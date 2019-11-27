@@ -1,0 +1,16 @@
+{
+  "name": "NTUEE-merge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd NTUEE-_backend && npm start\" \"cd NTUEE-PLUS && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.0.0"
+  }
+}

@@ -1,0 +1,122 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+</head>
+<body>
+        	<div id="container">
+			<form id="forgetForm">
+                <div id="register_table">
+                    <div id="table">
+                        <div id="input">
+                            <p id="input_text">Student ID</p>
+                            <input id="StudentID" name="StudentID" placeholder="Student ID"></input>
+                        </div>
+                        <div id="input">
+                            <p id="input_text">Your Email</p>
+                            <input id="Email" name="Email" placeholder="Your Email"></input>
+                        </div>
+                        <div id="input">
+                            <p id="input_text">Quation</p>
+                            <input id="question" name="question" placeholder="Your favorite movie"></input>
+                        </div>
+                        <div id="input">
+                            <p id="input_text">Template Password</p>
+                            <input id="password" name="password" placeholder="登入後須設定新密碼"></input>
+                        </div>
+                    </div>
+                    <div id="button">
+                        <button type="button" id="resetbtn">RESET PASSWORD</button>
+                    </div>
+                </div>
+			</form>
+                <div id="FAQ">
+                    <div id="FAQ_title">FAQ</div>
+                    <div id="splitline"></div>
+                    <div id="FAQ_content">
+                        <ul id="FAQ_list">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
+<script>
+console.log("hello>");
+    $(document).ready(function(){
+        $("#forgetForm").validate({
+                rules: {
+                    StudentID: {
+                        required: true,
+                        minlength: 9,
+						maxlength: 9
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    Email: {
+                        required: true,
+						email:true
+                    },
+					question: {
+						required: true
+					},
+                    agree:"required"
+                },
+                messages: {
+                    StudentID: {
+                        required: "請輸入學號",
+                        minlength: "學號長度錯誤",
+						maxlength: "學號長度錯誤"
+                    },
+                    password: {
+                        required: "請輸入密碼",
+                        minlength: "密碼長度只少5個字元"
+                    },
+                    Email: {
+                        required: "請輸入信箱",
+                        email: "請輸入合法信箱",
+                    },
+					question: {
+						required: "請輸入問題答案"
+					}
+                }
+        });
+		
+		$("#resetbtn").click(function(){
+			console.log("hello>");
+            var StudentID=$('#StudentID').val();
+			var Email=$('#Email').val();
+            var password=$('#password').val();
+			var question=$('#question').val();
+            //这里实现对 username和password格式的判断
+            //........
+            //发送ajax请求 使用post方式发送json字符串给后台login
+            $.ajax({
+                type: "post",
+                url: "http://localhost:1993/forget",
+                dataType: "json",
+                data:{ StudentID:StudentID, Email:Email, password:password, question:question },
+                success: function(data){
+                //接受返回的数据，前端判断采取的动作
+                console.log(data);
+                if(data){
+                    if(data.message==false){
+                    alert('發生錯誤'); //答錯答案
+                    window.location.href="#";
+                    }else{
+                    alert('激活連結已寄出');
+                    window.location.href="#";
+                    }
+                }
+                }
+            });
+        });
+	});
+</script>

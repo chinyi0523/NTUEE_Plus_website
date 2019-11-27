@@ -1,0 +1,2 @@
+sudo service mongodb start¡Gopen db
+sudo service mongodb start
