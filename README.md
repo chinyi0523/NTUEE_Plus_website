@@ -4,6 +4,7 @@
 2.npm install //install concurrent
 
 3.cd NTUEE-PLUS && npm install
+
 4.cd NTUEE-_backend && npm install
 
 5.npm start
