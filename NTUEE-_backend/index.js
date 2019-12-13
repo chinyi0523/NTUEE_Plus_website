@@ -1,39 +1,38 @@
-var express = require('express');
-var app = express();
+var express = require("express");
 var router = express.Router(); //後端處理的地方
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var cors = require("cors");
 var crypto = require("crypto");
 
+var app = express();
+
 //链接本地数据库
-var DB_URL = 'mongodb://localhost:27017/mongoose'
+var DB_URL = "mongodb://localhost:27017/mongoose";
 mongoose.connect(DB_URL);
 
-app.use(express.static('public'));
+var indexRouter = require("./routes/index");
+var loginRouter = require("./routes/login");
+var registerRouter = require("./routes/register");
+
+app.use(cors());
+app.use(express.static("public"));
 //解析表单数据
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	next();
-})
-//這個到時候要刪掉
-router.get('/',function(req,res){
-    res.render('index',__dirname+"/public/index.html")
-})
-
-/*注册页面数据接收*/
-router.post('/register', function(req, res){
-	var regPage = require('./srcs/register');
-	regPage(req, res);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
 
-/*登录处理*/
-router.post('/login', function (req, res, next) {
-  var loginPage = require('./srcs/login');
-  loginPage(req,res,next);
-});
+// 之後刪掉根目錄的router, router功能定義在/routes裡
+app.use("/", indexRouter);
+app.use("/login", loginRouter);
+app.use("/register", registerRouter);
 
 //处理昵称和头像的上传
 /*app.post('/uploadImg',function(req,res,next){
@@ -55,18 +54,18 @@ router.post('/login', function (req, res, next) {
     })
 })*/
 
-router.post('/forget', function (req, res, next) {
-  var forgetPage = require('./srcs/forget');
+router.post("/forget", function(req, res, next) {
+  var forgetPage = require("./srcs/forget");
   forgetPage(req, res, next);
 });
 
-router.get('/activation',function(req,res){
-	var activePage = require('./srcs/activation');
-	activePage(req,res);
+router.get("/activation", function(req, res) {
+  var activePage = require("./srcs/activation");
+  activePage(req, res);
 });
 
-app.use('/api', router);
+app.use("/api", router);
 
-var server = app.listen(1993,function(){
-    console.log('server connect');
-})
+var server = app.listen(1993, function() {
+  console.log("server connect");
+});
