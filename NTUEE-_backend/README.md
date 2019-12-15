@@ -55,3 +55,6 @@ in Schemas, there are 3 schema(user_login, user_visual, job), use "require(./Sch
 11/20
 把app.get('/xxx')內的函式移到srcs/xxx.js
 
+12/13
+將管理頁面routing的函式移到routes/底下
+
