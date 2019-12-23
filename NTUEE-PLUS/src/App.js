@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { Home_page,Login_page, Support_page,About_page ,Contact_page } from './pages';
+import { Home_page,Login_page, Support_page,About_page ,Contact_page ,Register_page,Forget_page} from './pages';
 import { NavBar } from './component/AppBar'
 
 class App extends Component {
@@ -14,6 +14,8 @@ class App extends Component {
         <Route path="/Support" component={Support_page} />
 		<Route path="/About" component={About_page} />
         <Route path="/Contact" component={Contact_page} />
+		<Route path="/Register" component={Register_page} />
+        <Route path="/Forget" component={Forget_page} />
       </div>
     );
   }
