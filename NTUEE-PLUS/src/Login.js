@@ -30,7 +30,7 @@ class Login extends Component{
 		event.preventDefault();
 		console.log(this.state);
 		alert("fine");
-		axios.post("http://localhost:1993/api/login", this.state)
+		axios.post("http://localhost:1993/login", this.state)
 		  .then(res => {
 			alert("歡迎 "+res.data.data.account);
 			console.log(res.data.data.account);
