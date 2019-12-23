@@ -14,6 +14,7 @@ mongoose.connect(DB_URL);
 var indexRouter = require("./routes/index");
 var loginRouter = require("./routes/login");
 var registerRouter = require("./routes/register");
+var apiRouter = require("./routes/api");
 
 app.use(cors());
 app.use(express.static("public"));
@@ -33,6 +34,7 @@ app.use(function(req, res, next) {
 app.use("/", indexRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
+app.use("/api", apiRouter);
 
 //处理昵称和头像的上传
 /*app.post('/uploadImg',function(req,res,next){
@@ -63,8 +65,6 @@ router.get("/activation", function(req, res) {
   var activePage = require("./srcs/activation");
   activePage(req, res);
 });
-
-app.use("/api", router);
 
 var server = app.listen(1993, function() {
   console.log("server connect");
