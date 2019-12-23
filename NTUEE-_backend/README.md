@@ -58,3 +58,7 @@ in Schemas, there are 3 schema(user_login, user_visual, job), use "require(./Sch
 12/13
 將管理頁面routing的函式移到routes/底下
 
+12/23
+完成登入後跳轉功能
+
+
