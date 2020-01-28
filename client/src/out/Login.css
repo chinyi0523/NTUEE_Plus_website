@@ -1,0 +1,205 @@
+:focus{
+    outline:0;
+}
+
+#Login_container{
+    font-family:'Noto Sans TC',Arial,sans-serif;
+}
+#Login_input{
+    position: absolute;
+    top:35%;
+    left:34%;
+    
+    color:white;
+    width:35%;
+    
+    
+}
+
+#Login_username{
+    
+    margin-bottom: 5%;
+}
+
+#Login_username_tag{
+    margin:0;
+    float: left;
+    font-size: 20px;
+    font-weight:500;
+}
+
+#Login_username_input{
+    color:white;
+    background-color: #003F67;
+    height:20px;
+    width:65%;
+    font-size:20px;
+    
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+
+    margin-left:5%;
+    margin-top:1%;
+}
+
+#Login_username_input:focus::-webkit-input-placeholder{
+    color: #003F67;
+    
+}
+
+#Login_username_input:focus:-ms-input-placeholder{
+    color: #003F67;
+    
+}
+
+#Login_username_input:focus::-ms-input-placeholder{
+    color: #003F67;
+    
+}
+
+#Login_username_input:focus::placeholder{
+    color: #003F67;
+    
+}
+
+
+#Login_password1{
+    clear: both;
+}
+
+#Login_password_tag{
+    margin:0;
+    float:left;
+    font-size: 20px;
+    font-weight:500;
+}
+
+#Login_password_input{
+    color:white;
+    background-color: #003F67;
+    height:20px;
+    width:65%;
+    font-size:20px;
+    clear:both;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    margin-left:6.2%;
+    margin-top:1%;
+}
+#Login_password_input:focus::-webkit-input-placeholder{
+    color: #003F67;
+    
+}
+#Login_password_input:focus:-ms-input-placeholder{
+    color: #003F67;
+    
+}
+#Login_password_input:focus::-ms-input-placeholder{
+    color: #003F67;
+    
+}
+#Login_password_input:focus::placeholder{
+    color: #003F67;
+    
+}
+
+
+
+#Login_links{
+    clear: both;
+    margin-top:5%;
+    width:93%;
+}
+
+
+#Login_submit{
+    font-size: 1.5vw;
+    border-radius: 10px;
+    position: absolute;
+    top:65%;
+    left:45.5%;
+    width:10%;
+    height: 7%;
+    background-color:  #003f67;
+    color: #fff;
+    border: 2px #fff solid;
+    font-weight: bold;
+    cursor: pointer;
+}
+#Login_submit:hover{
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
+    transition-duration: 250ms, 250ms;
+    background-color: #fff;
+    color: #003f67;
+    font-weight: bold;
+}
+
+#Login_create{
+    font-size: 14px;
+    float:left;
+    color:white;
+    text-decoration: none;
+}
+#Login_create:hover{
+    font-size: 14px;
+    float:left;
+    color:rgb(106, 255, 198);
+    text-decoration: none;
+}
+
+#Login_forgot{
+    font-size: 14px;
+    float:right;
+    color:white;
+    text-decoration: none;
+}
+
+#Login_forgot:hover{
+    font-size: 14px;
+    float:right;
+    color:rgb(48, 232, 255);
+    text-decoration: none;
+}
+
+#Login_footer{
+    position: absolute;
+    bottom:0%;
+    left:45.5%;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    color:white;
+}
+
+#Login_logo{
+    display: flex;
+    max-width: 10vmin;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Login_footer_text{
+    display: center;
+    margin:0;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    font-size: 0.5vw;
+    color: #fff;
+    text-align: center;
+}
+
+#Login_footer_text_2{
+    display: center;
+    margin:0;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    font-size: 0.5vw;
+    color: #fff;
+    text-align: center;
+    margin-bottom:10%;
+}
+

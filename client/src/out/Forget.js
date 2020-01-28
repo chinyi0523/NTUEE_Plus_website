@@ -1,0 +1,134 @@
+import React, { Component } from 'react';
+import './Forget.css';
+import eesa_icon from '../images/eesa-icon.png';
+import axios from 'axios';
+
+class Forget extends Component{
+	constructor(props) {
+		super(props);
+		this.state = {
+		  Forget_ID: '',
+		  Forget_email: '',
+		  Forget_question: '',
+		  Forget_password: '',
+		  Forget_confirm_password: ''
+		};
+
+		this.handleInputChange = this.handleInputChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleInputChange(event) {
+		const target = event.target;
+		const value = target.value;
+		const name = target.name;
+		
+		this.setState({
+		  [name]: value
+		});
+	}
+	
+	handleSubmit(event) {
+		event.preventDefault();
+		console.log(this.state);
+		if(this.state.Forget_password!==this.state.Forget_confirm_password){
+			alert("密碼不一致");
+		}else{
+			var r=window.confirm("確認送出?");
+			if(r){
+				axios.post("/api/forget", 
+					{account:this.state.Forget_ID,
+					password:this.state.Forget_password,
+					question:this.state.Forget_question,
+					Email:this.state.Forget_email
+					}
+				).then(data => {
+					console.log(data);
+						if(data){
+							if(data.data.message===true){
+								alert('信件已寄出，請收信');
+								window.location = "/Login";
+							}else{
+								alert('安全問題回答錯誤');
+							}
+						}
+				})
+			}
+		}
+	}
+	
+    render(){
+        return(
+            <div id="Forget_container">
+                <div id="Forget_left_table">
+					<form onSubmit={this.handleSubmit}>
+						<div id="Forget_input">
+							<p id="Forget_input_text">Student ID</p>
+							<input name="Forget_ID"
+								id="Forget_input_input" 
+								placeholder="Student ID"
+								value={this.state.value} 
+								onChange={this.handleInputChange}
+							></input>
+						</div>
+						<div id="Forget_input">
+							<p id="Forget_input_text">Your Email</p>
+							<input name="Forget_email"
+								id="Forget_input_input" 
+								placeholder="Your Email"
+								value={this.state.value} 
+								onChange={this.handleInputChange}
+							></input>
+						</div>
+						<div id="Forget_input">
+							<p id="Forget_input_text">Question</p>
+							<input name="Forget_question"
+								id="Forget_input_input" 
+								placeholder="Your favorite movie"
+								value={this.state.value} 
+								onChange={this.handleInputChange}
+							></input>
+						</div>
+						<div id="Forget_input">
+						   <p id="Forget_input_text">Temporary Password</p>
+							<input name="Forget_password"
+								id="Forget_input_input" 
+								placeholder="登入後須設定新密碼"
+								value={this.state.value} 
+								onChange={this.handleInputChange}
+							></input>
+						</div>
+						<div id="Forget_input">
+						   <p id="Forget_input_text">Confirm Password</p>
+							<input name="Forget_confirm_password"
+								id="Forget_input_input" 
+								placeholder="再次輸入密碼"
+								value={this.state.value} 
+								onChange={this.handleInputChange}
+							></input>
+						</div>
+						<div id="Forget_btn">
+							<button id="Forget_btn_text" onclick={this.handleSubmit}>
+								RESET PASSWORD
+							</button>
+						</div>
+					</form>
+                </div>
+
+                <div id="Forget_FAQ">
+                    <div id="Forget_FAQ_title">FAQ</div>
+                    <div id="Forget_FAQ_splitline"></div>
+                    <div id="Forget_FAQ_content">
+                        <ul id="Forget_FAQ_list">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        )
+    }
+}
+export default Forget

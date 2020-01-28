@@ -1,0 +1,211 @@
+#Register_container{
+    position: absolute;
+    top:15%;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+
+    width:100%;
+    height: 85%;
+}
+#Register_register_table{
+    width:65%;
+    margin-left:5%;
+    float:left;
+    color: white;
+}
+#Register_table_title{
+    letter-spacing: 2px;
+}
+#Register_table{
+    margin-top: 5%;
+    margin-left:10%;
+    font-size: 24px;
+    letter-spacing: 1px;
+    
+}
+#Register_input1{
+    margin-top:3%;
+}
+#Register_input2{
+    margin-top:3%;
+}
+#Register_input3{
+    margin-top: 3%;
+}
+#Register_input4{
+    margin-top: 3%;
+}
+#Register_realname_label{
+    margin:0;
+    display: inline;
+    text-align: center;
+}
+#Register_realname{
+    color:white;
+    font-size: 24px;
+    width:50%;
+    background-color: #003F67;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    float: right;
+    margin-right:5%;
+}
+#Register_realname:focus::-webkit-input-placeholder{
+    color:#003F67
+}
+#Register_realname:focus:-ms-input-placeholder{
+    color:#003F67
+}
+#Register_realname:focus::-ms-input-placeholder{
+    color:#003F67
+}
+#Register_realname:focus::placeholder{
+    color:#003F67
+}
+#Register_ID_label{
+    margin:0;
+    display: inline;
+}
+#Register_student_id{
+    color:white;
+    font-size: 24px;
+    width:50%;
+    background-color: #003F67;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    float: right;
+    margin-right:5%;
+}
+#Register_student_id:focus::-webkit-input-placeholder{
+    color:#003F67
+}
+#Register_student_id:focus:-ms-input-placeholder{
+    color:#003F67
+}
+#Register_student_id:focus::-ms-input-placeholder{
+    color:#003F67
+}
+#Register_student_id:focus::placeholder{
+    color:#003F67
+}
+
+#Register_password_label{
+    margin:0;
+    display: inline;
+}
+#Register_password{
+    color:white;
+    font-size: 24px;
+    width:50%;
+    background-color: #003F67;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    float: right;
+    margin-right:5%;
+}
+#Register_password:focus::-webkit-input-placeholder{
+    color:#003F67
+}
+#Register_password:focus:-ms-input-placeholder{
+    color:#003F67
+}
+#Register_password:focus::-ms-input-placeholder{
+    color:#003F67
+}
+#Register_password:focus::placeholder{
+    color:#003F67
+}
+#Register_confirm_password_label{
+    margin:0;
+    display: inline;
+    text-align: center;
+}
+#Register_confirm_password{
+    color:white;
+    font-size: 24px;
+    width:50%;
+    background-color: #003F67;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    float: right;
+    margin-right:5%;
+}
+#Register_confirm_password:focus::-webkit-input-placeholder{
+    color:#003F67
+}
+#Register_confirm_password:focus:-ms-input-placeholder{
+    color:#003F67
+}
+#Register_confirm_password:focus::-ms-input-placeholder{
+    color:#003F67
+}
+#Register_confirm_password:focus::placeholder{
+    color:#003F67
+}
+#Register_register_button{
+    font-size: 24px;
+    border-radius: 10px;
+    position: absolute;
+    top:70%;
+    left:30%;
+    width:13%;
+    height: 8%;
+    background-color:  #003f67;
+    color: #fff;
+    border: 2px #fff solid;
+    font-weight: bold;
+    cursor: pointer;
+
+    
+}
+#Register_register_button:hover{
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
+    transition-duration: 250ms, 250ms;
+    background-color: #fff;
+    color: #003f67;
+    font-weight: bold;
+}
+#Register_register_text{
+    text-align: center;
+    margin:0;
+    -webkit-transform: rotate3d(1,0,0,0deg);
+            transform: rotate3d(1,0,0,0deg);
+    -webkit-transition: -webkit-transform 2s ease-in-out;
+    transition: -webkit-transform 2s ease-in-out;
+    transition: transform 2s ease-in-out;
+    transition: transform 2s ease-in-out, -webkit-transform 2s ease-in-out;
+    
+}
+#Register_FAQ{
+    display: inline-block;
+    width: 30%;
+}
+#Register_FAQ_title{
+    color: gray;
+    margin-top:10%;
+    text-align: center;
+    font-size:24px;
+}
+#Register_splitline{
+    width:95%;
+    border-width: 0 0 2px 0 ;
+    border-style:solid ;
+    border-color:gray;
+    border-radius: 1px;
+}
+
+#Register_FAQ_list{
+    list-style-type: none;
+}
