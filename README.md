@@ -1,6 +1,6 @@
-# ee0125
+# NTUEE_Plus_website
 
-## 0126進度
+## 0126進度 By 君輔
 ### 新增.gitignore(拜託大大們不要再把node_module傳上來了，看了很難過)
 ### 架構我參考了https://github.com/rishipr/teams
 ### 後端一律在/api下工作，要新增功能請在routes/api.js中修改
