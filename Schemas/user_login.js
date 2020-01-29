@@ -3,7 +3,7 @@ var mongoose = require("./db"),
 
 var User_login_Schema = new Schema({
   username: { type: String, required: true },//名字
-  account: { type: String, required: true },//學號
+  account: { type: String, required: true,lowercase: true },//學號
   userpsw: { type: String, required: true },//密碼
   private_Email: String,
   question: { type: String, default: "Hello World" }//安全問題

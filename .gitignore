@@ -30,6 +30,7 @@
 ######################
 .DS_Store
 .DS_Store?
+.vscode/
 ._*
 .Spotlight-V100
 .Trashes
@@ -37,3 +38,10 @@ ehthumbs.db
 Thumbs.db
 
 /NTUEE-PLUS/node_modules/.cache
+
+#myedition
+node_modules/
+.DS_Store
+npm-debug.log
+client/build/
+sessions/

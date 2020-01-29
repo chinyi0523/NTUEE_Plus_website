@@ -1,5 +1,5 @@
 //srcs/login.js
-var user_l_Schema = require('../Schemas/user_login');
+var user_l_Schema = require('../../Schemas/user_login');
 var crypto = require("crypto");
 
 module.exports = function (req, res, next) {

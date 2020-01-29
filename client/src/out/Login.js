@@ -37,11 +37,11 @@ class Login extends Component{
 				axios.post("/api/login", 
 					{account:this.state.Login_username_input,
 					password:this.state.Login_password_input}
-				).then(data => {
-					console.log(data);
-						if(data){
-							if(data.data.message===true){
-								alert('登入成功');
+				).then(res => {
+					console.log(res.data);
+						if(res.data){
+							if(res.data.message===true){
+								alert('登入成功，歡迎：'+res.data.data.username);
 								window.location = "/Home_in";
 							}else{
 								alert('登入失敗');

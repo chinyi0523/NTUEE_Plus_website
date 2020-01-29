@@ -1,7 +1,7 @@
 //scrs/activation
 //處理express中 http://<hostname>/activation?name=<UserName>&active=<Gradled>
-var Activation = require('../Schemas/activation');
-var user_l_Schema = require('../Schemas/user_login');
+var Activation = require('../../Schemas/activation');
+var user_l_Schema = require('../../Schemas/user_login');
 
 module.exports = function(req,res){
 	var UserName = req.query.name;

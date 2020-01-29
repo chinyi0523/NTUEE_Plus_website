@@ -1,6 +1,6 @@
-var user_l_Schema = require('../Schemas/user_login');
+var user_l_Schema = require('../../Schemas/user_login');
 var crypto = require("crypto");
-var Activation = require('../Schemas/activation');
+var Activation = require('../../Schemas/activation');
 var sendmail = require('./mail/send');
 
 function insert_active(name,psw,act){ //激活碼
