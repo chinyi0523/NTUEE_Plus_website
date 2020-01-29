@@ -16,7 +16,15 @@ module.exports = function (req, res, next) {
         else {
             if(obj.length == 1){
                 console.log('登入成功',obj);
-                res.send({status:'success',message:true,data:{username:obj[0].username,account:obj[0].account}});
+				req.session.regenerate(function(err) {
+					if(err){
+						return res.json({ret_code: 2, ret_msg: 'session 建立失敗'});                
+					}
+					req.session.loginName = obj[0].username;
+					req.session.loginAccount = obj[0].account;
+					res.send({status:'success',message:true,data:{username:obj[0].username,account:obj[0].account}});
+					//res.redirect('/');
+				});
             }else{
                 console.log('請註冊帳號'); 
 				console.log(query); 

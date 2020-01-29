@@ -1,7 +1,7 @@
 var user_l_Schema = require('../Schemas/user_login');
 var crypto = require("crypto");
 var Activation = require('../Schemas/activation');
-var sendmail = require('./send');
+var sendmail = require('./mail/send');
 
 function insert_active(name,psw,act){ //激活碼
 	Activation.find({account:name},function(err,obj){
