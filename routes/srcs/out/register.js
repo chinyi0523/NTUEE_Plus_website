@@ -26,6 +26,9 @@ module.exports = function (req, res) {
   var UserName = req.body.username;
   var Useraccount = req.body.account;
   var UserPsw = req.body.password;
+  
+  
+  
   //密碼加密
   var md5 = crypto.createHash("md5");
   var newPas = md5.update(UserPsw).digest("hex");
@@ -34,6 +37,7 @@ module.exports = function (req, res) {
     user_l_Schema.find(query, function(err, obj){
         if (err) {
             console.log("Error:" + err);
+			return res.send({status:'success',message:false,description:"資料庫錯誤"});
         }
         else {
             if(obj.length == 0){

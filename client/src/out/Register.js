@@ -39,7 +39,8 @@ class Register extends Component{
 				axios.post("/api/register", 
 					{username:this.state.Register_realname,
 					account:this.state.Register_student_id,
-					password:this.state.Register_password}
+					password:this.state.Register_password,
+					ConfirmPassword:this.state.Register_confirm_password}
 				).then(data => {
 					console.log(data);
 						if(data){
@@ -50,6 +51,9 @@ class Register extends Component{
 								alert('帳號已存在');
 							}
 						}
+				}).catch(err=>{
+					console.log("err=",err.response.data.errors);
+					//[{value:"使用者填的值",msg:"錯的原因",param:"用他拿到是誰錯",location:"body"}]
 				})
 			}
 		}
