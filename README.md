@@ -26,3 +26,7 @@
 * 後端srcs也設成in/、out/兩個資料夾，方便管理(?
 > **一些話:**
 >* 我不太會打MD，有空ㄉ人可以幫我排版一下XD
+
+### 0130進度 By君輔
+*新增express-validation套件，在routes/validation下先檢驗傳入的資料是否合法再進入資料庫(/srcs)管理
+*若資料不合法則從(validation/controll.js)回傳422error，前端需再依error訊息顯示提醒
