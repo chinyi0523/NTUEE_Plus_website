@@ -30,3 +30,9 @@
 ### 0130進度 By君輔
 * 新增express-validation套件，在routes/validation下先檢驗傳入的資料是否合法再進入資料庫(/srcs)管理
 * 若資料不合法則從(validation/controll.js)回傳422error，前端需再依error訊息顯示提醒
+
+### 0131進度 By君輔
+* 前端接收到validation的訊息後會跳alert(統一當message===false時跳data.description中的內容)
+* 後端validation架構改變，針對每一種欄位有獨自的檔案規定格式(/Name)，但ConfirmPassword要用到req會噴bug，還在修正中
+> **一些話**
+> * 前端趕快生登入後頁面給我啦
