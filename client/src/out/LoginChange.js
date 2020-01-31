@@ -24,7 +24,7 @@ class LoginChange extends Component {
 							question:res.data.data.SQ
 						});
 					}else{
-						alert('已自動登出');
+						alert('錯誤：\n'+res.data.description);
 					}
 				}
 		})

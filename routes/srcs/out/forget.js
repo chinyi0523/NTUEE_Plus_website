@@ -39,7 +39,7 @@ function insert_active(name,psw,act){ //激活碼
 
 
 module.exports = function (req, res, next) {
-  var Useraccount = req.body.account;
+  var Useraccount = req.body.account.toLowerCase();
   var question = req.body.question;
   var Email = req.body.Email;
   var UserPsw = req.body.password;
@@ -47,24 +47,28 @@ module.exports = function (req, res, next) {
   var md5 = crypto.createHash("md5");
   var newPas = md5.update(UserPsw).digest("hex");
   console.log(UserPsw,newPas);
-  var query = {account: Useraccount, question:question};
+  var query = {account: Useraccount};//, question:question};
    user_l_Schema.find(query, function(err, obj){
         if (err) {
             console.log("Error:" + err);
-        }
-        else {
+			return res.send({status:'success',message:false,description:"資料庫錯誤"});
+        }else {
             if(obj.length == 1){
-                console.log('答案正確');
-				//寄送激活碼
-				var Garbled = Math.random().toString(36).substr(2); //產生亂碼
-				insert_active(Useraccount, newPas, Garbled);
-				var hylink = '<a href="'+req.protocol+"://"+req.get('host')+'/api/activation?name='+Useraccount+'&active='+Garbled+'">點擊激活</a>';
-				sendmail(Email,hylink);
-				res.send({status:'success',message:true});
+				if(obj[0].question===question&&question!==""){
+					console.log('答案正確');
+					//寄送激活碼
+					var Garbled = Math.random().toString(36).substr(2); //產生亂碼
+					insert_active(Useraccount, newPas, Garbled);
+					var hylink = '<a href="'+req.protocol+"://"+req.get('host')+'/api/activation?name='+Useraccount+'&active='+Garbled+'">點擊激活</a>';
+					sendmail(Email,hylink);
+					return res.send({status:'success',message:true});
+				}else{
+					console.log('答案錯誤');
+					return res.send({status:'success',message:false,description:"答案錯誤"});
+				}
             }else{
-                console.log('答案錯誤或帳號不存在'); 
-				console.log(query);
-                res.send({status:'success',message:false});
+                console.log('帳號不存在');
+                res.send({status:'success',message:false,description:"帳號不存在"});
             }
         }
     })

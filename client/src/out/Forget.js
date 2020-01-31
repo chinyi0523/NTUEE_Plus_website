@@ -42,14 +42,14 @@ class Forget extends Component{
 					question:this.state.Forget_question,
 					Email:this.state.Forget_email
 					}
-				).then(data => {
-					console.log(data);
-						if(data){
-							if(data.data.message===true){
+				).then(res => {
+					console.log(res.data);
+						if(res){
+							if(res.data.message===true){
 								alert('信件已寄出，請收信');
 								window.location = "/Login";
 							}else{
-								alert('安全問題回答錯誤');
+								alert('錯誤：\n'+res.data.description);
 							}
 						}
 				})

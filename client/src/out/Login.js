@@ -42,9 +42,9 @@ class Login extends Component{
 						if(res.data){
 							if(res.data.message===true){
 								alert('登入成功，歡迎：'+res.data.data.username);
-								window.location = "/Home_in";
+								window.location = "/";
 							}else{
-								alert('登入失敗');
+								alert("錯誤：\n"+res.data.description);
 							}
 						}
 				})

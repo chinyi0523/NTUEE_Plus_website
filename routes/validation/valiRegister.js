@@ -2,6 +2,7 @@ const {body} = require('express-validator');
 
 //Register
 module.exports=(req,res)=>{
+	//console.log("bug?");
 	return[
 		body('username')
 			.not().isEmpty().withMessage('請填入姓名'),

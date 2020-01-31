@@ -24,7 +24,7 @@ class VisualChange extends Component {
 							question:res.data.data.SQ
 						});
 					}else{
-						alert('自動登出');
+						alert('錯誤：\n'+res.data.description);
 					}
 				}
 		})

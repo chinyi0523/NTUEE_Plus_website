@@ -24,7 +24,7 @@ function insert(name,account,psw){
 
 module.exports = function (req, res) {
   var UserName = req.body.username;
-  var Useraccount = req.body.account;
+  var Useraccount = req.body.account.toLowerCase();
   var UserPsw = req.body.password;
   
   
@@ -46,7 +46,7 @@ module.exports = function (req, res) {
                 res.send({status:'success',message:true,data:UserName})
             }else{
 				console.log("已有此帳號");
-                res.send({status:'success',message:false}) 
+                res.send({status:'success',message:false,description:"帳號已存在"}) 
             }
         }
     })

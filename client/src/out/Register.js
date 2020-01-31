@@ -31,8 +31,8 @@ class Register extends Component{
 	handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.state);
-		if(this.state.Register_password!==this.state.Register_confirm_password){
-			alert("密碼不一致");
+		if(false){//this.state.Register_password!==this.state.Register_confirm_password){
+			return alert("密碼不一致");
 		}else{
 			var r=window.confirm("確認註冊?");
 			if(r){
@@ -41,18 +41,18 @@ class Register extends Component{
 					account:this.state.Register_student_id,
 					password:this.state.Register_password,
 					ConfirmPassword:this.state.Register_confirm_password}
-				).then(data => {
-					console.log(data);
-						if(data){
-							if(data.data.message===true){
+				).then(res => {
+					console.log(res.data);
+						if(res){
+							if(res.data.message===true){
 								alert('註冊成功');
 								window.location = "/Login";
 							}else{
-								alert('帳號已存在');
+								alert('錯誤：\n'+res.data.description);
 							}
 						}
 				}).catch(err=>{
-					console.log("err=",err.response.data.errors);
+					console.log("err=",err);
 					//[{value:"使用者填的值",msg:"錯的原因",param:"用他拿到是誰錯",location:"body"}]
 				})
 			}
