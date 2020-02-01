@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './profile.css';
 import default_image from '../images/default_image.png';
-import Axios from 'axios';
+import axios from 'axios';
 
 class Profile extends Component{
     constructor(props){
@@ -51,7 +51,8 @@ class Profile extends Component{
         }else{
             var r = window.confirm("確認更改?");
             if (r){
-                axios.post("../routes/Schemas/user_visual.js",
+                axios.post(//?
+                ,
                 {account : "",
                 username : this.Profile_realname,
                 nickname : "",
@@ -67,8 +68,8 @@ class Profile extends Component{
                 cellphone : this.Profile_mobile,
                 CC : this.Profile_address,
                 Occupation:[
-                    title:"",
-                    Company:""
+                    "",
+                    ""
                 ],
                 JobID:""
                 }).then(res => {
