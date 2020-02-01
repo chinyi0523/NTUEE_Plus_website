@@ -1,0 +1,231 @@
+#Profile_container{
+    width:100%;
+    margin-top:10%;
+    color: white;
+    font-family:'Noto Sans TC',Arial,sans-serif !important;
+}
+
+#Profile_public{
+    position: absolute;
+    top:17%;
+    left:49.3%;
+    color:gray;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    font-weight: 100;
+}
+#Profile_information{
+    float: left;
+    width: 50%;
+}
+
+#Profile_userimage{
+    
+    margin-left:7%;
+    width:25%;
+    height:30% ;
+    margin-top: 10%;
+    float: left;
+
+    border: 2px black solid;
+}
+
+#Profile_info{
+    margin:0;
+    
+    margin-left:37%;
+    
+    height: 20%;
+    width: 60%;
+    font-size: 20px;
+}
+
+#Profile_small_cont1{
+    padding-top:5%;
+    height: 25px;
+    margin-bottom: 10%;
+}
+
+
+#Profile_small_cont2{
+    height: 25px;
+}
+#Profile_realname_tag{
+    margin:0;
+    float:left;
+}
+#Profile_realname_checkbox{
+    margin-top: 3%;
+    margin-right: -10%;
+    float: right;
+}
+#Profile_realname{
+    color: white;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    background-color: #003F67;
+    font-size : 20px;
+    float:right;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    margin-top: 1%;
+}
+
+#Profile_studentID_tag{
+    /*clear: both;*/
+    margin:0;
+    float: left;
+}
+#Profile_studentID_checkbox{
+    margin-top: 3%;
+    margin-right: -10%;
+    float: right;
+}
+#Profile_studentID{
+    color:white;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    background-color: #003F67;
+    font-size : 20px;
+    float: right;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    margin-top: 1%;
+}
+#hr1{
+    color:gray;
+    font-weight: 100;
+    border-bottom: 1px solid gray;
+    width: 90%;
+    margin-bottom: 0;
+    margin-top: 5%;
+    margin-left: 7%;
+    
+}
+#Profile_more_info{
+    
+    margin-top:5%;
+    width:90%;
+    margin-left:7%;
+    font-size: 20px;
+}
+
+#Profile_more_info p {
+    margin:0;
+    float: left;
+}
+#Profile_more_info div>input,td>input{
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    color: white;
+    background-color: #003F67;
+    font-size : 20px;
+    float: right;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    padding: 0;
+    margin-top:1%;
+
+}
+
+#Profile_more_info div{
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-bottom: 10%;
+}
+#Profile_more_info input[type="checkbox"]{
+    margin-right:-6.5%;
+    margin-top: 1%;
+}
+#hr2{
+    font-size: 18px;
+    color:gray;
+    font-weight: 100;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    height: 24px !important;
+    margin-top: 10%;
+    margin-bottom: 0 !important; 
+}
+#Profile_diploma_choosebox_table input[type="checkbox"]{
+    position: absolute;
+    margin:0.3% 0 0 0;
+    left: 50.5%;
+}
+#Profile_diploma_choosebox_table tr{
+    height:8vh;
+}
+#Profile_diploma_checkbox_input{
+
+    display: inline;
+}
+#Profile_diploma_choosebox_table td{
+    margin-bottom: 10% !important; 
+}
+#Profile_diploma_master_input{
+    display: inline;
+}
+
+#Profile_shortintro{
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    font-size: 16px;
+    clear: both;
+    color: white;
+    width:100%;
+    height: 150px;
+    background-color: #003F67;
+    border-width: 2.5px ;
+    border-style:dashed ;
+    border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+}
+
+#Profile_submit_btn{
+    font-size: 1.5vw;
+    border-radius: 10px;
+    position: absolute;
+    top:215%;
+    left:15%;
+    /*top:65%;
+    left:45.5%;*/
+    width:20%;
+    height: 7%;
+    background-color:  #003f67;
+    color: #fff;
+    border: 2px #fff solid;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#Profile_submit_btn:hover{
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
+    transition-duration: 250ms, 250ms;
+    background-color: #fff;
+    color: #003f67;
+    font-weight: bold;
+}
+
+
+#Profile_latest_news{
+    display: inline-block;
+    margin-left: 7%;
+
+}
+
+#Profile_news_renderer a{
+    color : white;
+    text-decoration: none;
+}
+
+#Profile_news_renderer a:hover{
+    color: #93d5ff;
+    text-decoration: underline;
+}
+
