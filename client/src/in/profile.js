@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './profile.css';
 import default_image from '../images/default_image.png';
+import Axios from 'axios';
 
 class Profile extends Component{
     constructor(props){
         super(props);
         this.state = {
             Profile_realname : "",
-            Profile_studentID : "",
+            //Profile_studentID : "",
             Profile_email : "",
             Profile_phone_company : "",
             Profile_phone_home : "",
@@ -45,7 +46,45 @@ class Profile extends Component{
         event.preventDefault();
         console.log(this.state);
         /*alert("fine");*/
-        /*connect database and login then update profile*/ 
+        if(false){
+            alert("一些判斷式") //validation
+        }else{
+            var r = window.confirm("確認更改?");
+            if (r){
+                axios.post("../routes/Schemas/user_visual.js",
+                {account : "",
+                username : this.Profile_realname,
+                nickname : "",
+                profile : this.Profile_shortintro,
+                education:[
+                    {
+                        SD : this.Profile_diploma_bachelor_major,
+                        Note : "",
+                    }
+                ],
+                publicEmail : this.Profile_email,
+                office : this.Profile_phone_company,
+                cellphone : this.Profile_mobile,
+                CC : this.Profile_address,
+                Occupation:[
+                    title:"",
+                    Company:""
+                ],
+                JobID:""
+                }).then(res => {
+                    console.log(res.data);
+                        if (res.data){
+                            if (res.data.message === true){ 
+                                alert("修改成功!");
+                                //window.location = ? in's router hasn't done yet
+                            }else{
+                                alert("錯誤: \n"+res.data.description);
+                            }
+
+                        }
+                })
+            }
+        }
     }
     render(){
         return (
