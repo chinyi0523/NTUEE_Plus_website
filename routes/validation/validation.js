@@ -1,17 +1,17 @@
 const {body} = require('express-validator');
 
 mat = {
-	"register":["username","account","password","ConfirmPassword"],//],//
+	"register":["username","account","password","ConfirmPassword"],
 	"login":["account","password"],
-	"forget":["account","question","Email","password"],
+	"forget":["account","question","Email","password","ConfirmPassword"],
 	"chLogin":["question"]
 }
 
-Valid = function(url,req,res){
+Valid = function(method,req){
 	var output = [];
-	mat[url].forEach(element=>{
-		if(element==="ConfirmPassword"){
-			output.push(require("./Name/"+element)(req,res));
+	mat[method].forEach(element=>{
+		if(element==="ConfirmPassword"){//如果需要抓req就用它
+			output.push(require("./Name/"+element)(req));
 		}else{
 			output.push(require("./Name/"+element));
 		}
@@ -19,7 +19,9 @@ Valid = function(url,req,res){
 	return output;
 }
 
-module.exports.Login=()=>Valid("login");
-module.exports.Register=(req,res)=>Valid("register",req,res);
+
+module.exports=(method,req)=>Valid(method,req);
+/*module.exports.Login=()=>Valid("login");
+module.exports.Register=(req,res)=>{Valid("register",req,res)};
 module.exports.Forget=()=>Valid("forget");
-module.exports.chLogin=()=>Valid("chLogin");
+module.exports.chLogin=()=>Valid("chLogin");*/

@@ -31,7 +31,7 @@ class Forget extends Component{
 	handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.state);
-		if(this.state.Forget_password!==this.state.Forget_confirm_password){
+		if(false){//this.state.Forget_password!==this.state.Forget_confirm_password){
 			alert("密碼不一致");
 		}else{
 			var r=window.confirm("確認送出?");
@@ -40,7 +40,8 @@ class Forget extends Component{
 					{account:this.state.Forget_ID,
 					password:this.state.Forget_password,
 					question:this.state.Forget_question,
-					Email:this.state.Forget_email
+					Email:this.state.Forget_email,
+					ConfirmPassword:this.state.Forget_confirm_password
 					}
 				).then(res => {
 					console.log(res.data);
