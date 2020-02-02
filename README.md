@@ -36,3 +36,13 @@
 * 後端validation架構改變，針對每一種欄位有獨自的檔案規定格式(/Name)，但ConfirmPassword要用到req會噴bug，還在修正中
 > **一些話**
 > * 前端趕快生登入後頁面給我啦
+
+### 0201進度 By友廷
+* 前端profile頁面處理中
+
+### 0202進度 By君輔
+* 後端validation處理完成，只需修改validation.js的mat{}，即會運行對應的validate
+* 後端新增/api/showVisual(init用)、/api/chVisual(儲存用，尚未完善)，由於/Schemas/user_visual.js格式有更動，資料傳輸內容須再討論(即post的data)
+* Profile在Home下做測試
+* 前端頁面改用value={this.state.\<id or name\>}(我也不知道為何範例code用.value)
+* 前端id和name的意義可以統一一下，像是id拿來管理css、name管理this.state和post之類的(onchange中用target.id或target.name都可喔)
