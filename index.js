@@ -25,7 +25,7 @@ app.use(session({
     resave: false,  // 是否每次都重新保存會話，建議false
     cookie: {
 		httpOnly: false, //false前端可read和set
-        maxAge: 60 * 1000  // 有效期(ms)
+        maxAge: 10 * 60 * 1000  // 有效期(ms)
     }
 }));
 

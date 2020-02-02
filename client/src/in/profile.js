@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './profile.css';
-import default_image from '../images/default_image.png';
+import default_image from '../images/left_image.png';
 import axios from 'axios';
 
 class Profile extends Component{
@@ -29,7 +29,37 @@ class Profile extends Component{
         this.handleSubmit = this.handleSubmit.bind(this)
 
     }
-
+	
+	componentDidMount(){
+		this.showVisual();
+	}
+	
+	showVisual(){
+		axios.post("/api/showVisual", 
+			{}
+		).then(res => {
+			console.log(res.data);
+				if(res.data){
+					if(res.data.message===true){
+						var D = res.data.data;
+						console.log("Name=",D.username.data);
+						this.setState({
+							Profile_realname:D.username.data,
+							Profile_shortintro:D.profile.data,
+							Profile_email:D.publicEmail.data,
+							Profile_phone_company:D.office.data,
+							Profile_mobile:D.cellphone.data,
+							Profile_address:D.CC.data
+						});
+					}else{
+						alert('錯誤：\n'+res.data.description);
+					}
+				}
+		})
+	}
+	
+	
+	
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
@@ -51,22 +81,22 @@ class Profile extends Component{
         }else{
             var r = window.confirm("確認更改?");
             if (r){
-                axios.post(//?
+                axios.post('/api/chVisual'
                 ,
-                {account : "",
-                username : this.Profile_realname,
+                {
+                username: this.state.Profile_realname,
                 nickname : "",
-                profile : this.Profile_shortintro,
+                profile : this.state.Profile_shortintro,
                 education:[
                     {
-                        SD : this.Profile_diploma_bachelor_major,
+                        SD : this.state.Profile_diploma_bachelor_major,
                         Note : "",
                     }
                 ],
-                publicEmail : this.Profile_email,
-                office : this.Profile_phone_company,
-                cellphone : this.Profile_mobile,
-                CC : this.Profile_address,
+                publicEmail : this.state.Profile_email,
+                office : this.state.Profile_phone_company,
+                cellphone : this.state.Profile_mobile,
+                CC : this.state.Profile_address,
                 Occupation:[
                     "",
                     ""
@@ -100,12 +130,12 @@ class Profile extends Component{
                         <div id="Profile_small_cont1">
                             <p id="Profile_realname_tag">RealName:</p>
                             <input type="checkbox" id="Profile_realname_checkbox"></input>
-                            <input type="text" id="Profile_realname" value = {this.state.value} onChange = {this.handleInputChange} name="Profile_realname"></input>
+                            <input type="text" id="Profile_realname" value = {this.state.Profile_realname} onChange = {this.handleInputChange} name="Profile_realname"></input>
                         
                         </div>
                         <div>
                             <p id="Profile_shortintro_tag">簡介:</p>
-                            <textarea id="Profile_shortintro" name="Profile_shortintro" placeholder="briefly introduce yourself!" value = {this.state.value} onChange = {this.handleInputChange}></textarea>
+                            <textarea id="Profile_shortintro" name="Profile_shortintro" placeholder="briefly introduce yourself!" value = {this.state.Profile_shortintro} onChange = {this.handleInputChange}></textarea>
                         </div>
                     </div>
                     <div id="hr1">How to Contact</div> 
@@ -113,27 +143,27 @@ class Profile extends Component{
                         <div>
                         <p id="Profile_email_tag">E-mail:</p>
                         <input type="checkbox"></input>
-                        <input type="email" id="Profile_email" value = {this.state.value} onChange = {this.handleInputChange} name="Profile_email"></input>
+                        <input type="email" id="Profile_email" value = {this.state.Profile_email} onChange = {this.handleInputChange} name="Profile_email"></input>
                         </div>
                         <div>
                         <p id="Profile_phone_company_tag">Phone(Company):</p>
                         <input type="checkbox"></input>
-                        <input id="Profile_phone_company" value = {this.state.value} onChange = {this.handleInputChange} name="Profile_phone_company"></input>
+                        <input id="Profile_phone_company" value = {this.state.Profile_phone_company} onChange = {this.handleInputChange} name="Profile_phone_company"></input>
                         </div>
                         <div>
                         <p id="Profile_phone_home_tag">Phone(Home):</p>
                         <input type="checkbox"></input>
-                        <input id="Profile_phone_home" value = {this.state.value} onChange = {this.handleInputChange} name="Profile_phone_home"></input>
+                        <input id="Profile_phone_home" value = {this.state.Profile_phone_home} onChange = {this.handleInputChange} name="Profile_phone_home"></input>
                         </div>
                         <div>
                         <p id="Profile_mobile_tag">Mobile:</p>
                         <input type="checkbox"></input>
-                        <input id="Profile_mobile" value = {this.state.value} onChange = {this.handleInputChange} name="Profile_mobile"></input>
+                        <input id="Profile_mobile" value = {this.state.Profile_mobile} onChange = {this.handleInputChange} name="Profile_mobile"></input>
                         </div>
                         <div>
                         <p id="Profile_address_tag">Living Address:</p>
                         <input type="checkbox"></input>
-                        <input type="address" id="Profile_address" value = {this.state.value} onChange = {this.handleInputChange} name="Profile_address"></input>
+                        <input type="address" id="Profile_address" value = {this.state.Profile_address} onChange = {this.handleInputChange} name="Profile_address"></input>
                         </div>
                         <div>
                         <p id="Profile_personal_website_tag">Blog:</p>
