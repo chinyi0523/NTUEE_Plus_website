@@ -53,3 +53,7 @@
 * 關於App 與 App_in 兩個路由之間的切換還在工作中
 * Home_in 的排版完成, style細節再討論, 以及expand button的顯示優化工作中
 * 測試Home_in 請先在Index.js內import App_in,然後將原本的App改成App_in
+
+### 0203進度 By君輔
+* 前端profile的div hr0、hr1訊息可以完整傳送，接下來會嘗試在onchange做修改，讓只有被修改過的欄位才會回傳，加速資料傳遞
+* 後端依profile.js新增資料庫欄位(facebook,....)，接下來會加上validation
