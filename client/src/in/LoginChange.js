@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import "./LoginChange.css"
-//import axios from "axios";
+import axios from "axios";
 
 class LoginChange extends Component {
-	/*constructor(props) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			username:'',
@@ -43,7 +43,7 @@ class LoginChange extends Component {
 	}
 	
 	componentDidMount(){
-		this.showPersonal();
+		//this.showPersonal();
 	}
 	
 	btn_click=e=>{
@@ -73,7 +73,7 @@ class LoginChange extends Component {
 				})
 			}
 		}
-	}*/
+	}
 	
 	render(){
 		return (

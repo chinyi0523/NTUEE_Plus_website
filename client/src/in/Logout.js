@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-//import axios from "axios";
+import axios from "axios";
 
-/*class Logout extends Component {
+class Logout extends Component {
 	logoutbtn(){
 		axios.post("/api/logout", 
 			{}
@@ -30,9 +30,9 @@ import React, { Component } from 'react';
 			</div>
 		);
 	}
-}*/
+}
 
-const Logout = (e) => {
+/*const Logout = (e) => {
 	alert("logout successfully!") //for test
 	/*e.preventDefault();
 	axios.post("/api/logout", 
@@ -48,5 +48,5 @@ const Logout = (e) => {
 					}
 				}
 		})*/
-}
-export {Logout};
+//}
+export default Logout

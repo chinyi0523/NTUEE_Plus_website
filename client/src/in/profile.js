@@ -66,10 +66,13 @@ class Profile extends Component{
         };
 
         this.handleInputChange = this.handleInputChange.bind(this)
+		this.handleCheckChange = this.handleCheckChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.expandDiploma = this.expandDiploma.bind(this)
     }
     
+	
+	
     expandDiploma(event){
         event.preventDefault();
         if (this.state.clicktime % 2 === 0){
@@ -97,9 +100,6 @@ class Profile extends Component{
 				if(res.data){
 					if(res.data.message===true){
 						var D = res.data.data;
-						console.log("Name=",D.username.data);
-						console.log("Name=",D["username.data"]);
-						//不合法console.log("Name=",D.("username.data"));
 						var sta = {}
 						map.forEach(elements=>{
 							var arr = elements[1].split('.')
@@ -114,7 +114,16 @@ class Profile extends Component{
 				}
 		})
 	};
+	
+	handleCheckChange(event){
+		const target = event.target;
+        const name = target.name;
 
+        this.setState({
+            [name]:!this.state[name]
+        });
+	}
+	
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
@@ -330,7 +339,7 @@ class Profile extends Component{
                                             </td>
                                         </tr>
                                         </div>
-                                    </table>                                                                         
+                                    </table>
                             </div>   
                         </div>
                         <div id="hr3">Work Experience</div>

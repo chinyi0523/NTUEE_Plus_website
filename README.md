@@ -5,7 +5,7 @@
 * 架構我參考了https://github.com/rishipr/teams
 * 後端一律在/api下工作，要新增功能請在routes/api.js中修改
 * local端可在同一個port下工作(關鍵在於使用react bulid再用express static分析)
-* 共同網頁版可到https://ntueeplus.herokuapp.com/測試
+* 共同網頁版可到https://ntueeplus.herokuapp.com/ 測試
 * clone完後執行方式：
 >* npm install && cd client && npm install
 >* 開啟mongodb server(詳細請看舊版github教學)

@@ -24,8 +24,8 @@ app.use(session({
     saveUninitialized: false,  // 是否自动保存未初始化的會話，建議false
     resave: false,  // 是否每次都重新保存會話，建議false
     cookie: {
-		httpOnly: false, //false前端可read和set
-        maxAge: 10 * 60 * 1000  // 有效期(ms)
+		httpOnly: true, //false前端可read和set
+        maxAge: 60 * 60 * 1000  // 有效期(ms)
     }
 }));
 
