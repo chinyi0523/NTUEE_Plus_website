@@ -2,7 +2,7 @@
 var user_v_Schema = require('../../Schemas/user_visual');
 
 function insert(name,account){
-  new Promise((resolve,reject)=>{
+  return new Promise((resolve,reject)=>{
     var user =  new user_v_Schema({
                 username:{data : name},
 				account:{data: account}
@@ -38,12 +38,12 @@ module.exports = function (req, res, next) {
 				});
             }else if(obj.length === 0){//存在session但不在資料庫裡
 				console.log("session:",session_account);
-				output = await insert(req.session.loginName,session_account)
+				output = await insert(req.session.loginName,session_account);
 				console.log("output",output)
 				if(!output){
 					return res.send({status:'success',message:false, description:"資料庫錯誤(資料插入錯誤)"}); 
 				}else{
-					return res.send({status:'success',message:true, data:{output}}); 
+					return res.send({status:'success',message:true, data:output}); 
 				}
             }else{
 				return res.send({status:'success',message:false, description:"資料庫錯誤(帳號重複)"}); 

@@ -27,7 +27,7 @@ class Profile extends Component{
 
         this.handleInputChange = this.handleInputChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-
+		this.handleCheckChange = this.handleCheckChange.bind(this)
     }
 	
 	componentDidMount(){
@@ -44,6 +44,7 @@ class Profile extends Component{
 						var D = res.data.data;
 						console.log("Name=",D.username.data);
 						this.setState({
+							Profile_realname_checkbox:D.username.show,
 							Profile_realname:D.username.data,
 							Profile_shortintro:D.profile.data,
 							Profile_email:D.publicEmail.data,
@@ -58,7 +59,14 @@ class Profile extends Component{
 		})
 	}
 	
-	
+	handleCheckChange=(event)=>{
+		const target = event.target;
+		const name = target.name;
+		this.setState({
+			[name]:!this.state[name]
+		})
+		console.log(this.state[name])
+	}
 	
     handleInputChange(event) {
         const target = event.target;
@@ -84,19 +92,20 @@ class Profile extends Component{
                 axios.post('/api/chVisual'
                 ,
                 {
-                username: this.state.Profile_realname,
-                nickname : "",
-                profile : this.state.Profile_shortintro,
+				"username.show": this.state.Profile_realname_checkbox,
+                "username.data": this.state.Profile_realname,
+                "nickname.data" : "",
+                "profile.data" : this.state.Profile_shortintro,
                 education:[
                     {
                         SD : this.state.Profile_diploma_bachelor_major,
                         Note : "",
                     }
                 ],
-                publicEmail : this.state.Profile_email,
-                office : this.state.Profile_phone_company,
-                cellphone : this.state.Profile_mobile,
-                CC : this.state.Profile_address,
+                'publicEmail.data' : this.state.Profile_email,
+                'office.data' : this.state.Profile_phone_company,
+                'cellphone.data' : this.state.Profile_mobile,
+                'CC.data' : this.state.Profile_address,
                 Occupation:[
                     "",
                     ""
@@ -129,9 +138,11 @@ class Profile extends Component{
                     <div id="Profile_info">
                         <div id="Profile_small_cont1">
                             <p id="Profile_realname_tag">RealName:</p>
-                            <input type="checkbox" id="Profile_realname_checkbox"></input>
+                            <input type="checkbox" id="Profile_realname_checkbox"
+								checked = {this.state.Profile_realname_checkbox}
+								onChange = {this.handleCheckChange}
+								name="Profile_realname_checkbox"></input>
                             <input type="text" id="Profile_realname" value = {this.state.Profile_realname} onChange = {this.handleInputChange} name="Profile_realname"></input>
-                        
                         </div>
                         <div>
                             <p id="Profile_shortintro_tag">簡介:</p>
