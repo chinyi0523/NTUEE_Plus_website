@@ -11,14 +11,13 @@ module.exports = function (req, res, next) {
         }
         else {
             if(obj.length === 1){
-                console.log('發現帳號',obj);
+                console.log('即將更改資料',obj);
 				console.log('req',req.body);
-				console.log('name',req.body.username);
 				
-				/*user_v_Schema.updateOne({"account.data":session_account},{$set:req.body},function(err,result){
-					console.log(result);
+				user_v_Schema.updateOne({"account.data":session_account},{$set:req.body},function(err,result){
+					console.log("result=",result);
 					if (err) return res.send({status:'success',message:false, description:err});
-				});*/
+				});
 				return res.send({status:'success',message:true});
             }else{
                 console.log('駭客4你?');
