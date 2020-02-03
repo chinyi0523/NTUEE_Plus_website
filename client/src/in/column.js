@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './column.css';
-class column extends Component{
+class Column extends Component{
     render(){
         return (
         <div id = "column_container">
@@ -41,8 +41,9 @@ class column extends Component{
 					<div id = "column_subtitle">subtitle</div>
 				</div>
 			</div>
+		</div>
         )
     }
 }
 
-export default column;
+export default Column;

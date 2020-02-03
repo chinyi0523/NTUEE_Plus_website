@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import Button from '@material-ui/core/Button';
+//import axios from "axios";
 
-class Logout extends Component {
+/*class Logout extends Component {
 	logoutbtn(){
 		axios.post("/api/logout", 
 			{}
@@ -27,11 +26,27 @@ class Logout extends Component {
 	render(){
 		return (
 			<div description="logout">
-			  <Button onClick={this.btn_click}>Logout</Button>
+			  <button onClick={this.btn_click}>Logout</button>
 			</div>
 		);
 	}
+}*/
+
+const Logout = (e) => {
+	alert("logout successfully!") //for test
+	/*e.preventDefault();
+	axios.post("/api/logout", 
+			{}
+		).then(res => {
+			console.log(res.data);
+				if(res.data){
+					if(res.data.message===true){
+						alert('登出成功');
+						window.location = "/Login";
+					}else{
+						alert('登出失敗');
+					}
+				}
+		})*/
 }
-
-
-export default Logout;
+export {Logout};

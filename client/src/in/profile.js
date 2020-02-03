@@ -10,7 +10,6 @@ class Profile extends Component{
         this.state = {
             clicktime : 0,
             realname : "",
-            realname_checkbox : "",
             nickname : "",
             email : "",
             phone_company : "",
@@ -43,7 +42,6 @@ class Profile extends Component{
         this.handleInputChange = this.handleInputChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.expandDiploma = this.expandDiploma.bind(this)
-		this.handleCheckChange = this.handleCheckChange.bind(this)
     }
     
     expandDiploma(event){
@@ -75,7 +73,6 @@ class Profile extends Component{
 						var D = res.data.data;
 						console.log("Name=",D.username.data);
 						this.setState({
-                            realname_checkbox:D.username.show,
                             realname:D.username.data,
                             //nickname:D.nickname.data,
 							shortintro:D.profile.data,
@@ -90,17 +87,8 @@ class Profile extends Component{
 					}
 				}
 		})
-	}
-	
-	handleCheckChange=(event)=>{
-		const target = event.target;
-		const name = target.name;
-		this.setState({
-			[name]:!this.state[name]
-		})
-		console.log(this.state[name])
-	}
-	
+	};
+
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
@@ -124,26 +112,25 @@ class Profile extends Component{
             if (r){
                 axios.post("./api/login"
                 ,
-                {
-				"username.show": this.realname_checkbox,
-                "username.data": this.state.realname,
-                "nickname.data" : "",
-                "profile.data" : this.state.shortintro,
+                {account : "",
+                username : this.Profile_realname,
+                nickname : "",
+                profile : this.Profile_shortintro,
                 education:[
                     {
-                        SD : this.state.diploma_bachelor_major,
+                        SD : this.Profile_diploma_bachelor_major,
                         Note : "",
                     }
                 ],
-                'publicEmail.data' : this.state.email,
-                'office.data' : this.state.phone_company,
-                'cellphone.data' : this.state.mobile,
-                'CC.data' : this.state.address,
+                publicEmail : this.Profile_email,
+                office : this.Profile_phone_company,
+                cellphone : this.Profile_mobile,
+                CC : this.Profile_address,
                 Occupation:[
                     "",
                     ""
                 ],
-                JobID:this.state.JobID
+                JobID:""
                 }).then(res => {
                     console.log(res.data);
                         if (res.data){
@@ -172,8 +159,7 @@ class Profile extends Component{
                     <div id="Profile_info">
                         <div id="Profile_small_cont1">
                             <p id="Profile_realname_tag">RealName:</p>
-                            <input type="checkbox" id="Profile_realname_checkbox" checked = {this.state.realname_checkbox}
-                            onChange = {this.handleCheckChange}></input>
+                            <input type="checkbox" id="Profile_realname_checkbox"></input>
                             <input type="text" id="Profile_realname" value = {this.state.realname} onChange = {this.handleInputChange} name="realname"></input>
                         </div>
                         <div id="Profile_small_cont2">
