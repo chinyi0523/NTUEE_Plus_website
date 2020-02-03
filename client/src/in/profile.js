@@ -4,7 +4,33 @@ import default_image from '../images/default_image.png';
 import axios from 'axios';
 //import ReactDOM from 'react-dom';
 
+const map = [
+		["realname_checkbox","username.show"],
+		["realname","username.data"],
+		["nickname_checkbox","nickname.show"],
+		["nickname","nickname.data"],
+		["shortintro","profile.data"],
+		["email_checkbox","profile.show"],
+		["email","publicEmail.data"],
+		["phone_company_checkbox","office.show"],
+		["phone_company","office.data"],
+		["phone_home_checkbox","homephone.show"],
+		['phone_home','homephone.data'],
+		['mobile_checkbox','cellphone.show'],
+		['mobile','cellphone.data'],
+		['address_checkbox','CC.show'],
+		['address','CC.data'],
+		['personal_website_checkbox','web.show'],
+		['personal_website','web.data'],
+		['facebook_checkbox','facebook.show'],
+		['facebook','facebook.data'],
+		['Linkedin_checkbox','Linkedin.show'],
+		['Linkedin','Linkedin.data'],
+	]
+
+
 class Profile extends Component{
+	
     constructor(props){
         super(props);
         this.state = {
@@ -74,17 +100,15 @@ class Profile extends Component{
 					if(res.data.message===true){
 						var D = res.data.data;
 						console.log("Name=",D.username.data);
-						this.setState({
-                            realname_checkbox:D.username.show,
-                            realname:D.username.data,
-                            //nickname:D.nickname.data,
-							shortintro:D.profile.data,
-							email:D.publicEmail.data,
-                            phone_company:D.office.data,
-                            //phone_home:D.
-							mobile:D.cellphone.data,
-							address:D.CC.data
-						});
+						console.log("Name=",D["username.data"]);
+						//不合法console.log("Name=",D.("username.data"));
+						var sta = {}
+						map.forEach(elements=>{
+							var arr = elements[1].split('.')
+							sta[elements[0]]=D[arr[0]][arr[1]]
+						})
+						console.log('sta=',sta)
+						this.setState(sta);
 					}else{
 						alert('錯誤：\n'+res.data.description);
 					}
@@ -122,12 +146,18 @@ class Profile extends Component{
         }else{
             var r = window.confirm("確認更改?");
             if (r){
-                axios.post("./api/login"
+				var sta={}
+				map.forEach(elements=>{
+					sta[elements[1]]=this.state[elements[0]]
+				})
+				console.log('sta',sta)
+                axios.post("/api/chVisual"
                 ,
-                {
-				"username.show": this.realname_checkbox,
+				sta
+                /*{
+				"username.show": this.state.realname_checkbox,
                 "username.data": this.state.realname,
-                "nickname.data" : "",
+                "nickname.data" : this.state.,
                 "profile.data" : this.state.shortintro,
                 education:[
                     {
@@ -144,7 +174,7 @@ class Profile extends Component{
                     ""
                 ],
                 JobID:this.state.JobID
-                }).then(res => {
+                }*/).then(res => {
                     console.log(res.data);
                         if (res.data){
                             if (res.data.message === true){ 
@@ -172,13 +202,18 @@ class Profile extends Component{
                     <div id="Profile_info">
                         <div id="Profile_small_cont1">
                             <p id="Profile_realname_tag">RealName:</p>
-                            <input type="checkbox" id="Profile_realname_checkbox" checked = {this.state.realname_checkbox}
-                            onChange = {this.handleCheckChange}></input>
+                            <input type="checkbox" id="Profile_realname_checkbox" 
+							checked = {this.state.realname_checkbox}
+                            onChange = {this.handleCheckChange}
+							name="realname_checkbox"></input>
                             <input type="text" id="Profile_realname" value = {this.state.realname} onChange = {this.handleInputChange} name="realname"></input>
                         </div>
                         <div id="Profile_small_cont2">
                             <p id="Profile_nickname_tag">Nickname:</p>
-                            <input type="checkbox" id="Profile_nickname_checkbox"></input>
+                            <input type="checkbox" id="Profile_nickname_checkbox"
+							checked = {this.state.nickname_checkbox}
+                            onChange = {this.handleCheckChange}
+							name="nickname_checkbox"></input>
                             <input type="text" id="Profile_nickname" value = {this.state.nickname} onChange = {this.handleInputChange} name="nickname"></input>
                         </div>
                         <div>
@@ -190,42 +225,74 @@ class Profile extends Component{
                     <div id="Profile_more_info">
                         <div>
                         <p id="Profile_email_tag">E-mail:</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+						checked = {this.state.email_checkbox}
+                        onChange = {this.handleCheckChange}
+						name="email_checkbox"
+						></input>
                         <input type="email" id="Profile_email" value = {this.state.email} onChange = {this.handleInputChange} name="email"></input>
                         </div>
                         <div>
                         <p id="Profile_phone_company_tag">Phone(Company):</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+							checked = {this.state.phone_company_checkbox}
+							onChange = {this.handleCheckChange}
+							name="phone_company_checkbox"
+						></input>
                         <input id="Profile_phone_company" value = {this.state.phone_company} onChange = {this.handleInputChange} name="phone_company"></input>
                         </div>
                         <div>
                         <p id="Profile_phone_home_tag">Phone(Home):</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+							checked = {this.state.phone_home_checkbox}
+							onChange = {this.handleCheckChange}
+							name="phone_home_checkbox"
+						></input>
                         <input id="Profile_phone_home" value = {this.state.phone_home} onChange = {this.handleInputChange} name="phone_home"></input>
                         </div>
                         <div>
                         <p id="Profile_mobile_tag">Mobile:</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+							checked = {this.state.mobile_checkbox}
+							onChange = {this.handleCheckChange}
+							name="mobile_checkbox"
+						></input>
                         <input id="Profile_mobile" value = {this.state.mobile} onChange = {this.handleInputChange} name="mobile"></input>
                         </div>
                         <div>
                         <p id="Profile_address_tag">Living Address:</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+							checked = {this.state.address_checkbox}
+							onChange = {this.handleCheckChange}
+							name="address_checkbox"
+						></input>
                         <input type="address" id="address" value = {this.state.address} onChange = {this.handleInputChange} name="address"></input>
                         </div>
                         <div>
                         <p id="Profile_personal_website_tag">Blog:</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+							checked = {this.state.personal_website_checkbox}
+							onChange = {this.handleCheckChange}
+							name="personal_website_checkbox"
+						></input>
                         <input id="Profile_personal_website" value = {this.state.personal_website} onChange = {this.handleInputChange} name="personal_website"></input>
                         </div>
                         <div>
                         <p id="Profile_FB_tag">Facebook:</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+							checked = {this.state.facebook_checkbox}
+							onChange = {this.handleCheckChange}
+							name="facebook_checkbox"
+						></input>
                         <input id="Profile_FB" value = {this.state.facebook} onChange = {this.handleInputChange} name="facebook"></input>
                         </div>
                         <div>
                         <p id="Profile_Linkedin_tag">Linkedin:</p>
-                        <input type="checkbox"></input>
+                        <input type="checkbox"
+							checked = {this.state.Linkedin_checkbox}
+							onChange = {this.handleCheckChange}
+							name="Linkedin_checkbox"
+						></input>
                         <input id="Profile_Linkedin" value = {this.state.Linkedin} onChange = {this.handleInputChange} name="Linkedin"></input>
                         </div>
                 <div id="hr2">Diploma</div>

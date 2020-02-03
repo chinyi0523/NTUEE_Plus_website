@@ -34,6 +34,10 @@ var User_visual_Schema = new Schema({
 	show:{type:Boolean,default:true},
 	data:{type:String}
   },//phone
+  homephone:{
+	show:{type:Boolean,default:false},
+	data:{type:String}
+  },
   cellphone:{
 	show:{type:Boolean,default:false},
 	data:{type:String}
@@ -42,6 +46,18 @@ var User_visual_Schema = new Schema({
 	show:{type:Boolean,default:false},
 	data:{type:String}
   },//city+country
+  web:{
+	show:{type:Boolean,default:true},
+	data:{type:String}
+  },
+  facebook:{
+	show:{type:Boolean,default:true},
+	data:{type:String}
+  },
+  Linkedin:{
+	show:{type:Boolean,default:true},
+	data:{type:String}
+  },
   Occupation:[{
 	show:{type:Boolean,default:true},
 	title:{type:String},

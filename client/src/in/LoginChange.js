@@ -93,7 +93,7 @@ class LoginChange extends Component {
 					<td>安全問題</td>
 					<td colSpan="2">
 						
-						<input id="LC_safe_Question" placeholder="username" autoFocus
+						<input id="LC_safe_Question" placeholder="改變安全問題" autoFocus
 							value={this.state.question} onChange={this.handleInputChange}>
 						</input>
 					

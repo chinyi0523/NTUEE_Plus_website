@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import './index.css';
-import App from './out/App';
+import App_in from './in/App_in';
+//import App from './out/App';
 
 ReactDOM.render(
     <BrowserRouter>
       <Switch>
-        <App />
+        <App_in />
       </Switch>
     </BrowserRouter>,
     document.getElementById('root')

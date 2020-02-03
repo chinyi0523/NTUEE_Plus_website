@@ -16,7 +16,10 @@ module.exports = function (req, res, next) {
 				
 				user_v_Schema.updateOne({"account.data":session_account},{$set:req.body},function(err,result){
 					console.log("result=",result);
-					if (err) return res.send({status:'success',message:false, description:err});
+					if (err) {
+						console.log(err);
+						return res.send({status:'success',message:false, description:err});
+					}
 				});
 				return res.send({status:'success',message:true});
             }else{
