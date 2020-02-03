@@ -1,0 +1,15 @@
+#Home_title{
+    margin:0px auto;
+    text-align:center;
+    padding-top: 20%;
+    font-size: 24px;
+    float:center;
+    z-index: 10;
+}
+#Home_footer{
+    width:50%;
+    position: relative;
+    left:46%;
+    padding-left:0%;
+    padding-top:7%;
+}
