@@ -46,3 +46,10 @@
 * Profile在Home下做測試
 * 前端頁面改用value={this.state.\<id or name\>}(我也不知道為何範例code用.value)
 * 前端id和name的意義可以統一一下，像是id拿來管理css、name管理this.state和post之類的(onchange中用target.id或target.name都可喔)
+
+### 0203進度 By友廷
+* Profile的name與id功用分離
+* 前端新增App_in, pages_in, AppBar_in, Home_in
+* 關於App 與 App_in 兩個路由之間的切換還在工作中
+* Home_in 的排版完成, style細節再討論, 以及expand button的顯示優化工作中
+* 測試Home_in 請先在Index.js內import App_in,然後將原本的App改成App_in
