@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import "./LoginChange.css"
-import axios from "axios";
+//import axios from "axios";
 
 class LoginChange extends Component {
-	constructor(props) {
+	/*constructor(props) {
 		super(props);
 		this.state = {
 			username:'',
 			account:'',
 			question:''
 		};
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 	
 	showPersonal(){
@@ -72,27 +73,26 @@ class LoginChange extends Component {
 				})
 			}
 		}
-	}
+	}*/
 	
 	render(){
 		return (
 			<div description="personalInfo" id="LC_container">
 			  <div id="LC_hr">Security Question Reset</div>
-			  <form onSubmit={this.handleSubmit}>
-			  <button id="LC_refresh_btn" onClick={this.btn_click}>refresh</button>
+			  <form >{/*onSubmit={this.handleSubmit}}*/}
+			  <button id="LC_refresh_btn" /*onClick={"this.btn_click"}*/>refresh</button>
 			  <table id = "LC_table" cellSpacing="10">
 				<tr>
 					<td>學號</td>
-					<td colSpan="2">{this.state.account}</td>
+					<td colSpan="2">{"this.state.account"}</td>
 				</tr>
 				<tr>
 					<td>姓名</td>
-					<td colSpan="2">{this.state.username}</td>
+					<td colSpan="2">{"this.state.username"}</td>
 				</tr>
 				<tr>
 					<td>安全問題</td>
 					<td colSpan="2">
-						
 						<input id="LC_safe_Question" placeholder="改變安全問題" autoFocus
 							value={this.state.question} onChange={this.handleInputChange}>
 						</input>

@@ -36,7 +36,6 @@ class Profile extends Component{
         this.state = {
             clicktime : 0,
             realname : "",
-            realname_checkbox : "",
             nickname : "",
             email : "",
             phone_company : "",
@@ -69,7 +68,6 @@ class Profile extends Component{
         this.handleInputChange = this.handleInputChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.expandDiploma = this.expandDiploma.bind(this)
-		this.handleCheckChange = this.handleCheckChange.bind(this)
     }
     
     expandDiploma(event){
@@ -109,22 +107,14 @@ class Profile extends Component{
 						})
 						console.log('sta=',sta)
 						this.setState(sta);
+
 					}else{
 						alert('錯誤：\n'+res.data.description);
 					}
 				}
 		})
-	}
-	
-	handleCheckChange=(event)=>{
-		const target = event.target;
-		const name = target.name;
-		this.setState({
-			[name]:!this.state[name]
-		})
-		console.log(this.state[name])
-	}
-	
+	};
+
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
@@ -159,22 +149,24 @@ class Profile extends Component{
                 "username.data": this.state.realname,
                 "nickname.data" : this.state.,
                 "profile.data" : this.state.shortintro,
+
                 education:[
                     {
-                        SD : this.state.diploma_bachelor_major,
+                        SD : this.Profile_diploma_bachelor_major,
                         Note : "",
                     }
                 ],
-                'publicEmail.data' : this.state.email,
-                'office.data' : this.state.phone_company,
-                'cellphone.data' : this.state.mobile,
-                'CC.data' : this.state.address,
+                publicEmail : this.Profile_email,
+                office : this.Profile_phone_company,
+                cellphone : this.Profile_mobile,
+                CC : this.Profile_address,
                 Occupation:[
                     "",
                     ""
                 ],
                 JobID:this.state.JobID
                 }*/).then(res => {
+
                     console.log(res.data);
                         if (res.data){
                             if (res.data.message === true){ 
