@@ -8,10 +8,9 @@ var ImgGet = require('./middleware/multer')
 router.post("/login",
 	ValidTest('login'),
 	ValidSend,
-	ImgGet.single('file'),
 	require("./srcs/out/login"));
 router.post("/register",
-	ImgGet.single('file'),
+	ImgGet,
 	ValidTest('register'),
 	ValidSend,
 	require("./srcs/out/register"));
