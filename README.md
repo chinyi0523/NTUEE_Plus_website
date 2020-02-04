@@ -57,3 +57,11 @@
 ### 0203進度 By君輔
 * 前端profile的div hr0、hr1訊息可以完整傳送，接下來會嘗試在onchange做修改，讓只有被修改過的欄位才會回傳，加速資料傳遞
 * 後端依profile.js新增資料庫欄位(facebook,....)，接下來會加上validation
+
+
+### 0204進度 By君輔
+* 前端register新增照片上傳按鈕，可上傳證件證明
+* 後端用multer解析照片(validation待更改)，並以Buffer儲存在Mongo裡
+* 前端LoginChange.js新增顯示照片區(到時候應該是管理員授權註冊的頁面要顯示)，以src={this.state.img}顯示(預設照再看要放哪)
+* 後端用'data:image/png;base64,<buffer_data>'送出資料，可直接被前端img src使用
+* 前端profile可新增上船大頭照的按鈕，方法參照register；post的部分涉及檔案傳輸，要改成FormData
