@@ -3,12 +3,15 @@ var express = require("express");
 var router = express.Router();
 const ValidSend = require("./validation/controll");//若valid未通過則send false
 var ValidTest = require("./validation/validation");
+var ImgGet = require('./middleware/multer')
 
 router.post("/login",
 	ValidTest('login'),
 	ValidSend,
+	ImgGet.single('file'),
 	require("./srcs/out/login"));
 router.post("/register",
+	ImgGet.single('file'),
 	ValidTest('register'),
 	ValidSend,
 	require("./srcs/out/register"));

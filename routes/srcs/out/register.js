@@ -3,12 +3,13 @@ var user_l_Schema = require('../../Schemas/user_login');
 var crypto = require("crypto");
 
 /*新增一筆使用者資料*/
-function insert(name,account,psw){
+function insert(name,account,psw,file){
       //格式
     var user =  new user_l_Schema({
                 username : name,
 				account: account,
-                userpsw : psw
+                userpsw : psw,
+				img:file
             });
 	
     user.save(function(err,res){
@@ -27,8 +28,8 @@ module.exports = function (req, res) {
   var Useraccount = req.body.account.toLowerCase();
   var UserPsw = req.body.password;
   
-  
-  
+  console.log('file\n',req.body.file)
+  console.log('file\n',req.file)
   //密碼加密
   var md5 = crypto.createHash("md5");
   var newPas = md5.update(UserPsw).digest("hex");
@@ -42,7 +43,7 @@ module.exports = function (req, res) {
         else {
             if(obj.length == 0){
 				console.log("新增帳號");
-                insert(UserName,Useraccount,newPas);
+                insert(UserName,Useraccount,newPas,req.file.buffer);
                 res.send({status:'success',message:true,data:UserName})
             }else{
 				console.log("已有此帳號");

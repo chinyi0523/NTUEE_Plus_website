@@ -10,11 +10,14 @@ class Register extends Component{
 		  Register_realname: '',
 		  Register_student_id: '',
 		  Register_password: '',
-		  Register_confirm_password: ''
+		  Register_confirm_password: '',
+		  imagePreviewUrl: '',
+		  file: null
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleImageChange = this.handleImageChange.bind(this);
 	}
 
 	handleInputChange(event) {
@@ -30,17 +33,31 @@ class Register extends Component{
 	
 	handleSubmit(event) {
 		event.preventDefault();
-		console.log(this.state);
 		if(false){//this.state.Register_password!==this.state.Register_confirm_password){
 			return alert("密碼不一致");
 		}else{
 			var r=window.confirm("確認註冊?");
 			if(r){
-				axios.post("/api/register", 
-					{username:this.state.Register_realname,
+				var data = new FormData();
+				data.append('file',this.state.file)
+				data.append('username',this.state.Register_realname)
+				data.append('account',this.state.Register_student_id)
+				data.append('password',this.state.Register_password)
+				data.append('ConfirmPassword',this.state.Register_confirm_password)
+				console.log('data',data)
+				const config = {
+					headers: {
+						'content-type': 'multipart/form-data'
+					}
+				};
+				axios.post("/api/register",
+					data
+					/*{username:this.state.Register_realname,
 					account:this.state.Register_student_id,
 					password:this.state.Register_password,
-					ConfirmPassword:this.state.Register_confirm_password}
+					ConfirmPassword:this.state.Register_confirm_password,
+					file:this.state.file}*/,
+					config
 				).then(res => {
 					console.log(res.data);
 						if(res){
@@ -59,7 +76,34 @@ class Register extends Component{
 		}
 	}
 	
+	handleImageChange(e) {
+		//e.preventDefault();
+
+		let reader = new FileReader();
+		let file = e.target.files[0];
+		console.log('t',e.target)
+		this.setState({
+			file:file
+		})
+		reader.onloadend = () => {
+			console.log('onloadend');
+		  this.setState({
+			imagePreviewUrl: reader.result
+		  });
+		}
+
+		reader.readAsDataURL(file)
+		console.log(this.state.file)
+	}
+	
     render(){
+		let {imagePreviewUrl} = this.state;
+		let $imagePreview = null;
+		if (imagePreviewUrl) {
+		  $imagePreview = (<img src={imagePreviewUrl} />);
+		} else {
+		  $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+		}
         return(
             <div id="Register_container">
                 <div id="Register_register_table">
@@ -91,11 +135,18 @@ class Register extends Component{
 								></input>
 							</div>
 						</div>
+						<input className="fileInput" 
+						type="file" 
+						onChange={this.handleImageChange} 
+						name="file"/>
 						<button id="Register_register_button" onclick={this.handleSubmit}>
 							<p id="Register_register_text">Register</p>
 						</button>
 					</form>
                 </div>
+				<div className="imgPreview">
+				  {$imagePreview}
+				</div>
                 <div id="Register_FAQ">
                     <div id="Register_FAQ_title">FAQ</div>
                     <div id="Register_splitline"></div>
