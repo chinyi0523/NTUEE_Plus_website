@@ -8,7 +8,8 @@ class LoginChange extends Component {
 		this.state = {
 			username:'',
 			account:'',
-			question:''
+			question:'',
+			img:''
 		};
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
@@ -23,7 +24,8 @@ class LoginChange extends Component {
 						this.setState({
 							username:res.data.data.username,
 							account:res.data.data.account,
-							question:res.data.data.SQ
+							question:res.data.data.SQ,
+							img:res.data.data.img
 						});
 					}else{
 						alert('錯誤：\n'+res.data.description);
@@ -43,7 +45,7 @@ class LoginChange extends Component {
 	}
 	
 	componentDidMount(){
-		//this.showPersonal();
+		this.showPersonal();
 	}
 	
 	btn_click=e=>{
@@ -81,6 +83,7 @@ class LoginChange extends Component {
 			  <div id="LC_hr">Security Question Reset</div>
 			  <form >{/*onSubmit={this.handleSubmit}}*/}
 			  <button id="LC_refresh_btn" /*onClick={"this.btn_click"}*/>refresh</button>
+			  <img src={this.state.img} />
 			  <table id = "LC_table" cellSpacing="10">
 				<tr>
 					<td>學號</td>

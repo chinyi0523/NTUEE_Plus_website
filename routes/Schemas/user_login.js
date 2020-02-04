@@ -8,7 +8,8 @@ var User_login_Schema = new Schema({
   private_Email: String,
   question: { type: String, default: "Hello World" },//安全問題
   img: {
-	  type:Buffer
+	  data:{type:Buffer},
+	  contentType:{type:String}
   }
 });
 

@@ -9,9 +9,12 @@ function insert(name,account,psw,file){
                 username : name,
 				account: account,
                 userpsw : psw,
-				img:file
+				img:{
+					data:file.buffer,
+					contentType:file.mimetype
+				}
             });
-	
+	console.log('img=',user.img)
     user.save(function(err,res){
         if(err){
             console.log(err);
@@ -28,7 +31,6 @@ module.exports = function (req, res) {
   var Useraccount = req.body.account.toLowerCase();
   var UserPsw = req.body.password;
   
-  console.log('file\n',req.body.file)
   console.log('file\n',req.file)
   //密碼加密
   var md5 = crypto.createHash("md5");
@@ -43,7 +45,7 @@ module.exports = function (req, res) {
         else {
             if(obj.length == 0){
 				console.log("新增帳號");
-                insert(UserName,Useraccount,newPas,req.file.buffer);
+                insert(UserName,Useraccount,newPas,req.file);
                 res.send({status:'success',message:true,data:UserName})
             }else{
 				console.log("已有此帳號");
