@@ -61,9 +61,10 @@
 
 ### 0204進度 By君輔
 * 前端register新增照片上傳按鈕，可上傳證件證明
-* 後端用multer解析照片(validation待更改)，並以Buffer儲存在Mongo裡
+* 後端用multer解析照片，並以Buffer儲存在Mongo裡
 * 前端LoginChange.js新增顯示照片區(到時候應該是管理員授權註冊的頁面要顯示)，以src={this.state.img}顯示
 * 後端用'data:image/png;base64,<buffer_data>'送出資料，可直接被前端img src使用
 >  **一些話**
+> * multer的error方式待修正
 > * 預設照片的部分再請前端人員研究
 > * 前端profile可新增上傳大頭照的按鈕，方法參照register；post的部分涉及檔案傳輸，要改成FormData
