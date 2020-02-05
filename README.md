@@ -67,3 +67,8 @@
 >  **一些話**
 > * 預設照片的部分再請前端人員設定
 > * 前端profile待新增上傳大頭照的按鈕，方法參照register；post的部分涉及檔案傳輸，要改成FormData(這部分可留給後端人員做，只是介面要先出來)
+
+### 0205進度 By友廷
+* Profile新增上傳大頭照按鈕
+* Register的照片上傳按鈕style修正
+* Profile expand顯示優化
