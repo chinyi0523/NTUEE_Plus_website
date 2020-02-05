@@ -34,6 +34,9 @@
 #Register_input4{
     margin-top: 3%;
 }
+#Register_input5{
+    margin-top: 3%;
+}
 #Register_realname_label{
     margin:0;
     display: inline;
@@ -141,6 +144,33 @@
     float: right;
     margin-right:5%;
 }
+#Register_image_label{
+    margin:0;
+    display: inline;
+}
+#Register_fileinput{
+    /*float: right;
+    width:55%;
+    margin-top: 1.5%;
+    font-family:'Noto Sans TC',Arial,sans-serif !important;*/
+    display: none;
+
+}
+#Register_addImage_icon{
+    /*float: right;*/
+    font-size: 24px;
+    margin-left: 20%;
+}
+#Register_addImage_icon:hover{
+    color:rgb(106, 255, 198);
+    /*text-decoration: underline;*/
+}
+
+#Register_imgPreview{
+    font-size: 18px ;
+    margin-left: 50%;
+    border-radius: 10px;
+}
 #Register_confirm_password:focus::-webkit-input-placeholder{
     color:#003F67
 }
@@ -156,19 +186,17 @@
 #Register_register_button{
     font-size: 24px;
     border-radius: 10px;
-    position: absolute;
-    top:70%;
-    left:30%;
-    width:13%;
+    margin-top: 5%;
+    margin-left: 45%;
+    width:20%;
     height: 8%;
     background-color:  #003f67;
     color: #fff;
     border: 2px #fff solid;
     font-weight: bold;
-    cursor: pointer;
-
-    
+    cursor: pointer;   
 }
+
 #Register_register_button:hover{
     transition-property: background-color, color;
     transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React,{ Component } from 'react';
+import ReactDOM from "react-dom";
 import './profile.css';
 import default_image from '../images/default_image.png';
 import axios from 'axios';
@@ -35,6 +36,8 @@ class Profile extends Component{
         super(props);
         this.state = {
             clicktime : 0,
+            userimage : {default_image},
+            imagePreviewUrl:"",
             realname : "",
             nickname : "",
             email : "",
@@ -69,6 +72,7 @@ class Profile extends Component{
 		this.handleCheckChange = this.handleCheckChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.expandDiploma = this.expandDiploma.bind(this)
+        this.handleImageChange = this.handleImageChange.bind(this)
     }
     
 	
@@ -76,13 +80,49 @@ class Profile extends Component{
     expandDiploma(event){
         event.preventDefault();
         if (this.state.clicktime % 2 === 0){
-        document.getElementById("Profile_expand").style.display = "block";
+        //document.getElementById("Profile_expand").style.display = "block";
+        ReactDOM.render(
+            <div>
+            <tr>
+                <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>雙: </td>
+                <td style={{paddingBottom:"0"}}>
+                    <input id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
+                </td>
+                <td id="Profile_diploma_choosebox2" >輔: </td>
+                <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                    <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
+                    <input type="checkbox" id="Profile_bachelor_double_and_minor"></input>
+                </td>                               
+            </tr>
+            <tr>
+                <td colSpan="2" style={{paddingLeft:"0"}}>Master: </td>
+                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                    <input type="checkbox" id="Profile_master_checkbox"></input>
+                    <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
+                </td>
+            </tr>
+            <tr>
+                <td colSpan="2" style={{paddingLeft:"0"}}>Doctor: </td>
+                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                    <input type="checkbox" id="Profile_doctor_checkbox"></input>
+                    <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
+                </td>
+            </tr>
+            </div>,document.getElementById("Profile_expand")
+        )
+        document.getElementById("Profile_expand").style.opacity = "1";
         document.getElementById("hr3").style.marginTop = "30%";
+        document.getElementById("hr3").style.transitionDuration = "0.5s";
+        document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
         //document.getElementById("Profile_expand").style.border = "gray 2px solid"
         }else{
-            
-            document.getElementById("Profile_expand").style.display = "None";
             document.getElementById("hr3").style.marginTop = "2%";
+            document.getElementById("Profile_expand").style.opacity = "0";
+            ReactDOM.render(
+                <div></div>,document.getElementById("Profile_expand")
+            )
+            //document.getElementById("Profile_expand").style.display = "None";
+            
         }
         this.setState({clicktime:this.state.clicktime+1})
         
@@ -114,7 +154,29 @@ class Profile extends Component{
 				}
 		})
 	};
-	
+	handleImageChange(e){
+        //e.preventDefault();
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        console.log("t",e.target)
+        this.setState({
+            userimage:file
+        })
+        reader.onloadend = () =>{
+            console.log("onloadend");
+        this.setState({
+            imagePreviewUrl:reader.result
+        });
+        }
+        try {
+            reader.readAsDataURL(file)
+        } catch (error) {
+            
+        }
+        
+        console.log(this.state.userimage)
+    }
+
 	handleCheckChange(event){
 		const target = event.target;
         const name = target.name;
@@ -191,15 +253,30 @@ class Profile extends Component{
         }
     }
     render(){
+        let {imagePreviewUrl} = this.state;
+        let $imagePreview = null;
+        if (imagePreviewUrl){
+            $imagePreview = (<img src={imagePreviewUrl} id="Profile_userimage" alt="userimage"></img>)
+        }else{
+            $imagePreview = (<img src={default_image} id="Profile_userimage" alr="userimage"></img>)
+        }
         return (
             <div id="Profile_container">
                 <div id="hr0">Profile Setting</div>
                 <div id="Profile_information">
                 <p id="Profile_public">Public</p>
                 <form id="Profile_loginform" onSubmit={this.handleSubmit}>
+                    <div id="Profile_userimage_container">
+                        {$imagePreview}
+                        <label id="Profile_userimage_change">
+                        <input type="file"
+                         onChange = {this.handleImageChange}
+                         name = "userimage"
+                         style = {{display:"none"}}></input>
+                         <span id="Profile_addImage_icon">➕ <p style={{display:"inline",fontSize:"14px"}}>Add Head Shot</p></span>
+                        </label>
+                    </div>
                     
-                    <img id="Profile_userimage" src={default_image} alt="Profile_image" />
-                
                     <div id="Profile_info">
                         <div id="Profile_small_cont1">
                             <p id="Profile_realname_tag">RealName:</p>
@@ -312,32 +389,6 @@ class Profile extends Component{
 
                                         </tr>
                                         <div id="Profile_expand">
-                                        <tr>
-                                            <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>雙: </td>
-                                            <td style={{paddingBottom:"0"}}>
-                                                <input id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
-                                            </td>
-                                            <td id="Profile_diploma_choosebox2" >輔: </td>
-                                            <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
-                                                <input type="checkbox" id="Profile_bachelor_double_and_minor"></input>
-                                                </td>
-                                                
-                                        </tr>
-                                        <tr>
-                                            <td colSpan="2" style={{paddingLeft:"0"}}>Master: </td>
-                                            <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                <input type="checkbox" id="Profile_master_checkbox"></input>
-                                                <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colSpan="2" style={{paddingLeft:"0"}}>Doctor: </td>
-                                            <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                <input type="checkbox" id="Profile_doctor_checkbox"></input>
-                                                <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
-                                            </td>
-                                        </tr>
                                         </div>
                                     </table>
                             </div>   
@@ -382,8 +433,7 @@ class Profile extends Component{
                                 <input id="Profile_JobID" name="JobID" value = {this.state.JobID} onChange = {this.handleInputChange}></input>
                             </div>
                         </div>         
-                        {//<input id="Profile_submit_btn" type="submit" value="Update Profile" />
-    }               <input id="Profile_submit_btn" type="submit" value="Update Profile" />
+                   <input id="Profile_submit_btn" type="submit" value="Update Profile" />
                     </div>
                     
                 

@@ -134,19 +134,27 @@ class Register extends Component{
 									value={this.state.value} onChange={this.handleInputChange}
 								></input>
 							</div>
+							<div id="Register_input5">
+								<p id="Register_image_label">Upload Image</p>
+								<label>
+								<input className="fileInput" id="Register_fileinput" 
+										type="file" 
+										onChange={this.handleImageChange} 
+										name="file"/>
+								<span id="Register_addImage_icon">➕ <p style={{display:"inline",fontSize:"18px"}}>Add Your ID Photo</p></span>
+								</label>
+							</div>
+							<div className="imgPreview" id="Register_imgPreview">
+				  			{$imagePreview}
+							</div>
 						</div>
-						<input className="fileInput" 
-						type="file" 
-						onChange={this.handleImageChange} 
-						name="file"/>
+						
 						<button id="Register_register_button" onclick={this.handleSubmit}>
 							<p id="Register_register_text">Register</p>
 						</button>
 					</form>
                 </div>
-				<div className="imgPreview">
-				  {$imagePreview}
-				</div>
+				
                 <div id="Register_FAQ">
                     <div id="Register_FAQ_title">FAQ</div>
                     <div id="Register_splitline"></div>

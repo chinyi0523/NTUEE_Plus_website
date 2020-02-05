@@ -28,16 +28,33 @@
     float: left;
     width: 50%;
 }
-
-#Profile_userimage{
-    
+#Profile_userimage_container{
     margin-left:7%;
-    width:25%;
-    height:30% ;
     margin-top: 10%;
     float: left;
-
+    width:20%;
+    
+}
+#Profile_userimage{
+    
+    /*margin-left:7%;
+    margin-top: 10%;
+    float: left;*/
+    max-width:100%;
+    max-height:30% ;
+    overflow: hidden;
+    
     border: 2px black solid;
+}
+#Profile_addImage_icon{
+    cursor: pointer;
+    font-size: 20px;
+    width:3vw;
+    height: 3vw;
+}
+#Profile_addImage_icon:hover{
+    color:rgb(48, 232, 255);
+    /*text-decoration: underline;*/
 }
 
 #Profile_info{
@@ -192,7 +209,9 @@
     margin-bottom: 10% !important; 
 }
 #Profile_expand{
-    display: none;
+    display: block;
+    opacity: 0;
+    z-index: -1;
 }
 #Profile_diploma_expand_button{
     /*height:200%;
@@ -249,6 +268,7 @@
 
 #Profile_occupation_table{
     width:100%;
+    
 }
 #Profile_occupation_table th{
     text-align: center;

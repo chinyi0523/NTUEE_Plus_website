@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-
+import Button from "@material-ui/core/Button"
 class Logout extends Component {
 	logoutbtn(){
 		axios.post("/api/logout", 
@@ -25,8 +25,20 @@ class Logout extends Component {
 	
 	render(){
 		return (
-			<div description="logout">
-			  <button onClick={this.btn_click}>Logout</button>
+			<div description="logout" 
+			style = {{display:"inline-block",
+			
+			width:"25%",
+			height:"100%"}}>
+			  <Button onClick={this.btn_click}
+			  style={{display:"inline-block",
+			  position:"relative",
+			  margin:"0",
+			  flexGrow:"2",
+			  color:"#6AFFC6",
+			  fontSize:"1.3vw",
+			  fontWeight:"bold",
+			  textDecoration:"none"}}>Logout</Button>
 			</div>
 		);
 	}
