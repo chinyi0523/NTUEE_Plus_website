@@ -406,6 +406,7 @@ class Profile extends Component{
 
                                         </tr>
                                         <div id="Profile_expand">
+                                            <table>
                                         <tr>
                                                 <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>雙: </td>
                                                 <td style={{paddingBottom:"0"}}>
@@ -441,6 +442,7 @@ class Profile extends Component{
                                                     <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
                                                 </td>
                                             </tr>
+                                            </table>
                                         </div>
                                     </table>
                             </div>   
