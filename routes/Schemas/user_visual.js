@@ -19,13 +19,33 @@ var User_visual_Schema = new Schema({
 	show:{type:Boolean,default:true},
 	data:{type: String}
   },
-  education: [
-	{
+  education: {
+	major:{
+		show:{type:Boolean,default:true},
+		SD:{type:String},//school and department
+		Note:{type:String}//一些備註，如：畢業、在學....
+	},
+	double_major:{
+		show:{type:Boolean,default:true},
+		SD:{type:String},//school and department
+		Note:{type:String}//一些備註，如：畢業、在學....
+	},
+	minor:{
+		show:{type:Boolean,default:true},
+		SD:{type:String},//school and department
+		Note:{type:String}//一些備註，如：畢業、在學....
+	},
+	master:{
+		show:{type:Boolean,default:true},
+		SD:{type:String},//school and department
+		Note:{type:String}//一些備註，如：畢業、在學....
+	},
+	doctor:{
 		show:{type:Boolean,default:true},
 		SD:{type:String},//school and department
 		Note:{type:String}//一些備註，如：畢業、在學....
 	}
-  ],
+  },
   publicEmail:{
 	show:{type:Boolean,default:true},
 	data:{type:mongoose.SchemaTypes.Email}
@@ -63,7 +83,12 @@ var User_visual_Schema = new Schema({
 	title:{type:String},
 	Company:{type:String}
   }],
-  JobID:{type:String}//有空去查一下mongoose的ref和populate
+  JobID:{type:String},//有空去查一下mongoose的ref和populate
+  userimage: {//大頭貼
+	  data:{type:Buffer},
+	  contentType:{type:String},
+	  show:{type:Boolean,default:true}
+  }
 });
 
 module.exports = mongoose.model("User_visual", User_visual_Schema);

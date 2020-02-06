@@ -18,7 +18,7 @@ const upload=multer({
 })
 
 module.exports=function(req,res,next){
-	const doUpload=upload.single('file')
+	const doUpload=upload.single('userimage')
 	doUpload(req,res,function(err){
 		if (req.fileValidationError) {
 			return res.send({status:'success',message:false,description:req.fileValidationError})

@@ -27,7 +27,9 @@ router.post("/chLogin",
 	require("./srcs/in/chLogin"));
 router.post("/logout",require("./srcs/in/logout"));
 router.post("/showVisual",require('./srcs/in/showVisual'));
-router.post("/chVisual",require('./srcs/in/chVisual'));
+router.post("/chVisual",
+	ImgGet,
+	require('./srcs/in/chVisual'));
 	
 
 module.exports = router;

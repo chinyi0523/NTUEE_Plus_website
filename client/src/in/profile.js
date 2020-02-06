@@ -6,6 +6,7 @@ import axios from 'axios';
 //import ReactDOM from 'react-dom';
 
 const map = [
+		["userimage","userimage"],
 		["realname_checkbox","username.show"],
 		["realname","username.data"],
 		["nickname_checkbox","nickname.show"],
@@ -27,6 +28,15 @@ const map = [
 		['facebook','facebook.data'],
 		['Linkedin_checkbox','Linkedin.show'],
 		['Linkedin','Linkedin.data'],
+		['major_checkbox','education.major.show'],
+		['diploma_bachelor_major','education.major.SD'],
+		['diploma_bachelor_double_major','education.double_major.SD'],
+		['diploma_bachelor_minor','education.minor.SD'],
+		['dm_checkbox','education.double_major.show'],
+		['diploma_master','education.master.SD'],
+		['master_checkbox','education.master.show'],
+		['diploma_doctor','education.doctor.SD'],
+		['doctor_checkbox','education.doctor.show']
 	]
 
 
@@ -91,20 +101,30 @@ class Profile extends Component{
                 <td id="Profile_diploma_choosebox2" >輔: </td>
                 <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
                     <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
-                    <input type="checkbox" id="Profile_bachelor_double_and_minor"></input>
-                </td>                               
+                    <input type="checkbox" id="Profile_bachelor_double_and_minor"
+					checked = {this.state.dm_checkbox}
+					onChange = {this.handleCheckChange}
+					name="dm_checkbox"></input>
+                </td>
             </tr>
             <tr>
                 <td colSpan="2" style={{paddingLeft:"0"}}>Master: </td>
                 <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                    <input type="checkbox" id="Profile_master_checkbox"></input>
+                    <input type="checkbox" id="Profile_master_checkbox"
+					checked = {this.state.master_checkbox}
+					onChange = {this.handleCheckChange}
+					name="master_checkbox"></input>
                     <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
                 </td>
             </tr>
             <tr>
                 <td colSpan="2" style={{paddingLeft:"0"}}>Doctor: </td>
                 <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                    <input type="checkbox" id="Profile_doctor_checkbox"></input>
+                    <input type="checkbox" id="Profile_doctor_checkbox"
+					checked = {this.state.doctor_checkbox}
+					onChange = {this.handleCheckChange}
+					name="doctor_checkbox"
+					></input>
                     <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
                 </td>
             </tr>
@@ -143,11 +163,19 @@ class Profile extends Component{
 						var sta = {}
 						map.forEach(elements=>{
 							var arr = elements[1].split('.')
-							sta[elements[0]]=D[arr[0]][arr[1]]
+							var val = D[arr[0]]
+							var i;
+							for(i=1;i<arr.length;i++){
+								if(val){
+									val = val[arr[i]];
+								}else{
+									break
+								}
+							}
+							sta[elements[0]]=val;
 						})
 						console.log('sta=',sta)
 						this.setState(sta);
-
 					}else{
 						alert('錯誤：\n'+res.data.description);
 					}
@@ -207,11 +235,17 @@ class Profile extends Component{
         }else{
             var r = window.confirm("確認更改?");
             if (r){
-				var sta={}
+				var sta= new FormData();
 				map.forEach(elements=>{
-					sta[elements[1]]=this.state[elements[0]]
+					sta.append(elements[1],this.state[elements[0]])
+					//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
 				})
 				console.log('sta',sta)
+				const config = {
+					headers: {
+						'content-type': 'multipart/form-data'
+					}
+				};
                 axios.post("/api/chVisual"
                 ,
 				sta
@@ -236,7 +270,9 @@ class Profile extends Component{
                     ""
                 ],
                 JobID:this.state.JobID
-                }*/).then(res => {
+                }*/,
+				config
+				).then(res => {
 
                     console.log(res.data);
                         if (res.data){
@@ -381,7 +417,10 @@ class Profile extends Component{
                                         <tr>
                                             <td colSpan="2" style={{paddingLeft:"0"}}>Bachelor Major: </td>
                                             <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                <input type="checkbox" id="Profile_bachelor_major_checkbox"></input>
+                                                <input type="checkbox" id="Profile_bachelor_major_checkbox"
+												checked = {this.state.major_checkbox}
+												onChange = {this.handleCheckChange}
+												name="major_checkbox"></input>
                                                 
                                                 <input id="Profile_diploma_bachelor_major" value = {this.state.diploma_bachelor_major} onChange = {this.handleInputChange} name="diploma_bachelor_major"></input>
                                             </td>
