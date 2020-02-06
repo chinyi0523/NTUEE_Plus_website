@@ -79,3 +79,10 @@
 > * 預設頭像的部分要再研究，後端目前是如果不存在的話會回傳''，看是要哪裡做判斷(目前沒想到漂亮的方法
 > * expand欄位的onChange有bug(一次refresh只能打一個字)，請前端人員修正(這個不是很急
 > * profile.js現在檔案累積到有點大了，要不要各個div分開寫再render在一起?但這樣state的設置就得研究一下
+
+### 0206進度 By友廷
+* expand欄位的bug修好(發現是transition與display的conflict)
+> **補充**
+> * DeepCopy在一堆obj包在一起的時候好像很吃效能，所以有人建議用[ImmutableJS](https://github.com/kdchang/reactjs101/blob/master/Ch06/react-immutable-introduction.md)，保持state的不變，而是每次都回傳新的state
+> * 分開再結合的dataflow好像用Flux或[Redux](https://github.com/kdchang/reactjs101/blob/master/Ch07/react-redux-introduction.md)的結構會比較好管理? 雖然我也不太會XD
+
