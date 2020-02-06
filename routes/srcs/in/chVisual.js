@@ -18,10 +18,11 @@ module.exports = function (req, res, next) {
 				console.log('req',req.body);
 				var input = req.body;
 				if(req.file){
-					input.userimage={
+					input["userimage"]={
 						data:req.file.buffer,
 						contentType:req.file.mimetype
 					}
+					console.log(input.userimage)
 				}
 				user_v_Schema.updateOne({"account.data":session_account},{$set:input},function(err,result){
 					console.log("result=",result);

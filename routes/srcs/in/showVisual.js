@@ -34,17 +34,14 @@ module.exports = function (req, res, next) {
         }
         else {
             if(obj.length === 1){
-				var output=obj[0];
-				console.log('type',typeof(output))
-                console.log('帳號存在',output);
+				var output=JSON.parse(JSON.stringify(obj[0]));//手動深拷貝，但function會炸掉要注意
+				console.log('帳號存在',output);
 				if(output.userimage.contentType){
 					var prefix="data:"+output.userimage.contentType+";base64,"
 					var img = new Buffer(output.userimage.data, 'binary').toString('base64');
 					prefix+=img
 				}
-				
 				output.userimage = (prefix)||'';
-				console.log('ready to send\n',output)
 				res.send({status:'success',message:true,data:
 					output
 				});

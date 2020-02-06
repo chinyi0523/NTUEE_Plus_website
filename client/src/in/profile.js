@@ -148,7 +148,7 @@ class Profile extends Component{
         
     };
 
-    componentDidMount(){
+    componentWillMount(){
 		this.showVisual();
 	}
 	
@@ -166,9 +166,9 @@ class Profile extends Component{
 							var val = D[arr[0]]
 							var i;
 							for(i=1;i<arr.length;i++){
-								if(val){
-									val = val[arr[i]];
-								}else{
+								val = val[arr[i]];
+								if(!val){
+									val=""
 									break
 								}
 							}
@@ -237,7 +237,9 @@ class Profile extends Component{
             if (r){
 				var sta= new FormData();
 				map.forEach(elements=>{
-					sta.append(elements[1],this.state[elements[0]])
+					//if(this.state[elements[0]]){
+						sta.append(elements[1],this.state[elements[0]])
+					//}
 					//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
 				})
 				console.log('sta',sta)
@@ -289,12 +291,12 @@ class Profile extends Component{
         }
     }
     render(){
-        let {imagePreviewUrl} = this.state;
+        let {imagePreviewUrl} = this.state.userimage;
         let $imagePreview = null;
         if (imagePreviewUrl){
             $imagePreview = (<img src={imagePreviewUrl} id="Profile_userimage" alt="userimage"></img>)
         }else{
-            $imagePreview = (<img src={default_image} id="Profile_userimage" alr="userimage"></img>)
+            $imagePreview = (<img src={this.state.userimage||default_image} id="Profile_userimage" alr="userimage"></img>)
         }
         return (
             <div id="Profile_container">
