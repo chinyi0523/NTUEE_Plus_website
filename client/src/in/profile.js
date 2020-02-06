@@ -1,10 +1,9 @@
 import React,{ Component } from 'react';
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 import './profile.css';
 import default_image from '../images/default_image.png';
 import axios from 'axios';
 //import ReactDOM from 'react-dom';
-
 const map = [
 		["userimage","userimage"],
 		["realname_checkbox","username.show"],
@@ -83,6 +82,7 @@ class Profile extends Component{
         this.handleSubmit = this.handleSubmit.bind(this)
         this.expandDiploma = this.expandDiploma.bind(this)
         this.handleImageChange = this.handleImageChange.bind(this)
+        this.test = this.test.bind(this);
     }
     
 	
@@ -90,64 +90,40 @@ class Profile extends Component{
     expandDiploma(event){
         event.preventDefault();
         if (this.state.clicktime % 2 === 0){
-        //document.getElementById("Profile_expand").style.display = "block";
-        ReactDOM.render(
-            <div>
-            <tr>
-                <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>雙: </td>
-                <td style={{paddingBottom:"0"}}>
-                    <input id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
-                </td>
-                <td id="Profile_diploma_choosebox2" >輔: </td>
-                <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                    <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
-                    <input type="checkbox" id="Profile_bachelor_double_and_minor"
-					checked = {this.state.dm_checkbox}
-					onChange = {this.handleCheckChange}
-					name="dm_checkbox"></input>
-                </td>
-            </tr>
-            <tr>
-                <td colSpan="2" style={{paddingLeft:"0"}}>Master: </td>
-                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                    <input type="checkbox" id="Profile_master_checkbox"
-					checked = {this.state.master_checkbox}
-					onChange = {this.handleCheckChange}
-					name="master_checkbox"></input>
-                    <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
-                </td>
-            </tr>
-            <tr>
-                <td colSpan="2" style={{paddingLeft:"0"}}>Doctor: </td>
-                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                    <input type="checkbox" id="Profile_doctor_checkbox"
-					checked = {this.state.doctor_checkbox}
-					onChange = {this.handleCheckChange}
-					name="doctor_checkbox"
-					></input>
-                    <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
-                </td>
-            </tr>
-            </div>,document.getElementById("Profile_expand")
-        )
-        document.getElementById("Profile_expand").style.opacity = "1";
-        document.getElementById("hr3").style.marginTop = "30%";
-        document.getElementById("hr3").style.transitionDuration = "0.5s";
-        document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
+            document.getElementById("hr3").style.marginTop = "30%";
+            document.getElementById("hr3").style.transitionDuration = "0.5s";
+            document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
+            document.getElementById("Profile_expand").style.transitionProperty = "opacity";
+            setTimeout(()=>{
+                document.getElementById("Profile_expand").style.display = "block";
+                
+            },1);
+            document.getElementById("Profile_expand").style.opacity = "0";
+            setTimeout(()=>{document.getElementById("Profile_expand").style.opacity = "1";},100);
+            
         //document.getElementById("Profile_expand").style.border = "gray 2px solid"
         }else{
+            document.getElementById("hr3").style.transitionDuration = "0.5s";
+            document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
             document.getElementById("hr3").style.marginTop = "2%";
             document.getElementById("Profile_expand").style.opacity = "0";
-            ReactDOM.render(
+            setTimeout(()=>{
+                document.getElementById("Profile_expand").style.display = "None";
+            },500);
+            /*ReactDOM.render(
                 <div></div>,document.getElementById("Profile_expand")
-            )
-            //document.getElementById("Profile_expand").style.display = "None";
+            )*/
+            
             
         }
         this.setState({clicktime:this.state.clicktime+1})
         
     };
+    test = () => (
+        document.getElementById("Profile_expand").style.opacity = "0"
+    );
 
+    
     componentWillMount(){
 		this.showVisual();
 	}
@@ -430,6 +406,41 @@ class Profile extends Component{
 
                                         </tr>
                                         <div id="Profile_expand">
+                                        <tr>
+                                                <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>雙: </td>
+                                                <td style={{paddingBottom:"0"}}>
+                                                    <input id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
+                                                </td>
+                                                <td id="Profile_diploma_choosebox2" >輔: </td>
+                                                <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                                                    <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
+                                                    <input type="checkbox" id="Profile_bachelor_double_and_minor"
+                                                    checked = {this.state.dm_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                    name="dm_checkbox"></input>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colSpan="2" style={{paddingLeft:"0"}}>Master: </td>
+                                                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                                                    <input type="checkbox" id="Profile_master_checkbox"
+                                                    checked = {this.state.master_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                    name="master_checkbox"></input>
+                                                    <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colSpan="2" style={{paddingLeft:"0"}}>Doctor: </td>
+                                                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                                                    <input type="checkbox" id="Profile_doctor_checkbox"
+                                                    checked = {this.state.doctor_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                    name="doctor_checkbox"
+                                                    ></input>
+                                                    <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
+                                                </td>
+                                            </tr>
                                         </div>
                                     </table>
                             </div>   
