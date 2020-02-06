@@ -81,8 +81,8 @@
 > * profile.js現在檔案累積到有點大了，要不要各個div分開寫再render在一起?但這樣state的設置就得研究一下
 
 ### 0206進度 By友廷
-* expand欄位的bug修好(發現是transition與display的conflict)
+* expand欄位的bug修好(發現是transition與display的conflict,以及ReactDOM在onChange的時候會重新render)
 > **補充**
 > * DeepCopy在一堆obj包在一起的時候好像很吃效能，所以有人建議用[ImmutableJS](https://github.com/kdchang/reactjs101/blob/master/Ch06/react-immutable-introduction.md)，保持state的不變，而是每次都回傳新的state
-> * 分開再結合的dataflow好像用Flux或[Redux](https://github.com/kdchang/reactjs101/blob/master/Ch07/react-redux-introduction.md)的結構會比較好管理? 雖然我也不太會XD
+> * 分開component再結合的dataflow好像用Flux或[Redux](https://github.com/kdchang/reactjs101/blob/master/Ch07/react-redux-introduction.md)的結構會比較好管理? 雖然我也不太會XD
 
