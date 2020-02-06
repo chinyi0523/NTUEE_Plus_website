@@ -24,7 +24,7 @@ function insert(name,account){
 module.exports = function (req, res, next) {
   var session_account = req.session.loginAccount
   if(!session_account){
-	  session_account = 'b07901029' //測試用
+	  session_account = 'b07901028' //測試用
   }
   if(session_account){
      user_v_Schema.find({"account.data":session_account}, async function(err, obj){
@@ -52,6 +52,7 @@ module.exports = function (req, res, next) {
 				if(!output){
 					return res.send({status:'success',message:false, description:"資料庫錯誤(資料插入錯誤)"}); 
 				}else{
+					output.userimage = '';
 					return res.send({status:'success',message:true, data:output}); 
 				}
             }else{
