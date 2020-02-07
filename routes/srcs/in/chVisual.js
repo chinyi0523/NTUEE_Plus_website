@@ -4,7 +4,7 @@ var user_v_Schema = require('../../Schemas/user_visual');
 module.exports = function (req, res, next) {
   var session_account = (req.session.loginAccount)
   if(!session_account){
-	  session_account = 'b07901029' //測試用
+	  session_account = 'b07901028' //測試用
   }
   if(session_account){
      user_v_Schema.find({"account.data":session_account}, function(err, obj){
@@ -17,6 +17,7 @@ module.exports = function (req, res, next) {
                 console.log('即將更改資料',obj);
 				console.log('req',req.body);
 				var input = req.body;
+				delete input.userimage;
 				if(req.file){
 					input["userimage"]={
 						data:req.file.buffer,
@@ -24,6 +25,7 @@ module.exports = function (req, res, next) {
 					}
 					console.log(input.userimage)
 				}
+				console.log('img=',input.userimage)
 				user_v_Schema.updateOne({"account.data":session_account},{$set:input},function(err,result){
 					console.log("result=",result);
 					if (err) {

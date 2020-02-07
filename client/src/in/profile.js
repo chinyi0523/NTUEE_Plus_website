@@ -4,8 +4,9 @@ import './profile.css';
 import default_image from '../images/default_image.png';
 import axios from 'axios';
 //import ReactDOM from 'react-dom';
+
 const map = [
-		["userimage","userimage"],
+		["userimage","userimage",default_image],
 		["realname_checkbox","username.show"],
 		["realname","username.data"],
 		["nickname_checkbox","nickname.show"],
@@ -143,8 +144,8 @@ class Profile extends Component{
 							var i;
 							for(i=1;i<arr.length;i++){
 								val = val[arr[i]];
-								if(!val){
-									val=""
+								if(val===undefined){
+									val=(elements.length<=2)?'':elements[2]
 									break
 								}
 							}
@@ -267,12 +268,14 @@ class Profile extends Component{
         }
     }
     render(){
-        let {imagePreviewUrl} = this.state.userimage;
+        let imagePreviewUrl = this.state.imagePreviewUrl;
         let $imagePreview = null;
         if (imagePreviewUrl){
-            $imagePreview = (<img src={imagePreviewUrl} id="Profile_userimage" alt="userimage"></img>)
+			console.log('use it!')
+            $imagePreview = (<img src={this.state.imagePreviewUrl} id="Profile_userimage" alt="userimage"></img>)
         }else{
-            $imagePreview = (<img src={this.state.userimage||default_image} id="Profile_userimage" alr="userimage"></img>)
+			console.log('use default')
+            $imagePreview = (<img src={default_image} id="Profile_userimage" alr="userimage"></img>)
         }
         return (
             <div id="Profile_container">
