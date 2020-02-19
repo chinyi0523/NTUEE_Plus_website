@@ -11,34 +11,41 @@
 }
 #column_img {
 	background-image: url("https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/78194884_2409194972523954_2487778682865713152_o.jpg?_nc_cat=104&_nc_ohc=Eej7FkTWeykAQlKgjJPiNmenHksZmBYA-83TV7dvRn8FxdI4ign8CDuDA&_nc_ht=scontent-tpe1-1.xx&oh=bc7510df4e7c39bd7b97ead47f72f0e5&oe=5EAA648C"); 
-	background-size:600px 400px;
+	background-size:480px 320px;
 	float : left;
-	width : 600px;
-	height : 400px;
+	width : 480px;
+	height : 320px;
 	background-color : #000;
 }
 #column_text {
-	margin-left : 310px;
+	width: 45%;
+	display: inline-block;
+	margin-left : 10px;
 }
 #column_info {
 	margin : 0.5em;
 }
 #column_date{
-	font-size : 15px;
+	font-size : 12px;
 	float : left;
 	color : #888;
 }
 #column_name{
-	font-size : 15px;
+	font-size : 12px;
 	cursor: pointer;
 }
 #column_title{
+	font-size : 18px;
 	margin : 0.5em;
 	color : #fff;
     cursor: pointer;
 }
 #column_subtitle{
-	font-size : 15px;
+	font-size : 14px;
+	margin : 0.5em;
+}
+#column_prefix{
+	font-size : 12px;
 	margin : 0.5em;
 }
 @media (max-width:1200px){
