@@ -153,6 +153,7 @@ class Profile extends Component{
 							}
 							sta[elements[0]]=val;
 						})
+						sta.imagePreviewUrl = sta.userimage;
 						console.log('sta=',sta)
 						this.setState(sta);
 					}else{
