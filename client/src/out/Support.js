@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './Support.css';
 import eesa_icon from '../images/eesa-icon.png';
+import { NavBar } from '../component/AppBar';
 
 class Support extends Component{
     render(){
         return (
         <div id="Support_container">
+            <NavBar/>
             <div id="Support_up">
                 <h3 id="Support_up_text">
                     Your support is vital in enabling NTUEE+ to fulfill

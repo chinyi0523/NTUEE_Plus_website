@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './column.css';
+import {NavBar_in} from '../component/AppBar_in';
+
 class Column extends Component{
     render(){
         return (
         <div id = "column_container">
+			<NavBar_in/>
 			<div id = "column_section">
 				<div id = "column_img"></div>
 				<div id = "column_text">

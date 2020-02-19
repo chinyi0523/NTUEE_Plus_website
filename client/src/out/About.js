@@ -3,10 +3,12 @@ import './About.css';
 import eesa_icon from '../images/eesa-icon.png';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import { NavBar } from '../component/AppBar';
 class About extends Component{
     render(){
         return (
         <div id="About_container">
+            <NavBar/>
             <div id = "About_space"></div>
             <div id="About_up">
                 <h1 id="About_up_text">

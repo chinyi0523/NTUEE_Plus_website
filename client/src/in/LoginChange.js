@@ -81,17 +81,17 @@ class LoginChange extends Component {
 		return (
 			<div description="personalInfo" id="LC_container">
 			  <div id="LC_hr">Security Question Reset</div>
-			  <form >{/*onSubmit={this.handleSubmit}}*/}
+			  <form onSubmit={this.handleSubmit} >
 			  <button id="LC_refresh_btn" /*onClick={"this.btn_click"}*/>refresh</button>
 			  <img src={this.state.img} />
 			  <table id = "LC_table" cellSpacing="10">
 				<tr>
 					<td>學號</td>
-					<td colSpan="2">{"this.state.account"}</td>
+					<td colSpan="2">{this.state.account}</td>
 				</tr>
 				<tr>
 					<td>姓名</td>
-					<td colSpan="2">{"this.state.username"}</td>
+					<td colSpan="2">{this.state.username}</td>
 				</tr>
 				<tr>
 					<td>安全問題</td>

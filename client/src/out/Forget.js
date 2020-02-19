@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Forget.css';
 import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
-
+import { NavBar } from '../component/AppBar';
+import { NavBar_in } from '../component/AppBar_in';
 class Forget extends Component{
 	constructor(props) {
 		super(props);
@@ -61,6 +62,7 @@ class Forget extends Component{
     render(){
         return(
             <div id="Forget_container">
+				<NavBar_in/>
                 <div id="Forget_left_table">
 					<form onSubmit={this.handleSubmit}>
 						<div id="Forget_input">

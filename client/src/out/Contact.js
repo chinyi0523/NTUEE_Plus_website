@@ -3,11 +3,12 @@ import './Contact.css';
 import eesa_icon from '../images/eesa-icon.png';
 import left_image from '../images/left_image.png';
 import right_image from '../images/right_image.png';
-
+import { NavBar } from '../component/AppBar';
 class Contact extends Component{
     render(){
         return (
         <div id="Contact_container">
+            <NavBar/>
             <div id="Contact_left_column">
                 <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
                 <p id="Contact_left_text">

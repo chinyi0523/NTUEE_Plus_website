@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Register.css';
 import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
-
+import { NavBar } from '../component/AppBar';
 class Register extends Component{
 	constructor(props) {
 		super(props);
@@ -105,7 +105,10 @@ class Register extends Component{
 		  $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
 		}
         return(
+			<div>
+				<NavBar/>
             <div id="Register_container">
+				
                 <div id="Register_register_table">
                     <h1 id="Register_table_title">Just A Few Steps to Join EE+!</h1>
 					<form onSubmit={this.handleSubmit}>
@@ -167,6 +170,7 @@ class Register extends Component{
                     </div>
                 </div>
             </div>
+			</div>
         )
     }
 }

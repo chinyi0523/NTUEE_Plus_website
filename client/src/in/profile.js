@@ -3,6 +3,8 @@ import React,{ Component } from 'react';
 import './profile.css';
 import default_image from '../images/default_image.png';
 import axios from 'axios';
+
+//import { NavBar } from '../component/AppBar';
 //import ReactDOM from 'react-dom';
 
 const map = [

@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import './Login.css';
 import eesa_icon from '../images/eesa-icon.png';
-import { Link } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
 import axios from "axios";
-
+import { NavBar } from '../component/AppBar';
 class Login extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
 		  Login_username_input: '',
-		  Login_password_input: ''
+		  Login_password_input: '',
+		  isLogin: null
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
-
+	
 	handleInputChange(event) {
 		const target = event.target;
 		const value = target.value;
@@ -34,6 +35,8 @@ class Login extends Component{
 		}else{
 			var r=window.confirm("確認登入?");
 			if(r){
+				//window.location = "/Home_in";
+				
 				axios.post("/api/login", 
 					{account:this.state.Login_username_input,
 					password:this.state.Login_password_input}
@@ -42,7 +45,10 @@ class Login extends Component{
 						if(res.data){
 							if(res.data.message===true){
 								alert('登入成功，歡迎：'+res.data.data.username);
-								window.location = "/";
+								//window.location = "/";
+								this.setState({
+									isLogin:true
+								});
 							}else{
 								alert("錯誤：\n"+res.data.description);
 							}
@@ -53,8 +59,13 @@ class Login extends Component{
 	}
 	
     render(){
+		if(this.state.isLogin){
+			return <Redirect to="/Home_in"/>
+		}
+		
         return (
             <div id="Login_container">
+			<NavBar/>
 			<form onSubmit={this.handleSubmit}>
                 <div id="Login_input">
                         <div id="Login_username">
