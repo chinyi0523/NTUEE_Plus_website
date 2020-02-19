@@ -17,18 +17,22 @@ const upload=multer({
 	}
 })
 
-module.exports=function(req,res,next){
-	const doUpload=upload.single('userimage')
-	doUpload(req,res,function(err){
-		if (req.fileValidationError) {
-			return res.send({status:'success',message:false,description:req.fileValidationError})
-		}else if(err instanceof multer.MulterError){
-			console.log('Merr',err);
-			return res.send({status:'success',message:false,description:err.message})
-		}else if(err){
-			return res.send({status:'success',message:false,description:err})
-		}
-		console.log('no file err')
-		next()
-	})
+Multer = function(method){
+	const doUpload=upload.single(method)
+	return function(req,res,next){
+		doUpload(req,res,function(err){
+			if (req.fileValidationError) {
+				return res.send({status:'success',message:false,description:req.fileValidationError})
+			}else if(err instanceof multer.MulterError){
+				console.log('Merr',err);
+				return res.send({status:'success',message:false,description:err.message})
+			}else if(err){
+				return res.send({status:'success',message:false,description:err})
+			}
+			console.log('no file err')
+			next()
+		})
+	}
 }
+
+module.exports=(method)=>Multer(method)
