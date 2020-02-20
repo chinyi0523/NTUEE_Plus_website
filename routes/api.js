@@ -4,7 +4,11 @@ var router = express.Router();
 const ValidSend = require("./validation/controll");//若valid未通過則send false
 var ValidTest = require("./validation/validation");
 var ImgGet = require('./middleware/multer');
-
+//test
+router.get("/test",function(req,res){
+	const path = require('path');
+    res.sendFile(path.join(__dirname+"/testClient/test.html"))
+})
 //out
 router.post("/login",
 	ValidTest('login'),

@@ -15,11 +15,11 @@ column1 = [
 	"Linkedin"
 ]
 column2 = [
-	"education.major",
-	"education.double_major",
-	"education.minor",
-	"education.master",
-	"education.doctor"
+	["education","major"],
+	["education","double_major"],
+	["education","minor"],
+	["education","master"],
+	["education","doctor"]
 ]
 
 module.exports = function (req, res, next) {
@@ -52,19 +52,20 @@ module.exports = function (req, res, next) {
 				obj.forEach(people=>{
 					var output1 = {}
 					column1.forEach(element=>{
-						if(people[element+".show"]===true && people[element+".data"]!==undefined){//有空研究一下find的鍵指定，看output能不能只顯示true的
-							output1[element]=people[element+".data"]
+						if(people[element]["show"]===true && people[element]["data"]!==(undefined||"")){//有空研究一下find的鍵指定，看output能不能只顯示true的
+							output1[element]=people[element]["data"]
 						}
 					})
 					column2.forEach(element=>{
-						if(people[element+".show"]===true && people[element+".data"]!==undefined){//有空研究一下find的鍵指定，看output能不能只顯示true的
-							output1[element]=people[element+".data"]
+						if(people[element[0]][element[1]]["show"]===true && people[element[0]][element[1]]["data"]!==(undefined||"")){//有空研究一下find的鍵指定，看output能不能只顯示true的
+							output1[element]=people[element[0]][element[1]]["data"]
 						}
 					})
 					if(people.userimage.show===true && people.userimage.data!==undefined){
 						var prefix="data:"+people.userimage.contentType+";base64,"
 						var img = new Buffer(people.userimage.data, 'binary').toString('base64');
 						output1.userimage = prefix+img;
+						console.log('img=',output1)
 					}
 					output1.Occupation = people.Occupation
 					output.push(output1)
