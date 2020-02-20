@@ -414,11 +414,11 @@ class Profile extends Component{
                                         <div id="Profile_expand">
                                             <table>
                                         <tr>
-                                                <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>雙: </td>
+                                                <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>Double: </td>
                                                 <td style={{paddingBottom:"0"}}>
                                                     <input id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
                                                 </td>
-                                                <td id="Profile_diploma_choosebox2" >輔: </td>
+                                                <td id="Profile_diploma_choosebox2" >Minor: </td>
                                                 <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
                                                     <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
                                                     <input type="checkbox" id="Profile_bachelor_double_and_minor"

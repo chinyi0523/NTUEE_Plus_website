@@ -6,6 +6,7 @@
     width:100%;
     height: 100%;
 }
+
 #Register_register_table{
     margin-top: 7%;
     width:65%;
@@ -13,12 +14,31 @@
     float:left;
     color: white;
 }
+#Register_register_table input{
+    color:white;
+    font-size: 24px;
+    width:50%;
+    background-color: #003F67;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    float: right;
+    margin-right:5%;
+}
+
+#Register_register_table p{
+    margin:0;
+    display: inline;
+    text-align: center;
+}
 #Register_table_title{
     letter-spacing: 2px;
 }
 #Register_table{
     margin-top: 5%;
-    margin-left:10%;
+    margin-left:5%;
     font-size: 24px;
     letter-spacing: 1px;
     
@@ -38,24 +58,10 @@
 #Register_input5{
     margin-top: 3%;
 }
-#Register_realname_label{
-    margin:0;
-    display: inline;
-    text-align: center;
+#Register_input6{
+    margin-top: 3%;
 }
-#Register_realname{
-    color:white;
-    font-size: 24px;
-    width:50%;
-    background-color: #003F67;
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-    float: right;
-    margin-right:5%;
-}
+
 #Register_realname:focus::-webkit-input-placeholder{
     color:#003F67
 }
@@ -68,23 +74,7 @@
 #Register_realname:focus::placeholder{
     color:#003F67
 }
-#Register_ID_label{
-    margin:0;
-    display: inline;
-}
-#Register_student_id{
-    color:white;
-    font-size: 24px;
-    width:50%;
-    background-color: #003F67;
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-    float: right;
-    margin-right:5%;
-}
+
 #Register_student_id:focus::-webkit-input-placeholder{
     color:#003F67
 }
@@ -98,23 +88,7 @@
     color:#003F67
 }
 
-#Register_password_label{
-    margin:0;
-    display: inline;
-}
-#Register_password{
-    color:white;
-    font-size: 24px;
-    width:50%;
-    background-color: #003F67;
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-    float: right;
-    margin-right:5%;
-}
+
 #Register_password:focus::-webkit-input-placeholder{
     color:#003F67
 }
@@ -131,23 +105,6 @@
     margin:0;
     display: inline;
     text-align: center;
-}
-#Register_confirm_password{
-    color:white;
-    font-size: 24px;
-    width:50%;
-    background-color: #003F67;
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-    float: right;
-    margin-right:5%;
-}
-#Register_image_label{
-    margin:0;
-    display: inline;
 }
 #Register_fileinput{
     /*float: right;
@@ -167,11 +124,7 @@
     /*text-decoration: underline;*/
 }
 
-#Register_imgPreview{
-    font-size: 18px ;
-    margin-left: 50%;
-    border-radius: 10px;
-}
+
 #Register_confirm_password:focus::-webkit-input-placeholder{
     color:#003F67
 }
@@ -187,7 +140,7 @@
 #Register_register_button{
     font-size: 24px;
     border-radius: 10px;
-    margin-top: 5%;
+    margin-top: 4%;
     margin-left: 45%;
     width:20%;
     height: 8%;
@@ -218,6 +171,7 @@
     
 }
 #Register_FAQ{
+    margin-top: 5%;
     display: inline-block;
     width: 30%;
 }
@@ -236,5 +190,19 @@
 }
 
 #Register_FAQ_list{
-    list-style-type: none;
+    color: gray;
+    list-style-type: unset;
+}
+
+#Register_imgPreview{
+    margin-top: 3vh;
+    font-size: 18px ;
+    /*margin-left: 50%;*/
+    border-radius: 10px;
+    color:white;
+}
+#Register_id_photo{
+    
+    max-height: 40vh;
+    max-width: 30vw;
 }

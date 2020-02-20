@@ -7,11 +7,11 @@ class Column extends Component{
         return (
         <div id = "column_container">
 			<NavBar_in/>
-			<div id = "column_section">
-				<div id = "column_img"></div>
+			<div id = "column_section" style={{marginTop:"8%"}}>
+				<div id = "column_img" style={{backgroundImage:"url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/78194884_2409194972523954_2487778682865713152_o.jpg?_nc_cat=104&_nc_ohc=Eej7FkTWeykAQlKgjJPiNmenHksZmBYA-83TV7dvRn8FxdI4ign8CDuDA&_nc_ht=scontent-tpe1-1.xx&oh=bc7510df4e7c39bd7b97ead47f72f0e5&oe=5EAA648C)"}}></div>
 				<div id = "column_text">
 					<div id = "column_info">
-						<div id = "column_date">2019/12/07 星期六|</div>
+						<div id = "column_date">|2019/12/07 星期六</div>
 						<div id = "column_name">&nbsp;翁瑋襄 鄭謹譯 何俊緯 周子庭 謝承霖 吳建翰 余欣澄</div>
 					</div>
 					<div id = "column_title">
@@ -37,7 +37,7 @@ class Column extends Component{
 				<div id = "column_img"></div>
 				<div id = "column_text">
 					<div id = "column_info">
-						<div id = "column_date">2019/11/24 星期日|</div>
+						<div id = "column_date">|2019/11/24 星期日</div>
 						<div id = "column_name">&nbsp;李筠婕 鄭謹譯 莊永松 吳建翰 余欣澄</div>
 					</div>
 					<div id = "column_title">2012級 李昀樵 （技術副總 @ 17直播）</div>
@@ -59,7 +59,7 @@ class Column extends Component{
 				<div id = "column_img"></div>
 				<div id = "column_text">
 					<div id = "column_info">
-						<div id = "column_date">2019/09/17 星期二|</div>
+						<div id = "column_date">|2019/09/17 星期二</div>
 						<div id = "column_name">&nbsp;鄭謹譯 施彥宇 王德宇 曾&nbsp;&nbsp;&nbsp;晴 劉桓桓</div>
 					</div>
 					<div id = "column_title">2008級 方劭云（當屆最年輕升遷副教授）</div>
@@ -80,7 +80,7 @@ class Column extends Component{
 				<div id = "column_img"></div>
 				<div id = "column_text">
 					<div id = "column_info">
-						<div id = "column_date">2019/08/28 星期三|</div>
+						<div id = "column_date">|2019/08/28 星期三</div>
 						<div id = "column_name">&nbsp;鄭謹譯 李筠婕 莊永松 戴慕潔 吳建翰 毛弘仁</div>
 					</div>
 					<div id = "column_title">2012級 王易如 （行動貝果共同創辦人）</div>

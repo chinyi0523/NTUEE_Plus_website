@@ -100,7 +100,7 @@ class Register extends Component{
 		let {imagePreviewUrl} = this.state;
 		let $imagePreview = null;
 		if (imagePreviewUrl) {
-		  $imagePreview = (<img src={imagePreviewUrl} />);
+		  $imagePreview = (<img src={imagePreviewUrl} id="Register_id_photo"/>);
 		} else {
 		  $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
 		}
@@ -138,6 +138,11 @@ class Register extends Component{
 								></input>
 							</div>
 							<div id="Register_input5">
+								<p id="Register_question_label">Question</p>
+								<input id="Register_question" placeholder="ex: the name of your first pet, etc..." type="text"
+								 onChange = {this.handleInputChange}></input>
+							</div>
+							<div id="Register_input6">
 								<p id="Register_image_label">Upload Image</p>
 								<label>
 								<input className="fileInput" id="Register_fileinput" 
@@ -147,9 +152,7 @@ class Register extends Component{
 								<span id="Register_addImage_icon">➕ <p style={{display:"inline",fontSize:"18px"}}>Add Your ID Photo</p></span>
 								</label>
 							</div>
-							<div className="imgPreview" id="Register_imgPreview">
-				  			{$imagePreview}
-							</div>
+							
 						</div>
 						
 						<button id="Register_register_button" onclick={this.handleSubmit}>
@@ -163,11 +166,16 @@ class Register extends Component{
                     <div id="Register_splitline"></div>
                     <div id="Register_FAQ_content">
                         <ul id="Register_FAQ_list">
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
+                            <li>The size of photo is at most 1MB.</li>
+                            <li>...</li>
                         </ul>
                     </div>
+					<div id="Register_FAQ_title">Image Preview</div>
+					<div id="Register_splitline"></div>
+				<div className="imgPreview" id="Register_imgPreview">
+				  			{$imagePreview}
+					</div>
                 </div>
             </div>
 			</div>

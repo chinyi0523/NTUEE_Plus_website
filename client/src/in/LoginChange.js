@@ -83,7 +83,7 @@ class LoginChange extends Component {
 			  <div id="LC_hr">Security Question Reset</div>
 			  <form onSubmit={this.handleSubmit} >
 			  <button id="LC_refresh_btn" /*onClick={"this.btn_click"}*/>refresh</button>
-			  <img src={this.state.img} />
+			  {/*<img src={this.state.img} />*/}
 			  <table id = "LC_table" cellSpacing="10">
 				<tr>
 					<td>學號</td>
@@ -96,8 +96,8 @@ class LoginChange extends Component {
 				<tr>
 					<td>安全問題</td>
 					<td colSpan="2">
-						<input id="LC_safe_Question" placeholder="改變安全問題" autoFocus
-							value={this.state.question} onChange={this.handleInputChange}>
+						<input id="LC_safe_Question" placeholder={this.state.question} autoFocus
+							 onChange={this.handleInputChange} /*value={this.state.question}*/>
 						</input>
 					
 					</td>

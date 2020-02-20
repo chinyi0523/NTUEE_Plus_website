@@ -1,5 +1,6 @@
 #column_container {
 	position : relative;
+	font-family:'Noto Sans TC',Arial,sans-serif;
 }
 #column_section {
 	overflow: auto;
@@ -10,7 +11,7 @@
 	background-color : #93D5FF;
 }
 #column_img {
-	background-image: url("https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/78194884_2409194972523954_2487778682865713152_o.jpg?_nc_cat=104&_nc_ohc=Eej7FkTWeykAQlKgjJPiNmenHksZmBYA-83TV7dvRn8FxdI4ign8CDuDA&_nc_ht=scontent-tpe1-1.xx&oh=bc7510df4e7c39bd7b97ead47f72f0e5&oe=5EAA648C"); 
+	/*background-image: url("https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/78194884_2409194972523954_2487778682865713152_o.jpg?_nc_cat=104&_nc_ohc=Eej7FkTWeykAQlKgjJPiNmenHksZmBYA-83TV7dvRn8FxdI4ign8CDuDA&_nc_ht=scontent-tpe1-1.xx&oh=bc7510df4e7c39bd7b97ead47f72f0e5&oe=5EAA648C"); */
 	background-size:480px 320px;
 	float : left;
 	width : 480px;
@@ -18,7 +19,7 @@
 	background-color : #000;
 }
 #column_text {
-	width: 45%;
+	width: 42vw;
 	display: inline-block;
 	margin-left : 10px;
 }
@@ -26,15 +27,18 @@
 	margin : 0.5em;
 }
 #column_date{
+	float: right;
 	font-size : 12px;
-	float : left;
+	/*float : left;*/
 	color : #888;
 }
 #column_name{
+	float:right;
 	font-size : 12px;
 	cursor: pointer;
 }
 #column_title{
+	clear: both;
 	font-size : 18px;
 	margin : 0.5em;
 	color : #fff;

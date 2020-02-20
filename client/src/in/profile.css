@@ -208,6 +208,12 @@
 #Profile_diploma_choosebox_table td{
     margin-bottom: 10% !important; 
 }
+#Profile_diploma_bachelor_double_major{
+    width:100%;
+}
+#diploma_bachelor_minor{
+    width:100%;
+}
 #Profile_expand{
     display: none;
     opacity: 0;
