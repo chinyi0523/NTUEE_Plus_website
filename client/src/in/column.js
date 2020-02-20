@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './column.css';
 import {NavBar_in} from '../component/AppBar_in';
+import Oct_image from '../images/column/1910_photo.jpg';
+import Sep_image from '../images/column/1909_photo.jpg';
+import Aug_image from '../images/column/1908_photo.jpg';
+import Jul_image from '../images/column/1907_photo.JPG';
 
 class Column extends Component{
     render(){
@@ -8,7 +12,9 @@ class Column extends Component{
         <div id = "column_container">
 			<NavBar_in/>
 			<div id = "column_section" style={{marginTop:"8%"}}>
-				<div id = "column_img" style={{backgroundImage:"url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/78194884_2409194972523954_2487778682865713152_o.jpg?_nc_cat=104&_nc_ohc=Eej7FkTWeykAQlKgjJPiNmenHksZmBYA-83TV7dvRn8FxdI4ign8CDuDA&_nc_ht=scontent-tpe1-1.xx&oh=bc7510df4e7c39bd7b97ead47f72f0e5&oe=5EAA648C)"}}></div>
+				<div id = "column_img">
+					<img src={Oct_image} alt="Oct. Image" width="480px" height="320px" />
+				</div>
 				<div id = "column_text">
 					<div id = "column_info">
 						<div id = "column_date">|2019/12/07 星期六</div>
@@ -36,7 +42,9 @@ class Column extends Component{
 				<a id="column_readmore" href="#">read more...</a>
 			</div>
 			<div id = "column_section">
-				<div id = "column_img"></div>
+				<div id = "column_img">
+					<img src={Sep_image} alt="Sep. Image" width="480px" height="320px" />
+				</div>
 				<div id = "column_text">
 					<div id = "column_info">
 						<div id = "column_date">|2019/11/24 星期日</div>
@@ -59,7 +67,9 @@ class Column extends Component{
 				<a id="column_readmore" href="#">read more...</a>
 			</div>
 			<div id = "column_section">
-				<div id = "column_img"></div>
+				<div id = "column_img">
+					<img src={Aug_image} alt="Aug. Image" width="480px" height="320px" />
+				</div>
 				<div id = "column_text">
 					<div id = "column_info">
 						<div id = "column_date">|2019/09/17 星期二</div>
@@ -82,7 +92,9 @@ class Column extends Component{
 				<a id="column_readmore" href="#">read more...</a>
 			</div>
 			<div id = "column_section">
-				<div id = "column_img"></div>
+				<div id = "column_img">
+					<img src={Jul_image} alt="Jul. Image" width="480px" height="320px" />
+				</div>
 				<div id = "column_text">
 					<div id = "column_info">
 						<div id = "column_date">|2019/08/28 星期三</div>
