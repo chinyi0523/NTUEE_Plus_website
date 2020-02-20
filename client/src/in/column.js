@@ -12,8 +12,8 @@ class Column extends Component{
         <div id = "column_container">
 			<NavBar_in/>
 			<div id = "column_section" style={{marginTop:"8%"}}>
-				<div id = "column_img">
-					<img src={Oct_image} alt="Oct. Image" width="480px" height="320px" />
+				<div id="column_img">
+					<img src={Oct_image} alt="Oct. Image" className="column_image" />
 				</div>
 				<div id = "column_text">
 					<div id = "column_info">
@@ -33,17 +33,18 @@ class Column extends Component{
 						碩士：台灣大學電信所<br/>
 						學士：台灣大學電機系(2014)
 					</div>
-					<div id = "column_prefix">
+					<div id = "column_prefix" style={{height:"15vh"}}>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;創立於2017年的BravoAI (洽吧智能)是一間AI公司，專注於研發、提供金融機構廣泛的軟體服務。運用其電腦視覺、自然語言處理、深度學習等AI專長，BravoAI協助人壽與保險公司研發核保、理賠等流程自動化的方案，不僅替客戶節省大量行政成本，也為公司打出了知名度。目前為止，BravoAI以達成台灣壽險市佔率第一，更計畫邁向國際化。<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BravoAI主要由創辦人趙式隆、執行長林奕辰與技術長沈昇勳帶領，團隊著重於技術基礎研究與應用技術解決實際問題。
+						<a id="column_readmore" href="#">read more...</a>
 					</div>
 					
 				</div>
-				<a id="column_readmore" href="#">read more...</a>
+				
 			</div>
 			<div id = "column_section">
-				<div id = "column_img">
-					<img src={Sep_image} alt="Sep. Image" width="480px" height="320px" />
+				<div id="column_img">
+					<img src={Sep_image} alt="Sep. Image" className="column_image" />
 				</div>
 				<div id = "column_text">
 					<div id = "column_info">
@@ -59,16 +60,17 @@ class Column extends Component{
 						碩士：台灣大學電機所(2014)<br/>
 						學士：台灣大學電機系(2012)<br/>
 					</div>
-					<div id = "column_prefix">
+					<div id = "column_prefix" style={{height:"24vh"}}>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李昀樵曾是李琳山教授語音實驗室的研究生，研究所時期除了研究外，更有進行小型創業，開發出新聞摘要軟件及搜尋公共腳踏車的APP，前者以兩萬元售出，後者成為該領域當時市占率最高的APP。之後，李昀樵加入17直播，監管每年五百萬的IT預算，帶領團隊從5人成長到107人，更將17 Media的首屏載入速度從4秒縮減到0.3秒，成為同業中最快速的。李昀樵在新創領域有豐富經驗，現更到Harvard MBA進修。
+						<a id="column_readmore" href="#">read more...</a>
 					</div>
 					
 				</div>
-				<a id="column_readmore" href="#">read more...</a>
+				
 			</div>
 			<div id = "column_section">
-				<div id = "column_img">
-					<img src={Aug_image} alt="Aug. Image" width="480px" height="320px" />
+				<div id="column_img">
+					<img src={Aug_image} alt="Aug. Image" className="column_image"/>
 				</div>
 				<div id = "column_text">
 					<div id = "column_info">
@@ -83,17 +85,18 @@ class Column extends Component{
 						＊學歷＊<br/>
 						博士：台灣大學電子所 (2013)<br/>
 						學士：台灣大學電機系 (2008)</div>
-					<div id = "column_prefix">
+					<div id = "column_prefix" style={{height:"24vh"}}>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2008畢業於台大電機，目前任職於臺灣科技大學的方劭云教授，僅僅不到十年的時間內已經取得了副教授的頭銜，能有這樣的榮譽，是背後無數國際期刊論文與比賽獲獎的支撐。<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方教授於IEEE/ACM網絡學報屢次發布論文，二度獲得該學報最佳論文獎的榮譽。自2016起更帶領台科大團隊於CAD Contest at ICCAD比賽中四度獲獎，為臺灣在EDA領域中頗具地位的人才。目前授課項目包括VLSI、邏輯設計、演算法、奈米積體電路實體設計，並持續於EDA、奈米積體電路實體設計、製造可行性/可靠性設計、ML設計最佳化等領域中深造。<br/>
+						<a id="column_readmore" href="#">read more...</a>
 					</div>
 					
 				</div>
-				<a id="column_readmore" href="#">read more...</a>
+				
 			</div>
 			<div id = "column_section">
-				<div id = "column_img">
-					<img src={Jul_image} alt="Jul. Image" width="480px" height="320px" />
+				<div id="column_img">
+					<img src={Jul_image} alt="Jul. Image" className="column_image"/>
 				</div>
 				<div id = "column_text">
 					<div id = "column_info">
@@ -109,12 +112,13 @@ class Column extends Component{
 						碩士：Computer Science/Computer Hardware , Stanford University<br/>
 						學士：台灣大學電機系 (2012)
 					</div>
-					<div id = "column_prefix">
+					<div id = "column_prefix" style={{height:"24vh"}}>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;王易如於史丹佛大學取得碩士學位後，經由世界最大黑克松Salesforce $1Million Hackathon籌組MoBagel（行動貝果），目前任職該新創的營運長。MoBagel 致力於讓機器學習落地，目標讓人工智慧普及化，主要方向為APU (Advanced Preprocessing Unit)，根據AI的應用類別來進行資料前處理，增加預測準確度，目前已經與台灣許多產業龍頭合作。
+						<a id="column_readmore" href="#">read more...</a>
 					</div>
 					
 				</div>
-				<a id="column_readmore" href="#">read more...</a>
+				
 			</div>
 			
 		</div>
