@@ -5,6 +5,7 @@ const ValidSend = require("./validation/controll");//若valid未通過則send fa
 var ValidTest = require("./validation/validation");
 var ImgGet = require('./middleware/multer');
 
+//out
 router.post("/login",
 	ValidTest('login'),
 	ValidSend,
@@ -20,6 +21,7 @@ router.post("/forget",
 	require("./srcs/out/forget"));
 router.get("/activation", require("./srcs/out/activation"));
 
+//in
 router.post("/showPersonal", require("./srcs/in/showPersonal"));
 router.post("/chLogin",
 	ValidTest('chLogin'),
@@ -30,6 +32,7 @@ router.post("/showVisual",require('./srcs/in/showVisual'));
 router.post("/chVisual",
 	ImgGet('userimage'),
 	require('./srcs/in/chVisual'));
-	
+router.post('/searchVisual',
+	require('./srcs/in/searchVisual'))
 
 module.exports = router;
