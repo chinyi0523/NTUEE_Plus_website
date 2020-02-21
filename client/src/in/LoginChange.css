@@ -1,6 +1,6 @@
 #LC_container{
     display: inline-block;
-    margin-left: 7%;
+    margin-left: 10%;
     font-family:'Noto Sans TC',Arial,sans-serif;
     color:white;
     font-size: 20px;
@@ -11,8 +11,9 @@
     font-style: italic;
     /*text-align: right;*/
     margin-bottom: 2%;
-    margin-top: -15.5%;
+    margin-top: -13.7%;
     border-bottom: 2px gray solid;
+    width:35vw;
 }
 #LC_refresh_btn{
     font-family:'Noto Sans TC',Arial,sans-serif;

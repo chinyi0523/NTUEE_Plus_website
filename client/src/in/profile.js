@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-//import ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 import './profile.css';
 import default_image from '../images/default_image.png';
 import axios from 'axios';
@@ -271,6 +271,7 @@ class Profile extends Component{
         }
     }
     render(){
+        
         let imagePreviewUrl = this.state.imagePreviewUrl;
         let $imagePreview = null;
         if (imagePreviewUrl){
@@ -412,7 +413,7 @@ class Profile extends Component{
 
                                         </tr>
                                         <div id="Profile_expand">
-                                            <table>
+                                            <table cellPadding="15">
                                         <tr>
                                                 <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>Double: </td>
                                                 <td style={{paddingBottom:"0"}}>

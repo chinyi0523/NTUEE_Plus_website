@@ -106,7 +106,7 @@ class Register extends Component{
 		}
         return(
 			<div>
-				<NavBar/>
+				<NavBar/> 
             <div id="Register_container">
 				
                 <div id="Register_register_table">

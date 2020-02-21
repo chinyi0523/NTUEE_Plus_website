@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import './column.css';
 import {NavBar_in} from '../component/AppBar_in';
 import Dec_image from '../images/column/1912_photo.jpg';
@@ -9,6 +10,7 @@ import Jul_image from '../images/column/1907_photo.JPG';
 
 class Column extends Component{
     render(){
+		
         return (
         <div id = "column_container">
 			<NavBar_in/>

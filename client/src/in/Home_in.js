@@ -8,7 +8,6 @@ class Home_in extends Component{
     render(){
         return (
         <div id="Home_in_container">
-            <NavBar_in/>
             <VisualChange />
             <LoginChange /> 
         {/*<div id = "Home_footer">

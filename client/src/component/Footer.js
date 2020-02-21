@@ -6,7 +6,7 @@ const Footer = () => {
       <div id = "Footer_div">
         <img id = "Footer_img" src = {eesa}></img>
         <p id="Footer_text">聯絡信箱:ntueesa@gmail.com<br/>
-                            台灣大學電機工程學系 系學會</p>
+        &nbsp;台灣大學電機工程學系 系學會</p>
       </div>
     );
   };

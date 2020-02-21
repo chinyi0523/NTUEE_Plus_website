@@ -4,6 +4,7 @@ html {
 #Support_up{
     display: flex;
     justify-content: center;
+    margin-left: 1vw;
 }
 #Support_up_text{
     position: absolute;
@@ -16,6 +17,7 @@ html {
 #Support_down{
     display: flex;
     justify-content: center;
+    margin-left: 1vw;
 }
 #Support_down_text{
     position: absolute;

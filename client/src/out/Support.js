@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import './Support.css';
 import eesa_icon from '../images/eesa-icon.png';
 import { NavBar } from '../component/AppBar';
-
+import Footer from "../component/Footer";
 class Support extends Component{
     render(){
         return (
         <div id="Support_container">
-            <NavBar/>
+        <NavBar/> 
             <div id="Support_up">
                 <h3 id="Support_up_text">
                     Your support is vital in enabling NTUEE+ to fulfill
@@ -23,11 +23,7 @@ class Support extends Component{
                 </p>
             </div>
             
-            <div id="Support_footer">
-                <img id="Support_logo" src={eesa_icon} alt="logo"></img>
-                <p id="Support_footer_text">聯絡信箱 : ntueesa@gmail.com</p>
-                <p id="Support_footer_text_2">台灣大學電機工程學系 系學會</p>
-            </div>
+            <footer id="index_footer"><Footer/></footer>
         </div>
         )
     }

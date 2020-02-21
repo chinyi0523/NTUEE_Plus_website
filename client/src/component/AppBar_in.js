@@ -12,11 +12,12 @@ const NavBar_in = () =>{
         <div id = "AppBar_in_root">
             <AppBar id= "AppBar_in_Bar">
                 <Toolbar>
-                    <div id="AppBar_in_Logo"><Link to="/Home_in"><Logo /></Link></div>
+                    <div id="AppBar_in_Logo"><Link to="/in"><Logo /></Link></div>
                     <div id = "AppBar_in_space"></div>
                     <div id = "AppBar_in_menu">
-                        <Link id = "AppBar_in_Link" to="/?"><Button id = "AppBar_in_menuButton">Working...</Button></Link>
-                        <Link id = "AppBar_in_Link" to="/Column"><Button id="AppBar_in_menuButton">Column</Button></Link>
+                        <Link id = "AppBar_in_Link" to="/in/Home_in"><Button id = "AppBar_in_menuButton">Profile</Button></Link>
+                        <Link id = "AppBar_in_Link" to="/in/Column"><Button id="AppBar_in_menuButton">Column</Button></Link>
+                        <Link id = "AppBar_in_Link" to="/in/Find"><Button id="AppBar_in_menuButton">Find</Button></Link>
                         <Link id = "AppBar_in_Link"><Logout id="AppBar_in_menuButton"/></Link>
                     </div>
                 </Toolbar>

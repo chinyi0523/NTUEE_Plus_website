@@ -1,5 +1,6 @@
 #Footer_div{
     height: 100px;
+    font-family:'Noto Sans TC',Arial,sans-serif;
 }
 
 #Footer_img{
@@ -7,7 +8,8 @@
     position: relative;
     height:50px;
     width: 85px;
-    margin:0;
+    margin-bottom: 2vh;
+    left: 1.7vw;
     
 }
 #Footer_text{

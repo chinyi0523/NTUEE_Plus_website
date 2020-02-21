@@ -4,6 +4,7 @@ import eesa_icon from '../images/eesa-icon.png';
 import left_image from '../images/left_image.png';
 import right_image from '../images/right_image.png';
 import { NavBar } from '../component/AppBar';
+import Footer from "../component/Footer";
 class Contact extends Component{
     render(){
         return (
@@ -25,11 +26,7 @@ class Contact extends Component{
                     B06901180
                 </p>
             </div>
-            <div id="Contact_footer">
-                <img id="Contact_logo" src={eesa_icon}  alt="logo"></img>
-                <p id="Contact_footer_text">聯絡信箱 : ntueesa@gmail.com</p>
-                <p id="Contact_footer_text_2">台灣大學電機工程學系 系學會</p>
-            </div>
+            <footer id="index_footer"><Footer/></footer>
         </div>
         )
     }

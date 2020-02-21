@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
 import eesa_icon from '../images/eesa-icon.png';
+import Footer from "../component/Footer";
 import { Link,Redirect } from 'react-router-dom';
 import axios from "axios";
 import { NavBar } from '../component/AppBar';
@@ -60,23 +61,23 @@ class Login extends Component{
 	
     render(){
 		if(this.state.isLogin){
-			return <Redirect to="/Home_in"/>
+			return <Redirect to="/in" />
 		}
 		
         return (
             <div id="Login_container">
-			<NavBar/>
+			<NavBar/> 
 			<form onSubmit={this.handleSubmit}>
                 <div id="Login_input">
                         <div id="Login_username">
                             <p id="Login_username_tag">Username:</p>
-                            <input id="Login_username_input" placeholder="username" autoFocus
+                            <input id="Login_username_input" className="Login_input" placeholder="username" autoFocus
 								value={this.state.value} onChange={this.handleInputChange}
 							></input>
                         </div>
                         <div id="Login_password1">
                             <p id="Login_password_tag">Password:</p>
-                            <input id="Login_password_input" placeholder="password" type="password"
+                            <input id="Login_password_input" className="Login_input" placeholder="password" type="password"
 								value={this.state.value} onChange={this.handleInputChange}
 							></input>
                         </div>
@@ -87,11 +88,13 @@ class Login extends Component{
                 </div>
                 <input id="Login_submit" type="submit" value="LOGIN"/>
             </form>
-                <div id="Login_footer">
+				
+                {/*<div id="Login_footer">
                     <img id="Login_logo" src={eesa_icon} alt="logo" ></img>
                     <p id="Login_footer_text">聯絡信箱 : ntueesa@gmail.com</p>
                     <p id="Login_footer_text_2">台灣大學電機工程學系 系學會</p>
-                </div>
+		</div>*/}
+		<footer id="index_footer"><Footer/></footer>
             </div>
         )
     }
