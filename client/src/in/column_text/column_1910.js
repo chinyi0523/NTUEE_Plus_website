@@ -6,7 +6,7 @@ class Column_1910 extends Component{
     render(){
         return (
 			<div id = "column_container">
-				<div id = "column_title" style={{marginTop:"8%"}} >
+				<div id = "column_titlepage" style={{marginTop:"8%"}} >
 					2016級 林奕辰 （Bravo AI 洽吧智能執行長）2014級 沈昇勳 （Bravo AI 洽吧智能技術長）
 				</div>
 				<div id = "column_text_background" >
