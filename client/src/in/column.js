@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Switch,Redirect,Route,Link} from "react-router-dom"
+import {column_1910_page } from "./column_text/column_pages";
 import ReactDOM from "react-dom";
 import './column.css';
 import {NavBar_in} from '../component/AppBar_in';
@@ -13,7 +15,9 @@ class Column extends Component{
 		
         return (
         <div id = "column_container">
-			<NavBar_in/>
+			<Switch>
+				<Route path="/in/Column/1910" component={column_1910_page} />
+			</Switch>
 			<div id = "column_section" style={{marginTop:"8%"}}>
 				<div id="column_img">
 					<img src={Dec_image} alt="Dec. Image" className="column_image" />
@@ -32,7 +36,7 @@ class Column extends Component{
 						博士：CMU ECE(2013)<br/>
 						學士：台灣大學電機系(2008)
 					</div>
-					<div id = "column_prefix" style={{height:"22vh"}}>
+					<div className = "column_prefix">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目前任職於 Google Brain 的團隊技術領導者和軟體主管工程師的鄭恆之，從事大規模機器學習的研究與軟體開發。在2013年加入 Googe 的實習生行列進行廣告排行的研究，僅僅花費不到三年的時間，就從實習生轉正職於 Google Research 的軟體工程師並且晉升 Google Brain 的技術領導與主管工程師，亮麗的職涯經歷背後是堅實的學術基礎與多篇國際期刊論文的支撐。<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。
 						<a id="column_readmore" href="#">Still Writing...</a>
@@ -64,10 +68,11 @@ class Column extends Component{
 						碩士：台灣大學電信所<br/>
 						學士：台灣大學電機系(2014)
 					</div>
-					<div id = "column_prefix" style={{height:"20vh"}}>
+					<div className = "column_prefix" id="column_sp">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;創立於2017年的BravoAI (洽吧智能)是一間AI公司，專注於研發、提供金融機構廣泛的軟體服務。運用其電腦視覺、自然語言處理、深度學習等AI專長，BravoAI協助人壽與保險公司研發核保、理賠等流程自動化的方案，不僅替客戶節省大量行政成本，也為公司打出了知名度。目前為止，BravoAI以達成台灣壽險市佔率第一，更計畫邁向國際化。<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BravoAI主要由創辦人趙式隆、執行長林奕辰與技術長沈昇勳帶領，團隊著重於技術基礎研究與應用技術解決實際問題。
-						<a id="column_readmore" href="/Column_1910">Now constructing...</a>
+						{/*<a id="column_readmore" href="/Column_1910">Now constructing...</a>*/}
+						<Link to="/in/Column/pages/1910">working...</Link>
 					</div>
 					
 				</div>
@@ -91,7 +96,7 @@ class Column extends Component{
 						碩士：台灣大學電機所(2014)<br/>
 						學士：台灣大學電機系(2012)<br/>
 					</div>
-					<div id = "column_prefix" style={{height:"30vh"}}>
+					<div className = "column_prefix" >
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李昀樵曾是李琳山教授語音實驗室的研究生，研究所時期除了研究外，更有進行小型創業，開發出新聞摘要軟件及搜尋公共腳踏車的APP，前者以兩萬元售出，後者成為該領域當時市占率最高的APP。之後，李昀樵加入17直播，監管每年五百萬的IT預算，帶領團隊從5人成長到107人，更將17 Media的首屏載入速度從4秒縮減到0.3秒，成為同業中最快速的。李昀樵在新創領域有豐富經驗，現更到Harvard MBA進修。
 						<a id="column_readmore" href="#">read more...</a>
 					</div>
@@ -116,7 +121,7 @@ class Column extends Component{
 						＊學歷＊<br/>
 						博士：台灣大學電子所 (2013)<br/>
 						學士：台灣大學電機系 (2008)</div>
-					<div id = "column_prefix" style={{height:"30vh"}}>
+					<div className = "column_prefix" >
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2008畢業於台大電機，目前任職於臺灣科技大學的方劭云教授，僅僅不到十年的時間內已經取得了副教授的頭銜，能有這樣的榮譽，是背後無數國際期刊論文與比賽獲獎的支撐。<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方教授於IEEE/ACM網絡學報屢次發布論文，二度獲得該學報最佳論文獎的榮譽。自2016起更帶領台科大團隊於CAD Contest at ICCAD比賽中四度獲獎，為臺灣在EDA領域中頗具地位的人才。目前授課項目包括VLSI、邏輯設計、演算法、奈米積體電路實體設計，並持續於EDA、奈米積體電路實體設計、製造可行性/可靠性設計、ML設計最佳化等領域中深造。<br/>
 						<a id="column_readmore" href="#">read more...</a>
@@ -143,7 +148,7 @@ class Column extends Component{
 						碩士：Computer Science/Computer Hardware , Stanford University<br/>
 						學士：台灣大學電機系 (2012)
 					</div>
-					<div id = "column_prefix" style={{height:"30vh"}}>
+					<div className = "column_prefix">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;王易如於史丹佛大學取得碩士學位後，經由世界最大黑克松Salesforce $1Million Hackathon籌組MoBagel（行動貝果），目前任職該新創的營運長。MoBagel 致力於讓機器學習落地，目標讓人工智慧普及化，主要方向為APU (Advanced Preprocessing Unit)，根據AI的應用類別來進行資料前處理，增加預測準確度，目前已經與台灣許多產業龍頭合作。
 						<a id="column_readmore" href="#">read more...</a>
 					</div>

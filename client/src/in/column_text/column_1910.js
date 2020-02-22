@@ -5,10 +5,10 @@ import {NavBar_in} from '../../component/AppBar_in';
 class Column_1910 extends Component{
     render(){
         return (
-			<div id = "column_title">
+			<div id = "column_title" >
 			2016級 林奕辰 （Bravo AI 洽吧智能執行長）<br/>
 			2014級 沈昇勳 （Bravo AI 洽吧智能技術長）
-		</div>
+			</div>
         /*<div id = "column_container">
 			<NavBar_in/>
 			<div id = "column_section" style={{marginTop:"8%"}}>
