@@ -20,12 +20,12 @@
 }
 #AppBar_in_space{
     display: inline-block;
-    flex-grow:3;
+    flex-grow:2;
     /* border:2px solid red; */
 }
 #AppBar_in_menu{
     display: inline-block;
-    flex-grow:2;
+    flex-grow:3;
     /* border:2px solid red; */
     
 }
@@ -34,17 +34,17 @@
     position: relative;
     /* border:2px solid green; */
     flex-grow: 1;
-    width: 25%;
+    width: 20%;
     height: 100%;
     margin:0;
     color:#6AFFC6;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     font-weight:Bold;
     text-decoration:none;
 }
 #AppBar_in_Link{
     color:#6AFFC6;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     font-weight:Bold;
     text-decoration:none;
 }

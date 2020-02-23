@@ -1,0 +1,11 @@
+#recruit_container {
+	position : relative;
+	font-family:'Noto Sans TC',Arial,sans-serif;
+}
+#recruit_study_text {
+	
+	font-size : 54px;
+}
+@media (max-width:500px){
+	
+}
