@@ -1,5 +1,15 @@
 # NTUEE_Plus_website
 
+### 0223進度 By君輔
+* 新增route/src/in/readDB.js，管理obj和output/input的轉換
+> * 如果回傳欄位是undefined就skip
+> * 如果回傳資料是''就用update->$unset把它刪掉
+> * 後端只會傳出除了''和undefined以外的資料減少網路流量消耗
+> * 前端傳入資料希望用成「被修改過的才傳回後端」（包括變成""刪除資料庫）
+* 待修正
+> * logout後端會找不到需刪除的檔案(因為session已自動刪掉?)，再改
+
+
 ### 0220工作分配 By謹譯 (更新明翰工作）
 第一次部聚前希望可以完成
 > **前端**
