@@ -30,7 +30,6 @@
 > * 該欄位必須使用者選擇show=true才會回傳
 > * 先用/api/test玩
 * 待修正/新增
-> * logout後端會找不到需刪除的檔案(噴ENOENT error)，再改
 > * occupation的資料傳輸(資料庫type用array希望讓使用者無限新增)
 > * 研究mongo的ref，將jobID和findJob資料庫串聯
 

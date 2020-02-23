@@ -141,5 +141,12 @@ module.exports.chDB = function(req){
 		output["userimage.contentType"] = req.file.mimetype
 		console.log('get img',output["userimage.contentType"])
 	}
-	return (Object.entries(unset).length === 0 && unset.constructor === Object)?({$set:output}):({$set:output,$unset:unset})
+	var re={}
+	var unsetEmpty = (Object.entries(unset).length === 0 && unset.constructor === Object)
+	var setEmpty = (Object.entries(output).length === 0 && output.constructor === Object)
+	//var re = (!setEmpty)?((!unsetEmpty)?({$set:output,$unset:unset}):({$set:output})):((!unsetEmpty)?({$unset:unset}):({}))
+	if(!unsetEmpty)(re.$unset=unset)
+	if(!setEmpty)(re.$set = output)
+	console.log('re',re)
+	return re;
 }
