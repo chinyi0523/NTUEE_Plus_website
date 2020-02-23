@@ -31,8 +31,9 @@ class Column extends Component{
 						2008級 鄭恆之 （Technical Lead Manager @ Google Brain）
 					</div>
 					<div id = "column_subtitle">
-						鄭恆之<br/>
+						＊經歷＊<br/>
 						現任：Google Brain Technical Lead Manager<br/>
+						＊學歷＊<br/>
 						博士：CMU ECE(2013)<br/>
 						學士：台灣大學電機系(2008)
 					</div>

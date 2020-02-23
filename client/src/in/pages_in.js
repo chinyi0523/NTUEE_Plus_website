@@ -18,4 +18,4 @@ const Main_in_page = () =>{
     return <Main_in/>
 }
 
-export {Home_in_page, Column_page, Main_in_page, Recruit_study_page};
+export {Home_in_page, Column_page,Recruit_study_page, Main_in_page};

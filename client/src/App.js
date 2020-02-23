@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Home_page,Login_page, Support_page,About_page ,Contact_page,Register_page,Forget_page } from './out/pages';
-import { Home_in_page, Column_page, Main_in_page } from './in/pages_in'; 
+import { Home_in_page, Column_page,Recruit_study_page, Main_in_page } from './in/pages_in'; 
 import { NavBar } from './component/AppBar'
 
 class App extends Component {
