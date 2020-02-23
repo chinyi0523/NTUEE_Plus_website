@@ -142,9 +142,9 @@ class Profile extends Component{
 						var sta = {}
 						map.forEach(elements=>{
 							var arr = elements[1].split('.')
-							var val = D[arr[0]]
+							var val = D;
 							var i;
-							for(i=1;i<arr.length;i++){
+							for(i=0;i<arr.length;i++){
 								val = val[arr[i]];
 								if(val===undefined){
 									val=(elements.length<=2)?'':elements[2]
@@ -217,9 +217,9 @@ class Profile extends Component{
             if (r){
 				var sta= new FormData();
 				map.forEach(elements=>{
-					//if(this.state[elements[0]]){
+					if(this.state[elements[0]]!==undefined){
 						sta.append(elements[1],this.state[elements[0]])
-					//}
+					}
 					//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
 				})
 				console.log('sta',sta)

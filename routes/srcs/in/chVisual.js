@@ -1,6 +1,6 @@
 //srcs/chLogin.js
 var user_v_Schema = require('../../Schemas/user_visual');
-
+var readDB = require('./readDB');
 module.exports = function (req, res, next) {
   var session_account = (req.session.loginAccount)
   if(!session_account){
@@ -16,17 +16,8 @@ module.exports = function (req, res, next) {
             if(obj.length === 1){
                 console.log('即將更改資料',obj);
 				console.log('req',req.body);
-				var input = req.body;
-				delete input.userimage;
-				if(req.file){
-					input["userimage"]={
-						data:req.file.buffer,
-						contentType:req.file.mimetype
-					}
-					console.log(input.userimage)
-				}
-				console.log('img=',input.userimage)
-				user_v_Schema.updateOne({"account.data":session_account},{$set:input},function(err,result){
+				var update = readDB.chDB(req);
+				user_v_Schema.updateOne({"account.data":session_account},update,function(err,result){
 					console.log("result=",result);
 					if (err) {
 						console.log(err);
