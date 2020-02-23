@@ -46,7 +46,12 @@ class Profile extends Component{
 	
     constructor(props){
         super(props);
-        this.state = {
+        var tmpCh = {}
+		map.forEach(element=>{
+			tmpCh[element[0]] = false
+		})
+		
+		this.state = {
             clicktime : 0,
             userimage : {default_image},
             imagePreviewUrl:"",
@@ -76,8 +81,8 @@ class Profile extends Component{
             
             work_O_3:"",
             work_P_3:"",
-            work_C_3:"" //will add button to add work experience
-
+            work_C_3:"", //will add button to add work experience
+			hasChanged:tmpCh,
         };
 
         this.handleInputChange = this.handleInputChange.bind(this)
@@ -141,6 +146,7 @@ class Profile extends Component{
 						var D = res.data.data;
 						var sta = {}
 						map.forEach(elements=>{
+							//(elements[0]==="userimage") && (elements
 							var arr = elements[1].split('.')
 							var val = D;
 							var i;
@@ -165,24 +171,26 @@ class Profile extends Component{
 	handleImageChange(e){
         //e.preventDefault();
         let reader = new FileReader();
+		if(e.target.files.length===0) return;
         let file = e.target.files[0];
-        console.log("t",e.target)
         this.setState({
             userimage:file
         })
+
         reader.onloadend = () =>{
             console.log("onloadend");
-        this.setState({
-            imagePreviewUrl:reader.result
-        });
+			this.setState({
+				imagePreviewUrl:reader.result
+			});
         }
         try {
             reader.readAsDataURL(file)
         } catch (error) {
             
         }
-        
-        console.log(this.state.userimage)
+		var hasChanged = {...this.state.hasChanged}
+		hasChanged.userimage = true;
+		this.setState({hasChanged})
     }
 
 	handleCheckChange(event){
@@ -192,6 +200,9 @@ class Profile extends Component{
         this.setState({
             [name]:!this.state[name]
         });
+		var hasChanged = {...this.state.hasChanged}
+		hasChanged[name] = true;
+		this.setState({hasChanged})
 	}
 	
     handleInputChange(event) {
@@ -204,6 +215,9 @@ class Profile extends Component{
         this.setState({
             [name]:value
         });
+		var hasChanged = {...this.state.hasChanged}
+		hasChanged[name] = true;
+		this.setState({hasChanged})
     }
 
     handleSubmit(event){
@@ -217,7 +231,7 @@ class Profile extends Component{
             if (r){
 				var sta= new FormData();
 				map.forEach(elements=>{
-					if(this.state[elements[0]]!==undefined){
+					if(this.state.hasChanged[elements[0]] && this.state[elements[0]]!==undefined){
 						sta.append(elements[1],this.state[elements[0]])
 					}
 					//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
@@ -260,6 +274,11 @@ class Profile extends Component{
                         if (res.data){
                             if (res.data.message === true){ 
                                 alert("修改成功!");
+									var hasChanged = {...this.state.hasChanged}
+									map.forEach(element=>{
+										hasChanged[element[0]] = false;
+									})
+									this.setState({hasChanged});
                                 //window.location = ? in's router hasn't done yet
                             }else{
                                 alert("錯誤: \n"+res.data.description);
@@ -272,7 +291,7 @@ class Profile extends Component{
     }
     render(){
         
-        let imagePreviewUrl = this.state.imagePreviewUrl;
+        {/*let imagePreviewUrl = this.state.imagePreviewUrl;
         let $imagePreview = null;
         if (imagePreviewUrl){
 			console.log('use it!')
@@ -280,7 +299,7 @@ class Profile extends Component{
         }else{
 			console.log('use default')
             $imagePreview = (<img src={default_image} id="Profile_userimage" alr="userimage"></img>)
-        }
+        }*/}
         return (
             <div id="Profile_container">
                 <div id="hr0">Profile Setting</div>
@@ -288,11 +307,13 @@ class Profile extends Component{
                 <p id="Profile_public">Public</p>
                 <form id="Profile_loginform" onSubmit={this.handleSubmit}>
                     <div id="Profile_userimage_container">
-                        {$imagePreview}
+					{/*$imagePreview*/}
+						<img src={this.state.imagePreviewUrl} id="Profile_userimage" alt="userimage"></img>
                         <label id="Profile_userimage_change">
                         <input type="file"
                          onChange = {this.handleImageChange}
                          name = "userimage"
+						 accept = "image/*"
                          style = {{display:"none"}}></input>
                          <span id="Profile_addImage_icon">➕ <p style={{display:"inline",fontSize:"14px"}}>Add Head Shot</p></span>
                         </label>

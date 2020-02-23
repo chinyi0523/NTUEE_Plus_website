@@ -114,8 +114,8 @@ module.exports.search = function(req){
 module.exports.chDB = function(req){
 	//update $set 的讀值規則(用xxx.xxx或xxx.$.xxx(用在array))
 	//https://docs.mongodb.com/manual/reference/operator/update/set/
-	output = {}
-	unset = {}
+	var output = {}
+	var unset = {}
 	column1.forEach(element=>{
 		if(element!='account'){
 			if(req.body[element+'.data']!==undefined){
@@ -135,11 +135,11 @@ module.exports.chDB = function(req){
 		}
 	})
 	console.log('set=',output)
-	console.log('unset=',unset)
+	console.log('unset=',unset,unset.length)
 	if(req.file){
 		output["userimage.data"] = req.file.buffer
 		output["userimage.contentType"] = req.file.mimetype
 		console.log('get img',output["userimage.contentType"])
 	}
-	return {$set:output,$unset:unset}
+	return (Object.entries(unset).length === 0 && unset.constructor === Object)?({$set:output}):({$set:output,$unset:unset})
 }
