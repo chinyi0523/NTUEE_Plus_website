@@ -1,17 +1,7 @@
 # NTUEE_Plus_website
 
-### 0223進度 By君輔
-* 新增route/src/in/readDB.js，管理obj和output/input的轉換，優化與profile的溝通
-> * 如果回傳欄位是undefined就skip
-> * 如果回傳資料是""就用update->$unset把它刪掉
-> * 後端只會傳出除了""和undefined以外的資料減少網路流量消耗
-> * 前端傳入資料用hasChanged讓被修改過的才傳回後端（包括變成""刪除資料庫）
-> * profile圖片上傳的bug修正(原本按cancel會讓file變成undefined)
-* 待修正
-> * logout後端會找不到需刪除的檔案(因為session已自動刪掉?)，再改
 
-
-### 0220工作分配 By謹譯 (更新明翰工作）
+### 0220工作分配 By謹譯 (更新明翰工作）(置頂?)
 第一次部聚前希望可以完成
 > **前端**
 > 有兩位生力軍 明翰 建琁加入
@@ -25,6 +15,24 @@
 > * 君輔：Merge東西，處理Profile
 > * 維恩＆宗倫：研究搜尋的相關/Find Job頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
+
+### 0223進度 By君輔
+* 新增route/src/in/readDB.js，管理obj和output/input的轉換，優化與profile的溝通
+> * 如果回傳欄位是undefined就skip
+> * 如果回傳資料是""就用update->$unset把它刪掉
+> * 後端只會傳出除了""和undefined以外的資料減少網路流量消耗
+> * 前端傳入資料用hasChanged讓被修改過的才傳回後端（包括變成""刪除資料庫）
+> * profile圖片上傳的bug修正(原本按cancel會讓file變成undefined)
+* 新增/api/test頁面可以充當前端
+> * url代表目標網址
+> * textarea寫post的data，\n區隔不同pair，一個pair用空格區分key/value
+* 後端新增/api/searchVisual，依據除了工作以外的欄位可查詢其餘使用者
+> * 該欄位必須使用者選擇show=true才會回傳
+> * 先用/api/test玩
+* 待修正/新增
+> * logout後端會找不到需刪除的檔案(噴ENOENT error)，再改
+> * occupation的資料傳輸(資料庫type用array希望讓使用者無限新增)
+> * 研究mongo的ref，將jobID和findJob資料庫串聯
 
 ### 0222更新 By友廷&謹譯
 > * Column
