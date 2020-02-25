@@ -15,6 +15,11 @@
 > * 維恩＆宗倫：研究搜尋的相關/Find Job頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
+### 0225進度 By友廷
+* Profile
+> * 目前Occupation的部分可以自由新增或減少，資料傳遞部分可能要後端處理一下
+> * 新增一些icon或動畫
+
 ### 0223進度 By謹譯
 * 新增App Bar in 一按鈕 Recruit Study 與 Recruit Study 頁面，其功能簡介如下
 * Recruit
