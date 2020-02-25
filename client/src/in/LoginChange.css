@@ -17,20 +17,35 @@
 }
 #LC_refresh_btn{
     font-family:'Noto Sans TC',Arial,sans-serif;
+    padding: 0;
     background-color:  #003f67;
     color: #fff;
     border: 2px #fff solid;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
+    height: 2.5vw;
+    width: 2.5vw;
 }
 #LC_refresh_btn:hover{
-    transition-property: background-color, color;
+    /*transition-property: background-color, color;
     transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
     transition-duration: 250ms, 250ms;
     background-color: #fff;
     color: #003f67;
-    font-weight: bold;
+    font-weight: bold;*/
+}
+#LC_refresh_icon{
+    height:2vw;
+    width: 2vw;
+    transform: rotate(0deg);
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    transition-duration: 0.7s;
+}
+#LC_refresh_icon:hover{
+    transform: rotate(360deg);
+
 }
 #LC_table tr>td:first-child{
     text-align: center;

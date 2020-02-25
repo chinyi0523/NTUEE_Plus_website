@@ -2,11 +2,25 @@ import React,{ Component } from 'react';
 import ReactDOM from "react-dom";
 import './profile.css';
 import default_image from '../images/default_image.png';
+import remove_icon from '../images/remove_icon.png';
+import add_icon from "../images/add_icon.png";
+import show_less from "../images/show_less.png";
+import show_more from "../images/show_more.png";
+
+
 import axios from 'axios';
 
 //import { NavBar } from '../component/AppBar';
 //import ReactDOM from 'react-dom';
-
+//const remove_icon = <svg t="1582553044501" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw"><path d="M512 938.666667C276.362667 938.666667 85.333333 747.637333 85.333333 512S276.362667 85.333333 512 85.333333s426.666667 191.029333 426.666667 426.666667-191.029333 426.666667-426.666667 426.666667z m0-64c200.298667 0 362.666667-162.368 362.666667-362.666667S712.298667 149.333333 512 149.333333 149.333333 311.701333 149.333333 512s162.368 362.666667 362.666667 362.666667zM352 480h320a32 32 0 0 1 0 64H352a32 32 0 0 1 0-64z" p-id="2601" fill="#1296db" data-spm-anchor-id="a313x.7781069.0.i1" class="selected"></path></svg>
+/*const makeSVG = function(tag,attrs){
+    let el = document.createElementNS('http://www.w3.org/2000/svg',tag);
+    for (var k in attrs){
+        el.setAttribute(k,attrs[k]);
+        
+    }
+    return el;
+}*/
 const map = [
 		["userimage","userimage",default_image],
 		["realname_checkbox","username.show"],
@@ -52,6 +66,7 @@ class Profile extends Component{
 		})
 		
 		this.state = {
+            Occupation_number:3,
             clicktime : 0,
             userimage : {default_image},
             imagePreviewUrl:"",
@@ -90,14 +105,34 @@ class Profile extends Component{
         this.handleSubmit = this.handleSubmit.bind(this)
         this.expandDiploma = this.expandDiploma.bind(this)
         this.handleImageChange = this.handleImageChange.bind(this)
-        this.test = this.test.bind(this);
+        this.addOccupation = this.addOccupation.bind(this)
+        this.removeOccupation = this.removeOccupation.bind(this)
     }
     
 	
 	
     expandDiploma(event){
         event.preventDefault();
+        let expand_icon = document.getElementById("Profile_expand_icon")
+        let expand_icon_parent = expand_icon.parentNode;
+        let show_more_icon = function(){
+            let icon = document.createElement("img");
+            icon.setAttribute("src",show_more);
+            icon.setAttribute("alt","show_more");
+            icon.setAttribute("id","Profile_expand_icon");
+            return icon;
+
+        }
+        
+        let show_less_icon = function(){
+            let icon = document.createElement("img");
+            icon.setAttribute("src",show_less);
+            icon.setAttribute("alt","show_less");
+            icon.setAttribute("id","Profile_expand_icon");
+            return icon;
+        }
         if (this.state.clicktime % 2 === 0){
+            expand_icon_parent.replaceChild(show_less_icon(),expand_icon);
             document.getElementById("hr3").style.marginTop = "30%";
             document.getElementById("hr3").style.transitionDuration = "0.5s";
             document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
@@ -111,6 +146,7 @@ class Profile extends Component{
             
         //document.getElementById("Profile_expand").style.border = "gray 2px solid"
         }else{
+            expand_icon_parent.replaceChild(show_more_icon(),expand_icon)
             document.getElementById("hr3").style.transitionDuration = "0.5s";
             document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
             document.getElementById("hr3").style.marginTop = "2%";
@@ -127,9 +163,66 @@ class Profile extends Component{
         this.setState({clicktime:this.state.clicktime+1})
         
     };
-    test = () => (
-        document.getElementById("Profile_expand").style.opacity = "0"
-    );
+    
+    addOccupation(e){
+        e.preventDefault();
+        this.setState({
+            Occupation_number:this.state.Occupation_number+1
+        })
+        var OT = document.getElementById("Profile_occupation_table");
+        //var i;
+        let num = this.state.Occupation_number;
+        var new_tr = document.createElement("tr");
+        new_tr.setAttribute("id",`Profile_occupation_row_${num+1}`)
+        
+        var new_input_O = document.createElement("input");
+        var new_input_P = document.createElement("input");
+        var new_input_C = document.createElement("input");
+        var remove_btn = document.createElement("button");
+        new_input_O.onchange = this.handleInputChange;
+        new_input_P.onchange = this.handleInputChange;
+        new_input_C.onchange = this.handleInputChange;
+        remove_btn.onclick = this.removeOccupation;
+        new_input_O.setAttribute("name",`work_O_${num+1}`);
+        new_input_P.setAttribute("name",`work_P_${num+1}`);
+        new_input_C.setAttribute("name",`work_C_${num+1}`);
+        remove_btn.setAttribute("id","Profile_removeOccupation")
+        var new_img = document.createElement("img")
+        new_img.setAttribute("src",remove_icon)
+        new_img.setAttribute("class","Profile_remove_icon")
+        new_img.setAttribute("alt","remove_icon")
+        remove_btn.appendChild(new_img);
+        //remove_btn.innerHTML = remove_icon;
+        //var new_td;
+        let new_td_1 = document.createElement("td");
+        new_td_1.appendChild(new_input_O);
+        new_tr.appendChild(new_td_1);
+        let new_td_2 = document.createElement("td");
+        new_td_2.appendChild(new_input_P);
+        new_tr.appendChild(new_td_2);
+        let new_td_3 = document.createElement("td");
+        new_td_3.appendChild(new_input_C);
+        new_tr.appendChild(new_td_3);
+        let new_td_4 = document.createElement("td");
+        new_td_4.appendChild(remove_btn);
+        new_tr.appendChild(new_td_4);
+
+        OT.appendChild(new_tr);
+    }
+    
+    removeOccupation(e){
+        e.preventDefault();
+        
+        var delete_tr = e.target.parentNode.parentNode.parentNode;
+        var delete_tr_parent = delete_tr.parentNode;
+        delete_tr_parent.removeChild(delete_tr);
+
+        this.setState({
+            Occupation_number:this.state.Occupation_number-1
+        })
+
+        console.log(this.state.Occupation_number)
+    }
 
     
     componentWillMount(){
@@ -430,7 +523,7 @@ class Profile extends Component{
                                                 
                                                 <input id="Profile_diploma_bachelor_major" value = {this.state.diploma_bachelor_major} onChange = {this.handleInputChange} name="diploma_bachelor_major"></input>
                                             </td>
-                                            <td style={{paddingLeft:"10%"}}><button id="Profile_diploma_expand_button" onClick={this.expandDiploma}>Expand</button></td>
+                                            <td style={{paddingLeft:"10%"}}><button id="Profile_diploma_expand_button" onClick={this.expandDiploma}><img id="Profile_expand_icon" src={show_more} alt="show_more"></img></button></td>
 
                                         </tr>
                                         <div id="Profile_expand">
@@ -483,43 +576,51 @@ class Profile extends Component{
                                         <th>Occupation</th>
                                         <th>Position</th>
                                         <th>Company</th>
+                                        <th>
+                                        <button onClick={this.addOccupation} id="Profile_addOccupation"><img src={add_icon} alt="add_icon" className="Profile_remove_icon"></img></button>
+                                        </th>
                                     </tr>
                                 </thead>
-                                <tr>
+                                <tr id="Profile_occupation_row_1">
                                     <td><input placeholder="Front-End" name="work_O_1" 
                                     value = {this.state.work_O_1} onChange = {this.handleInputChange}></input></td>
                                     <td><input placeholder="Sub-Leader" name="work_P_1" 
                                     value = {this.state.work_P_1} onChange = {this.handleInputChange}></input></td>
                                     <td><input placeholder="NTUEE+" name="work_C_1" 
                                     value = {this.state.work_C_1} onChange = {this.handleInputChange}></input></td>
+                                    <td><button onClick={this.removeOccupation} id="Profile_removeOccupation"><img src={remove_icon} alt="remove_icon" className="Profile_remove_icon"></img></button></td>
                                 </tr>
-                                <tr>
+                                <tr id="Profile_occupation_row_2">
                                     <td><input name="work_O_2"
                                     value = {this.state.work_O_2} onChange = {this.handleInputChange}></input></td>
                                     <td><input name="work_P_2"
                                     value = {this.state.work_P_2} onChange = {this.handleInputChange}></input></td>
                                     <td><input name="work_C_2"
                                     value = {this.state.work_C_2} onChange = {this.handleInputChange}></input></td>
+                                    <td><button onClick={this.removeOccupation} id="Profile_removeOccupation"><img src={remove_icon} alt="remove_icon" className="Profile_remove_icon"></img></button></td>
                                 </tr>
-                                <tr>
+                                <tr id="Profile_occupation_row_3">
                                     <td><input name="work_O_3"
                                     value = {this.state.work_O_3} onChange = {this.handleInputChange}></input></td>
                                     <td><input name="work_P_3"
                                     value = {this.state.work_P_3} onChange = {this.handleInputChange}></input></td>
                                     <td><input name="work_C_3"
                                     value = {this.state.work_C_3} onChange = {this.handleInputChange}></input></td>
+                                    <td><button onClick={this.removeOccupation} id="Profile_removeOccupation"><img src={remove_icon} alt="remove_icon" className="Profile_remove_icon"></img></button></td>
                                 </tr>
                             </table>
                             <div style={{marginTop:"5%",height:"7vh"}}>
                                 <p>Job ID</p>
                                 <input id="Profile_JobID" name="JobID" value = {this.state.JobID} onChange = {this.handleInputChange}></input>
+                                <input id="Profile_submit_btn" type="submit" value="Update Profile" />
                             </div>
                         </div>         
-                   <input id="Profile_submit_btn" type="submit" value="Update Profile" />
+                   
                     </div>
                     
                 
                 </form>
+                
                 </div>
                 
                 {/*<div id="Profile_latest_news">
@@ -535,6 +636,7 @@ class Profile extends Component{
                     </div>
 
         </div>*/}
+        
             </div>
         )
     }

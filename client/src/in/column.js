@@ -155,7 +155,7 @@ class Column extends Component{
 					</div>
 					
 				</div>
-				r
+				
 			</div>
 			
 		</div>

@@ -145,7 +145,7 @@
     margin:0;
     float: left;
 }
-#Profile_more_info div>input ,td>input{
+#Profile_more_info input:not(#Profile_submit_btn) {
     font-family:'Noto Sans TC',Arial,sans-serif;
     color: white;
     background-color: #003F67;
@@ -220,23 +220,29 @@
     z-index: -1;
 }
 #Profile_diploma_expand_button{
-    /*height:200%;
-    width:200%;*/
     background-color:  #003f67;
+    border: 0;
+    /*height:200%;
+    width:200%;
+    
     color: #fff;
     border: 2px #fff solid;
     border-radius: 10px;
     font-weight: bold;
-    cursor: pointer;
+    cursor: pointer;*/
 }
-#Profile_diploma_expand_button:hover{
+#Profile_expand_icon{
+    height:2vw;
+    width:2vw;
+}
+/*#Profile_diploma_expand_button:hover{
     transition-property: background-color, color;
     transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
     transition-duration: 250ms, 250ms;
     background-color: #fff;
     color: #003f67;
     font-weight: bold;
-}
+}*/
 #Profile_diploma_master_input{
     display: inline;
 }
@@ -266,7 +272,26 @@
     margin-top: 2%;
     margin-bottom: 0 !important; 
 }
-
+#Profile_addOccupation{
+    margin-top: 1.5vh;
+    background-color: #003F67;
+    border: 0;
+    height:2vw;
+}
+#Profile_removeOccupation{
+    background-color: #003F67;
+    border: 0;
+    /*width:2vw;
+    height: 2vw;
+    color: rgb(63,151,206);
+    font-size: 1vw;
+    border-radius: 1vw;
+    border: 3px rgb(63, 151, 206) solid;*/
+}
+.Profile_remove_icon{
+    height:2vw;
+    width:2vw;
+}
 #Profile_occupation_container{
     height:45vh !important;
     margin-bottom: 0 !important;
@@ -296,8 +321,8 @@
     margin-left: 30%;
     margin-top: 5%;
     margin-bottom: 5%;
-    width:30%;
-    height: 10%;
+    width:15vw;
+    height: 6vh;
     background-color:  #003f67;
     color: #fff;
     border: 2px #fff solid;

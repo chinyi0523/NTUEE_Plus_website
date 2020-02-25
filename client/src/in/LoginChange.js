@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./LoginChange.css"
 import axios from "axios";
+import refresh from "../images/refresh.png"
 
 class LoginChange extends Component {
 	constructor(props) {
@@ -49,6 +50,7 @@ class LoginChange extends Component {
 	}
 	
 	btn_click=e=>{
+		console.log("hi")
 		e.preventDefault();
 		this.showPersonal();
 	}
@@ -82,7 +84,7 @@ class LoginChange extends Component {
 			<div description="personalInfo" id="LC_container">
 			  <div id="LC_hr">Security Question Reset</div>
 			  <form onSubmit={this.handleSubmit} >
-			  <button id="LC_refresh_btn" /*onClick={"this.btn_click"}*/>refresh</button>
+			  <button id="LC_refresh_btn" onClick={this.btn_click}><img src={refresh} alt="refresh" id="LC_refresh_icon"></img></button>
 			  {/*<img src={this.state.img} />*/}
 			  <table id = "LC_table" cellSpacing="10">
 				<tr>
