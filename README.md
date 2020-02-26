@@ -15,6 +15,10 @@
 > * 維恩＆宗倫：研究搜尋的相關/Find Job頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
+### 0225建議 By謹譯
+* Profile
+> * 電話類一個expand (home office mobile)
+> * 社群網站一個expand (Facebook Linkedin Blog)
 ### 0225進度 By友廷
 * Profile
 > * 目前Occupation的部分可以自由新增或減少，資料傳遞部分可能要後端處理一下
