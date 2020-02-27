@@ -1,4 +1,12 @@
 //ee0125/index.js
+/* https */
+const https = require('https')
+const fs = require('fs')
+const options = {
+  key: fs.readFileSync('./certificate.key'),
+  cert: fs.readFileSync('./certificate.crt')
+};
+
 var express = require('express');
 var app = express();
 const path = require('path');
@@ -40,8 +48,14 @@ app.get('*', (req, res) => {
   //res.redirect('/'); //這個按F5會亂跳，先捨棄
 });
 
-
+// connect to https://localhost:1993
+https.createServer(options, app).listen(1993, function() {
+  console.log('server connect');
+  console.log('port name: ', process.env.PORT||1993);
+});
+/*
 var server = app.listen(process.env.PORT||1993,function(){
     console.log('server connect');
 	console.log('port name: ',process.env.PORT||1993);
 })
+*/
