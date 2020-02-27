@@ -15,6 +15,12 @@
 > * 維恩＆宗倫：研究搜尋的相關/Find Job頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
+### 0227 進度 By 建翰
+* Certification
+> * 在 index.js 中增加 https 認證
+> * 根目錄增加 certificate.crt 與 certificate.key
+> * npm run local 完之後，網址輸入 https://localhost:1993
+
 ### 0225建議 By謹譯
 * Profile
 > * 電話類一個expand (home office mobile)
