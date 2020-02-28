@@ -15,6 +15,12 @@
 > * 維恩＆宗倫：研究搜尋的相關/Find Job頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
+### 0228 進度 By 友廷
+* Profile
+> * 新增expand在phone和social media上
+> * 縮放排版初步工作，需要再調整
+> * expand效果加強中
+
 ### 0227 進度 By 建翰
 * Certification
 > * 在 index.js 中增加 https 認證
