@@ -19,6 +19,9 @@ module.exports = function (req, res, next) {
 				var update = readDB.chDB(req);
 				user_v_Schema.updateOne({"account.data":session_account},update,function(err,result){
 					console.log("result=",result);
+					user_v_Schema.updateOne({"account.data":session_account},
+					{$pull:{"Occupation":null}},
+					function(err2,result2){console.log('resu=',result2)});
 					if (err) {
 						console.log(err);
 						return res.send({status:'success',message:false, description:err});

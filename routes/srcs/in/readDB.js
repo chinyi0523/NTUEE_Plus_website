@@ -151,7 +151,7 @@ module.exports.chDB = function(req){
 		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Remove']))){
 			//key = work_O、P、C_{index}
 			var arr = key.split('_')
-			unset[column3+'.'+(arr[2]-1)] = 1//mongo 目前沒有辦法簡單地remove array's element，只能靠unset + pull null
+			unset[column3+'.'+(arr[1]-1)] = 1//mongo 目前沒有辦法簡單地remove array's element，只能靠unset + pull null
 		}
 	}
 	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Insert')){
@@ -168,7 +168,7 @@ module.exports.chDB = function(req){
 			pushArr.push(item[key])
 			console.log('push item',item[key])
 		})
-		re.$push = {'Occupation':pushArr}
+		re.$push = {'Occupation':{$each:pushArr}}
 	}
 	
 	console.log('set=',output)

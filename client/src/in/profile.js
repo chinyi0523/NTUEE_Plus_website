@@ -162,7 +162,6 @@ class Profile extends Component{
     
     addOccupation(haveVal){
         //e.preventDefault();
-		console.log('haveVal',haveVal);
 		if(haveVal){
 			var toSet = {Occupation_number:this.state.Occupation_number+1}
 		}else{
@@ -177,10 +176,10 @@ class Profile extends Component{
 			var OT = document.getElementById("Profile_occupation_table");
 			//var i;
 			let num = this.state.Occupation_number;
-			console.log('num',num)
+			console.log('num',num);
 			var new_tr = document.createElement("tr");
 			new_tr.setAttribute("id",`Profile_occupation_row_${num}`)
-			
+			new_tr.setAttribute("name",`work_${num}`);
 			var new_input_O = document.createElement("input");
 			var new_input_P = document.createElement("input");
 			var new_input_C = document.createElement("input");
@@ -225,6 +224,12 @@ class Profile extends Component{
         
         var delete_tr = e.target.parentNode.parentNode.parentNode;
         var delete_tr_parent = delete_tr.parentNode;
+		console.log("toDelete name",delete_tr.getAttribute("name"));
+		var hasChanged = {...this.state.hasChanged}
+		hasChanged[delete_tr.getAttribute("name")] = true;
+		this.setState({hasChanged})
+		
+		
         delete_tr_parent.removeChild(delete_tr);
 
         /*this.setState({
@@ -232,7 +237,7 @@ class Profile extends Component{
         })*/
 		//這樣的話刪掉倒數第二個再按新增，會有重複的
 
-        console.log(this.state.Occupation_number)
+        //console.log(this.state.Occupation_number)
     }
 
     
@@ -263,18 +268,20 @@ class Profile extends Component{
 							}
 							sta[elements[0]]=val;
 						})
-						res.data.data.Occupation.forEach((item,index)=>{
-							sta[`work_O_${index}`] = (item.O===undefined)?'':item.O;
-							sta[`work_P_${index}`] = (item.P===undefined)?'':item.P;
-							sta[`work_C_${index}`] = (item.C===undefined)?'':item.C;
-							sta[`work_show_${index}`] = item.show
-							console.log('index',index);
-							this.addOccupation(true);
-						})
 						sta.InitWorkNum = res.data.data.Occupation.length;
 						sta.imagePreviewUrl = sta.userimage;
 						console.log('sta=',sta)
 						this.setState(sta);
+						res.data.data.Occupation.forEach((item,index)=>{
+							this.setState({
+								[`work_O_${index+1}`] : (item.O===undefined)?'':item.O,
+								[`work_P_${index+1}`] : (item.P===undefined)?'':item.P,
+								[`work_C_${index+1}`] : (item.C===undefined)?'':item.C,
+								[`work_show_${index+1}`] : item.show
+							},function(){
+								this.addOccupation(true)
+							});
+						})
 					}else{
 						alert('錯誤：\n'+res.data.description);
 					}
