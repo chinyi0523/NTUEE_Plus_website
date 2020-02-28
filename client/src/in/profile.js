@@ -67,7 +67,7 @@ class Profile extends Component{
 		
 		this.state = {
             Occupation_number:3,
-            clicktime : 0,
+            //clicktime : 0,
             userimage : {default_image},
             imagePreviewUrl:"",
             realname : "",
@@ -111,56 +111,52 @@ class Profile extends Component{
     
 	
 	
-    expandDiploma(event){
-        event.preventDefault();
-        let expand_icon = document.getElementById("Profile_expand_icon")
+    expandDiploma(elem,elemDown,elemIcon,downheight,origheight){
+        let expand_icon = document.getElementById(elemIcon);
         let expand_icon_parent = expand_icon.parentNode;
+        let expand_elem = document.getElementById(elem);
+        let moving_elem = document.getElementById(elemDown);
         let show_more_icon = function(){
             let icon = document.createElement("img");
             icon.setAttribute("src",show_more);
             icon.setAttribute("alt","show_more");
-            icon.setAttribute("id","Profile_expand_icon");
+            icon.setAttribute("id",elemIcon);
+            icon.setAttribute("class","Profile_expand_icon");
             return icon;
-
         }
-        
         let show_less_icon = function(){
             let icon = document.createElement("img");
             icon.setAttribute("src",show_less);
             icon.setAttribute("alt","show_less");
-            icon.setAttribute("id","Profile_expand_icon");
+            icon.setAttribute("id",elemIcon);
+            icon.setAttribute("class","Profile_expand_icon");
             return icon;
         }
-        if (this.state.clicktime % 2 === 0){
+
+        if (expand_icon.alt==="show_more"){
             expand_icon_parent.replaceChild(show_less_icon(),expand_icon);
-            document.getElementById("hr3").style.marginTop = "30%";
-            document.getElementById("hr3").style.transitionDuration = "0.5s";
-            document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
-            document.getElementById("Profile_expand").style.transitionProperty = "opacity";
+            moving_elem.style.marginTop = downheight;
+            moving_elem.style.transitionDuration = "0.5s";
+            expand_elem.style.transitionDuration = "0.5s";
+            expand_elem.style.transitionProperty = "opacity";
             setTimeout(()=>{
-                document.getElementById("Profile_expand").style.display = "block";
-                
+                expand_elem.style.display = "block";
             },1);
-            document.getElementById("Profile_expand").style.opacity = "0";
-            setTimeout(()=>{document.getElementById("Profile_expand").style.opacity = "1";},100);
-            
-        //document.getElementById("Profile_expand").style.border = "gray 2px solid"
-        }else{
-            expand_icon_parent.replaceChild(show_more_icon(),expand_icon)
-            document.getElementById("hr3").style.transitionDuration = "0.5s";
-            document.getElementById("Profile_expand").style.transitionDuration = "0.5s";
-            document.getElementById("hr3").style.marginTop = "2%";
-            document.getElementById("Profile_expand").style.opacity = "0";
+            expand_elem.style.opacity = "0";
             setTimeout(()=>{
-                document.getElementById("Profile_expand").style.display = "None";
+                expand_elem.style.opacity="1";
+            },100);
+        }else{
+            expand_icon_parent.replaceChild(show_more_icon(),expand_icon);
+            moving_elem.style.transitionDuration = "0.5s";
+            expand_elem.style.transitionDuration = "0.5s";
+            moving_elem.style.marginTop = origheight;
+            expand_elem.style.opacity = "0";
+            setTimeout(()=>{
+                expand_elem.style.display = "none";
             },500);
-            /*ReactDOM.render(
-                <div></div>,document.getElementById("Profile_expand")
-            )*/
-            
-            
+
         }
-        this.setState({clicktime:this.state.clicktime+1})
         
     };
     
@@ -446,7 +442,23 @@ class Profile extends Component{
                         <input type="email" id="Profile_email" value = {this.state.email} onChange = {this.handleInputChange} name="email"></input>
                         </div>
                         <div>
+                        <p id="Profile_address_tag">Living Address:</p>
+                        <input type="checkbox"
+							checked = {this.state.address_checkbox}
+							onChange = {this.handleCheckChange}
+							name="address_checkbox"
+						></input>
+                        <input type="address" id="address" value = {this.state.address} onChange = {this.handleInputChange} name="address"></input>
+                        </div>
+                        <div>
                         <p id="Profile_phone_company_tag">Phone(Company):</p>
+                        <button className="Profile_expand_button" 
+                                                onClick={(e)=>{
+                                                    e.preventDefault();
+                                                    this.expandDiploma("Profile_expand_phone","hr4","Profile_expand_icon_1","17vh","0vh")}}>
+                                                    <img className="Profile_expand_icon" id="Profile_expand_icon_1" src={show_more} alt="show_more">
+                                                    </img>
+                                                </button>
                         <input type="checkbox"
 							checked = {this.state.phone_company_checkbox}
 							onChange = {this.handleCheckChange}
@@ -454,6 +466,7 @@ class Profile extends Component{
 						></input>
                         <input id="Profile_phone_company" value = {this.state.phone_company} onChange = {this.handleInputChange} name="phone_company"></input>
                         </div>
+                        <div id="Profile_expand_phone">
                         <div>
                         <p id="Profile_phone_home_tag">Phone(Home):</p>
                         <input type="checkbox"
@@ -463,7 +476,7 @@ class Profile extends Component{
 						></input>
                         <input id="Profile_phone_home" value = {this.state.phone_home} onChange = {this.handleInputChange} name="phone_home"></input>
                         </div>
-                        <div>
+                        <div style={{marginBottom:"5vh"}}>
                         <p id="Profile_mobile_tag">Mobile:</p>
                         <input type="checkbox"
 							checked = {this.state.mobile_checkbox}
@@ -472,15 +485,25 @@ class Profile extends Component{
 						></input>
                         <input id="Profile_mobile" value = {this.state.mobile} onChange = {this.handleInputChange} name="mobile"></input>
                         </div>
-                        <div>
-                        <p id="Profile_address_tag">Living Address:</p>
-                        <input type="checkbox"
-							checked = {this.state.address_checkbox}
-							onChange = {this.handleCheckChange}
-							name="address_checkbox"
-						></input>
-                        <input type="address" id="address" value = {this.state.address} onChange = {this.handleInputChange} name="address"></input>
                         </div>
+                        <div id="hr4">Social Media</div>
+                        <div>
+                        <p id="Profile_FB_tag">Facebook:</p>
+                        <button className="Profile_expand_button" 
+                                                onClick={(e)=>{
+                                                    e.preventDefault();
+                                                    this.expandDiploma("Profile_expand_social_media","hr2","Profile_expand_icon_2","5vh","0vh")}}>
+                                                    <img className="Profile_expand_icon" id="Profile_expand_icon_2" src={show_more} alt="show_more">
+                                                    </img>
+                                                </button>
+                        <input type="checkbox"
+							checked = {this.state.facebook_checkbox}
+							onChange = {this.handleCheckChange}
+							name="facebook_checkbox"
+						></input>
+                        <input id="Profile_FB" value = {this.state.facebook} onChange = {this.handleInputChange} name="facebook"></input>
+                        </div>
+                        <div id="Profile_expand_social_media">
                         <div>
                         <p id="Profile_personal_website_tag">Blog:</p>
                         <input type="checkbox"
@@ -491,15 +514,6 @@ class Profile extends Component{
                         <input id="Profile_personal_website" value = {this.state.personal_website} onChange = {this.handleInputChange} name="personal_website"></input>
                         </div>
                         <div>
-                        <p id="Profile_FB_tag">Facebook:</p>
-                        <input type="checkbox"
-							checked = {this.state.facebook_checkbox}
-							onChange = {this.handleCheckChange}
-							name="facebook_checkbox"
-						></input>
-                        <input id="Profile_FB" value = {this.state.facebook} onChange = {this.handleInputChange} name="facebook"></input>
-                        </div>
-                        <div>
                         <p id="Profile_Linkedin_tag">Linkedin:</p>
                         <input type="checkbox"
 							checked = {this.state.Linkedin_checkbox}
@@ -507,6 +521,7 @@ class Profile extends Component{
 							name="Linkedin_checkbox"
 						></input>
                         <input id="Profile_Linkedin" value = {this.state.Linkedin} onChange = {this.handleInputChange} name="Linkedin"></input>
+                        </div>
                         </div>
                 <div id="hr2">Diploma</div>
                         <div id="Profile_diploma_container">
@@ -523,10 +538,18 @@ class Profile extends Component{
                                                 
                                                 <input id="Profile_diploma_bachelor_major" value = {this.state.diploma_bachelor_major} onChange = {this.handleInputChange} name="diploma_bachelor_major"></input>
                                             </td>
-                                            <td style={{paddingLeft:"10%"}}><button id="Profile_diploma_expand_button" onClick={this.expandDiploma}><img id="Profile_expand_icon" src={show_more} alt="show_more"></img></button></td>
+                                            <td style={{paddingLeft:"10%"}}>
+                                                <button className="Profile_expand_button" 
+                                                onClick={(e)=>{
+                                                    e.preventDefault();
+                                                    this.expandDiploma("Profile_expand_diploma","hr3","Profile_expand_icon_3","30vh","7vh")}}>
+                                                    <img className="Profile_expand_icon" id="Profile_expand_icon_3" src={show_more} alt="show_more">
+                                                    </img>
+                                                </button>
+                                            </td>
 
                                         </tr>
-                                        <div id="Profile_expand">
+                                        <div id="Profile_expand_diploma">
                                             <table cellPadding="15">
                                         <tr>
                                                 <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>Double: </td>
