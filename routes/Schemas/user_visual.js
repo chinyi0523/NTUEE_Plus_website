@@ -80,8 +80,9 @@ var User_visual_Schema = new Schema({
   },
   Occupation:[{
 	show:{type:Boolean,default:true},
-	title:{type:String},
-	Company:{type:String}
+	O:{type:String},//部門?
+	P:{type:String},//職稱?
+	C:{type:String}//公司?
   }],
   JobID:{type:String},//有空去查一下mongoose的ref和populate
   userimage: {//大頭貼

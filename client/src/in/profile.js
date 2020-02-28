@@ -186,6 +186,9 @@ class Profile extends Component{
         new_input_O.setAttribute("name",`work_O_${num+1}`);
         new_input_P.setAttribute("name",`work_P_${num+1}`);
         new_input_C.setAttribute("name",`work_C_${num+1}`);
+		new_input_O.setAttribute("value",this.state[`work_O_${num+1}`]);
+		new_input_P.setAttribute("value",this.state[`work_P_${num+1}`]);
+		new_input_C.setAttribute("value",this.state[`work_C_${num+1}`]);
         remove_btn.setAttribute("id","Profile_removeOccupation")
         var new_img = document.createElement("img")
         new_img.setAttribute("src",remove_icon)
@@ -217,9 +220,10 @@ class Profile extends Component{
         var delete_tr_parent = delete_tr.parentNode;
         delete_tr_parent.removeChild(delete_tr);
 
-        this.setState({
+        /*this.setState({
             Occupation_number:this.state.Occupation_number-1
-        })
+        })*/
+		//這樣的話刪掉倒數第二個再按新增，會有重複的
 
         console.log(this.state.Occupation_number)
     }
@@ -251,6 +255,12 @@ class Profile extends Component{
 								}
 							}
 							sta[elements[0]]=val;
+						})
+						res.data.data.Occupation.forEach((item,index)=>{
+							sta[`work_O_${index}`] = (item.O===undefined)?'':item.O;
+							sta[`work_P_${index}`] = (item.P===undefined)?'':item.P;
+							sta[`work_C_${index}`] = (item.C===undefined)?'':item.C;
+							sta[`work_show_${index}`] = item.show
 						})
 						sta.imagePreviewUrl = sta.userimage;
 						console.log('sta=',sta)
