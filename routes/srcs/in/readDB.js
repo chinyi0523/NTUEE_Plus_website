@@ -116,6 +116,7 @@ module.exports.chDB = function(req){
 	//https://docs.mongodb.com/manual/reference/operator/update/set/
 	var output = {}
 	var unset = {}
+	var re={}
 	column1.forEach(element=>{
 		if(element!='account'){
 			if(req.body[element+'.data']!==undefined){
@@ -134,14 +135,50 @@ module.exports.chDB = function(req){
 			(req.body[ele+'.Note']==='')? (unset[ele+'.Note']="") : (output[ele+'.Note']=req.body[ele+'.Note'])
 		}
 	})
+	
+	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Modify')){
+		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Modify']))){
+			//key = work_O、P、C_{index}
+			var arr = key.split('_')
+			if(val===''){
+				unset[column3+'.'+(arr[2]-1)+'.'+arr[1]] = ''
+			}else{
+				output[column3+'.'+(arr[2]-1)+'.'+arr[1]] = val
+			}
+		}
+	}
+	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Remove')){
+		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Remove']))){
+			//key = work_O、P、C_{index}
+			var arr = key.split('_')
+			unset[column3+'.'+(arr[2]-1)] = 1//mongo 目前沒有辦法簡單地remove array's element，只能靠unset + pull null
+		}
+	}
+	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Insert')){
+		var item = {}
+		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Insert']))){
+			console.log('insert',key,val);
+			var arr = key.split('_');
+			if(!item.hasOwnProperty(arr[2])) item[arr[2]] = {};
+			item[arr[2]][arr[1]] = val;
+		}
+		console.log('insert item',item)
+		var pushArr = []
+		Object.keys(item).sort().forEach(key=>{
+			pushArr.push(item[key])
+			console.log('push item',item[key])
+		})
+		re.$push = {'Occupation':pushArr}
+	}
+	
 	console.log('set=',output)
-	console.log('unset=',unset,unset.length)
+	console.log('unset=',unset)
 	if(req.file){
 		output["userimage.data"] = req.file.buffer
 		output["userimage.contentType"] = req.file.mimetype
 		console.log('get img',output["userimage.contentType"])
 	}
-	var re={}
+
 	var unsetEmpty = (Object.entries(unset).length === 0 && unset.constructor === Object)
 	var setEmpty = (Object.entries(output).length === 0 && output.constructor === Object)
 	//var re = (!setEmpty)?((!unsetEmpty)?({$set:output,$unset:unset}):({$set:output})):((!unsetEmpty)?({$unset:unset}):({}))

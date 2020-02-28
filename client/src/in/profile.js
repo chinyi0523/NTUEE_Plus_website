@@ -66,7 +66,7 @@ class Profile extends Component{
 		})
 		
 		this.state = {
-            Occupation_number:3,
+            Occupation_number:0,
             //clicktime : 0,
             userimage : {default_image},
             imagePreviewUrl:"",
@@ -160,53 +160,64 @@ class Profile extends Component{
         
     };
     
-    addOccupation(e){
-        e.preventDefault();
-        this.setState({
-            Occupation_number:this.state.Occupation_number+1
-        })
-        var OT = document.getElementById("Profile_occupation_table");
-        //var i;
-        let num = this.state.Occupation_number;
-        var new_tr = document.createElement("tr");
-        new_tr.setAttribute("id",`Profile_occupation_row_${num+1}`)
-        
-        var new_input_O = document.createElement("input");
-        var new_input_P = document.createElement("input");
-        var new_input_C = document.createElement("input");
-        var remove_btn = document.createElement("button");
-        new_input_O.onchange = this.handleInputChange;
-        new_input_P.onchange = this.handleInputChange;
-        new_input_C.onchange = this.handleInputChange;
-        remove_btn.onclick = this.removeOccupation;
-        new_input_O.setAttribute("name",`work_O_${num+1}`);
-        new_input_P.setAttribute("name",`work_P_${num+1}`);
-        new_input_C.setAttribute("name",`work_C_${num+1}`);
-		new_input_O.setAttribute("value",this.state[`work_O_${num+1}`]);
-		new_input_P.setAttribute("value",this.state[`work_P_${num+1}`]);
-		new_input_C.setAttribute("value",this.state[`work_C_${num+1}`]);
-        remove_btn.setAttribute("id","Profile_removeOccupation")
-        var new_img = document.createElement("img")
-        new_img.setAttribute("src",remove_icon)
-        new_img.setAttribute("class","Profile_remove_icon")
-        new_img.setAttribute("alt","remove_icon")
-        remove_btn.appendChild(new_img);
-        //remove_btn.innerHTML = remove_icon;
-        //var new_td;
-        let new_td_1 = document.createElement("td");
-        new_td_1.appendChild(new_input_O);
-        new_tr.appendChild(new_td_1);
-        let new_td_2 = document.createElement("td");
-        new_td_2.appendChild(new_input_P);
-        new_tr.appendChild(new_td_2);
-        let new_td_3 = document.createElement("td");
-        new_td_3.appendChild(new_input_C);
-        new_tr.appendChild(new_td_3);
-        let new_td_4 = document.createElement("td");
-        new_td_4.appendChild(remove_btn);
-        new_tr.appendChild(new_td_4);
+    addOccupation(haveVal){
+        //e.preventDefault();
+		console.log('haveVal',haveVal);
+		if(haveVal){
+			var toSet = {Occupation_number:this.state.Occupation_number+1}
+		}else{
+			var toSet = {
+				Occupation_number:this.state.Occupation_number+1,
+				[`work_O_${this.state.Occupation_number+1}`]:'',
+				[`work_P_${this.state.Occupation_number+1}`]:'',
+				[`work_C_${this.state.Occupation_number+1}`]:'',
+			}
+		}
+        this.setState(toSet,function(){
+			var OT = document.getElementById("Profile_occupation_table");
+			//var i;
+			let num = this.state.Occupation_number;
+			console.log('num',num)
+			var new_tr = document.createElement("tr");
+			new_tr.setAttribute("id",`Profile_occupation_row_${num}`)
+			
+			var new_input_O = document.createElement("input");
+			var new_input_P = document.createElement("input");
+			var new_input_C = document.createElement("input");
+			var remove_btn = document.createElement("button");
+			new_input_O.onchange = this.handleInputChange;
+			new_input_P.onchange = this.handleInputChange;
+			new_input_C.onchange = this.handleInputChange;
+			remove_btn.onclick = this.removeOccupation;
+			new_input_O.setAttribute("name",`work_O_${num}`);
+			new_input_P.setAttribute("name",`work_P_${num}`);
+			new_input_C.setAttribute("name",`work_C_${num}`);
+			new_input_O.setAttribute("value",this.state[`work_O_${num}`]);
+			new_input_P.setAttribute("value",this.state[`work_P_${num}`]);
+			new_input_C.setAttribute("value",this.state[`work_C_${num}`]);
+			remove_btn.setAttribute("id","Profile_removeOccupation")
+			var new_img = document.createElement("img")
+			new_img.setAttribute("src",remove_icon)
+			new_img.setAttribute("class","Profile_remove_icon")
+			new_img.setAttribute("alt","remove_icon")
+			remove_btn.appendChild(new_img);
+			//remove_btn.innerHTML = remove_icon;
+			//var new_td;
+			let new_td_1 = document.createElement("td");
+			new_td_1.appendChild(new_input_O);
+			new_tr.appendChild(new_td_1);
+			let new_td_2 = document.createElement("td");
+			new_td_2.appendChild(new_input_P);
+			new_tr.appendChild(new_td_2);
+			let new_td_3 = document.createElement("td");
+			new_td_3.appendChild(new_input_C);
+			new_tr.appendChild(new_td_3);
+			let new_td_4 = document.createElement("td");
+			new_td_4.appendChild(remove_btn);
+			new_tr.appendChild(new_td_4);
 
-        OT.appendChild(new_tr);
+			OT.appendChild(new_tr);
+		})
     }
     
     removeOccupation(e){
@@ -257,7 +268,10 @@ class Profile extends Component{
 							sta[`work_P_${index}`] = (item.P===undefined)?'':item.P;
 							sta[`work_C_${index}`] = (item.C===undefined)?'':item.C;
 							sta[`work_show_${index}`] = item.show
+							console.log('index',index);
+							this.addOccupation(true);
 						})
+						sta.InitWorkNum = res.data.data.Occupation.length;
 						sta.imagePreviewUrl = sta.userimage;
 						console.log('sta=',sta)
 						this.setState(sta);
@@ -335,6 +349,34 @@ class Profile extends Component{
 					}
 					//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
 				})
+				var toModify = {}
+				var toRemove = {}
+				var toInsert = {}
+				for(var workL = 1;workL<=this.state.InitWorkNum;workL++){
+					console.log('workL0',workL)
+					if(this.state.hasChanged[`work_${workL}`]===true){
+						toRemove[`work_${workL}`] = 1
+					}else{
+						(['O','P','C']).forEach(word=>{
+							if(this.state.hasChanged[`work_${word}_${workL}`]){
+								toModify[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
+							}
+						})
+					}
+				}
+				if(Object.entries(toModify).length!==0) sta.append('Occupation.Modify',JSON.stringify(toModify))
+				if(Object.entries(toRemove).length!==0)  sta.append('Occupation.Remove',JSON.stringify(toRemove))
+				for(var workL = this.state.InitWorkNum+1;workL<=this.state.Occupation_number;workL++){
+					console.log('workL',workL);
+					(['O','P','C']).forEach(word=>{
+						console.log('word',word)
+						if(this.state.hasChanged[`work_${word}_${workL}`]){
+							toInsert[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
+						}
+					})
+				}
+				console.log('insert',toInsert)
+				if(Object.entries(toInsert).length!==0)  sta.append('Occupation.Insert',JSON.stringify(toInsert))
 				console.log('sta',sta)
 				const config = {
 					headers: {
@@ -463,12 +505,12 @@ class Profile extends Component{
                         <div>
                         <p id="Profile_phone_company_tag">Phone(Company):</p>
                         <button className="Profile_expand_button" 
-                                                onClick={(e)=>{
-                                                    e.preventDefault();
-                                                    this.expandDiploma("Profile_expand_phone","hr4","Profile_expand_icon_1","17vh","0vh")}}>
-                                                    <img className="Profile_expand_icon" id="Profile_expand_icon_1" src={show_more} alt="show_more">
-                                                    </img>
-                                                </button>
+							onClick={(e)=>{
+								e.preventDefault();
+								this.expandDiploma("Profile_expand_phone","hr4","Profile_expand_icon_1","17vh","0vh")}}>
+								<img className="Profile_expand_icon" id="Profile_expand_icon_1" src={show_more} alt="show_more">
+								</img>
+						</button>
                         <input type="checkbox"
 							checked = {this.state.phone_company_checkbox}
 							onChange = {this.handleCheckChange}
@@ -610,11 +652,14 @@ class Profile extends Component{
                                         <th>Position</th>
                                         <th>Company</th>
                                         <th>
-                                        <button onClick={this.addOccupation} id="Profile_addOccupation"><img src={add_icon} alt="add_icon" className="Profile_remove_icon"></img></button>
+                                        <button onClick={(e)=>{
+											e.preventDefault();
+											this.addOccupation(false);
+										}} id="Profile_addOccupation"><img src={add_icon} alt="add_icon" className="Profile_remove_icon"></img></button>
                                         </th>
                                     </tr>
                                 </thead>
-                                <tr id="Profile_occupation_row_1">
+                                {/*<tr id="Profile_occupation_row_1">
                                     <td><input placeholder="Front-End" name="work_O_1" 
                                     value = {this.state.work_O_1} onChange = {this.handleInputChange}></input></td>
                                     <td><input placeholder="Sub-Leader" name="work_P_1" 
@@ -640,7 +685,7 @@ class Profile extends Component{
                                     <td><input name="work_C_3"
                                     value = {this.state.work_C_3} onChange = {this.handleInputChange}></input></td>
                                     <td><button onClick={this.removeOccupation} id="Profile_removeOccupation"><img src={remove_icon} alt="remove_icon" className="Profile_remove_icon"></img></button></td>
-                                </tr>
+                                </tr>*/}
                             </table>
                             <div style={{marginTop:"5%",height:"7vh"}}>
                                 <p>Job ID</p>
