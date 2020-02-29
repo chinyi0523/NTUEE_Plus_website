@@ -15,6 +15,20 @@
 > * 維恩＆宗倫：研究搜尋的相關/Find Job頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
+### 0228進度 By君輔
+* chVisual中針對Ocupation新增三個傳送方法：
+> * Occupation.Modify，傳遞單個須修改的欄位值(一樣""代表unset)
+> * Occupation.Remove，傳遞待刪除的一整行資料(mongo中沒有有效移除array element的方法，只能用unset再pull null)
+> * Occupation.Insert，push新的一行資料
+* 此流程會出現的bug
+> * 對於一行全部""是否(在後端)自動刪除？
+> * 因為是按照work_X_${num}決定順序，傳遞一次後(因為array被刪除)序號就會對不上，前端更新的原則該是什麼?
+> * 可能的解決方法：用array中每個obj獨有的_id進行追蹤，但這樣好像就失去array的意義
+* 一些想改的東西
+> * profile真的太冗了啦，感覺一些function可以提到外面去寫(???
+> * 只要前端有改東西就要重新build一次才能跑，好像有點麻煩
+	(p.s.不知道是不是大家都知道：如果只有後端有修正的話只要打npm start就可以了
+
 ### 0228 進度 By 友廷
 * Profile
 > * 新增expand在phone和social media上
