@@ -107,6 +107,7 @@ class Profile extends Component{
         this.handleImageChange = this.handleImageChange.bind(this)
         this.addOccupation = this.addOccupation.bind(this)
         this.removeOccupation = this.removeOccupation.bind(this)
+        this.checkboxDisplay = this.checkboxDisplay.bind(this)
     }
     
 	
@@ -145,13 +146,16 @@ class Profile extends Component{
             expand_elem.style.opacity = "0";
             setTimeout(()=>{
                 expand_elem.style.opacity="1";
+                this.checkboxDisplay();
             },100);
+            
         }else{
             expand_icon_parent.replaceChild(show_more_icon(),expand_icon);
             moving_elem.style.transitionDuration = "0.5s";
             expand_elem.style.transitionDuration = "0.5s";
             moving_elem.style.marginTop = origheight;
             expand_elem.style.opacity = "0";
+            this.checkboxDisplay();
             setTimeout(()=>{
                 expand_elem.style.display = "none";
             },500);
@@ -159,7 +163,21 @@ class Profile extends Component{
         }
         
     };
-    
+    checkboxDisplay(){
+        let checkboxs = document.getElementsByClassName("Profile_diploma_checkbox");
+        console.log(checkboxs)
+        if(document.getElementById("Profile_expand_icon_3").alt === "show_more"){
+            console.log("show_more");
+            [...checkboxs].forEach(checkbox => checkbox.style.display = "none");
+            
+            
+            
+
+        }else{
+            console.log("show_less");
+            [...checkboxs].forEach(checkbox => checkbox.style.display = "block");
+        }
+    }
     addOccupation(haveVal){
         //e.preventDefault();
 		if(haveVal){
@@ -451,7 +469,7 @@ class Profile extends Component{
         return (
             <div id="Profile_container">
                 <div id="hr0">Profile Setting</div>
-                <div id="Profile_information">
+                <div id="Profile_information"> 
                 <p id="Profile_public">Public</p>
                 <form id="Profile_loginform" onSubmit={this.handleSubmit}>
                     <div id="Profile_userimage_container">
@@ -468,21 +486,24 @@ class Profile extends Component{
                     </div>
                     
                     <div id="Profile_info">
-                        <div id="Profile_small_cont1">
-                            <p id="Profile_realname_tag">RealName:</p>
+                        <div id="Profile_name">
+                            <ul className="Profile_ul" id="Profile_name_list">
+                                <li><p id="Profile_realname_tag">RealName:</p>
                             <input type="checkbox" id="Profile_realname_checkbox" 
 							checked = {this.state.realname_checkbox}
                             onChange = {this.handleCheckChange}
 							name="realname_checkbox"></input>
                             <input type="text" id="Profile_realname" value = {this.state.realname} onChange = {this.handleInputChange} name="realname"></input>
-                        </div>
-                        <div id="Profile_small_cont2">
-                            <p id="Profile_nickname_tag">Nickname:</p>
+                                </li>
+                                <li>
+                                <p id="Profile_nickname_tag">Nickname:</p>
                             <input type="checkbox" id="Profile_nickname_checkbox"
 							checked = {this.state.nickname_checkbox}
                             onChange = {this.handleCheckChange}
 							name="nickname_checkbox"></input>
                             <input type="text" id="Profile_nickname" value = {this.state.nickname} onChange = {this.handleInputChange} name="nickname"></input>
+                                </li>
+                            </ul>
                         </div>
                         <div>
                             <p id="Profile_shortintro_tag">簡介:</p>
@@ -491,30 +512,31 @@ class Profile extends Component{
                     </div>
                     <div id="hr1">How to Contact</div> 
                     <div id="Profile_more_info">
-                        <div>
-                        <p id="Profile_email_tag">E-mail:</p>
-                        <input type="checkbox"
+                        <ul className="Profile_ul" id="Profile_contact_us">
+                            <li>
+                                <p id="Profile_email_tag">E-mail:</p>
+                                <input type="checkbox"
 						checked = {this.state.email_checkbox}
                         onChange = {this.handleCheckChange}
 						name="email_checkbox"
-						></input>
-                        <input type="email" id="Profile_email" value = {this.state.email} onChange = {this.handleInputChange} name="email"></input>
-                        </div>
-                        <div>
-                        <p id="Profile_address_tag">Living Address:</p>
+						        ></input>
+                                <input type="email" id="Profile_email" value = {this.state.email} onChange = {this.handleInputChange} name="email"></input>
+                            </li>
+                            <li>
+                            <p id="Profile_address_tag">Living Address:</p>
                         <input type="checkbox"
 							checked = {this.state.address_checkbox}
 							onChange = {this.handleCheckChange}
 							name="address_checkbox"
 						></input>
                         <input type="address" id="address" value = {this.state.address} onChange = {this.handleInputChange} name="address"></input>
-                        </div>
-                        <div>
-                        <p id="Profile_phone_company_tag">Phone(Company):</p>
+                            </li>
+                            <li>
+                            <p id="Profile_phone_company_tag">Phone(Company):</p>
                         <button className="Profile_expand_button" 
 							onClick={(e)=>{
 								e.preventDefault();
-								this.expandDiploma("Profile_expand_phone","hr4","Profile_expand_icon_1","17vh","0vh")}}>
+								this.expandDiploma("Profile_expand_phone","hr4","Profile_expand_icon_1","5vh","0vh")}}>
 								<img className="Profile_expand_icon" id="Profile_expand_icon_1" src={show_more} alt="show_more">
 								</img>
 						</button>
@@ -524,34 +546,40 @@ class Profile extends Component{
 							name="phone_company_checkbox"
 						></input>
                         <input id="Profile_phone_company" value = {this.state.phone_company} onChange = {this.handleInputChange} name="phone_company"></input>
-                        </div>
+                            </li>
+                        </ul>
                         <div id="Profile_expand_phone">
-                        <div>
-                        <p id="Profile_phone_home_tag">Phone(Home):</p>
+                            <ul className="Profile_ul" id="Profile_phone_list">
+                                <li>
+                                <p id="Profile_phone_home_tag">Phone(Home):</p>
                         <input type="checkbox"
 							checked = {this.state.phone_home_checkbox}
 							onChange = {this.handleCheckChange}
 							name="phone_home_checkbox"
 						></input>
                         <input id="Profile_phone_home" value = {this.state.phone_home} onChange = {this.handleInputChange} name="phone_home"></input>
-                        </div>
-                        <div style={{marginBottom:"5vh"}}>
-                        <p id="Profile_mobile_tag">Mobile:</p>
+                                </li>
+                                <li>
+                                <p id="Profile_mobile_tag">Mobile:</p>
                         <input type="checkbox"
 							checked = {this.state.mobile_checkbox}
 							onChange = {this.handleCheckChange}
 							name="mobile_checkbox"
 						></input>
                         <input id="Profile_mobile" value = {this.state.mobile} onChange = {this.handleInputChange} name="mobile"></input>
+                                </li>
+                            </ul>
                         </div>
-                        </div>
+                    
                         <div id="hr4">Social Media</div>
-                        <div>
-                        <p id="Profile_FB_tag">Facebook:</p>
+                        <div id="Profile_social_media">
+                            <ul className="Profile_ul" id="Profile_social_media_list">
+                                <li>
+                                <p id="Profile_FB_tag">Facebook:</p>
                         <button className="Profile_expand_button" 
                                                 onClick={(e)=>{
                                                     e.preventDefault();
-                                                    this.expandDiploma("Profile_expand_social_media","hr2","Profile_expand_icon_2","5vh","0vh")}}>
+                                                    this.expandDiploma("Profile_expand_social_media","hr2","Profile_expand_icon_2","5vh","2vh")}}>
                                                     <img className="Profile_expand_icon" id="Profile_expand_icon_2" src={show_more} alt="show_more">
                                                     </img>
                                                 </button>
@@ -561,47 +589,71 @@ class Profile extends Component{
 							name="facebook_checkbox"
 						></input>
                         <input id="Profile_FB" value = {this.state.facebook} onChange = {this.handleInputChange} name="facebook"></input>
-                        </div>
-                        <div id="Profile_expand_social_media">
-                        <div>
-                        <p id="Profile_personal_website_tag">Blog:</p>
+                                </li>
+                            </ul>
+                            <div id="Profile_expand_social_media">
+                                <ul className="Profile_ul">
+                                    <li>
+                                    <p id="Profile_personal_website_tag">Blog:</p>
                         <input type="checkbox"
 							checked = {this.state.personal_website_checkbox}
 							onChange = {this.handleCheckChange}
 							name="personal_website_checkbox"
 						></input>
                         <input id="Profile_personal_website" value = {this.state.personal_website} onChange = {this.handleInputChange} name="personal_website"></input>
-                        </div>
-                        <div>
-                        <p id="Profile_Linkedin_tag">Linkedin:</p>
+                                    </li>
+                                    <li>
+                                    <p id="Profile_Linkedin_tag">Linkedin:</p>
                         <input type="checkbox"
 							checked = {this.state.Linkedin_checkbox}
 							onChange = {this.handleCheckChange}
 							name="Linkedin_checkbox"
 						></input>
                         <input id="Profile_Linkedin" value = {this.state.Linkedin} onChange = {this.handleInputChange} name="Linkedin"></input>
-                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                 <div id="hr2">Diploma</div>
                         <div id="Profile_diploma_container">
                             <div style={{marginBottom:"2%"}}></div>
                             <div id="Profile_diploma">
+                                
+                                <input type="checkbox" className="Profile_diploma_checkbox"
+                                                    checked = {this.state.dm_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                name="dm_checkbox"
+                                                style={{bottom:"60%"}}></input>
+                                <input type="checkbox" className="Profile_diploma_checkbox"
+                                                    checked = {this.state.master_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                    name="master_checkbox"
+                                                    style={{bottom:"35%"}}></input>
+                                <input type="checkbox" className="Profile_diploma_checkbox"
+                                                    checked = {this.state.doctor_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                    name="doctor_checkbox"
+                                                    style={{bottom:"10%"}}
+                                        ></input>
+                                  
                                     <table id="Profile_diploma_choosebox_table">
                                         <tr>
                                             <td colSpan="2" style={{paddingLeft:"0"}}>Bachelor Major: </td>
                                             <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                <input type="checkbox" id="Profile_bachelor_major_checkbox"
+                                                <input type="checkbox" id="Profile_diploma_major_checkbox"
 												checked = {this.state.major_checkbox}
 												onChange = {this.handleCheckChange}
-												name="major_checkbox"></input>
+                                                name="major_checkbox"></input>
                                                 
                                                 <input id="Profile_diploma_bachelor_major" value = {this.state.diploma_bachelor_major} onChange = {this.handleInputChange} name="diploma_bachelor_major"></input>
                                             </td>
                                             <td style={{paddingLeft:"10%"}}>
-                                                <button className="Profile_expand_button" 
+                                                <button className="Profile_expand_button"
                                                 onClick={(e)=>{
                                                     e.preventDefault();
-                                                    this.expandDiploma("Profile_expand_diploma","hr3","Profile_expand_icon_3","30vh","7vh")}}>
+                                                    this.expandDiploma("Profile_expand_diploma","hr3","Profile_expand_icon_3","30vh","7vh")
+                                                    
+                                                    }}>
                                                     <img className="Profile_expand_icon" id="Profile_expand_icon_3" src={show_more} alt="show_more">
                                                     </img>
                                                 </button>
@@ -609,7 +661,7 @@ class Profile extends Component{
 
                                         </tr>
                                         <div id="Profile_expand_diploma">
-                                            <table cellPadding="15">
+                                            <table id="Profile_expand_diploma_table">
                                         <tr>
                                                 <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>Double: </td>
                                                 <td style={{paddingBottom:"0"}}>
@@ -618,37 +670,25 @@ class Profile extends Component{
                                                 <td id="Profile_diploma_choosebox2" >Minor: </td>
                                                 <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
                                                     <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
-                                                    <input type="checkbox" id="Profile_bachelor_double_and_minor"
-                                                    checked = {this.state.dm_checkbox}
-                                                    onChange = {this.handleCheckChange}
-                                                    name="dm_checkbox"></input>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colSpan="2" style={{paddingLeft:"0"}}>Master: </td>
                                                 <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                    <input type="checkbox" id="Profile_master_checkbox"
-                                                    checked = {this.state.master_checkbox}
-                                                    onChange = {this.handleCheckChange}
-                                                    name="master_checkbox"></input>
                                                     <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
+                                            
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colSpan="2" style={{paddingLeft:"0"}}>Doctor: </td>
                                                 <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                    <input type="checkbox" id="Profile_doctor_checkbox"
-                                                    checked = {this.state.doctor_checkbox}
-                                                    onChange = {this.handleCheckChange}
-                                                    name="doctor_checkbox"
-                                                    ></input>
                                                     <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
                                                 </td>
                                             </tr>
                                             </table>
                                         </div>
                                     </table>
-                            </div>   
+                            </div>
                         </div>
                         <div id="hr3">Work Experience</div>
                         <div id="Profile_occupation_container">
