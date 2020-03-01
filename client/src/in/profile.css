@@ -180,7 +180,28 @@
     z-index: -1;
     margin-bottom: 0 !important;
 }
-#Profile_diploma_container{
+#Profile_diploma_list li:first-child{
+    margin-top: 0;
+}
+#Profile_diploma_list li{
+    position: relative;
+}
+.Profile_input_nonfloat{
+    margin-left: 2.25vw;
+    float: none !important;
+    width:15vw !important;
+}
+
+.Profile_diploma_checkbox{
+    position: absolute;
+    right: 0;
+}
+#Profile_expand_diploma{
+    display: none;
+    opacity: 0;
+    z-index: -1;
+}
+/*#Profile_diploma_container{
     height:6vh !important;
     margin-bottom: 0 !important;
 }
@@ -205,20 +226,27 @@
 
     display: inline;
 }
-#Profile_diploma_choosebox_table td{
+#Profile_expand_diploma_table td{
+    padding: 0 2vh 0 2vh;
+}
+#Profile_expand_diploma_table td:first-child{
+    padding: 0 2vh 0 0;
+}
+/*#Profile_diploma_choosebox_table td{
     margin-bottom: 10% !important; 
 }
 #Profile_diploma_major_checkbox{
     margin-left: 2vw;
 }
 #Profile_expand_diploma{
+    /*width:100%;
     display: none;
     opacity: 0;
     z-index: -1;
+#Profile_diploma_master_input{
+    display: inline;
 }
-#Profile_expand_diploma_table {
-    border-spacing: 2.5vh 0;
-}
+}*/
 
 .Profile_expand_button{
     background-color:  #003f67;
@@ -237,8 +265,9 @@
     height:2vw;
     width:2vw;
 }
-#Profile_diploma_master_input{
-    display: inline;
+
+#Profile_expand_icon_3{
+    margin-bottom: -1vh;
 }
 
 #Profile_shortintro{

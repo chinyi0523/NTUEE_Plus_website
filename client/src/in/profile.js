@@ -107,7 +107,7 @@ class Profile extends Component{
         this.handleImageChange = this.handleImageChange.bind(this)
         this.addOccupation = this.addOccupation.bind(this)
         this.removeOccupation = this.removeOccupation.bind(this)
-        this.checkboxDisplay = this.checkboxDisplay.bind(this)
+        //this.checkboxDisplay = this.checkboxDisplay.bind(this)
     }
     
 	
@@ -146,7 +146,7 @@ class Profile extends Component{
             expand_elem.style.opacity = "0";
             setTimeout(()=>{
                 expand_elem.style.opacity="1";
-                this.checkboxDisplay();
+                //this.checkboxDisplay();
             },100);
             
         }else{
@@ -155,7 +155,7 @@ class Profile extends Component{
             expand_elem.style.transitionDuration = "0.5s";
             moving_elem.style.marginTop = origheight;
             expand_elem.style.opacity = "0";
-            this.checkboxDisplay();
+            //this.checkboxDisplay();
             setTimeout(()=>{
                 expand_elem.style.display = "none";
             },500);
@@ -163,7 +163,7 @@ class Profile extends Component{
         }
         
     };
-    checkboxDisplay(){
+    /*checkboxDisplay(){
         let checkboxs = document.getElementsByClassName("Profile_diploma_checkbox");
         console.log(checkboxs)
         if(document.getElementById("Profile_expand_icon_3").alt === "show_more"){
@@ -177,7 +177,7 @@ class Profile extends Component{
             console.log("show_less");
             [...checkboxs].forEach(checkbox => checkbox.style.display = "block");
         }
-    }
+    }*/
     addOccupation(haveVal){
         //e.preventDefault();
 		if(haveVal){
@@ -616,7 +616,62 @@ class Profile extends Component{
                         </div>
                 <div id="hr2">Diploma</div>
                         <div id="Profile_diploma_container">
-                            <div style={{marginBottom:"2%"}}></div>
+                            <ul className="Profile_ul" id="Profile_diploma_list">
+                                <li>
+                                    Bachelor Major:
+                                    <button className="Profile_expand_button"
+                                                onClick={(e)=>{
+                                                    e.preventDefault();
+                                                    this.expandDiploma("Profile_expand_diploma","hr3","Profile_expand_icon_3","5vh","2vh")
+                                                    
+                                                    }}>
+                                                    <img className="Profile_expand_icon" id="Profile_expand_icon_3" src={show_more} alt="show_more">
+                                                    </img>
+                                                </button>
+                                    <input id="Profile_diploma_bachelor_major" value = {this.state.diploma_bachelor_major} onChange = {this.handleInputChange} name="diploma_bachelor_major"></input>
+                                    <input type="checkbox" id="Profile_diploma_major_checkbox"
+                                                className = "Profile_diploma_checkbox"
+												checked = {this.state.major_checkbox}
+												onChange = {this.handleCheckChange}
+                                                name="major_checkbox"></input>
+                                    
+                                </li>
+                                <div id="Profile_expand_diploma">
+                                    <li style={{marginTop:"7vh"}}>
+                                        Double:
+                                        <input className="Profile_input_nonfloat" id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
+                                        <span style={{marginLeft:"2vw"}}>Minor:</span>
+                                        <input className="Profile_input_nonfloat" id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
+                                        <input type="checkbox" 
+                                                    className="Profile_diploma_checkbox"
+                                                    checked = {this.state.dm_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                name="dm_checkbox"
+                                                ></input>
+                                    </li>
+                                    <li>
+                                        Master:
+                                        <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
+                                        <input type="checkbox" 
+                                                    className="Profile_diploma_checkbox"
+                                                    checked = {this.state.master_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                    name="master_checkbox"
+                                                    ></input>
+                                    </li>
+                                    <li>
+                                        Doctor:
+                                        <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
+                                        <input type="checkbox" 
+                                                    className="Profile_diploma_checkbox"
+                                                    checked = {this.state.doctor_checkbox}
+                                                    onChange = {this.handleCheckChange}
+                                                    name="doctor_checkbox"     
+                                        ></input>
+                                    </li>
+                                </div>
+                            </ul>
+                            {/*<div style={{marginBottom:"2%"}}></div>
                             <div id="Profile_diploma">
                                 
                                 <input type="checkbox" className="Profile_diploma_checkbox"
@@ -663,25 +718,25 @@ class Profile extends Component{
                                         <div id="Profile_expand_diploma">
                                             <table id="Profile_expand_diploma_table">
                                         <tr>
-                                                <td id="Profile_diploma_choosebox1" style={{paddingLeft:"0"}}>Double: </td>
-                                                <td style={{paddingBottom:"0"}}>
+                                                <td id="Profile_diploma_choosebox1" >Double: </td>
+                                                <td >
                                                     <input id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
                                                 </td>
                                                 <td id="Profile_diploma_choosebox2" >Minor: </td>
-                                                <td style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                                                <td >
                                                     <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colSpan="2" style={{paddingLeft:"0"}}>Master: </td>
-                                                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                                                <td colSpan="2" >Master: </td>
+                                                <td colSpan="2" >
                                                     <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
                                             
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colSpan="2" style={{paddingLeft:"0"}}>Doctor: </td>
-                                                <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
+                                                <td colSpan="2" >Doctor: </td>
+                                                <td colSpan="2" >
                                                     <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
                                                 </td>
                                             </tr>
@@ -689,7 +744,7 @@ class Profile extends Component{
                                         </div>
                                     </table>
                             </div>
-                        </div>
+                                                </div>*/}
                         <div id="hr3">Work Experience</div>
                         <div id="Profile_occupation_container">
                             <table id="Profile_occupation_table" cellPadding="9">
@@ -743,7 +798,7 @@ class Profile extends Component{
                    
                     </div>
                     
-                
+                </div>
                 </form>
                 
                 </div>
