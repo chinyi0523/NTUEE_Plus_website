@@ -7,7 +7,7 @@
 }
 #Login_input{
     position: relative;
-    top:35vh;
+    top:25vh;
     left:34vw;
     
     color:white;
@@ -116,8 +116,8 @@
     /*position: absolute;
     top:65%;
     left:45.5%;*/
-    margin-left: 45vw;
-    margin-top: 40vh;
+    margin-left: 45.3vw;
+    margin-top: 30vh;
     width:10%;
     height: 7%;
     background-color:  #003f67;
@@ -161,21 +161,34 @@
     color:rgb(48, 232, 255);
     text-decoration: none;
 }
+
+#Login_hr{
+    font-size: 18px;
+    color:gray;
+    font-weight: 100;
+    border-bottom: 1px solid gray;
+    width: 35vw;
+    margin-top: 5vh;
+    margin-left: 32.5vw;
+    text-align: center;
+}
 #LoginFB_submit{
     font-size: 1.5vw;
     border-radius: 10px;
     /*position: absolute;
     top:65%;
     left:45.5%;*/
-    margin-left: 45vw;
+    margin-left: 44.8vw;
     margin-top: 5vh;
-    width:10%;
+    width:10.5vw;
     height: 7%;
     background-color:  #003f67;
     color: #fff;
     border: 2px #fff solid;
     font-weight: bold;
     cursor: pointer;
+    text-align: center;
+    
 }
 #LoginFB_submit:hover{
     transition-property: background-color, color;
@@ -184,6 +197,15 @@
     background-color: #fff;
     color: #003f67;
     font-weight: bold;
+}
+#Login_FB_icon{
+    height: 5vh;
+    margin-bottom: -1vh;
+}
+#Login_FB_url{
+    margin-left: 0.5vw;
+    text-decoration: none;
+    color: inherit;
 }
 /*#Login_footer{
     position: absolute;
