@@ -161,7 +161,30 @@
     color:rgb(48, 232, 255);
     text-decoration: none;
 }
-
+#LoginFB_submit{
+    font-size: 1.5vw;
+    border-radius: 10px;
+    /*position: absolute;
+    top:65%;
+    left:45.5%;*/
+    margin-left: 45vw;
+    margin-top: 5vh;
+    width:10%;
+    height: 7%;
+    background-color:  #003f67;
+    color: #fff;
+    border: 2px #fff solid;
+    font-weight: bold;
+    cursor: pointer;
+}
+#LoginFB_submit:hover{
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
+    transition-duration: 250ms, 250ms;
+    background-color: #fff;
+    color: #003f67;
+    font-weight: bold;
+}
 /*#Login_footer{
     position: absolute;
     bottom:0%;

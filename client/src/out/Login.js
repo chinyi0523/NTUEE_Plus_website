@@ -86,9 +86,13 @@ class Login extends Component{
 						<Link id = "Login_forgot" to="/Forget">Forgot your password?</Link>
 					</div>
                 </div>
-                <input id="Login_submit" type="submit" value="LOGIN"/>
-            </form>
 				
+                <input id="Login_submit" type="submit" value="LOGIN"/>
+				<div id="LoginFB_submit">
+					<a href="https://www.facebook.com/groups/2484604148528585/" target="_blank" title="Facebook">Facebook</a>
+				</div>
+            </form>
+			
                 {/*<div id="Login_footer">
                     <img id="Login_logo" src={eesa_icon} alt="logo" ></img>
                     <p id="Login_footer_text">聯絡信箱 : ntueesa@gmail.com</p>
