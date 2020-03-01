@@ -24,7 +24,15 @@
 	text-shadow: #000 1px 1px;
 	
 }
-
+#column_hashtagpage{
+	clear: both;
+	text-align: center;
+	font-size : 20px;
+	color : rgb(238, 240, 128);
+	cursor: pointer;
+	text-shadow: #000 1px 1px;
+	
+}
 #column_textpage{
 	overflow-y: auto;
 	width: 1000px;
