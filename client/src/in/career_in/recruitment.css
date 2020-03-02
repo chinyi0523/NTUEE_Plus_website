@@ -1,8 +1,8 @@
-#column_container {
+#recruitment_container {
 	position : relative;
 	font-family:'Noto Sans TC',Arial,sans-serif;
 }
-#column_text_background {
+#recruitment_text_background {
 	overflow-y: auto;
 	height: 70vw;
 	margin-top : 1em;
@@ -14,7 +14,7 @@
 }
 
 
-#column_titlepage{
+#recruitment_titlepage{
 	margin-top : 5em;
 	clear: both;
 	text-align: center;
@@ -24,7 +24,7 @@
 	text-shadow: #000 1px 1px;
 	
 }
-#column_hashtagpage{
+#recruitment_hashtagpage{
 	clear: both;
 	text-align: center;
 	font-size : 20px;
@@ -33,7 +33,7 @@
 	text-shadow: #000 1px 1px;
 	
 }
-#column_textpage{
+#recruitment_textpage{
 	overflow-y: auto;
 	width: 1000px;
 	display: inline-block;

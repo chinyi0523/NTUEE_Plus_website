@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import {Switch,Redirect,Route,Link} from "react-router-dom"
 
 import ReactDOM from "react-dom";
-import './recruit_study.css';
+import './study.css';
 import {NavBar_in} from '../component/AppBar_in';
 
-class Recruit_study extends Component{
+class Study extends Component{
     render(){
 		
         return (
-        <div id = "recruit_study_container" >
-			<div id = "recruit_study_text" style={{marginTop:"8%"}}>
-				招募徵才<br/>
+        <div id = "study_container" >
+			<div id = "study_text" style={{marginTop:"8%"}}>
 				升學資訊
 			</div>
 					
@@ -21,4 +20,4 @@ class Recruit_study extends Component{
     }
 }
 
-export default Recruit_study;
+export default Study;

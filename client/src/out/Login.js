@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
 import eesa_icon from '../images/eesa-icon.png';
+import fb_icon from '../images/social_fb.png'
 import Footer from "../component/Footer";
 import { Link,Redirect } from 'react-router-dom';
 import axios from "axios";
@@ -86,9 +87,15 @@ class Login extends Component{
 						<Link id = "Login_forgot" to="/Forget">Forgot your password?</Link>
 					</div>
                 </div>
-                <input id="Login_submit" type="submit" value="LOGIN"/>
-            </form>
 				
+                <input id="Login_submit" type="submit" value="LOGIN"/>
+				<div id="Login_hr">&nbsp;&nbsp;&nbsp;or login with...</div>
+				<div id="LoginFB_submit">
+					<img id="Login_FB_icon" src={fb_icon} alt="fb_icon"></img>
+					<a id="Login_FB_url" href="https://www.facebook.com/groups/2484604148528585/" target="_blank" title="Facebook">Facebook</a>
+				</div>
+            </form>
+			
                 {/*<div id="Login_footer">
                     <img id="Login_logo" src={eesa_icon} alt="logo" ></img>
                     <p id="Login_footer_text">聯絡信箱 : ntueesa@gmail.com</p>

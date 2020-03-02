@@ -1,7 +1,8 @@
 import React from "react";
 import Home_in from "./Home_in";
 import Column from "./column";
-import Recruit_study from "./recruit_study";
+import Career from "./career";
+import Study from "./study";
 import Main_in from "./Main_in";
 
 
@@ -11,11 +12,14 @@ const Home_in_page = () =>{
 const Column_page = () =>{
     return <Column />
 }
-const Recruit_study_page = () =>{
-    return <Recruit_study />
+const Career_page = () =>{
+    return <Career />
+}
+const Study_page = () =>{
+    return <Study />
 }
 const Main_in_page = () =>{
     return <Main_in/>
 }
 
-export {Home_in_page, Column_page,Recruit_study_page, Main_in_page};
+export {Home_in_page, Column_page,Career_page, Study_page,Main_in_page};

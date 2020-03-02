@@ -28,7 +28,7 @@ class Logout extends Component {
 			<div description="logout" 
 			style = {{display:"inline-block",
 			
-			width:"20%",
+			width:"16.67%",
 			height:"100%"}}>
 			  <Button onClick={this.btn_click}
 			  style={{display:"inline-block",

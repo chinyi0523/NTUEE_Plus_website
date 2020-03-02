@@ -16,7 +16,8 @@ const NavBar_in = () =>{
                     <div id = "AppBar_in_space"></div>
                     <div id = "AppBar_in_menu">
                         <Link id = "AppBar_in_Link" to="/in/Home_in"><Button id = "AppBar_in_menuButton">Profile</Button></Link>
-                        <Link id = "AppBar_in_Link" to="/in/Recruit_study"><Button id="AppBar_in_menuButton">Recruit Study</Button></Link>
+                        <Link id = "AppBar_in_Link" to="/in/Career"><Button id="AppBar_in_menuButton">Career</Button></Link>
+                        <Link id = "AppBar_in_Link" to="/in/Study"><Button id="AppBar_in_menuButton">Study</Button></Link>
                         <Link id = "AppBar_in_Link" to="/in/Column"><Button id="AppBar_in_menuButton">Column</Button></Link>
                         <Link id = "AppBar_in_Link" to="/in/Search"><Button id="AppBar_in_menuButton">Search</Button></Link>
                         <Link id = "AppBar_in_Link"><Logout id="AppBar_in_menuButton"/></Link>
