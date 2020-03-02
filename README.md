@@ -15,6 +15,13 @@
 > * 維恩＆宗倫：研究搜尋的相關/Recruit頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
+### 0302 進度 By 謹譯
+* Recruit 改為 Career 內切割為 Recommendation & Recruitment 
+* Recommendation 
+> * 推薦區，求職方使用
+* Recruitment 
+> * 徵才區，供職方使用
+
 ### 0301 進度 By 謹譯&友廷
 * 新增App Bar in 一按鈕 Study 原Recruit Study改為Recruit，頁面拆開，功能簡介如下
 * Recruit
