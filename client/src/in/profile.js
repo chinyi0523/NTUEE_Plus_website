@@ -506,7 +506,7 @@ class Profile extends Component{
                             </ul>
                         </div>
                         <div>
-                            <p id="Profile_shortintro_tag">簡介:</p>
+                            <p id="Profile_shortintro_tag">Talk about yourself:</p>
                             <textarea id="Profile_shortintro" name="shortintro" placeholder="briefly introduce yourself!" value = {this.state.shortintro} onChange = {this.handleInputChange}></textarea>
                         </div>
                     </div>

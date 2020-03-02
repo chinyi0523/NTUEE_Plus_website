@@ -1,9 +1,10 @@
-#recruit_container {
+#career_container {
 	position : relative;
 	font-family:'Noto Sans TC',Arial,sans-serif;
 }
-#recruit_text {
-	
+#career_text {
+	color : rgb(236, 233, 131);
+	text-align: center;
 	font-size : 54px;
 }
 @media (max-width:500px){
