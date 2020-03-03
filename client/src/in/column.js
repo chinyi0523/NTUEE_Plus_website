@@ -15,9 +15,6 @@ class Column extends Component{
 		
         return (
         <div id = "column_container">
-			<Switch>
-				<Route path="/in/Column/1910" component={column_1910_page} />
-			</Switch>
 			<div id = "column_section" style={{marginTop:"8%"}}>
 				<div id="column_img">
 					<img src={Dec_image} alt="Dec. Image" className="column_image" />

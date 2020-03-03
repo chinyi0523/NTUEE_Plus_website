@@ -1,11 +1,12 @@
 import React,{Component} from "react";
 import {Route,Switch} from "react-router-dom";
 import {Register_account_page} from "./register_pages";
-
+import {NavBar} from "../../component/AppBar"
 class register_app extends Component{
     render(){
         return(
             <div>
+                <NavBar/>
                 <Switch>
                     <Route path="/Register/pages/Register_account" exact component={Register_account_page}/>
                 </Switch>
@@ -14,4 +15,4 @@ class register_app extends Component{
 }
 }
 
-export {register_app};
+export default register_app;

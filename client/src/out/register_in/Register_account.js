@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './Register.css';
-import eesa_icon from '../images/eesa-icon.png';
+//import './Register.css';
+//import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
-import { NavBar } from '../component/AppBar';
-class Register extends Component{
+import { NavBar } from '../../component/AppBar';
+//import Register_account from './';
+class Register_account extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -106,8 +107,8 @@ class Register extends Component{
 		}
         return(
 			<div>
-				<NavBar/> 
-            <div id="Register_container">
+				<p style={{fontSize:"64px"}}>TTest!!</p>
+            {/*<div id="Register_container">
 				
                 <div id="Register_register_table">
                     <h1 id="Register_table_title">Just A Few Steps to Join EE+!</h1>
@@ -177,9 +178,9 @@ class Register extends Component{
 				  			{$imagePreview}
 					</div>
                 </div>
-            </div>
+		</div>*/}
 			</div>
         )
     }
 }
-export default Register
+export default Register_account
