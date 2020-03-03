@@ -16,7 +16,8 @@
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
 ### 0303 進度 By 君輔
-* 把profile.js的一些function丟到profileFunc/，管理上比較方便(profile.js中改成this.func = func.bind(this)
+* 把profile.js的一些function丟到profileFunc/，管理上比較方便
+	* profile.js中改成this.func = func.bind(this)
 
 ### 0303 進度 By 友廷
 * 以column_1912做測試
