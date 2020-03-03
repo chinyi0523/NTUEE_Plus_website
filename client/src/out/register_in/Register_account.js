@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Register.css';
 import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
@@ -109,7 +108,7 @@ class Register extends Component{
 			<div>
 				<NavBar/> 
             <div id="Register_container">
-			
+				
                 <div id="Register_register_table">
                     <h1 id="Register_table_title">Just A Few Steps to Join EE+!</h1>
 					<form onSubmit={this.handleSubmit}>
@@ -159,13 +158,11 @@ class Register extends Component{
 						<button id="Register_register_button" onclick={this.handleSubmit}>
 							<p id="Register_register_text">Register</p>
 						</button>
-						
 					</form>
                 </div>
 				
                 <div id="Register_FAQ">
                     <div id="Register_FAQ_title">FAQ</div>
-					<Link to="/Register/pages/Register_account" >Recruitment</Link>
                     <div id="Register_splitline"></div>
                     <div id="Register_FAQ_content">
                         <ul id="Register_FAQ_list">

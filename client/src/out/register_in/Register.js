@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './Register.css';
+import './Register_account.css';
 import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
 import { NavBar } from '../component/AppBar';
-class Register extends Component{
+class Register_account extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -182,4 +182,4 @@ class Register extends Component{
         )
     }
 }
-export default Register
+export default Register_account

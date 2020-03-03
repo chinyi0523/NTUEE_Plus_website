@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Home_page,Login_page, Support_page,About_page ,Contact_page,Register_page,Forget_page } from './pages';
 import { Home_in_page, Column_page } from '../in/pages_in'; 
+import {Register_app} from './register_in/register_app'
 import { NavBar } from '../component/AppBar'
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
 		    <Route path="/About" component={About_page} />
         <Route path="/Contact" component={Contact_page} />
         <Route path="/Register" component={Register_page} />
+        <Route path="/Register/pages" component = {Register_app}/>
         <Route path="/Forget" component={Forget_page} />
         <Route path="/Home_in" component={Home_in_page} />
         <Route path="/Column" component={Column_page} />
