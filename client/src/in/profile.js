@@ -6,9 +6,11 @@ import remove_icon from '../images/remove_icon.png';
 import add_icon from "../images/add_icon.png";
 import show_less from "../images/show_less.png";
 import show_more from "../images/show_more.png";
+import {handleImageChange,handleCheckChange,handleInputChange} from "./profileFunc/handleChange";
+import {showVisual,handleSubmit} from './profileFunc/showAndSubmit.js';
+import {map} from "./profileFunc/map";
 
 
-import axios from 'axios';
 
 //import { NavBar } from '../component/AppBar';
 //import ReactDOM from 'react-dom';
@@ -21,43 +23,8 @@ import axios from 'axios';
     }
     return el;
 }*/
-const map = [
-		["userimage","userimage",default_image],
-		["realname_checkbox","username.show"],
-		["realname","username.data"],
-		["nickname_checkbox","nickname.show"],
-		["nickname","nickname.data"],
-		["shortintro","profile.data"],
-		["email_checkbox","profile.show"],
-		["email","publicEmail.data"],
-		["phone_company_checkbox","office.show"],
-		["phone_company","office.data"],
-		["phone_home_checkbox","homephone.show"],
-		['phone_home','homephone.data'],
-		['mobile_checkbox','cellphone.show'],
-		['mobile','cellphone.data'],
-		['address_checkbox','CC.show'],
-		['address','CC.data'],
-		['personal_website_checkbox','web.show'],
-		['personal_website','web.data'],
-		['facebook_checkbox','facebook.show'],
-		['facebook','facebook.data'],
-		['Linkedin_checkbox','Linkedin.show'],
-		['Linkedin','Linkedin.data'],
-		['major_checkbox','education.major.show'],
-		['diploma_bachelor_major','education.major.SD'],
-		['diploma_bachelor_double_major','education.double_major.SD'],
-		['diploma_bachelor_minor','education.minor.SD'],
-		['dm_checkbox','education.double_major.show'],
-		['diploma_master','education.master.SD'],
-		['master_checkbox','education.master.show'],
-		['diploma_doctor','education.doctor.SD'],
-		['doctor_checkbox','education.doctor.show']
-	]
-
 
 class Profile extends Component{
-	
     constructor(props){
         super(props);
         var tmpCh = {}
@@ -99,12 +66,15 @@ class Profile extends Component{
             work_C_3:"", //will add button to add work experience
 			hasChanged:tmpCh,
         };
-
-        this.handleInputChange = this.handleInputChange.bind(this)
-		this.handleCheckChange = this.handleCheckChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+		
+        this.handleInputChange = handleInputChange.bind(this)
+		this.handleCheckChange = handleCheckChange.bind(this)
+        this.handleImageChange = handleImageChange.bind(this)
+		
+		this.showVisual = showVisual.bind(this)
+        this.handleSubmit = handleSubmit.bind(this)
+		
         this.expandDiploma = this.expandDiploma.bind(this)
-        this.handleImageChange = this.handleImageChange.bind(this)
         this.addOccupation = this.addOccupation.bind(this)
         this.removeOccupation = this.removeOccupation.bind(this)
         //this.checkboxDisplay = this.checkboxDisplay.bind(this)
@@ -257,204 +227,11 @@ class Profile extends Component{
 
         //console.log(this.state.Occupation_number)
     }
-
-    
+	
     componentWillMount(){
 		this.showVisual();
 	}
 	
-	showVisual(){
-		axios.post("/api/showVisual", 
-			{}
-		).then(res => {
-			console.log(res.data);
-				if(res.data){
-					if(res.data.message===true){
-						var D = res.data.data;
-						var sta = {}
-						map.forEach(elements=>{
-							//(elements[0]==="userimage") && (elements
-							var arr = elements[1].split('.')
-							var val = D;
-							var i;
-							for(i=0;i<arr.length;i++){
-								val = val[arr[i]];
-								if(val===undefined){
-									val=(elements.length<=2)?'':elements[2]
-									break
-								}
-							}
-							sta[elements[0]]=val;
-						})
-						sta.InitWorkNum = res.data.data.Occupation.length;
-						sta.imagePreviewUrl = sta.userimage;
-						console.log('sta=',sta)
-						this.setState(sta);
-						res.data.data.Occupation.forEach((item,index)=>{
-							this.setState({
-								[`work_O_${index+1}`] : (item.O===undefined)?'':item.O,
-								[`work_P_${index+1}`] : (item.P===undefined)?'':item.P,
-								[`work_C_${index+1}`] : (item.C===undefined)?'':item.C,
-								[`work_show_${index+1}`] : item.show
-							},function(){
-								this.addOccupation(true)
-							});
-						})
-					}else{
-						alert('錯誤：\n'+res.data.description);
-					}
-				}
-		})
-	};
-	handleImageChange(e){
-        //e.preventDefault();
-        let reader = new FileReader();
-		if(e.target.files.length===0) return;
-        let file = e.target.files[0];
-        this.setState({
-            userimage:file
-        })
-
-        reader.onloadend = () =>{
-            console.log("onloadend");
-			this.setState({
-				imagePreviewUrl:reader.result
-			});
-        }
-        try {
-            reader.readAsDataURL(file)
-        } catch (error) {
-            
-        }
-		var hasChanged = {...this.state.hasChanged}
-		hasChanged.userimage = true;
-		this.setState({hasChanged})
-    }
-
-	handleCheckChange(event){
-		const target = event.target;
-        const name = target.name;
-
-        this.setState({
-            [name]:!this.state[name]
-        });
-		var hasChanged = {...this.state.hasChanged}
-		hasChanged[name] = true;
-		this.setState({hasChanged})
-	}
-	
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        console.log(name);
-        console.log(value);
-
-        this.setState({
-            [name]:value
-        });
-		var hasChanged = {...this.state.hasChanged}
-		hasChanged[name] = true;
-		this.setState({hasChanged})
-    }
-
-    handleSubmit(event){
-        event.preventDefault();
-        console.log(this.state);
-        alert("fine");
-        if(false){
-            alert("一些判斷式") //validation
-        }else{
-            var r = window.confirm("確認更改?");
-            if (r){
-				var sta= new FormData();
-				map.forEach(elements=>{
-					if(this.state.hasChanged[elements[0]] && this.state[elements[0]]!==undefined){
-						sta.append(elements[1],this.state[elements[0]])
-					}
-					//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
-				})
-				var toModify = {}
-				var toRemove = {}
-				var toInsert = {}
-				for(var workL = 1;workL<=this.state.InitWorkNum;workL++){
-					console.log('workL0',workL)
-					if(this.state.hasChanged[`work_${workL}`]===true){
-						toRemove[`work_${workL}`] = 1
-					}else{
-						(['O','P','C']).forEach(word=>{
-							if(this.state.hasChanged[`work_${word}_${workL}`]){
-								toModify[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
-							}
-						})
-					}
-				}
-				if(Object.entries(toModify).length!==0) sta.append('Occupation.Modify',JSON.stringify(toModify))
-				if(Object.entries(toRemove).length!==0)  sta.append('Occupation.Remove',JSON.stringify(toRemove))
-				for(var workL = this.state.InitWorkNum+1;workL<=this.state.Occupation_number;workL++){
-					console.log('workL',workL);
-					(['O','P','C']).forEach(word=>{
-						console.log('word',word)
-						if(this.state.hasChanged[`work_${word}_${workL}`]){
-							toInsert[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
-						}
-					})
-				}
-				console.log('insert',toInsert)
-				if(Object.entries(toInsert).length!==0)  sta.append('Occupation.Insert',JSON.stringify(toInsert))
-				console.log('sta',sta)
-				const config = {
-					headers: {
-						'content-type': 'multipart/form-data'
-					}
-				};
-                axios.post("/api/chVisual"
-                ,
-				sta
-                /*{
-				"username.show": this.state.realname_checkbox,
-                "username.data": this.state.realname,
-                "nickname.data" : this.state.,
-                "profile.data" : this.state.shortintro,
-
-                education:[
-                    {
-                        SD : this.Profile_diploma_bachelor_major,
-                        Note : "",
-                    }
-                ],
-                publicEmail : this.Profile_email,
-                office : this.Profile_phone_company,
-                cellphone : this.Profile_mobile,
-                CC : this.Profile_address,
-                Occupation:[
-                    "",
-                    ""
-                ],
-                JobID:this.state.JobID
-                }*/,
-				config
-				).then(res => {
-
-                    console.log(res.data);
-                        if (res.data){
-                            if (res.data.message === true){ 
-                                alert("修改成功!");
-									var hasChanged = {...this.state.hasChanged}
-									map.forEach(element=>{
-										hasChanged[element[0]] = false;
-									})
-									this.setState({hasChanged});
-                                //window.location = ? in's router hasn't done yet
-                            }else{
-                                alert("錯誤: \n"+res.data.description);
-                            }
-
-                        }
-                })
-            }
-        }
-    }
     render(){
         
         {/*let imagePreviewUrl = this.state.imagePreviewUrl;

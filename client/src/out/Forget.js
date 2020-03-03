@@ -3,6 +3,8 @@ import './Forget.css';
 import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
 import { NavBar } from '../component/AppBar';
+import handleInputChange from './funcTest/handleInputChange';
+
 class Forget extends Component{
 	constructor(props) {
 		super(props);
@@ -14,11 +16,11 @@ class Forget extends Component{
 		  Forget_confirm_password: ''
 		};
 
-		this.handleInputChange = this.handleInputChange.bind(this);
+		this.handleInputChange = handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
-
-	handleInputChange(event) {
+	
+	/*handleInputChange(event) {
 		const target = event.target;
 		const value = target.value;
 		const name = target.name;
@@ -26,7 +28,7 @@ class Forget extends Component{
 		this.setState({
 		  [name]: value
 		});
-	}
+	}*/
 	
 	handleSubmit(event) {
 		event.preventDefault();
