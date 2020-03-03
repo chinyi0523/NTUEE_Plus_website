@@ -15,6 +15,12 @@
 > * 維恩＆宗倫：研究搜尋的相關/Recruit頁面
 > * 建翰＆侃軒：研究FB登入/研究安全相關
 
+### 0303 進度 By 友廷
+* 以column_1912做測試
+* Column_text內新增Component資料夾，以便未來增加訪問內容時能以固定格式顯示
+* 格式位於column_content當中，之後還會修正
+* 美觀部分待處理
+* Profile我之後應該會把它拆成部分，現在真的太長了= =
 
 ### 0302 進度 By 謹譯
 * Recruit 改為 Career 內切割為 Recommendation & Recruitment 

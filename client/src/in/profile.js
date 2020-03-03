@@ -12,6 +12,7 @@ import {map} from "./profileFunc/map";
 
 
 
+
 //import { NavBar } from '../component/AppBar';
 //import ReactDOM from 'react-dom';
 //const remove_icon = <svg t="1582553044501" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw"><path d="M512 938.666667C276.362667 938.666667 85.333333 747.637333 85.333333 512S276.362667 85.333333 512 85.333333s426.666667 191.029333 426.666667 426.666667-191.029333 426.666667-426.666667 426.666667z m0-64c200.298667 0 362.666667-162.368 362.666667-362.666667S712.298667 149.333333 512 149.333333 149.333333 311.701333 149.333333 512s162.368 362.666667 362.666667 362.666667zM352 480h320a32 32 0 0 1 0 64H352a32 32 0 0 1 0-64z" p-id="2601" fill="#1296db" data-spm-anchor-id="a313x.7781069.0.i1" class="selected"></path></svg>
@@ -23,6 +24,7 @@ import {map} from "./profileFunc/map";
     }
     return el;
 }*/
+
 
 class Profile extends Component{
     constructor(props){
@@ -448,80 +450,6 @@ class Profile extends Component{
                                     </li>
                                 </div>
                             </ul>
-                            {/*<div style={{marginBottom:"2%"}}></div>
-                            <div id="Profile_diploma">
-                                
-                                <input type="checkbox" className="Profile_diploma_checkbox"
-                                                    checked = {this.state.dm_checkbox}
-                                                    onChange = {this.handleCheckChange}
-                                                name="dm_checkbox"
-                                                style={{bottom:"60%"}}></input>
-                                <input type="checkbox" className="Profile_diploma_checkbox"
-                                                    checked = {this.state.master_checkbox}
-                                                    onChange = {this.handleCheckChange}
-                                                    name="master_checkbox"
-                                                    style={{bottom:"35%"}}></input>
-                                <input type="checkbox" className="Profile_diploma_checkbox"
-                                                    checked = {this.state.doctor_checkbox}
-                                                    onChange = {this.handleCheckChange}
-                                                    name="doctor_checkbox"
-                                                    style={{bottom:"10%"}}
-                                        ></input>
-                                  
-                                    <table id="Profile_diploma_choosebox_table">
-                                        <tr>
-                                            <td colSpan="2" style={{paddingLeft:"0"}}>Bachelor Major: </td>
-                                            <td colSpan="2" style={{paddingRight:"0",paddingLeft:"6px",paddingBottom:"0"}}>
-                                                <input type="checkbox" id="Profile_diploma_major_checkbox"
-												checked = {this.state.major_checkbox}
-												onChange = {this.handleCheckChange}
-                                                name="major_checkbox"></input>
-                                                
-                                                <input id="Profile_diploma_bachelor_major" value = {this.state.diploma_bachelor_major} onChange = {this.handleInputChange} name="diploma_bachelor_major"></input>
-                                            </td>
-                                            <td style={{paddingLeft:"10%"}}>
-                                                <button className="Profile_expand_button"
-                                                onClick={(e)=>{
-                                                    e.preventDefault();
-                                                    this.expandDiploma("Profile_expand_diploma","hr3","Profile_expand_icon_3","30vh","7vh")
-                                                    
-                                                    }}>
-                                                    <img className="Profile_expand_icon" id="Profile_expand_icon_3" src={show_more} alt="show_more">
-                                                    </img>
-                                                </button>
-                                            </td>
-
-                                        </tr>
-                                        <div id="Profile_expand_diploma">
-                                            <table id="Profile_expand_diploma_table">
-                                        <tr>
-                                                <td id="Profile_diploma_choosebox1" >Double: </td>
-                                                <td >
-                                                    <input id="Profile_diploma_bachelor_double_major" value = {this.state.diploma_bachelor_double_major} onChange = {this.handleInputChange} name="diploma_bachelor_double_major"></input>
-                                                </td>
-                                                <td id="Profile_diploma_choosebox2" >Minor: </td>
-                                                <td >
-                                                    <input id="diploma_bachelor_minor" value = {this.state.diploma_bachelor_minor} onChange = {this.handleInputChange} name="diploma_bachelor_minor"></input>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colSpan="2" >Master: </td>
-                                                <td colSpan="2" >
-                                                    <input id="Profile_diploma_master" value = {this.state.diploma_master} onChange = {this.handleInputChange} name="diploma_master" ></input>
-                                            
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colSpan="2" >Doctor: </td>
-                                                <td colSpan="2" >
-                                                    <input id="Profile_diploma_doctor" value = {this.state.diploma_doctor} onChange = {this.handleInputChange} name="diploma_doctor"></input>
-                                                </td>
-                                            </tr>
-                                            </table>
-                                        </div>
-                                    </table>
-                            </div>
-                                                </div>*/}
                         <div id="hr3">Work Experience</div>
                         <div id="Profile_occupation_container">
                             <table id="Profile_occupation_table" cellPadding="9">
@@ -538,33 +466,6 @@ class Profile extends Component{
                                         </th>
                                     </tr>
                                 </thead>
-                                {/*<tr id="Profile_occupation_row_1">
-                                    <td><input placeholder="Front-End" name="work_O_1" 
-                                    value = {this.state.work_O_1} onChange = {this.handleInputChange}></input></td>
-                                    <td><input placeholder="Sub-Leader" name="work_P_1" 
-                                    value = {this.state.work_P_1} onChange = {this.handleInputChange}></input></td>
-                                    <td><input placeholder="NTUEE+" name="work_C_1" 
-                                    value = {this.state.work_C_1} onChange = {this.handleInputChange}></input></td>
-                                    <td><button onClick={this.removeOccupation} id="Profile_removeOccupation"><img src={remove_icon} alt="remove_icon" className="Profile_remove_icon"></img></button></td>
-                                </tr>
-                                <tr id="Profile_occupation_row_2">
-                                    <td><input name="work_O_2"
-                                    value = {this.state.work_O_2} onChange = {this.handleInputChange}></input></td>
-                                    <td><input name="work_P_2"
-                                    value = {this.state.work_P_2} onChange = {this.handleInputChange}></input></td>
-                                    <td><input name="work_C_2"
-                                    value = {this.state.work_C_2} onChange = {this.handleInputChange}></input></td>
-                                    <td><button onClick={this.removeOccupation} id="Profile_removeOccupation"><img src={remove_icon} alt="remove_icon" className="Profile_remove_icon"></img></button></td>
-                                </tr>
-                                <tr id="Profile_occupation_row_3">
-                                    <td><input name="work_O_3"
-                                    value = {this.state.work_O_3} onChange = {this.handleInputChange}></input></td>
-                                    <td><input name="work_P_3"
-                                    value = {this.state.work_P_3} onChange = {this.handleInputChange}></input></td>
-                                    <td><input name="work_C_3"
-                                    value = {this.state.work_C_3} onChange = {this.handleInputChange}></input></td>
-                                    <td><button onClick={this.removeOccupation} id="Profile_removeOccupation"><img src={remove_icon} alt="remove_icon" className="Profile_remove_icon"></img></button></td>
-                                </tr>*/}
                             </table>
                             <div style={{marginTop:"5%",height:"7vh"}}>
                                 <p>Job ID</p>
