@@ -180,32 +180,7 @@ class Column extends Component{
 				</div>
 				
 			</div>
-            <div id = "column_section" >
-				<div id="column_img">
-					<img src={Yang_image} alt="Yang. Image" className="column_image" />
-				</div>
-				<div id = "column_text">
-					<div id = "column_info">
-						<div id = "column_date">|2018/10/13 星期六</div>
-						<div id = "column_name">&nbsp;毛弘仁 吳兩原 林芃廷 王廷峻 李筠婕 陳培鳴 莊永松</div>
-					</div>
-					<div id = "column_title">
-						1994級 陳維超 （Skywatch Inc. Co-founder）
-					</div>
-					<div id = "column_subtitle">
-						陳維超<br/>
-						現任：Skywatch Inc. Co-founder<br/>
-						學士：台灣大學電機系(1994)<br/>
-					</div>
-					<div className = "column_prefix" id="column_sp">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陳維超學長在2002年於北卡羅萊納大學教堂山分校取得博士學位，專攻電腦繪圖運算技術。學長的產業界及學界歷練皆相當豐富，在業界，學長曾任美國NVIDIA 3D Graphics 架構師、Nokia Research Palo Alto 資深研究員等高技術職位，更在近年與大學同學 楊吉評學長共同創立Skywatch Inc.，提供高規格的雲端監視系統服務、同時也擔任英業達 (Inventec) 公司的 Head of AI Center、以及台灣人工智慧學校的理事；在學界，學長也曾擔任過台大資工系的教授，開設多年熱門課程：圖形處理器程式設計，同時也擔任過眾多國際學術會議的committee、member或者reviewer，如ACM SIGGRAPH、ISMAR、CVPR、ICCV、ACCV等等，是國內繪圖運算技術領域的翹楚。
-						<Link to="/in/Column/pages/Chen">read more...</Link>
-					</div>
-					
-				</div>
-				
-			</div>
-			
+            
 		</div>
         )
     }
