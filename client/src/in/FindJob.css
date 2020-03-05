@@ -1,0 +1,39 @@
+#FindJob_container {
+	position : relative;
+}
+#FindJob_section {
+	overflow: auto;
+	margin-top : 1em;
+	margin-bottom : 1em;
+	margin-left : 10vw;
+	margin-right : 10vw;
+	background-color : #93D5FF;
+}
+#FindJob_section_1 {
+	margin : 10px;
+	background-color : #FFFFFF;
+}
+#FindJob_section_2 {
+	
+}
+#FindJob_img {
+	margin : 10px;
+	background-image: url("https://factsnfigs.com/wp-content/uploads/2019/06/Find_Jobs.jpg"); 
+	background-size:600px 400px;
+	float : left;
+	width : 600px;
+	height : 400px;
+	background-color : #000;
+}
+#FindJob_text {
+
+}
+#FindJob_info {
+	margin : 10px;
+}
+@media (max-width:1200px){
+	
+}
+@media (max-width:500px){
+	
+}
