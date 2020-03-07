@@ -10,6 +10,10 @@ import Sep_image from '../images/column/1909_photo.jpg';
 import Aug_image from '../images/column/1908_photo.jpg';
 import Jul_image from '../images/column/1907_photo.JPG';
 import 陳維超_image from '../images/column/陳維超_photo.jpg';
+import 楊奕軒_image from '../images/column/楊奕軒_photo.jpg';
+import 陳俊仰_image from '../images/column/陳俊仰_photo.jpg';
+import 黃柏源_image from '../images/column/黃柏源_photo.jpg';
+import 胡立民_image from '../images/column/胡立民_photo.jpg';
 
 class Column extends Component{
     render(){
@@ -180,7 +184,115 @@ class Column extends Component{
 				</div>
 				
 			</div>
-            
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={楊奕軒_image} alt="楊奕軒. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2018/9/10 星期一</div>
+						<div id = "column_name">&nbsp;莊永松 莊鎧爾 琉琉 何驊凌 蔡易霖</div>
+					</div>
+					<div id = "column_title">
+						2006級 楊奕軒 （研究員/教授 @ 中研院資創中心）
+					</div>
+					<div id = "column_subtitle">
+						楊奕軒<br/>
+						現任：研究員/教授 @ 中研院資創中心<br/>
+						學士：台灣大學電機系(2006)<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;楊奕軒學長是國內少數專攻音樂資訊領域的學者，研究論文產量十分豐厚。電機系畢業後直攻電信所的博士，過去曾在美國Columbia University、西班牙Universitat Pompeu Fabra擔任訪問學者。目前是中研院資創中心的副研究員，也是清大與成大的合聘教授，同時也擔任過許多conference的editer、chair以及眾多journal、conference的reviewer等等。
+						<Link to="/in/Column/pages/楊奕軒">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={陳俊仰_image} alt="陳俊仰. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2018/8/18 星期六</div>
+						<div id = "column_name">&nbsp;楊程皓 吳奕萱 毛弘仁</div>
+					</div>
+					<div id = "column_title">
+						2000級 陳俊仰 （Grindr President & CTO）
+					</div>
+					<div id = "column_subtitle">
+						陳俊仰<br/>
+						現任：Grindr President & CTO<br/>
+                        博士：Electrical Engineering (Digital Signal Processing Group), Caltech (2004-2009)<br/>
+                        碩士：臺灣大學電信工程學研究所 (2000-2002)<br/>
+                        學士：臺灣大學電機工程學系 (1996-2000)<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陳俊仰學長在從台大電信所（通訊組）畢業後，在 Caltech 唸了五年 PhD，研究領域是通訊和雷達的信號處理。從 Caltech 畢業後進入一流的軟體公司 Facebook 工作，目前則在世界最大的同志交友平台 Grindr 擔任總裁兼技術長。
+						<Link to="/in/Column/pages/陳俊仰">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={黃柏源_image} alt="黃柏源. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2018/7/15 星期日</div> 
+                        <div id = "column_name">&nbsp;鍾興寰 陳威成 孫凡耕 蘇柏元</div>
+					</div>
+					<div id = "column_title">
+						2014級 黃柏源（Princeton EE PhD）
+					</div>
+					<div id = "column_subtitle">
+						黃柏源<br/>
+						＊學歷＊<br/>
+                        學士：台大電機系(2014)<br/>
+                        博士：EE, Princeton University<br/>
+                        ＊經歷＊<br/>
+                        Security Research Intern, Intel Coporation<br/>
+                        Security Research Intern, Intel Coporation<br/>
+                        Design Automation Intern, TSMC<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黃柏源學長是目前受訪者中最年輕的一位，大學時拿過多次書卷獎，電機系畢業後前往Princeton攻讀EE PhD，專攻EDA領域，大學時就曾擔任IEEE 通訊 paper reviewer，也曾在TSMC及Intel實習過，學界業界經歷皆相當豐富。
+						<Link to="/in/Column/pages/黃柏源">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={胡立民_image} alt="胡立民. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2018/3/9 星期五</div>
+						<div id = "column_name">&nbsp;林承德 許哲睿 蘇家軒 賴沂謙 黃煜堯</div>
+					</div>
+					<div id = "column_title">
+						1984級 胡立民（Chief Technology Officer Emeritus of Ellie Mae, Inc.）
+					</div>
+					<div id = "column_subtitle">
+						胡立民<br/>
+						現任：Chief Technology Officer Emeritus of Ellie Mae, Inc.<br/>
+                        博士： UC Berkeley<br/>
+						學士：台灣大學電機系(1984)<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果經營公司成功就算是人生一個勝利戰果的話，那麼胡立民學長就有兩個戰果：一個是經營EllieMae的成功，目前該公司已是一個在美上市、市值三十億美金的FinTech公司；另一個是他從事慈善事業，他與友人推動的「華人特殊兒童中心」嘉惠無數特殊兒童家庭，因不敷使用，已於2017年初於南灣再開第二家，受到政府重視。
+						<Link to="/in/Column/pages/胡立民">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+                              
 		</div>
         )
     }

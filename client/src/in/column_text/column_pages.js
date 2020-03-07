@@ -6,6 +6,10 @@ import Column_1909 from "./column_1909";
 import Column_1908 from "./column_1908";
 import Column_1907 from "./column_1907";
 import Column_陳維超 from "./column_陳維超";
+import Column_楊奕軒 from "./column_楊奕軒";
+import Column_陳俊仰 from "./column_陳俊仰";
+import Column_黃柏源 from "./column_黃柏源";
+import Column_胡立民 from "./column_胡立民";
 //import column_app from "./column_main"
 
 const column_1912_page = () =>{
@@ -26,5 +30,18 @@ const column_1907_page = () =>{
 const column_陳維超_page = () =>{
     return <Column_陳維超/>
 }
+const column_楊奕軒_page = () =>{
+    return <Column_楊奕軒/>
+}
+const column_陳俊仰_page = () =>{
+    return <Column_陳俊仰/>
+}
+const column_黃柏源_page = () =>{
+    return <Column_黃柏源/>
+}
+const column_胡立民_page = () =>{
+    return <Column_胡立民/>
+}
     
-export {column_1912_page, column_1910_page, column_1909_page, column_1908_page, column_1907_page, column_陳維超_page};
+export {column_1912_page, column_1910_page, column_1909_page, column_1908_page, column_1907_page,
+    column_陳維超_page, column_楊奕軒_page, column_陳俊仰_page, column_黃柏源_page, column_胡立民_page};
