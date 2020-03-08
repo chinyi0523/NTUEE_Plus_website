@@ -28,7 +28,7 @@ class Column_hashtags extends Component{
     }
     render(){
         return(
-            <div id={this.state.id}>
+            <div id={this.state.id} class="column_hashtags">
             </div>
         )
     }

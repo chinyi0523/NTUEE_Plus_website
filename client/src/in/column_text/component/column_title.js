@@ -12,7 +12,7 @@ class Column_title extends Component{
     }
     render(){
         return(
-            <div id={this.state.id}>
+            <div id={this.state.id} class="column_whole_title">
                 {this.state.title}
             </div>
         )

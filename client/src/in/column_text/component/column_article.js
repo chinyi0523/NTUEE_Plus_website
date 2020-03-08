@@ -13,7 +13,7 @@ class Column_article extends Component{
     render(){
         const new_sections = [];
         for (let i=0;i<this.state.sections.length;i++){
-            new_sections.push(<Column_section id={this.state.id+"_"+(i+1)} content = {this.state.sections[i]}/>)
+            new_sections.push(<Column_section id={this.state.id+"_"+(i+1)} sections = {this.state.sections[i]}/>)
         }
         return(
             <div id={this.state.id}>

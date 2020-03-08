@@ -1,0 +1,8 @@
+.column_content{
+    font-family: 'Noto Sans TC',Arial,sans-serif !important;
+    background-image:linear-gradient(150deg,#93D5FF,white) ;
+    margin-top: 15vh;
+    width:90vw;
+    margin-left: 5vw;
+    border-radius: 1vw;
+}

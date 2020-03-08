@@ -3,6 +3,7 @@ import Column_title from './column_title';
 import Column_hashtags from './column_hashtags';
 import Column_article from './column_article';
 import Column_sp_thx from './column_sp_thx';
+import './column_content.css'
 /*
 content = {
     title:string
@@ -10,13 +11,40 @@ content = {
     sections:[
         //第一段
         {
-            title:...
-            sections:[section1,section2...]
+            bigtitle:...
+            sections:
+            [
+                {   
+                    title:
+                    section1:
+                },
+                {
+                    title:
+                    section2:
+                },
+                .
+                .
+                .
+
+            ]
         }
         //第二段
         {
-            title:...
-            sections:[section1,section2...]
+            bigtitle:...
+            sections:
+            [
+                {   
+                    title:
+                    section1:
+                },
+                {
+                    title:
+                    section2:
+                },
+                .
+                .
+                .
+            ]
         }
         .
         .
@@ -39,7 +67,7 @@ class Column_content extends Component{
     }
     render(){
         return(
-            <div id={`${this.state.id}_content`}>
+            <div id={`${this.state.id}_content`} class="column_content">
                 <Column_title id={`${this.state.id}_title`} title={this.state.title}/>
                 <Column_hashtags id={`${this.state.id}_hashtags`} hashtags={this.state.hashtags}/>
                 <Column_article id={`${this.state.id}_article`} sections={this.state.sections}/>
