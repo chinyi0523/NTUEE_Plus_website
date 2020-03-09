@@ -18,7 +18,7 @@
 ### 0309 進度 By 謹譯
 * Career 內 Recommendation & Recruitment 已合
 * 感謝育楷，但記得看一下Readme目前改的部分喔 
-> * 內頁目前皆使用同一個模板，需修正
+> * 每個方框可以縮小，以三欄方式呈現 (3n)
 
 ### 0303 進度 By 君輔
 * 把profile.js的一些function丟到profileFunc/，管理上比較方便
