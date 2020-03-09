@@ -21,13 +21,13 @@ class Recommendation extends Component{
 						</div>
 						<div id = "FindJob_text">
 							<div id = "FindJob_info">
-								職缺：
+								職缺：test
 							</div>
 							<div id = "FindJob_info">
-								簡介：
+								簡介：test
 							</div>
 							<div id = "FindJob_info">
-								聯絡：
+								聯絡：test
 							</div>
 						</div>
 					</div>		
