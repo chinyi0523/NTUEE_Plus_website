@@ -1,22 +1,22 @@
-#FindJob_container {
+#recruitment_container {
 	position : relative;
 }
-#FindJob_section {
+#recruitment_section {
 	overflow: auto;
 	margin-top : 1em;
 	margin-bottom : 1em;
 	margin-left : 10vw;
 	margin-right : 10vw;
-	background-color : #93D5FF;
+	background-color : #FFA07A;
 }
-#FindJob_section_1 {
+#recruitment_section_1 {
 	margin : 10px;
-	background-color : #FFFFFF;
+	background-color : #FFA07A;
 }
-#FindJob_section_2 {
+#recruitment_section_2 {
 	
 }
-#FindJob_img {
+#recruitment_img {
 	margin : 10px;
 	background-image: url("https://factsnfigs.com/wp-content/uploads/2019/06/Find_Jobs.jpg"); 
 	background-size:600px 400px;
@@ -25,10 +25,10 @@
 	height : 400px;
 	background-color : #000;
 }
-#FindJob_text {
+#recruitment_text {
 
 }
-#FindJob_info {
+#recruitment_info {
 	margin : 10px;
 }
 @media (max-width:1200px){
