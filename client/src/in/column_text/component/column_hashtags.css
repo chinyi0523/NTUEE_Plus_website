@@ -1,0 +1,15 @@
+.column_hashtags{
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+.column_hashtags a:hover{
+    text-decoration: underline;
+}
+
+.column_hashtags a{
+    margin-left: 1vw;
+    transition-property: text-decoration;
+    transition-duration: 0.5s;
+}
