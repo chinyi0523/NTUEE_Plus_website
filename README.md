@@ -1,5 +1,7 @@
 # NTUEE_Plus_website
 
+執行方法 : npm install; npm audit fix; npm run local_mac
+
 ### 置頂文 0311工作分配 By謹譯 (0312部聚）
 第一次部聚＋第二次部聚前
 我會晚到（採訪到1930），大家可以先進行
