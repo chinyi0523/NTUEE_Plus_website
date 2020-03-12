@@ -10,21 +10,43 @@ class Contact extends Component{
         return (
         <div id="Contact_container">
             <NavBar/>
-            <div id="Contact_left_column">
-                <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
-                <p id="Contact_left_text">
-                    李筠婕
-                    <br />
-                    B06901014
-                </p>
+            <div id="Contact_section">
+                <div id="Contact_left_column">
+                    Past:
+                    <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
+                    <p id="Contact_left_text">
+                        莊永松
+                        <br />
+                        B05901033
+                    </p>
+                </div>
+                <div id="Contact_right_column">
+                    <div id="Contact_right_image"><img src={right_image} alt="rightImage" width="250px" height="250px" /></div>
+                    <p id="Contact_right_text">
+                        趙冠豪
+                        <br />
+                        B05901180
+                    </p>
+                </div>
             </div>
-            <div id="Contact_right_column">
-                <div id="Contact_right_image"><img src={right_image} alt="rightImage" width="250px" height="250px" /></div>
-                <p id="Contact_right_text">
-                    鄭謹譯
-                    <br />
-                    B06901180
-                </p>
+            <div id="Contact_section">
+                <div id="Contact_left_column">
+                    Current:
+                    <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
+                    <p id="Contact_left_text">
+                        李筠婕
+                        <br />
+                        B06901014
+                    </p>
+                </div>
+                <div id="Contact_right_column">
+                    <div id="Contact_right_image"><img src={right_image} alt="rightImage" width="250px" height="250px" /></div>
+                    <p id="Contact_right_text">
+                        鄭謹譯
+                        <br />
+                        B06901180
+                    </p>
+                </div>
             </div>
             <footer id="index_footer"><Footer/></footer>
         </div>
