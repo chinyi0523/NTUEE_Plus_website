@@ -14,7 +14,7 @@ class Column_section extends Component{
         let minor_section_container = document.getElementById(this.state.id);
         for (let i=0;i<this.state.sections.length;i++){
             let new_minor_section = document.createElement('div')
-            let minor_section_title = document.createElement('p');
+            let minor_section_title = document.createElement('li');
             let minor_section_content = document.createElement('p');
             minor_section_title.innerHTML = this.state.sections[i].title;
             minor_section_title.setAttribute('id',this.state.id+'_minor_title'+(i+1));
@@ -30,8 +30,6 @@ class Column_section extends Component{
             minor_section_container.appendChild(new_minor_section)
         }
     }
-        
-    
     render(){
         return(
             <div id={this.state.id}>

@@ -7,10 +7,8 @@ class Column_hashtags extends Component{
         this.state = {
             hashtags : this.props.hashtags,
             id : this.props.id
-
         }
         this.addHashTag = this.addHashTag.bind(this);
-    
     }
     addHashTag(i,content){
         let tag_container = document.getElementById(this.state.id);
@@ -28,8 +26,11 @@ class Column_hashtags extends Component{
     }
     render(){
         return(
-            <div id={this.state.id} class="column_hashtags">
+            <div id = "hashtag_space">
+                <div id={this.state.id} class="column_hashtags">
             </div>
+            </div>
+            
         )
     }
 }

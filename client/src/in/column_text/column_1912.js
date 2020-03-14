@@ -6,7 +6,7 @@ import {NavBar_in} from '../../component/AppBar_in';
 class Column_1912 extends Component{
     render(){
 		const column_1910_article = {
-			title:'2016級 林奕辰 （Bravo AI 洽吧智能執行長）2014級 沈昇勳 （Bravo AI 洽吧智能技術長）',
+			title:['2016級 林奕辰 （Bravo AI 洽吧智能執行長）','2014級 沈昇勳 （Bravo AI 洽吧智能技術長）'],
 			hashtags:['系友專訪','林奕辰','沈昇勳','2016級','2014級','BravoAI','洽吧智能','MachineLearning','核保理賠自動化','電腦視覺','自然語言處理','深度學習'],
 			sections:[
 				{
@@ -91,23 +91,15 @@ class Column_1912 extends Component{
 				}
 
 			],
-			sp_thx:'特別感謝 林奕辰 沈昇勳 撰寫： 何俊緯 周子庭 謝承霖 吳建翰 余欣澄 校稿彙整： 翁瑋襄 鄭謹譯',
+			
+			
+			annotation:['特別感謝：林奕辰、沈昇勳','撰寫：何俊緯、周子庭、謝承霖、吳建翰、余欣澄','校稿彙整：翁瑋襄、鄭謹譯'],
 			id:'column_1912'
 		}
-        return (
+		return (
 			<div>
 				<Column_content content = {column_1910_article}/>
 			</div>
-			/*<div id = "column_container">
-				<div id = "column_titlepage" style={{marginTop:"8%"}} >
-					Constructing
-				</div>
-				<div id = "column_text_background" >
-					<div id = "column_textpage">
-						Constructing
-					</div>
-				</div>
-			</div>*/
         )
     }
 }
