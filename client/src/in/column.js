@@ -4,6 +4,7 @@ import {column_1910_page } from "./column_text/column_pages";
 import ReactDOM from "react-dom";
 import './column.css';
 import {NavBar_in} from '../component/AppBar_in';
+import Jan_image from '../images/column/2001_photo.jpg';
 import Dec_image from '../images/column/1912_photo.jpg';
 import Oct_image from '../images/column/1910_photo.jpg';
 import Sep_image from '../images/column/1909_photo.jpg';
@@ -21,6 +22,37 @@ class Column extends Component{
         return (
         <div id = "column_container">
 			<div id = "column_section" style={{marginTop:"8%"}}>
+				<div id="column_img">
+					<img src={Jan_image} alt="Jan. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2020/03/14 星期六</div>
+						<div id = "column_name">&nbsp;羅韻瑢 鄭謹譯 李筠婕 吳建翰 余欣澄</div>
+					</div>
+					<div id = "column_title">
+						1999級 簡韶逸（CEO/ Founder @ Ganzin Technology, Prof. @ NTUEE）
+					</div>
+					<div id = "column_subtitle">
+						＊經歷＊<br/>
+						現任：CEO of Ganzin Technology<br/>
+						現任：Associate professor at GIEE (NTU)<br/>
+						曾任：Research staff in Quanta Research Institute(廣達) (2003~2004)<br/>
+						＊學歷＊<br/>
+						博士：台灣大學電子工程學研究所 (2003)<br/>
+						學士：台灣大學電機系(1999)
+
+					</div>
+					<div className = "column_prefix">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;簡韶逸教授任職於台大電子所長達16年，致力於多媒體訊號處理系統、多媒體積體電路設計、晶片系統設計方法的研究。 多年來，「媒體晶片系統實驗室」不斷研發出優異的技術。2016 年簡韶逸教授帶學生做出眼球追蹤技術的雛形時，他看好一定能應用在 AR/VR 上，於是決心創業。2018年1月時見臻科技(Ganzin Technology) 從台灣大學spin off。見臻科技提供整合性視線追蹤解決方案 (eye tracking solution)，包括視線追蹤模組 (eye tracking module) 及對應之軟體開發平台 (SDK)，解決目前市面上眼動儀成本高、功耗高、體積大、機構複雜的問題。<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;見臻科技連兩年參加世界性消費電子展（CES），2018年獲選Taiwan Tech Star，是32家獲選的台灣新創公司之一，2019年更被路透社評選為Best of CES。
+						<Link to="/in/Column/pages/2001">敬請期待...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div id = "column_section" >
 				<div id="column_img">
 					<img src={Dec_image} alt="Dec. Image" className="column_image" />
 				</div>
