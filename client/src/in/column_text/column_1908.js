@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Column_content from './component/column_content';
 import './column_text.css';
 import {NavBar_in} from '../../component/AppBar_in';
 
@@ -132,7 +133,7 @@ class Column_1908 extends Component{
 			],
 			
 			
-			annotation:['特別感謝：方劭云 Yuko Fang','撰寫： 鄭謹譯、施彥宇、王德宇、曾晴 ','校稿彙整： 鄭謹譯'],
+			annotation:['特別感謝：方劭云','撰寫： 鄭謹譯、施彥宇、王德宇、曾晴','校稿彙整： 鄭謹譯'],
 			id:'column_1908'
 		}
 		return (
