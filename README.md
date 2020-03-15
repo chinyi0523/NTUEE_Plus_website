@@ -4,9 +4,9 @@
 第一次部聚＋第二次部聚前
 我會晚到（採訪到1930），大家可以先進行
 > **前端**
-> * 友廷：完成Profile部分、Contact排版,team頁面
-> * 謹譯：完成Profile部分、Contact排版
-> * 承樺：完成Column各個訪問的內頁，可以問友廷模板（內頁加油）
+> * 友廷：完成Profile部分、Contact排版、team頁面
+> * 謹譯：完成Profile部分、Contact排版、Study Link
+> * 承樺：完成Column各個訪問的內頁
 > * 建琁：同上，另外學如何架內頁，連結readme
 > * 育楷：Recruit/Recommendation 頁面分成三欄（目前為一欄） 
 > * 明翰：看目前所有網站，提供所有設計的點子
@@ -17,6 +17,11 @@
 > * 宗倫：Career
 > * 建翰：修照片
 > * 侃軒：Session
+
+### 0315 進度 By 謹譯 建琁 承樺
+* Column內頁模板完成
+* Column 1907- 完成
+* Study Link 完成
 
 ### 0220工作分配 By謹譯 0309已閱
 第一次部聚前希望可以完成
