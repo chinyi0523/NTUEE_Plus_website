@@ -9,7 +9,7 @@ import Dec_image from '../images/column/1912_photo.jpg';
 import Oct_image from '../images/column/1910_photo.jpg';
 import Sep_image from '../images/column/1909_photo.jpg';
 import Aug_image from '../images/column/1908_photo.jpg';
-import Jul_image from '../images/column/1907_photo.JPG';
+import Jul_image from '../images/column/1907_photo.jpg';
 import 陳維超_image from '../images/column/陳維超_photo.jpg';
 import 楊奕軒_image from '../images/column/楊奕軒_photo.jpg';
 import 陳俊仰_image from '../images/column/陳俊仰_photo.jpg';
