@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Switch,Redirect,Route,Link} from "react-router-dom"
-
+import Button from '@material-ui/core/Button';
 import ReactDOM from "react-dom";
 import './study.css';
 import {NavBar_in} from '../component/AppBar_in';
@@ -11,7 +11,9 @@ class Study extends Component{
         return (
         <div id = "study_container" >
 			<div id = "study_text" style={{marginTop:"8%"}}>
-				升學資訊
+                <a href="https://docs.google.com/spreadsheets/d/1I2HBAvKZWo2eeMYtZTJ8JkHEGu8gM2yUiRyArxE5GvY/edit#gid=0" target="_blank">
+                    <Button id="Study_btn">Program Info</Button>
+                </a>
 			</div>
 					
 			

@@ -4,16 +4,19 @@ import {column_1910_page } from "./column_text/column_pages";
 import ReactDOM from "react-dom";
 import './column.css';
 import {NavBar_in} from '../component/AppBar_in';
+import Jan_image from '../images/column/2001_photo.JPG';
 import Dec_image from '../images/column/1912_photo.jpg';
 import Oct_image from '../images/column/1910_photo.jpg';
 import Sep_image from '../images/column/1909_photo.jpg';
 import Aug_image from '../images/column/1908_photo.jpg';
-import Jul_image from '../images/column/1907_photo.JPG';
+import Jul_image from '../images/column/1907_photo.jpg';
 import 陳維超_image from '../images/column/陳維超_photo.jpg';
 import 楊奕軒_image from '../images/column/楊奕軒_photo.jpg';
 import 陳俊仰_image from '../images/column/陳俊仰_photo.jpg';
 import 黃柏源_image from '../images/column/黃柏源_photo.jpg';
 import 胡立民_image from '../images/column/胡立民_photo.jpg';
+import 洪銘駿_image from '../images/column/洪銘駿_photo.jpg';
+import 王英明_image from '../images/column/王英明_photo.jpg';
 
 class Column extends Component{
     render(){
@@ -21,6 +24,37 @@ class Column extends Component{
         return (
         <div id = "column_container">
 			<div id = "column_section" style={{marginTop:"8%"}}>
+				<div id="column_img">
+					<img src={Jan_image} alt="Jan. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2020/03/14 星期六</div>
+						<div id = "column_name">&nbsp;羅韻瑢 鄭謹譯 李筠婕 吳建翰 余欣澄</div>
+					</div>
+					<div id = "column_title">
+						1999級 簡韶逸（CEO/ Founder @ Ganzin Technology, Prof. @ NTUEE）
+					</div>
+					<div id = "column_subtitle">
+						＊經歷＊<br/>
+						現任：CEO of Ganzin Technology<br/>
+						現任：Associate professor at GIEE (NTU)<br/>
+						曾任：Research staff in Quanta Research Institute(廣達) (2003~2004)<br/>
+						＊學歷＊<br/>
+						博士：台灣大學電子工程學研究所 (2003)<br/>
+						學士：台灣大學電機系(1999)
+
+					</div>
+					<div className = "column_prefix">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;簡韶逸教授任職於台大電子所長達16年，致力於多媒體訊號處理系統、多媒體積體電路設計、晶片系統設計方法的研究。 多年來，「媒體晶片系統實驗室」不斷研發出優異的技術。2016 年簡韶逸教授帶學生做出眼球追蹤技術的雛形時，他看好一定能應用在 AR/VR 上，於是決心創業。2018年1月時見臻科技(Ganzin Technology) 從台灣大學spin off。見臻科技提供整合性視線追蹤解決方案 (eye tracking solution)，包括視線追蹤模組 (eye tracking module) 及對應之軟體開發平台 (SDK)，解決目前市面上眼動儀成本高、功耗高、體積大、機構複雜的問題。<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;見臻科技連兩年參加世界性消費電子展（CES），2018年獲選Taiwan Tech Star，是32家獲選的台灣新創公司之一，2019年更被路透社評選為Best of CES。
+						<Link to="/in/Column/pages/2001">敬請期待...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div id = "column_section" >
 				<div id="column_img">
 					<img src={Dec_image} alt="Dec. Image" className="column_image" />
 				</div>
@@ -292,7 +326,58 @@ class Column extends Component{
 				</div>
 				
 			</div>
-                              
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={洪銘駿_image} alt="洪銘駿. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/6/9 星期五</div>
+						<div id = "column_name">&nbsp;劉衡謙 賴明緯 潘彥銘 葉加祈 Sasa Chen</div>
+					</div>
+					<div id = "column_title">
+						2014級 洪銘駿（RobotArt 國際機器人藝術大賽首獎）
+					</div>
+					<div id = "column_subtitle">
+						洪銘駿<br/>
+                        碩士：台大電機所控制組 <br/>
+						學士：台灣大學電機系(2014)<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到2014級 洪銘駿 系友參加本次影片專訪。學長將本身在藝術方面的興趣和科技做結合，在RobotArt機器人藝術比賽上奪得首獎！youtube上面也有學長設計的機器人畫Albert Einstein的影片呢！這次的籌備團隊非常用心，特別製作了一份圖文並茂、以故事方式呈現訪談過程的文章（https://goo.gl/0ZH42K）希望能讓大家對於洪銘駿學長有更完整的認識！
+                        快點進文章或觀賞我們精心剪輯的影片，聽一聽 洪銘駿 學長為我們帶來的分享吧 :-)
+						<Link to="/in/Column/pages/洪銘駿">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={王英明_image} alt="王英明. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/5/26 星期五</div>
+						<div id = "column_name">&nbsp;藍辰屹 陳欽安 Wei-Lun Huang 廖宜倫 Chih-Yang Yeh</div>
+					</div>
+					<div id = "column_title">
+						1995級 王英明（Corporate Business Development@ Mediatek Inc）
+					</div>
+					<div id = "column_subtitle">
+						王英明<br/>
+                        碩士：University of Texas at Austin <br/>
+						學士：台灣大學電機系(1995)<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到 1995級 王英明 系友參加本次影片專訪，感謝 2008級 趙式隆 隆哥的推薦。學長是標準的電機系出身，畢業後當了RD一陣子後、決定轉戰管理顧問行業，加入了麥肯錫。 學長非常熱心，兩天前（5/24）系上的「專題演講」必修課，他也很慷慨地來到現場和大家聊聊他的心路歷程，近期王英明學長正在籌備自己的新創事業。快點進文章或觀賞我們精心剪輯的影片，聽一聽 王英明學長為我們帶來的分享吧。
+						<Link to="/in/Column/pages/王英明">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+                                                                                       
 		</div>
         )
     }
