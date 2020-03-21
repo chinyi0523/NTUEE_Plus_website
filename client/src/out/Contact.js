@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import './Contact.css';
+import {Link} from "react-router-dom";
 import eesa_icon from '../images/eesa-icon.png';
 import left_image from '../images/left_image.png';
 import right_image from '../images/right_image.png';
 import { NavBar } from '../component/AppBar';
 import Footer from "../component/Footer";
+import { Button } from '@material-ui/core';
 class Contact extends Component{
     render(){
         return (
         <div id="Contact_container">
             <NavBar/>
-            <div id="Contact_section">
+            {/*<div id="Contact_section">
                 <div id="Contact_left_column">
                     Past:
                     <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
@@ -28,10 +30,9 @@ class Contact extends Component{
                         B05901180
                     </p>
                 </div>
-            </div>
-            <div id="Contact_section">
+        </div>*/}
+            
                 <div id="Contact_left_column">
-                    Current:
                     <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
                     <p id="Contact_left_text">
                         李筠婕
@@ -47,7 +48,9 @@ class Contact extends Component{
                         B06901180
                     </p>
                 </div>
-            </div>
+                <Link to="/Team" id="Contact_link"><button id="Contact_team_btn">History Team</button></Link>
+                
+            
             <footer id="index_footer"><Footer/></footer>
         </div>
         )

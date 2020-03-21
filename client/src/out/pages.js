@@ -7,6 +7,7 @@ import About from "./About"
 import Contact from "./Contact"
 import Register from "./Register"
 import Forget from "./Forget"
+import Team from "./Team"
 
 const Home_page = () =>{
     return <Home/>;
@@ -29,5 +30,8 @@ const Register_page = () =>{
 const Forget_page = () =>{
     return <Forget/>
 };
+const Team_page = () =>{
+    return <Team/>
+}
 
-export { Home_page,Login_page, Support_page,About_page ,Contact_page, Register_page,Forget_page };
+export { Home_page,Login_page, Support_page,About_page ,Contact_page, Register_page,Forget_page ,Team_page};

@@ -4,7 +4,7 @@ import {column_1910_page } from "./column_text/column_pages";
 import ReactDOM from "react-dom";
 import './column.css';
 import {NavBar_in} from '../component/AppBar_in';
-import Jan_image from '../images/column/2001_photo.JPG';
+import Jan_image from '../images/column/2001_photo.jpg';
 import Dec_image from '../images/column/1912_photo.jpg';
 import Oct_image from '../images/column/1910_photo.jpg';
 import Sep_image from '../images/column/1909_photo.jpg';
