@@ -18,7 +18,7 @@
 > * 建翰：修照片
 > * 侃軒：Session
 ### 0321 進度 By 友廷
- Contact排版修復，加上buttom連到Team
+* Contact排版修復，加上buttom連到Team
 * Team_member 組成 Team頁面，格式請看Team.js
 * 待將AppBar加上hover list
 * 美觀部份待工作
