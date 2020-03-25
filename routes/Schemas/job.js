@@ -5,7 +5,7 @@ var Job_Schema = new Schema({
     ID : String,
 	title : String,
 	subtitle: String,
-	discription: String
+	description: String
 })
 
 module.exports = mongoose.model('Job',Job_Schema);
