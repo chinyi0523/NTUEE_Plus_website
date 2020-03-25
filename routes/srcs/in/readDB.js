@@ -57,13 +57,13 @@ module.exports.getOtherDB = function(obj1){
 	column22.forEach(element=>{
 		output[element[0]]={}
 		element[1].forEach(ele1=>{
-			if(obj1[element[0]][element[1]]["show"]===true
-				&& (obj1[element[0]][element[1]]["SD"]!==(undefined||'')
-				|| obj1[element[0]][element[1]]["Note"]!==(undefined||''))
+			if(obj1[element[0]][ele1]["show"]===true
+				&& (obj1[element[0]][ele1]["SD"]!==(undefined||'')
+				|| obj1[element[0]][ele1]["Note"]!==(undefined||''))
 			){
-				output[element[0]][element[1]]={
-					SD:obj1[element[0]][element[1]]["SD"],
-					Note:obj1[element[0]][element[1]]["Note"]
+				output[element[0]][ele1]={
+					SD:obj1[element[0]][ele1]["SD"],
+					Note:obj1[element[0]][ele1]["Note"]
 				}
 			}
 		})
@@ -186,4 +186,13 @@ module.exports.chDB = function(req){
 	if(!setEmpty)(re.$set = output)
 	console.log('re',re)
 	return re;
+}
+
+module.exports.addJob = function(req){
+	output = {
+		title:req.body.title,
+		subtitle:req.body.subtitle||"",
+		discription: req.body.discription
+	}
+	return output
 }
