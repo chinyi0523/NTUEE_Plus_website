@@ -18,6 +18,9 @@
 > * 建翰：修照片
 > * 侃軒：Session
 
+### 0326 進度 By 育楷
+* Recruit/Recommendation 頁面分成三欄
+
 ### 0325 進度 By 君輔
 * search目前可用基本資料、系所進行搜尋(工作搜尋待新增
 * 搜尋完的結果我只有console出來，怎麼render再交給前端負責
