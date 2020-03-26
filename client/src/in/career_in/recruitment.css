@@ -1,12 +1,16 @@
 #recruitment_container {
 	position : relative;
+	margin-top : 8%;
+	display: flex;
+	padding: 30px;
+	justify-content: space-evenly;
 }
 #recruitment_section {
 	overflow: auto;
 	margin-top : 1em;
 	margin-bottom : 1em;
-	margin-left : 10vw;
-	margin-right : 10vw;
+	margin-left : 10px;
+	margin-right : 10px ;
 	background-color : #FFA07A;
 }
 #recruitment_section_1 {
@@ -19,10 +23,10 @@
 #recruitment_img {
 	margin : 10px;
 	background-image: url("https://factsnfigs.com/wp-content/uploads/2019/06/Find_Jobs.jpg"); 
-	background-size:600px 400px;
+	background-size:300px 200px;
 	float : left;
-	width : 600px;
-	height : 400px;
+	width : 300px;
+	height : 200px;
 	background-color : #000;
 }
 #recruitment_text {
