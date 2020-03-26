@@ -38,5 +38,7 @@ router.post("/chVisual",
 	require('./srcs/in/chVisual'));
 router.post('/searchVisual',
 	require('./srcs/in/searchVisual'))
+router.post('/addJob',
+	require('.srcs/in/addJob'))
 
 module.exports = router;
