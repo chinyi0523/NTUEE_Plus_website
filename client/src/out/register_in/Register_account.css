@@ -1,4 +1,4 @@
-#Register_container{
+#Register_acc_container{
     /*position: absolute;
     top:15%;*/
     font-family:'Noto Sans TC',Arial,sans-serif;
@@ -7,14 +7,14 @@
     height: 100%;
 }
 
-#Register_register_table{
+#Register_acc_register_table{
     margin-top: 7%;
     width:65%;
     margin-left:5%;
     float:left;
     color: white;
 }
-#Register_register_table input{
+#Register_acc_register_table input{
     color:white;
     font-size: 24px;
     width:50%;
@@ -28,85 +28,85 @@
     margin-right:5%;
 }
 
-#Register_register_table p{
+#Register_acc_register_table p{
     margin:0;
     display: inline;
     text-align: center;
 }
-#Register_table_title{
+#Register_acc_table_title{
     letter-spacing: 2px;
 }
-#Register_table{
+#Register_acc_table{
     margin-top: 5%;
     margin-left:5%;
     font-size: 24px;
     letter-spacing: 1px;
     
 }
-#Register_input1{
+#Register_acc_input1{
     margin-top:3%;
 }
-#Register_input2{
+#Register_acc_input2{
     margin-top:3%;
 }
-#Register_input3{
+#Register_acc_input3{
     margin-top: 3%;
 }
-#Register_input4{
+#Register_acc_input4{
     margin-top: 3%;
 }
-#Register_input5{
+#Register_acc_input5{
     margin-top: 3%;
 }
-#Register_input6{
+#Register_acc_input6{
     margin-top: 3%;
 }
 
-#Register_realname:focus::-webkit-input-placeholder{
+#Register_acc_realname:focus::-webkit-input-placeholder{
     color:#003F67
 }
-#Register_realname:focus:-ms-input-placeholder{
+#Register_acc_realname:focus:-ms-input-placeholder{
     color:#003F67
 }
-#Register_realname:focus::-ms-input-placeholder{
+#Register_acc_realname:focus::-ms-input-placeholder{
     color:#003F67
 }
-#Register_realname:focus::placeholder{
-    color:#003F67
-}
-
-#Register_student_id:focus::-webkit-input-placeholder{
-    color:#003F67
-}
-#Register_student_id:focus:-ms-input-placeholder{
-    color:#003F67
-}
-#Register_student_id:focus::-ms-input-placeholder{
-    color:#003F67
-}
-#Register_student_id:focus::placeholder{
+#Register_acc_realname:focus::placeholder{
     color:#003F67
 }
 
+#Register_acc_student_id:focus::-webkit-input-placeholder{
+    color:#003F67
+}
+#Register_acc_student_id:focus:-ms-input-placeholder{
+    color:#003F67
+}
+#Register_acc_student_id:focus::-ms-input-placeholder{
+    color:#003F67
+}
+#Register_acc_student_id:focus::placeholder{
+    color:#003F67
+}
 
-#Register_password:focus::-webkit-input-placeholder{
+
+#Register_acc_password:focus::-webkit-input-placeholder{
     color:#003F67
 }
-#Register_password:focus:-ms-input-placeholder{
+#Register_acc_password:focus:-ms-input-placeholder{
     color:#003F67
 }
-#Register_password:focus::-ms-input-placeholder{
+#Register_acc_password:focus::-ms-input-placeholder{
     color:#003F67
 }
-#Register_password:focus::placeholder{
+#Register_acc_password:focus::placeholder{
     color:#003F67
 }
-#Register_confirm_password_label{
+#Register_acc_confirm_password_label{
     margin:0;
     display: inline;
     text-align: center;
 }
-#Register_fileinput{
+#Register_acc_fileinput{
     /*float: right;
     width:55%;
     margin-top: 1.5%;
@@ -114,30 +114,30 @@
     display: none;
 
 }
-#Register_addImage_icon{
+#Register_acc_addImage_icon{
     /*float: right;*/
     font-size: 24px;
     margin-left: 20%;
 }
-#Register_addImage_icon:hover{
+#Register_acc_addImage_icon:hover{
     color:rgb(106, 255, 198);
     /*text-decoration: underline;*/
 }
 
 
-#Register_confirm_password:focus::-webkit-input-placeholder{
+#Register_acc_confirm_password:focus::-webkit-input-placeholder{
     color:#003F67
 }
-#Register_confirm_password:focus:-ms-input-placeholder{
+#Register_acc_confirm_password:focus:-ms-input-placeholder{
     color:#003F67
 }
-#Register_confirm_password:focus::-ms-input-placeholder{
+#Register_acc_confirm_password:focus::-ms-input-placeholder{
     color:#003F67
 }
-#Register_confirm_password:focus::placeholder{
+#Register_acc_confirm_password:focus::placeholder{
     color:#003F67
 }
-#Register_register_button{
+#Register_acc_register_button{
     font-size: 24px;
     border-radius: 10px;
     margin-top: 4%;
@@ -151,7 +151,7 @@
     cursor: pointer;   
 }
 
-#Register_register_button:hover{
+#Register_acc_register_button:hover{
     transition-property: background-color, color;
     transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
     transition-duration: 250ms, 250ms;
@@ -159,7 +159,7 @@
     color: #003f67;
     font-weight: bold;
 }
-#Register_register_text{
+#Register_acc_register_text{
     text-align: center;
     margin:0;
     -webkit-transform: rotate3d(1,0,0,0deg);
@@ -170,18 +170,18 @@
     transition: transform 2s ease-in-out, -webkit-transform 2s ease-in-out;
     
 }
-#Register_FAQ{
+#Register_acc_FAQ{
     margin-top: 5%;
     display: inline-block;
     width: 30%;
 }
-#Register_FAQ_title{
+#Register_acc_FAQ_title{
     color: gray;
     margin-top:10%;
     text-align: center;
     font-size:24px;
 }
-#Register_splitline{
+#Register_acc_splitline{
     width:95%;
     border-width: 0 0 2px 0 ;
     border-style:solid ;
@@ -189,19 +189,19 @@
     border-radius: 1px;
 }
 
-#Register_FAQ_list{
+#Register_acc_FAQ_list{
     color: gray;
     list-style-type: unset;
 }
 
-#Register_imgPreview{
+#Register_acc_imgPreview{
     margin-top: 3vh;
     font-size: 18px ;
     /*margin-left: 50%;*/
     border-radius: 10px;
     color:white;
 }
-#Register_id_photo{
+#Register_acc_id_photo{
     
     max-height: 40vh;
     max-width: 30vw;

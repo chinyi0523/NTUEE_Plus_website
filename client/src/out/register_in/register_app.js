@@ -9,6 +9,7 @@ class register_app extends Component{
                 <div>
                 <NavBar/>
                 </div>
+                    Please choose one below, strongly recommend register by Facebook!
                 <Switch>
                     <Route path="/Register/pages/Register_account" exact component={Register_account_page}/>
                 </Switch>
