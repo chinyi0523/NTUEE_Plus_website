@@ -19,3 +19,23 @@
     float:left;
     color: white;
 }
+#Register_btn{
+    font-size: 2.7vmin;
+    border-radius: 10px;
+    background-color:  #003f67;
+    color: #fff;
+    border: 2px #fff solid;
+    margin:0;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+#Register_btn:hover{
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
+    transition-duration: 250ms, 250ms;
+    background-color: #fff;
+    color: #003f67;
+    font-weight: bold;
+}
