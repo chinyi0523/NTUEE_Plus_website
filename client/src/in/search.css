@@ -1,0 +1,8 @@
+#search_container {
+	position : relative;
+	display : flex;
+	justify-content : center;
+}
+#search_div{
+	margin-top : 50%;
+}
