@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './Register.css';
-import eesa_icon from '../images/eesa-icon.png';
+//import './Register.css';
+//import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
-import { NavBar } from '../component/AppBar';
-class Register extends Component{
+import { NavBar } from '../../component/AppBar';
+//import Register_account from './';
+class Register_facebook extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -107,9 +107,9 @@ class Register extends Component{
 		}
         return(
 			<div>
-				<NavBar/> 
-            <div id="Register_container">
-			
+				<p style={{fontSize:"64px"}}>TTest!!</p>
+            {/*<div id="Register_container">
+				
                 <div id="Register_register_table">
                     <h1 id="Register_table_title">Just A Few Steps to Join EE+!</h1>
 					<form onSubmit={this.handleSubmit}>
@@ -159,14 +159,11 @@ class Register extends Component{
 						<button id="Register_register_button" onclick={this.handleSubmit}>
 							<p id="Register_register_text">Register</p>
 						</button>
-						
 					</form>
                 </div>
 				
                 <div id="Register_FAQ">
                     <div id="Register_FAQ_title">FAQ</div>
-					<Link to="/Register/pages/Register_account" >Recruitment</Link>
-					<Link to="/Register/pages/Register_facebook" >Facebookin</Link>
                     <div id="Register_splitline"></div>
                     <div id="Register_FAQ_content">
                         <ul id="Register_FAQ_list">
@@ -181,9 +178,9 @@ class Register extends Component{
 				  			{$imagePreview}
 					</div>
                 </div>
-            </div>
+		</div>*/}
 			</div>
         )
     }
 }
-export default Register
+export default Register_facebook
