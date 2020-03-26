@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Switch,Redirect,Route,Link} from "react-router-dom"
 import Button from '@material-ui/core/Button';
 import ReactDOM from "react-dom";
-import './Search.css';
+import './search.css';
 import {NavBar_in} from '../component/AppBar_in';
 import axios from 'axios';
 
@@ -28,7 +28,7 @@ var map = [
 ];
 
 class Search extends Component{
-    constructor(props) {
+    /*constructor(props) {
 		super(props);
 		var tmpState = {hasChanged:{}};
 		map.forEach(arr=>{
@@ -38,8 +38,8 @@ class Search extends Component{
 		this.handleInputChange = handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.creatTable = this.creatTable.bind(this);
-	}
-	
+	}*/
+	/*
 	handleSubmit(event){
 		event.preventDefault();
 		var r = window.confirm("確認搜尋?");
@@ -90,7 +90,7 @@ class Search extends Component{
 			
 			ST.appendChild(new_tr)
 		})
-	}
+	}*/
 	render(){
         return (
 	       <div id = "search_container">
