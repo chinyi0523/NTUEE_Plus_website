@@ -52,7 +52,7 @@ app.get('*', (req, res) => {
 https.createServer(options, app).listen(1993, function() {
   console.log('server connect');
   console.log('port name: ', process.env.PORT||1993);
-});
+})	;
 /*
 var server = app.listen(process.env.PORT||1993,function(){
     console.log('server connect');

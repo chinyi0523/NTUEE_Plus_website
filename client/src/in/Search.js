@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Switch,Redirect,Route,Link} from "react-router-dom"
 import Button from '@material-ui/core/Button';
 import ReactDOM from "react-dom";
+import './search.css';
 import {NavBar_in} from '../component/AppBar_in';
 import axios from 'axios';
 
@@ -27,7 +28,7 @@ var map = [
 ];
 
 class Search extends Component{
-    constructor(props) {
+    /*constructor(props) {
 		super(props);
 		var tmpState = {hasChanged:{}};
 		map.forEach(arr=>{
@@ -37,8 +38,8 @@ class Search extends Component{
 		this.handleInputChange = handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.creatTable = this.creatTable.bind(this);
-	}
-	
+	}*/
+	/*
 	handleSubmit(event){
 		event.preventDefault();
 		var r = window.confirm("確認搜尋?");
@@ -89,14 +90,33 @@ class Search extends Component{
 			
 			ST.appendChild(new_tr)
 		})
-	}
+	}*/
 	render(){
         return (
-        <div id = "search_container" style={{marginTop:"8%"}}>
-			<form id="Search_Form" onSubmit={this.handleSubmit}>
-			  <table id = "Search_table" cellSpacing="10">
-			  </table>
-			  <input type="submit" value="Search" />
+	       <div id = "search_container">
+			<form id="search_Form" onSubmit={this.handleSubmit}>
+				<div id = "search_div">
+					<span id = "search_method">請選擇查詢方式：</span>
+					<select id="search_cstype">
+						<option value="1">account</option>
+						<option value="2">username</option>
+						<option value="3">nickname</option>
+						<option value="4">profile</option>
+						<option value="5">publicEmail</option>
+						<option value="6">office</option>
+						<option value="7">homephone</option>
+						<option value="8">cellphone</option>
+						<option value="9">major</option>
+						<option value="10">double_major</option>
+						<option value="11">minor</option>
+						<option value="12">master</option>
+						<option value="13">doctor</option>
+						<option value="14">Company</option>
+					</select>
+					<span id = "search_method">輸入關鍵字：</span> 
+					<input/>
+					<input type="submit" value="Search" />
+				</div>
 			</form>
 		</div>
         )

@@ -201,7 +201,7 @@ module.exports.chDB = function(req){
 	return re;
 }
 
-module.exports.addJob = function(req){
+module.exports.addJob = function(req){ //searchJob
 	output = {
 		title:req.body.title,
 		subtitle:req.body.subtitle||"",
