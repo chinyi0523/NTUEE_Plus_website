@@ -20,7 +20,10 @@ var map = [
 	["double_major","education.double_major"],
 	["minor","education.minor"],
 	["master","education.master"],
-	["doctor","education.doctor"]
+	["doctor","education.doctor"],
+	["Company","Occupation.C"],
+	["Occupation","Occupation.O"],
+	["Position","Occupation.P"]
 ];
 
 class Search extends Component{

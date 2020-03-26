@@ -25,6 +25,7 @@ column22 = [
 column3 = [
 	"Occupation"
 ]
+column33 = ["O","P","C"]
 
 module.exports.getOwnDB = function(obj1){
 	console.log('obj=',obj1)
@@ -107,6 +108,18 @@ module.exports.search = function(req){
 			}
 		})
 	})
+	JobQ = false
+	JobMatch = {}
+	column33.forEach(ele2=>{
+		if(req.body["Occupation."+ele2]!==undefined){
+			JobQ = true;
+			JobMatch[ele2] = req.body["Occupation."+ele2];
+		}
+	})
+	if(JobQ){
+		JobMatch["show"] = true;
+		query["Occupation"] = {$elemMatch:JobMatch};
+	}
 	console.log('query=',query)
 	return query
 }
