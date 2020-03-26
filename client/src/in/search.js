@@ -92,11 +92,30 @@ class Search extends Component{
 	}
 	render(){
         return (
-        <div id = "search_container" style={{marginTop:"8%"}}>
-			<form id="Search_Form" onSubmit={this.handleSubmit}>
-			  <table id = "Search_table" cellSpacing="10">
-			  </table>
-			  <input type="submit" value="Search" />
+	       <div id = "search_container">
+			<form id="search_Form" onSubmit={this.handleSubmit}>
+				<div id = "search_div">
+					<span id = "search_method">請選擇查詢方式：</span>
+					<select id="search_cstype">
+						<option value="1">account</option>
+						<option value="2">username</option>
+						<option value="3">nickname</option>
+						<option value="4">profile</option>
+						<option value="5">publicEmail</option>
+						<option value="6">office</option>
+						<option value="7">homephone</option>
+						<option value="8">cellphone</option>
+						<option value="9">major</option>
+						<option value="10">double_major</option>
+						<option value="11">minor</option>
+						<option value="12">master</option>
+						<option value="13">doctor</option>
+						<option value="14">Company</option>
+					</select>
+					<span id = "search_method">輸入關鍵字：</span> 
+					<input/>
+					<input type="submit" value="Search" />
+				</div>
 			</form>
 		</div>
         )
