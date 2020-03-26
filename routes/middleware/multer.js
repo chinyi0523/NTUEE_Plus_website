@@ -5,8 +5,8 @@ var multer = require('multer')
 
 const upload=multer({
 	limits: {
-		// 限制上傳檔案的大小為 1MB
-		fileSize: 1000000
+		// 限制上傳檔案的大小為 100MB
+		fileSize: 100000000
 	},
 	fileFilter:function(req,file,cb){
 		if(!file.originalname.match(/\.(jpg|jpeg|png)$/)){
