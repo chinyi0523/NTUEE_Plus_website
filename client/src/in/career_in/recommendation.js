@@ -35,7 +35,7 @@ class Recommendation extends Component{
 					</div>
 				</div>		
 			</div>
-			<div id = "recommendation_section" style={{marginTop:"3%"}} >
+			<div id = "recommendation_section" >
 				<div id = "recommendation_section_1" >
 					<div id = "recommendation_title">
 						title
@@ -64,7 +64,7 @@ class Recommendation extends Component{
 					</div>
 				</div>		
 			</div>
-			<div id = "recommendation_section" style={{marginTop:"3%"}} >
+			<div id = "recommendation_section" >
 				<div id = "recommendation_section_1" >
 					<div id = "recommendation_title">
 						title
