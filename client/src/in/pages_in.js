@@ -4,7 +4,7 @@ import Column from "./column";
 import Career from "./career";
 import Study from "./study";
 import Main_in from "./Main_in";
-import Search from "./search";
+import Search from "./Sea";
 
 const Home_in_page = () =>{
     return <Home_in/>;
