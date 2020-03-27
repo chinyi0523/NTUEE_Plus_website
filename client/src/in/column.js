@@ -12,11 +12,17 @@ import Aug_image from '../images/column/1908_photo.jpg';
 import Jul_image from '../images/column/1907_photo.jpg';
 import 陳維超_image from '../images/column/陳維超_photo.jpg';
 import 楊奕軒_image from '../images/column/楊奕軒_photo.jpg';
-import 陳俊仰_image from '../images/column/陳俊仰_photo.jpg';
+import 陳俊仰_image from '../images/column/default_photo.jpg';
 import 黃柏源_image from '../images/column/黃柏源_photo.jpg';
 import 胡立民_image from '../images/column/胡立民_photo.jpg';
-import 洪銘駿_image from '../images/column/洪銘駿_photo.jpg';
-import 王英明_image from '../images/column/王英明_photo.jpg';
+import 洪銘駿_image from '../images/column/default_photo.jpg';
+import 王英明_image from '../images/column/default_photo.jpg';
+import 梁維仁_image from '../images/column/default_photo.jpg';
+import 高奕豪_image from '../images/column/default_photo.jpg';
+import 謝沛倫_image from '../images/column/default_photo.jpg';
+import 胡一天_image from '../images/column/default_photo.jpg';
+import 徐瑞廷_image from '../images/column/default_photo.jpg';
+import 趙式隆_image from '../images/column/default_photo.jpg';
 
 class Column extends Component{
     render(){
@@ -372,6 +378,160 @@ class Column extends Component{
 					<div className = "column_prefix" id="column_sp">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到 1995級 王英明 系友參加本次影片專訪，感謝 2008級 趙式隆 隆哥的推薦。學長是標準的電機系出身，畢業後當了RD一陣子後、決定轉戰管理顧問行業，加入了麥肯錫。 學長非常熱心，兩天前（5/24）系上的「專題演講」必修課，他也很慷慨地來到現場和大家聊聊他的心路歷程，近期王英明學長正在籌備自己的新創事業。快點進文章或觀賞我們精心剪輯的影片，聽一聽 王英明學長為我們帶來的分享吧。
 						<Link to="/in/Column/pages/王英明">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={梁維仁_image} alt="梁維仁. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/5/12 星期五</div>
+						<div id = "column_name">&nbsp;藍珮瑜 Steven Huang 林昱嘉 陳柏瑞</div>
+					</div>
+					<div id = "column_title">
+						1992級 梁維仁（元大證券香港區總經理、花旗環球證券臺灣區總經理）
+					</div>
+					<div id = "column_subtitle">
+						梁維仁<br/>
+                        曾任：元大證券香港區總經理、花旗環球證券臺灣區總經理<br/>
+                        碩士：Carnegie Mellon University master of science Computational Finance,<br/> 
+                        Industrial administration <br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到 1992級 梁維仁 系友參加本次skype專訪！
+                        學長不但在金融工程領域闖出一片天，退休後投入音樂藝術相關工作，還擅長登山滑雪等休閒活動，人生經歷非常豐富，我們快來看看梁維仁學長的經驗分享吧！
+						<Link to="/in/Column/pages/梁維仁">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={高奕豪_image} alt="高奕豪. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/4/28 星期五</div>
+						<div id = "column_name">&nbsp;蔡忠紘 林怡廷 陳鴻智 蔡承佑</div>
+					</div>
+					<div id = "column_title">
+						2006級 高奕豪（Quantitative Researcher @Two Sigma Investments）
+					</div>
+					<div id = "column_subtitle">
+						高奕豪<br/>
+                        現職：Quantitative Researcher, Two Sigma Investments <br/>
+						博士：Stanford University Information Systems Lab, EE PhD(2012)<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到 2006級 高奕豪 系友參加本次skype專訪，感謝 2006級 I-Hsiang Wang 教授的推薦。
+                        學長的經歷非常豐富，在Stanford University取得EE的PhD後，進入Wall Street 的 hedge fund，在數學、軟硬體、計量金融...等領域，都有很多人生故事願意和我們分享。快點進文章，看一看高奕豪學長為我們帶來的分享吧!
+						<Link to="/in/Column/pages/高奕豪">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={謝沛倫_image} alt="謝沛倫. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/4/13 星期四</div>
+						<div id = "column_name">&nbsp;鍾興寰 Paulsu Su 陳威成 孫凡耕</div>
+					</div>
+					<div id = "column_title">
+						2007級 謝沛倫（Ambidio Inc. 共同創辦人）
+					</div>
+					<div id = "column_subtitle">
+						謝沛倫<br/>
+                        碩士：Columbia University, Fu Foundation School of Engineering and Applied Science Electrical Engineering <br/>
+						經歷：Co-Founder of Ambidio Inc.<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;「想像一下，打開電腦或是手機觀看影片或玩電動，就能感受到360度逼真的立體音效，彷彿賽車就從身旁呼嘯而過、恐龍就從眼前磅礡踩過的震撼聲音。」
+                        系學會很榮幸邀請到 2007級 謝沛倫系友參加本次skype專訪。創辦於2014年，LA based的 startup ─ Ambidio，希望能創造「大腦與耳朵重新連結的Ambidio時代」，快點進文章，聽一聽謝沛倫學長為我們帶來的分享吧!
+						<Link to="/in/Column/pages/謝沛倫">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={胡一天_image} alt="胡一天. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/3/30 星期四</div>
+						<div id = "column_name">&nbsp;Isabelle Wu Tiffany Chiang 楊程皓 Thomas Mao Pierre Sue</div>
+					</div>
+					<div id = "column_title">
+						2000級 胡一天（源鉑資本Kyber Capital執行長，專業投資人與金融觀察家）
+					</div>
+					<div id = "column_subtitle">
+						胡一天<br/>
+                        碩士：Financial Engineering, Columbia University (2003-2006)<br/>
+						現任：Founder, Chairman & CEO @ Kyber Capital 源鉑資本<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到 2000級 胡一天系友參加本次專訪，感謝 2000級 陳和麟教授的大力幫忙。學長對於金融的洞見非常令人欽佩，而且樂於與學弟妹分享自己的故事、願意撥冗直接參與編修這篇文章（超熱心！）現在就點擊連結、一起認識學長的心路歷程吧!
+						<Link to="/in/Column/pages/胡一天"> more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={徐瑞廷_image} alt="徐瑞廷. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/3/13 星期一</div>
+						<div id = "column_name">&nbsp;</div>
+					</div>
+					<div id = "column_title">
+						1995級 徐瑞廷（BCG 波士頓顧問公司董事總經理）
+					</div>
+					<div id = "column_subtitle">
+						徐瑞廷<br/>
+                        碩士：史丹福大學電子工程學碩士 <br/>
+						經歷：BCG波士頓顧問公司台北辦公室負責人、合夥人暨董事總經理。<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到 1995級 徐瑞廷系友參加本次專訪，感謝 1995級林哲立系友 與 1995級丁建均教授的大力幫忙。現在就點擊文章，讓我們一起看看徐瑞廷學長的分享與心路歷程吧!
+						<Link to="/in/Column/pages/徐瑞廷">read more...</Link>
+					</div>
+					
+				</div>
+				
+			</div>
+            <div id = "column_section" >
+				<div id="column_img">
+					<img src={趙式隆_image} alt="趙式隆. Image" className="column_image" />
+				</div>
+				<div id = "column_text">
+					<div id = "column_info">
+						<div id = "column_date">|2017/2/27 星期一</div>
+						<div id = "column_name">&nbsp;</div>
+					</div>
+					<div id = "column_title">
+						2008級 趙式隆（台灣矽谷創業家協會理事長）
+					</div>
+					<div id = "column_subtitle">
+						趙式隆<br/>
+                        博士：台大電機博士(D97) <br/>
+						經歷：台灣矽谷創業家協會理事長、學悅科技Zuvio創辦人<br/>
+					</div>
+					<div className = "column_prefix" id="column_sp">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到2008級 趙式隆 學長擔任首po系友專訪，為我們介紹他的簡歷以及NTUEE在他心中的定位！
+						<Link to="/in/Column/pages/趙式隆">read more...</Link>
 					</div>
 					
 				</div>

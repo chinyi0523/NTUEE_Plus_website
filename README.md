@@ -18,6 +18,11 @@
 > * 建翰：修照片
 > * 侃軒：Session
 
+### 0327 進度 By 建琁
+* Column 陳俊仰、黃柏源- 完成
+* Column 新增default照片
+* Column 新增 梁維仁、高奕豪、謝沛倫、胡一天、徐瑞廷、趙式隆學長
+
 ### 0326 進度 By 育楷 宗倫
 * Recruit/Recommendation 頁面分成三欄
 * 新增addJob後端
