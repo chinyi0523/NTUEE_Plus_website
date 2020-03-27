@@ -12,10 +12,12 @@ module.exports = function(name,file){
     column.save(function(err,res){
         if(err){
             console.log(err);
+			return false;
         }
         else{
 			console.log('成功儲存');
             console.log(res);
+			return true;
         }
     })
 }
