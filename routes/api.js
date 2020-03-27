@@ -40,5 +40,8 @@ router.post('/searchVisual',
 	require('./srcs/in/searchVisual'))
 router.post('/addJob',
 	require('./srcs/in/addJob'))
+router.post('/saveImg',
+	ImgGet('file'),
+	require('./srcs/in/saveImg'))
 
 module.exports = router;
