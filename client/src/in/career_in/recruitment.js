@@ -6,6 +6,9 @@ class Recruitment extends Component{
     render(){
         return (
 		<div id = "recruitment_container">
+			<a href=''>
+				submmit
+			</a>
 			<div id = "recruitment_section" >
 				<div id = "recruitment_section_1" >
 					<div id = "recruitment_title">

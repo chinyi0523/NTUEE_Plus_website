@@ -4,9 +4,11 @@ import {column_1910_page } from "./column_text/column_pages";
 import ReactDOM from "react-dom";
 import './column.css';
 import Column_block from './column_block/column_block'
+//import './column_block/column_block_img.css'
 import {NavBar_in} from '../component/AppBar_in';
 import Jan_image from '../images/column/2001_photo.jpg';
 import Dec_image from '../images/column/1912_photo.jpg';
+import Oct_image from '../images/column/1910_photo.jpg';
 
 
 class Column extends Component{
@@ -27,7 +29,14 @@ class Column extends Component{
 			intro:['目前任職於 Google Brain 的團隊技術領導者和軟體主管工程師的鄭恆之，從事大規模機器學習的研究與軟體開發。在2013年加入 Googe 的實習生行列進行廣告排行的研究，僅僅花費不到三年的時間，就從實習生轉正職於 Google Research 的軟體工程師並且晉升 Google Brain 的技術領導與主管工程師，亮麗的職涯經歷背後是堅實的學術基礎與多篇國際期刊論文的支撐。','熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。'],
 			id:'Column_Block_1912'
 		}
-
+		const column_block_1910 = {
+			anno:['翁瑋襄 鄭謹譯 何俊緯 周子庭 謝承霖 吳建翰 余欣澄 ','|2019/12/07 星期六'],
+			title:['2016級 林奕辰 （Bravo AI 洽吧智能執行長）','2014級 沈昇勳 （Bravo AI 洽吧智能技術長）'],			
+			exp:['林奕辰 現任：Bravo AI 洽吧智能執行長','沈昇勳 現任：Bravo AI 洽吧智能技術長'  ],
+			edu:['林奕辰 學士：台灣大學電機系(2016)','沈昇勳 碩士：台灣大學電信所', '沈昇勳 學士：台灣大學電機系(2014)'],
+			intro:['創立於2017年的BravoAI (洽吧智能)是一間AI公司，專注於研發、提供金融機構廣泛的軟體服務。運用其電腦視覺、自然語言處理、深度學習等AI專長，BravoAI協助人壽與保險公司研發核保、理賠等流程自動化的方案，不僅替客戶節省大量行政成本，也為公司打出了知名度。目前為止，BravoAI以達成台灣壽險市佔率第一，更計畫邁向國際化。','BravoAI主要由創辦人趙式隆、執行長林奕辰與技術長沈昇勳帶領，團隊著重於技術基礎研究與應用技術解決實際問題。'],
+			id:'Column_Block_1910'
+		}
 		return (
 			<div id = "column_block_container">
 				<a href="/in/Column/pages/2001">
@@ -39,8 +48,15 @@ class Column extends Component{
 
 				<a href="/in/Column/pages/1912">
 					<div id = "column_block_section" onclick="/in/Column/pages/1912">
-						<div id = "column_block_img"><img src= {Dec_image} alt="img_2001" className="column_block_image"/></div>
+						<div id = "column_block_img"><img src= {Dec_image} alt="img_1912" className="column_block_image"/></div>
 					<Column_block block = {column_block_1912}/>
+					</div>
+				</a>
+
+				<a href="/in/Column/pages/1910">
+					<div id = "column_block_section" onclick="/in/Column/pages/1910">
+						<div id = "column_block_img"><img src= {Oct_image} alt="img_1910" className="column_block_image"/></div>
+					<Column_block block = {column_block_1910}/>
 					</div>
 				</a>
 			</div>

@@ -6,6 +6,9 @@ class Recommendation extends Component{
     render(){
         return (
 		<div id = "recommendation_container">
+			<a href=''>
+				submmit
+			</a>
 			<div id = "recommendation_section">
 				<div id = "recommendation_section_1" >
 					<div id = "recommendation_title">

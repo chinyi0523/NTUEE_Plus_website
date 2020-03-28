@@ -94,12 +94,13 @@ class Column_1910 extends Component{
 			
 			
 			annotation:['特別感謝：林奕辰、沈昇勳','撰寫：何俊緯、周子庭、謝承霖、吳建翰、余欣澄','校稿彙整：翁瑋襄、鄭謹譯'],
+			href:['上一篇','下一篇','返回專欄'],
 			id:'column_1910'
 		}
 		return (
-			<div>
-				<Column_content content = {column_1910_article}/>
-			</div>
+				<div>
+					<Column_content content = {column_1910_article}/>
+				</div>
         )
     }
 }
