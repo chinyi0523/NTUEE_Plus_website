@@ -18,6 +18,10 @@
 > * 建翰：修照片
 > * 侃軒：Session
 
+### 0328 進度 By 友廷
+* Proifle => Slidebar 實現滑出功能
+* 一些排版問題待修正
+
 ### 0327 進度 By 建琁
 * Column 陳俊仰、黃柏源- 完成
 * Column 新增default照片
