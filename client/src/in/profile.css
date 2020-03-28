@@ -1,4 +1,5 @@
 #Profile_container{
+    margin-top: 5vh;
     width:100%;
     /*margin-top:10%;*/
     color: white;
@@ -6,7 +7,7 @@
 }
 #hr0{
     font-family:'Noto Sans TC',Arial,sans-serif !important;
-    width:51%;
+    width:100%;
     font-weight: 200;
     font-size:30px;
     font-style: italic;
@@ -18,15 +19,15 @@
 
 #Profile_public{
     position: absolute;
-    top:0%;
+    top:-5%;
     right: -5%;
     color:gray;
     font-family:'Noto Sans TC',Arial,sans-serif;
     font-weight: 100;
 }
 #Profile_information{
-    float: left;
-    width: 50%;
+    /*float: left;*/
+    /*width: 50%;*/
     position: relative;
 }
 #Profile_userimage_container{
@@ -81,7 +82,8 @@
 #Profile_realname{
     color: white;
     font-family:'Noto Sans TC',Arial,sans-serif;
-    background-color: #003F67;
+    /*background-color: #003F67;*/
+    background-color: inherit;
     font-size : 20px;
     float:right;
     border-width:0 0 4px 0;
@@ -104,7 +106,8 @@
 #Profile_nickname{
     color:white;
     font-family:'Noto Sans TC',Arial,sans-serif;
-    background-color: #003F67;
+    /*background-color: #003F67;*/
+    background-color: inherit;
     font-size : 20px;
     float: right;
     border-width:0 0 4px 0;
@@ -114,6 +117,20 @@
     border-image-slice: 1;
     margin-top: 1%;
 }
+#Profile_shortintro{
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    font-size: 16px;
+    clear: both;
+    color: white;
+    width:100%;
+    height: 100px;
+    background-color: inherit;
+    /*background-color: #003F67;*/
+    border-width: 2.5px ;
+    border-style:dashed ;
+    border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+}
 #hr1{
     color:gray;
     font-weight: 100;
@@ -121,12 +138,12 @@
     width: 90%;
     margin-bottom: 0;
     margin-top: 5%;
-    margin-left: 7%;
+    margin-left: 1vw;
     
 }
 #Profile_more_info{
     width:90%;
-    margin-left:7%;
+    margin-left:1vw;
     font-size: 20px;
 }
 
@@ -137,7 +154,8 @@
 #Profile_more_info input:not(#Profile_submit_btn) {
     font-family:'Noto Sans TC',Arial,sans-serif;
     color: white;
-    background-color: #003F67;
+    /*background-color: #003F67;*/
+    background-color: inherit;
     font-size : 20px;
     float: right;
     border-width:0 0 4px 0;
@@ -199,7 +217,6 @@
 #Profile_expand_diploma{
     display: none;
     opacity: 0;
-    z-index: -1;
 }
 /*#Profile_diploma_container{
     height:6vh !important;
@@ -249,7 +266,8 @@
 }*/
 
 .Profile_expand_button{
-    background-color:  #003f67;
+    background-color: inherit;
+    /*background-color:  #003f67;*/
     border: 0;
     cursor: pointer;
     /*height:200%;
@@ -270,19 +288,6 @@
     margin-bottom: -1vh;
 }
 
-#Profile_shortintro{
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 16px;
-    clear: both;
-    color: white;
-    width:100%;
-    height: 100px;
-    background-color: #003F67;
-    border-width: 2.5px ;
-    border-style:dashed ;
-    border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-}
 #hr4{
     display: block;
     font-size: 18px;
@@ -303,12 +308,14 @@
 }
 #Profile_addOccupation{
     margin-top: 1.5vh;
-    background-color: #003F67;
+    /*background-color: #003F67;*/
+    background-color: inherit;
     border: 0;
     height:2vw;
 }
 #Profile_removeOccupation{
-    background-color: #003F67;
+    /*background-color: #003F67;*/
+    background-color: inherit;
     border: 0;
 }
 .Profile_remove_icon{
@@ -341,12 +348,13 @@
 #Profile_submit_btn{
     font-size: 1.5vw;
     border-radius: 10px;
-    margin-left: 30%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     width:15vw;
     height: 6vh;
-    background-color:  #003f67;
+    /*background-color:  #003f67;*/
+    background-color: inherit;
     color: #fff;
     border: 2px #fff solid;
     font-weight: bold;

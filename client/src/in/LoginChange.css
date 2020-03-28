@@ -1,7 +1,7 @@
 #LC_container{
     /*display: inline-block;*/
-    margin-top: 2%;
-    margin-left: 10vw;
+    margin-top: 15%;
+    margin-left: 2vw;
     font-family:'Noto Sans TC',Arial,sans-serif;
     color:white;
     font-size: 20px;
@@ -10,16 +10,18 @@
     font-weight: 200;
     font-size:30px;
     font-style: italic;
+    margin-left: -2vw;
     /*text-align: right;*/
     margin-bottom: 2%;
     margin-top: -13.7%;
     border-bottom: 2px gray solid;
-    width:35vw;
+    /*width:35vw;*/
 }
 #LC_refresh_btn{
     font-family:'Noto Sans TC',Arial,sans-serif;
     padding: 0;
-    background-color:  #003f67;
+    background-color: inherit;
+    /*background-color:  #003f67;*/
     color: #fff;
     border: 2px #fff solid;
     border-radius: 10px;
@@ -61,7 +63,8 @@
 #LC_safe_Question{
     font-family:'Noto Sans TC',Arial,sans-serif;
     color: white;
-    background-color: #003F67;
+    /*background-color: #003F67;*/
+    background-color: inherit;
     font-size : 20px;
     float: right;
     border-width:0 0 4px 0;
@@ -72,11 +75,15 @@
     padding: 0;
 }
 #LC_submit_btn{
-    width:8vw;
-    margin-left: 15vw;
+    font-size: 1.5vw;
+    width:15vw;
+    height: 5vh;
+    margin-left: 10vw;
     margin-top: 2vh;
+    margin-bottom: 10vh;
     font-family:'Noto Sans TC',Arial,sans-serif;
-    background-color:  #003f67;
+    background-color: inherit;
+    /*background-color:  #003f67;*/
     color: #fff;
     border: 2px #fff solid;
     border-radius: 10px;
