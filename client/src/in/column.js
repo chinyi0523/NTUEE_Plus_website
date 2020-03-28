@@ -50,10 +50,9 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;見臻科技連兩年參加世界性消費電子展（CES），2018年獲選Taiwan Tech Star，是32家獲選的台灣新創公司之一，2019年更被路透社評選為Best of CES。
 						<Link to="/in/Column/pages/2001">敬請期待...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
 			<div id = "column_section" >
 				<div id="column_img">
 					<img src={Dec_image} alt="Dec. Image" className="column_image" />
@@ -78,9 +77,7 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。
 						<Link to="/in/Column/pages/1912">敬請期待...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
 
 			<div id = "column_section" >
@@ -111,10 +108,9 @@ class Column extends Component{
 						{/*<a id="column_readmore" href="/Column_1910">Now constructing...</a>*/}
 						<Link to="/in/Column/pages/1910">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
 			<div id = "column_section">
 				<div id="column_img">
 					<img src={Sep_image} alt="Sep. Image" className="column_image" />
@@ -137,10 +133,9 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李昀樵曾是李琳山教授語音實驗室的研究生，研究所時期除了研究外，更有進行小型創業，開發出新聞摘要軟件及搜尋公共腳踏車的APP，前者以兩萬元售出，後者成為該領域當時市占率最高的APP。之後，李昀樵加入17直播，監管每年五百萬的IT預算，帶領團隊從5人成長到107人，更將17 Media的首屏載入速度從4秒縮減到0.3秒，成為同業中最快速的。李昀樵在新創領域有豐富經驗，現更到Harvard MBA進修。
 						<Link to="/in/Column/pages/1909">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
 			<div id = "column_section">
 				<div id="column_img">
 					<img src={Aug_image} alt="Aug. Image" className="column_image"/>
@@ -163,10 +158,9 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方教授於IEEE/ACM網絡學報屢次發布論文，二度獲得該學報最佳論文獎的榮譽。自2016起更帶領台科大團隊於CAD Contest at ICCAD比賽中四度獲獎，為臺灣在EDA領域中頗具地位的人才。目前授課項目包括VLSI、邏輯設計、演算法、奈米積體電路實體設計，並持續於EDA、奈米積體電路實體設計、製造可行性/可靠性設計、ML設計最佳化等領域中深造。
 						<Link to="/in/Column/pages/1908">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
 			<div id = "column_section">
 				<div id="column_img">
 					<img src={Jul_image} alt="Jul. Image" className="column_image"/>
@@ -189,10 +183,9 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;王易如於史丹佛大學取得碩士學位後，經由世界最大黑克松Salesforce $1Million Hackathon籌組MoBagel（行動貝果），目前任職該新創的營運長。MoBagel 致力於讓機器學習落地，目標讓人工智慧普及化，主要方向為APU (Advanced Preprocessing Unit)，根據AI的應用類別來進行資料前處理，增加預測準確度，目前已經與台灣許多產業龍頭合作。
 						<Link to="/in/Column/pages/1907">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
             <div id = "column_section" >
 				<div id="column_img">
 					<img src={陳維超_image} alt="陳維超. Image" className="column_image" />
@@ -214,10 +207,10 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陳維超學長在2002年於北卡羅萊納大學教堂山分校取得博士學位，專攻電腦繪圖運算技術。學長的產業界及學界歷練皆相當豐富，在業界，學長曾任美國NVIDIA 3D Graphics 架構師、Nokia Research Palo Alto 資深研究員等高技術職位，更在近年與大學同學 楊吉評學長共同創立Skywatch Inc.，提供高規格的雲端監視系統服務、同時也擔任英業達 (Inventec) 公司的 Head of AI Center、以及台灣人工智慧學校的理事；在學界，學長也曾擔任過台大資工系的教授，開設多年熱門課程：圖形處理器程式設計，同時也擔任過眾多國際學術會議的committee、member或者reviewer，如ACM SIGGRAPH、ISMAR、CVPR、ICCV、ACCV等等，是國內繪圖運算技術領域的翹楚。
 						<Link to="/in/Column/pages/陳維超">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
+
             <div id = "column_section" >
 				<div id="column_img">
 					<img src={楊奕軒_image} alt="楊奕軒. Image" className="column_image" />
@@ -239,10 +232,10 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;楊奕軒學長是國內少數專攻音樂資訊領域的學者，研究論文產量十分豐厚。電機系畢業後直攻電信所的博士，過去曾在美國Columbia University、西班牙Universitat Pompeu Fabra擔任訪問學者。目前是中研院資創中心的副研究員，也是清大與成大的合聘教授，同時也擔任過許多conference的editer、chair以及眾多journal、conference的reviewer等等。
 						<Link to="/in/Column/pages/楊奕軒">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
+
             <div id = "column_section" >
 				<div id="column_img">
 					<img src={陳俊仰_image} alt="陳俊仰. Image" className="column_image" />
@@ -266,10 +259,10 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陳俊仰學長在從台大電信所（通訊組）畢業後，在 Caltech 唸了五年 PhD，研究領域是通訊和雷達的信號處理。從 Caltech 畢業後進入一流的軟體公司 Facebook 工作，目前則在世界最大的同志交友平台 Grindr 擔任總裁兼技術長。
 						<Link to="/in/Column/pages/陳俊仰">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
+
             <div id = "column_section" >
 				<div id="column_img">
 					<img src={黃柏源_image} alt="黃柏源. Image" className="column_image" />
@@ -296,10 +289,10 @@ class Column extends Component{
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黃柏源學長是目前受訪者中最年輕的一位，大學時拿過多次書卷獎，電機系畢業後前往Princeton攻讀EE PhD，專攻EDA領域，大學時就曾擔任IEEE 通訊 paper reviewer，也曾在TSMC及Intel實習過，學界業界經歷皆相當豐富。
 						<Link to="/in/Column/pages/黃柏源">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
+
             <div id = "column_section" >
 				<div id="column_img">
 					<img src={胡立民_image} alt="胡立民. Image" className="column_image" />
@@ -322,10 +315,10 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果經營公司成功就算是人生一個勝利戰果的話，那麼胡立民學長就有兩個戰果：一個是經營EllieMae的成功，目前該公司已是一個在美上市、市值三十億美金的FinTech公司；另一個是他從事慈善事業，他與友人推動的「華人特殊兒童中心」嘉惠無數特殊兒童家庭，因不敷使用，已於2017年初於南灣再開第二家，受到政府重視。
 						<Link to="/in/Column/pages/胡立民">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
+
             <div id = "column_section" >
 				<div id="column_img">
 					<img src={洪銘駿_image} alt="洪銘駿. Image" className="column_image" />
@@ -348,10 +341,10 @@ class Column extends Component{
                         快點進文章或觀賞我們精心剪輯的影片，聽一聽 洪銘駿 學長為我們帶來的分享吧 :-)
 						<Link to="/in/Column/pages/洪銘駿">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
+
+
             <div id = "column_section" >
 				<div id="column_img">
 					<img src={王英明_image} alt="王英明. Image" className="column_image" />
@@ -373,9 +366,7 @@ class Column extends Component{
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系學會很榮幸邀請到 1995級 王英明 系友參加本次影片專訪，感謝 2008級 趙式隆 隆哥的推薦。學長是標準的電機系出身，畢業後當了RD一陣子後、決定轉戰管理顧問行業，加入了麥肯錫。 學長非常熱心，兩天前（5/24）系上的「專題演講」必修課，他也很慷慨地來到現場和大家聊聊他的心路歷程，近期王英明學長正在籌備自己的新創事業。快點進文章或觀賞我們精心剪輯的影片，聽一聽 王英明學長為我們帶來的分享吧。
 						<Link to="/in/Column/pages/王英明">read more...</Link>
 					</div>
-					
 				</div>
-				
 			</div>
                                                                                        
 		</div>
