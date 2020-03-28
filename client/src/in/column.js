@@ -27,6 +27,7 @@ class Column extends Component{
 			intro:['目前任職於 Google Brain 的團隊技術領導者和軟體主管工程師的鄭恆之，從事大規模機器學習的研究與軟體開發。在2013年加入 Googe 的實習生行列進行廣告排行的研究，僅僅花費不到三年的時間，就從實習生轉正職於 Google Research 的軟體工程師並且晉升 Google Brain 的技術領導與主管工程師，亮麗的職涯經歷背後是堅實的學術基礎與多篇國際期刊論文的支撐。','熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。'],
 			id:'Column_Block_1912'
 		}
+
 		return (
 			<div id = "column_block_container">
 				<a href="/in/Column/pages/2001">
@@ -36,19 +37,23 @@ class Column extends Component{
 					</div>
 				</a>
 
-				<a to="/in/Column/pages/1912">
+				<a href="/in/Column/pages/1912">
 					<div id = "column_block_section" onclick="/in/Column/pages/1912">
 						<div id = "column_block_img"><img src= {Dec_image} alt="img_2001" className="column_block_image"/></div>
 					<Column_block block = {column_block_1912}/>
 					</div>
 				</a>
-				
 			</div>
 		)
     }
 }
 
 export default Column;
+
+//////////////////////////// Component Using Tips ////////////////////////////
+// A unit of a column block contains "a const XXXXXXXX" and a "<a>...</a>" 
+//////////////////////////////////////////////////////////////////////////////
+
 
 // import React, { Component } from 'react';
 // import {Switch,Redirect,Route,Link} from "react-router-dom"
