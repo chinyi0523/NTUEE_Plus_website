@@ -1,109 +1,28 @@
-#column_container {
+#column_block_container {
 	position : relative;
 	font-family:'Noto Sans TC',Arial,sans-serif;
 }
-#column_section {
-	margin-top : 1em;
-	margin-bottom : 1em;
-	margin-left : auto;
-	margin-right : auto;
+#column_block_section {
+	margin-top : 1vh;
+	margin-bottom : 2vh;
+	margin-left : 3vw; 
+	margin-right : 3vw;
 	background-image : linear-gradient(150deg,#93D5FF,white);
-	height:400px;
-	width:1320px;
+	height:420px;
+	/* width:1320px; */
 	border-radius: 10px;
 	box-shadow: #fff 3px 2px;
 }
-.column_image{
-	height:400px;
-	width: 600px;
+#column_block_img{
+	float : left;
+}
+.column_block_image{
+	display: inline-block;
+	height:420px;
+	width: auto;
 	border-radius: 10px;
 }
-#column_img {
-	/*background-image: url("https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/78194884_2409194972523954_2487778682865713152_o.jpg?_nc_cat=104&_nc_ohc=Eej7FkTWeykAQlKgjJPiNmenHksZmBYA-83TV7dvRn8FxdI4ign8CDuDA&_nc_ht=scontent-tpe1-1.xx&oh=bc7510df4e7c39bd7b97ead47f72f0e5&oe=5EAA648C"); */
-	/*background-size:480px 320px;*/
-	float : left;
-	width : 600px;
-	height : 400px;
-	/*background-color : #000;*/
-}
-#column_text {
-	width: 690px;
-	display: inline-block;
-	margin-left : 12px;
-	height:10vh;
-}
-#column_info {
-	margin : 0.5em;
-}
-#column_date{
-	float: right;
-	font-size : 12px;
-	/*float : left;*/
-	color : #888;
-}
-#column_name{
-	float:right;
-	font-size : 10px;
-	cursor: pointer;
-}
-#column_title{
-	clear: both;
-	font-size : 18px;
-	margin : 0.5em;
-	color : #fff;
-	cursor: pointer;
-	text-shadow: #000 1px 1px;
-	
-}
-#column_subtitle{
-	font-size : 14px;
-	margin : 0.5em;
-}
-.column_prefix{
-	overflow-y: auto;
-	/*height: 24vh;*/
-	font-size : 14px;
-	margin : 0.5em;
-}
-#column_readmore{
-	position: relative;
-	bottom: 0;
-	float: right;
-	font-size: 12px;
-}
-@media (max-width:1320px){
-	#column_title{
-		font-size: 16px;
-	}
-	#column_img{
-		width:450px;
-		height: 300px;
-	}
-	#column_text {
-		width: 530px;
-	}
-	#column_section{
-		height:300px;
-		width:1000px;
-	}
-	#column_image{
-		width:450px;
-		height:300px;
-	}
-	.column_prefix{
-		/*height: 24vh;*/
-		font-size : 12px;
-		height: 20vh;
-	}
-	.column_image{
-		max-height:300px;
-		max-width: 450px;
-	}
-
-	#column_sp{
-		height:10vh;
-	}
-}
-@media (max-width:500px){
-	
+a:link,a:visited,a:hover,a:active {
+  text-decoration: none; 
+  color: #000;
 }

@@ -1,0 +1,17 @@
+.column_block_anno{
+    display: inline;
+    font-size: 0.6em;
+    margin:0;
+}
+.column_block_date{
+    display: inline;
+    color:gray;
+    font-size: 0.4em;
+    margin:0;
+}
+.column_block_Anno{
+    /* padding-right: 20px; */
+    text-align: right;
+    margin:0;
+    
+}
