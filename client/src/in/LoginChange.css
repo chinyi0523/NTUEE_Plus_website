@@ -1,7 +1,7 @@
 #LC_container{
-    /*display: inline-block;*/
-    margin-top: 15%;
-    margin-left: 2vw;
+    display: inline-block;
+    margin-top: 5vh;
+    margin-left: 1vw;
     font-family:'Noto Sans TC',Arial,sans-serif;
     color:white;
     font-size: 20px;
@@ -10,12 +10,12 @@
     font-weight: 200;
     font-size:30px;
     font-style: italic;
-    margin-left: -2vw;
+    margin-left: 0vw;
     /*text-align: right;*/
     margin-bottom: 2%;
-    margin-top: -13.7%;
+    margin-top: 10vh;
     border-bottom: 2px gray solid;
-    /*width:35vw;*/
+    width:50vw;
 }
 #LC_refresh_btn{
     font-family:'Noto Sans TC',Arial,sans-serif;
@@ -50,6 +50,9 @@
     transform: rotate(360deg);
 
 }
+#LC_table{
+    width: 80%;
+}
 #LC_table tr>td:first-child{
     text-align: center;
     width:40%;
@@ -75,10 +78,11 @@
     padding: 0;
 }
 #LC_submit_btn{
+    
     font-size: 1.5vw;
     width:15vw;
     height: 5vh;
-    margin-left: 10vw;
+    margin-left: 13.7vw;
     margin-top: 2vh;
     margin-bottom: 10vh;
     font-family:'Noto Sans TC',Arial,sans-serif;

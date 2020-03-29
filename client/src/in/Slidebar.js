@@ -38,7 +38,7 @@ class Slidebar extends Component{
             new_icon.setAttribute('src',arrow_left);
             new_icon.setAttribute('alt','arrow_left');
             new_btn.appendChild(new_icon)
-            new_btn.style.left = "48vw";
+            new_btn.style.left = "52vw";
         }
         return new_btn
     }
@@ -51,7 +51,7 @@ class Slidebar extends Component{
         slidebtn_parent.style.left = "0vw";
         slidebtn_parent.style.transitionProperty = "left";
         slidebtn_parent.style.transitionDuration = "0.5s"
-        slidebtn.style.left = "48vw"
+        slidebtn.style.left = "52vw"
         slidebtn.style.transitionProperty = "left";
         slidebtn.style.transitionDuration = "0.5s"
         setTimeout(()=>{
@@ -66,7 +66,7 @@ class Slidebar extends Component{
         let slidebtn = document.getElementById("Slidebar_btn_close");
         let openbtn = this.createSlideBtn('open')
         
-        slidebtn_parent.style.left = "-50vw";
+        slidebtn_parent.style.left = "-55vw";
         slidebtn_parent.style.transitionProperty = "left";
         slidebtn_parent.style.transitionDuration = "0.5s"
         slidebtn.style.left = "1vw";
