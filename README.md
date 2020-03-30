@@ -18,6 +18,9 @@
 > * 建翰：修照片
 > * 侃軒：Session
 
+### 0331 進度 By 友廷
+* AppBar新增dropdown,且修正顯示問題
+
 ### 0328 進度 By 友廷
 * Proifle => Slidebar 實現滑出功能
 * 一些排版問題待修正
