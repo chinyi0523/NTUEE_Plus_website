@@ -98,22 +98,21 @@ class Search extends Component{
 				<div id = "search_div">
 					<span id = "search_method">請選擇查詢方式：</span>
 					<select id="search_cstype">
-						<option value="1">Account</option>
-						<option value="2">Username</option>
-						<option value="3">Nickname</option>
-						<option value="4">Profile</option>
-						<option value="5">Public Email</option>
-						<option value="6">Office Tel.</option>
-						<option value="7">Home Tel.</option>
-						<option value="8">Mobile</option>
-						<option value="9">Major</option>
-						<option value="10">Double Major</option>
-						<option value="11">Minor</option>
-						<option value="12">Master</option>
-						<option value="13">Doctor</option>
+						<option value="1">account</option>
+						<option value="2">username</option>
+						<option value="3">nickname</option>
+						<option value="4">profile</option>
+						<option value="5">publicEmail</option>
+						<option value="6">office</option>
+						<option value="7">homephone</option>
+						<option value="8">cellphone</option>
+						<option value="9">major</option>
+						<option value="10">double_major</option>
+						<option value="11">minor</option>
+						<option value="12">master</option>
+						<option value="13">doctor</option>
 						<option value="14">Company</option>
 					</select>
-					&nbsp;&nbsp;
 					<span id = "search_method">輸入關鍵字：</span> 
 					<input/>
 					<input type="submit" value="Search" />

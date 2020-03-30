@@ -12,7 +12,7 @@ class Team_member extends Component{
     }
     render(){
         return(
-            <div id={this.state.id} style={{display:"inline-block"}}>
+            <div id={this.state.id} style={{display:"inline-block"}} className="Team_member_entity">
                 <img src={this.props.photo_src} alt={this.state.name+"'s photo"} width="250px" height="250px"></img>
                 <p id={this.state.id+"_name"}>{this.state.name}</p>
             </div>

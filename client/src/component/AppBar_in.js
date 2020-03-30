@@ -21,7 +21,7 @@ const NavBar_in = () =>{
                         <Link id = "AppBar_in_Link" to="/in/Study"><Button id="AppBar_in_menuButton">Study</Button></Link>
                         <Link id = "AppBar_in_Link" to="/in/Column"><Button id="AppBar_in_menuButton">Column</Button></Link>
                         <Link id = "AppBar_in_Link" to="/in/Search"><Button id="AppBar_in_menuButton">Search</Button></Link>
-                        <Link id = "AppBar_in_Link"><Logout id="AppBar_in_menuButton"/></Link>
+                        <Link id = "AppBar_in_Link" ><Logout/></Link>
                     </div>
                 </Toolbar>
             </AppBar>

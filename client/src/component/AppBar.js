@@ -14,10 +14,17 @@ const NavBar = () => {
             <div id = "AppBar_Logo"><Link  to="/"><Logo/></Link></div>
             <div id = "AppBar_space"></div>
             <div id = "AppBar_menu">
-              <Link id = "AppBar_Link" to="/About"><Button id = "AppBar_menuButton">About</Button></Link>
-              <Link id = "AppBar_Link" to="/Contact"><Button id = "AppBar_menuButton">Contact</Button></Link>
-              <Link id = "AppBar_Link" to="/Support"><Button id = "AppBar_menuButton">Support</Button></Link>
-              <Link id = "AppBar_Link" to="/Login"><Button id = "AppBar_menuButton">Login</Button></Link>
+              <ul className = "AppBar_dropdown">
+                
+                  <li><Link id = "AppBar_Link" to="/About"><Button id = "AppBar_menuButton">About</Button></Link>
+                    <ul>
+                      <li><Link id = "AppBar_Link" to="/Team"><Button id = "AppBar_menuButton">Team</Button></Link></li>
+                    </ul>
+                  </li>
+                <li><Link id = "AppBar_Link" to="/Contact"><Button id = "AppBar_menuButton">Contact</Button></Link></li>
+                <li><Link id = "AppBar_Link" to="/Support"><Button id = "AppBar_menuButton">Support</Button></Link></li>
+                <li><Link id = "AppBar_Link" to="/Login"><Button id = "AppBar_menuButton">Login</Button></Link></li>
+              </ul>
             </div>
         </Toolbar>
       </AppBar>

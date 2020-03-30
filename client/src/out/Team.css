@@ -1,0 +1,27 @@
+#Team_container{
+    font-family: "KeepCalm-Medium",sans-serif;
+}
+
+#Team_content{
+    margin-top: 15vh;
+    color:white;
+    font-size: 24px;
+}
+#Team_title_hr{
+    font-size: 48px;
+    width:100%;
+    border-bottom: 2px solid gray;
+    
+       /* border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1; */
+}
+#Team_B06{
+    margin-top: 5vh;
+}
+#Team_B06_title_hr{
+    /* margin-top: 3vh; */
+    font-size: 32px;
+}
+#Team_B06_leader{
+    margin-top: 3vh;
+}

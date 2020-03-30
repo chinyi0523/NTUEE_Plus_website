@@ -274,7 +274,7 @@ class Profile extends Component{
 							name="realname_checkbox"></input>
                             <input type="text" id="Profile_realname" value = {this.state.realname} onChange = {this.handleInputChange} name="realname"></input>
                                 </li>
-                                <li>
+                                <li style={{marginBottom:"8vh"}}>
                                 <p id="Profile_nickname_tag">Nickname:</p>
                             <input type="checkbox" id="Profile_nickname_checkbox"
 							checked = {this.state.nickname_checkbox}
