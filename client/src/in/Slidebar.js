@@ -5,6 +5,8 @@ import arrow_left  from "../images/arrow_left.png";
 //import Footer from "../component/Footer"
 import LoginChange from "./LoginChange";
 import VisualChange from "./VisualChange";
+import Scrollbars from "react-custom-scrollbars";
+import Scrollbar from 'react-scrollbars-custom';
 //import {NavBar_in} from '../component/AppBar_in';
 
 class Slidebar extends Component{
@@ -78,14 +80,23 @@ class Slidebar extends Component{
         
     }
     render(){
+            const renderThumb = ({ style, ...props }) => {
+                const thumbStyle = {
+                borderRadius: 6,
+                backgroundColor: 'rgba(192,192,200, 0.5)'
+                };
+                return <div style={{ ...style, ...thumbStyle }} {...props} />;
+            }
         return(
             <div id="Slidebar_container">
                 <button class="Slidebar_btn" id = "Slidebar_btn_open" onClick={this.slideopen}>
                     <img class="Slidebar_png" src={arrow_right} alt="arrow_right" />
                 </button>
                 <div id="Slidebar_main">
-                <VisualChange class="Slidebar_main"/>
-                <LoginChange  class="Slidebar_main"/>
+                    <Scrollbars renderThumbVertical={renderThumb}>
+                        <VisualChange class="Slidebar_main"/>
+                        <LoginChange  class="Slidebar_main"/>
+                    </Scrollbars>
                 </div>
         </div>
         )

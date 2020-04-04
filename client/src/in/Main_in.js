@@ -1,14 +1,11 @@
 import React,{ Component } from 'react';
-import ReactDOM from "react-dom";
-import {Route,Switch, Redirect} from "react-router-dom";
+import {Route,Switch} from "react-router-dom";
 import Slidebar from "./Slidebar"
-import { /*Home_in_page,*/ Column_page, Career_page, Study_page,Search_page} from "./pages_in";
+import { Column_page, Career_page, Study_page,Search_page} from "./pages_in";
 import {column_app} from "./column_text/column_app";
 import {career_app} from "./career_in/career_app";
-//import { column_1910_page,column_main_page } from "./column_text/column_pages"
 import "./Main_in.css";
 import {NavBar_in} from "../component/AppBar_in";
-import Column from './column';
 class Main_in extends Component{
     render(){
         return(

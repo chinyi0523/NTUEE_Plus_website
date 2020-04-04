@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {Switch,Redirect,Route,Link} from "react-router-dom"
-import Button from '@material-ui/core/Button';
-import ReactDOM from "react-dom";
 import './search.css';
-import {NavBar_in} from '../component/AppBar_in';
 import axios from 'axios';
-
 import {handleInputChange} from "./searchFunc/handleChange";
 
 var map = [

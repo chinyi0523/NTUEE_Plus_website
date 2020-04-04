@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {Switch,Redirect,Route,Link} from "react-router-dom"
-import {column_1910_page } from "./column_text/column_pages";
-import ReactDOM from "react-dom";
 import './column.css';
 import Column_block from './column_block/column_block'
-//import './column_block/column_block_img.css'
-import {NavBar_in} from '../component/AppBar_in';
 import Jan_image from '../images/column/2001_photo.jpg';
 import Dec_image from '../images/column/1912_photo.jpg';
 import Oct_image from '../images/column/1910_photo.jpg';

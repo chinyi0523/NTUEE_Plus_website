@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import './Register.css';
-import eesa_icon from '../images/eesa-icon.png';
-import axios from 'axios';
+//import axios from 'axios';
 import { NavBar } from '../component/AppBar';
 class Register extends Component{
 	

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Support.css';
-import eesa_icon from '../images/eesa-icon.png';
 import { NavBar } from '../component/AppBar';
 import Footer from "../component/Footer";
 class Support extends Component{

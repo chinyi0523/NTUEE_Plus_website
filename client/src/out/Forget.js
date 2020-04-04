@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Forget.css';
-import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
 import { NavBar } from '../component/AppBar';
 import handleInputChange from './funcTest/handleInputChange';

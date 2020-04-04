@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './About.css';
-import eesa_icon from '../images/eesa-icon.png';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { NavBar } from '../component/AppBar';

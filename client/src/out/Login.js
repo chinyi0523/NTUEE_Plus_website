@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Login.css';
-import eesa_icon from '../images/eesa-icon.png';
 import fb_icon from '../images/social_fb.png'
 import Footer from "../component/Footer";
 import { Link,Redirect } from 'react-router-dom';

@@ -1,5 +1,4 @@
 import React from "react";
-//import {Redirect} from "react-router-dom";
 import Recommendation from "./recommendation";
 import Recruitment from "./recruitment";
 

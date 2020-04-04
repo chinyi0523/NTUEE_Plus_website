@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import {Switch,Redirect,Route,Link} from "react-router-dom"
-
-import ReactDOM from "react-dom";
+import {Link} from "react-router-dom"
 import './career.css';
-import {NavBar_in} from '../component/AppBar_in';
 
 class Career extends Component{
     render(){
