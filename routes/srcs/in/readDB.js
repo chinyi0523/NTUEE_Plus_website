@@ -201,11 +201,11 @@ module.exports.chDB = function(req){
 	return re;
 }
 
-module.exports.addJob = function(req){ //searchJob
+module.exports.searchJob = function(req){ //searchJob
 	output = {
 		title:req.body.title,
 		subtitle:req.body.subtitle||"",
-		discription: req.body.discription
+		description: req.body.description
 	}
 	return output
 }
