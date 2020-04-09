@@ -251,3 +251,28 @@ module.exports.searchJob = function(req){ //searchJob
 	}
 	return output
 }
+column_job = [
+	"title",
+	"subtitle",
+	"description"
+]
+module.exports.getOtherDB_job = function(obj){
+	output = {}
+	column_job.forEach(element=>{
+		if(obj[element] !== (undefined || '')){
+			output[element] = obj[element]
+		}
+	})
+	console.log('job=',output.title)
+	return output
+}
+module.exports.search_job = function(req){
+	query = {}
+	column_job.forEach(element => {
+		if(req.body[element] !== undefined){
+			query[element] = req.body[element];
+		}
+	})
+	console.log('query=', query)
+	return query
+}
