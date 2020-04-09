@@ -73,17 +73,18 @@ class Login extends Component{
 			console.log(res.data);
 			if(res.data){
 				if(res.data.message===true){
-					alert('登入成功，歡迎：'+res.data.username);
+					alert('Logged in! Welcome：'+res.data.username);
 					this.setState({
 						Login_facebook_ID:response.userID,
-						isFBLogin:true,
-						isLogin : true
+						isFBLogin : true,
+						isLogin   : true
 					});
 				}else{
 					alert('User not registered!');
 					this.setState({
 						Login_facebook_ID:response.userID,
-						isFBLogin:true
+						isLogin   : false,
+						isFBLogin : true
 					});
 				}
 			}
@@ -98,7 +99,6 @@ class Login extends Component{
 			return <Redirect to="/in" />
 		} 
 		else if (this.state.isFBLogin) {
-			// return <Redirect to={"/Register/pages/Register_facebook/" + this.state.Login_facebook_ID} />
 			return <Redirect to={{pathname:"/Register/pages/Register_facebook", id:this.state.Login_facebook_ID}} />
 		}
 		

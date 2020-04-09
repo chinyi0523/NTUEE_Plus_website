@@ -13,7 +13,7 @@ class Register_facebook extends Component{
 		  	imagePreviewUrl: '',
 		  	file: null
 		};
-		console.log(props.location.id)
+
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleImageChange = this.handleImageChange.bind(this);
@@ -38,12 +38,14 @@ class Register_facebook extends Component{
 			data.append('file',this.state.file)
 			data.append('username',this.state.Register_acc_realname)
 			data.append('account',this.state.Register_acc_student_id)
-			data.append('id', this.state.Register_facebook_id)
+			data.append('facebookID', this.state.Register_facebook_id)
+
 			const config = {
 				headers: {
 					'content-type': 'multipart/form-data'
 				}
 			};
+			
 			axios.post("/api/registerFB",
 				data, config
 			).then(res => {

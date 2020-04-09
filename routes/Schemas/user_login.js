@@ -3,13 +3,14 @@ var mongoose = require("./db"),
 
 var User_login_Schema = new Schema({
   username: { type: String, required: true },//名字
-  account: { type: String, required: true,lowercase: true },//學號
+  facebookID: String,
+  account: { type: String, required: true, lowercase: true },//學號
   userpsw: { type: String, required: true },//密碼
   private_Email: String,
   question: { type: String, default: "Hello World" },//安全問題
   img: {
-	  data:{type:Buffer},
-	  contentType:{type:String}
+    data: { type: Buffer },
+    contentType: { type: String }
   }
 });
 
