@@ -28,28 +28,31 @@ var map = [
 ];
 
 class Search extends Component{
-    /*constructor(props) {
+    constructor(props) {
 		super(props);
 		var tmpState = {hasChanged:{}};
 		map.forEach(arr=>{
 			tmpState[arr[1]]='';
 		});
+		tmpState["select"] = "1";
 		this.state = tmpState;
 		this.handleInputChange = handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.creatTable = this.creatTable.bind(this);
-	}*/
-	/*
+	}
+	
 	handleSubmit(event){
 		event.preventDefault();
 		var r = window.confirm("確認搜尋?");
 		if(r){
-			var toSend = {}
-			map.forEach(arr=>{
+			const searchIndex = parseInt(this.state.select)-1;
+			var toSend = {};
+			toSend[map[searchIndex][1]]=this.state.toSend;
+			/*map.forEach(arr=>{
 				if(this.state.hasChanged[arr[1]]){
 					toSend[arr[1]] = this.state[arr[1]]
 				}
-			})
+			})*/
 			console.log('toSend',toSend)
 			axios.post("/api/searchVisual",
 				toSend
@@ -66,9 +69,9 @@ class Search extends Component{
 			})
 		}
 	}
-	componentDidMount(){
+	/*componentDidMount(){
 		this.creatTable();
-	}
+	}*/
 	creatTable(){
 		var ST = document.getElementById("Search_table");
 		map.forEach(arr=>{
@@ -90,14 +93,15 @@ class Search extends Component{
 			
 			ST.appendChild(new_tr)
 		})
-	}*/
+	}
 	render(){
         return (
 	       <div id = "search_container">
 			<form id="search_Form" onSubmit={this.handleSubmit}>
 				<div id = "search_div">
 					<span id = "search_method">請選擇查詢方式：</span>
-					<select id="search_cstype">
+					<select id="search_cstype" name="select" 
+						onChange={this.handleInputChange}>
 						<option value="1">account</option>
 						<option value="2">username</option>
 						<option value="3">nickname</option>
@@ -114,7 +118,9 @@ class Search extends Component{
 						<option value="14">Company</option>
 					</select>
 					<span id = "search_method">輸入關鍵字：</span> 
-					<input/>
+					<input name="toSend" 
+						value={this.state.toSend}
+						onChange={this.handleInputChange}/>
 					<input type="submit" value="Search" />
 				</div>
 			</form>

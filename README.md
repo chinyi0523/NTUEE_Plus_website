@@ -17,6 +17,15 @@
 > * 宗倫：Career
 > * 建翰：修照片
 > * 侃軒：Session
+### 0408 進度 By 君輔
+* column的儲存照片(/api/saveImg)及讀取照片(/api/getImg)完成，請參考profile.js post的方法將filename和圖片檔傳給後端
+* search新增select bar版本的post
+
+
+### 0408 進度 By 建翰
+* Add Facebook Login Button
+* Usage!!! If error says facebook-login-react not found!
+* npm install react react-dom react-facebook-login --save --force
 
 ### 0404 進度 By 友廷
 * ScrollBar 樣式調整
