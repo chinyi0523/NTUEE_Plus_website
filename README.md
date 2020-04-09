@@ -18,7 +18,8 @@
 > * 建翰：修照片
 > * 侃軒：Session
 ### 0408 進度 By 君輔
-* column的儲存照片(/api/saveImg)及讀取照片(/api/getImg)完成，請
+* column的儲存照片(/api/saveImg)及讀取照片(/api/getImg)完成，請參考profile.js post的方法將filename和圖片檔傳給後端
+* search新增select bar版本的post
 
 
 ### 0408 進度 By 建翰
