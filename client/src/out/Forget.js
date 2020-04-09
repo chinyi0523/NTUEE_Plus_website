@@ -95,9 +95,10 @@ class Forget extends Component{
 							></input>
 						</div>
 						<div id="Forget_input">
-						   <p id="Forget_input_text">Temporary Password</p>
+						   <p id="Forget_input_text">New Password</p>
 							<input name="Forget_password"
 								id="Forget_input_input" 
+								type = "password"
 								placeholder="登入後須設定新密碼"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
@@ -107,6 +108,7 @@ class Forget extends Component{
 						   <p id="Forget_input_text">Confirm Password</p>
 							<input name="Forget_confirm_password"
 								id="Forget_input_input" 
+								type = "password"
 								placeholder="再次輸入密碼"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
