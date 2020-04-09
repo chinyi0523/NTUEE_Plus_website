@@ -35,6 +35,8 @@ router.post("/chLogin",
 	ValidTest('chLogin'),
 	ValidSend,
 	require("./srcs/in/chLogin"));
+router.post("/isLogin",
+	require("./srcs/in/isLogin"));
 router.post("/logout",require("./srcs/in/logout"));
 router.post("/showVisual",require('./srcs/in/showVisual'));
 router.post("/chVisual",
