@@ -17,6 +17,11 @@
 > * 宗倫：Career
 > * 建翰：修照片
 > * 侃軒：Session
+
+### 0408 進度 By 建翰 & 侃軒
+* Facebook Login and Register 修改大致完成
+* 剩下從註冊進入的按紐處理以及註冊
+
 ### 0408 進度 By 育楷
 * Forget password的New Password和Confirm Password輸入的type改成password
   (如果不能merge,先把client\src\out\Forget.js刪除)
