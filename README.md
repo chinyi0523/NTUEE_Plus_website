@@ -22,6 +22,8 @@
 * 呼叫columnImgFunc/saveImg(filename,img)回傳true(儲存成功)/false(儲存失敗)
 * 呼叫columnImgFunc/getImg(filename)回傳圖片檔(用\<img src={回傳的東東}>可直接顯示)
 * search新增select bar版本的post
+* isLogin回傳true(登入中)或false(未登入)
+* search變OR
 
 ### 0408 進度 By 建翰
 * Add Facebook Login Button
@@ -50,7 +52,7 @@
 ### 0325 進度 By 君輔
 * search目前可用基本資料、系所進行搜尋(工作搜尋待新增
 * 搜尋完的結果我只有console出來，怎麼render再交給前端負責
-* 以免有些人還不知道，現在database變成線上的，在[這裡](https://www.mlab.com/databases/heroku_b6klgxdz/collections/user_visuals)(帳密都是ntuee2020
+* 以免有些人還不知道，現在database變成線上的，在[這裡](https://www.mlab.com/databases/heroku_b6klgxdz#collections )(帳密都是ntuee2020
 
 ### 0321 進度 By 友廷
 * Contact排版修復，加上buttom連到Team
