@@ -14,6 +14,10 @@ router.post("/login",
 	ValidTest('login'),
 	ValidSend,
 	require("./srcs/out/login"));
+router.post("/loginFB",
+	ValidTest('login'),
+	ValidSend,
+	require("./srcs/out/loginFB"));
 router.post("/register",
 	ImgGet('file'),
 	ValidTest('register'),
