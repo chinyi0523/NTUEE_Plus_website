@@ -1,5 +1,5 @@
 //srcs/register.js
-var user_l_Schema = require('../../Schemas/user_loginFB');
+var user_l_Schema = require('../../Schemas/user_login');
 var crypto = require("crypto");
 
 /*新增一筆使用者資料*/

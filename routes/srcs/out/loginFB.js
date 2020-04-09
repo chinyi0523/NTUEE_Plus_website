@@ -1,5 +1,5 @@
 //srcs/login.js
-var user_l_Schema = require('../../Schemas/user_loginFB');
+var user_l_Schema = require('../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
 	var facebookID = req.body.facebookID;
