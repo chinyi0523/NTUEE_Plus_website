@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
 		session_account = 'b07901028' //測試用
 	}
 	if(session_account){
-		var query = readDB.search(req);
+		var query = readDB.searchOr(req);
 		user_v_Schema.find(query,{_id:0},function(err,obj){
 			if (err) {
 				console.log("Error:" + err);

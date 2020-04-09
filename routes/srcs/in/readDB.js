@@ -124,6 +124,48 @@ module.exports.search = function(req){
 	return query
 }
 
+module.exports.searchOr = function(req){
+	var query=[]
+	column1.forEach(element=>{
+		if(req.body[element]!==undefined){
+			var Q1 = {};
+			Q1[element+".data"] = req.body[element];
+			Q1[element+".show"] = true;
+			query.push(Q1);
+		}
+	})
+	column22.forEach(element=>{
+		element[1].forEach(ele1=>{
+			var Q2 = {}
+			if(req.body[element[0]]!==undefined&&req.body[element[0]][ele1]!==undefined){
+				Q2[element[0]+'.'+ele1+".SD"] = req.body[element[0]][ele1];
+				Q2[element[0]+'.'+ele1+".show"] = true;
+				query.push(Q2);
+			}else if(req.body[element[0]+'.'+ele1]!==undefined){
+				Q2[element[0]+'.'+ele1+".SD"] = req.body[element[0]+'.'+ele1];//格式隨你高興la
+				Q2[element[0]+'.'+ele1+".show"] = true;
+				query.push(Q2);
+			}
+		})
+	})
+	JobQ = false
+	JobMatch = {}
+	column33.forEach(ele2=>{
+		if(req.body["Occupation."+ele2]!==undefined){
+			JobQ = true;
+			JobMatch[ele2] = req.body["Occupation."+ele2];
+		}
+	})
+	if(JobQ){
+		var Q3={}
+		JobMatch["show"] = true;
+		Q3["Occupation"] = {$elemMatch:JobMatch};
+		query.push(Q3)
+	}	
+	console.log('query=',query)
+	return {$or:query}
+}
+
 module.exports.chDB = function(req){
 	//update $set 的讀值規則(用xxx.xxx或xxx.$.xxx(用在array))
 	//https://docs.mongodb.com/manual/reference/operator/update/set/
