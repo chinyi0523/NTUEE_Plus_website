@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom"
 import './career.css';
+import Recruitment_image from '../images/Recruitment.png';
+import Recommendation_image from '../images/Recommendation.png';
 
 class Career extends Component{
     render(){
@@ -8,9 +10,9 @@ class Career extends Component{
         return (
         <div id = "career_container" >
 			<div id = "career_text" style={{marginTop:"8%"}}>
-                <Link to="/in/Career/pages/Recruitment" >Recruitment</Link>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to="/in/Career/pages/Recommendation">Recommendation</Link>
+                <Link to="/in/Career/pages/Recruitment" ><img src= {Recruitment_image} alt="Recruitment"/></Link>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to="/in/Career/pages/Recommendation"><img src= {Recommendation_image} alt="Recommendation"/></Link>
 			</div>
 					
 			
