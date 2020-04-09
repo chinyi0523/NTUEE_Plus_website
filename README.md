@@ -17,6 +17,9 @@
 > * 宗倫：Career
 > * 建翰：修照片
 > * 侃軒：Session
+### 0408 進度 By 育楷
+* Forget password的New Password和Confirm Password輸入的type改成password
+  (如果不能merge,先把client\src\out\Forget.js刪除)
 ### 0408 進度 By 君輔
 * column的儲存照片(/api/saveImg)及讀取照片(/api/getImg)完成
 * 呼叫columnImgFunc/saveImg(filename,img)回傳true(儲存成功)/false(儲存失敗)
