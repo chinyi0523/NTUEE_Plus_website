@@ -4,9 +4,9 @@ var Job_Schema = require('../../Schemas/job');
 function insert(title,subtitle,description){
       //格式
     var job =  new Job_Schema({ 
-		job_title: title,
-                job_subtitle : subtitle,
-		job_description: description
+		title: title,
+                subtitle : subtitle,
+		description: description
             });
 	
     job.save(function(err,res){ //save to db
