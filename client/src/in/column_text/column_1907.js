@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Column_content from './component/column_content';
 import './column_text.css';
-import {NavBar_in} from '../../component/AppBar_in';
 
 class Column_1907 extends Component{
     render(){
