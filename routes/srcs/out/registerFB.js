@@ -4,16 +4,16 @@ var crypto = require("crypto");
 
 /*新增一筆使用者資料*/
 function insert(name,account,facebookID,file){
-      //格式
+    //格式
     var user =  new user_l_Schema({
                 username : name,
-				account: account,
-                userpsw : psw,
+                account: account,
+                id: facebookID,
 				img:{
 					data:file.buffer,
 					contentType:file.mimetype
 				}
-            });
+    });
 	console.log('img=',user.img)
     user.save(function(err,res){
         if(err){
@@ -29,12 +29,10 @@ function insert(name,account,facebookID,file){
 module.exports = function (req, res) {
   var UserName = req.body.username;
   var Useraccount = req.body.account.toLowerCase();
-  var UserPsw = req.body.password;
+  var UserFbId = req.body.id;
   
   console.log('file\n',req.file)
-  //密碼加密
-  var md5 = crypto.createHash("md5");
-  var newPas = md5.update(UserPsw).digest("hex");
+
   //查詢用戶是否存在
   var query = {account: Useraccount};
     user_l_Schema.find(query, function(err, obj){
@@ -45,7 +43,7 @@ module.exports = function (req, res) {
         else {
             if(obj.length == 0){
 				console.log("新增帳號");
-                insert(UserName,Useraccount,newPas,req.file);
+                insert(UserName,Useraccount,UserFbId,req.file);
                 res.send({status:'success',message:true,data:UserName})
             }else{
 				console.log("已有此帳號");

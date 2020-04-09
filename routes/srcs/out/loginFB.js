@@ -23,12 +23,12 @@ module.exports = function (req, res, next) {
 					}
 					req.session.loginName = obj[0].username;
 					req.session.loginAccount = obj[0].account;
-					return res.send({status:'success',message:true,data:{username:obj[0].username,account:obj[0].account}});
+					return res.send({status:'success',message:true, username:obj[0].username});
 					//res.redirect('/');
 					});
 			}else{
 				console.log('帳號不存在');
-				return res.send({status:'success',message:false,description:"帳號不存在"}); 
+				return res.send({status:'success',message:false,username:"Not found!"}); 
 			}
 		}
 	})

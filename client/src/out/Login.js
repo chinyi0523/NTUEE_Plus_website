@@ -7,33 +7,15 @@ import { Link,Redirect } from 'react-router-dom';
 import axios from "axios";
 import { NavBar } from '../component/AppBar';
 
-const responseFacebook = (response) => {
-	console.log(response);
-	if (response == undefined) {
-		alert ('Please Login Your Facebook!')
-		return
-	}
-	
-	alert ("Your Facebook name: " + response.name + ", ID: " + response.userID);
-	axios.post("/api/loginFB", {facebookID: response.userID}).then(res => {
-		console.log(res.data);
-		if(res.data){
-			if(res.data.message===true){
-				alert('登入成功，歡迎：'+res.data.data.username);
-			}else{
-				alert('Error：'+ res.data);
-			}
-		}
-	})
-}
-
 class Login extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
 		  Login_username_input: '',
 		  Login_password_input: '',
-		  isLogin: null
+		  Login_facebook_ID: '',
+		  isLogin: false,
+		  isFBLogin: false
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -80,10 +62,44 @@ class Login extends Component{
 			}
 		}
 	}
+
+	handleFBSubmit = (response) => {
+		console.log(response);
+		if (response == undefined) {
+			alert ('Please Login Your Facebook!')
+			return
+		}
+		axios.post("/api/loginFB", {facebookID: response.userID}).then(res => {
+			console.log(res.data);
+			if(res.data){
+				if(res.data.message===true){
+					alert('登入成功，歡迎：'+res.data.username);
+					this.setState({
+						Login_facebook_ID:response.userID,
+						isFBLogin:true,
+						isLogin : true
+					});
+				}else{
+					alert('User not registered!');
+					this.setState({
+						Login_facebook_ID:response.userID,
+						isFBLogin:true
+					});
+				}
+			}
+		}).catch(err => {
+			console.log(err)
+		})
+	}
 	
     render(){
+		console.log (this.state)
 		if(this.state.isLogin){
 			return <Redirect to="/in" />
+		} 
+		else if (this.state.isFBLogin) {
+			// return <Redirect to={"/Register/pages/Register_facebook/" + this.state.Login_facebook_ID} />
+			return <Redirect to={{pathname:"/Register/pages/Register_facebook", id:this.state.Login_facebook_ID}} />
 		}
 		
         return (
@@ -111,16 +127,17 @@ class Login extends Component{
 				
                 <input id="Login_submit" type="submit" value="LOGIN"/>
 				<div id="Login_hr">&nbsp;&nbsp;&nbsp;or login with...</div>
-				<FacebookLogin
-					appId="176796437077702"
-					autoLoad={false}
-					fields="name,email,picture"
-					callback={responseFacebook}
-					cssClass="btnFacebook"
-					icon="fa-facebook"
-					textButton = "&nbsp;&nbsp;Sign In with Facebook" 
-				/>
             </form>
+			
+			<FacebookLogin
+				appId="176796437077702"
+				autoLoad={false}
+				fields="name,email,picture"
+				callback={this.handleFBSubmit}
+				cssClass="btnFacebook"
+				icon="fa-facebook"
+				textButton = "&nbsp;&nbsp;Sign In with Facebook" 
+			/>
 			
                 {/*<div id="Login_footer">
                     <img id="Login_logo" src={eesa_icon} alt="logo" ></img>

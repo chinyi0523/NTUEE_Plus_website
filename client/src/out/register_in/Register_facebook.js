@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-//import './Register.css';
-//import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
 import { NavBar } from '../../component/AppBar';
-//import Register_account from './';
+import {withRouter} from 'react-router-dom'
+
 class Register_facebook extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-		  Register_realname: '',
-		  Register_student_id: '',
-		  Register_password: '',
-		  Register_confirm_password: '',
-		  imagePreviewUrl: '',
-		  file: null
+			Register_acc_realname: '',
+			Register_acc_student_id: '',
+		  	Register_facebook_id: props.location.id,
+		  	imagePreviewUrl: '',
+		  	file: null
 		};
-
+		console.log(props.location.id)
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleImageChange = this.handleImageChange.bind(this);
@@ -26,7 +24,6 @@ class Register_facebook extends Component{
 		const value = target.value;
 		const name = target.id;
 		
-		
 		this.setState({
 		  [name]: value
 		});
@@ -34,46 +31,34 @@ class Register_facebook extends Component{
 	
 	handleSubmit(event) {
 		event.preventDefault();
-		if(false){//this.state.Register_password!==this.state.Register_confirm_password){
-			return alert("密碼不一致");
-		}else{
-			var r=window.confirm("確認註冊?");
-			if(r){
-				var data = new FormData();
-				data.append('file',this.state.file)
-				data.append('username',this.state.Register_realname)
-				data.append('account',this.state.Register_student_id)
-				data.append('password',this.state.Register_password)
-				data.append('ConfirmPassword',this.state.Register_confirm_password)
-				console.log('data',data)
-				const config = {
-					headers: {
-						'content-type': 'multipart/form-data'
-					}
-				};
-				axios.post("/api/register",
-					data
-					/*{username:this.state.Register_realname,
-					account:this.state.Register_student_id,
-					password:this.state.Register_password,
-					ConfirmPassword:this.state.Register_confirm_password,
-					file:this.state.file}*/,
-					config
-				).then(res => {
-					console.log(res.data);
-						if(res){
-							if(res.data.message===true){
-								alert('註冊成功');
-								window.location = "/Login";
-							}else{
-								alert('錯誤：\n'+res.data.description);
-							}
+
+		var r=window.confirm("Are you sure to register via Facebook account?");
+		if(r){
+			var data = new FormData();
+			data.append('file',this.state.file)
+			data.append('username',this.state.Register_acc_realname)
+			data.append('account',this.state.Register_acc_student_id)
+			data.append('id', this.state.Register_facebook_id)
+			const config = {
+				headers: {
+					'content-type': 'multipart/form-data'
+				}
+			};
+			axios.post("/api/registerFB",
+				data, config
+			).then(res => {
+				console.log(res.data);
+					if(res){
+						if(res.data.message===true){
+							alert('Successfully registered!');
+							window.location = "/Login";
+						}else{
+							alert('Error：\n'+res.data.description);
 						}
-				}).catch(err=>{
-					console.log("err=",err);
-					//[{value:"使用者填的值",msg:"錯的原因",param:"用他拿到是誰錯",location:"body"}]
-				})
-			}
+					}
+			}).catch(err=>{
+				console.log("err=",err);
+			})
 		}
 	}
 	
@@ -107,80 +92,63 @@ class Register_facebook extends Component{
 		}
         return(
 			<div>
-				<p style={{fontSize:"64px"}}>TTest!!</p>
-            {/*<div id="Register_container">
-				
-                <div id="Register_register_table">
-                    <h1 id="Register_table_title">Just A Few Steps to Join EE+!</h1>
+				<NavBar/> 
+            <div id="Register_acc_container">
+                <div id="Register_acc_register_table">
+                    <h1 id="Register_acc_table_title">Just A Few Steps to Join EE+ With Facebook!</h1>
 					<form onSubmit={this.handleSubmit}>
-						<div id="Register_table">
-							<div id="Register_input1">
-								<p id="Register_realname_label">Your Name</p>
-								<input id="Register_realname" placeholder="Your Chinese Name"
+						<div id="Register_acc_table">
+							<div id="Register_acc_input1">
+								<p id="Register_acc_realname_label">Your Name</p>
+								<input id="Register_acc_realname" placeholder="Your Chinese Name"
 									value={this.state.value} onChange={this.handleInputChange}
 								></input>
 							</div>
-							<div id="Register_input2">
-								<p id="Register_ID_label">Student ID</p>
-								<input id="Register_student_id" placeholder="Student ID"
+							<div id="Register_acc_input2">
+								<p id="Register_acc_ID_label">Student ID</p>
+								<input id="Register_acc_student_id" placeholder="Student ID"
 									value={this.state.value} onChange={this.handleInputChange}
 								></input>
 							</div>
-							<div id="Register_input3">
-								<p id="Register_password_label">Password</p>
-								<input id="Register_password" placeholder="Set Your Password" type="password"
-									value={this.state.value} onChange={this.handleInputChange}
-								></input>
-							</div>
-							<div id="Register_input4">
-								<p id="Register_confirm_password_label">Confirm Password</p>
-								<input id="Register_confirm_password" placeholder="Confirm Your Password" type="password"
-									value={this.state.value} onChange={this.handleInputChange}
-								></input>
-							</div>
-							<div id="Register_input5">
-								<p id="Register_question_label">Question</p>
-								<input id="Register_question" placeholder="ex: the name of your first pet, etc..." type="text"
-								 onChange = {this.handleInputChange}></input>
-							</div>
-							<div id="Register_input6">
-								<p id="Register_image_label">Upload Image</p>
+							<div id="Register_acc_input6">
+								<p id="Register_acc_image_label">Upload Image</p>
 								<label>
 								<input className="fileInput" id="Register_fileinput" 
 										type="file" 
 										onChange={this.handleImageChange} 
 										name="file"/>
-								<span id="Register_addImage_icon">➕ <p style={{display:"inline",fontSize:"18px"}}>Add Your ID Photo</p></span>
+								<span id="Register_acc_addImage_icon">➕ <p style={{display:"inline",fontSize:"18px"}}>Add Your ID Photo</p></span>
 								</label>
 							</div>
 							
 						</div>
 						
-						<button id="Register_register_button" onclick={this.handleSubmit}>
-							<p id="Register_register_text">Register</p>
+						<button id="Register_acc_register_button" onclick={this.handleSubmit}>
+							<p id="Register_acc_register_text">Register</p>
 						</button>
+						
 					</form>
                 </div>
 				
-                <div id="Register_FAQ">
-                    <div id="Register_FAQ_title">FAQ</div>
-                    <div id="Register_splitline"></div>
-                    <div id="Register_FAQ_content">
-                        <ul id="Register_FAQ_list">
+                <div id="Register_acc_FAQ">
+                    <div id="Register_acc_FAQ_title">FAQ</div>
+                    <div id="Register_acc_splitline"></div>
+                    <div id="Register_acc_FAQ_content">
+                        <ul id="Register_acc_FAQ_list">
                             <li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
                             <li>The size of photo is at most 1MB.</li>
                             <li>...</li>
                         </ul>
                     </div>
-					<div id="Register_FAQ_title">Image Preview</div>
-					<div id="Register_splitline"></div>
+					<div id="Register_acc_FAQ_title">Image Preview</div>
+					<div id="Register_acc_splitline"></div>
 				<div className="imgPreview" id="Register_imgPreview">
 				  			{$imagePreview}
 					</div>
                 </div>
-		</div>*/}
+            </div>
 			</div>
         )
     }
 }
-export default Register_facebook
+export default withRouter(Register_facebook)

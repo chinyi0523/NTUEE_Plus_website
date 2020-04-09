@@ -3,7 +3,6 @@ const {body} = require('express-validator');
 mat = {
 	"register":["username","account","password","ConfirmPassword"],
 	"login":["account","password"],
-	"loginFB" : ["facebookID"],
 	"forget":["account","question","Email","password","ConfirmPassword"],
 	"chLogin":["question"]
 }

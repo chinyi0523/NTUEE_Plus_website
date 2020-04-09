@@ -15,14 +15,15 @@ router.post("/login",
 	ValidSend,
 	require("./srcs/out/login"));
 router.post("/loginFB",
-	ValidTest('login'),
-	ValidSend,
 	require("./srcs/out/loginFB"));
 router.post("/register",
 	ImgGet('file'),
 	ValidTest('register'),
 	ValidSend,
 	require("./srcs/out/register"));
+router.post("/registerFB",
+	ImgGet('file'),
+	require("./srcs/out/registerFB"));
 router.post("/forget",
 	ValidTest('forget'),
 	ValidSend,
@@ -35,8 +36,6 @@ router.post("/chLogin",
 	ValidTest('chLogin'),
 	ValidSend,
 	require("./srcs/in/chLogin"));
-router.post("/isLogin",
-	require("./srcs/in/isLogin"));
 router.post("/logout",require("./srcs/in/logout"));
 router.post("/showVisual",require('./srcs/in/showVisual'));
 router.post("/chVisual",
