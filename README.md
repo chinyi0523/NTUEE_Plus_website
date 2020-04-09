@@ -20,7 +20,7 @@
 ### 0408 進度 By 君輔
 * column的儲存照片(/api/saveImg)及讀取照片(/api/getImg)完成
 * 呼叫columnImgFunc/saveImg(filename,img)回傳true(儲存成功)/false(儲存失敗)
-* 呼叫columnImgFunc/getImg(filename)回傳圖片檔(用<img src={回傳的東東}>可直接顯示)
+* 呼叫columnImgFunc/getImg(filename)回傳圖片檔(用\<img src={回傳的東東}>可直接顯示)
 * search新增select bar版本的post
 
 ### 0408 進度 By 建翰
