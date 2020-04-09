@@ -17,6 +17,10 @@
 > * 宗倫：Career
 > * 建翰：修照片
 > * 侃軒：Session
+### 0408 進度 By 君輔
+* column的儲存照片(/api/saveImg)及讀取照片(/api/getImg)完成，請
+
+
 ### 0408 進度 By 建翰
 * Add Facebook Login Button
 * Usage!!! If error says facebook-login-react not found!
