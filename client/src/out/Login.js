@@ -64,9 +64,7 @@ class Login extends Component{
 	}
 
 	handleFBSubmit = (response) => {
-		console.log(response);
-		if (response == undefined) {
-			alert ('Please Login Your Facebook!')
+		if (response.status == "unknown") {
 			return
 		}
 		axios.post("/api/loginFB", {facebookID: response.userID}).then(res => {
