@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
 import './Login.css';
-import fb_icon from '../images/social_fb.png'
+import FacebookLogin from 'react-facebook-login';
+import ReactDOM from 'react-dom';
 import Footer from "../component/Footer";
 import { Link,Redirect } from 'react-router-dom';
 import axios from "axios";
 import { NavBar } from '../component/AppBar';
+
+const responseFacebook = (response) => {
+	console.log(response);
+	if (response == undefined) {
+		alert ('Please Login Your Facebook!')
+		return
+	}
+	
+	alert ("Your Facebook name: " + response.name + ", ID: " + response.userID);
+	axios.post("/api/loginFB", {facebookID: response.userID}).then(res => {
+		console.log(res.data);
+		if(res.data){
+			if(res.data.message===true){
+				alert('登入成功，歡迎：'+res.data.data.username);
+			}else{
+				alert('Error：'+ res.data);
+			}
+		}
+	})
+}
+
 class Login extends Component{
 	constructor(props) {
 		super(props);
@@ -89,10 +111,15 @@ class Login extends Component{
 				
                 <input id="Login_submit" type="submit" value="LOGIN"/>
 				<div id="Login_hr">&nbsp;&nbsp;&nbsp;or login with...</div>
-				<div id="LoginFB_submit">
-					<img id="Login_FB_icon" src={fb_icon} alt="fb_icon"></img>
-					<a id="Login_FB_url" href="https://www.facebook.com/groups/2484604148528585/" target="_blank" title="Facebook">Facebook</a>
-				</div>
+				<FacebookLogin
+					appId="176796437077702"
+					autoLoad={false}
+					fields="name,email,picture"
+					callback={responseFacebook}
+					cssClass="btnFacebook"
+					icon="fa-facebook"
+					textButton = "&nbsp;&nbsp;Sign In with Facebook" 
+				/>
             </form>
 			
                 {/*<div id="Login_footer">
