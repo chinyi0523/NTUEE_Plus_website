@@ -17,6 +17,10 @@
 > * 宗倫：Career
 > * 建翰：修照片
 > * 侃軒：Session
+### 0408 進度 By 建翰
+* Add Facebook Login Button
+* Usage!!!
+* npm install react react-dom react-facebook-login --save --force
 
 ### 0404 進度 By 友廷
 * ScrollBar 樣式調整
