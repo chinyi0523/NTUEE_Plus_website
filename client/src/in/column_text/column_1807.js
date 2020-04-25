@@ -3,9 +3,9 @@ import './column_text.css';
 
 import Column_content from '../column_text/component/column_content'
 
-class Column_楊奕軒 extends Component{
+class Column_1807 extends Component{
     render(){
-        const column_楊奕軒_article = {
+        const column_1807_article = {
 			title:['2006級 楊奕軒 （研究員/教授 @ 中研院資創中心）'],
 			hashtags:['系友專訪', '楊奕軒', '2006級', 'B91', '台大電信所博士', '中央研究院', '資訊科技創新研究中心', '研究員', '教授', '音樂資訊', '音樂生成', '音樂情緒', '音源分離'],
 			sections:[
@@ -98,14 +98,14 @@ class Column_楊奕軒 extends Component{
 			
 			
 			annotation:['特別感謝：楊奕軒','撰寫： 莊永松 莊鎧爾 琉琉 何驊凌 蔡易霖'],
-			id:'column_楊奕軒'
+			id:'column_1807'
 		}
 		return (
 			<div>
-				<Column_content content = {column_楊奕軒_article}/>
+				<Column_content content = {column_1807_article}/>
 			</div>
         )
     }
 }
 
-export default Column_楊奕軒;
+export default Column_1807;

@@ -6,10 +6,10 @@ import {column_1910_page} from "./column_pages";
 import {column_1909_page} from "./column_pages";
 import {column_1908_page} from "./column_pages";
 import {column_1907_page} from "./column_pages";
-import {column_陳維超_page} from "./column_pages";
-import {column_楊奕軒_page} from "./column_pages";
-import {column_陳俊仰_page} from "./column_pages";
-import {column_黃柏源_page} from "./column_pages";
+import {column_1808_page} from "./column_pages";
+import {column_1807_page} from "./column_pages";
+import {column_1806_page} from "./column_pages";
+import {column_1805_page} from "./column_pages";
 import {column_胡立民_page} from "./column_pages";
 import {column_洪銘駿_page} from "./column_pages";
 import {column_王英明_page} from "./column_pages";
@@ -31,10 +31,10 @@ class column_app extends Component{
                     <Route path="/in/Column/pages/1909" exact component={column_1909_page}/>
                     <Route path="/in/Column/pages/1908" exact component={column_1908_page}/>
                     <Route path="/in/Column/pages/1907" exact component={column_1907_page}/>
-                    <Route path="/in/Column/pages/陳維超" exact component={column_陳維超_page}/>
-                    <Route path="/in/Column/pages/楊奕軒" exact component={column_楊奕軒_page}/>
-                    <Route path="/in/Column/pages/陳俊仰" exact component={column_陳俊仰_page}/>
-                    <Route path="/in/Column/pages/黃柏源" exact component={column_黃柏源_page}/>
+                    <Route path="/in/Column/pages/1808" exact component={column_1808_page}/>
+                    <Route path="/in/Column/pages/1807" exact component={column_1807_page}/>
+                    <Route path="/in/Column/pages/1806" exact component={column_1806_page}/>
+                    <Route path="/in/Column/pages/1805" exact component={column_1805_page}/>
                     <Route path="/in/Column/pages/胡立民" exact component={column_胡立民_page}/>
                     <Route path="/in/Column/pages/洪銘駿" exact component={column_洪銘駿_page}/>
                     <Route path="/in/Column/pages/王英明" exact component={column_王英明_page}/>

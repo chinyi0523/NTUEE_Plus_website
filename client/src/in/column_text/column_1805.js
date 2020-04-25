@@ -3,9 +3,9 @@ import './column_text.css';
 
 import Column_content from '../column_text/component/column_content'
 
-class Column_黃柏源 extends Component{
+class Column_1805 extends Component{
     render(){
-        const column_黃柏源_article = {
+        const column_1805_article = {
 			title:['2014級 黃柏源（Princeton EE PhD）'],
 			hashtags:['系友專訪', '黃柏源', '2014級', 'B99', 'Princeton', 'EE', 'PhD', 'EDA', 'TSMC', 'Intel', 'IEEE_paper_reviewer'],
 			sections:[
@@ -164,14 +164,14 @@ class Column_黃柏源 extends Component{
 			
 			
 			annotation:['特別感謝：黃柏源','撰寫：鍾興寰 陳威成 孫凡耕 蘇柏元'],
-			id:'column_黃柏源'
+			id:'column_1805'
 		}
 		return (
 			<div>
-				<Column_content content = {column_黃柏源_article}/>
+				<Column_content content = {column_1805_article}/>
 			</div>
         )
     }
 }
 
-export default Column_黃柏源;
+export default Column_1805;

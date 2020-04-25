@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './column_text.css';
 
 
-class Column_陳維超 extends Component{
+class Column_1808 extends Component{
     render(){
         return (
 			<div id = "column_container">
@@ -19,4 +19,4 @@ class Column_陳維超 extends Component{
     }
 }
 
-export default Column_陳維超;
+export default Column_1808;
