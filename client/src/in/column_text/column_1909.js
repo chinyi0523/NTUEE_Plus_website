@@ -5,7 +5,7 @@ import Column_content from './component/column_content';
 
 class Column_1909 extends Component{
     render(){
-		const column_1910_article = {
+		const column_1909_article = {
 			title:['2012級 李昀樵（17直播 技術副總）'],
 			hashtags:['系友專訪' ,'李昀樵' ,'2012級' ,'B97' ,'Harvard' ,'MBA' ,'新創' ,'創業' ,'語音處理' ,'17直播' ],
 			sections:[
@@ -120,7 +120,7 @@ class Column_1909 extends Component{
 		}
 		return (
 			<div>
-				<Column_content content = {column_1910_article}/>
+				<Column_content content = {column_1909_article}/>
 			</div>
         )
     }
