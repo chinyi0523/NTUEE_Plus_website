@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import Footer from './component/Footer';
+// import Footer from './component/Footer';
 
 ReactDOM.render(
     <BrowserRouter>

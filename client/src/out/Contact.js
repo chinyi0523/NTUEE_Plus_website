@@ -4,13 +4,15 @@ import {Link} from "react-router-dom";
 import left_image from '../images/left_image.png';
 import right_image from '../images/right_image.png';
 import { NavBar } from '../component/AppBar';
-import Footer from "../component/Footer";
+import Footer from '../component/Footer/Footer'
+// import Footer from "../component/Footer";
 class Contact extends Component{
     render(){
         return (
+        <div>
         <div id="Contact_container">
+            <div id="Contact_content_wrap">
             <NavBar/>
-            
                 <div id="Contact_left_column">
                     <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
                     <p id="Contact_left_text">
@@ -28,9 +30,9 @@ class Contact extends Component{
                     </p>
                 </div>
                 <Link to="/Team" id="Contact_link"><button id="Contact_team_btn">History Team</button></Link>
-                
-            
-            <footer id="index_footer"><Footer/></footer>
+            </div>
+        </div>
+        <Footer/>
         </div>
         )
     }

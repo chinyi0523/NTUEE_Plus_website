@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./Home.css"
-import Footer from "../component/Footer";
+// import Footer from "../component/Footer";
 import { NavBar } from '../component/AppBar';
 class Home extends Component{
 	
@@ -14,7 +14,7 @@ class Home extends Component{
 			NTUEE+
 			
         </div>
-        <footer id="index_footer"><Footer/></footer>
+        {/* <footer id="index_footer"><Footer/></footer> */}
         </div> 
         )
     }

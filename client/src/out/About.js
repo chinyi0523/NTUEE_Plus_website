@@ -3,11 +3,13 @@ import './About.css';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { NavBar } from '../component/AppBar';
-import Footer from "../component/Footer";
+import Footer from '../component/Footer/Footer'
 class About extends Component{
     render(){
         return (
-        <div id="About_container">
+        <div>
+        <div className="About_container">
+            <div className = "About_content_wrap">
             <NavBar/>
             <div id = "About_space"></div>
             <div id="About_up">
@@ -26,11 +28,14 @@ class About extends Component{
                     讓系友們有專屬的家！
                 </p>
             </div>
-            
             <Link id="About_join" to="/Login"><Button id="About_join_btn">JOIN US</Button></Link>
             
-            <footer id="index_footer"><Footer/></footer>
+            </div>
+            
         </div>
+            <Footer/>
+        </div>
+        
         )
     }
 }

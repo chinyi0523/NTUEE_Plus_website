@@ -1,6 +1,17 @@
+.About_container{
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
+}
+/* 
+.About_content_wrap{
+    flex:1;
+} */
+
 html {
     background-color: #003F67;
 }
+
 
 #About_up{
     display: flex;
@@ -54,14 +65,14 @@ html {
     text-decoration: none;
     text-align: center;
 }
-#About_footer{
+/* #About_footer{
     position: absolute;
     bottom:0%;
     left:42.5%;
     font-family:'Noto Sans TC',Arial,sans-serif;
     color:white;
-}
-#About_logo{
+} */
+/* #About_logo{
     display: flex;
     max-width: 10vmin;
     width: 100%;
@@ -88,4 +99,4 @@ html {
     margin-bottom:10%;
 }
 
-
+ */

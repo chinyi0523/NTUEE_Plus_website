@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './Support.css';
 import { NavBar } from '../component/AppBar';
-import Footer from "../component/Footer";
+import Footer from "../component/Footer/Footer";
 class Support extends Component{
     render(){
         return (
+        <div>
         <div id="Support_container">
         <NavBar/> 
             <div id="Support_up">
@@ -21,8 +22,8 @@ class Support extends Component{
                     備註:NTUEE-PLUS
                 </p>
             </div>
-            
-            <footer id="index_footer"><Footer/></footer>
+        </div>
+        <Footer/>
         </div>
         )
     }

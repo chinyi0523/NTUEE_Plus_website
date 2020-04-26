@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './Login.css';
 import FacebookLogin from 'react-facebook-login';
 import ReactDOM from 'react-dom';
-import Footer from "../component/Footer";
+// import Footer from "../component/Footer";
 import { Link,Redirect } from 'react-router-dom';
 import axios from "axios";
 import { NavBar } from '../component/AppBar';
-
+import Footer from '../component/Footer/Footer'
 class Login extends Component{
 	constructor(props) {
 		super(props);
@@ -101,6 +101,7 @@ class Login extends Component{
 		}
 		
         return (
+			<div>
             <div id="Login_container">
 			<NavBar/> 
 			<form onSubmit={this.handleSubmit}>
@@ -136,14 +137,9 @@ class Login extends Component{
 				icon="fa-facebook"
 				textButton = "&nbsp;&nbsp;Sign In with Facebook" 
 			/>
-			
-                {/*<div id="Login_footer">
-                    <img id="Login_logo" src={eesa_icon} alt="logo" ></img>
-                    <p id="Login_footer_text">聯絡信箱 : ntueesa@gmail.com</p>
-                    <p id="Login_footer_text_2">台灣大學電機工程學系 系學會</p>
-		</div>*/}
-		<footer id="index_footer"><Footer/></footer>
             </div>
+			<Footer/>
+			</div>
         )
     }
 }

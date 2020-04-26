@@ -1,3 +1,12 @@
+#Contact_container{
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
+}
+/* 
+#Contact_content_wrap{
+    flex:1;
+} */
 html {
     background-color: #003F67;
 }
