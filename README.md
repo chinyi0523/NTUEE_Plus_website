@@ -18,6 +18,9 @@
 > * 建翰：修照片
 > * 侃軒：Session
 
+### 0425 進度 By 建琁
+* 新增1909~1805的column
+
 ### 0408 進度 By 建翰 & 侃軒
 * Facebook Login and Register 修改大致完成
 * 剩下從註冊進入的按紐處理

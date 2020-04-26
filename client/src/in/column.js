@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import './column.css';
 import Column_block from './column_block/column_block'
-import Jan_image from '../images/column/2001_photo.jpg';
-import Dec_image from '../images/column/1912_photo.jpg';
-import Oct_image from '../images/column/1910_photo.jpg';
+import twe_Jan_image from '../images/column/2001_photo.jpg';
+import nin_Dec_image from '../images/column/1912_photo.jpg';
+import nin_Oct_image from '../images/column/1910_photo.jpg';
+import nin_Sep_image from '../images/column/1909_photo.jpg';
+import nin_Aug_image from '../images/column/1908_photo.jpg';
+import nin_Jul_image from '../images/column/1907_photo.jpg';
+import eig_Aug_image from '../images/column/1808_photo.jpg';
+import eig_Jul_image from '../images/column/1807_photo.jpg';
+import eig_Jun_image from '../images/column/default_photo.jpg';
+import eig_May_image from '../images/column/1805_photo.jpg';
 
 
 class Column extends Component{
@@ -25,33 +32,138 @@ class Column extends Component{
 			id:'Column_Block_1912'
 		}
 		const column_block_1910 = {
-			anno:['翁瑋襄 鄭謹譯 何俊緯 周子庭 謝承霖 吳建翰 余欣澄 ','|2019/12/07 星期六'],
+			anno:['翁瑋襄 鄭謹譯 何俊緯 周子庭 謝承霖 吳建翰 余欣澄 ','| 2019/12/07 星期六'],
 			title:['2016級 林奕辰 （Bravo AI 洽吧智能執行長）','2014級 沈昇勳 （Bravo AI 洽吧智能技術長）'],			
 			exp:['林奕辰 現任：Bravo AI 洽吧智能執行長','沈昇勳 現任：Bravo AI 洽吧智能技術長'  ],
 			edu:['林奕辰 學士：台灣大學電機系(2016)','沈昇勳 碩士：台灣大學電信所', '沈昇勳 學士：台灣大學電機系(2014)'],
 			intro:['創立於2017年的BravoAI (洽吧智能)是一間AI公司，專注於研發、提供金融機構廣泛的軟體服務。運用其電腦視覺、自然語言處理、深度學習等AI專長，BravoAI協助人壽與保險公司研發核保、理賠等流程自動化的方案，不僅替客戶節省大量行政成本，也為公司打出了知名度。目前為止，BravoAI以達成台灣壽險市佔率第一，更計畫邁向國際化。','BravoAI主要由創辦人趙式隆、執行長林奕辰與技術長沈昇勳帶領，團隊著重於技術基礎研究與應用技術解決實際問題。'],
 			id:'Column_Block_1910'
 		}
+        const column_block_1909 = {
+			anno:['李筠婕 鄭謹譯 莊永松 吳建翰 余欣澄','| 2019/11/24 星期日'],
+			title:['2012級 李昀樵 （技術副總 @ 17直播）'],			
+			exp:['現任：Harvard MBA 學生','曾任：17直播產品技術副總裁'],
+			edu:['碩士：台灣大學電機所(2014)','學士：台灣大學電機系(2012)'],
+			intro:['李昀樵曾是李琳山教授語音實驗室的研究生，研究所時期除了研究外，更有進行小型創業，開發出新聞摘要軟件及搜尋公共腳踏車的APP，前者以兩萬元售出，後者成為該領域當時市占率最高的APP。之後，李昀樵加入17直播，監管每年五百萬的IT預算，帶領團隊從5人成長到107人，更將17 Media的首屏載入速度從4秒縮減到0.3秒，成為同業中最快速的。李昀樵在新創領域有豐富經驗，現更到Harvard MBA進修。'],
+			id:'Column_Block_1909'
+		}
+        const column_block_1908 = {
+			anno:['鄭謹譯 施彥宇 王德宇 曾晴 劉桓桓','| 2019/09/17 星期二'],
+			title:['2008級 方劭云（當屆最年輕升遷副教授）'],			
+			exp:['現任：國立臺灣科技大學電機系 副教授','聯絡方式：syfang@mail.ntust.edu.tw'],
+			edu:['博士：台灣大學電子所 (2013)','學士：台灣大學電機系 (2008)'],
+			intro:['2008畢業於台大電機，目前任職於臺灣科技大學的方劭云教授，僅僅不到十年的時間內已經取得了副教授的頭銜，能有這樣的榮譽，是背後無數國際期刊論文與比賽獲獎的支撐。方教授於IEEE/ACM網絡學報屢次發布論文，二度獲得該學報最佳論文獎的榮譽。自2016起更帶領台科大團隊於CAD Contest at ICCAD比賽中四度獲獎，為臺灣在EDA領域中頗具地位的人才。目前授課項目包括VLSI、邏輯設計、演算法、奈米積體電路實體設計，並持續於EDA、奈米積體電路實體設計、製造可行性/可靠性設計、ML設計最佳化等領域中深造。'],
+			id:'Column_Block_1908'
+		}
+        const column_block_1907 = {
+			anno:['鄭謹譯 李筠婕 莊永松 戴慕潔 吳建翰 毛弘仁','| 2019/08/28 星期三'],
+			title:['2012級 王易如 （行動貝果共同創辦人）'],			
+			exp:['現任：MoBagel 共同創辦人，任職營運長','聯絡方式：iruwang@mobagel.com'],
+			edu:['碩士：Computer Science/Computer Hardware , Stanford University','學士：台灣大學電機系 (2012)'],
+			intro:['王易如於史丹佛大學取得碩士學位後，經由世界最大黑克松Salesforce $1Million Hackathon籌組MoBagel（行動貝果），目前任職該新創的營運長。MoBagel 致力於讓機器學習落地，目標讓人工智慧普及化，主要方向為APU (Advanced Preprocessing Unit)，根據AI的應用類別來進行資料前處理，增加預測準確度，目前已經與台灣許多產業龍頭合作。'],
+			id:'Column_Block_1907'
+		}
+        const column_block_1808 = {
+			anno:['毛弘仁 吳兩原 林芃廷 王廷峻 李筠婕 陳培鳴 莊永松','| 2018/10/13 星期六'],
+			title:['1994級 陳維超 （Skywatch Inc. Co-founder）'],			
+			exp:['現任：Skywatch Inc. Co-founder'  ],
+			edu:['學士：台灣大學電機系(1994)'],
+			intro:['陳維超學長在2002年於北卡羅萊納大學教堂山分校取得博士學位，專攻電腦繪圖運算技術。學長的產業界及學界歷練皆相當豐富，在業界，學長曾任美國NVIDIA 3D Graphics 架構師、Nokia Research Palo Alto 資深研究員等高技術職位，更在近年與大學同學 楊吉評學長共同創立Skywatch Inc.，提供高規格的雲端監視系統服務、同時也擔任英業達 (Inventec) 公司的 Head of AI Center、以及台灣人工智慧學校的理事；在學界，學長也曾擔任過台大資工系的教授，開設多年熱門課程：圖形處理器程式設計，同時也擔任過眾多國際學術會議的committee、member或者reviewer，如ACM SIGGRAPH、ISMAR、CVPR、ICCV、ACCV等等，是國內繪圖運算技術領域的翹楚。'],
+			id:'Column_Block_1808'
+		}
+        const column_block_1807 = {
+			anno:['莊永松 莊鎧爾 琉琉 何驊凌 蔡易霖','| 2018/9/10 星期一'],
+			title:['2006級 楊奕軒 （研究員/教授 @ 中研院資創中心）'],			
+			exp:['現任：研究員/教授 @ 中研院資創中心'],
+			edu:['學士：台灣大學電機系(2006)'],
+			intro:['楊奕軒學長是國內少數專攻音樂資訊領域的學者，研究論文產量十分豐厚。電機系畢業後直攻電信所的博士，過去曾在美國Columbia University、西班牙Universitat Pompeu Fabra擔任訪問學者。目前是中研院資創中心的副研究員，也是清大與成大的合聘教授，同時也擔任過許多conference的editer、chair以及眾多journal、conference的reviewer等等。'],
+			id:'Column_Block_1807'
+		}
+        const column_block_1806 = {
+			anno:['楊程皓 吳奕萱 毛弘仁','| 2018/8/18 星期六'],
+			title:['2000級 陳俊仰 （Grindr President & CTO）'],			
+			exp:['現任：Grindr President & CTO'  ],
+			edu:['博士：Electrical Engineering (Digital Signal Processing Group), Caltech (2004-2009)','碩士：臺灣大學電信工程學研究所 (2000-2002)','學士：臺灣大學電機工程學系 (1996-2000)'],
+			intro:['陳俊仰學長在從台大電信所（通訊組）畢業後，在 Caltech 唸了五年 PhD，研究領域是通訊和雷達的信號處理。從 Caltech 畢業後進入一流的軟體公司 Facebook 工作，目前則在世界最大的同志交友平台 Grindr 擔任總裁兼技術長。'],
+			id:'Column_Block_1806'
+		}
+        const column_block_1805 = {
+			anno:['鍾興寰 陳威成 孫凡耕 蘇柏元','| 2018/7/15 星期日'],
+			title:['2014級 黃柏源（Princeton EE PhD）'],			
+			exp:['Security Research Intern, Intel Coporation','Design Automation Intern, TSMC'],
+			edu:['博士：EE, Princeton University','學士：台大電機系(2014)'],
+			intro:['黃柏源學長是目前受訪者中最年輕的一位，大學時拿過多次書卷獎，電機系畢業後前往Princeton攻讀EE PhD，專攻EDA領域，大學時就曾擔任IEEE 通訊 paper reviewer，也曾在TSMC及Intel實習過，學界業界經歷皆相當豐富。'],
+			id:'Column_Block_1805'
+		}
 		return (
 			<div id = "column_block_container">
 				<a href="/in/Column/pages/2001">
 					<div id = "column_block_section" style={{marginTop:"8%"}}>
-						<div id = "column_block_img"><img src= {Jan_image} alt="img_2001" className="column_block_image"/></div>
+						<div id = "column_block_img"><img src= {twe_Jan_image} alt="img_2001" className="column_block_image"/></div>
 						<Column_block block = {column_block_2001}/>
 					</div>
 				</a>
 
 				<a href="/in/Column/pages/1912">
 					<div id = "column_block_section" onclick="/in/Column/pages/1912">
-						<div id = "column_block_img"><img src= {Dec_image} alt="img_1912" className="column_block_image"/></div>
+						<div id = "column_block_img"><img src= {nin_Dec_image} alt="img_1912" className="column_block_image"/></div>
 					<Column_block block = {column_block_1912}/>
 					</div>
 				</a>
 
 				<a href="/in/Column/pages/1910">
 					<div id = "column_block_section" onclick="/in/Column/pages/1910">
-						<div id = "column_block_img"><img src= {Oct_image} alt="img_1910" className="column_block_image"/></div>
+						<div id = "column_block_img"><img src= {nin_Oct_image} alt="img_1910" className="column_block_image"/></div>
 					<Column_block block = {column_block_1910}/>
+					</div>
+				</a>
+                
+                <a href="/in/Column/pages/1909">
+					<div id = "column_block_section" onclick="/in/Column/pages/1909">
+						<div id = "column_block_img"><img src= {nin_Sep_image} alt="img_1909" className="column_block_image"/></div>
+					<Column_block block = {column_block_1909}/>
+					</div>
+				</a>
+                
+                <a href="/in/Column/pages/1908">
+					<div id = "column_block_section" onclick="/in/Column/pages/1908">
+						<div id = "column_block_img"><img src= {nin_Aug_image} alt="img_1908" className="column_block_image"/></div>
+					<Column_block block = {column_block_1908}/>
+					</div>
+				</a>
+                
+                <a href="/in/Column/pages/1907">
+					<div id = "column_block_section" onclick="/in/Column/pages/1907">
+						<div id = "column_block_img"><img src= {nin_Jul_image} alt="img_1907" className="column_block_image"/></div>
+					<Column_block block = {column_block_1907}/>
+					</div>
+				</a>
+                
+                <a href="/in/Column/pages/1808">
+					<div id = "column_block_section" onclick="/in/Column/pages/1808">
+						<div id = "column_block_img"><img src= {eig_Aug_image} alt="img_1808" className="column_block_image"/></div>
+					<Column_block block = {column_block_1808}/>
+					</div>
+				</a>
+                
+                <a href="/in/Column/pages/1807">
+					<div id = "column_block_section" onclick="/in/Column/pages/1807">
+						<div id = "column_block_img"><img src= {eig_Jul_image} alt="img_1807" className="column_block_image"/></div>
+					<Column_block block = {column_block_1807}/>
+					</div>
+				</a>
+                
+                <a href="/in/Column/pages/1806">
+					<div id = "column_block_section" onclick="/in/Column/pages/1806">
+						<div id = "column_block_img"><img src= {eig_Jun_image} alt="img_1806" className="column_block_image"/></div>
+					<Column_block block = {column_block_1806}/>
+					</div>
+				</a>
+                 
+                <a href="/in/Column/pages/1805">
+					<div id = "column_block_section" onclick="/in/Column/pages/1805">
+						<div id = "column_block_img"><img src= {eig_May_image} alt="img_1805" className="column_block_image"/></div>
+					<Column_block block = {column_block_1805}/>
 					</div>
 				</a>
 			</div>
