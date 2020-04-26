@@ -21,7 +21,7 @@ module.exports = function (req, res, next) {
 					console.log("result=",result);
 					user_v_Schema.updateOne({"account.data":session_account},
 					{$pull:{"Occupation":null}},
-					function(err2,result2){console.log('resu=',result2)});
+					function(err2,result2){console.log('deleted array(may be undefined)=',result2)});
 					if (err) {
 						console.log(err);
 						return res.send({status:'success',message:false, description:err});
