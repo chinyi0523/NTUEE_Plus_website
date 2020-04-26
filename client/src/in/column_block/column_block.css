@@ -1,6 +1,18 @@
 #column_block_text{
     width: 670px;
 	display: inline-block;
-	margin-left : 10px;
+	margin-left : 10px; 
 	height: 10vh;
+}
+
+#column_block {
+	margin-top : 1vh;
+	margin-bottom : 2vh;
+	margin-left : 3vw; 
+	margin-right : 3vw;
+	background-image : linear-gradient(150deg,#93D5FF,white);
+	height:420px;
+	/* width:1320px; */
+	border-radius: 10px;
+	box-shadow: #fff 3px 2px;
 }

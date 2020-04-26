@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import {getImg} from './columnImgFunc/getImg';
+import {saveImg} from './columnImgFunc/saveImg';
 import './column.css';
 import Column_block from './column_block/column_block'
 import twe_Jan_image from '../images/column/2001_photo.jpg';
@@ -14,8 +16,68 @@ import eig_May_image from '../images/column/1805_photo.jpg';
 
 
 class Column extends Component{
+	constructor(props){
+		super(props);
+		this.state = {
+            filename:'',
+            file:null
+        };
+
+		this.handleImageChange = this.handleImageChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFilenameChange = this.handleFilenameChange.bind(this)
+		// this.getImg = getImg.bind(this);
+	}
+	// componentWillMount(){
+	// 	this.getImg('1908')
+	// }
+	handleFilenameChange(event) {
+		const target = event.target;
+		const filename = target.value;
+		//const name = target.id;
+		
+		this.setState({
+		  filename:filename
+		});
+    }
+    
+    handleSubmit(e){
+        e.preventDefault();
+        saveImg(this.state.filename,this.state.file)
+
+    }
+
+    handleImageChange(e){
+		console.log(this.state.file)
+        let reader = new FileReader();
+        //if(e.target.files.length===0) return;
+        let file = e.target.files[0];
+        this.setState({
+            file:file
+        })
+
+        try {
+			reader.readAsDataURL(file)
+			
+        } catch (error) {
+            console.log("readfile error!!")
+		}
+		console.log(this.state.file)
+		
+		
+    }
     render(){
+		// const test = {
+		// 	filename:'1908',
+		// 	anno:['鄭謹譯 施彥宇 王德宇 曾晴 劉桓桓','| 2019/09/17 星期二'],
+		// 	title:['2008級 方劭云（當屆最年輕升遷副教授）'],			
+		// 	exp:['現任：國立臺灣科技大學電機系 副教授','聯絡方式：syfang@mail.ntust.edu.tw'],
+		// 	edu:['博士：台灣大學電子所 (2013)','學士：台灣大學電機系 (2008)'],
+		// 	intro:['2008畢業於台大電機，目前任職於臺灣科技大學的方劭云教授，僅僅不到十年的時間內已經取得了副教授的頭銜，能有這樣的榮譽，是背後無數國際期刊論文與比賽獲獎的支撐。方教授於IEEE/ACM網絡學報屢次發布論文，二度獲得該學報最佳論文獎的榮譽。自2016起更帶領台科大團隊於CAD Contest at ICCAD比賽中四度獲獎，為臺灣在EDA領域中頗具地位的人才。目前授課項目包括VLSI、邏輯設計、演算法、奈米積體電路實體設計，並持續於EDA、奈米積體電路實體設計、製造可行性/可靠性設計、ML設計最佳化等領域中深造。'],
+		// 	id:'Column_Block_1908'
+		// }
 		const column_block_2001 = {
+			filename:'2001',
 			anno:['羅韻瑢 鄭謹譯 李筠婕 吳建翰 余欣澄 ','| 2020/03/14 星期六'],
 			title:['1999級 簡韶逸（CEO/ Founder @ Ganzin Technology, Prof. @ NTUEE）'],
 			exp:['現任：CEO of Ganzin Technology', '現任：Associate professor at GIEE (NTU)','曾任：Research staff in Quanta Research Institute(廣達) (2003~2004)' ],
@@ -23,15 +85,17 @@ class Column extends Component{
 			intro:['簡韶逸教授任職於台大電子所長達16年，致力於多媒體訊號處理系統、多媒體積體電路設計、晶片系統設計方法的研究。 多年來，「媒體晶片系統實驗室」不斷研發出優異的技術。2016 年簡韶逸教授帶學生做出眼球追蹤技術的雛形時，他看好一定能應用在 AR/VR 上，於是決心創業。2018年1月時見臻科技(Ganzin Technology) 從台灣大學spin off。見臻科技提供整合性視線追蹤解決方案 (eye tracking solution)，包括視線追蹤模組 (eye tracking module) 及對應之軟體開發平台 (SDK)，解決目前市面上眼動儀成本高、功耗高、體積大、機構複雜的問題。','見臻科技連兩年參加世界性消費電子展（CES），2018年獲選Taiwan Tech Star，是32家獲選的台灣新創公司之一，2019年更被路透社評選為Best of CES。'],
 			id:'Column_Block_2001'
 		}
-		const column_block_1912 = {
-			anno:['李筠婕 鄭謹譯 莊永松 吳建翰 俞建琁 王廷峻 ','| 2020/02/20 星期四'],
-			title:['2008級 鄭恆之 （Technical Lead Manager @ Google Brain）'],
-			exp:['現任：Google Brain Technical Lead Manager' ],
-			edu:['博士：CMU ECE(2013)', '學士：台灣大學電機系(2008)'],
-			intro:['目前任職於 Google Brain 的團隊技術領導者和軟體主管工程師的鄭恆之，從事大規模機器學習的研究與軟體開發。在2013年加入 Googe 的實習生行列進行廣告排行的研究，僅僅花費不到三年的時間，就從實習生轉正職於 Google Research 的軟體工程師並且晉升 Google Brain 的技術領導與主管工程師，亮麗的職涯經歷背後是堅實的學術基礎與多篇國際期刊論文的支撐。','熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。'],
-			id:'Column_Block_1912'
-		}
+		// const column_block_1912 = {
+		//	filename:'1912' //image too big!~~ (>16MB),
+		// 	anno:['李筠婕 鄭謹譯 莊永松 吳建翰 俞建琁 王廷峻 ','| 2020/02/20 星期四'],
+		// 	title:['2008級 鄭恆之 （Technical Lead Manager @ Google Brain）'],
+		// 	exp:['現任：Google Brain Technical Lead Manager' ],
+		// 	edu:['博士：CMU ECE(2013)', '學士：台灣大學電機系(2008)'],
+		// 	intro:['目前任職於 Google Brain 的團隊技術領導者和軟體主管工程師的鄭恆之，從事大規模機器學習的研究與軟體開發。在2013年加入 Googe 的實習生行列進行廣告排行的研究，僅僅花費不到三年的時間，就從實習生轉正職於 Google Research 的軟體工程師並且晉升 Google Brain 的技術領導與主管工程師，亮麗的職涯經歷背後是堅實的學術基礎與多篇國際期刊論文的支撐。','熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。'],
+		// 	id:'Column_Block_1912'
+		// }
 		const column_block_1910 = {
+			filename:'1910',
 			anno:['翁瑋襄 鄭謹譯 何俊緯 周子庭 謝承霖 吳建翰 余欣澄 ','| 2019/12/07 星期六'],
 			title:['2016級 林奕辰 （Bravo AI 洽吧智能執行長）','2014級 沈昇勳 （Bravo AI 洽吧智能技術長）'],			
 			exp:['林奕辰 現任：Bravo AI 洽吧智能執行長','沈昇勳 現任：Bravo AI 洽吧智能技術長'  ],
@@ -40,6 +104,7 @@ class Column extends Component{
 			id:'Column_Block_1910'
 		}
         const column_block_1909 = {
+			filename:'1909',
 			anno:['李筠婕 鄭謹譯 莊永松 吳建翰 余欣澄','| 2019/11/24 星期日'],
 			title:['2012級 李昀樵 （技術副總 @ 17直播）'],			
 			exp:['現任：Harvard MBA 學生','曾任：17直播產品技術副總裁'],
@@ -48,6 +113,7 @@ class Column extends Component{
 			id:'Column_Block_1909'
 		}
         const column_block_1908 = {
+			filename:'1908',
 			anno:['鄭謹譯 施彥宇 王德宇 曾晴 劉桓桓','| 2019/09/17 星期二'],
 			title:['2008級 方劭云（當屆最年輕升遷副教授）'],			
 			exp:['現任：國立臺灣科技大學電機系 副教授','聯絡方式：syfang@mail.ntust.edu.tw'],
@@ -56,6 +122,7 @@ class Column extends Component{
 			id:'Column_Block_1908'
 		}
         const column_block_1907 = {
+			filename:'1907',
 			anno:['鄭謹譯 李筠婕 莊永松 戴慕潔 吳建翰 毛弘仁','| 2019/08/28 星期三'],
 			title:['2012級 王易如 （行動貝果共同創辦人）'],			
 			exp:['現任：MoBagel 共同創辦人，任職營運長','聯絡方式：iruwang@mobagel.com'],
@@ -64,6 +131,7 @@ class Column extends Component{
 			id:'Column_Block_1907'
 		}
         const column_block_1808 = {
+			filename:'1808',
 			anno:['毛弘仁 吳兩原 林芃廷 王廷峻 李筠婕 陳培鳴 莊永松','| 2018/10/13 星期六'],
 			title:['1994級 陳維超 （Skywatch Inc. Co-founder）'],			
 			exp:['現任：Skywatch Inc. Co-founder'  ],
@@ -72,6 +140,7 @@ class Column extends Component{
 			id:'Column_Block_1808'
 		}
         const column_block_1807 = {
+			filename:'1807',
 			anno:['莊永松 莊鎧爾 琉琉 何驊凌 蔡易霖','| 2018/9/10 星期一'],
 			title:['2006級 楊奕軒 （研究員/教授 @ 中研院資創中心）'],			
 			exp:['現任：研究員/教授 @ 中研院資創中心'],
@@ -80,6 +149,7 @@ class Column extends Component{
 			id:'Column_Block_1807'
 		}
         const column_block_1806 = {
+			filename:'1806',
 			anno:['楊程皓 吳奕萱 毛弘仁','| 2018/8/18 星期六'],
 			title:['2000級 陳俊仰 （Grindr President & CTO）'],			
 			exp:['現任：Grindr President & CTO'  ],
@@ -88,6 +158,7 @@ class Column extends Component{
 			id:'Column_Block_1806'
 		}
         const column_block_1805 = {
+			filename:'1805',
 			anno:['鍾興寰 陳威成 孫凡耕 蘇柏元','| 2018/7/15 星期日'],
 			title:['2014級 黃柏源（Princeton EE PhD）'],			
 			exp:['Security Research Intern, Intel Coporation','Design Automation Intern, TSMC'],
@@ -98,6 +169,39 @@ class Column extends Component{
 		return (
 			<div id = "column_block_container">
 				<a href="/in/Column/pages/2001">
+					<Column_block block = {column_block_2001}/>
+				</a>
+				<a href="/in/Column/pages/1910">
+					<Column_block block = {column_block_1910}/>
+				</a>
+				<a href="/in/Column/pages/1909">
+					<Column_block block = {column_block_1909}/>
+				</a>
+				<a href="/in/Column/pages/1908">
+					<Column_block block = {column_block_1908}/>
+				</a>
+				<a href="/in/Column/pages/1907">
+					<Column_block block = {column_block_1907}/>
+				</a>
+				<a href="/in/Column/pages/1808">
+					<Column_block block = {column_block_1808}/>
+				</a>
+				<a href="/in/Column/pages/1807">
+					<Column_block block = {column_block_1807}/>
+				</a>
+				<a href="/in/Column/pages/1806">
+					<Column_block block = {column_block_1806}/>
+				</a>
+				<a href="/in/Column/pages/1805">
+					<Column_block block = {column_block_1805}/>
+				</a>
+				{/* <form onSubmit={this.handleSubmit}>
+                    <input type="file" onChange={this.handleImageChange}/>
+                    <input type="text" onChange={this.handleFilenameChange}/>
+                    <button onClick={this.handleSubmit}> submit </button>
+                </form> */}
+				{/* <img src = {this.state.nin_Aug} alt="fuckyou"></img> */}
+				{/* <a href="/in/Column/pages/2001">
 					<div id = "column_block_section" style={{marginTop:"8%"}}>
 						<div id = "column_block_img"><img src= {twe_Jan_image} alt="img_2001" className="column_block_image"/></div>
 						<Column_block block = {column_block_2001}/>
@@ -165,7 +269,7 @@ class Column extends Component{
 						<div id = "column_block_img"><img src= {eig_May_image} alt="img_1805" className="column_block_image"/></div>
 					<Column_block block = {column_block_1805}/>
 					</div>
-				</a>
+				</a> */}
 			</div>
 		)
     }

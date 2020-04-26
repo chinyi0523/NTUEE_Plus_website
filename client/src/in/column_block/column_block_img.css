@@ -1,10 +1,11 @@
-.column_block_img{
-    float : left;
-	width : 600px;
-	height : 400px;
-}
+/* .column_block_img_div{
+	height: 100%;
+	width: 600px;
+    /* margin-right: 10px; 
+} */
 
 .column_block_image{
+	float : left;
     height:400px;
 	width: 600px;
 	border-radius: 10px;

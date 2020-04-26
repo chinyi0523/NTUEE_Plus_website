@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-module.exports = function (filename,img){
+export function saveImg(filename,img){
 	var toSend= new FormData();
 	toSend.append("filename",filename);
 	toSend.append("file",img);

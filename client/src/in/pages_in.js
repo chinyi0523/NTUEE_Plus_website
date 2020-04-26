@@ -4,6 +4,7 @@ import Career from "./career";
 import Study from "./study";
 import Main_in from "./Main_in";
 import Search from "./search";
+import Uploadimage from './Uploadimage';
 const Column_page = () =>{
     return <Column />
 }
@@ -19,5 +20,8 @@ const Search_page = () =>{
 const Main_in_page = () =>{
     return <Main_in/>
 }
+const Upload_image_page = () =>{
+    return <Uploadimage/>
+}
 
-export { Column_page,Career_page, Study_page, Search_page, Main_in_page};
+export { Column_page,Career_page, Study_page, Search_page, Main_in_page, Upload_image_page};

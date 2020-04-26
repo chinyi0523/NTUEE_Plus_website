@@ -11,6 +11,7 @@ module.exports = function (name){
 			objImg = obj[0].columnImg;
 			var prefix="data:"+objImg.contentType+";base64,"
 			var img = new Buffer(objImg.data, 'binary').toString('base64');
+			//console.log("find!!")
 			resolve(prefix+img);
 		}
 		else{

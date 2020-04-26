@@ -1,18 +1,19 @@
 #column_block_container {
 	position : relative;
 	font-family:'Noto Sans TC',Arial,sans-serif;
+	margin-top: 15vh;
 }
-#column_block_section {
+/* #column_block_section {
 	margin-top : 1vh;
 	margin-bottom : 2vh;
 	margin-left : 3vw; 
 	margin-right : 3vw;
 	background-image : linear-gradient(150deg,#93D5FF,white);
 	height:420px;
-	/* width:1320px; */
+	/* width:1320px; 
 	border-radius: 10px;
 	box-shadow: #fff 3px 2px;
-}
+} */
 #column_block_img{
 	float : left;
 }
