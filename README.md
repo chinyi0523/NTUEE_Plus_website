@@ -1,22 +1,8 @@
 # NTUEE_Plus_website
 
-### 置頂文 0311工作分配 By謹譯 (0312部聚）
-第一次部聚＋第二次部聚前
-我會晚到（採訪到1930），大家可以先進行
-> **前端**
-> * 友廷：完成Profile部分、Contact排版、team頁面
-> * 謹譯：完成Profile部分、Contact排版、Study Link
-> * 承樺：完成Column各個訪問的內頁
-> * 建琁：同上，另外學如何架內頁，連結readme
-> * 育楷：Recruit/Recommendation 頁面分成三欄（目前為一欄） 
-> * 明翰：看目前所有網站，提供所有設計的點子
-
-> **後端**
-> * 君輔：搜尋
-> * 維恩：搜尋（特殊）
-> * 宗倫：Career
-> * 建翰：修照片
-> * 侃軒：Session
+### 0427 進度 By 育楷
+* History增加頁面
+* Contributors 沿用舊的team，未修改
 
 ### 0427 進度 By 育楷
 * search 改成新的版面
