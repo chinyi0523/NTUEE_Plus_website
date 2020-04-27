@@ -18,7 +18,8 @@ const NavBar = () => {
                 
                   <li><Link id = "AppBar_Link" to="/About"><Button id = "AppBar_menuButton">About</Button></Link>
                     <ul>
-                      <li><Link id = "AppBar_Link" to="/Team"><Button id = "AppBar_menuButton">Team</Button></Link></li>
+                      <li><Link id = "AppBar_Link" to="/History"><Button id = "AppBar_menuButton">History</Button></Link></li>
+                      <li><Link id = "AppBar_Link" to="/Team"><Button id = "AppBar_menuButton">Contributors</Button></Link></li>
                     </ul>
                   </li>
                 <li><Link id = "AppBar_Link" to="/Contact"><Button id = "AppBar_menuButton">Contact</Button></Link></li>

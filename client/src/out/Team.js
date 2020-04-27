@@ -67,7 +67,7 @@ class Team extends Component{
             <div id="Team_container">
                 <NavBar/>
                 <div id="Team_content">
-                    <div id="Team_title_hr">History Team</div>
+                    <div id="Team_title_hr">Website Contributors</div>
                     <div id="Team_B06">
                         <div id="Team_B06_title_hr">B06</div>
                         <div id="Team_B06_leader">

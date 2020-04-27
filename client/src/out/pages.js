@@ -8,6 +8,7 @@ import Contact from "./Contact"
 import Register from "./Register"
 import Forget from "./Forget"
 import Team from "./Team"
+import History from "./History"
 
 const Home_page = () =>{
     return <Home/>;
@@ -33,5 +34,8 @@ const Forget_page = () =>{
 const Team_page = () =>{
     return <Team/>
 }
+const History_page = () =>{
+    return <History/>
+}
 
-export { Home_page,Login_page, Support_page,About_page ,Contact_page, Register_page,Forget_page ,Team_page};
+export { Home_page,Login_page, Support_page,About_page ,Contact_page, Register_page,Forget_page ,Team_page,History_page};
