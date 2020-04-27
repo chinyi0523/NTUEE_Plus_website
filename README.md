@@ -18,6 +18,9 @@
 > * 建翰：修照片
 > * 侃軒：Session
 
+### 0427 進度 By 育楷
+* search 改成新的版面
+
 ### 0426 進度 By 友廷
 * 將column_block component化，現在需要多輸一項filename來表示在資料庫的圖片名稱
 * 名稱格式我用年份加月份(ex.1912)
