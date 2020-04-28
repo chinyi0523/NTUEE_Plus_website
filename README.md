@@ -1,6 +1,6 @@
 # NTUEE_Plus_website
 
-### 0427 進度 By 育楷
+### 0427 進度 By 謹譯
 * History增加頁面
 * Contributors 沿用舊的team，未修改
 
