@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import './Team.css';
 import {NavBar} from "../component/AppBar"
 import Team_member from "../component/Team_member"
-import left_image from '../images/left_image.png';
+import b06_1 from '../images/contributors/B06_1.png';
+import b06_2 from '../images/contributors/B06_2.png';
+import abroad_1 from '../images/contributors/abroad_1.png';
+import abroad_2 from '../images/contributors/abroad_2.png';
+import front_1 from '../images/contributors/front_1.png';
+import front_2 from '../images/contributors/front_2.png';
+import front_3 from '../images/contributors/front_3.png';
+import front_4 from '../images/contributors/front_4.png';
+import back_1 from '../images/contributors/back_1.png';
+import back_2 from '../images/contributors/back_2.png';
 /* format:
     team leader should be first
     {
@@ -46,20 +55,23 @@ class Team extends Component{
     render(){
         const B06_teams = 
         {
-            "leaders" : {"1":left_image,
-                       "2":left_image
-                        },
+            "leaders" : {
+                "鄭謹譯 網頁":b06_1,
+                "李筠婕 留學":b06_2,
+            },
             "frontend" : {
-                "1":left_image,
-                "2":left_image
+                "呂承樺":front_4,
+                "王友廷":front_1,
+                "何明翰":front_3,
+                "陳育楷":front_2,
             },
             "backend" : {
-                "1":left_image,
-                "2":left_image
+                "李宗倫":back_2,
+                "吳建翰":back_1,
             },
             "study" : {
-                "1":left_image,
-                "2":left_image
+                "翁瑋襄":abroad_2,
+                "余欣澄":abroad_1
             }
         };
         
@@ -69,21 +81,20 @@ class Team extends Component{
                 <div id="Team_content">
                     <div id="Team_title_hr">Website Contributors</div>
                     <div id="Team_B06">
-                        <div id="Team_B06_title_hr">B06</div>
                         <div id="Team_B06_leader">
-                            Leaders:
+                            負責人:
                             {this.Generate_member_profile(B06_teams["leaders"],"leaders")}
                         </div>
                         <div id="Team_B06_frontend">
-                            Front-End Developers:
+                            網頁前端團隊:
                             {this.Generate_member_profile(B06_teams["frontend"],"frontend")}
                         </div>
                         <div id="Team_B06_backend">
-                            Back-End Developers:
+                            網頁後端團隊:
                             {this.Generate_member_profile(B06_teams["backend"],"backend")}
                         </div>
                         <div id="Team_B06_study">
-                            Study:
+                            留學資料搜集團隊:
                             {this.Generate_member_profile(B06_teams["study"],"study")}
                         </div>
                     </div>

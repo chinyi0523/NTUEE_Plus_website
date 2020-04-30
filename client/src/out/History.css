@@ -18,3 +18,8 @@
        /* border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
     border-image-slice: 1; */
 }
+#History_member{
+    display: inline-block;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}

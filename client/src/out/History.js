@@ -12,6 +12,7 @@ import B05_1 from '../images/history/B05_1.png';
 import B05_2 from '../images/history/B05_2.png';
 import B06_1 from '../images/history/B06_1.png';
 import B06_2 from '../images/history/B06_2.png';
+import B06_all from '../images/history/B06_all.png';
 /* format:
     team leader should be first
     {
@@ -96,6 +97,12 @@ class History extends Component{
                         <div id="History_B06_title_hr">B06 4th NTUEE+</div>
                         <div id="History_B06_leader">
                             {this.Generate_member_profile(B06_teams["leaders"],"leaders")}
+                        </div>
+                        <img src= {B06_all} alt="4th all members" width="600px" height="400px" display="inline-block"></img>
+                        <div id="History_member">
+                            網頁組：陳君輔、呂承樺、王友廷、李宗倫、賴侃軒<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;吳建翰、王維恩、陳育楷、俞建琁、何明翰<br/>
+                            留學組：
                         </div>
                     </div>
                 </div>
