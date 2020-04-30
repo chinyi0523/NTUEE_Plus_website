@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route,Redirect } from 'react-router-dom';
-import { Home_page,Login_page, Support_page,About_page ,Contact_page,Register_page,Forget_page,Team_page} from './out/pages';
+import { Route } from 'react-router-dom';
+import { Home_page,Login_page, Support_page,About_page ,Contact_page,Register_page,Forget_page,Team_page,History_page} from './out/pages';
 import { Home_in_page, Column_page,Recruit_study_page, Main_in_page } from './in/pages_in'; 
 //import PrivateRoute from './component/PrivateRoute';
 import register_app from './out/register_in/register_app';
@@ -89,6 +89,7 @@ class App extends Component {
         {/* <Route path="/in" component={Main_in_page} /> */}
         <PrivateRoute path="/in" component={Main_in_page} loginstatus={this.state.isLogin}/>
         <Route path="/Team" component={Team_page}/>
+        <Route path="/History" component={History_page}/>
       </div>
     );
   }

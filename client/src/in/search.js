@@ -99,29 +99,69 @@ class Search extends Component{
 	       <div id = "search_container">
 			<form id="search_Form" onSubmit={this.handleSubmit}>
 				<div id = "search_div">
-					<span id = "search_method">請選擇查詢方式：</span>
-					<select id="search_cstype" name="select" 
-						onChange={this.handleInputChange}>
-						<option value="1">account</option>
-						<option value="2">username</option>
-						<option value="3">nickname</option>
-						<option value="4">profile</option>
-						<option value="5">publicEmail</option>
-						<option value="6">office</option>
-						<option value="7">homephone</option>
-						<option value="8">cellphone</option>
-						<option value="9">major</option>
-						<option value="10">double_major</option>
-						<option value="11">minor</option>
-						<option value="12">master</option>
-						<option value="13">doctor</option>
-						<option value="14">Company</option>
-					</select>
-					<span id = "search_method">輸入關鍵字：</span> 
-					<input name="toSend" 
-						value={this.state.toSend}
-						onChange={this.handleInputChange}/>
-					<input type="submit" value="Search" />
+					<div id="search_all_type">
+						<div id="search_type">
+							<div>account<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>username<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>nickname<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>profile<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>publicEmail<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+					</div>
+					<div id="search_all_type">
+						<div id="search_type">
+							<div>office<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>homephone<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>cellphone<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>major<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>double_major<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+					</div>
+					<div id="search_all_type">
+						<div id="search_type">
+							<div>minor<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>master<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>doctor<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type">
+							<div>company<input type="checkbox" value="no"/></div>
+							<input/>
+						</div>
+						<div id="search_type"><input id="search_btn" type="submit" value="Search" /></div>	
+					</div>
 				</div>
 			</form>
 		</div>
