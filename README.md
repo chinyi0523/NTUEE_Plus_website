@@ -1,5 +1,8 @@
 # NTUEE_Plus_website
 
+### 0430 進度 By 建琁
+* column新增1606
+
 ### 0427 進度 By 謹譯
 * History增加頁面
 * Contributors 沿用舊的team，未修改

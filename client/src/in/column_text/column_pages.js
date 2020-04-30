@@ -15,7 +15,7 @@ import Column_洪銘駿 from "./column_洪銘駿";
 import Column_王英明 from "./column_王英明";
 import Column_梁維仁 from "./column_梁維仁";
 import Column_高奕豪 from "./column_高奕豪";
-import Column_謝沛倫 from "./column_謝沛倫";
+import Column_1606 from "./column_1606";
 import Column_胡一天 from "./column_胡一天";
 import Column_徐瑞廷 from "./column_徐瑞廷";
 import Column_趙式隆 from "./column_趙式隆";
@@ -66,8 +66,8 @@ const column_梁維仁_page = () =>{
 const column_高奕豪_page = () =>{
     return <Column_高奕豪/>
 }
-const column_謝沛倫_page = () =>{
-    return <Column_謝沛倫/>
+const column_1606_page = () =>{
+    return <Column_1606/>
 }
 const column_胡一天_page = () =>{
     return <Column_胡一天/>
@@ -81,5 +81,5 @@ const column_趙式隆_page = () =>{
     
 export {column_2001_page,column_1912_page, column_1910_page, column_1909_page, column_1908_page, column_1907_page,
     column_1808_page, column_1807_page, column_1806_page, column_1805_page, column_胡立民_page, column_洪銘駿_page,
-    column_王英明_page, column_梁維仁_page, column_高奕豪_page, column_謝沛倫_page, column_胡一天_page, column_徐瑞廷_page, 
+    column_王英明_page, column_梁維仁_page, column_高奕豪_page, column_1606_page, column_胡一天_page, column_徐瑞廷_page, 
     column_趙式隆_page};
