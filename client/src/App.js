@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { Home_page,Login_page, Support_page,About_page ,Contact_page,Register_page,Forget_page,Team_page,History_page} from './out/pages';
 import { Home_in_page, Column_page,Recruit_study_page, Main_in_page } from './in/pages_in'; 
 //import PrivateRoute from './component/PrivateRoute';
@@ -35,14 +35,15 @@ class PrivateRoute extends Component {
     componentWillMount(){
      this.checkAuth()
     }*/
-    componentWillReceiveProps(){
+    UNSAFE_componentWillReceiveProps(){
       this.setState({
         isLogin:this.props.loginstatus
       })
      }
     render () {
       const { component: Component, ...rest } = this.props
-      const { isLogin } = this.state
+      let isLogin = this.props.loginstatus;
+      //const { isLogin } = this.state
       console.log("call PrivateRoute")
       console.log(isLogin)
       return (
