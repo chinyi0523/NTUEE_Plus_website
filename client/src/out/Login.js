@@ -20,8 +20,15 @@ class Login extends Component{
 
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleLogin = this.handleLogin.bind(this);
 	}
-	
+	handleLogin(isLoginorNot){
+		console.log("handleLogin");
+		let isLogin = isLoginorNot;
+		//console.log('111114hroipsfjiweffberb     '+typeof(this.props.loginFunc))
+		//console.log(this.props);
+		this.props.loginFunc(isLogin);
+	}
 	handleInputChange(event) {
 		const target = event.target;
 		const value = target.value;
@@ -54,9 +61,12 @@ class Login extends Component{
 								this.setState({
 									isLogin:true
 								});
+								this.handleLogin(true)
 							}else{
 								alert("錯誤：\n"+res.data.description);
+								
 							}
+
 						}
 				})
 			}
@@ -77,6 +87,8 @@ class Login extends Component{
 						isFBLogin : true,
 						isLogin   : true
 					});
+					this.handleLogin(true)
+					
 				}else{
 					alert('User not registered!');
 					this.setState({
@@ -84,19 +96,28 @@ class Login extends Component{
 						isLogin   : false,
 						isFBLogin : true
 					});
+					this.handleLogin(true)
+					
 				}
 			}
 		}).catch(err => {
 			console.log(err)
+			this.handleLogin(false)
 		})
 	}
-	
+	componentWillReceiveProps(){
+		this.setState({
+			isLogin:this.props.loginstatus
+		})
+	}
     render(){
 		console.log (this.state)
 		if(this.state.isLogin){
+			
 			return <Redirect to="/in" />
 		} 
 		else if (this.state.isFBLogin) {
+			
 			return <Redirect to={{pathname:"/Register/pages/Register_facebook", id:this.state.Login_facebook_ID}} />
 		}
 		

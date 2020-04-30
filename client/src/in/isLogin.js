@@ -1,7 +1,7 @@
 //前端isLogin
 import axios from 'axios';
 
-module.exports = function (){
+export function isLoginChecker(){
 	axios.post("/api/isLogin",
 		{}
 	).then(res=>{
