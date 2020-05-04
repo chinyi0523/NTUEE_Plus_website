@@ -72,14 +72,17 @@ module.exports.getOtherDB = function(obj1){
 	column3.forEach(element=>{
 		output[element]=[]
 		obj1[element].forEach(occupation=>{
+			console.log(occupation)
 			if(occupation.show===true){
 				output[element].push({
-					title:occupation.title,
-					Company:occupation.Company
+					Company:occupation.C,
+					Position:occupation.P,
+					Occupation:occupation.O
 				})
 			}
 		})
 	})
+	console.log(output["Occupation"])
 	if(obj1.userimage.contentType){
 		var prefix="data:"+obj1.userimage.contentType+";base64,"
 		var img = new Buffer(obj1.userimage.data, 'binary').toString('base64');
