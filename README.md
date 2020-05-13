@@ -1,5 +1,11 @@
 # NTUEE_Plus_website
 
+### 0513 進度 By 友廷
+* Search Block 完成(除外觀部分
+* 跳轉至user Profile完成
+* 剩餘問題為Search頁面需記得跳轉頁面前之狀態
+* Recruitment Block已完成(除外觀部分
+
 ### 0430 進度 By 建琁
 * column新增1606
 
