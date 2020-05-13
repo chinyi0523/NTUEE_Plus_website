@@ -6,12 +6,17 @@ import b06_1 from '../images/contributors/B06_1.png';
 import b06_2 from '../images/contributors/B06_2.png';
 import abroad_1 from '../images/contributors/abroad_1.png';
 import abroad_2 from '../images/contributors/abroad_2.png';
+import abroad_3 from '../images/contributors/abroad_3.png';
+import abroad_4 from '../images/contributors/abroad_4.png';
 import front_1 from '../images/contributors/front_1.png';
 import front_2 from '../images/contributors/front_2.png';
 import front_3 from '../images/contributors/front_3.png';
 import front_4 from '../images/contributors/front_4.png';
 import back_1 from '../images/contributors/back_1.png';
 import back_2 from '../images/contributors/back_2.png';
+import back_3 from '../images/contributors/back_3.png';
+import back_4 from '../images/contributors/back_4.png';
+import back_5 from '../images/contributors/back_5.png';
 /* format:
     team leader should be first
     {
@@ -66,12 +71,17 @@ class Team extends Component{
                 "陳育楷":front_2,
             },
             "backend" : {
+                "陳君輔":back_5,
                 "李宗倫":back_2,
+                "賴侃軒":back_3,
                 "吳建翰":back_1,
+                "王維恩":back_4
             },
             "study" : {
                 "翁瑋襄":abroad_2,
-                "余欣澄":abroad_1
+                "余欣澄":abroad_1,
+                "施彥宇":abroad_4,
+                "周軒羽":abroad_3
             }
         };
         
