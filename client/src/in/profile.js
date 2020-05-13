@@ -290,7 +290,7 @@ class Profile extends Component{
                     <div id="Profile_more_info">
                         <ul className="Profile_ul" id="Profile_contact_us">
                             <li>
-                                <p id="Profile_email_tag">E-mail:</p>
+                                <p id="Profile_email_tag">Email:</p>
                                 <input type="checkbox"
 						checked = {this.state.email_checkbox}
                         onChange = {this.handleCheckChange}
@@ -308,7 +308,7 @@ class Profile extends Component{
                         <input type="address" id="address" value = {this.state.address} onChange = {this.handleInputChange} name="address"></input>
                             </li>
                             <li>
-                            <p id="Profile_phone_company_tag">Phone(Company):</p>
+                            <p id="Profile_phone_company_tag">Phone(Office):</p>
                         <button className="Profile_expand_button" 
 							onClick={(e)=>{
 								e.preventDefault();

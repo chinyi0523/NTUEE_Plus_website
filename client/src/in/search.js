@@ -7,21 +7,22 @@ import {NavBar_in} from '../component/AppBar_in';
 import axios from 'axios';
 import Search_result from './search_block/Search_result';
 import {handleInputChange} from "./searchFunc/handleChange";
+import { white } from 'ansi-colors';
 
 var map = [
-	["account","account"],
-	["username","username"],
-	["nickname","nickname"],
-	["profile","profile"],
-	["publicEmail","publicEmail"],
-	["office","office"],
-	["homephone","homephone"],
-	["cellphone","cellphone"],
-	["major","education.major"],
-	["double_major","education.double_major"],
-	["minor","education.minor"],
-	["master","education.master"],
-	["doctor","education.doctor"],
+	["Account","account"],
+	["Username","username"],
+	["Nickname","nickname"],
+	["Profile","profile"],
+	["Email","publicEmail"],
+	["Office Tel","office"],
+	["Home Tel","homephone"],
+	["Mobile","cellphone"],
+	["Major","education.major"],
+	["Double Major","education.double_major"],
+	["Minor","education.minor"],
+	["Master","education.master"],
+	["Doctor","education.doctor"],
 	["Company","Occupation.C"],
 	["Occupation","Occupation.O"],
 	["Position","Occupation.P"]
@@ -123,15 +124,15 @@ class Search extends Component{
 		if (this.state.result_num!==0){
 			$search_result = (<Search_result num={this.state.result_num} result={this.state.search_result} search_list={this.state.search_list} prevstate={this.state}/>)
 		}else{
-			$search_result = (<p>Search what you want~</p>)
+			$search_result = (<div id= "Search_return" style={{color:"white",fontSize:"20px",marginLeft:"5vw"}}><p>Search what you want </p></div>)
 		}
         return (
 			<div>
 			<form onSubmit={this.handleSubmit}>
-			<div id="Search_table" style={{marginTop:"20vh"}}>
+			<div id="Search_table" style={{color:"white",fontSize:"20px",marginTop:"20vh",marginLeft:"5vw"}}>
 
 			</div>
-			<input type="submit" name="submit" value="submit"></input>
+			<input type="submit" name="submit" value="submit" style={{color:"black",fontSize:"20px",marginTop:"2vh",marginLeft:"5vw"}}></input>
 			</form>
 			{$search_result}
 			{/* <Search_result/> */}
