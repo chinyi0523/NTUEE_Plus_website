@@ -1,0 +1,14 @@
+#Recruitment_block_container{
+    color:white;
+    font-family:'Noto Sans TC',Arial,sans-serif !important;
+    /* background-color: turquoise; */
+}
+
+.Recruitment_block_image{
+    width:10vw;
+    max-height: 15vh;
+    /* display: inline-block; */
+}
+.Recruitment_block_image_container{
+    float: left;
+}

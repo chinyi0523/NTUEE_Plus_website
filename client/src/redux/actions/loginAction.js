@@ -5,11 +5,11 @@ import {
     SET_LOGOUT
 } from '../constants/actionTypes';
 
-import {loginChecker} from '../../in/isLogin';
+import {isLoginChecker} from '../../in/isLogin';
 export const getIslogin = () => (
     (dispatch) => {
         dispatch({type:GET_ISLOGIN})
-        if (loginChecker===true){
+        if (isLoginChecker()===true){
             dispatch({type:SET_LOGIN});
         }else{
             dispatch({type:SET_LOGOUT});

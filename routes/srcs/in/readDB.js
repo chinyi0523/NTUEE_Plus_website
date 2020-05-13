@@ -72,6 +72,7 @@ module.exports.getOtherDB = function(obj1){
 	column3.forEach(element=>{
 		output[element]=[]
 		obj1[element].forEach(occupation=>{
+			if(occupation!==null){
 			console.log(occupation)
 			if(occupation.show===true){
 				output[element].push({
@@ -79,8 +80,9 @@ module.exports.getOtherDB = function(obj1){
 					Position:occupation.P,
 					Occupation:occupation.O
 				})
-			}
+			}}
 		})
+	
 	})
 	console.log(output["Occupation"])
 	if(obj1.userimage.contentType){

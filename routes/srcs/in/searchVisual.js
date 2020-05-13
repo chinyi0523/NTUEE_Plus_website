@@ -16,6 +16,7 @@ module.exports = function (req, res, next) {
 			else{
 				var output = []
 				obj.forEach(people=>{
+					console.log(obj)
 					var output1 = readDB.getOtherDB(people)
 					output.push(output1)
 				})

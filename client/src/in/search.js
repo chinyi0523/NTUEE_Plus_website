@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import './search.css';
 import {NavBar_in} from '../component/AppBar_in';
 import axios from 'axios';
-
+import Search_result from './search_block/Search_result';
 import {handleInputChange} from "./searchFunc/handleChange";
 
 var map = [
@@ -30,12 +30,21 @@ var map = [
 class Search extends Component{
     constructor(props) {
 		super(props);
-		var tmpState = {hasChanged:{}};
+		var tmpState = {hasChanged:{},
+						result_num:0,
+						search_result:null,
+						search_list:[],
+					};
 		map.forEach(arr=>{
 			tmpState[arr[1]]='';
 		});
 		tmpState["select"] = "1";
-		this.state = tmpState;
+		if(this.props.location !== undefined){
+			this.state = this.props.location.state
+		}else{
+			this.state = tmpState;
+		}
+		
 		this.handleInputChange = handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.creatTable = this.creatTable.bind(this);
@@ -43,16 +52,25 @@ class Search extends Component{
 	
 	handleSubmit(event){
 		event.preventDefault();
+		let list = []
+		for (let catalog in this.state.hasChanged){
+			if(this.state.hasChanged[catalog]){
+				list.push(catalog)
+			}
+		}
+		this.setState({
+			search_list:list
+		})
 		var r = window.confirm("確認搜尋?");
 		if(r){
 			const searchIndex = parseInt(this.state.select)-1;
 			var toSend = {};
 			toSend[map[searchIndex][1]]=this.state.toSend;
-			/*map.forEach(arr=>{
+			map.forEach(arr=>{
 				if(this.state.hasChanged[arr[1]]){
 					toSend[arr[1]] = this.state[arr[1]]
 				}
-			})*/
+			})
 			console.log('toSend',toSend)
 			axios.post("/api/searchVisual",
 				toSend
@@ -62,16 +80,22 @@ class Search extends Component{
 						const receive = res.data.data;
 						console.log('獲得'+receive.length+'筆資料');
 						console.log(receive);
+						this.setState({
+							search_result:receive,
+							result_num:receive.length
+						})
 					}else{
 						alert("錯誤: \n"+res.data.description);
 					}
 				}
 			})
+
 		}
+		// this.props.history.replace( this.props.location.pathname, this.state);
 	}
-	/*componentDidMount(){
+	componentDidMount(){
 		this.creatTable();
-	}*/
+	}
 	creatTable(){
 		var ST = document.getElementById("Search_table");
 		map.forEach(arr=>{
@@ -95,76 +119,92 @@ class Search extends Component{
 		})
 	}
 	render(){
+		let $search_result = null;
+		if (this.state.result_num!==0){
+			$search_result = (<Search_result num={this.state.result_num} result={this.state.search_result} search_list={this.state.search_list} prevstate={this.state}/>)
+		}else{
+			$search_result = (<p>Search what you want~</p>)
+		}
         return (
-	       <div id = "search_container">
-			<form id="search_Form" onSubmit={this.handleSubmit}>
-				<div id = "search_div">
-					<div id="search_all_type">
-						<div id="search_type">
-							<div>account<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>username<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>nickname<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>profile<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>publicEmail<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-					</div>
-					<div id="search_all_type">
-						<div id="search_type">
-							<div>office<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>homephone<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>cellphone<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>major<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>double_major<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-					</div>
-					<div id="search_all_type">
-						<div id="search_type">
-							<div>minor<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>master<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>doctor<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type">
-							<div>company<input type="checkbox" value="no"/></div>
-							<input/>
-						</div>
-						<div id="search_type"><input id="search_btn" type="submit" value="Search" /></div>	
-					</div>
-				</div>
+			<div>
+			<form onSubmit={this.handleSubmit}>
+			<div id="Search_table" style={{marginTop:"20vh"}}>
+
+			</div>
+			<input type="submit" name="submit" value="submit"></input>
 			</form>
-		</div>
+			{$search_result}
+			{/* <Search_result/> */}
+			</div>
+	    //    <div id = "search_container">
+		// 	<form id="search_Form" onSubmit={this.handleSubmit}>
+		// 		<div id = "search_div">
+		// 			<div id="search_all_type">
+		// 				<div id="search_type">
+		// 					<div>account<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>username<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>nickname<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>profile<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>publicEmail<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 			</div>
+		// 			<div id="search_all_type">
+		// 				<div id="search_type">
+		// 					<div>office<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>homephone<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>cellphone<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>major<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>double_major<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 			</div>
+		// 			<div id="search_all_type">
+		// 				<div id="search_type">
+		// 					<div>minor<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>master<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>doctor<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type">
+		// 					<div>company<input type="checkbox" value="no"/></div>
+		// 					<input/>
+		// 				</div>
+		// 				<div id="search_type"><input id="search_btn" type="submit" value="Search" /></div>	
+		// 			</div>
+		// 		</div>
+		// 	</form>
+		// </div>
         )
     }
 }

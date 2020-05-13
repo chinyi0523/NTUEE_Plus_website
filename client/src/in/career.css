@@ -7,6 +7,31 @@
 	text-align: center;
 	font-size : 54px;
 }
+.career_img{
+	transition-property: transform;
+	transform: scale(1);
+	transition-duration: 0.5s;
+}
+.career_img:hover{
+	transform: scale(1.05);
+	animation-name: wobble;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+@keyframes wobble{
+	0%{
+		transform: rotate(0deg);
+	}
+	25%{
+		transform: rotate(-10deg);
+	}
+	75%{
+		transform: rotate(10deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
 @media (max-width:500px){
 	
 }
