@@ -51,4 +51,7 @@ router.post('/saveImg',
 router.post('/getImg',
 	require('./srcs/in/getImg'))
 
+router.post('/isLogin',
+	require('./srcs/in/isLogin'))
+
 module.exports = router;

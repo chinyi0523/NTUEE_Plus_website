@@ -1,7 +1,7 @@
-import Immutable from 'immutable';
+//import Immutable from 'immutable';
 
-export const LoginState = Immutable.fromJS(
+export const LoginState = 
     {
         isLogin:false
     }
-);
+;

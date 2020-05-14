@@ -1,4 +1,7 @@
-#recruitment_container {
+
+
+
+#Recruitment_container {
 	position : relative;
 	margin-top : 8%;
 	display: flex;
@@ -6,6 +9,10 @@
 	padding: 30px;
 	justify-content: space-evenly;
 }
+.Recruitment_block{
+	margin-top: 1vh;
+}
+/*
 #recruitment_section {
 	overflow: auto;
 	margin-top : 1em;
@@ -41,4 +48,4 @@
 }
 @media (max-width:500px){
 	
-}
+}*/

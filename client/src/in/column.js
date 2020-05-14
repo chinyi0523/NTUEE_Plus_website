@@ -13,7 +13,6 @@ import eig_Aug_image from '../images/column/1808_photo.jpg';
 import eig_Jul_image from '../images/column/1807_photo.jpg';
 import eig_Jun_image from '../images/column/default_photo.jpg';
 import eig_May_image from '../images/column/1805_photo.jpg';
-import six_Jun_image from '../images/column/default_photo.jpg';
 
 
 class Column extends Component{
@@ -167,15 +166,6 @@ class Column extends Component{
 			intro:['黃柏源學長是目前受訪者中最年輕的一位，大學時拿過多次書卷獎，電機系畢業後前往Princeton攻讀EE PhD，專攻EDA領域，大學時就曾擔任IEEE 通訊 paper reviewer，也曾在TSMC及Intel實習過，學界業界經歷皆相當豐富。'],
 			id:'Column_Block_1805'
 		}
-        const column_block_1606 = {
-			filename:'1606',
-			anno:['鍾興寰 Paulsu Su 陳威成 孫凡耕','| 2017/4/13 星期四'],
-			title:['2007級 謝沛倫（Ambidio Inc. 共同創辦人）'],			
-			exp:['Co-Founder of Ambidio Inc.'],
-			edu:['碩士：Columbia University, Fu Foundation School of Engineering and Applied Science Electrical Engineering'],
-			intro:['「想像一下，打開電腦或是手機觀看影片或玩電動，就能感受到360度逼真的立體音效，彷彿賽車就從身旁呼嘯而過、恐龍就從眼前磅礡踩過的震撼聲音。」系學會很榮幸邀請到 2007級 謝沛倫系友參加本次skype專訪。創辦於2014年，LA based的 startup ─ Ambidio，希望能創造「大腦與耳朵重新連結的Ambidio時代」，快點進文章，聽一聽謝沛倫學長為我們帶來的分享吧!'],
-			id:'Column_Block_1606'
-		}
 		return (
 			<div id = "column_block_container">
 				<a href="/in/Column/pages/2001">
@@ -204,9 +194,6 @@ class Column extends Component{
 				</a>
 				<a href="/in/Column/pages/1805">
 					<Column_block block = {column_block_1805}/>
-				</a>
-                <a href="/in/Column/pages/1606">
-					<Column_block block = {column_block_1606}/>
 				</a>
 				{/* <form onSubmit={this.handleSubmit}>
                     <input type="file" onChange={this.handleImageChange}/>

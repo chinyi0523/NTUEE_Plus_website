@@ -1,10 +1,43 @@
 import React, { Component } from 'react';
 import './recruitment.css';
 import {NavBar_in} from '../../component/AppBar_in';
+import Recuritment_block from './recruitment_block/Recruitment_block'
+import eesa_icon from '../../images/eesa-icon.png';
+import {Link} from 'react-router-dom';
 
-class Recruitment extends Component{
+const template = {
+	title:'NTUEE+ frontend',
+	info:{
+		company_name:'NTUEE+',
+		work_type:'website engineer',
+		salary:'0',
+		requirement:'NO',
+		diploma:'NTUEE'
+	},
+	description:'testtesttesttesttesttesttesttesttest',
+	image:eesa_icon,
+	id:'Recruitment_block_1'
+}
+const Recruitment = (props) =>{
+	
+	return(
+		<div id = "Recruitment_container">
+			<Link>
+				<Recuritment_block data = {template} className='Recruitment_block'/>
+			</Link>
+			<Link>
+				<Recuritment_block data = {template} className='Recruitment_block'/>
+			</Link>
+			
+
+		</div>
+	)
+}
+/*class Recruitment extends Component{
     render(){
         return (
+
+		
 		<div id = "recruitment_container">
 			<a href=''>
 				submmit
@@ -91,6 +124,6 @@ class Recruitment extends Component{
 		
         )
     }
-}
+}*/
 
 export default Recruitment;

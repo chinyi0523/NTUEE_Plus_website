@@ -1,5 +1,5 @@
 #column_block_text{
-    width: 670px;
+    width: 900px;
 	display: inline-block;
 	margin-left : 10px; 
 	height: 10vh;
@@ -11,8 +11,8 @@
 	margin-left : 3vw; 
 	margin-right : 3vw;
 	background-image : linear-gradient(150deg,#93D5FF,white);
-	height:420px;
-	/* width:1320px; */
+	height:400px;
+	width:1550px;
 	border-radius: 10px;
 	box-shadow: #fff 3px 2px;
 }

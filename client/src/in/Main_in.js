@@ -6,6 +6,7 @@ import {column_app} from "./column_text/column_app";
 import {career_app} from "./career_in/career_app";
 import "./Main_in.css";
 import {NavBar_in} from "../component/AppBar_in";
+import Profile_for_search from '../component/Profile';
 class Main_in extends Component{
     render(){
         return(
@@ -21,6 +22,7 @@ class Main_in extends Component{
                     <Route path="/in/Career/pages" component = {career_app}/>
                     <Route path="/in/Study"  exact component={Study_page} />
 					<Route path="/in/Search"  exact component={Search_page} />
+                    <Route path="/in/:handle" exact component={Profile_for_search} />
                 </Switch>
             </div>
         )
