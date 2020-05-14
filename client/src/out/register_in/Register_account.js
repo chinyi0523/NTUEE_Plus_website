@@ -8,10 +8,10 @@ class Register_account extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-		  Register_realname: '',
-		  Register_student_id: '',
-		  Register_password: '',
-		  Register_confirm_password: '',
+		  Register_acc_realname: '',
+		  Register_acc_student_id: '',
+		  Register_acc_password: '',
+		  Register_acc_confirm_password: '',
 		  imagePreviewUrl: '',
 		  file: null
 		};
@@ -34,7 +34,8 @@ class Register_account extends Component{
 	
 	handleSubmit(event) {
 		event.preventDefault();
-		if(false){//this.state.Register_password!==this.state.Register_confirm_password){
+		console.log(this.state)
+		if(this.state.Register_password!==this.state.Register_confirm_password){
 			return alert("密碼不一致");
 		}else{
 			var r=window.confirm("確認註冊?");
