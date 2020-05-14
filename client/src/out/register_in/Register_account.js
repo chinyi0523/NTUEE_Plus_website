@@ -41,10 +41,10 @@ class Register_account extends Component{
 			if(r){
 				var data = new FormData();
 				data.append('file',this.state.file)
-				data.append('username',this.state.Register_realname)
-				data.append('account',this.state.Register_student_id)
-				data.append('password',this.state.Register_password)
-				data.append('ConfirmPassword',this.state.Register_confirm_password)
+				data.append('username',this.state.Register_acc_realname)
+				data.append('account',this.state.Register_acc_student_id)
+				data.append('password',this.state.Register_acc_password)
+				data.append('ConfirmPassword',this.state.Register_acc_confirm_password)
 				console.log('data',data)
 				const config = {
 					headers: {

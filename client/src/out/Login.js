@@ -27,7 +27,11 @@ class Login extends Component{
 		let isLogin = isLoginorNot;
 		//console.log('111114hroipsfjiweffberb     '+typeof(this.props.loginFunc))
 		//console.log(this.props);
-		this.props.loginFunc(isLogin);
+		//this.props.loginFunc(isLogin);
+		if(isLogin){
+			localStorage.setItem('auth',true);
+			window.location = 'in';
+		}
 	}
 	handleInputChange(event) {
 		const target = event.target;
