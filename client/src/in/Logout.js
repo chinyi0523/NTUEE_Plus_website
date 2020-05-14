@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import Button from "@material-ui/core/Button"
+import Button from "@material-ui/core/Button";
+import {fakeAuth} from '../auth';
+
 class Logout extends Component {
 	logoutbtn(){
 		axios.post("/api/logout", 
@@ -10,6 +12,7 @@ class Logout extends Component {
 				if(res.data){
 					if(res.data.message===true){
 						alert('登出成功');
+						localStorage.removeItem('auth');
 						window.location = "/Login";
 					}else{
 						alert('登出失敗');

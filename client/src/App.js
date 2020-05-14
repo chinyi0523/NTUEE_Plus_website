@@ -10,8 +10,9 @@ import Footer from './component/Footer/Footer'
 // import NavBar from './component/AppBar'
 import './App.css'
 import { get } from 'mongoose';
-
-class PrivateRoute extends Component {
+import equal from 'fast-deep-equal';
+import {fakeAuth} from './auth';
+/*class PrivateRoute extends Component {
     constructor (props) {
       super(props)
   
@@ -34,34 +35,61 @@ class PrivateRoute extends Component {
     }
     componentWillMount(){
      this.checkAuth()
-    }*/
+    }//
     UNSAFE_componentWillReceiveProps(){
       this.setState({
         isLogin:this.props.loginstatus
       })
-     }
+    }
+	
+	componentDidUpdate(prevProps) {
+	  if(!equal(this.props.loginstatus, prevProps.loginstatus))
+	  {
+		const propL = this.props.loginstatus;
+		console.log('login state change',propL);
+		this.setState((propL)=>({
+			isLogin:propL
+		}));
+		
+	  }
+	} 
+	
     render () {
       const { component: Component, ...rest } = this.props
       let isLogin = this.props.loginstatus;
       //const { isLogin } = this.state
       console.log("call PrivateRoute")
-      console.log(isLogin)
+      console.log('PrivateRoute isLogin = ',isLogin)
       return (
+		
          <Route {...rest} render={props => (
-              isLogin
+			 {this.state.isLogin}
                 ? <Component {...props} />
                 : <Redirect to='/Login' />
             )} />
       )
     }
   
-  }
+  }*/
+  
+
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    localStorage.getItem('auth')
+      ? <Component {...props} />
+      : <Redirect to={{
+          pathname: '/Login',
+          state: { from: props.location }
+        }} />
+  )} />
+)
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isLogin:false,
+      isLogin:false
     }
     this.handleisLoginChange = this.handleisLoginChange.bind(this);
   }
@@ -71,7 +99,9 @@ class App extends Component {
     this.setState({
       isLogin:isLogin
     })
-    console.log(this.state.isLogin)
+	localStorage.setItem('auth',true);
+	if(isLogin) window.location = "/in";
+    console.log('App isLogin = ',this.state.isLogin)
   }
   render() {
     return (
