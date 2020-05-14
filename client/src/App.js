@@ -11,7 +11,7 @@ import Footer from './component/Footer/Footer'
 import './App.css'
 import { get } from 'mongoose';
 import equal from 'fast-deep-equal';
-import {fakeAuth} from './auth';
+//import {fakeAuth} from './auth';
 /*class PrivateRoute extends Component {
     constructor (props) {
       super(props)
