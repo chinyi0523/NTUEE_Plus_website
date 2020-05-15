@@ -1,0 +1,80 @@
+
+#Recommendation_block_container{
+    background-color: azure;
+    width:100%;
+    margin-top: 3em;
+    padding:0.5em 1em 0.5em;
+    /* padding:1em, 2em; */
+    border-radius: 1em;
+    color:rgb(12, 28, 99);
+    font-family:'Noto Sans TC',Arial,sans-serif !important;
+    /* background-color: turquoise; */
+}
+section {
+    box-sizing: border-box;
+    margin:auto, auto;
+}
+
+.Recommendation_block_image{
+    width:8vw;
+    max-height: 12vh;
+    float:center;
+}
+.Recommendation_block_image_container{
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    width:25%;
+}
+.Recommendation_block_title_container{
+    box-sizing: border-box;
+    display: inline-block;
+    width:75%;
+}
+.Recommendation_block_title{
+    color:rgb(12, 28, 99);
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 1em;
+}
+.Recommendation_block_subtitle{
+    color:rgb(12, 28, 99);
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 1.5em;
+}
+.Recruitment_block_work_type{
+    color:rgb(94, 94, 94);
+}
+
+.Recommendation_block_info_div{
+    padding-left: 1em;
+    padding-right: 1em;
+    /* padding:0, 2em; */
+}
+.Recommendation_block_info{
+    font-size: 16px;
+}
+
+.Recommendation_block_salary{
+    color:red;
+    font-weight: bold;
+}
+
+.Recommendation_block_spec_div{
+    font-size: 16px;
+    color:rgb(72, 72, 72);
+}
+#Recommendation_spec_requirement{
+    text-decoration: dashed;
+    padding-left: 1em;
+    /* padding-right: 1em; */
+}
+#Recommendation_requirement_li{
+    font-weight: bold;
+}
+.Recommendation_block_requirement{
+    font-size:12px;
+    text-align: justify;
+}
+
