@@ -1,4 +1,7 @@
 # NTUEE_Plus_website
+### 0514 進度 by 建翰 & 侃軒
+* 修改 Facebook Login 與 Facebook Register
+* 修改前端 register_in/register_account 認證 改回沒有 acc 的
 
 ### 0513 進度 By 友廷
 * Search Block 完成(除外觀部分

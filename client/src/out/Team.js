@@ -8,10 +8,12 @@ import abroad_1 from '../images/contributors/abroad_1.png';
 import abroad_2 from '../images/contributors/abroad_2.png';
 import abroad_3 from '../images/contributors/abroad_3.png';
 import abroad_4 from '../images/contributors/abroad_4.png';
+import abroad_5 from '../images/contributors/abroad_5.png';
 import front_1 from '../images/contributors/front_1.png';
 import front_2 from '../images/contributors/front_2.png';
 import front_3 from '../images/contributors/front_3.png';
 import front_4 from '../images/contributors/front_4.png';
+import front_5 from '../images/contributors/front_5.png';
 import back_1 from '../images/contributors/back_1.png';
 import back_2 from '../images/contributors/back_2.png';
 import back_3 from '../images/contributors/back_3.png';
@@ -69,6 +71,7 @@ class Team extends Component{
                 "王友廷":front_1,
                 "何明翰":front_3,
                 "陳育楷":front_2,
+                "俞建琁":front_5
             },
             "backend" : {
                 "陳君輔":back_5,
@@ -80,8 +83,9 @@ class Team extends Component{
             "study" : {
                 "翁瑋襄":abroad_2,
                 "余欣澄":abroad_1,
-                "施彥宇":abroad_4,
-                "周軒羽":abroad_3
+                "謝承霖":abroad_5,
+                "周軒羽":abroad_3,
+                "施彥宇":abroad_4
             }
         };
         
@@ -104,7 +108,7 @@ class Team extends Component{
                             {this.Generate_member_profile(B06_teams["backend"],"backend")}
                         </div>
                         <div id="Team_B06_study">
-                            留學資料搜集團隊:
+                            留學資料蒐集團隊:
                             {this.Generate_member_profile(B06_teams["study"],"study")}
                         </div>
                     </div>

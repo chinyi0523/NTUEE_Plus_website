@@ -21,13 +21,18 @@ class Login extends Component{
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleLogin = this.handleLogin.bind(this);
+		this.handleFBSubmit = this.handleFBSubmit.bind(this);
 	}
 	handleLogin(isLoginorNot){
 		console.log("handleLogin");
 		let isLogin = isLoginorNot;
 		//console.log('111114hroipsfjiweffberb     '+typeof(this.props.loginFunc))
 		//console.log(this.props);
-		this.props.loginFunc(isLogin);
+		//this.props.loginFunc(isLogin);
+		if(isLogin){
+			localStorage.setItem('auth',true);
+			window.location = 'in';
+		}
 	}
 	handleInputChange(event) {
 		const target = event.target;
@@ -96,7 +101,7 @@ class Login extends Component{
 						isLogin   : false,
 						isFBLogin : true
 					});
-					this.handleLogin(true)
+					this.handleLogin(false)
 					
 				}
 			}
