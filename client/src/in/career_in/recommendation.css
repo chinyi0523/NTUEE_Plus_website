@@ -1,44 +1,26 @@
-#recommendation_container {
-	position : relative;
-	margin-top : 8%;
-	display: flex;
-	flex-wrap: wrap;
-	padding: 30px;
-	justify-content: space-evenly;
+.Recommendation{
+	width:90%;
+	margin:7% auto 0;
 }
-#recommendation_section {
-	overflow: auto;
-	margin-top : 1em;
-	margin-bottom : 1em;
-	margin-left : 10px;
-	margin-right : 10px;
-	background-color : #7FFFD4;
+.Recommendation_container {
+	/* position : relative; */
+	/* margin-top : 7%; */
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+	/* flex-wrap: wrap; */
+	/* padding: 30px; */
+	/* justify-content: space-evenly; */
+	width:50%;
+	margin:0 auto;
 }
-#recommendation_section_1 {
-	margin : 10px;
-	background-color : #7FFFD4;
+.Recommendation_wrapper{
+	/* display: inline-block; */
+	width: 80%;
+	margin:0 auto;
+	vertical-align: top;
 }
-#recommendation_section_2 {
-	
-}
-#recommendation_img {
-	margin : 10px;
-	background-image: url("https://factsnfigs.com/wp-content/uploads/2019/06/Find_Jobs.jpg"); 
-	background-size:300px 200px;
-	float : left;
-	width : 300px;
-	height : 200px;
-	background-color : #000;
-}
-#recommendation_text {
-
-}
-#recommendation_info {
-	margin : 10px;
-}
-@media (max-width:1200px){
-	
-}
-@media (max-width:500px){
-	
+.Recommendation_block{
+	margin-top:0;
+	vertical-align: top;
 }

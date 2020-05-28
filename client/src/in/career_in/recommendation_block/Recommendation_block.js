@@ -90,18 +90,3 @@ const Recommendation_spec = (props) => {
         </div>
     )
 }
-
-
-/*
-const Recommendation_info = (props) =>{
-    let name = props.nam;
-    let occupation = props.occ;
-	let experience = props.exp;
-	let speciality = props.spe;
-    let diploma = props.dip;
-    return(
-        <div>
-
-        </div>
-    )
-}*/
