@@ -112,8 +112,9 @@ const renderThumb = ({ style, ...props }) => {
 	return <div style={{ ...style, ...thumbStyle }} {...props} />;}
 const Recruitment = (props) =>{
 	return(
-		<Scrollbar renderThumbVertical={renderThumb}>
+		
 		<div className ="Recruitment">
+			<Scrollbar renderThumbVertical={renderThumb}>
 		<div className = "Recruitment_container">
 			<div className = "Recruitment_wrapper">
 				<Link className='Recruitment_block'>
@@ -137,8 +138,9 @@ const Recruitment = (props) =>{
 				</Link>
 			</div>
 		</div>
-		</div>
 		</Scrollbar>
+		</div>
+		
 	)
 }
 export default Recruitment;

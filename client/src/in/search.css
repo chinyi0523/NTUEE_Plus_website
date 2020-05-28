@@ -30,6 +30,18 @@
 	right:8vw;
 	top:15vh;
 }
+#Search_form{
+	width:33vw;
+	display:inline-block;
+}
+#Search_submit{
+	position: absolute;
+	z-index:4;
+	top:50vh;
+}
+#Search_submit:hover{
+	
+}
 /*
 #search_all_type{
 	display : flex;

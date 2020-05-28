@@ -10,6 +10,7 @@ import {handleInputChange} from "./searchFunc/handleChange";
 import Search_input from './search_block/Search_input';
 import { white } from 'ansi-colors';
 import Scrollbar from 'react-scrollbars-custom';
+import arrow_search from '../images/arrow_search.png'
 
 var map = [
 	["Account","account"],
@@ -67,6 +68,9 @@ class Search extends Component{
 
 	
 	handleSubmit(event){
+		console.log('===========')
+		console.log('Submit')
+		console.log('===========')
 		event.preventDefault();
 		let list = []
 		for (let catalog in this.state.hasChanged){
@@ -164,15 +168,15 @@ class Search extends Component{
 			$search_result = (<Search_result num={this.state.result_num} result={this.state.search_result} search_list={this.state.search_list} prevstate={this.state}/>)
 		}else{
 			if(this.state.searching){
-				$search_result = (<p>Searching...</p>)
+				$search_result = (<p style={{textAlign:'center'}}>Searching...</p>)
 			}else{
-				$search_result = (<p>Search what you want </p>)
+				$search_result = (<p style={{textAlign:'center'}}>Search what you want </p>)
 			}
 		}
         return (
 			<div id='Search_container_bg'>
 				<div id='Search_left_container'>
-					<form onSubmit={this.handleSubmit} style={{width:'30vw',display:'inline-block'}}>
+					<form onSubmit={this.handleSubmit} id='Search_form'>
 					<Search_input
 					hasChangedSetter = {this.hasChangedSetter}
 					handleInputChange = {this.handleInputChange}
@@ -180,9 +184,15 @@ class Search extends Component{
 					{/* <div id="Search_table" style={{color:"black",fontSize:"20px",marginTop:"20vh",marginLeft:"5vw"}}> */}
 
 					{/* </div> */}
-					<input type="submit" name="submit" value="submit" id="Search_submit"></input>
+					
 					</form>
 				</div>
+				<label id="Search_submit">
+					<input type="submit" name="submit" value="Search" style={{display:'none'}}/>
+					<span><img src={arrow_search}></img></span>
+				</label>
+				
+				
 				<div id='Search_right_container'>
 				<Scrollbar renderThumbVertical={renderThumb}>
 					{$search_result}

@@ -3,6 +3,7 @@ import './Search_input_block.css'
 import {Component} from 'react'; 
 
 import remove_btn from '../../images/remove_icon.png';
+import expand_icon from '../../images/show_more.png';
 //import {handleInputChange} from "../searchFunc/handleChange";
 
 const map = {
@@ -84,7 +85,10 @@ class Search_input_block extends Component{
             <li className='Search_input_block_container'>
                 <div id={this.props.id+'_list_container'} className='Search_input_block_list_container'>
                     <ul className='Search_input_block_dropdown'>
-                        <li id={this.props.id+'_currentOption'} onClick={this.displayUl} className='Search_input_block_options'>{this.state.currentOption}
+                        
+                        <li id={this.props.id+'_currentOption'} onClick={this.displayUl} className='Search_input_block_options'>
+                            <img src={expand_icon} className="Search_input_block_expand"></img>
+                            {this.state.currentOption}
                         <ul id={this.props.id+'_ul'} className='Search_input_block_options'></ul>
                         </li>
                     </ul>

@@ -89,8 +89,8 @@ class Slidebar extends Component{
             }
         return(
             <div id="Slidebar_container">
-                <button class="Slidebar_btn" id = "Slidebar_btn_open" onClick={this.slideopen}>
-                    <img class="Slidebar_png" src={arrow_right} alt="arrow_right" />
+                <button className="Slidebar_btn" id = "Slidebar_btn_open" onClick={this.slideopen}>
+                    <img className="Slidebar_png" src={arrow_right} alt="arrow_right" />
                 </button>
                 <div id="Slidebar_main">
                     <Scrollbars renderThumbVertical={renderThumb}>

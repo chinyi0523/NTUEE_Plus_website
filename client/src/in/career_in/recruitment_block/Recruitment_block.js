@@ -61,20 +61,20 @@ const Recruitment_info = (props) =>{
     let id = props.id;
     return(
         <div className="Recruitment_block_info_div">
-            <p className="Recruitment_block_info">
-                <td className="Recruitment_block_salary">{salary} </td>
-                <td>  |  {experience} |  {diploma}</td>
-            </p>
+            <div className="Recruitment_block_info">
+                <p className="Recruitment_block_salary">{salary} </p>
+                <p>  |  {experience} |  {diploma}</p>
+            </div>
         </div>
     )
 }
 
 const Recruitment_spec = (props) => {
     let requirement = props.spec.requirement.split('\n').map(i => {
-        return <li>{i}</li>
+        return <li key={i}>{i}</li>
     });
     let description = props.spec.description.split('\n').map(i => {
-        return <li>{i}</li>
+        return <li key={i}>{i}</li>
     });
     let id = props.id;
     return (

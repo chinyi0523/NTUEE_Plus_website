@@ -87,6 +87,7 @@ class LoginChange extends Component {
 			  <button id="LC_refresh_btn" onClick={this.btn_click}><img src={refresh} alt="refresh" id="LC_refresh_icon"></img></button>
 			  {/*<img src={this.state.img} />*/}
 			  <table id = "LC_table" cellSpacing="10">
+				<tbody>
 				<tr>
 					<td>學號</td>
 					<td colSpan="2">{this.state.account}</td>
@@ -104,6 +105,7 @@ class LoginChange extends Component {
 					
 					</td>
 				</tr>
+				</tbody>
 				
 			  </table>
 			  <input id="LC_submit_btn" type="submit" value="Change" />
