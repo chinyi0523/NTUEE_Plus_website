@@ -1,0 +1,52 @@
+.Search_input_block_container{
+    margin-top: 2.5vh;
+    height: 3vh;
+    /* display: block; */
+}
+.Search_input_block_list_container{
+    float: left;
+    /* display: inline-block; */
+}
+.Search_input_block_options{
+    cursor: pointer;
+    list-style: none;
+}
+
+.Search_input_block_dropdown>li{
+    /*CurrentOption*/
+    display: inline-block;
+    padding:0;
+}
+.Search_input_block_dropdown ul{
+    background-color: gray;
+    position: absolute;
+    left:-9999999px;
+    z-index: 3;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    padding:0;
+}
+.Search_input_block_dropdown ul>li{
+    /* Options */
+}
+.Search_input_block_dropdown li:hover >ul{
+    left:14vw;
+    opacity: 1;
+}
+
+.Search_input_block_input{
+    float: right;
+}
+.Search_input_block_remove_btn{
+    float: right;
+    height: 2vw;
+    width: 2vw;
+    background-color: inherit;
+    padding: 0;
+    border: 0;
+}
+.Search_input_block_btn{
+    height: 2vw;
+    width: 2vw;
+}

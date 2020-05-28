@@ -6,7 +6,7 @@ import arrow_left  from "../images/arrow_left.png";
 import LoginChange from "./LoginChange";
 import VisualChange from "./VisualChange";
 import Scrollbars from "react-custom-scrollbars";
-import Scrollbar from 'react-scrollbars-custom';
+//import Scrollbar from 'react-scrollbars-custom';
 //import {NavBar_in} from '../component/AppBar_in';
 
 class Slidebar extends Component{

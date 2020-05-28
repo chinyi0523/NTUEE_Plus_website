@@ -7,7 +7,9 @@ import {NavBar_in} from '../component/AppBar_in';
 import axios from 'axios';
 import Search_result from './search_block/Search_result';
 import {handleInputChange} from "./searchFunc/handleChange";
+import Search_input from './search_block/Search_input';
 import { white } from 'ansi-colors';
+import Scrollbar from 'react-scrollbars-custom';
 
 var map = [
 	["Account","account"],
@@ -35,6 +37,7 @@ class Search extends Component{
 						result_num:0,
 						search_result:null,
 						search_list:[],
+						searching:false,
 					};
 		map.forEach(arr=>{
 			tmpState[arr[1]]='';
@@ -48,8 +51,20 @@ class Search extends Component{
 		
 		this.handleInputChange = handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.creatTable = this.creatTable.bind(this);
+		// this.creatTable = this.creatTable.bind(this);
+		this.hasChangedSetter = this.hasChangedSetter.bind(this);
 	}
+
+	hasChangedSetter(newHasChanged){
+		this.setState({
+			hasChanged:newHasChanged
+		},function(){
+			console.log('===hasChangedSetter===')
+			console.log(this.state.hasChanged)
+			console.log('======================')
+		})
+	}
+
 	
 	handleSubmit(event){
 		event.preventDefault();
@@ -73,6 +88,9 @@ class Search extends Component{
 				}
 			})
 			console.log('toSend',toSend)
+			this.setState({
+				searching:true,
+			})
 			axios.post("/api/searchVisual",
 				toSend
 			).then(res=>{
@@ -88,124 +106,89 @@ class Search extends Component{
 					}else{
 						alert("錯誤: \n"+res.data.description);
 					}
+
+					this.setState({
+						searching:false,
+					})
 				}
 			})
 
 		}
 		// this.props.history.replace( this.props.location.pathname, this.state);
 	}
-	componentDidMount(){
-		this.creatTable();
+	/*componentDidMount(){
+		
+		setTimeout(
+			document.getElementById('Search_container_bg').style.backgroundColor='rgba(0,0,0,0.6)'
+		,2000)
 	}
-	creatTable(){
-		var ST = document.getElementById("Search_table");
-		map.forEach(arr=>{
-			var new_tr = document.createElement("tr");
+	componentWillUnmount(){
+		document.getElementById('Search_container_bg').style.backgroundColor='transparent';
+	}*/
+	
+	// creatTable(){
+	// 	var ST = document.getElementById("Search_table");
+	// 	map.forEach(arr=>{
+	// 		var new_tr = document.createElement("tr");
 			
-			var new_td1 = document.createElement("td");
-			new_td1.innerHTML=arr[0];
+	// 		var new_td1 = document.createElement("td");
+	// 		new_td1.innerHTML=arr[0];
 			
-			var new_td2 = document.createElement("td");
-			new_td2.setAttribute("colSpan",2);
-			var new_input = document.createElement("input");
-			new_input.setAttribute("name",arr[1]);
-			new_input.setAttribute("value",this.state[arr[1]])
-			new_input.onchange = this.handleInputChange;
-			new_td2.appendChild(new_input)
+	// 		var new_td2 = document.createElement("td");
+	// 		new_td2.setAttribute("colSpan",2);
+	// 		var new_input = document.createElement("input");
+	// 		new_input.setAttribute("name",arr[1]);
+	// 		new_input.setAttribute("value",this.state[arr[1]])
+	// 		new_input.onchange = this.handleInputChange;
+	// 		new_td2.appendChild(new_input)
 			
-			new_tr.appendChild(new_td1)
-			new_tr.appendChild(new_td2)
+	// 		new_tr.appendChild(new_td1)
+	// 		new_tr.appendChild(new_td2)
 			
-			ST.appendChild(new_tr)
-		})
-	}
+	// 		ST.appendChild(new_tr)
+	// 	})
+	// }
+	// componentDidMount(){
+	// 	this.creatTable();
+	// }
 	render(){
+		const renderThumb = ({ style, ...props }) => {
+			const thumbStyle = {
+			borderRadius: 6,
+			backgroundColor: 'rgba(192,192,200, 0.5)'
+			};
+			return <div style={{ ...style, ...thumbStyle }} {...props} />;}
+
 		let $search_result = null;
 		if (this.state.result_num!==0){
 			$search_result = (<Search_result num={this.state.result_num} result={this.state.search_result} search_list={this.state.search_list} prevstate={this.state}/>)
 		}else{
-			$search_result = (<div id= "Search_return" style={{color:"white",fontSize:"20px",marginLeft:"5vw"}}><p>Search what you want </p></div>)
+			if(this.state.searching){
+				$search_result = (<p>Searching...</p>)
+			}else{
+				$search_result = (<p>Search what you want </p>)
+			}
 		}
         return (
-			<div>
-			<form onSubmit={this.handleSubmit}>
-			<div id="Search_table" style={{color:"white",fontSize:"20px",marginTop:"20vh",marginLeft:"5vw"}}>
+			<div id='Search_container_bg'>
+				<div id='Search_left_container'>
+					<form onSubmit={this.handleSubmit} style={{width:'30vw',display:'inline-block'}}>
+					<Search_input
+					hasChangedSetter = {this.hasChangedSetter}
+					handleInputChange = {this.handleInputChange}
+					></Search_input>
+					{/* <div id="Search_table" style={{color:"black",fontSize:"20px",marginTop:"20vh",marginLeft:"5vw"}}> */}
 
+					{/* </div> */}
+					<input type="submit" name="submit" value="submit" id="Search_submit"></input>
+					</form>
+				</div>
+				<div id='Search_right_container'>
+				<Scrollbar renderThumbVertical={renderThumb}>
+					{$search_result}
+					</Scrollbar>
+				</div>
 			</div>
-			<input type="submit" name="submit" value="submit" style={{color:"black",fontSize:"20px",marginTop:"2vh",marginLeft:"5vw"}}></input>
-			</form>
-			{$search_result}
-			{/* <Search_result/> */}
-			</div>
-	    //    <div id = "search_container">
-		// 	<form id="search_Form" onSubmit={this.handleSubmit}>
-		// 		<div id = "search_div">
-		// 			<div id="search_all_type">
-		// 				<div id="search_type">
-		// 					<div>account<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>username<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>nickname<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>profile<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>publicEmail<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 			</div>
-		// 			<div id="search_all_type">
-		// 				<div id="search_type">
-		// 					<div>office<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>homephone<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>cellphone<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>major<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>double_major<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 			</div>
-		// 			<div id="search_all_type">
-		// 				<div id="search_type">
-		// 					<div>minor<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>master<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>doctor<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type">
-		// 					<div>company<input type="checkbox" value="no"/></div>
-		// 					<input/>
-		// 				</div>
-		// 				<div id="search_type"><input id="search_btn" type="submit" value="Search" /></div>	
-		// 			</div>
-		// 		</div>
-		// 	</form>
-		// </div>
         )
     }
 }

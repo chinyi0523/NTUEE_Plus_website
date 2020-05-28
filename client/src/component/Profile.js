@@ -3,7 +3,7 @@ import './Profile.css';
 import show_more from '../images/show_more.png';
 import show_less from '../images/show_less.png';
 import Job_row from '../component/Job_row';
-
+import Scrollbar from 'react-scrollbars-custom';
 
 
 class Profile_for_search extends Component{
@@ -16,6 +16,7 @@ class Profile_for_search extends Component{
         this.expandDiploma = this.expandDiploma.bind(this);
 
     }
+
     componentWillMount(){
         // const template = {
         //     userimage:'',
@@ -143,7 +144,14 @@ class Profile_for_search extends Component{
                 $new_jobs.push(<Job_row CPO={CPO}/>)
             }
         )
+        const renderThumb = ({ style, ...props }) => {
+			const thumbStyle = {
+			borderRadius: 6,
+			backgroundColor: 'rgba(192,192,200, 0.5)'
+			};
+			return <div style={{ ...style, ...thumbStyle }} {...props} />;}
         return(
+            <Scrollbar renderThumbVertical={renderThumb}>
             <div id="Profile_for_search_container">
                 <div id="hr0">Profile</div>
                 <div id="Profile_for_search_information">
@@ -188,7 +196,7 @@ class Profile_for_search extends Component{
                         </div>
                     </div>
                     <div id="hr1">How to Contact</div> 
-                    <div id="Profile_for_search_more_info" style={{marginBottom:"10vh"}}>
+                    <div id="Profile_for_search_more_info" style={{paddingBottom:"10vh"}}>
                         <ul className="Profile_for_search_ul" id="Profile_for_search_contact_us">
                             <li>
                                 <p id="Profile_for_search_email_tag">E-mail:</p>
@@ -383,6 +391,7 @@ class Profile_for_search extends Component{
                 {/* </form> */}
                 
                 </div>
+                </Scrollbar>
         )
     }
     

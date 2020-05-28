@@ -147,7 +147,7 @@ class Register_account extends Component{
 							<div id="Register_acc_input6">
 								<p id="Register_acc_image_label">Upload Image</p>
 								<label>
-								<input className="fileInput" id="Register_fileinput" 
+								<input className="fileInput" id="Register_acc_fileinput" 
 										type="file" 
 										onChange={this.handleImageChange} 
 										name="file"/>

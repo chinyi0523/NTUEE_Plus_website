@@ -7,7 +7,7 @@ import kronos from '../../images/kronos.png'
 import McKinsey from '../../images/McKinsey.png'
 import Riedel from '../../images/Riedel.png'
 import {Link} from 'react-router-dom';
-
+import Scrollbar from 'react-scrollbars-custom';
 
 const template1 = {
 	title:{
@@ -104,8 +104,15 @@ const template5 = {
 	image:Riedel,
 	id:'Recruitment_block_5'
 }
+const renderThumb = ({ style, ...props }) => {
+	const thumbStyle = {
+	borderRadius: 6,
+	backgroundColor: 'rgba(192,192,200, 0.5)'
+	};
+	return <div style={{ ...style, ...thumbStyle }} {...props} />;}
 const Recruitment = (props) =>{
 	return(
+		<Scrollbar renderThumbVertical={renderThumb}>
 		<div className ="Recruitment">
 		<div className = "Recruitment_container">
 			<div className = "Recruitment_wrapper">
@@ -131,6 +138,7 @@ const Recruitment = (props) =>{
 			</div>
 		</div>
 		</div>
+		</Scrollbar>
 	)
 }
 export default Recruitment;

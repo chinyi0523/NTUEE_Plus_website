@@ -13,6 +13,7 @@ import eig_Aug_image from '../images/column/1808_photo.jpg';
 import eig_Jul_image from '../images/column/1807_photo.jpg';
 import eig_Jun_image from '../images/column/default_photo.jpg';
 import eig_May_image from '../images/column/1805_photo.jpg';
+import Scrollbar from 'react-scrollbars-custom';
 
 
 class Column extends Component{
@@ -166,7 +167,14 @@ class Column extends Component{
 			intro:['黃柏源學長是目前受訪者中最年輕的一位，大學時拿過多次書卷獎，電機系畢業後前往Princeton攻讀EE PhD，專攻EDA領域，大學時就曾擔任IEEE 通訊 paper reviewer，也曾在TSMC及Intel實習過，學界業界經歷皆相當豐富。'],
 			id:'Column_Block_1805'
 		}
+		const renderThumb = ({ style, ...props }) => {
+			const thumbStyle = {
+			borderRadius: 6,
+			backgroundColor: 'rgba(192,192,200, 0.5)'
+			};
+			return <div style={{ ...style, ...thumbStyle }} {...props} />;}
 		return (
+			<Scrollbar renderThumbVertical={renderThumb}>
 			<div id = "column_block_container">
 				<a href="/in/Column/pages/2001">
 					<Column_block block = {column_block_2001}/>
@@ -271,6 +279,7 @@ class Column extends Component{
 					</div>
 				</a> */}
 			</div>
+			</Scrollbar>
 		)
     }
 }
