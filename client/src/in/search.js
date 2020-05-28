@@ -184,13 +184,14 @@ class Search extends Component{
 					{/* <div id="Search_table" style={{color:"black",fontSize:"20px",marginTop:"20vh",marginLeft:"5vw"}}> */}
 
 					{/* </div> */}
-					
+					<input type="submit" name="submit" value="Search"/>
 					</form>
 				</div>
-				<label id="Search_submit">
+				{/* <label id="Search_submit">
 					<input type="submit" name="submit" value="Search" style={{display:'none'}}/>
 					<span><img src={arrow_search}></img></span>
-				</label>
+				</label> */}
+				
 				
 				
 				<div id='Search_right_container'>

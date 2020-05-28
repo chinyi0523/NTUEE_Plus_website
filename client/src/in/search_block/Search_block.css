@@ -1,6 +1,7 @@
 .Search_block_div{
     background-image: url('../../images/search_bar.png');
     background-repeat: no-repeat;
+    background-size: 45vw,15vh;
     clear: both;
     height: 30vh;
     margin-top: 5vh;

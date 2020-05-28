@@ -4,6 +4,8 @@ import {NavBar_in} from '../../component/AppBar_in';
 import Recommendation_block from './recommendation_block/Recommendation_block';
 import eesa_icon from '../../images/eesa-icon.png';
 import {Link} from 'react-router-dom';
+import Scrollbar from 'react-scrollbars-custom';
+
 const template1 = {
 	title:{
 		title:'矽谷推薦',
@@ -23,9 +25,16 @@ const template1 = {
 	image:eesa_icon,
 	id:'Recruitment_block_1'
 }
+const renderThumb = ({ style, ...props }) => {
+	const thumbStyle = {
+	borderRadius: 6,
+	backgroundColor: 'rgba(192,192,200, 0.5)'
+	};
+	return <div style={{ ...style, ...thumbStyle }} {...props} />;}
 const Recommendation = (props) =>{
 	return(
 		<div className ="Recommendation">
+			<Scrollbar renderThumbVertical={renderThumb}>
 			<div className = "Recommendation_container">
 				<div className = "Recommendation_wrapper">
 					<Link className='Recommendation_block'>
@@ -52,6 +61,7 @@ const Recommendation = (props) =>{
 					</Link>
 				</div>
 			</div>
+			</Scrollbar>
 		</div>
 	)
 }
