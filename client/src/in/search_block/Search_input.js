@@ -21,7 +21,7 @@ import add_btn from '../../images/add_icon.png';
 // 	["Occupation","Occupation.O"],
 // 	["Position","Occupation.P"]
 // ];
-/*const map = {
+const map = {
     'Please Choose A Catalog':'default',
     'Account':'account',
     "Username":"username",
@@ -39,7 +39,11 @@ import add_btn from '../../images/add_icon.png';
     "Company":"Occupation.C",
     "Occupation":"Occupation.O",
     "Position":"Occupation.P"
-}*/
+}
+let map_reverse = {}
+for (let option in map){
+    map_reverse[map[option]] = option;
+}
 let template = {
     'Please Choose A Catalog':'default',
     'Account':'account',
@@ -61,14 +65,25 @@ let template = {
 }
 
 class Search_input extends Component{
-    constructor(props){
-        super(props)
-        this.state={
+   state={
             block_num:0,
             options:template,
-            have_chosen:{}
+            have_chosen:{},
+            parentState : this.props.inputValues
         }
-        this.parentHasChangedSetter = this.props.hasChangedSetter;
+        //this.parentHasChangedSetter = this.props.hasChangedSetter;
+    static getDerivedStateFromProps(props,state){
+        if (props.inputValues !== state.parentState){
+            return{
+                    parentState:props.inputValues
+                };
+            
+        }else{
+            return null
+        }
+    }
+    parentHasChangedSetter = (new_object) => {
+        this.props.hasChangedSetter(new_object)
     }
     addButtonFunc = (e) => {
         e.preventDefault();
@@ -82,7 +97,7 @@ class Search_input extends Component{
 
     removeButtonFunc = (currentOption) => {
         let new_have_chosen = this.state.have_chosen
-        delete new_have_chosen[currentOption]
+        delete new_have_chosen[map[currentOption]]
 
         this.setState({
 
@@ -101,7 +116,7 @@ class Search_input extends Component{
 
     addOption = (newOption) => {
         let new_have_chosen = this.state.have_chosen
-        new_have_chosen[newOption] = ''
+        new_have_chosen[map[newOption]] = true;
 
         this.setState({
 
@@ -116,7 +131,7 @@ class Search_input extends Component{
 
     removeOption = (prevOption) => {
         let new_have_chosen = this.state.have_chosen
-        delete new_have_chosen[prevOption]
+        delete new_have_chosen[map[prevOption]]
 
         this.setState({
 
@@ -139,8 +154,9 @@ class Search_input extends Component{
         for (let option in this.state.have_chosen){
             $Search_input_blocks.push(
             <Search_input_block 
-            options={this.state.options} 
-            currentOption={option} 
+            options={this.state.options}
+            currentValue = {this.state.parentState[option]}
+            currentOption={map_reverse[option]} 
             removeFunc={this.removeButtonFunc}
             addOptionFunc={this.addOption}
             removeOptionFunc = {this.removeOption}
@@ -153,7 +169,8 @@ class Search_input extends Component{
         for (let i = 0;i<this.state.block_num-have_chosen_num;i++){
             $Search_input_blocks.push(
             <Search_input_block 
-            options={this.state.options} 
+            options={this.state.options}
+            currentValue = ''
             currentOption={'Please Choose A Catalog'} 
             removeFunc={this.removeButtonFunc}
             addOptionFunc={this.addOption}

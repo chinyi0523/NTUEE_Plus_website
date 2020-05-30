@@ -28,14 +28,25 @@ const map = {
 
 
 class Search_input_block extends Component{
-    constructor(props){
-        super(props)
-        this.state={
+    state={
             currentOption:this.props.currentOption,
             options:this.props.options,
-            name:map[this.props.currentOption]
+            name:map[this.props.currentOption],
+            currentValue:this.props.currentValue
+    };
+
+    static getDerivedStateFromProps(props,state){
+        if (props.currentOption !== state.currentOption){
+            return{
+                    currentOption:props.currentOption,
+                    name:map[props.currentOption],
+                    currentValue:props.currentValue
+                };
+            
+        }else{
+            return null
         }
-    }
+    } 
 
     removeButtonFuc = (e) => {
         e.preventDefault();
@@ -61,8 +72,14 @@ class Search_input_block extends Component{
 
     componentDidMount(){
         this.renderOptions()
+        
     }
+    componentDidUpdate(){
+        
+        let input = document.getElementById(this.props.id+'_input');
+        input.setAttribute("value",this.state.currentValue)
 
+    }
     handleSelectChange = (e) => {
         let value = e.target.innerHTML
         if(this.state.currentOption==='Please Choose A Catalog'){
@@ -78,6 +95,7 @@ class Search_input_block extends Component{
         })
         
     }
+    
 
 
     render(){
@@ -96,7 +114,7 @@ class Search_input_block extends Component{
                 <button id={this.props.id+'_remove_btn'} onClick={this.removeButtonFuc} className='Search_input_block_remove_btn'>
                     <img src={remove_btn} className='Search_input_block_btn'/>
                 </button>
-                <input name={this.state.name} className='Search_input_block_input' onChange={this.props.handleInputChangeFunc}></input>
+                <input id={this.props.id+'_input'} name={this.state.name} className='Search_input_block_input' onChange={this.props.handleInputChangeFunc}></input>
                 
             </li>
         )

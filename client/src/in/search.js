@@ -10,7 +10,7 @@ import {handleInputChange} from "./searchFunc/handleChange";
 import Search_input from './search_block/Search_input';
 import { white } from 'ansi-colors';
 import Scrollbar from 'react-scrollbars-custom';
-import arrow_search from '../images/arrow_search.png'
+import arrow_search from '../images/arrow_search.png';
 
 var map = [
 	["Account","account"],
@@ -79,7 +79,8 @@ class Search extends Component{
 			}
 		}
 		this.setState({
-			search_list:list
+			search_list:list,
+			result_num:0
 		})
 		var r = window.confirm("確認搜尋?");
 		if(r){
@@ -95,6 +96,7 @@ class Search extends Component{
 			this.setState({
 				searching:true,
 			})
+
 			axios.post("/api/searchVisual",
 				toSend
 			).then(res=>{
@@ -178,6 +180,7 @@ class Search extends Component{
 				<div id='Search_left_container'>
 					<form onSubmit={this.handleSubmit} id='Search_form'>
 					<Search_input
+					inputValues = {this.state}
 					hasChangedSetter = {this.hasChangedSetter}
 					handleInputChange = {this.handleInputChange}
 					></Search_input>
