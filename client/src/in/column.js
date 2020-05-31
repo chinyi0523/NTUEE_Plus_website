@@ -13,7 +13,12 @@ import eig_Aug_image from '../images/column/1808_photo.jpg';
 import eig_Jul_image from '../images/column/1807_photo.jpg';
 import eig_Jun_image from '../images/column/default_photo.jpg';
 import eig_May_image from '../images/column/1805_photo.jpg';
-import Scrollbar from 'react-scrollbars-custom';
+import six_Jun_image from '../images/column/default_photo.jpg';
+import six_May_image from '../images/column/default_photo.jpg';
+import six_Apr_image from '../images/column/default_photo.jpg';
+import six_Mar_image from '../images/column/default_photo.jpg';
+import six_Feb_image from '../images/column/default_photo.jpg';
+import six_Jan_image from '../images/column/default_photo.jpg';
 
 
 class Column extends Component{
@@ -86,15 +91,15 @@ class Column extends Component{
 			intro:['簡韶逸教授任職於台大電子所長達16年，致力於多媒體訊號處理系統、多媒體積體電路設計、晶片系統設計方法的研究。 多年來，「媒體晶片系統實驗室」不斷研發出優異的技術。2016 年簡韶逸教授帶學生做出眼球追蹤技術的雛形時，他看好一定能應用在 AR/VR 上，於是決心創業。2018年1月時見臻科技(Ganzin Technology) 從台灣大學spin off。見臻科技提供整合性視線追蹤解決方案 (eye tracking solution)，包括視線追蹤模組 (eye tracking module) 及對應之軟體開發平台 (SDK)，解決目前市面上眼動儀成本高、功耗高、體積大、機構複雜的問題。','見臻科技連兩年參加世界性消費電子展（CES），2018年獲選Taiwan Tech Star，是32家獲選的台灣新創公司之一，2019年更被路透社評選為Best of CES。'],
 			id:'Column_Block_2001'
 		}
-		// const column_block_1912 = {
-		//	filename:'1912' //image too big!~~ (>16MB),
-		// 	anno:['李筠婕 鄭謹譯 莊永松 吳建翰 俞建琁 王廷峻 ','| 2020/02/20 星期四'],
-		// 	title:['2008級 鄭恆之 （Technical Lead Manager @ Google Brain）'],
-		// 	exp:['現任：Google Brain Technical Lead Manager' ],
-		// 	edu:['博士：CMU ECE(2013)', '學士：台灣大學電機系(2008)'],
-		// 	intro:['目前任職於 Google Brain 的團隊技術領導者和軟體主管工程師的鄭恆之，從事大規模機器學習的研究與軟體開發。在2013年加入 Googe 的實習生行列進行廣告排行的研究，僅僅花費不到三年的時間，就從實習生轉正職於 Google Research 的軟體工程師並且晉升 Google Brain 的技術領導與主管工程師，亮麗的職涯經歷背後是堅實的學術基礎與多篇國際期刊論文的支撐。','熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。'],
-		// 	id:'Column_Block_1912'
-		// }
+		const column_block_1912 = {
+			filename:'1912', //image too big!~~ (>16MB),
+		 	anno:['李筠婕 鄭謹譯 莊永松 吳建翰 俞建琁 王廷峻 ','| 2020/02/20 星期四'],
+		 	title:['2008級 鄭恆之 （Technical Lead Manager @ Google Brain）'],
+		 	exp:['現任：Google Brain Technical Lead Manager' ],
+		 	edu:['博士：CMU ECE(2013)', '學士：台灣大學電機系(2008)'],
+		 	intro:['目前任職於 Google Brain 的團隊技術領導者和軟體主管工程師的鄭恆之，從事大規模機器學習的研究與軟體開發。在2013年加入 Googe 的實習生行列進行廣告排行的研究，僅僅花費不到三年的時間，就從實習生轉正職於 Google Research 的軟體工程師並且晉升 Google Brain 的技術領導與主管工程師，亮麗的職涯經歷背後是堅實的學術基礎與多篇國際期刊論文的支撐。','熱愛音樂的鄭恆之學長在大學時期曾任台大合唱團公演指揮，並在陳宏銘教授的 Multimedia Processing and Communications Lab 時於ACM Multimedia 等論壇發表三篇論文，畢業後於 CMU ECE 攻讀博士且專注於機器學習與多媒體訊號處理。研究成果在進入博班後達到高峰，屢次在移動通訊、普及計算和行動電腦運算領域發表高度影響力的文章，並在該論壇得到最佳論文獎的殊榮。'],
+		 	id:'Column_Block_1912'
+		}
 		const column_block_1910 = {
 			filename:'1910',
 			anno:['翁瑋襄 鄭謹譯 何俊緯 周子庭 謝承霖 吳建翰 余欣澄 ','| 2019/12/07 星期六'],
@@ -167,14 +172,61 @@ class Column extends Component{
 			intro:['黃柏源學長是目前受訪者中最年輕的一位，大學時拿過多次書卷獎，電機系畢業後前往Princeton攻讀EE PhD，專攻EDA領域，大學時就曾擔任IEEE 通訊 paper reviewer，也曾在TSMC及Intel實習過，學界業界經歷皆相當豐富。'],
 			id:'Column_Block_1805'
 		}
-		const renderThumb = ({ style, ...props }) => {
-			const thumbStyle = {
-			borderRadius: 6,
-			backgroundColor: 'rgba(192,192,200, 0.5)'
-			};
-			return <div style={{ ...style, ...thumbStyle }} {...props} />;}
+        const column_block_1606 = {
+			filename:'1606',
+			anno:['鍾興寰 Paulsu Su 陳威成 孫凡耕','| 2017/4/13 星期四'],
+			title:['2007級 謝沛倫（Ambidio Inc. 共同創辦人）'],			
+			exp:['Co-Founder of Ambidio Inc.'],
+			edu:['碩士：Columbia University, Fu Foundation School of Engineering and Applied Science Electrical Engineering'],
+			intro:['「想像一下，打開電腦或是手機觀看影片或玩電動，就能感受到360度逼真的立體音效，彷彿賽車就從身旁呼嘯而過、恐龍就從眼前磅礡踩過的震撼聲音。」系學會很榮幸邀請到 2007級 謝沛倫系友參加本次skype專訪。創辦於2014年，LA based的 startup ─ Ambidio，希望能創造「大腦與耳朵重新連結的Ambidio時代」，快點進文章，聽一聽謝沛倫學長為我們帶來的分享吧!'],
+			id:'Column_Block_1606'
+		}
+        const column_block_1605 = {
+			filename:'1605',
+			anno:['蔡忠紘 林怡廷 陳鴻智 蔡承佑','| 2017/4/28 星期五'],
+			title:['2006級 高奕豪（Quantitative Researcher @Two Sigma Investments）'],			
+			exp:['Quantitative Researcher, Two Sigma Investments'],
+			edu:['博士：Stanford University Information Systems Lab, EE PhD(2012)'],
+			intro:['系學會很榮幸邀請到 2006級 高奕豪 系友參加本次skype專訪，感謝 2006級 I-Hsiang Wang 教授的推薦。學長的經歷非常豐富，在Stanford University取得EE的PhD後，進入Wall Street 的 hedge fund，在數學、軟硬體、計量金融...等領域，都有很多人生故事願意和我們分享。快點進文章，看一看高奕豪學長為我們帶來的分享吧!'],
+			id:'Column_Block_1605'
+		}
+        const column_block_1604 = {
+			filename:'1604',
+			anno:['吳奕萱 楊程皓 毛弘仁 江庭瑋 蘇峯廣','| 2017/3/30 星期四'],
+			title:['2000級 胡一天（源鉑資本Kyber Capital執行長，專業投資人與金融觀察家）'],			
+			exp:['Founder, Chairman & CEO @ Kyber Capital 源鉑資本', 'Co-Founder/Managing Partner at Infinite Studio'],
+			edu:['碩士：Financial Engineering, Columbia University (2003-2006)', '臺灣大學電機工程學系、法律系財經法學組 (1996-2001)'],
+			intro:['系學會很榮幸邀請到 2000級 胡一天系友參加本次專訪，感謝 2000級 陳和麟教授的大力幫忙。學長對於金融的洞見非常令人欽佩，而且樂於與學弟妹分享自己的故事、願意撥冗直接參與編修這篇文章（超熱心！）現在就點擊連結、一起認識學長的心路歷程吧!'],
+			id:'Column_Block_1604'
+		}
+        const column_block_1603 = {
+			filename:'1603',
+			anno:['許秉鈞 袁培傑 劉禹辰 曾耕森','| 2017/2/27 星期一'],
+			title:['2008級 趙式隆（台灣矽谷創業家協會理事長）'],			
+			exp:['台灣矽谷創業家協會理事長', '學悅科技Zuvio創辦人'],
+			edu:['博士：台大電機博士(D97)'],
+			intro:['系學會很榮幸邀請到2008級 趙式隆 學長擔任首po系友專訪，為我們介紹他的簡歷以及NTUEE在他心中的定位！'],
+			id:'Column_Block_1603'
+		}
+        const column_block_1602 = {
+			filename:'1602',
+			anno:['藍珮瑜 Steven Huang 林昱嘉 陳柏瑞','| 2017/5/12 星期五'],
+			title:['1992級 梁維仁（元大證券香港區總經理、花旗環球證券臺灣區總經理）'],			
+			exp:['元大證券香港區總經理、花旗環球證券臺灣區總經理'],
+			edu:['碩士：Carnegie Mellon University master of science Computational Finance, Industrial administration.'],
+			intro:['系學會很榮幸邀請到 1992級 梁維仁 系友參加本次skype專訪！學長不但在金融工程領域闖出一片天，退休後投入音樂藝術相關工作，還擅長登山滑雪等休閒活動，人生經歷非常豐富，我們快來看看梁維仁學長的經驗分享吧！'],
+			id:'Column_Block_1602'
+		}
+        const column_block_1601 = {
+			filename:'1601',
+			anno:['廖宜倫 黃暐倫 楊耀程 孫裕修 林恆陞','| 2017/3/13 星期一'],
+			title:['1995級 徐瑞廷（BCG 波士頓顧問公司董事總經理）'],			
+			exp:['BCG波士頓顧問公司台北辦公室負責人、合夥人暨董事總經理'],
+			edu:['史丹福大學電子工程學碩士','聖塔克拉拉大學MBA'],
+			intro:['系學會很榮幸邀請到 1995級 徐瑞廷系友參加本次專訪，感謝 1995級林哲立系友 與 1995級丁建均教授的大力幫忙。現在就點擊文章，讓我們一起看看徐瑞廷學長的分享與心路歷程吧!'],
+			id:'Column_Block_1601'
+		}
 		return (
-			<Scrollbar renderThumbVertical={renderThumb}>
 			<div id = "column_block_container">
 				<a href="/in/Column/pages/2001">
 					<Column_block block = {column_block_2001}/>
@@ -202,6 +254,24 @@ class Column extends Component{
 				</a>
 				<a href="/in/Column/pages/1805">
 					<Column_block block = {column_block_1805}/>
+				</a>
+                <a href="/in/Column/pages/1606">
+					<Column_block block = {column_block_1606}/>
+				</a>
+                <a href="/in/Column/pages/1605">
+					<Column_block block = {column_block_1605}/>
+				</a>
+                <a href="/in/Column/pages/1604">
+					<Column_block block = {column_block_1604}/>
+				</a>
+                <a href="/in/Column/pages/1603">
+					<Column_block block = {column_block_1603}/>
+				</a>
+                <a href="/in/Column/pages/1602">
+					<Column_block block = {column_block_1602}/>
+				</a>
+                <a href="/in/Column/pages/1601">
+					<Column_block block = {column_block_1601}/>
 				</a>
 				{/* <form onSubmit={this.handleSubmit}>
                     <input type="file" onChange={this.handleImageChange}/>
@@ -279,7 +349,6 @@ class Column extends Component{
 					</div>
 				</a> */}
 			</div>
-			</Scrollbar>
 		)
     }
 }

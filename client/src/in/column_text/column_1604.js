@@ -92,7 +92,7 @@ class Column_1604 extends Component{
 			],
 			
 			
-			annotation:['特別感謝：胡一天','撰寫：Isabelle Wu Tiffany Chiang 楊程皓 Thomas Mao Pierre Sue'],
+			annotation:['特別感謝：胡一天','撰寫：吳奕萱 楊程皓 毛弘仁 江庭瑋 蘇峯廣'],
 			id:'column_1604'
 		}
 		return (

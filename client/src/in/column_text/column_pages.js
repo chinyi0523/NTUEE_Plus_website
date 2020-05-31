@@ -13,12 +13,12 @@ import Column_1805 from "./column_1805";
 import Column_胡立民 from "./column_胡立民";
 import Column_洪銘駿 from "./column_洪銘駿";
 import Column_王英明 from "./column_王英明";
-import Column_梁維仁 from "./column_梁維仁";
-import Column_高奕豪 from "./column_高奕豪";
+import Column_1602 from "./column_1602";
+import Column_1605 from "./column_1605";
 import Column_1606 from "./column_1606";
-import Column_胡一天 from "./column_胡一天";
-import Column_徐瑞廷 from "./column_徐瑞廷";
-import Column_趙式隆 from "./column_趙式隆";
+import Column_1604 from "./column_1604";
+import Column_1601 from "./column_1601";
+import Column_1603 from "./column_1603";
 
 //import column_app from "./column_main"
 const column_2001_page = () =>{
@@ -60,26 +60,26 @@ const column_洪銘駿_page = () =>{
 const column_王英明_page = () =>{
     return <Column_王英明/>
 }
-const column_梁維仁_page = () =>{
-    return <Column_梁維仁/>
+const column_1602_page = () =>{
+    return <Column_1602/>
 }
-const column_高奕豪_page = () =>{
-    return <Column_高奕豪/>
+const column_1605_page = () =>{
+    return <Column_1605/>
 }
 const column_1606_page = () =>{
     return <Column_1606/>
 }
-const column_胡一天_page = () =>{
-    return <Column_胡一天/>
+const column_1604_page = () =>{
+    return <Column_1604/>
 }
-const column_徐瑞廷_page = () =>{
-    return <Column_徐瑞廷/>
+const column_1601_page = () =>{
+    return <Column_1601/>
 }
-const column_趙式隆_page = () =>{
-    return <Column_趙式隆/>
+const column_1603_page = () =>{
+    return <Column_1603/>
 }
     
 export {column_2001_page,column_1912_page, column_1910_page, column_1909_page, column_1908_page, column_1907_page,
     column_1808_page, column_1807_page, column_1806_page, column_1805_page, column_胡立民_page, column_洪銘駿_page,
-    column_王英明_page, column_梁維仁_page, column_高奕豪_page, column_1606_page, column_胡一天_page, column_徐瑞廷_page, 
-    column_趙式隆_page};
+    column_王英明_page, column_1602_page, column_1605_page, column_1606_page, column_1604_page, column_1601_page, 
+    column_1603_page};
