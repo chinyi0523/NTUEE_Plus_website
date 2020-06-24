@@ -1,4 +1,6 @@
 # NTUEE_Plus_website
+### 0624 進度 by 建琁
+* column新增 洪銘駿
 
 ### 0531 進度 by 建琁
 * column新增 1603、1602、1601
