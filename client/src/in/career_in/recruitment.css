@@ -1,51 +1,29 @@
-
-
-
-#Recruitment_container {
-	position : relative;
-	margin-top : 8%;
-	display: flex;
-	flex-wrap: wrap;
-	padding: 30px;
-	justify-content: space-evenly;
+.Recruitment{
+	width:90%;
+	margin:10vh auto 0;
+	height: 90vh;
+	background-color: rgba(0,0,0,0.2);
+}
+.Recruitment_container {
+	/* position : relative; */
+	/* margin-top : 7%; */
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+	/* flex-wrap: wrap; */
+	/* padding: 30px; */
+	/* justify-content: space-evenly; */
+	width:50%;
+	margin:0 auto;
+}
+.Recruitment_wrapper{
+	/* display: inline-block; */
+	width: 80%;
+	margin:0 auto;
+	vertical-align: top;
 }
 .Recruitment_block{
-	margin-top: 1vh;
+	margin-top:0;
+	vertical-align: top;
 }
-/*
-#recruitment_section {
-	overflow: auto;
-	margin-top : 1em;
-	margin-bottom : 1em;
-	margin-left : 10px;
-	margin-right : 10px ;
-	background-color : #FFA07A;
-}
-#recruitment_section_1 {
-	margin : 10px;
-	background-color : #FFA07A;
-}
-#recruitment_section_2 {
-	
-}
-#recruitment_img {
-	margin : 10px;
-	background-image: url("https://factsnfigs.com/wp-content/uploads/2019/06/Find_Jobs.jpg"); 
-	background-size:300px 200px;
-	float : left;
-	width : 300px;
-	height : 200px;
-	background-color : #000;
-}
-#recruitment_text {
 
-}
-#recruitment_info {
-	margin : 10px;
-}
-@media (max-width:1200px){
-	
-}
-@media (max-width:500px){
-	
-}*/

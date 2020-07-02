@@ -1,0 +1,12 @@
+#Main_in_container{
+    position: absolute;
+    z-index:-99;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/background_opacity.png');
+    /* background-color: ; */
+    background-size: 90vw 90vh;
+    background-repeat: no-repeat;
+    background-position: 5vw 10vh;
+    /* opacity: 0.9; */
+}

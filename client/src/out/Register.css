@@ -39,3 +39,13 @@
     color: #003f67;
     font-weight: bold;
 }
+#Register_imgs{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#RegisterFB_img:hover{
+    background: #3b5998;
+    cursor:pointer;
+}

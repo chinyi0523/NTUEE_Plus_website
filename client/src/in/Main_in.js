@@ -10,7 +10,7 @@ import Profile_for_search from '../component/Profile';
 class Main_in extends Component{
     render(){
         return(
-            <div>
+            <div id="Main_in_container">
                 <NavBar_in/>
                 <Slidebar/>
                 <Switch>

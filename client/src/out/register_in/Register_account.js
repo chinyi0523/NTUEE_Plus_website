@@ -8,10 +8,10 @@ class Register_account extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-		  Register_realname: '',
-		  Register_student_id: '',
-		  Register_password: '',
-		  Register_confirm_password: '',
+		  Register_acc_realname: '',
+		  Register_acc_student_id: '',
+		  Register_acc_password: '',
+		  Register_acc_confirm_password: '',
 		  imagePreviewUrl: '',
 		  file: null
 		};
@@ -34,7 +34,8 @@ class Register_account extends Component{
 	
 	handleSubmit(event) {
 		event.preventDefault();
-		if(false){//this.state.Register_password!==this.state.Register_confirm_password){
+		console.log(this.state)
+		if(this.state.Register_password!==this.state.Register_confirm_password){
 			return alert("密碼不一致");
 		}else{
 			var r=window.confirm("確認註冊?");
@@ -147,7 +148,7 @@ class Register_account extends Component{
 							<div id="Register_acc_input6">
 								<p id="Register_acc_image_label">Upload Image</p>
 								<label>
-								<input className="fileInput" id="Register_fileinput" 
+								<input className="fileInput" id="Register_acc_fileinput" 
 										type="file" 
 										onChange={this.handleImageChange} 
 										name="file"/>

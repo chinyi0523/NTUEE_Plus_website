@@ -2,6 +2,9 @@
 	position : relative;
 	font-family:'Noto Sans TC',Arial,sans-serif;
 	margin-top: 15vh;
+	/* overflow-y: scroll; */
+	height: 85vh;
+	opacity: 0.95;
 }
 /* #column_block_section {
 	margin-top : 1vh;

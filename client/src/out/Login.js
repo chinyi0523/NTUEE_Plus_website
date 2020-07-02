@@ -21,6 +21,7 @@ class Login extends Component{
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleLogin = this.handleLogin.bind(this);
+		this.handleFBSubmit = this.handleFBSubmit.bind(this);
 	}
 	handleLogin(isLoginorNot){
 		console.log("handleLogin");
@@ -100,7 +101,7 @@ class Login extends Component{
 						isLogin   : false,
 						isFBLogin : true
 					});
-					this.handleLogin(true)
+					this.handleLogin(false)
 					
 				}
 			}

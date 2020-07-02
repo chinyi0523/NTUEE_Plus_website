@@ -1,5 +1,5 @@
 
-#Recruitment_block_container{
+#Recommendation_block_container{
     background-color: azure;
     width:100%;
     margin-top: 3em;
@@ -15,29 +15,29 @@ section {
     margin:auto, auto;
 }
 
-.Recruitment_block_image{
+.Recommendation_block_image{
     width:8vw;
     max-height: 12vh;
     float:center;
 }
-.Recruitment_block_image_container{
+.Recommendation_block_image_container{
     box-sizing: border-box;
     display: inline-block;
     text-align: center;
     width:25%;
 }
-.Recruitment_block_title_container{
+.Recommendation_block_title_container{
     box-sizing: border-box;
     display: inline-block;
     width:75%;
 }
-.Recruitment_block_title{
+.Recommendation_block_title{
     color:rgb(12, 28, 99);
     font-size: 20px;
     font-weight: bold;
     padding-left: 1em;
 }
-.Recruitment_block_subtitle{
+.Recommendation_block_subtitle{
     color:rgb(12, 28, 99);
     font-size: 16px;
     font-weight: bold;
@@ -47,33 +47,33 @@ section {
     color:rgb(94, 94, 94);
 }
 
-.Recruitment_block_info_div{
+.Recommendation_block_info_div{
     padding-left: 1em;
     padding-right: 1em;
     /* padding:0, 2em; */
 }
-.Recruitment_block_info{
+.Recommendation_block_info{
     font-size: 16px;
 }
 
-.Recruitment_block_salary{
+.Recommendation_block_salary{
     color:red;
     font-weight: bold;
 }
 
-.Recruitment_block_spec_div{
+.Recommendation_block_spec_div{
     font-size: 16px;
     color:rgb(72, 72, 72);
 }
-#Recruitment_spec_requirement{
+#Recommendation_spec_requirement{
     text-decoration: dashed;
     padding-left: 1em;
     /* padding-right: 1em; */
 }
-#Recruitment_requirement_li{
+#Recommendation_requirement_li{
     font-weight: bold;
 }
-.Recruitment_block_requirement{
+.Recommendation_block_requirement{
     font-size:12px;
     text-align: justify;
 }
