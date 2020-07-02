@@ -46,7 +46,21 @@ module.exports = function (req, res) {
             if(obj.length == 0){
 				console.log("新增帳號");
                 insert(UserName,Useraccount,newPas,req.file);
-                res.send({status:'success',message:true,data:UserName})
+				req.session.regenerate(function(err) {
+					if(err){
+						console.log("session建立失敗，err=\n",err);
+						return res.send({
+							status:'success',
+							message:false,
+							description:"session建立失敗"
+							});                
+					}
+					req.session.loginName = UserName;
+					req.session.loginAccount = Useraccount;
+					return res.send({status:'success',message:true,data:UserName});
+						//res.redirect('/');
+				});
+                
             }else{
 				console.log("已有此帳號");
                 res.send({status:'success',message:false,description:"帳號已存在"}) 

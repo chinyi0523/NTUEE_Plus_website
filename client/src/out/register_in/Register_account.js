@@ -64,6 +64,7 @@ class Register_account extends Component{
 						if(res){
 							if(res.data.message===true){
 								alert('註冊成功');
+								localStorage.setItem('auth',true);
 								window.location = "/Login";
 							}else{
 								alert('錯誤：\n'+res.data.description);

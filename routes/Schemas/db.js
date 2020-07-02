@@ -12,3 +12,4 @@ mongoose.connection.on('disconnected',function(){
 })
 
 module.exports = mongoose;
+//mongodb://heroku_kbtrwz4h:f13g3thhm7uo2ip6o2qcnaufk9@ds155718.mlab.com:55718/heroku_kbtrwz4h
