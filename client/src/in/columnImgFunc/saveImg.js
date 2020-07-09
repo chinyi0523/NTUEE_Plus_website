@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function saveImg(filename,img){
-	var toSend= new FormData();
+	const toSend= new FormData();
 	toSend.append("filename",filename);
 	toSend.append("file",img);
 	axios.post("/api/saveImg",

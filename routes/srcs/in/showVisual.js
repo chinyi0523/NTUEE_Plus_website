@@ -1,10 +1,10 @@
 //srcs/login.js
-var user_v_Schema = require('../../Schemas/user_visual');
-var readDB = require('./readDB');
+const user_v_Schema = require('../../Schemas/user_visual');
+const readDB = require('./readDB');
 
 function insert(name,account){
   return new Promise((resolve,reject)=>{
-    var user =  new user_v_Schema({
+    const user =  new user_v_Schema({
                 username:{data : name},
 				account:{data: account}
             });
@@ -23,7 +23,7 @@ function insert(name,account){
 }
 
 module.exports = function (req, res, next) {
-  var session_account = req.session.loginAccount
+  let session_account = req.session.loginAccount
   if(!session_account){
 	  session_account = 'b07901028' //測試用
   }
@@ -31,28 +31,28 @@ module.exports = function (req, res, next) {
      user_v_Schema.find({"account.data":session_account}, async function(err, obj){
         if (err) {
             console.log("Error:" + err);
-			return res.send({status:'success',message:false, description:"資料庫錯誤"}); 
+			      return res.send({status:'success',message:false, description:"資料庫錯誤"}); 
         }
         else {
             if(obj.length === 1){
-				var output=readDB.getOwnDB(obj[0]);
-				console.log('帳號存在',output.account);
-				res.send({status:'success',message:true,data:
-					output
-				});
+              const output=readDB.getOwnDB(obj[0]);
+              console.log('帳號存在',output.account);
+              res.send({status:'success',message:true,data:
+                output
+              });
             }else if(obj.length === 0){//存在session但不在資料庫裡
-				console.log("session:",session_account);
-				output = await insert(req.session.loginName||'無名氏',session_account);
-				console.log("output",output)
-				if(!output){
-					return res.send({status:'success',message:false, description:"資料庫錯誤(資料插入錯誤)"}); 
-				}else{
-					output.userimage = '';
-					return res.send({status:'success',message:true, data:output}); 
-				}
+              console.log("session:",session_account);
+              output = await insert(req.session.loginName||'無名氏',session_account);
+              console.log("output",output)
+              if(!output){
+                return res.send({status:'success',message:false, description:"資料庫錯誤(資料插入錯誤)"}); 
+              }else{
+                output.userimage = '';
+                return res.send({status:'success',message:true, data:output}); 
+              }
             }else{
-				return res.send({status:'success',message:false, description:"資料庫錯誤(帳號重複)"}); 
-			}
+              return res.send({status:'success',message:false, description:"資料庫錯誤(帳號重複)"}); 
+            }
         }
     })
   }else{

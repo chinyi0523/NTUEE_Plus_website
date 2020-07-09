@@ -1,6 +1,6 @@
-var GetFunc = require('./imgProcess/getImg');
+const GetFunc = require('./imgProcess/getImg');
 module.exports = async function (req, res, next){
-	var getDone = false;
+	let getDone = false;
 	getDone = await GetFunc(req.body.filename);
 	//console.log("getDone"+typeof(getDone))
 	if(getDone){return res.send({status:'success',message:true,data:getDone})}

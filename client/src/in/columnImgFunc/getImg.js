@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getImg (filename){
-	var toSend= {"filename":filename};
+	const toSend= {"filename":filename};
 	console.log(filename)
 	axios.post("/api/getImg",
 		toSend

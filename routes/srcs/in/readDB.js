@@ -1,4 +1,4 @@
-column1 = [
+const column1 = [
 	"account",
 	"username",
 	"nickname",
@@ -12,24 +12,24 @@ column1 = [
 	"facebook",
 	"Linkedin"
 ]
-column2 = [
+const column2 = [
 	["education","major"],
 	["education","double_major"],
 	["education","minor"],
 	["education","master"],
 	["education","doctor"]
 ]
-column22 = [
+const column22 = [
 	["education",["major","double_major","minor","master","doctor"]]
 ]
-column3 = [
+const column3 = [
 	"Occupation"
 ]
-column33 = ["O","P","C"]
+const column33 = ["O","P","C"]
 
 module.exports.getOwnDB = function(obj1){
 	console.log('obj=',obj1)
-	output = {}
+	const output = {}
 	column1.forEach(element=>{
 		output[element]=obj1[element]
 	})
@@ -41,8 +41,8 @@ module.exports.getOwnDB = function(obj1){
 	})
 	console.log('user0=',output)
 	if(obj1.userimage.contentType){
-		var prefix="data:"+obj1.userimage.contentType+";base64,"
-		var img = new Buffer(obj1.userimage.data, 'binary').toString('base64');
+		const prefix="data:"+obj1.userimage.contentType+";base64,"
+		const img = new Buffer(obj1.userimage.data, 'binary').toString('base64');
 		output.userimage = prefix+img;
 	}
 	return output
@@ -86,8 +86,8 @@ module.exports.getOtherDB = function(obj1){
 	})
 	console.log(output["Occupation"])
 	if(obj1.userimage.contentType){
-		var prefix="data:"+obj1.userimage.contentType+";base64,"
-		var img = new Buffer(obj1.userimage.data, 'binary').toString('base64');
+		const prefix="data:"+obj1.userimage.contentType+";base64,"
+		const img = new Buffer(obj1.userimage.data, 'binary').toString('base64');
 		output.userimage = prefix+img;
 	}
 	console.log('user1=',output.account)
@@ -95,7 +95,7 @@ module.exports.getOtherDB = function(obj1){
 }
 
 module.exports.search = function(req){
-	query={}
+	const query={}
 	column1.forEach(element=>{
 		if(req.body[element]!==undefined){
 			query[element+".data"] = req.body[element];
@@ -113,8 +113,8 @@ module.exports.search = function(req){
 			}
 		})
 	})
-	JobQ = false
-	JobMatch = {}
+	let JobQ = false;
+	const JobMatch = {};
 	column33.forEach(ele2=>{
 		if(req.body["Occupation."+ele2]!==undefined){
 			JobQ = true;
@@ -130,10 +130,10 @@ module.exports.search = function(req){
 }
 
 module.exports.searchOr = function(req){
-	var query=[]
+	let query=[]
 	column1.forEach(element=>{
 		if(req.body[element]!==undefined){
-			var Q1 = {};
+			const Q1 = {};
 			Q1[element+".data"] = req.body[element];
 			Q1[element+".show"] = true;
 			query.push(Q1);
@@ -141,7 +141,7 @@ module.exports.searchOr = function(req){
 	})
 	column22.forEach(element=>{
 		element[1].forEach(ele1=>{
-			var Q2 = {}
+			const Q2 = {};
 			if(req.body[element[0]]!==undefined&&req.body[element[0]][ele1]!==undefined){
 				Q2[element[0]+'.'+ele1+".SD"] = req.body[element[0]][ele1];
 				Q2[element[0]+'.'+ele1+".show"] = true;
@@ -153,8 +153,8 @@ module.exports.searchOr = function(req){
 			}
 		})
 	})
-	JobQ = false
-	JobMatch = {}
+	let JobQ = false
+	const JobMatch = {}
 	column33.forEach(ele2=>{
 		if(req.body["Occupation."+ele2]!==undefined){
 			JobQ = true;
@@ -162,7 +162,7 @@ module.exports.searchOr = function(req){
 		}
 	})
 	if(JobQ){
-		var Q3={}
+		const Q3={}
 		JobMatch["show"] = true;
 		Q3["Occupation"] = {$elemMatch:JobMatch};
 		query.push(Q3)
@@ -174,9 +174,9 @@ module.exports.searchOr = function(req){
 module.exports.chDB = function(req){
 	//update $set 的讀值規則(用xxx.xxx或xxx.$.xxx(用在array))
 	//https://docs.mongodb.com/manual/reference/operator/update/set/
-	var output = {}
-	var unset = {}
-	var re={}
+	const output = {}
+	const unset = {}
+	const re={}
 	column1.forEach(element=>{
 		if(element!='account'){
 			if(req.body[element+'.data']!==undefined){
@@ -199,7 +199,7 @@ module.exports.chDB = function(req){
 	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Modify')){
 		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Modify']))){
 			//key = work_O、P、C_{index}
-			var arr = key.split('_')
+			const arr = key.split('_')
 			if(val===''){
 				unset[column3+'.'+(arr[2]-1)+'.'+arr[1]] = ''
 			}else{
@@ -210,12 +210,12 @@ module.exports.chDB = function(req){
 	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Remove')){
 		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Remove']))){
 			//key = work_O、P、C_{index}
-			var arr = key.split('_')
+			const arr = key.split('_')
 			unset[column3+'.'+(arr[1]-1)] = 1//mongo 目前沒有辦法簡單地remove array's element，只能靠unset + pull null
 		}
 	}
 	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Insert')){
-		var item = {}
+		const item = {}
 		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Insert']))){
 			console.log('insert',key,val);
 			var arr = key.split('_');
@@ -223,7 +223,7 @@ module.exports.chDB = function(req){
 			item[arr[2]][arr[1]] = val;
 		}
 		console.log('insert item',item)
-		var pushArr = []
+		const pushArr = []
 		Object.keys(item).sort().forEach(key=>{
 			pushArr.push(item[key])
 			console.log('push item',item[key])
@@ -239,8 +239,8 @@ module.exports.chDB = function(req){
 		console.log('get img',output["userimage.contentType"])
 	}
 
-	var unsetEmpty = (Object.entries(unset).length === 0 && unset.constructor === Object)
-	var setEmpty = (Object.entries(output).length === 0 && output.constructor === Object)
+	const unsetEmpty = (Object.entries(unset).length === 0 && unset.constructor === Object)
+	const setEmpty = (Object.entries(output).length === 0 && output.constructor === Object)
 	//var re = (!setEmpty)?((!unsetEmpty)?({$set:output,$unset:unset}):({$set:output})):((!unsetEmpty)?({$unset:unset}):({}))
 	if(!unsetEmpty)(re.$unset=unset)
 	if(!setEmpty)(re.$set = output)
@@ -249,20 +249,22 @@ module.exports.chDB = function(req){
 }
 
 module.exports.searchJob = function(req){ //searchJob
-	output = {
+	const output = {
 		title:req.body.title,
 		subtitle:req.body.subtitle||"",
 		description: req.body.description
 	}
 	return output
 }
-column_job = [
+
+const column_job = [
 	"title",
 	"subtitle",
 	"description"
 ]
+
 module.exports.getOtherDB_job = function(obj){
-	output = {}
+	const output = {}
 	column_job.forEach(element=>{
 		if(obj[element] !== (undefined || '')){
 			output[element] = obj[element]
@@ -271,8 +273,9 @@ module.exports.getOtherDB_job = function(obj){
 	console.log('job=',output.title)
 	return output
 }
+
 module.exports.search_job = function(req){
-	query = {}
+	const query = {}
 	column_job.forEach(element => {
 		if(req.body[element] !== undefined){
 			query[element] = req.body[element];

@@ -1,7 +1,7 @@
-var mongoose = require('./db'),
+const mongoose = require('./db'),
     Schema = mongoose.Schema;
 
-var Job_Schema = new Schema({
+const Job_Schema = new Schema({
     ID : String,
 	title : String,
 	subtitle: String,

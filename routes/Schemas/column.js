@@ -1,7 +1,7 @@
-var mongoose = require('./db'),
+const mongoose = require('./db'),
     Schema = mongoose.Schema;
 
-var Column_Schema = new Schema({
+const Column_Schema = new Schema({
 	filename:{type:String},
     columnImg: {//column 的照片
 	  data:{type:Buffer},

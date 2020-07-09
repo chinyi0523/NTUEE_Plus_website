@@ -1,12 +1,12 @@
 //scrs/activation
 //處理express中 http://<hostname>/activation?name=<UserName>&active=<Gradled>
-var Activation = require('../../Schemas/activation');
-var user_l_Schema = require('../../Schemas/user_login');
+const Activation = require('../../Schemas/activation');
+const user_l_Schema = require('../../Schemas/user_login');
 
 module.exports = function(req,res){
-	var UserName = req.query.name;
+	const UserName = req.query.name;
 	console.log('使用者是：',UserName);
-	var Garbled = req.query.active;
+	const Garbled = req.query.active;
 	Activation.find({account:UserName}, function(err, obj){
         if (err) {
             console.log("Error:" + err);
@@ -25,7 +25,7 @@ module.exports = function(req,res){
 						console.log(obj+" document(s) deleted");
 					});
 					console.log('密碼更新');
-					URL = '<a href="'+req.protocol+"://"+req.get('host')+'/Login">點擊跳轉</a>';
+					const URL = '<a href="'+req.protocol+"://"+req.get('host')+'/Login">點擊跳轉</a>';
 					res.send('認證成功，密碼已更新<br>'+URL);
 				}else{
 					console.log('驗證碼過期');
@@ -34,7 +34,7 @@ module.exports = function(req,res){
             }else{
                 console.log('驗證碼錯誤');
 				console.log(obj, Garbled);
-				URL = '<a href="'+req.protocol+"://"+req.get('host')+'/Forget">點擊跳轉</a>';
+				const URL = '<a href="'+req.protocol+"://"+req.get('host')+'/Forget">點擊跳轉</a>';
                 res.send('驗證碼錯誤<br>'+URL);
             }
         }

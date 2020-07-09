@@ -1,7 +1,8 @@
-var user_l_Schema = require('../../Schemas/user_login');
-var crypto = require("crypto");
-var Activation = require('../../Schemas/activation');
-var sendmail = require('./mail/send');
+const user_l_Schema = require('../../Schemas/user_login');
+const crypto = require("crypto");
+const Activation = require('../../Schemas/activation');
+const sendmail = require('./mail/send');
+
 
 function insert_active(name,psw,act){ //激活碼
 	Activation.find({account:name},function(err,obj){
@@ -10,7 +11,7 @@ function insert_active(name,psw,act){ //激活碼
         }
         else {
             if(obj.length == 0){//新增
-				var data =  new Activation({
+				const data =  new Activation({
 					account : name,
 					newpsw : psw,
 					active : act
@@ -39,15 +40,15 @@ function insert_active(name,psw,act){ //激活碼
 
 
 module.exports = function (req, res, next) {
-  var Useraccount = req.body.account.toLowerCase();
-  var question = req.body.question;
-  var Email = req.body.Email;
-  var UserPsw = req.body.password;
+  const Useraccount = req.body.account.toLowerCase();
+  const question = req.body.question;
+  const Email = req.body.Email;
+  const UserPsw = req.body.password;
   //密碼加密
-  var md5 = crypto.createHash("md5");
-  var newPas = md5.update(UserPsw).digest("hex");
+  let md5 = crypto.createHash("md5");
+  const newPas = md5.update(UserPsw).digest("hex");
   console.log(UserPsw,newPas);
-  var query = {account: Useraccount};//, question:question};
+  const query = {account: Useraccount};//, question:question};
    user_l_Schema.find(query, function(err, obj){
         if (err) {
             console.log("Error:" + err);
@@ -57,9 +58,9 @@ module.exports = function (req, res, next) {
 				if(obj[0].question===question&&question!==""){
 					console.log('答案正確');
 					//寄送激活碼
-					var Garbled = Math.random().toString(36).substr(2); //產生亂碼
+					const Garbled = Math.random().toString(36).substr(2); //產生亂碼
 					insert_active(Useraccount, newPas, Garbled);
-					var hylink = '<a href="'+req.protocol+"://"+req.get('host')+'/api/activation?name='+Useraccount+'&active='+Garbled+'">點擊激活</a>';
+					const hylink = '<a href="'+req.protocol+"://"+req.get('host')+'/api/activation?name='+Useraccount+'&active='+Garbled+'">點擊激活</a>';
 					sendmail(Email,hylink);
 					return res.send({status:'success',message:true});
 				}else{
