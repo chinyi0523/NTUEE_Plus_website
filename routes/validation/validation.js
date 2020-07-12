@@ -1,14 +1,14 @@
-const {body} = require('express-validator');
+//const {body} = require('express-validator');
 
-mat = {
+const mat = {
 	"register":["username","account","password","ConfirmPassword"],
 	"login":["account","password"],
 	"forget":["account","question","Email","password","ConfirmPassword"],
 	"chLogin":["question"]
 }
 
-Valid = function(method,req){
-	var output = [];
+const Valid = function(method,req){
+	const output = [];
 	mat[method].forEach(element=>{
 		if(element==="ConfirmPassword"){//如果需要抓req就用它
 			output.push(require("./Name/"+element)(req));

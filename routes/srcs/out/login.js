@@ -1,14 +1,15 @@
 //srcs/login.js
-var user_l_Schema = require('../../Schemas/user_login');
-var crypto = require("crypto");
+const user_l_Schema = require('../../Schemas/user_login');
+const crypto = require("crypto");
+
 
 module.exports = function (req, res, next) {
-	var account = req.body.account.toLowerCase();
-	var UserPsw = req.body.password;
+	const account = req.body.account.toLowerCase();
+	const UserPsw = req.body.password;
 	//密碼加密  
-	var md5 = crypto.createHash("md5");
-	var newPas = md5.update(UserPsw).digest("hex");
-	var query = {account: account};//,userpsw:newPas};
+	let md5 = crypto.createHash("md5");
+	const newPas = md5.update(UserPsw).digest("hex");
+	const query = {account: account};//,userpsw:newPas};
 	user_l_Schema.find(query, function(err, obj){
 		if (err) {
 			console.log("Error:" + err);

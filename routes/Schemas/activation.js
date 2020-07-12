@@ -1,7 +1,7 @@
-var mongoose = require("./db"),
+const mongoose = require("./db"),
   Schema = mongoose.Schema;
 
-var activation_Schema = new Schema({
+const activation_Schema = new Schema({
   account: { type: String, required: true },
   newpsw: { type: String, required: true },
   active: String, //激活碼

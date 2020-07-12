@@ -1,8 +1,8 @@
 //srcs/login.js
-var user_l_Schema = require('../../Schemas/user_login');
+const user_l_Schema = require('../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
-  var session_account = req.session.loginAccount;
+  const session_account = req.session.loginAccount;
   if(session_account){
      user_l_Schema.find({account:session_account}, function(err, obj){
         if (err) {
@@ -12,9 +12,9 @@ module.exports = function (req, res, next) {
         else {
             if(obj.length === 1){
                 console.log('登入成功',obj);
-				var prefix="data:"+obj[0].img.contentType+";base64,"
+				const prefix="data:"+obj[0].img.contentType+";base64,"
 				//var img = window.btoa(String.fromCharCode.apply(null, obj[0].img.data));
-				var img = new Buffer(obj[0].img.data, 'binary').toString('base64')
+				const img = new Buffer(obj[0].img.data, 'binary').toString('base64')
 				res.send({status:'success',message:true,data:{
 					username:obj[0].username,
 					account:obj[0].account,

@@ -7,12 +7,12 @@ const options = {
   cert: fs.readFileSync('./certificate.crt')
 };
 
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 const path = require('path');
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var FileStore = require('session-file-store')(session);
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 
 //post, get時的解碼
 app.use(bodyParser.urlencoded({extended:true}))
@@ -55,7 +55,7 @@ https.createServer(options, app).listen(1993, function() {
   console.log('port name: ', process.env.PORT||1993);
 })	;
 /*
-var server = app.listen(process.env.PORT||1993,function(){
+const server = app.listen(process.env.PORT||1993,function(){
     console.log('server connect');
 	console.log('port name: ',process.env.PORT||1993);
 })

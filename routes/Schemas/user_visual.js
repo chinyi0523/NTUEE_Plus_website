@@ -1,8 +1,8 @@
-var mongoose = require("./db"),
+const mongoose = require("./db"),
   Schema = mongoose.Schema;
 require('mongoose-type-email');
 
-var User_visual_Schema = new Schema({
+const User_visual_Schema = new Schema({
   account:  {
 	show: {type:Boolean,default:true},
 	data: {type: String, required: true, lowercase: true }

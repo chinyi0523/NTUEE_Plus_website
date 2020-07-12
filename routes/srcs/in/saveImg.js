@@ -1,6 +1,6 @@
-var SaveFunc = require('./imgProcess/addImg');
+const SaveFunc = require('./imgProcess/addImg');
 module.exports = function (req, res, next){
-	var saveDone = false;
+	let saveDone = false;
 	if(req.body.filename){
 		saveDone = SaveFunc(req.body.filename,req.file);
 	}

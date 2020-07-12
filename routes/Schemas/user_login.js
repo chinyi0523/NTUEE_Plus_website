@@ -1,7 +1,7 @@
-var mongoose = require("./db"),
+const mongoose = require("./db"),
   Schema = mongoose.Schema;
 
-var User_login_Schema = new Schema({
+const User_login_Schema = new Schema({
   username: { type: String, required: true },//名字
   facebookID: String,
   account: { type: String, required: true, lowercase: true },//學號

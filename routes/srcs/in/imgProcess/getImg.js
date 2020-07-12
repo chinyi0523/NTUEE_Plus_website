@@ -1,4 +1,4 @@
-var Column_Schema = require('../../../Schemas/column');
+const Column_Schema = require('../../../Schemas/column');
 
 module.exports = function (name){
 	return new Promise((resolve,reject)=>{

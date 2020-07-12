@@ -1,11 +1,12 @@
 //srcs/register.js
-var user_l_Schema = require('../../Schemas/user_login');
-var crypto = require("crypto");
+const user_l_Schema = require('../../Schemas/user_login');
+const crypto = require("crypto");
+
 
 /*新增一筆使用者資料*/
 function insert(name,account,psw,file){
       //格式
-    var user =  new user_l_Schema({
+    const user =  new user_l_Schema({
                 username : name,
 				account: account,
                 userpsw : psw,
@@ -27,16 +28,16 @@ function insert(name,account,psw,file){
 }
 
 module.exports = function (req, res) {
-  var UserName = req.body.username;
-  var Useraccount = req.body.account.toLowerCase();
-  var UserPsw = req.body.password;
+  const UserName = req.body.username;
+  const Useraccount = req.body.account.toLowerCase();
+  const UserPsw = req.body.password;
   
   console.log('file\n',req.file)
   //密碼加密
-  var md5 = crypto.createHash("md5");
-  var newPas = md5.update(UserPsw).digest("hex");
+  let md5 = crypto.createHash("md5");
+  const newPas = md5.update(UserPsw).digest("hex");
   //查詢用戶是否存在
-  var query = {account: Useraccount};
+  const query = {account: Useraccount};
     user_l_Schema.find(query, function(err, obj){
         if (err) {
             console.log("Error:" + err);

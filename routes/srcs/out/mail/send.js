@@ -1,8 +1,8 @@
-var send = require('./mail');
+const send = require('./mail');
 
 module.exports = function (myfriend, hr){
 		// 設定寄信參數
-	var mail = {
+	const mail = {
 		// 發信人
 		from: 'jeff5120721@gmail.com',
 		// 主題

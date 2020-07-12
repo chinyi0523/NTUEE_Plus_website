@@ -1,9 +1,9 @@
-var Job_Schema = require('../../Schemas/job');
+const Job_Schema = require('../../Schemas/job');
 
 /*新增一筆資料*/
 function insert(title,subtitle,description){
       //格式
-    var job =  new Job_Schema({ 
+    const job =  new Job_Schema({ 
 		title: title,
                 subtitle : subtitle,
 		description: description
@@ -21,9 +21,9 @@ function insert(title,subtitle,description){
 }
 
 module.exports = function (req, res) {
-    var jobTitle = req.body.title;
-    var jobSubtitle = req.body.subtitle;
-    var jobDescription = req.body.description;
+    const jobTitle = req.body.title;
+    const jobSubtitle = req.body.subtitle;
+    const jobDescription = req.body.description;
 
     //var query = {ID: ID};
     console.log("新增工作");

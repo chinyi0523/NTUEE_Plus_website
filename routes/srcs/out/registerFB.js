@@ -1,11 +1,11 @@
 //srcs/register.js
-var user_l_Schema = require('../../Schemas/user_login');
-var crypto = require("crypto");
+const user_l_Schema = require('../../Schemas/user_login');
+//const crypto = require("crypto");
 
 /*新增一筆使用者資料*/
 function insert(name, account, facebookID, file) {
     //格式
-    var user = new user_l_Schema({
+    const user = new user_l_Schema({
         username: name,
         account: account,
         facebookID: facebookID,
@@ -27,14 +27,14 @@ function insert(name, account, facebookID, file) {
 }
 
 module.exports = function (req, res) {
-    var UserName = req.body.username;
-    var Useraccount = req.body.account.toLowerCase();
-    var UserFbId = req.body.facebookID;
+    const UserName = req.body.username;
+    const Useraccount = req.body.account.toLowerCase();
+    const UserFbId = req.body.facebookID;
 
     console.log('file\n', req.file)
 
     //查詢用戶是否存在
-    var query = { account: Useraccount };
+    const query = { account: Useraccount };
     user_l_Schema.find(query, function (err, obj) {
         if (err) {
             console.log("Error:" + err);

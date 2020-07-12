@@ -1,9 +1,9 @@
 //srcs/chLogin.js
-var user_l_Schema = require('../../Schemas/user_login');
+const user_l_Schema = require('../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
-  var session_account = req.session.loginAccount;
-  var NQ = req.body.question;
+  const session_account = req.session.loginAccount;
+  const NQ = req.body.question;
   if(NQ===""||!NQ){
 	  return res.send({status:'success',message:false, description:"問題不得為空"}); 
   }

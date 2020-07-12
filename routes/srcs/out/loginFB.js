@@ -1,9 +1,9 @@
 //srcs/login.js
-var user_l_Schema = require('../../Schemas/user_login');
+const user_l_Schema = require('../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
-	var facebookID = req.body.facebookID;
-	var query = { facebookID: facebookID };
+	const facebookID = req.body.facebookID;
+	const query = { facebookID: facebookID };
 	user_l_Schema.find (query, function (err, obj) {
 		if (err) {
 			console.log("Error:" + err);

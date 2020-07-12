@@ -1,7 +1,7 @@
-var Column_Schema = require('../../../Schemas/column');
+const Column_Schema = require('../../../Schemas/column');
 
 module.exports = function(name,file){
-	var column =  new Column_Schema({
+	const column =  new Column_Schema({
 		filename:name,
 		columnImg:{
 			data:file.buffer,
