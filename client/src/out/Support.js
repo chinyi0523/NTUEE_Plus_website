@@ -9,9 +9,8 @@ class Support extends Component{
         <div id="Support_container">
         <NavBar/> 
             <div id="Support_up">
-                <h3 id="Support_up_text">
+                <h3 id="Support_up_text" >
                     Your support is vital in enabling NTUEE+ to fulfill
-                    <br />
                     our mission to chain all the alumnae in the world.
                 </h3>
             </div>

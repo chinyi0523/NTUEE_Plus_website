@@ -72,7 +72,7 @@ class History extends Component{
         };
         return(
             <div id="History_container">
-                <NavBar/>
+                {/* <NavBar/> */}
                 <div id="History_content">
                     <div id="History_title_hr">History</div>
                     <div id="History_B03">

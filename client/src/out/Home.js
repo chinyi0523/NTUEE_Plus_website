@@ -8,7 +8,7 @@ class Home extends Component{
         
         return ( 
         <div>
-            <NavBar/> 
+            {/* <NavBar/>  */}
         <div id = "Home_title">
             
 			NTUEE+
