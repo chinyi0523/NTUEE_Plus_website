@@ -110,11 +110,11 @@ class Login extends Component{
 			this.handleLogin(false)
 		})
 	}
-	componentWillReceiveProps(){
-		this.setState({
-			isLogin:this.props.loginstatus
-		})
-	}
+	// componentWillReceiveProps(){
+	// 	this.setState({
+	// 		isLogin:this.props.loginstatus
+	// 	})
+	// }
     render(){
 		console.log (this.state)
 		if(this.state.isLogin){
@@ -129,7 +129,7 @@ class Login extends Component{
         return (
 			<div>
             <div id="Login_container">
-			<NavBar/> 
+			{/* <NavBar/>  */}
 			<form onSubmit={this.handleSubmit}>
                 <div id="Login_input">
                         <div id="Login_username">
