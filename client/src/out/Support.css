@@ -2,27 +2,28 @@
     display:flex;
     flex-direction: column;
     min-height:100vh;
-}
+} 
 html {
     background-color: #003F67;
 }
 #Support_up{
     display: flex;
     justify-content: center;
-    margin-left: 1vw;
+    margin-left: 1vw; 
 }
 #Support_up_text{
+    font-size: 1.4rem;
     position: absolute;
     bottom: 50%;
     text-align: center;
-    font-family: 'Noto Sans TC',Arial,sans-serif;
+    font-family: 'Noto Sans TC',Arial,sans-serif; 
     color: white;
 }
 
 #Support_down{
     display: flex;
     justify-content: center;
-    margin-left: 1vw;
+    margin-left: 1vw; 
 }
 #Support_down_text{
     position: absolute;
@@ -34,10 +35,10 @@ html {
 
 
 #Support_footer{
-    position: absolute;
+    /* position: absolute;
     bottom:0%;
     left:42.5%;
-    font-family:'Noto Sans TC',Arial,sans-serif;
+    font-family:'Noto Sans TC',Arial,sans-serif; */
     color:white;
 }
 
@@ -46,7 +47,7 @@ html {
     max-width: 10vmin;
     width: 100%;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; 
 }
 
 #Support_footer_text{
@@ -55,15 +56,15 @@ html {
     font-family:'Noto Sans TC',Arial,sans-serif;
     font-size: 0.5vw;
     color: #fff;
-    text-align: center;
+    text-align: center; 
 }
 #Support_footer_text_2{
-    display: center;
+     display: center;
     margin:0;
     font-family:'Noto Sans TC',Arial,sans-serif;
     font-size: 0.5vw;
     color: #fff;
     text-align: center;
-    margin-bottom:10%;
+    margin-bottom:10%; 
 }
 
