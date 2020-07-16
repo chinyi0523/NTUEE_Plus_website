@@ -8,6 +8,7 @@
     "dbstart": "sudo service mongodb start",
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
+    "postbuild": "cd client && npm install && npm run build",
     "local": "npm run dbstart && cd client && npm run build && cd .. && npm start",
     "local_mac": "cd client && npm run build && cd .. && npm start"
   },

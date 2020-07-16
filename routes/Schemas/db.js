@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //數據地址
-const local = true;
+const local = false;
 let DB_URL;
 if(local){
     DB_URL = 'mongodb://localhost:27017/mongoose';

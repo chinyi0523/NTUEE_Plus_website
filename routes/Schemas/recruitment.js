@@ -1,7 +1,7 @@
-var mongoose = require('./db'),
+const mongoose = require('./db'),
     Schema = mongoose.Schema;
 
-var Recruitment_Schema = new Schema({
+const Recruitment_Schema = new Schema({
     title:{
 		title: String,
 		company_name: String,

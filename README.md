@@ -1,4 +1,14 @@
 # NTUEE_Plus_website
+## Run
+```bash
+$ npm install
+$ npm run postbuild
+$ npm start
+```
+
+### 0716 進度 by 君輔
+* https://eeplus.herokuapp.com/ 的資料庫網址更新，重新註冊後應該可以登入了
+
 ### 0624 進度 by 建琁
 * column新增 洪銘駿
 
