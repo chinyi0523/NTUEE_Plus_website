@@ -105,7 +105,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="contain">
         
 		{/* The corresponding component will show here if the current URL matches the path */}
         <Route path="/" exact component={Home_page} />

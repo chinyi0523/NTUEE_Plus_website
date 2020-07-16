@@ -8,7 +8,7 @@ import './AppBar.css';
 
 const NavBar = () => {
   return (
-    <div id = "AppBar_root">
+    <div id = "AppBar_root" className=".container_fluid">
       <AppBar id = "AppBar_Bar">
         <Toolbar >
             <div id = "AppBar_Logo"><Link  to="/"><Logo/></Link></div>
