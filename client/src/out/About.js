@@ -9,11 +9,11 @@ class About extends Component{
         return (
         <div>
         <div className="About_container">
-            <div className = "About_content_wrap">
-            <NavBar/>
+            <div className = "About_content_wrap mx-auto my-auto">
+            {/* <NavBar/> */}
             <div id = "About_space"></div>
             <div id="About_up">
-                <h1 id="About_up_text">
+                <h1 id="About_up_text" className="">
                     Welcome to NTUEE+
                 </h1>
             </div>

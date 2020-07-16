@@ -12,7 +12,7 @@ class Contact extends Component{
         <div>
         <div id="Contact_container">
             <div id="Contact_content_wrap">
-            <NavBar/>
+            {/* <NavBar/> */}
                 <div id="Contact_left_column">
                     <div id="Contact_left_image"><img src={left_image} alt="leftImage" width="250px" height="250px" /></div>
                     <p id="Contact_left_text">

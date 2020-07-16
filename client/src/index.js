@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import { Provider } from 'react-redux'; 
-import { createStore, applyMiddleware} from 'redux';
-import reduxThunk from 'redux-thunk';
-import {createLogger} from 'redux-logger';
-//import Immutable from 'immutable';
-import rootReducer from '../src/redux/reducers';
+import { Main_in_page } from './in/pages_in'; 
 
-const initialState = {};
+// import { Provider } from 'react-redux'; 
+// import { createStore, applyMiddleware} from 'redux';
+// import reduxThunk from 'redux-thunk';
+// import {createLogger} from 'redux-logger';
+// //import Immutable from 'immutable';
+// import rootReducer from '../src/redux/reducers';
+
+// const initialState = {};
  
 // // import Footer from './component/Footer';
 // const AppWrapper = ({ children}) =>{
@@ -21,10 +23,21 @@ const initialState = {};
 // );
 // return (<Provider store={store}>{children}</Provider>);
 //}
+const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={(props) => (
+      true
+        ? <Component {...props} />
+        : <Redirect to={{
+            pathname: '/Login',
+            state: { from: props.location }
+          }} />
+    )} />
+  )
 ReactDOM.render(
   
     <BrowserRouter>
       <Switch>
+      <PrivateRoute path="/in" component={Main_in_page}/>
         <App />
       </Switch>
     </BrowserRouter>,

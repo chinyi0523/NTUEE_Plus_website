@@ -62,7 +62,7 @@ class Forget extends Component{
     render(){
         return(
 			<div>
-			<NavBar/>
+			{/* <NavBar/> */}
             <div id="Forget_container">
 				
                 <div id="Forget_left_table">

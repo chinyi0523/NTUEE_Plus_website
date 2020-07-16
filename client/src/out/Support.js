@@ -6,7 +6,7 @@ class Support extends Component{
     render(){
         return (
         <div>
-        <div id="Support_container" className="container-fluid">
+        <div id="Support_container">
         <NavBar/> 
             <div id="Support_up">
                 <h3 id="Support_up_text" >
