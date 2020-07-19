@@ -1,3 +1,27 @@
+@media (max-width: 767px) {
+    body{font-size: 15px !important;}
+}
+
+@media (min-width: 768px) {
+    body{
+        font-size: 20px !important;
+    }
+}
+@media (min-width: 1023px) {
+    body{
+        font-size: 27px !important;
+    }
+}
+@media (min-width: 1301px) {
+    body{
+        font-size: 27px !important;
+    }
+}
+@media (min-width: 1501px) {
+    body{
+        font-size: 27px !important;
+    }
+}
 #Support_container{
     display:flex;
     flex-direction: column;
@@ -12,7 +36,6 @@ html {
     margin-left: 1vw; 
 }
 #Support_up_text{
-    font-size: 1.4rem;
     position: absolute;
     bottom: 50%;
     text-align: center;
