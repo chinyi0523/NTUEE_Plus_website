@@ -28,7 +28,7 @@ class About extends Component{
                     讓系友們有專屬的家！
                 </p>
             </div>
-            <Link id="About_join" to="/Login"><Button id="About_join_btn">JOIN US</Button></Link>
+            <Link id="About_join" to="/Login"><button id="About_join_btn" className="btn text-center">JOIN US</button></Link>
             
             </div>
             

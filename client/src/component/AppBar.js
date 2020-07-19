@@ -8,7 +8,7 @@ import './AppBar.css';
 
 const NavBar = () => {
   return (
-    <div id = "AppBar_root" className='container-xl-fluid'>
+    /* <div id = "AppBar_root" className='container-xl-fluid'>
       <AppBar id = "AppBar_Bar">
         <Toolbar >
             <div id = "AppBar_Logo"><Link  to="/"><Logo/></Link></div>
@@ -29,7 +29,42 @@ const NavBar = () => {
             </div>
         </Toolbar>
       </AppBar>
-    </div>
+    </div> */
+    <nav className="navbar navbar-expand-lg bg-light fixed-top">
+          <div><Link to="/Home" className="navbar-brand"><Logo /></Link></div>
+          <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+          <li class="nav-item dropdown active">
+              {/* <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a> */}
+              <Link id = "AppBar_Link" className="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to="/About"><Button id = "AppBar_menuButton">About</Button></Link>
+
+              <div class="dropdown-menu" aria-labelledby="AppBar_Link">
+                <Link id = "AppBar_Link" className="dropdown-item" to="/History"><Button id = "AppBar_menuButton">History</Button></Link>
+                <Link id = "AppBar_Link" className="dropdown-item" to="/Team"><Button id = "AppBar_menuButton">Contributors</Button></Link>
+
+              </div>
+            </li>
+            <li class="nav-item ">
+              <Link id = "AppBar_Link" className="nav-link" to="/Contact"><Button id = "AppBar_menuButton">Contact<span class="sr-only">(current)</span></Button></Link>
+            </li>
+            <li class="nav-item">
+              <Link id = "AppBar_Link" className="nav-link" to="/Support"><Button id = "AppBar_menuButton">Support</Button></Link>
+            </li>
+            <li class="nav-item ml-auto">
+              <Link id = "AppBar_Link" className="nav-link" to="/Login"><Button id = "AppBar_menuButton">Login</Button></Link>
+            </li>
+            
+            {/* <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> */}
+          </ul>
+        </div>
+    </nav>
   );
 };
 export { NavBar };

@@ -1,4 +1,7 @@
-.AppBar_dropdown{
+button:focus{
+    outline: 0;
+}
+/* .AppBar_dropdown{
     margin-right: -10vw;
 }
 .AppBar_dropdown>li{
@@ -24,17 +27,17 @@
     margin-left: -2.5vw;
 }
 .AppBar_dropdown li:hover > ul{
-    /* display: block; */
+    /* display: block; 
     left:42.5vw;
     opacity: 1;
-}
-#AppBar_root{
+} */
+/* #AppBar_root{
     position:fixed;
     top: 0;
     align-items:stretch;
     z-index: 1;
-    /* width: 100vw; */
-}
+    /* width: 100vw; 
+} */
 
 #AppBar_Bar{
     flex-grow: 1;
