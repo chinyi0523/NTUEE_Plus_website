@@ -7,7 +7,7 @@ class Support extends Component{
         return (
         <div>
         <div id="Support_container">
-        <NavBar/> 
+        {/* <NavBar/>  */}
             <div id="Support_up">
                 <h3 id="Support_up_text" >
                     Your support is vital in enabling NTUEE+ to fulfill

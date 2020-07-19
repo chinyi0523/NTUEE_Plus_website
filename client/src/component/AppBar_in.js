@@ -26,6 +26,7 @@ const NavBar_in = () =>{
                 </Toolbar>
             </AppBar>
         </div>
+        
     );
 };
 export {NavBar_in};
