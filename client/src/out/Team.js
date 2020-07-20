@@ -91,7 +91,7 @@ class Team extends Component{
         
         return(
             <div id="Team_container">
-                <NavBar/>
+                {/* <NavBar/> */}
                 <div id="Team_content">
                     <div id="Team_title_hr">Website Contributors</div>
                     <div id="Team_B06">
