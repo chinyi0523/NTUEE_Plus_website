@@ -2,8 +2,7 @@
     font-family: 'Noto Sans TC',Arial,sans-serif;
     color :white;
     background-color:#002958;
-    /* margin-top: 90vh;
-    margin-bottom: 0; */
+
     position: relative;
     bottom:0;
     width:100%;
@@ -15,29 +14,17 @@
     margin:0,auto;
 } */
 .icon_img{
-    width: 150px;
-    height:100%;
-    float:right;
-    margin-right:240px;
-    margin-top:30px;
+    
+    max-width: 200px;
+    
 }
-.footer_col_1{
-    display: inline-block;
-    position: relative;
-    width: 70%;
-   
-}
-.footer_col_2{
-    display: inline-block;
-    position: relative;
-    width: 30%;
-}
+
 .footer_list{
     color: white;
     list-style-type: none;
     font-size: 17px;
     line-height: 30px;
-    margin-left: 150px;
+    
 }
 
 #footer_col_sm{

@@ -8,10 +8,10 @@ class About extends Component{
     render(){
         return (
         <div>
-        <div className="About_container">
-            <div className = "About_content_wrap mx-auto my-auto">
+        <div className="About_container justify-content-center">
+            <div className = "About_content_wrap mx-auto mt-n5">
             {/* <NavBar/> */}
-            <div id = "About_space"></div>
+            {/* <div id = "About_space"></div> */}
             <div id="About_up">
                 <h1 id="About_up_text" className="">
                     Welcome to NTUEE+
@@ -28,8 +28,13 @@ class About extends Component{
                     讓系友們有專屬的家！
                 </p>
             </div>
-            <Link id="About_join" to="/Login"><button id="About_join_btn" className="btn text-center">JOIN US</button></Link>
-            
+            <div className="justify-content-center d-flex p-auto">
+                <Link id="About_join" to="/Login">
+                    <button id="About_join_btn" className="btn text-center justify-content-center">
+                        JOIN US
+                    </button>
+                </Link>
+            </div>
             </div>
             
         </div>
