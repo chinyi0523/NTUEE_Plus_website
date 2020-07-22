@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './Register_account.css';
-//import eesa_icon from '../images/eesa-icon.png';
 import axios from 'axios';
-import { NavBar } from '../../component/AppBar';
-//import Register_account from './';
+
 class Register_account extends Component{
 	constructor(props) {
 		super(props);
@@ -109,7 +107,6 @@ class Register_account extends Component{
 		}
         return(
 			<div>
-				<NavBar/> 
             <div id="Register_acc_container">
 			
                 <div id="Register_acc_register_table">
