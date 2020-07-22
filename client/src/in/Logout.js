@@ -28,9 +28,7 @@ class Logout extends Component {
 	
 	render(){
 		return (
-			<div description="logout" 
-			style = {{display:"inline-block",
-			height:"100%"}}>
+			<div description="logout" >
 			  <Button onClick={this.btn_click}
 			  style={{display:"inline-block",
 			  position:"relative",
@@ -38,9 +36,10 @@ class Logout extends Component {
 			  margin:"0",
 			  flexGrow:"2",
 			  color:"#6AFFC6",
-			  fontSize:"1.1vw",
+			  fontSize:"1.5rem",
 			  fontWeight:"bold",
-			  textDecoration:"none"}}>Logout</Button>
+			  textDecoration:"none"}}
+			  className="noHoverBg">Logout</Button>
 			</div>
 		);
 	}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Logo from './Logo';
 import './AppBar.css'; 
@@ -78,17 +78,17 @@ const NavBar = () => {
     <Button id = "AppBar_menuButton" className="noHoverBg">
       <NavDropdown title="ABOUT" id="basic-nav-dropdown">
         
-          <NavDropdown.Item href="/About"><Button id = "AppBar_menuButton">About</Button></NavDropdown.Item>
-          <NavDropdown.Item href="/History"><Button id = "AppBar_menuButton">History</Button></NavDropdown.Item>
-          <NavDropdown.Item href="/Team"><Button id = "AppBar_menuButton">Team</Button></NavDropdown.Item>
+          <NavDropdown.Item href="/About"><Button id = "AppBar_menuButton" className="noHoverBg">About</Button></NavDropdown.Item>
+          <NavDropdown.Item href="/History"><Button id = "AppBar_menuButton" className="noHoverBg">History</Button></NavDropdown.Item>
+          <NavDropdown.Item href="/Team"><Button id = "AppBar_menuButton" className="noHoverBg">Team</Button></NavDropdown.Item>
           {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
         </NavDropdown>
       </Button> 
-      <Nav.Link href="/Contact"><Button id = "AppBar_menuButton">Contact<span class="sr-only">(current)</span></Button></Nav.Link>
-      <Nav.Link href="/Support"><Button id = "AppBar_menuButton">Support</Button></Nav.Link>
-      <Nav.Link href="/Login"><Button id = "AppBar_menuButton">Login</Button></Nav.Link>
+      <Nav.Link href="/Contact"><Button id = "AppBar_menuButton" className="noHoverBg">Contact<span class="sr-only">(current)</span></Button></Nav.Link>
+      <Nav.Link href="/Support"><Button id = "AppBar_menuButton" className="noHoverBg">Support</Button></Nav.Link>
+      <Nav.Link href="/Login"><Button id = "AppBar_menuButton" className="noHoverBg">Login</Button></Nav.Link>
       
     </Nav>
   </Navbar.Collapse>

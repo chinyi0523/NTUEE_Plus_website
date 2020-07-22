@@ -54,7 +54,7 @@ class Team extends Component{
             count++;
         }
         return(
-            <div id={"Team_"+team_name+"_member"}>
+            <div id={"Team_"+team_name+"_member"} className="row justify-content-center">
                 {member_components}
             </div>
         )
@@ -92,10 +92,10 @@ class Team extends Component{
         return(
             <div id="Team_container">
                 {/* <NavBar/> */}
-                <div id="Team_content">
+                <div id="Team_content" className="container-fluid">
                     <div id="Team_title_hr">Website Contributors</div>
                     <div id="Team_B06">
-                        <div id="Team_B06_leader">
+                        <div id="Team_B06_leader" className="container-fluid">
                             負責人:
                             {this.Generate_member_profile(B06_teams["leaders"],"leaders")}
                         </div>
