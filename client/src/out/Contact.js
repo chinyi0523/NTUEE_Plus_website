@@ -3,7 +3,6 @@ import './Contact.css';
 import {Link} from "react-router-dom";
 import left_image from '../images/left_image.png';
 import right_image from '../images/right_image.png';
-import { NavBar } from '../component/AppBar';
 import Footer from '../component/Footer/Footer'
 // import Footer from "../component/Footer";
 class Contact extends Component{

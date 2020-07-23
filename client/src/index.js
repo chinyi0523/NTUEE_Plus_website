@@ -40,7 +40,9 @@ ReactDOM.render(
       <PrivateRoute path="/in" component={Main_in_page}/>
         <App />
       </Switch>
-    </BrowserRouter>,
+    </BrowserRouter>
+    
+    ,
     document.getElementById('root')
   );
 
