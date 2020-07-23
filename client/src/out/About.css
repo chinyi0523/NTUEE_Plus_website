@@ -11,8 +11,8 @@
 
 #About_up{
     /* display: flex; */
-    /* justify-content: center; */
-    /* margin-left: 1.5vw; */
+    justify-content: center;
+    margin-left: 1.5vw;
 }
 #About_up_text{
     position: relative;
@@ -25,7 +25,7 @@
 #About_down{
     /* display: flex; */
     justify-content: center;
-    /* margin-left: 1.5vw; */
+    margin-left: 5vw;
 }
 #About_down_text{
     /* position: relative; */
@@ -34,7 +34,62 @@
     font-family:'Noto Sans TC',Arial,sans-serif;
     color: white;
 }
-
+@media screen and (min-width: 300px){
+    #About_down_text{
+        font-size: 12px;
+    }
+    #About_up_text{
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 350px){
+    #About_down_text{
+        font-size: 15px;
+    }
+    #About_up_text{
+        font-size: 25px;
+    }
+}
+@media screen and (min-width: 400px){
+    #About_down_text{
+        font-size: 18px;
+    }
+    #About_up_text{
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 600px){
+    #About_down_text{
+        font-size: 18px;
+    }
+    #About_up_text{
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 767px){
+    #About_down_text{
+        font-size: 35px;
+    }
+    #About_up_text{
+        font-size: 50px;
+    }
+}
+@media screen and (min-width: 1023px){
+    #About_down_text{
+        font-size: 42px;
+    }
+    #About_up_text{
+        font-size: 60px;
+    }
+}
+@media screen and (min-width: 1500px){
+    #About_down_text{
+        font-size: 35px;
+    }
+    #About_up_text{
+        font-size: 50px;
+    }
+}
 #About_join_btn{
     font-size: 2.7vmin;
     /* border-radius: 10px; */

@@ -13,9 +13,9 @@ class About extends Component{
             {/* <NavBar/> */}
             {/* <div id = "About_space"></div> */}
             <div id="About_up">
-                <h1 id="About_up_text" className="">
+                <p id="About_up_text">
                     Welcome to NTUEE+
-                </h1>
+                </p>
             </div>
             <div id="About_down">
                 <p id="About_down_text">
