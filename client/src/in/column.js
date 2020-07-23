@@ -249,7 +249,7 @@ class Column extends Component{
 		}
 		return (
 			<div id = "column_block_container">
-				{/*<a href="/in/Column/pages/2001">
+				<a href="/in/Column/pages/2001">
 					<Column_block block = {column_block_2001}/>
 				</a>
 				<a href="/in/Column/pages/1910">
@@ -296,11 +296,8 @@ class Column extends Component{
 				</a>
                 <a href="/in/Column/pages/1601">
 					<Column_block block = {column_block_1601}/>
-<<<<<<< HEAD
-				</a>*/}
-=======
+
 				</a>
->>>>>>> 580a705bf4baee07c56815dac45f44a8cf17b562
 				<form onSubmit={this.handleSubmit}>
                     <input type="file" onChange={this.handleImageChange}/>
                     <input type="text" onChange={this.handleFilenameChange}/>
