@@ -3,10 +3,9 @@
     flex-direction: column;
     min-height:100vh;
 }
-/* 
 #Contact_content_wrap{
-    flex:1;
-} */
+    margin-top: 10rem;
+}
 html {
     background-color: #003F67;
 }
@@ -20,85 +19,54 @@ html {
 	width:1320px;
 }*/
 #Contact_left_column{
-    float:left;
+    /* float:left;
     position: absolute;
     left:25%;
-    top:25%;
+    top:25%; */
     color:white;
-    font-size:20px;
+    font-size:1.5rem;
     font-weight:500;
-}
-
-#Contact_left_image{
-    
-    overflow: hidden;
 }
 
 #Contact_left_text{
     margin:0;
     text-align: center;
     font-family:'Noto Sans TC',Arial,sans-serif;
+    font-size:1.5rem;
 }
 
 #Contact_right_column{
-    float:left;
+    /* float:left;
     position: absolute;
     right:25%;
-    top:25%;
+    top:25%; */
     color:white;
-    font-size:20px;
+    font-size:1.5rem;
     font-weight:500;
 }
 
-#Contact_right_image{
-    
-    overflow: hidden;
-}
+
 
 #Contact_right_text{
     margin:0;
     text-align: center;
     font-family:'Noto Sans TC',Arial,sans-serif;
-}
-
-#Contact_footer{
-    position: absolute;
-    bottom:0%;
-    left:42.5%;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    color:white;
-}
-
-#Contact_logo{
-    display: flex;
-    max-width: 10vmin;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#Contact_footer_text{
-    display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    color: #fff;
-    text-align: center;
+    font-size:1.5rem;
 }
 #Contact_team_btn{
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     border-radius: 10px;
-    width:15%;
-    height: 7%;
+    /* width:3rem;
+    height: 1.5rem; */
     background-color:  #003f67;
     color: #fff;
     border: 2px #fff solid;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    position: absolute;
+    /* position: absolute;
     bottom: 20vh;
-    left:42vw;
+    left:42vw; */
 }
 #Contact_team_btn:hover{
     transition-property: background-color, color;
@@ -112,14 +80,8 @@ html {
     text-decoration: none;
     color: unset;
 }
-#Contact_footer_text_2{
-    display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    text-align: center;
-    color: #fff;
-    margin-bottom:10%;
-}
 
+.Contact_image{
+    width: 15rem;
+}
 

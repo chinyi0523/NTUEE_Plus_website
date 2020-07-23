@@ -296,7 +296,11 @@ class Column extends Component{
 				</a>
                 <a href="/in/Column/pages/1601">
 					<Column_block block = {column_block_1601}/>
+<<<<<<< HEAD
 				</a>*/}
+=======
+				</a>
+>>>>>>> 580a705bf4baee07c56815dac45f44a8cf17b562
 				<form onSubmit={this.handleSubmit}>
                     <input type="file" onChange={this.handleImageChange}/>
                     <input type="text" onChange={this.handleFilenameChange}/>

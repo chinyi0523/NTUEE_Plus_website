@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './History.css';
-import {NavBar} from "../component/AppBar"
+// import {NavBar} from "../component/AppBar"
 import History_member from "../component/History_member"
 import B03_1 from '../images/history/B03_1.png';
 import B03_2 from '../images/history/B03_2.png';
@@ -48,7 +48,7 @@ class History extends Component{
             count++;
         }
         return(
-            <div id={"Team_"+team_name+"_member"}>
+            <div id={"Team_"+team_name+"_member"} className="row justify-content-center">
                 {member_components}
             </div>
         )
@@ -72,8 +72,8 @@ class History extends Component{
         };
         return(
             <div id="History_container">
-                <NavBar/>
-                <div id="History_content">
+                {/* <NavBar/> */}
+                <div id="History_content" className="container-fluid">
                     <div id="History_title_hr">History</div>
                     <div id="History_B03">
                         <div id="History_B03_title_hr">B03 Founder of NTUEE+</div>
@@ -98,11 +98,17 @@ class History extends Component{
                         <div id="History_B06_leader">
                             {this.Generate_member_profile(B06_teams["leaders"],"leaders")}
                         </div>
-                        <img src= {B06_all} alt="4th all members" width="600px" height="400px" display="inline-block"></img>
-                        <div id="History_member">
-                            網頁組：陳君輔、呂承樺、王友廷、李宗倫、賴侃軒<br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;吳建翰、王維恩、陳育楷、俞建琁、何明翰<br/>
-                            留學組：
+                        <div className="container justify-content-center">
+                            <img src= {B06_all} alt="4th all members" display="inline-block" className="img-fluid col-12 col-md-3" style={{maxWidth:"500px"}}></img>
+                            {/* <div className="w-100 d-block d-lg-none"></div> */}
+                            <div id="History_member" className="container col-12 col-md-6">
+                                <ul className="list-group" style={{listStyle:"none"}}>
+                                    <li className="list-item">網頁組：</li>
+                                    <li className="list-item">陳君輔、呂承樺、王友廷、李宗倫、賴侃軒</li>
+                                    <li className="list-item">吳建翰、王維恩、陳育楷、俞建琁、何明翰</li>
+                                    <li className="list-item">留學組：</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

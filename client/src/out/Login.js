@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import './Login.css';
 import FacebookLogin from 'react-facebook-login';
-import ReactDOM from 'react-dom';
-// import Footer from "../component/Footer";
 import { Link,Redirect } from 'react-router-dom';
 import axios from "axios";
-import { NavBar } from '../component/AppBar';
 import Footer from '../component/Footer/Footer'
 class Login extends Component{
 	constructor(props) {
@@ -26,9 +23,6 @@ class Login extends Component{
 	handleLogin(isLoginorNot){
 		console.log("handleLogin");
 		let isLogin = isLoginorNot;
-		//console.log('111114hroipsfjiweffberb     '+typeof(this.props.loginFunc))
-		//console.log(this.props);
-		//this.props.loginFunc(isLogin);
 		if(isLogin){
 			localStorage.setItem('auth',true);
 			window.location = 'in';
@@ -110,11 +104,6 @@ class Login extends Component{
 			this.handleLogin(false)
 		})
 	}
-	componentWillReceiveProps(){
-		this.setState({
-			isLogin:this.props.loginstatus
-		})
-	}
     render(){
 		console.log (this.state)
 		if(this.state.isLogin){
@@ -128,30 +117,35 @@ class Login extends Component{
 		
         return (
 			<div>
-            <div id="Login_container">
-			<NavBar/> 
-			<form onSubmit={this.handleSubmit}>
-                <div id="Login_input">
-                        <div id="Login_username">
-                            <p id="Login_username_tag">Username:</p>
-                            <input id="Login_username_input" className="Login_input" placeholder="username" autoFocus
+            <div id="Login_container" className="container-fluid">
+			{/* <NavBar/>  */}
+			<div className="w-100 d-none d-sm-block" style={{height:"5rem"}}></div>
+			<form onSubmit={this.handleSubmit} >
+                <div id="Login_input" className="container justify-content-center mt-5">
+                        <div id="Login_username" className="form-group row mb-5">
+                            {/* <p id="Login_username_tag">Username:</p> */}
+							<label for="username" className="col-sm-6 col-form-label">Username</label>
+                            <input id="Login_username_input" className="Login_input form-control col-sm-6" placeholder="username" autoFocus
 								value={this.state.value} onChange={this.handleInputChange}
 							></input>
                         </div>
-                        <div id="Login_password1">
-                            <p id="Login_password_tag">Password:</p>
-                            <input id="Login_password_input" className="Login_input" placeholder="password" type="password"
+                        <div id="Login_password1" className="form-group row">
+							<label for="password" className="col-sm-6 col-form-label">Password</label>
+                            <input id="Login_password_input" className="Login_input form-control col-sm-6" placeholder="password" type="password"
 								value={this.state.value} onChange={this.handleInputChange}
 							></input>
                         </div>
-					<div id="Login_links">
-						<Link id = "Login_create" to="/Register">Create a new account</Link>
-						<Link id = "Login_forgot" to="/Forget">Forgot your password?</Link>
-					</div>
+						<div id="Login_links" className="container-sm-fluid justify-content-sm-between d-sm-flex">
+							<Link id = "Login_create" to="/Register">Create a new account</Link>
+							<div className="w-100 d-block d-sm-none"></div>
+							<Link id = "Login_forgot" to="/Forget">Forgot your password?</Link>
+						</div>
                 </div>
+				<input id="Login_submit" className=" container d-flex justify-content-center mt-4" type="submit" value="LOGIN"/>
+				<div id="Login_hr" className="w-50 text-center container d-md-block d-none mt-3">or login with...</div>
+                <div id="Login_hr" className="w-100 text-center container d-md-none d-block mt-5">or login with...</div>
 				
-                <input id="Login_submit" type="submit" value="LOGIN"/>
-				<div id="Login_hr">&nbsp;&nbsp;&nbsp;or login with...</div>
+				
             </form>
 			
 			<FacebookLogin
@@ -159,9 +153,9 @@ class Login extends Component{
 				autoLoad={false}
 				fields="name,email,picture"
 				callback={this.handleFBSubmit}
-				cssClass="btnFacebook"
+				cssClass="btnFacebook container d-flex justify-content-center mt-4"
 				icon="fa-facebook"
-				textButton = "&nbsp;&nbsp;Sign In with Facebook" 
+				textButton = "" 
 			/>
             </div>
 			<Footer/>
