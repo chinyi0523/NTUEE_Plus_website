@@ -252,6 +252,9 @@ class Column extends Component{
 				<a href="/in/Column/pages/2001">
 					<Column_block block = {column_block_2001}/>
 				</a>
+                <a href="/in/Column/pages/1912">
+					<Column_block block = {column_block_1912}/>
+				</a>
 				<a href="/in/Column/pages/1910">
 					<Column_block block = {column_block_1910}/>
 				</a>
