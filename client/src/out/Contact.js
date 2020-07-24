@@ -12,7 +12,7 @@ class Contact extends Component{
         <div id="Contact_container">
             <div id="Contact_content_wrap" className="container-fluid d-flex justify-content-center mx-auto">
             {/* <NavBar/> */}
-                <div id="Contact_left_column" className="mx-5">
+                <div id="Contact_left_column" className="mx-3 mx-md-5 ">
                     <div id="Contact_left_image"><img src={left_image} alt="leftImage" className="img-fluid Contact_image" /></div>
                     <p id="Contact_left_text">
                         李筠婕
@@ -20,7 +20,7 @@ class Contact extends Component{
                         B06901014
                     </p>
                 </div>
-                <div id="Contact_right_column" className="mx-5">
+                <div id="Contact_right_column" className="mx-3 mx-md-5 mx-lg-6">
                     <div id="Contact_right_image"><img src={right_image} alt="rightImage" className="img-fluid Contact_image" /></div>
                     <p id="Contact_right_text">
                         鄭謹譯
@@ -31,7 +31,7 @@ class Contact extends Component{
                 
             </div>
             <div className="container d-flex justify-content-center mt-5">
-                    <Link to="/Team" id="Contact_link"><button id="Contact_team_btn" className="p-2">History Team</button></Link>
+                    <Link to="/Team" id="Contact_link"><button id="Contact_team_btn" className="p-2">&nbsp;&nbsp;History Team&nbsp;&nbsp;</button></Link>
             </div>
         </div>
         <Footer/>
