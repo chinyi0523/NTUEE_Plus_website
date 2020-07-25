@@ -18,7 +18,7 @@
 .Login_input{
     color:white;
     background-color: #003F67;
-    font-size:1.5rem;
+    /*font-size:1.5rem;*/
     
     border-width:0 0 4px 0;
     -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
@@ -27,9 +27,112 @@
     border-image-slice: 1;
 
 }
+@media screen and (min-width: 300px){
+    #Login_input{
+        font-size: 1.0rem;
+    }
+    #Login_hr{
+        font-size: 10px;
+    }
+    #Login_links{
+        font-size: 0.5rem;
+    }
+}
+@media screen and (min-width: 350px){
+    #Login_input{
+        font-size: 1.0rem;
+    }
+    #Login_hr{
+        font-size: 10px;
+    }
+    #Login_links{
+        font-size: 0.5rem;
+    }
+}
+@media screen and (min-width: 400px){
+    #Login_input{
+        font-size: 1.2rem;
+    }
+    #Login_hr{
+        font-size: 12px;
+    }
+    #Login_links{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (min-width: 600px){
+    #Login_input{
+        font-size: 1.5rem;
+    }
+    #Login_hr{
+        font-size: 18px;
+    }
+    #Login_links{
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 767px){
+    #Login_input{
+        font-size: 25px;
+    }
+    #Login_hr{
+        font-size: 25px;
+    }
+    #Login_username_input{
+        font-size: 25px;
+    }
+    #Login_password_input{
+        font-size: 25px;
+    }
+    #Login_submit{
+        font-size: 30px;
+    }
+    #Login_links{
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 1023px){
+    #Login_input{
+        font-size: 30px;
+    }
+    #Login_hr{
+        font-size: 30px;
+    }
+    #Login_username_input{
+        font-size: 30px;
+    }
+    #Login_password_input{
+        font-size: 30px;
+    }
+    #Login_submit{
+        font-size: 36px;
+    }
+    #Login_links{
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 1500px){
+    #Login_input{
+        font-size: 25px;
+    }
+    #Login_hr{
+        font-size: 25px;
+    }
+    #Login_username_input{
+        font-size: 25px;
+    }
+    #Login_password_input{
+        font-size: 25px;
+    }
+    #Login_submit{
+        font-size: 30px;
+    }
+    #Login_links{
+        font-size: 18px;
+    }
+}
 
 #Login_links{
-    font-size: 1rem;
     max-width: 45rem;
 }
 
@@ -72,7 +175,7 @@
 }
 
 #Login_hr{
-    font-size: 18px;
+    /*font-size: 18px;*/
     color:gray;
     font-weight: 100;
     border-bottom: 1px solid gray;
