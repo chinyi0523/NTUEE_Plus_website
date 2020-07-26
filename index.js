@@ -48,7 +48,7 @@ app.get('*', (req, res) => {
   //res.redirect('/'); //這個按F5會亂跳，先捨棄
 });
 
-const http = require('http');
+// const http = require('http');
 // connect to https://localhost:1993
 https.createServer(options, app).listen(1993, function() {
   console.log('server connect');

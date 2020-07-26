@@ -117,15 +117,15 @@ class Login extends Component{
 		
         return (
 			<div>
-            <div id="Login_container" className="container-fluid">
+            <div id="Login_container" className="container-fluid col-10">
 			{/* <NavBar/>  */}
 			<div className="w-100 d-none d-sm-block" style={{height:"5rem"}}></div>
 			<form onSubmit={this.handleSubmit} >
                 <div id="Login_input" className="container justify-content-center mt-5">
                         <div id="Login_username" className="form-group row mb-5">
                             {/* <p id="Login_username_tag">Username:</p> */}
-							<label for="username" className="col-sm-6 col-form-label">Username</label>
-                            <input id="Login_username_input" className="Login_input form-control col-sm-6" placeholder="username" autoFocus
+							<label for="username" className="col-sm-6 col-form-label">School ID</label>
+                            <input id="Login_username_input" className="Login_input form-control col-sm-6" placeholder="e.g. b06901000" autoFocus
 								value={this.state.value} onChange={this.handleInputChange}
 							></input>
                         </div>
@@ -135,10 +135,10 @@ class Login extends Component{
 								value={this.state.value} onChange={this.handleInputChange}
 							></input>
                         </div>
-						<div id="Login_links" className="container-sm-fluid justify-content-sm-between d-sm-flex">
+						<div id="Login_links" className="container-sm-fluid justify-content-sm-between d-sm-flex mx-sm-auto">
 							<Link id = "Login_create" to="/Register">Create a new account</Link>
 							<div className="w-100 d-block d-sm-none"></div>
-							<Link id = "Login_forgot" to="/Forget">Forgot your password?</Link>
+							<Link id = "Login_forgot" to="/Forget" >Forgot your password?</Link>
 						</div>
                 </div>
 				<input id="Login_submit" className=" container d-flex justify-content-center mt-4" type="submit" value="LOGIN"/>
