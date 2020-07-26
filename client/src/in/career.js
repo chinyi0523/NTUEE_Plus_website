@@ -8,11 +8,10 @@ class Career extends Component{
     render(){
 		
         return (
-        <div id = "career_container" >
-			<div id = "career_text" style={{marginTop:"8%"}}>
-                <Link to="/in/Career/pages/Recruitment" ><img className="career_img" src= {Recruitment_image} alt="Recruitment"/></Link>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to="/in/Career/pages/Recommendation"><img className="career_img" src= {Recommendation_image} alt="Recommendation"/></Link>
+        <div className="mt-5" >
+			<div className="container justify-content-around d-flex">
+                <Link to="/in/Career/pages/Recruitment" ><img className="career_img img-fluid" src= {Recruitment_image} alt="Recruitment"/></Link>
+                <Link to="/in/Career/pages/Recommendation"><img className="career_img img-fluid" src= {Recommendation_image} alt="Recommendation"/></Link>
 			</div>
 					
 			
