@@ -34,7 +34,7 @@ class Contact extends Component{
                     <Link to="/Team" id="Contact_link"><button id="Contact_team_btn" className="p-2">History Team</button></Link>
             </div>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
         )
     }

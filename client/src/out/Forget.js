@@ -64,57 +64,62 @@ class Forget extends Component{
 			<div>
 			{/* <NavBar/> */}
             <div id="Forget_container">
-				
-                <div id="Forget_left_table">
+				<div className="w-100" style={{height:"5rem"}}></div>
+                <div id="Forget_left_table" className="container justify-content-center mt-5">
 					<form onSubmit={this.handleSubmit}>
-						<div id="Forget_input">
-							<p id="Forget_input_text">Student ID</p>
+						<div id="Forget_input" className="form-group row">
+							<label for="StudentID" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Student ID</label>
 							<input name="Forget_ID"
 								id="Forget_input_input" 
 								placeholder="Student ID"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
+								className="form-control col-7 col-lg-8 offset-1"
 							></input>
 						</div>
-						<div id="Forget_input">
-							<p id="Forget_input_text">Your Email</p>
+						<div id="Forget_input" className="form-group row">
+							<label for="Your Email" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Your Email</label>
 							<input name="Forget_email"
 								id="Forget_input_input" 
 								placeholder="Your Email"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
+								className="form-control col-7 col-lg-8 offset-1 "
 							></input>
 						</div>
-						<div id="Forget_input">
-							<p id="Forget_input_text">Question</p>
+						<div id="Forget_input" className="form-group row">
+							<label for="Question" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Question</label>
 							<input name="Forget_question"
 								id="Forget_input_input" 
 								placeholder="Your favorite movie"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
+								className="form-control col-7 col-lg-8 offset-1"
 							></input>
 						</div>
-						<div id="Forget_input">
-						   <p id="Forget_input_text">New Password</p>
+						<div id="Forget_input" className="form-group  row">
+						   <label id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">New Password</label>
 							<input name="Forget_password"
 								id="Forget_input_input" 
 								type = "password"
 								placeholder="登入後須設定新密碼"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
+								className="form-control col-7 col-lg-8 offset-1"
 							></input>
 						</div>
-						<div id="Forget_input">
-						   <p id="Forget_input_text">Confirm Password</p>
+						<div id="Forget_input" className="form-group row">
+						   <label id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Confirm Password</label>
 							<input name="Forget_confirm_password"
 								id="Forget_input_input" 
 								type = "password"
 								placeholder="再次輸入密碼"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
+								className="form-control col-7 col-lg-8 offset-1"
 							></input>
 						</div>
-						<div id="Forget_btn">
+						<div id="Forget_btn" className="justify-content-center d-flex mt-4">
 							<button id="Forget_btn_text" onclick={this.handleSubmit}>
 								RESET PASSWORD
 							</button>
@@ -122,7 +127,7 @@ class Forget extends Component{
 					</form>
                 </div>
 
-                <div id="Forget_FAQ">
+                {/* <div id="Forget_FAQ">
                     <div id="Forget_FAQ_title">FAQ</div>
                     <div id="Forget_FAQ_splitline"></div>
                     <div id="Forget_FAQ_content">
@@ -132,7 +137,7 @@ class Forget extends Component{
                             <li></li>
                         </ul>
                     </div>
-                </div>
+                </div> */}
 
             </div>
 			</div>

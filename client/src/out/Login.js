@@ -158,7 +158,7 @@ class Login extends Component{
 				textButton = "" 
 			/>
             </div>
-			<Footer/>
+			{/* <Footer/> */}
 			</div>
         )
     }

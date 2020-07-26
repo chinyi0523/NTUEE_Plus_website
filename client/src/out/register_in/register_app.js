@@ -5,9 +5,6 @@ class register_app extends Component{
     render(){
         return(
             <div>
-                <div>
-                </div>
-                    Please choose one below, strongly recommend register by Facebook!
                 <Switch>
                     <Route path="/Register/pages/Register_account" exact component={Register_account_page}/>
                     <Route path="/Register/pages/Register_facebook" exact component={Register_facebook_page}/>

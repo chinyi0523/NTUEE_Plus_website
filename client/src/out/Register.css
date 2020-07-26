@@ -4,23 +4,17 @@
     font-family:'Noto Sans TC',Arial,sans-serif;
 
     width:100%;
-    height: 100%;
+    min-height: 100vh;
 }
 #Register_text{
-    margin-top: 10vw;
-    font-size: 20px;
     text-align: center;
     color: white;
+    font-size: 1.5rem;
 }
 #Register_register_table{
-    margin-top: 7%;
-    width:65%;
-    margin-left:5%;
-    float:left;
     color: white;
 }
 #Register_btn{
-    font-size: 2.7vmin;
     border-radius: 10px;
     background-color:  #003f67;
     color: #fff;
@@ -39,13 +33,9 @@
     color: #003f67;
     font-weight: bold;
 }
-#Register_imgs{
-    display: flex;
+.Register_imgs{
+    /* display: flex;
     justify-content: space-around;
-    align-content: center;
-}
-
-#RegisterFB_img:hover{
-    background: #3b5998;
-    cursor:pointer;
+    align-content: center; */
+    max-width:20rem;
 }

@@ -7,7 +7,7 @@ class Home extends Component{
     render(){
         
         return ( 
-        <div>
+        <div style={{minHeight: '100vh'}}>
             {/* <NavBar/>  */}
         <div id = "Home_title">
             

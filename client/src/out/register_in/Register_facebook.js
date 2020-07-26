@@ -88,38 +88,39 @@ class Register_facebook extends Component{
 		let {imagePreviewUrl} = this.state;
 		let $imagePreview = null;
 		if (imagePreviewUrl) {
-		  $imagePreview = (<img src={imagePreviewUrl} id="Register_id_photo"/>);
+		  $imagePreview = (<img src={imagePreviewUrl} className="img-fluid container justify-content-center d-flex" id="Register_acc_id_photo"/>);
 		} else {
 		  $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
 		}
         return(
-			<div>
-				<NavBar/> 
             <div id="Register_acc_container">
-                <div id="Register_acc_register_table">
+                <div id="Register_acc_register_table" className="container-fluid mt-3">
                     <h1 id="Register_acc_table_title">Just A Few Steps to Join EE+ With Facebook!</h1>
 					<form onSubmit={this.handleSubmit}>
-						<div id="Register_acc_table">
-							<div id="Register_acc_input1">
-								<p id="Register_acc_realname_label">Your Name</p>
+						<div id="Register_acc_table" className="col-xl-8 mt-5 mr-0 d-xl-inline-block mx-auto">
+							<div className="form-group row">
+							<label id="Register_acc_realname_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Your Name</label>
 								<input id="Register_acc_realname" placeholder="Your Chinese Name"
 									value={this.state.value} onChange={this.handleInputChange}
+									className="form-control col-7 col-md-8 offset-sm-1 Register_account_input"
 								></input>
 							</div>
-							<div id="Register_acc_input2">
-								<p id="Register_acc_ID_label">Student ID</p>
+							<div className="form-group row">
+							<label id="Register_acc_ID_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Student ID</label>
 								<input id="Register_acc_student_id" placeholder="Student ID"
 									value={this.state.value} onChange={this.handleInputChange}
+									className="form-control col-7 col-md-8 offset-sm-1 Register_account_input"
 								></input>
 							</div>
-							<div id="Register_acc_input6">
-								<p id="Register_acc_image_label">Upload Image</p>
-								<label>
-								<input className="fileInput" id="Register_fileinput" 
+							<div className="form-group row">
+							<label id="Register_acc_image_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Upload Image</label>
+							<label className="col-form-label offset-sm-1">
+								<input 	id="Register_acc_fileinput" 
 										type="file" 
 										onChange={this.handleImageChange} 
-										name="file"/>
-								<span id="Register_acc_addImage_icon">➕ <p style={{display:"inline",fontSize:"18px"}}>Add Your ID Photo</p></span>
+										name="file"
+										className="form-control col-7 col-md-8 Register_account_input"/>
+								<span id="Register_acc_addImage_icon">➕ <p style={{display:"inline",fontSize:"1.5rem"}}>Add Your ID Photo</p></span>
 								</label>
 							</div>
 							
@@ -132,7 +133,7 @@ class Register_facebook extends Component{
 					</form>
                 </div>
 				
-                <div id="Register_acc_FAQ">
+                <div id="Register_acc_FAQ" className="col-xl-3 d-xl-inline-block ml-0 float-xl-right mt-5 mr-5">
                     <div id="Register_acc_FAQ_title">FAQ</div>
                     <div id="Register_acc_splitline"></div>
                     <div id="Register_acc_FAQ_content">
@@ -144,12 +145,11 @@ class Register_facebook extends Component{
                     </div>
 					<div id="Register_acc_FAQ_title">Image Preview</div>
 					<div id="Register_acc_splitline"></div>
-				<div className="imgPreview" id="Register_imgPreview">
+				<div id="Register_imgPreview" className="mt-3 mb-5">
 				  			{$imagePreview}
 					</div>
                 </div>
             </div>
-			</div>
         )
     }
 }

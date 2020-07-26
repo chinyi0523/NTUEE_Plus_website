@@ -38,7 +38,7 @@ class About extends Component{
             </div>
             
         </div>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
         
         )

@@ -101,85 +101,90 @@ class Register_account extends Component{
 		let {imagePreviewUrl} = this.state;
 		let $imagePreview = null;
 		if (imagePreviewUrl) {
-		  $imagePreview = (<img src={imagePreviewUrl} id="Register_acc_id_photo"/>);
+		  $imagePreview = (<img src={imagePreviewUrl} className="img-fluid container justify-content-center d-flex" id="Register_acc_id_photo"/>);
 		} else {
 		  $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
 		}
         return(
-			<div>
             <div id="Register_acc_container">
 			
-                <div id="Register_acc_register_table">
+                <div id="Register_acc_register_table" className="container-fluid mt-3">
                     <h1 id="Register_acc_table_title">Just A Few Steps to Join EE+!</h1>
 					<form onSubmit={this.handleSubmit}>
-						<div id="Register_acc_table">
-							<div id="Register_acc_input1">
-								<p id="Register_acc_realname_label">Your Name</p>
+						<div id="Register_acc_table" className="col-xl-8 mt-5 mr-0 d-xl-inline-block mx-auto">
+							<div className="form-group row">
+								<label id="Register_acc_realname_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Your Name</label>
 								<input id="Register_acc_realname" placeholder="Your Chinese Name"
 									value={this.state.value} onChange={this.handleInputChange}
+									className="form-control col-7 col-md-8 offset-sm-1 Register_account_input"
 								></input>
 							</div>
-							<div id="Register_acc_input2">
-								<p id="Register_acc_ID_label">Student ID</p>
+							<div className="form-group row">
+								<label id="Register_acc_ID_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Student ID</label>
 								<input id="Register_acc_student_id" placeholder="Student ID"
 									value={this.state.value} onChange={this.handleInputChange}
+									className="form-control offset-sm-1 col-7 col-md-8 Register_account_input"
 								></input>
 							</div>
-							<div id="Register_acc_input3">
-								<p id="Register_acc_password_label">Password</p>
+							<div className="form-group row">
+								<label id="Register_acc_password_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Password</label>
 								<input id="Register_acc_password" placeholder="Set Your Password" type="password"
 									value={this.state.value} onChange={this.handleInputChange}
+									className="form-control offset-sm-1 col-7 col-md-8 Register_account_input"
 								></input>
 							</div>
-							<div id="Register_acc_input4">
-								<p id="Register_acc_confirm_password_label">Confirm Password</p>
+							<div className="form-group row">
+								<label id="Register_acc_confirm_password_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Confirm Password</label>
 								<input id="Register_acc_confirm_password" placeholder="Confirm Your Password" type="password"
 									value={this.state.value} onChange={this.handleInputChange}
+									className="form-control offset-sm-1 col-7 col-md-8 Register_account_input"
 								></input>
 							</div>
-							<div id="Register_acc_input5">
-								<p id="Register_acc_question_label">Question</p>
+							<div className="form-group row">
+								<label id="Register_acc_question_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Question</label>
 								<input id="Register_acc_question" placeholder="ex: the name of your first pet, etc..." type="text"
-								 onChange = {this.handleInputChange}></input>
+								 onChange = {this.handleInputChange} className="form-control offset-sm-1 col-7 col-md-8 Register_account_input"
+								 ></input>
 							</div>
-							<div id="Register_acc_input6">
-								<p id="Register_acc_image_label">Upload Image</p>
-								<label>
-								<input className="fileInput" id="Register_acc_fileinput" 
+							<div className="form-group row">
+								<label id="Register_acc_image_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Upload Image</label>
+								<label className="col-form-label offset-sm-1">
+								<input 	id="Register_acc_fileinput" 
 										type="file" 
 										onChange={this.handleImageChange} 
-										name="file"/>
-								<span id="Register_acc_addImage_icon">➕ <p style={{display:"inline",fontSize:"18px"}}>Add Your ID Photo</p></span>
+										name="file"
+										className="form-control col-7 col-md-8 Register_account_input"/>
+								<span id="Register_acc_addImage_icon">➕ <p style={{display:"inline",fontSize:"1.5rem"}}>Add Your ID Photo</p></span>
 								</label>
 							</div>
 							
 						</div>
 						
-						<button id="Register_acc_register_button" onclick={this.handleSubmit}>
+						{/* <button id="Register_acc_register_button" onclick={this.handleSubmit}>
 							<p id="Register_acc_register_text">Register</p>
-						</button>
-						
+						</button> */}
+						<div id="Register_acc_FAQ" className="col-xl-3 d-xl-inline-block ml-0 float-xl-right mt-5 mr-5">
+							<div id="Register_acc_FAQ_title">FAQ</div>
+							<div id="Register_acc_splitline"></div>
+							<div id="Register_acc_FAQ_content">
+								<ul id="Register_acc_FAQ_list">
+									<li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
+									<li>The size of photo is at most 1MB.</li>
+									<li>...</li>
+								</ul>
+							</div>
+							<div id="Register_acc_FAQ_title">Image Preview</div>
+							<div id="Register_acc_splitline"></div>
+							<div id="Register_imgPreview" className="mt-3 mb-5">
+									{$imagePreview}
+							</div>
+						</div>
 					</form>
+				
                 </div>
 				
-                <div id="Register_acc_FAQ">
-                    <div id="Register_acc_FAQ_title">FAQ</div>
-                    <div id="Register_acc_splitline"></div>
-                    <div id="Register_acc_FAQ_content">
-                        <ul id="Register_acc_FAQ_list">
-                            <li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
-                            <li>The size of photo is at most 1MB.</li>
-                            <li>...</li>
-                        </ul>
-                    </div>
-					<div id="Register_acc_FAQ_title">Image Preview</div>
-					<div id="Register_acc_splitline"></div>
-				<div className="imgPreview" id="Register_imgPreview">
-				  			{$imagePreview}
-					</div>
-                </div>
+                
             </div>
-			</div>
         )
     }
 }

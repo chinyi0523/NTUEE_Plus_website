@@ -71,7 +71,7 @@ const NavBar = () => {
     // </nav>
     //=========================Bootstrap React =============================
     <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="/Home"><Logo /></Navbar.Brand>
+  <Navbar.Brand href="/"><Logo /></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav>

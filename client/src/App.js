@@ -10,6 +10,7 @@ import Login from './out/Login';
 // import NavBar from './component/AppBar'
 import './App.css'
 import {NavBar} from './component/AppBar';
+import Footer from './component/Footer/Footer';
 
 // import { get } from 'mongoose';
 // import equal from 'fast-deep-equal';
@@ -124,6 +125,7 @@ const App = () =>{
         {/* <PrivateRoute path="/in" component={Main_in_page} loginstatus={this.state.isLogin}/> */}
         <Route path="/Team" component={Team_page}/>
         <Route path="/History" component={History_page}/>
+        <Footer/>
       </div>
     );
   }

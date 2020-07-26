@@ -20,7 +20,7 @@ class Support extends Component{
                 </p>
             </div>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
         )
     }
