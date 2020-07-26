@@ -1,36 +1,57 @@
 @media screen and (min-width: 300px){
     #Register_imgs{
-        max-width:6rem;
+        max-width:7rem;
+    }
+    #Register_text{
+        font-size: 0.8rem;
     }
 }
 @media screen and (min-width: 350px){
     #Register_imgs{
-        max-width:6rem;
+        max-width:8.3rem;
+    }
+    #Register_text{
+        font-size: 1.0rem;
     }
 }
 @media screen and (min-width: 400px){
     #Register_imgs{
         max-width:10rem;
     }
+    #Register_text{
+        font-size: 1.2rem;
+    }
 }
 @media screen and (min-width: 600px){
     #Register_imgs{
         max-width:10rem;
     }
+    #Register_text{
+        font-size: 1.2rem;
+    }
 }
 @media screen and (min-width: 767px){
     #Register_imgs{
-        max-width:20rem;
+        max-width:15rem;
+    }
+    #Register_text{
+        font-size: 2.0rem;
     }
 }
 @media screen and (min-width: 1023px){
     #Register_imgs{
         max-width:20rem;
     }
+    #Register_text{
+        font-size: 2.4rem;
+    }
 }
 @media screen and (min-width: 1500px){
     #Register_imgs{
         max-width:20rem;
+    }
+    #Register_text{
+        font-size: 2.4rem;
     }
 }
 #Register_container{
@@ -44,7 +65,6 @@
 #Register_text{
     text-align: center;
     color: white;
-    font-size: 1.5rem;
 }
 #Register_register_table{
     color: white;

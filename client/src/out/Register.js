@@ -64,7 +64,7 @@ class Register extends Component{
 		}
 		return(
             	<div id="Register_container" className="mb-5 mb-md-0">
-					<p id ="Register_text" className="my-5 mx-3">
+					<p id ="Register_text" className="my-5 mx-5">
 						Please choose one method to register, strongly recommend via Facebook
 					</p>
 					<div class="row container mx-auto">
