@@ -64,32 +64,34 @@ class Register extends Component{
 		}
 		return(
             	<div id="Register_container" className="mb-5 mb-md-0">
-					<p id ="Register_text" className="my-5">
+					<p id ="Register_text" className="my-5 mx-3">
 						Please choose one method to register, strongly recommend via Facebook
 					</p>
-						<div id="Register_imgs" className="container justify-content-md-around d-md-flex justify-content-center d-block mt-5">
-							{/* <Link to="/Register/pages/Register_facebook" ><img src= {Facebook_image} alt="Register by Facebook" height="480" width="320"/></Link>*/}
-							
-							<div className="d-flex justify-content-center">
-								<FacebookLogin
-									appId="176796437077702"
-									autoLoad={false}
-									fields="name,email,picture"
-									callback={this.handleFBSubmit}
-									// cssClass="RegisterFB_btn"
-									textButton = ""
-									render={renderProps => (
-										<img id="RegisterFB_img" onClick={renderProps.onClick} src= {Facebook_image} alt="Register by Facebook" className="img-fluid Register_imgs"/>
-									)}
-								/>
-							</div>		
-							<div className="w-100 d-block d-md-none mt-5"></div>
-							<div className="d-flex justify-content-center">
-								<Link to="/Register/pages/Register_account" >
-									<img src= {Account_image} alt="Register by Account" className="img-fluid Register_imgs"/>
-								</Link>
-							</div>
+					<div class="row">
+						
+						<div class="col">
+							<FacebookLogin
+								appId="176796437077702"
+								autoLoad={false}
+								fields="name,email,picture"
+								callback={this.handleFBSubmit}
+										// cssClass="RegisterFB_btn"
+								textButton = ""
+								render={renderProps => (
+									<img id="Register_imgs" onClick={renderProps.onClick} src= {Facebook_image} alt="Register by Facebook" />
+								)}
+							/>
 						</div>
+						<div class="col">
+							<Link to="/Register/pages/Register_account" >
+								<img id="Register_imgs" src= {Account_image} alt="Register by Account" />
+							</Link>
+						</div>
+						<div class="w-100"></div>
+					</div>
+					
+					
+						
 				</div>
         )
     }
