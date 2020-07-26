@@ -67,9 +67,9 @@ class Register extends Component{
 					<p id ="Register_text" className="my-5 mx-3">
 						Please choose one method to register, strongly recommend via Facebook
 					</p>
-					<div class="row">
+					<div class="row container mx-auto">
 						
-						<div class="col">
+						<div class="col d-flex justify-content-center">
 							<FacebookLogin
 								appId="176796437077702"
 								autoLoad={false}
@@ -82,7 +82,7 @@ class Register extends Component{
 								)}
 							/>
 						</div>
-						<div class="col">
+						<div class="col d-flex justify-content-center">
 							<Link to="/Register/pages/Register_account" >
 								<img id="Register_imgs" src= {Account_image} alt="Register by Account" />
 							</Link>
