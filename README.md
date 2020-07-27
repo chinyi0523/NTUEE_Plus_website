@@ -1,8 +1,17 @@
 # NTUEE_Plus_website
 ## Run
+首次執行
 ```bash
 $ npm install
 $ npm run postbuild
+$ npm start
+```
+前端改過後重跑(重build跑比較久)
+```bash
+$ npm run local_mac
+```
+只有改後端
+```bash
 $ npm start
 ```
 

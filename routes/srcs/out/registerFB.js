@@ -1,6 +1,7 @@
 //srcs/register.js
 const user_l_Schema = require('../../Schemas/user_login');
 //const crypto = require("crypto");
+const user_v_Schema = require('../../Schemas/user_visual');
 
 /*新增一筆使用者資料*/
 function insert(name, account, facebookID, file) {
@@ -25,7 +26,25 @@ function insert(name, account, facebookID, file) {
         }
     })
 }
-
+function insertVisual(name,account){
+    return new Promise((resolve,reject)=>{
+      const user =  new user_v_Schema({
+                  username:{data : name},
+                  account:{data: account}
+              });
+      
+      user.save(function(err,res){
+          if(err){
+              console.log(err);
+              resolve(false);
+          }
+          else{
+              console.log('成功儲存：',user);
+              resolve( res);
+          }
+      })
+    })
+}
 module.exports = function (req, res) {
     const UserName = req.body.username;
     const Useraccount = req.body.account.toLowerCase();
@@ -44,6 +63,7 @@ module.exports = function (req, res) {
             if (obj.length == 0) {
                 console.log("新增帳號");
                 insert(UserName, Useraccount, UserFbId, req.file);
+                insertVisual(UserName,Useraccount);
                 res.send({ status: 'success', message: true, data: UserName })
             } else {
                 console.log("已有此帳號");

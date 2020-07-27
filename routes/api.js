@@ -23,6 +23,8 @@ router.post("/register",
 	require("./srcs/out/register"));
 router.post("/registerFB",
 	ImgGet('file'),
+	ValidTest("registerFB"),
+	ValidSend,
 	require("./srcs/out/registerFB"));
 router.post("/forget",
 	ValidTest('forget'),

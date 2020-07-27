@@ -41,7 +41,7 @@ module.exports = function (req, res, next) {
                 output
               });
             }else if(obj.length === 0){//存在session但不在資料庫裡
-              console.log("session:",session_account);
+              console.log("session1:",session_account);
               output = await insert(req.session.loginName||'無名氏',session_account);
               console.log("output",output)
               if(!output){
