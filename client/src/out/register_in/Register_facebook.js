@@ -97,7 +97,7 @@ class Register_facebook extends Component{
                 <div id="Register_acc_register_table" className="container-fluid mt-3">
                     <h1 id="Register_acc_table_title">Just A Few Steps to Join EE+ With Facebook!</h1>
 					<form onSubmit={this.handleSubmit}>
-						<div id="Register_acc_table" className="col-xl-8 mt-5 mr-0 d-xl-inline-block mx-auto">
+						<div id="Register_acc_table" className="col-11 col-xl-8 mt-5 mr-0 d-xl-inline-block mx-auto">
 							<div className="form-group row">
 							<label id="Register_acc_realname_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Your Name</label>
 								<input id="Register_acc_realname" placeholder="Your Chinese Name"
@@ -120,35 +120,39 @@ class Register_facebook extends Component{
 										onChange={this.handleImageChange} 
 										name="file"
 										className="form-control col-7 col-md-8 Register_account_input"/>
-								<span id="Register_acc_addImage_icon">➕ <p style={{display:"inline",fontSize:"1.5rem"}}>Add Your ID Photo</p></span>
+								<span id="Register_acc_addImage_icon" className="Register_account_input">➕ <p style={{display:"inline"}}>Add Your ID Photo</p></span>
 								</label>
 							</div>
 							
+							<div className="d-flex justify-content-center mx-auto">
+								<button id="Register_acc_register_button" onclick={this.handleSubmit} className="btn">
+									Register
+								</button>
+							</div>
 						</div>
 						
-						<button id="Register_acc_register_button" onclick={this.handleSubmit}>
-							<p id="Register_acc_register_text">Register</p>
-						</button>
 						
+						
+						<div id="Register_acc_FAQ" className="col-xl-3 d-xl-inline-block ml-0 float-xl-right mt-5 mr-5">
+							<div id="Register_acc_FAQ_title">FAQ</div>
+							<div id="Register_acc_splitline"></div>
+							<div id="Register_acc_FAQ_content">
+								<ul id="Register_acc_FAQ_list">
+									<li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
+									<li>The size of photo is at most 1MB.</li>
+									<li>...</li>
+								</ul>
+							</div>
+							<div id="Register_acc_FAQ_title">Image Preview</div>
+							<div id="Register_acc_splitline"></div>
+						<div id="Register_imgPreview" className="mt-3 mb-5">
+									{$imagePreview}
+							</div>
+						</div>
 					</form>
                 </div>
 				
-                <div id="Register_acc_FAQ" className="col-xl-3 d-xl-inline-block ml-0 float-xl-right mt-5 mr-5">
-                    <div id="Register_acc_FAQ_title">FAQ</div>
-                    <div id="Register_acc_splitline"></div>
-                    <div id="Register_acc_FAQ_content">
-                        <ul id="Register_acc_FAQ_list">
-                            <li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
-                            <li>The size of photo is at most 1MB.</li>
-                            <li>...</li>
-                        </ul>
-                    </div>
-					<div id="Register_acc_FAQ_title">Image Preview</div>
-					<div id="Register_acc_splitline"></div>
-				<div id="Register_imgPreview" className="mt-3 mb-5">
-				  			{$imagePreview}
-					</div>
-                </div>
+                
             </div>
         )
     }
