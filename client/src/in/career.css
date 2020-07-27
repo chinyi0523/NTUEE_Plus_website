@@ -23,6 +23,39 @@
 		transform: rotate(0deg);
 	}
 }
-@media (max-width:500px){
-	
+@media screen and (min-height: 432px){
+	.career_link_imgs{
+		height: 80%;
+	}
+}
+
+@media screen and (min-height: 576px){
+	.career_link_imgs{
+		height: 80%;
+	}
+}
+
+@media screen and (min-height: 800px){
+	.career_link_imgs{
+		height: 80%;
+	}
+}
+
+@media screen and (min-width: 767px) and (min-height: 432px){
+    .career_link_imgs{
+		margin-top: calc(50vh - 18rem);
+		height: initial;
+	}
+}
+@media screen and (min-width: 1023px) and (min-height: 576px){
+    .career_link_imgs{
+		margin-top: calc(50vh - 22rem );
+		height: initial;
+	}
+}
+@media screen and (min-width: 1500px) and (min-height: 800px){
+    .career_link_imgs{
+		margin-top: calc(50vh - 22rem);
+		height: initial;
+	}
 }

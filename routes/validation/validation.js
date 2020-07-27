@@ -2,6 +2,7 @@
 
 const mat = {
 	"register":["username","account","password","ConfirmPassword"],
+	"registerFB":["username","account"],
 	"login":["account","password"],
 	"forget":["account","question","Email","password","ConfirmPassword"],
 	"chLogin":["question"]
