@@ -8,11 +8,15 @@ class Career extends Component{
     render(){
 		
         return (
-        <div className="mt-5" >
-			<div className="container justify-content-around d-flex">
-                <Link to="/in/Career/pages/Recruitment" ><img className="career_img img-fluid" src= {Recruitment_image} alt="Recruitment"/></Link>
-                <Link to="/in/Career/pages/Recommendation"><img className="career_img img-fluid" src= {Recommendation_image} alt="Recommendation"/></Link>
-			</div>
+        <div className="align-items-center d-flex career_link_imgs">
+			<div className="row container mx-auto ">
+                <div className="col d-flex justify-content-center">
+                    <Link to="/in/Career/pages/Recruitment" ><img className="career_img img-fluid" src= {Recruitment_image} alt="Recruitment"/></Link>
+                </div>
+                <div className="col d-flex justify-content-center">
+                    <Link to="/in/Career/pages/Recommendation"><img className="career_img img-fluid" src= {Recommendation_image} alt="Recommendation"/></Link>
+                </div>
+            </div>
 					
 			
 		</div>
