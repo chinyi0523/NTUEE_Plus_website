@@ -149,7 +149,7 @@ class Login extends Component{
             </form>
 			
 			<FacebookLogin
-				appId="176796437077702"
+				appId="969130733557478"
 				autoLoad={false}
 				fields="name,email,picture"
 				callback={this.handleFBSubmit}
