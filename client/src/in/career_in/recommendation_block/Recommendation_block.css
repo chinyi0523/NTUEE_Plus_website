@@ -78,7 +78,7 @@
     }
 
     .Recommendation_block_image{
-        width:12.5rem;
+        width:10rem;
     }
     .Recommendation_block_requirement{
         text-align: justify;
@@ -110,7 +110,7 @@
 
     #Recommendation_block_text_sm{
         display: block !important;
-        height:20rem;
+        height:15rem;
     }
     .Recommendation_block_requirement{
         text-align: justify;
@@ -142,7 +142,7 @@
 
     #Recommendation_block_text_sm{
         display: block !important;
-        height:20rem;
+        height:15rem;
         padding: 0;
     }
     .Recommendation_block_requirement{
