@@ -133,7 +133,7 @@ class Register_facebook extends Component{
 						
 						
 						
-						<div id="Register_acc_FAQ" className="col-xl-3 d-xl-inline-block ml-0 float-xl-right mt-5 mr-5">
+						<div id="Register_acc_FAQ" className="col-xl-3 d-xl-inline-block d-none ml-0 float-xl-right mt-5 mr-5">
 							<div id="Register_acc_FAQ_title">FAQ</div>
 							<div id="Register_acc_splitline"></div>
 							<div id="Register_acc_FAQ_content">
@@ -145,9 +145,28 @@ class Register_facebook extends Component{
 							</div>
 							<div id="Register_acc_FAQ_title">Image Preview</div>
 							<div id="Register_acc_splitline"></div>
-						<div id="Register_imgPreview" className="mt-3 mb-5">
+							<div id="Register_imgPreview" className="mt-3 mb-5">
 									{$imagePreview}
 							</div>
+						</div>
+
+						<div id="Register_acc_FAQ" className="d-block d-xl-none ml-0 float-xl-right mt-5">
+							<div id="Register_acc_FAQ_title">Image Preview</div>
+							<div id="Register_acc_splitline"></div>
+							<div id="Register_imgPreview">
+									{$imagePreview}
+							</div>
+							<div id="Register_acc_FAQ_title">FAQ</div>
+							<div id="Register_acc_splitline"></div>
+							<div id="Register_acc_FAQ_content" className="mt-3 mb-5">
+								<ul id="Register_acc_FAQ_list">
+									<li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
+									<li>The size of photo is at most 1MB.</li>
+									<li>...</li>
+								</ul>
+							</div>
+							
+							
 						</div>
 					</form>
                 </div>
