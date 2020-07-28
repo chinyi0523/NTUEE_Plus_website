@@ -33,32 +33,34 @@ const renderThumb = ({ style, ...props }) => {
 	return <div style={{ ...style, ...thumbStyle }} {...props} />;}
 const Recommendation = (props) =>{
 	return(
-		<div className ="Recommendation">
+		<div className ="Recommendation container-fluid">
 			<Scrollbar renderThumbVertical={renderThumb}>
-			<div className = "Recommendation_container">
-				<div className = "Recommendation_wrapper">
-					<Link className='Recommendation_block'>
-						<Recommendation_block data = {template1} />
-					</Link>
-					<Link className='Recommendation_block'>
-						<Recommendation_block data = {template1} />
-					</Link>
-					<Link className='Recommendation_block'>
-						<Recommendation_block data = {template1}/>
-					</Link>
+			<div className="d-xl-flex justify-content-xl-around">
+				<div className = "Recommendation_container col">
+					<div className = "Recommendation_wrapper">
+						<Link className='Recommendation_block'>
+							<Recommendation_block data = {template1} />
+						</Link>
+						<Link className='Recommendation_block'>
+							<Recommendation_block data = {template1} />
+						</Link>
+						<Link className='Recommendation_block'>
+							<Recommendation_block data = {template1}/>
+						</Link>
+					</div>
 				</div>
-			</div>
-			<div className = "Recommendation_container">
-				<div className = "Recommendation_wrapper">
-					<Link className='Recommendation_block'>
-						<Recommendation_block data = {template1} />
-					</Link>
-					<Link className='Recommendation_block'>
-						<Recommendation_block data = {template1} />
-					</Link>
-					<Link className='Recommendation_block'>
-						<Recommendation_block data = {template1}/>
-					</Link>
+				<div className = "Recommendation_container col">
+					<div className = "Recommendation_wrapper">
+						<Link className='Recommendation_block'>
+							<Recommendation_block data = {template1} />
+						</Link>
+						<Link className='Recommendation_block'>
+							<Recommendation_block data = {template1} />
+						</Link>
+						<Link className='Recommendation_block'>
+							<Recommendation_block data = {template1}/>
+						</Link>
+					</div>
 				</div>
 			</div>
 			</Scrollbar>
