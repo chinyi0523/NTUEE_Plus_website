@@ -113,31 +113,33 @@ const renderThumb = ({ style, ...props }) => {
 const Recruitment = (props) =>{
 	return(
 		
-		<div className ="Recruitment">
+		<div className ="Recruitment container-fluid ">
 			<Scrollbar renderThumbVertical={renderThumb}>
-		<div className = "Recruitment_container">
-			<div className = "Recruitment_wrapper">
-				<Link className='Recruitment_block'>
-					<Recruitment_block data = {template1} />
-				</Link>
-				<Link className='Recruitment_block'>
-					<Recruitment_block data = {template3} />
-				</Link>
-				<Link className='Recruitment_block'>
-					<Recruitment_block data = {template5}/>
-				</Link>
+			<div className="d-xl-flex justify-content-xl-around">
+			<div className = "Recruitment_container col">
+				<div className = "Recruitment_wrapper">
+					<Link className='Recruitment_block'>
+						<Recruitment_block data = {template1} />
+					</Link>
+					<Link className='Recruitment_block'>
+						<Recruitment_block data = {template3} />
+					</Link>
+					<Link className='Recruitment_block'>
+						<Recruitment_block data = {template5}/>
+					</Link>
+				</div>
 			</div>
-		</div>
-		<div className = "Recruitment_container">
-			<div className = "Recruitment_wrapper">
-				<Link className='Recruitment_block'>
-					<Recruitment_block data = {template2}/>
-				</Link>
-				<Link className='Recruitment_block'>
-					<Recruitment_block data = {template4}/>
-				</Link>
+			<div className = "Recruitment_container col">
+				<div className = "Recruitment_wrapper">
+					<Link className='Recruitment_block'>
+						<Recruitment_block data = {template2}/>
+					</Link>
+					<Link className='Recruitment_block'>
+						<Recruitment_block data = {template4}/>
+					</Link>
+				</div>
 			</div>
-		</div>
+			</div>
 		</Scrollbar>
 		</div>
 		

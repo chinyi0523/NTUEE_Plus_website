@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 //數據地址
-const local = false;
+const local = true;
 let DB_URL;
 if(local){
-    DB_URL = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/eeplus01?retryWrites=true&w=majority'
+    DB_URL = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/heroku_kbtrwz4h?retryWrites=true&w=majority'
     //'mongodb://localhost:27017/mongoose';
 }else{
     DB_URL = "mongodb://heroku_kbtrwz4h:f13g3thhm7uo2ip6o2qcnaufk9@ds155718.mlab.com:55718/heroku_kbtrwz4h";
