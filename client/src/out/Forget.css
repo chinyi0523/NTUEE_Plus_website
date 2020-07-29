@@ -70,42 +70,42 @@ html {
 @media screen and (min-width: 300px){
     #Forget_input_text{
         font-size: 0.98rem;
-        color: red;
+        color: white;
     }    
 }
 @media screen and (min-width: 350px){
     #Forget_input_text{
-        font-size: 1.0rem;
-        color: orange;
+        font-size: 1.1rem;
+        color: white;
     }
 }
 @media screen and (min-width: 400px){
     #Forget_input_text{
         font-size: 1.2rem;
-        color: yellow;
+        color: white;
     }
 }
 @media screen and (min-width: 600px){
     #Forget_input_text{
         font-size: 1.5rem;
-        color: green;
+        color: white;
     }
 }
 @media screen and (min-width: 767px){
     #Forget_input_text{
         font-size: 1.5rem;
-        color: blue;
+        color: white;
     }
 }
 @media screen and (min-width: 1023px){
     #Forget_input_text{
-        font-size: 1.65rem;
-        color: indigo;
+        font-size: 1.6rem;
+        color: white;
     }
 }
 @media screen and (min-width: 1500px){
     #Forget_input_text{
         font-size: 1.7rem;
-        color: purple;
+        color: white;
     }
 }

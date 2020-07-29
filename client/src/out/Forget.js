@@ -68,7 +68,7 @@ class Forget extends Component{
                 <div id="Forget_left_table" className="container justify-content-center mt-5">
 					<form onSubmit={this.handleSubmit}>
 						<div id="Forget_input" className="form-group row">
-							<label for="StudentID" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Student ID</label>
+							<label for="StudentID" id="Forget_input_text" className="col-form-label col-4 col-lg-3 text-center text-md-left">Student ID</label>
 							<input name="Forget_ID"
 								id="Forget_input_input" 
 								placeholder="Student ID"
