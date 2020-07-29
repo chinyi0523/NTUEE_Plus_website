@@ -65,7 +65,7 @@ class Forget extends Component{
 			{/* <NavBar/> */}
             <div id="Forget_container">
 				<div className="w-100" style={{height:"5rem"}}></div>
-                <div id="Forget_left_table" className="container justify-content-center mt-5">
+                <div id="Forget_left_table" className="container justify-content-center mt-5 mx-3 mx-md-5">
 					<form onSubmit={this.handleSubmit}>
 						<div id="Forget_input" className="form-group row">
 							<label for="StudentID" id="Forget_input_text" className="col-form-label col-4 col-lg-3 text-center text-md-left">Student ID</label>
@@ -94,7 +94,7 @@ class Forget extends Component{
 								placeholder="Your favorite movie"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
-								className="form-control col-7 col-lg-8 offset-1"
+								className="form-control col-5 col-lg-8 offset-1"
 							></input>
 						</div>
 						<div id="Forget_input" className="form-group  row">

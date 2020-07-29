@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {saveImg} from './columnImgFunc/saveImg';
 import './column.css';
 import Column_block from './column_block/column_block'
-import twe_Jan_image from '../images/column/2001_photo.jpg';
+/*import twe_Jan_image from '../images/column/2001_photo.jpg';
 import nin_Dec_image from '../images/column/1912_photo.jpg';
 import nin_Oct_image from '../images/column/1910_photo.jpg';
 import nin_Sep_image from '../images/column/1909_photo.jpg';
@@ -21,7 +21,7 @@ import six_May_image from '../images/column/default_photo.jpg';
 import six_Apr_image from '../images/column/default_photo.jpg';
 import six_Mar_image from '../images/column/default_photo.jpg';
 import six_Feb_image from '../images/column/default_photo.jpg';
-import six_Jan_image from '../images/column/default_photo.jpg';
+import six_Jan_image from '../images/column/default_photo.jpg';*/
 
 
 class Column extends Component{

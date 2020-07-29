@@ -71,7 +71,11 @@ html {
     #Forget_input_text{
         font-size: 0.98rem;
         color: white;
-    }    
+    }
+    /* #Forget_input_input{
+        font-size: 0.98rem;
+        color: white;
+    }     */
 }
 @media screen and (min-width: 350px){
     #Forget_input_text{
