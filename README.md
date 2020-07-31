@@ -14,6 +14,8 @@ $ npm run local_mac
 ```bash
 $ npm start
 ```
+### 0731 進度 by 建琁
+* 壓縮contributors和history內的照片。
 
 ### 0716 進度 by 君輔
 * https://eeplus.herokuapp.com/ 的資料庫網址更新，重新註冊後應該可以登入了
