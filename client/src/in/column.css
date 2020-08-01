@@ -1,32 +1,16 @@
+@import url(../component/style/_global.css);
+
+
 #column_block_container {
 	position : relative;
-	font-family:'Noto Sans TC',Arial,sans-serif;
-	margin-top: 15vh;
+	/*font-family:'Noto Sans TC',Arial,sans-serif;*/
+	margin-top: 10vh;
 	/* overflow-y: scroll; */
-	height: 85vh;
+	/*height: 85vh;*/
 	opacity: 0.95;
 }
-/* #column_block_section {
-	margin-top : 1vh;
-	margin-bottom : 2vh;
-	margin-left : 3vw; 
-	margin-right : 3vw;
-	background-image : linear-gradient(150deg,#93D5FF,white);
-	height:420px;
-	/* width:1320px; 
-	border-radius: 10px;
-	box-shadow: #fff 3px 2px;
-} */
-#column_block_img{
-	float : left;
-}
-.column_block_image{
-	display: inline-block;
-	height:420px;
-	width: auto;
-	border-radius: 10px;
-}
+
 a:link,a:visited,a:hover,a:active {
   text-decoration: none; 
-  color: #000;
+  color: var(--title-color);
 }
