@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './column_block.css';
+import {getImg} from '../columnImgFunc/getImg';
 
 const Column_block_title = (props) =>{
     const _id = props.id;
@@ -53,15 +54,41 @@ const Column_block_anno = (props) =>{
         </p>
     );
 }
+class Column_block_img extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            img : null,
+            id : this.props.id,
+            filename: this.props.filename
+        }
+        this.getImg = getImg.bind(this);
+    }
+    componentWillMount(){
+        console.log(this.state.filename)
+        this.getImg(this.state.filename)
+    }
+    render(){
+        
+        return(
+            <div className="column_block_img">
+                <img src={this.state.img} alt = {this.state.id}/>
+            </div>
+        );
+    }
+}
+/*
 const Column_block_img = (props) =>{
     const _id = props.id;
-    const _img = props.img;
+    const _filename = props.filename;
+    const _img = getImg(_filename);
     return (
         <div className="column_block_img">
             <img src={_img} alt = {_id}/>
         </div>
     );
-}
+}*/
+
 
 const Column_block = (props) =>{
     const _link = props.link;
