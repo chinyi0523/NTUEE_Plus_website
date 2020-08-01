@@ -14,6 +14,9 @@ $ npm run local_mac
 ```bash
 $ npm start
 ```
+### 0801 進度 by 建琁
+* 調整Forget的字體及行距大小。
+
 ### 0731 進度 by 建琁
 * 壓縮contributors和history內的照片。
 
