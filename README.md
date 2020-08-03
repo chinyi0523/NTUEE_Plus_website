@@ -14,6 +14,9 @@ $ npm run local_mac
 ```bash
 $ npm start
 ```
+### 0803 進度 by 友廷
+* Profile SlideBar 已套 Bootstrap
+* 增加Edit按鈕
 
 ### 0801 進度 by 靖傑
 * 簡化及修正 in/Column 頁面以及背後程式結構。
