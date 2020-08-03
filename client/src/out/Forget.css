@@ -14,7 +14,7 @@ html {
 #Forget_input_text{
     margin:0;
     /* text-align: center; */
-    /* font-size: 1.5rem; */
+    font-size: 1.5rem;
 }
 #Forget_input_input{
     color: white;
@@ -67,49 +67,3 @@ html {
 #Forget_FAQ_list{
     list-style-type: none;
 } */
-@media screen and (min-width: 300px){
-    #Forget_input_text{
-        font-size: 0.98rem;
-        color: white;
-    }
-    /* #Forget_input_input{
-        font-size: 0.98rem;
-        color: white;
-    }     */
-}
-@media screen and (min-width: 350px){
-    #Forget_input_text{
-        font-size: 1.1rem;
-        color: white;
-    }
-}
-@media screen and (min-width: 400px){
-    #Forget_input_text{
-        font-size: 1.2rem;
-        color: white;
-    }
-}
-@media screen and (min-width: 600px){
-    #Forget_input_text{
-        font-size: 1.5rem;
-        color: white;
-    }
-}
-@media screen and (min-width: 767px){
-    #Forget_input_text{
-        font-size: 1.5rem;
-        color: white;
-    }
-}
-@media screen and (min-width: 1023px){
-    #Forget_input_text{
-        font-size: 1.6rem;
-        color: white;
-    }
-}
-@media screen and (min-width: 1500px){
-    #Forget_input_text{
-        font-size: 1.7rem;
-        color: white;
-    }
-}
