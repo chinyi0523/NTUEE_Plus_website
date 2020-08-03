@@ -14,6 +14,21 @@ $ npm run local_mac
 ```bash
 $ npm start
 ```
+## 前端coding style規則
+> https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
+### 0803 進度 by 友廷
+* Profile SlideBar 已套 Bootstrap
+* 增加Edit按鈕
+
+### 0801 進度 by 靖傑
+* 簡化及修正 in/Column 頁面以及背後程式結構。
+* 新增 source/Component/style/_global.css 管理主色調。
+
+### 0801 進度 by 建琁
+* 調整Forget的字體及行距大小。
+
+### 0731 進度 by 建琁
+* 壓縮contributors和history內的照片。
 
 ### 0716 進度 by 君輔
 * https://eeplus.herokuapp.com/ 的資料庫網址更新，重新註冊後應該可以登入了

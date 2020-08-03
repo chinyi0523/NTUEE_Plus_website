@@ -1,134 +1,188 @@
+@media screen and (min-width: 300px){
+    #Profile_addImage_icon{
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    #Profile_userimage{
+        max-height:15rem ;
+    }
+
+    #Profile_name{
+        height: 6rem;
+    }
+
+    .Profile_info_input{
+        font-size: 1rem;
+        margin-top: 0.3rem;
+    }
+
+    .Profile_info_label{
+        font-size: 1rem;
+        padding: 0.5rem 0 0 0;
+    }
+
+    #Profile_shortintro{
+        font-size: 1rem;
+        width:100%;
+        height: 5rem;
+    }
+
+    .Profile_expand_icon{
+        height:1.5rem;
+        width:1.5rem;
+    }
+
+    .Profile_remove_icon{
+        height:1.5rem;
+        width:1.5rem;
+    }
+
+    .Profile_info_table_input{
+        font-size: 0.9rem;
+    }
+
+    .Profile_hr{
+        font-size: 1rem;
+    }
+
+    .Profile_edit_btn{
+        background-color: inherit;
+        color: white;
+        /* margin-bottom: -1rem; */
+    }
+
+    .Profile_edit_icon{
+        width:1.5rem;
+        margin-top: -0.5rem;
+    }
+
+}
+@media screen and (min-width: 350px){
+    
+}
+@media screen and (min-width: 400px){
+    
+}
+@media screen and (min-width: 600px){
+    
+}
+@media screen and (min-width: 767px){
+    #Profile_addImage_icon{
+        cursor: pointer;
+        font-size: 1.3rem;
+    }
+
+    #Profile_userimage{
+        max-height:20rem ;
+    }
+
+    #Profile_name{
+        height: 6rem;
+    }
+
+    .Profile_info_input{
+        font-size: 1.3rem;
+        margin-top: 0.5rem;
+    }
+
+    .Profile_info_label{
+        font-size: 1.3rem;
+        padding: 0.5rem 0 0 0;
+    }
+
+    #Profile_shortintro{
+        font-size: 1.3rem;
+        width:100%;
+        height: 7rem;
+    }
+
+    .Profile_expand_icon{
+        padding-top: 0.7rem;
+        height:2rem;
+        width:2rem;
+    }
+
+    .Profile_remove_icon{
+        height:2rem;
+        width:2rem;
+    }
+
+    .Profile_info_table_input{
+        font-size: 1.1rem;
+    }
+
+    #Profile_occupation_container{
+        font-size: 1.3rem;
+    }
+
+    .Profile_hr{
+        font-size: 1.3rem;
+    }
+}
+@media screen and (min-width: 1023px){
+    
+}
+@media screen and (min-width: 1500px){
+    
+}
+
+.Profile_info_input{
+    color:white !important;
+    font-family:'Noto Sans TC',Arial,sans-serif;
+    background-color: inherit !important;
+    border-width:0 0 4px 0;
+    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
+    border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    
+}
+
+.Profile_info_input:focus{
+    background-color: inherit !important;
+}
+
 #Profile_container{
-    margin-top: 5vh;
-    width:100%;
-    /*margin-top:10%;*/
     color: white;
     font-family:'Noto Sans TC',Arial,sans-serif !important;
 }
 #hr0{
     font-family:'Noto Sans TC',Arial,sans-serif !important;
-    width:90%;
     font-weight: 200;
-    font-size:30px;
     font-style: italic;
-    margin-left: 1%;
-    margin-top: -4%;
-    margin-bottom: 0;
     border-bottom: 2px gray solid;
 }
 
-#Profile_public{
+/* #Profile_public{
     position: absolute;
     right:0;
     top:-5vh;
     /* top:-5%;
-    right: -5%; */
+    right: -5%; 
     color:gray;
     font-family:'Noto Sans TC',Arial,sans-serif;
     font-weight: 100;
-}
-#Profile_information{
-    /*float: left;*/
-    width: 50vw !important;
-    position: relative;
-}
-#Profile_userimage_container{
-    margin-left:1vw;
-    margin-top: 5vh;
-    float: left;
-    width:20%;
-    
-}
+} */
 #Profile_userimage{
-    max-width:100%;
-    max-height:30% ;
+    max-width:90%;
+    max-height:20rem ;
     overflow: hidden;
     border: 2px black solid;
 }
-#Profile_addImage_icon{
-    cursor: pointer;
-    font-size: 20px;
-    width:3vw;
-    height: 3vw;
-}
+
 #Profile_addImage_icon:hover{
     color:rgb(48, 232, 255);
-    /*text-decoration: underline;*/
 }
 
 #Profile_info{
     display: block;
-    margin-right: 0 !important;
-    margin-left:15vw;
-    height: 20%;
-    width: 30vw;
-    font-size: 20px;
-}
-.Profile_ul{
-    list-style: none;
-    padding: 0;
 }
 
-.Profile_ul li{
-    height: 2vh;
-    margin-top: 7vh;
-}
-#Profile_realname_tag{
-    margin:0;
-    float:left;
-}
-#Profile_realname_checkbox{
-    margin-top: 3%;
-    margin-right: -4vw;
-    float: right;
-}
-#Profile_realname{
-    color: white;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    /*background-color: #003F67;*/
-    background-color: inherit;
-    font-size : 20px;
-    float:right;
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-    margin-top: 1%;
-}
-
-#Profile_nickname_tag{
-    margin:0;
-    float: left;
-}
-#Profile_nickname_checkbox{
-    margin-top: 3%;
-    margin-right: -4vw;
-    float: right;
-}
-#Profile_nickname{
-    color:white;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    /*background-color: #003F67;*/
-    background-color: inherit;
-    font-size : 20px;
-    float: right;
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-    margin-top: 1%;
-}
 #Profile_shortintro{
     font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 16px;
-    clear: both;
     color: white;
-    width:100%;
-    height: 100px;
     background-color: inherit;
-    /*background-color: #003F67;*/
     border-width: 2.5px ;
     border-style:dashed ;
     border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
@@ -139,78 +193,25 @@
     font-weight: 100;
     border-bottom: 1px solid gray;
     width: 90%;
-    margin-bottom: 0;
-    margin-top: 5%;
-    margin-left: 1vw;
     
 }
-#Profile_more_info{
-    width:90%;
-    margin-left:1vw;
-    font-size: 20px;
-}
 
-#Profile_more_info p {
-    margin:0;
-    float: left;
-}
-#Profile_more_info input:not(#Profile_submit_btn) {
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    color: white;
-    /*background-color: #003F67;*/
-    background-color: inherit;
-    font-size : 20px;
-    float: right;
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
-    padding: 0;
-    margin-top:1%;
-
-}
-#Profile_contact_us li:first-child{
-    margin-top:0;
-}
-#Profile_more_info input[type="checkbox"]{
-    margin-right:-6.5%;
-    margin-top: 1%;
-}
 #hr2{
-    font-size: 18px;
+    /* font-size: 18px; */
     color:gray;
     font-weight: 100;
     border-bottom: 1px solid gray;
     width: 100%;
-    height: 24px !important;
-    margin-top: 2vh;
 }
 #Profile_expand_phone{
     display: none;
     opacity: 0;
-    /* z-index: -1; */
 }
-#Profile_social_media_list li:first-child{
-    margin-top: 0;
-}
+
 #Profile_expand_social_media{
-    height:10vh !important;
     display: none;
     opacity: 0;
-    /* z-index: -1; */
-    margin-bottom: 0 !important;
-}
-#Profile_diploma_list li:first-child{
-    margin-top: 0;
-}
-#Profile_diploma_list li{
-    position: relative;
-}
-.Profile_input_nonfloat{
-    margin-left: 2.25vw;
-    float: none !important;
-    width:15vw !important;
+
 }
 
 .Profile_diploma_checkbox{
@@ -221,143 +222,40 @@
     display: none;
     opacity: 0;
 }
-/*#Profile_diploma_container{
-    height:6vh !important;
-    margin-bottom: 0 !important;
-}
-#Profile_diploma{
-    position: relative;
-    display: inline-block;
-    margin-bottom: 0 !important;
-}
-.Profile_diploma_checkbox{
-    position: absolute;
-    right: 2vw;
-    display: none;
-}
-#Profile_diploma_choosebox_table{
-    display: block;
-    padding-bottom: 0;
-}
-#Profile_diploma_choosebox_table tr{
-    height:8vh;
-}
-#Profile_diploma_checkbox_input{
-
-    display: inline;
-}
-#Profile_expand_diploma_table td{
-    padding: 0 2vh 0 2vh;
-}
-#Profile_expand_diploma_table td:first-child{
-    padding: 0 2vh 0 0;
-}
-/*#Profile_diploma_choosebox_table td{
-    margin-bottom: 10% !important; 
-}
-#Profile_diploma_major_checkbox{
-    margin-left: 2vw;
-}
-#Profile_expand_diploma{
-    /*width:100%;
-    display: none;
-    opacity: 0;
-    z-index: -1;
-#Profile_diploma_master_input{
-    display: inline;
-}
-}*/
 
 .Profile_expand_button{
     background-color: inherit;
-    /*background-color:  #003f67;*/
     border: 0;
     cursor: pointer;
-    /*height:200%;
-    width:200%;
-    
-    color: #fff;
-    border: 2px #fff solid;
-    border-radius: 10px;
-    font-weight: bold;
-    */
-}
-.Profile_expand_icon{
-    height:2vw;
-    width:2vw;
 }
 
-#Profile_expand_icon_3{
-    margin-bottom: -1vh;
-}
 
 #hr4{
     display: block;
-    font-size: 18px;
+    /* font-size: 18px; */
     color:gray;
     font-weight: 100;
     border-bottom: 1px solid gray;
 }
 
-#hr3{
-    font-size: 18px;
+#hr41{
+    display: block;
+    /* font-size: 18px; */
     color:gray;
     font-weight: 100;
     border-bottom: 1px solid gray;
-    width: 100%;
-    height: 24px !important;
-    margin-top: 7vh;
-    margin-bottom: 0 !important; 
 }
+
 #Profile_addOccupation{
-    margin-top: 1.5vh;
-    /*background-color: #003F67;*/
     background-color: inherit;
     border: 0;
-    height:2vw;
 }
 #Profile_removeOccupation{
-    /*background-color: #003F67;*/
     background-color: inherit;
     border: 0;
 }
-.Profile_remove_icon{
-    height:2vw;
-    width:2vw;
-}
-#Profile_occupation_container{
-    height:30vh !important;
-    margin-bottom: 0 !important;
-}
 
-#Profile_occupation_table{
-    width:100%;
-    
-}
-#Profile_occupation_table th{
-    text-align: center;
-    font-weight: 100;
-    font-style: italic;
-}
-#Profile_occupation_table input{
-    /*width:50%;*/
-    width:100%;
-    text-align: center;
-    float: none;
-}
-#Profile_JobID{
-    margin-top: 0 !important;
-}
 #Profile_submit_btn{
-    display: inline-block;
-    font-size: 1.5vw;
-    border-radius: 10px;
-    margin-left: 10vw;
-    margin-top: 10vh;
-    /* margin-bottom: 5vh; */
-    width:15vw;
-    height: 6vh;
-    /*background-color:  #003f67;*/
     background-color: inherit;
     color: #fff;
     border: 2px #fff solid;
@@ -374,58 +272,3 @@
     font-weight: bold;
 }
 
-
-#Profile_latest_news{
-    display: inline-block;
-    margin-left: 7%;
-
-}
-
-#Profile_news_renderer a{
-    color : white;
-    text-decoration: none;
-}
-
-#Profile_news_renderer a:hover{
-    color: #93d5ff;
-    text-decoration: underline;
-}
-
-@media (max-width:1230px){
-    #Profile_information{
-        width: 650px;
-    }
-    #LC_container{
-        width:450px;
-        margin-left: 0px;
-    }
-}
-@media (max-width:1110px){
-    #LC_container{
-        margin-left: 0;
-        margin-top: 5vh;
-        /*margin-left: auto;*/
-        /*width: 700px;*/
-    }
-    #hr0{
-        width:60vw;
-    }
-    #LC_hr{
-        width:60vw;
-    }
-}
-@media (max-width:700px){
-    #Home_in_container{
-        margin-bottom: -10vh;
-    }
-    #hr0{
-        width:90%;
-    }
-    #LC_container{
-        margin-top: 10vh;
-        width: 700px;
-    }
-    #LC_hr{
-        width:90%;
-    }
-}

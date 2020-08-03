@@ -1,21 +1,48 @@
-#LC_container{
-    display: inline-block;
+@media screen and (min-width: 300px){
+    #LC_refresh_icon{
+        height:1.5rem;
+        width: 1.5rem;
+    }
+
+}
+@media screen and (min-width: 350px){
+    
+}
+@media screen and (min-width: 400px){
+    
+}
+@media screen and (min-width: 600px){
+    
+}
+@media screen and (min-width: 767px){
+    
+}
+@media screen and (min-width: 1023px){
+    
+}
+@media screen and (min-width: 1500px){
+    
+}
+
+#LC_containers{
+    /* display: inline-block;
     margin-top: 5vh;
-    margin-left: 1vw;
+    margin-left: 1vw; */
     font-family:'Noto Sans TC',Arial,sans-serif;
     color:white;
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 #LC_hr{
     font-weight: 200;
-    font-size:30px;
+    /* font-size:30px; */
     font-style: italic;
-    margin-left: 0vw;
+    /* margin-left: 0vw; */
     /*text-align: right;*/
-    margin-bottom: 2%;
-    margin-top: 10vh;
+    /* margin-bottom: 2%;
+    margin-top: 10vh; */
     border-bottom: 2px gray solid;
-    width:45vw;
+    width: 90%;
+    /* width:45vw; */
 }
 #LC_refresh_btn{
     font-family:'Noto Sans TC',Arial,sans-serif;
@@ -27,8 +54,8 @@
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    height: 2.5vw;
-    width: 2.5vw;
+    /* height: 2.5vw;
+    width: 2.5vw; */
 }
 #LC_refresh_btn:hover{
     /*transition-property: background-color, color;
@@ -39,8 +66,6 @@
     font-weight: bold;*/
 }
 #LC_refresh_icon{
-    height:2vw;
-    width: 2vw;
     transform: rotate(0deg);
     transition-property: transform;
     transition-timing-function: ease-out;
@@ -51,15 +76,15 @@
 
 }
 #LC_table{
-    width: 80%;
+    /* width: 80%; */
 }
 #LC_table tr>td:first-child{
     text-align: center;
-    width:40%;
+    /* width:40%; */
 }
 
 #LC_table tr>td:last-child{
-    width: 60%;
+    /* width: 60%; */
     /*float: right;*/
 }
 
@@ -68,8 +93,8 @@
     color: white;
     /*background-color: #003F67;*/
     background-color: inherit;
-    font-size : 20px;
-    float: right;
+    /* font-size : 20px;
+    float: right; */
     border-width:0 0 4px 0;
     -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
        border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
@@ -79,12 +104,12 @@
 }
 #LC_submit_btn{
     
-    font-size: 1.5vw;
+    /* font-size: 1.5vw;
     width:15vw;
     height: 5vh;
     margin-left: 13.7vw;
     margin-top: 2vh;
-    margin-bottom: 10vh;
+    margin-bottom: 10vh; */
     font-family:'Noto Sans TC',Arial,sans-serif;
     background-color: inherit;
     /*background-color:  #003f67;*/

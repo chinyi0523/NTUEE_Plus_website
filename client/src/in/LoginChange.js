@@ -7,112 +7,112 @@ class LoginChange extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			username:'',
-			account:'',
-			question:'',
-			img:''
+			username: '',
+			account: '',
+			question: '',
+			img: ''
 		};
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
-	
-	showPersonal(){
-		axios.post("/api/showPersonal", 
+
+	showPersonal() {
+		axios.post("/api/showPersonal",
 			{}
 		).then(res => {
 			console.log(res.data);
-				if(res.data){
-					if(res.data.message===true){
-						this.setState({
-							username:res.data.data.username,
-							account:res.data.data.account,
-							question:res.data.data.SQ,
-							img:res.data.data.img
-						});
-					}else{
-						alert('錯誤：\n'+res.data.description);
-					}
+			if (res.data) {
+				if (res.data.message === true) {
+					this.setState({
+						username: res.data.data.username,
+						account: res.data.data.account,
+						question: res.data.data.SQ,
+						img: res.data.data.img
+					});
+				} else {
+					alert('錯誤：\n' + res.data.description);
 				}
+			}
 		})
 	}
-	
-	handleInputChange=event=>{
+
+	handleInputChange = event => {
 		const target = event.target;
 		const value = target.value;
 		const name = target.id;
-		
-		if(name==="safe_Question"){
-			this.setState({question: value});
+
+		if (name === "safe_Question") {
+			this.setState({ question: value });
 		}
 	}
-	
-	componentDidMount(){
+
+	componentDidMount() {
 		this.showPersonal();
 	}
-	
-	btn_click=e=>{
+
+	btn_click = e => {
 		console.log("hi")
 		e.preventDefault();
 		this.showPersonal();
 	}
-	
-	handleSubmit=event=>{
+
+	handleSubmit = event => {
 		event.preventDefault();
 		console.log(this.state);
-		if(this.state===""){
+		if (this.state === "") {
 			alert("該值不得為空");
-		}else{
-			var r=window.confirm("確認更改安全問題?");
-			if(r){
-				axios.post("/api/chLogin", 
-					{question:this.state.question}
+		} else {
+			var r = window.confirm("確認更改安全問題?");
+			if (r) {
+				axios.post("/api/chLogin",
+					{ question: this.state.question }
 				).then(res => {
 					console.log(res.data);
-						if(res.data){
-							if(res.data.message===true){
-								alert('更改完成');
-							}else{
-								alert('更改失敗');
-							}
+					if (res.data) {
+						if (res.data.message === true) {
+							alert('更改完成');
+						} else {
+							alert('更改失敗');
 						}
+					}
 				})
 			}
 		}
 	}
-	
-	render(){
+
+	render() {
 		return (
-			<div description="personalInfo" id="LC_container">
-			  <div id="LC_hr">Security Question Reset</div>
-			  <form onSubmit={this.handleSubmit} >
-			  <button id="LC_refresh_btn" onClick={this.btn_click}><img src={refresh} alt="refresh" id="LC_refresh_icon"></img></button>
-			  {/*<img src={this.state.img} />*/}
-			  <table id = "LC_table" cellSpacing="10">
-				<tbody>
-				<tr>
-					<td>學號</td>
-					<td colSpan="2">{this.state.account}</td>
-				</tr>
-				<tr>
-					<td>姓名</td>
-					<td colSpan="2">{this.state.username}</td>
-				</tr>
-				<tr>
-					<td>安全問題</td>
-					<td colSpan="2">
-						<input id="LC_safe_Question" placeholder={this.state.question} autoFocus
-							 onChange={this.handleInputChange} /*value={this.state.question}*/>
-						</input>
-					
-					</td>
-				</tr>
-				</tbody>
-				
-			  </table>
-			  <input id="LC_submit_btn" type="submit" value="Change" />
-			  </form>
+			<div description="personalInfo" id="LC_containers" className="mb-5">
+				<div id="LC_hr">Security Question Reset</div>
+				<form onSubmit={this.handleSubmit} >
+					<button id="LC_refresh_btn" onClick={this.btn_click}>
+						<img src={refresh} alt="refresh" id="LC_refresh_icon" className="img-fluid">
+						</img>
+					</button>
+					{/*<img src={this.state.img} />*/}
+					<div className="container">
+					<div className="form-group row mx-auto">
+							<label className="col-form-label col-5">姓名</label>
+							<input id="LC_safe_Question" className="col-6 col-md-5 col-xl-4 offset-1 offset-md-2 offset-xl-3"
+									value={this.state.username} disabled></input>
+						</div>
+						<div className="form-group row mx-auto">
+							<label className="col-form-label col-5">學號</label>
+							<input id="LC_safe_Question" className="col-6 col-md-5 col-xl-4 offset-1 offset-md-2 offset-xl-3"
+									value={this.state.account} disabled></input>
+						</div>
+						<div className="form-group row mx-auto">
+							<label className="col-form-label col-5">安全問題</label>
+							<input id="LC_safe_Question" className="col-6 col-md-5 col-xl-4 offset-1 offset-md-2 offset-xl-3"
+									value={this.state.question}></input>
+						</div>
+					</div>
+					<div className="d-flex justify-content-center mt-3">
+						<input id="LC_submit_btn" type="submit" value="Change" className="btn"/>
+					</div>
+				</form>
 			</div>
 		);
 	}
 }
- 
+
 export default LoginChange;

@@ -13,13 +13,13 @@ html {
 
 #Forget_input_text{
     margin:0;
+    color: white; 
     /* text-align: center; */
     font-size: 1.5rem;
 }
 #Forget_input_input{
     color: white;
     background-color: #003F67;
-    font-size: 1.5rem;
     border-width: 0 0 4px 0;
     -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
        border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
@@ -67,3 +67,66 @@ html {
 #Forget_FAQ_list{
     list-style-type: none;
 } */
+@media screen and (min-width: 300px){
+    #Forget_input_text{
+        font-size: 0.75rem;
+        /* color: red; */
+    }
+    #Forget_input_input{
+        font-size: 0.68rem;
+    } 
+}
+@media screen and (min-width: 350px){
+    #Forget_input_text{
+        font-size: 0.8rem;
+        /* color: orange; */
+    }
+    #Forget_input_input{
+        font-size: 0.73rem;
+    } 
+}
+@media screen and (min-width: 400px){
+    #Forget_input_text{
+        font-size: 0.9rem;
+        /* color: yellow; */
+    }
+    #Forget_input_input{
+        font-size: 0.85rem;
+    }
+}
+@media screen and (min-width: 600px){
+    #Forget_input_text{
+        font-size: 1.5rem;
+        /* color: lightgreen; */
+    }
+    #Forget_input_input{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (min-width: 767px){
+    #Forget_input_text{
+        font-size: 1.5rem;
+        /* color: lightblue; */
+    }
+    #Forget_input_input{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (min-width: 1023px){
+    #Forget_input_text{
+        font-size: 1.67rem;
+        /* color: pink; */
+    }
+    #Forget_input_input{
+        font-size: 1.6rem;
+    }
+}
+@media screen and (min-width: 1500px){
+    #Forget_input_text{
+        font-size: 1.77rem;
+        /* color: purple; */
+    }
+    #Forget_input_input{
+        font-size: 1.7rem;
+    }
+}
