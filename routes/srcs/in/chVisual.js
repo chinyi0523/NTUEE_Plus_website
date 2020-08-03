@@ -29,7 +29,6 @@ module.exports = function (req, res, next) {
 				});
 				return res.send({status:'success',message:true});
             }else{
-                console.log('駭客4你?');
 				console.log("session:",session_account);
                 return res.send({status:'success',message:false, description:"帳號不存在或重複"}); 
             }

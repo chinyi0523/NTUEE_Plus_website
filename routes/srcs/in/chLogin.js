@@ -21,9 +21,8 @@ module.exports = function (req, res, next) {
 				});
 				res.send({status:'success',message:true});
             }else{
-                console.log('駭客4你?'); 
 				console.log("session:",session_account);
-                res.send({status:'success',message:false, description:"session不匹配"}); 
+                res.send({status:'success',message:false, description:"帳號不存在或存在多個帳號"}); 
             }
         }
     })
