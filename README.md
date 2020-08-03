@@ -14,6 +14,8 @@ $ npm run local_mac
 ```bash
 $ npm start
 ```
+## 前端coding style規則
+> https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
 ### 0803 進度 by 友廷
 * Profile SlideBar 已套 Bootstrap
 * 增加Edit按鈕
