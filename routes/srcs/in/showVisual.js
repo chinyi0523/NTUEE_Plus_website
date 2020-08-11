@@ -24,9 +24,6 @@ function insert(name,account){
 
 module.exports = function (req, res, next) {
   let session_account = req.session.loginAccount
-  if(!session_account){
-	  session_account = 'b07901028' //測試用
-  }
   if(session_account){
      user_v_Schema.find({"account.data":session_account}, async function(err, obj){
         if (err) {

@@ -3,9 +3,6 @@ const readDB = require('./readDB');
 
 module.exports = function (req, res, next) {
 	let session_account = req.session.loginAccount;
-	if(!session_account){
-		session_account = 'b07901028' //測試用
-	}
 	if(session_account){
 		const query = readDB.searchOr(req);
 		user_v_Schema.find(query,{_id:0},function(err,obj){
