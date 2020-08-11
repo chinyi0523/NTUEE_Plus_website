@@ -50,10 +50,13 @@ module.exports = function (req, res) {
   const Useraccount = req.body.account.toLowerCase();
   const UserPsw = req.body.password;
   
-  console.log('file\n',req.file)
   //密碼加密
   let md5 = crypto.createHash("md5");
   const newPas = md5.update(UserPsw).digest("hex");
+  
+  if(req.file===undefined){
+      return res.send({message:false,description:"請添加照片"});
+  }
   //查詢用戶是否存在
   const query = {account: Useraccount};
     user_l_Schema.find(query, function(err, obj){

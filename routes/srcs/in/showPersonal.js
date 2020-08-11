@@ -11,16 +11,16 @@ module.exports = function (req, res, next) {
         }
         else {
             if(obj.length === 1){
-                console.log('登入成功',obj);
-				const prefix="data:"+obj[0].img.contentType+";base64,"
+                //console.log('登入成功',obj);
+				//const prefix="data:"+obj[0].img.contentType+";base64,"
 				//var img = window.btoa(String.fromCharCode.apply(null, obj[0].img.data));
-				const img = new Buffer(obj[0].img.data, 'binary').toString('base64')
+				//const img = new Buffer(obj[0].img.data, 'binary').toString('base64')
 				res.send({status:'success',message:true,data:{
 					username:obj[0].username,
 					account:obj[0].account,
 					email:obj[0].private_Email,
 					SQ:obj[0].question,
-					img:(prefix+img)
+					//img:(prefix+img)
 				}});
             }else{
                 console.log('駭客4你?'); 

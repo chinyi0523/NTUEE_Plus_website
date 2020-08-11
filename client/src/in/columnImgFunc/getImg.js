@@ -9,8 +9,10 @@ export function getImg (filename){
 		if(res.data && res.data.message === true){
 			console.log(res)
 			// return res.data.data;
+			const objImg = res.data.data;
+			const img = new Buffer(objImg.data, 'binary').toString('base64')
 			this.setState({
-				img:res.data.data,
+				img:"data:"+objImg.contentType+";base64,"+img
 			})
 
 		}else{

@@ -36,14 +36,14 @@ module.exports = function (req, res, next) {
         else {
             if(obj.length === 1){
               const output=readDB.getOwnDB(obj[0]);
-              console.log('帳號存在',output.account);
+              console.log('即將傳出使用者資料',output.account);
               res.send({status:'success',message:true,data:
                 output
               });
             }else if(obj.length === 0){//存在session但不在資料庫裡
-              console.log("session1:",session_account);
+              console.log("session:",session_account);
               output = await insert(req.session.loginName||'無名氏',session_account);
-              console.log("output",output)
+              //console.log("output",output)
               if(!output){
                 return res.send({status:'success',message:false, description:"資料庫錯誤(資料插入錯誤)"}); 
               }else{
