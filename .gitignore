@@ -45,4 +45,4 @@ node_modules/
 npm-debug.log
 client/build/
 sessions/
-hello/
+hellos/
