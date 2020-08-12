@@ -6,7 +6,7 @@ import Column_content from './component/column_content';
 class Column_1601 extends Component{
     render(){
         const column_1601_article = {
-			title:['1995級 徐瑞廷（BCG 波士頓顧問公司董事總經理）'],
+			title:['1995級 徐瑞廷','（董事總經理＠BCG 波士頓顧問公司）'],
 			hashtags:['系友專訪', '徐瑞廷', '1995級', 'B80', 'StanfordUniversity', 'SantaClaraUniversity', 'MBA', '史丹福大學電子工程學碩士', '聖塔克拉拉大學MBA', 'BCG', '波士頓顧問公司合夥人暨董事總經理', 'BCG台北辦公室負責人', '策略顧問方法與實務', 'StrategyConsulting', '探索自己', '多想下一步跟下下步', '獨立思考' ],
 			sections:[
 				{

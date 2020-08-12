@@ -2,7 +2,60 @@
     font-size: 36px;
     text-align: center;
     font-weight: bold;
+
 }
 .column_title{
     line-height: 10px;
 }
+@media screen and (min-width: 300px){
+    #column_whole_title{
+        font-size: 15px;
+        line-height: normal;
+        color: honeydew;
+    }
+
+}
+@media screen and (min-width: 350px){
+    .column_title{
+        font-size: 25px;
+        line-height: normal;
+        color: gold;
+    }
+    
+}
+@media screen and (min-width: 400px){
+    .column_title{
+        font-size: 25px;
+        line-height: normal;
+        color: crimson;
+    }
+}
+@media screen and (min-width: 600px){
+    .column_title{
+        font-size: 30px;
+        line-height: normal;
+        color: dimgray;
+    }
+}
+@media screen and (min-width: 767px){
+    .column_title{
+        font-size: 30px;
+        line-height: normal;
+        color: limegreen;
+    }
+}
+@media screen and (min-width: 1023px){
+    .column_title{
+        font-size: 35px;
+        line-height: normal;
+        color: rgb(40, 20, 220);
+    }
+}
+/*@media screen and (min-width: 1500px){
+    .column_title{
+        font-size: 35px;
+        line-height: normal;
+        color: mediumorchid;
+    }
+}
+*/

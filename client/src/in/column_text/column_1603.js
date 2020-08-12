@@ -6,7 +6,7 @@ import Column_content from './component/column_content';
 class Column_1603 extends Component{
     render(){
         const column_1603_article = {
-			title:['2008級 趙式隆（台灣矽谷創業家協會理事長）'],
+			title:['2008級 趙式隆','（理事長＠台灣矽谷創業家協會）'],
 			hashtags:['系友專訪', '首PO', '趙式隆', '2008級', 'B93', '創業就像搶銀行', '台灣矽谷創業家協會理事長', '學悅科技Zuvio創辦人', '台灣虛擬及擴增實境產業協會共同發起人', '網路與多媒體實驗室助教', '台大創創學程', '保持好奇心勇於嘗試' ],
 			sections:[
 				{

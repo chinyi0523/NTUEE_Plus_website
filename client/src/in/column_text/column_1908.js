@@ -6,7 +6,7 @@ import './column_text.css';
 class Column_1908 extends Component{
     render(){
        const column_1908_article = {
-			title:['2008級 方劭云（當屆最年輕升遷副教授）'],
+			title:['2008級 方劭云','（副教授＠台灣科技大學）'],
 			hashtags:['2008級', 'B93', 'NTUST', 'EDA', 'VLSI', 'IEEE', 'ACM', '電子設計自動化', '超大型積體電路', '台灣科技大學', '演算法'],
 			sections:[
 				{

@@ -6,7 +6,7 @@ import Column_content from './component/column_content';
 class Column_1604 extends Component{
     render(){
         const column_1604_article = {
-			title:['2000級 胡一天（源鉑資本Kyber Capital執行長，專業投資人與金融觀察家）'],
+			title:['2000級 胡一天','（執行長＠源鉑資本Kyber Capital，專業投資人與金融觀察家）'],
 			hashtags:['系友專訪' ,'胡一天', 'ThomasHu', '2000級', 'B85', 'Blockchain區塊鏈', 'Ethereum以太坊', 'KyperCapital', '源鉑資本執行長',  'InfiniteStudio無限工作室', 'FinancialEingeering', '哥倫比亞大學金融工程', 'ColumbiaUniversity', '電機系與法律系財經法學組雙主修', '跨領域',  'Hongkong', '金融觀察家', '專業投資人', '先進到適合發展的環境再積極創造機會' ],
 			sections:[
 				{

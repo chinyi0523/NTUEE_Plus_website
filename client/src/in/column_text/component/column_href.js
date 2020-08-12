@@ -26,10 +26,10 @@ class Column_href extends Component{
     }
     render(){
         return(
-            <div id = "hrefspace">
-                <div id={this.state.id} class="column_href">
-            </div>
-            </div>
+        <div id = "hrefspace">
+             <div id={this.state.id} class="column_href">
+         </div>
+         </div>
             
         )
     }

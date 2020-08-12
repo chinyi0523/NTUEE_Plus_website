@@ -6,7 +6,7 @@ import Column_content from '../column_text/component/column_content'
 class Column_1805 extends Component{
     render(){
         const column_1805_article = {
-			title:['2014級 黃柏源（Princeton EE PhD）'],
+			title:['2014級 黃柏源','（PhD＠Princeton EE）'],
 			hashtags:['系友專訪', '黃柏源', '2014級', 'B99', 'Princeton', 'EE', 'PhD', 'EDA', 'TSMC', 'Intel', 'IEEE_paper_reviewer'],
 			sections:[
 				{

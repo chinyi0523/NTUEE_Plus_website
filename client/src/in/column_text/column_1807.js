@@ -6,7 +6,7 @@ import Column_content from '../column_text/component/column_content'
 class Column_1807 extends Component{
     render(){
         const column_1807_article = {
-			title:['2006級 楊奕軒 （研究員/教授 @ 中研院資創中心）'],
+			title:['2006級 楊奕軒 ','（研究員/教授 @ 中研院資創中心）'],
 			hashtags:['系友專訪', '楊奕軒', '2006級', 'B91', '台大電信所博士', '中央研究院', '資訊科技創新研究中心', '研究員', '教授', '音樂資訊', '音樂生成', '音樂情緒', '音源分離'],
 			sections:[
 				{
