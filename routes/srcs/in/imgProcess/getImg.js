@@ -9,10 +9,10 @@ module.exports = function (name){
 		}
 		if(obj.length==1){
 			objImg = obj[0].columnImg;
-			var prefix="data:"+objImg.contentType+";base64,"
-			var img = new Buffer(objImg.data, 'binary').toString('base64');
+			//const prefix="data:"+objImg.contentType+";base64,"
+			//const img = new Buffer(objImg.data, 'binary').toString('base64');
 			//console.log("find!!")
-			resolve(prefix+img);
+			resolve(objImg);
 		}
 		else{
 			console.log("查無資料或有多筆資料");

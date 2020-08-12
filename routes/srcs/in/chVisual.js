@@ -3,9 +3,6 @@ const user_v_Schema = require('../../Schemas/user_visual');
 const readDB = require('./readDB');
 module.exports = function (req, res, next) {
   var session_account = (req.session.loginAccount)
-  if(!session_account){
-	  session_account = 'b07901028' //測試用
-  }
   if(session_account){
      user_v_Schema.find({"account.data":session_account}, function(err, obj){
         if (err) {
@@ -29,7 +26,6 @@ module.exports = function (req, res, next) {
 				});
 				return res.send({status:'success',message:true});
             }else{
-                console.log('駭客4你?');
 				console.log("session:",session_account);
                 return res.send({status:'success',message:false, description:"帳號不存在或重複"}); 
             }

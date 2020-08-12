@@ -49,8 +49,10 @@ module.exports = function (req, res) {
     const UserName = req.body.username;
     const Useraccount = req.body.account.toLowerCase();
     const UserFbId = req.body.facebookID;
-
-    console.log('file\n', req.file)
+    if(req.file===undefined){
+        return res.send({message:false,description:"請添加照片"});
+    }
+    //console.log('file\n', req.file)
 
     //查詢用戶是否存在
     const query = { account: Useraccount };
