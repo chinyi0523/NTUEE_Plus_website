@@ -1,7 +1,7 @@
 //routes/api.js 控管後端所有頁面部屬 
 const express = require("express");
 const router = express.Router();
-const ValidSend = require("./validation/controll");//若valid未通過則send false
+const ValidSend = require("./validation/control");//若valid未通過則send false
 const ValidTest = require("./validation/validation");
 const ImgGet = require('./middleware/multer');
 //test
