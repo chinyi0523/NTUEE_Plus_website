@@ -59,7 +59,6 @@ class Column extends Component{
 			filename:'2001',
 			anno:['羅韻瑢 鄭謹譯 李筠婕 吳建翰 余欣澄 ','| 2020/03/14 星期六'],
 			title:['1999級 簡韶逸 (CEO/ Founder @ Ganzin Technology, Prof. @ NTUEE)'],
-			/*title:['1999級', '簡韶逸', ' (CEO/ Founder @ Ganzin Technology, Prof. @ NTUEE)'],*/
 			exp:['現任：CEO of Ganzin Technology', '現任：Associate professor at GIEE  (NTU)','曾任：Research staff in Quanta Research Institute (廣達)  (2003~2004)' ],
 			edu:['博士：台灣大學電子工程學研究所  (2003)', '學士：台灣大學電機系 (1999)'],
 			intro:['簡韶逸教授任職於台大電子所長達16年，致力於多媒體訊號處理系統、多媒體積體電路設計、晶片系統設計方法的研究。 多年來，「媒體晶片系統實驗室」不斷研發出優異的技術。2016 年簡韶逸教授帶學生做出眼球追蹤技術的雛形時，他看好一定能應用在 AR/VR 上，於是決心創業。2018年1月時見臻科技 (Ganzin Technology) 從台灣大學spin off。見臻科技提供整合性視線追蹤解決方案  (eye tracking solution)，包括視線追蹤模組  (eye tracking module) 及對應之軟體開發平台  (SDK)，解決目前市面上眼動儀成本高、功耗高、體積大、機構複雜的問題。','見臻科技連兩年參加世界性消費電子展 (CES)，2018年獲選Taiwan Tech Star，是32家獲選的台灣新創公司之一，2019年更被路透社評選為Best of CES。'],

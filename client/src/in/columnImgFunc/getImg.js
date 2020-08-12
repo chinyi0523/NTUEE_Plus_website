@@ -1,22 +1,28 @@
 import axios from 'axios';
 
-export function getImg (filename){
+export function getImg (filename)
+{
 	const toSend= {"filename":filename};
 	console.log(filename)
 	axios.post("/api/getImg",
 		toSend
-	).then(res=>{
-		if(res.data && res.data.message === true){
+	).then(res=>
+		{
+		if(res.data && res.data.message === true)
+		{
 			console.log(res)
 			// return res.data.data;
 			this.setState({
 				img:res.data.data,
 			})
 
-		}else{
+		}
+		else
+		{
 			console.log("讀取失敗或查無檔案");
 			console.log(res.data.description)
 			return false
 		}
-	})
+	}
+	)
 }
