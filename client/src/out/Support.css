@@ -68,10 +68,12 @@ html {
 }
 @media screen and (min-width: 1023px){
     #Support_up_text{
-        font-size: 42px;
+        font-size: 40px;
+        color: rgb(138, 238, 138);
     }
     #Support_down_text{
-        font-size: 36px;
+        font-size: 34px;
+        color: rgb(138, 238, 138);
     }
 }
 @media screen and (min-width: 1500px){
