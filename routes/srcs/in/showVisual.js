@@ -38,7 +38,7 @@ module.exports = function (req, res, next) {
               });
             }else if(obj.length === 0){//存在session但不在資料庫裡
               console.log("session:",session_account);
-              output = await insert(req.session.loginName||'無名氏',session_account||'b07901028');
+              output = await insert(req.session.loginName||'無名氏',session_account);
               //console.log("output",output)
               if(!output){
                 return res.send({status:'success',message:false, description:"資料庫錯誤(資料插入錯誤)"}); 

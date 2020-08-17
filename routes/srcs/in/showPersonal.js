@@ -23,8 +23,8 @@ module.exports = function (req, res, next) {
             }});
         }else{
             console.log("session不匹配:",session_account);
-            //res.send({status:'success',message:false, description:"session不匹配"}); 
-            res.send({status:'success',message:true, data:{}}); 
+            res.send({status:'success',message:false, description:"session不匹配"}); 
+            //res.send({status:'success',message:true, data:{}}); 
         }
     }
 })
