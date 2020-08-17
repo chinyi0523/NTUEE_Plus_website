@@ -166,7 +166,7 @@ module.exports.searchOr = function(req){
 		JobMatch["show"] = true;
 		Q3["Occupation"] = {$elemMatch:JobMatch};
 		query.push(Q3)
-	}	
+	}
 	console.log('query=',query)
 	return {$or:query}
 }
