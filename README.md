@@ -14,8 +14,15 @@ $ npm run local_mac
 ```bash
 $ npm start
 ```
+只想看前端(改程式會自動refresh)
+```bash
+$ cd client
+$ npm start
+```
 ## 前端coding style規則
 > https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
+### 0817 進度 by 君輔
+* 把Auth統一管理，master裡不判定(呼叫next)，beta裡會return{description:請登入}
 ### 0811 進度 by 君輔
 * 新增beta branch
 ### 0803 進度 by 友廷
