@@ -13,7 +13,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+const connectHistoryApiFallback = require('connect-history-api-fallback');
 
+app.use(connectHistoryApiFallback({
+  verbose: false
+}));
 //post, get時的解碼
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())

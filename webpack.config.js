@@ -2,7 +2,12 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./client/public/index.html", 
-  filename: "./index.html"
+  filename: "./index.html",
+  favicon: './client/public/favicon.ico',//favicon路径
+  minify: { //压缩HTML文件
+    removeComments: true, //移除HTML中的注释
+    collapseWhitespace: false //删除空白符与换行符
+  }
 });
 module.exports = {
   entry: "./client/src/index.js",
@@ -31,7 +36,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|ico)$/,
         loader: "file-loader",
-        options: { name: '/static/[name].[ext]' }
+        options: { name: '[path][name].[ext]' }
       }
     ]
   }
