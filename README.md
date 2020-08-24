@@ -21,10 +21,15 @@ $ npm start
 ```
 ## 前端coding style規則
 > https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
+### 0824 進度 by 建琁
+* 調整Support字體大小和margin top。
+
 ### 0817 進度 by 君輔
 * 把Auth統一管理，master裡不判定(呼叫next)，beta裡會return{description:請登入}
+
 ### 0811 進度 by 君輔
 * 新增beta branch
+
 ### 0803 進度 by 友廷
 * Profile SlideBar 已套 Bootstrap
 * 增加Edit按鈕
