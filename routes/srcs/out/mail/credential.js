@@ -1,4 +1,5 @@
 //srcs/credential.js 寄件人帳密
+//參考資料https://oranwind.org/gmail-smtp/
 module.exports = {
   cookieSecret: 'your cookie secret goes here',
   gmail: {
