@@ -3,20 +3,21 @@
 首次執行
 ```bash
 $ npm install
-$ npm run postbuild
+$ npm run install-client
 $ npm start
 ```
-前端改過後重跑(重build跑比較久)
+前端人員(更改會透過webpack --watch自動重整)
 ```bash
-$ npm run local_mac
+$ npm run dev
 ```
-只有改後端
+後端人員
 ```bash
-$ npm start
+$ node index.js
+或
+$ nodemon index.js //有可能會很卡 不建議
 ```
-只想看前端(改程式會自動refresh)
+正式跑
 ```bash
-$ cd client
 $ npm start
 ```
 ## 前端coding style規則
