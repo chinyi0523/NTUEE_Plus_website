@@ -10,9 +10,7 @@ import {column_1808_page} from "./column_pages";
 import {column_1807_page} from "./column_pages";
 import {column_1806_page} from "./column_pages";
 import {column_1805_page} from "./column_pages";
-import {column_胡立民_page} from "./column_pages";
-import {column_洪銘駿_page} from "./column_pages";
-import {column_王英明_page} from "./column_pages";
+import {column_HungMingJiun_page} from "./column_pages";
 import {column_1602_page} from "./column_pages";
 import {column_1605_page} from "./column_pages";
 import {column_1606_page} from "./column_pages";
@@ -35,9 +33,7 @@ class column_app extends Component{
                     <Route path="/in/Column/pages/1807" exact component={column_1807_page}/>
                     <Route path="/in/Column/pages/1806" exact component={column_1806_page}/>
                     <Route path="/in/Column/pages/1805" exact component={column_1805_page}/>
-                    <Route path="/in/Column/pages/胡立民" exact component={column_胡立民_page}/>
-                    <Route path="/in/Column/pages/洪銘駿" exact component={column_洪銘駿_page}/>
-                    <Route path="/in/Column/pages/王英明" exact component={column_王英明_page}/>
+                    <Route path="/in/Column/pages/HungMingJiun" exact component={column_HungMingJiun_page}/>
                     <Route path="/in/Column/pages/1602" exact component={column_1602_page}/>
                     <Route path="/in/Column/pages/1605" exact component={column_1605_page}/>
                     <Route path="/in/Column/pages/1606" exact component={column_1606_page}/>

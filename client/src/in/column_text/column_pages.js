@@ -10,9 +10,7 @@ import Column_1808 from "./column_1808";
 import Column_1807 from "./column_1807";
 import Column_1806 from "./column_1806";
 import Column_1805 from "./column_1805";
-import Column_胡立民 from "./column_胡立民";
-import Column_洪銘駿 from "./column_洪銘駿";
-import Column_王英明 from "./column_王英明";
+import Column_HungMingJiun from "./column_HungMingJiun";
 import Column_1602 from "./column_1602";
 import Column_1605 from "./column_1605";
 import Column_1606 from "./column_1606";
@@ -51,14 +49,8 @@ const column_1806_page = () =>{
 const column_1805_page = () =>{
     return <Column_1805/>
 }
-const column_胡立民_page = () =>{
-    return <Column_胡立民/>
-}
-const column_洪銘駿_page = () =>{
-    return <Column_洪銘駿/>
-}
-const column_王英明_page = () =>{
-    return <Column_王英明/>
+const column_HungMingJiun_page = () =>{
+    return <Column_HungMingJiun/>
 }
 const column_1602_page = () =>{
     return <Column_1602/>
@@ -80,6 +72,6 @@ const column_1603_page = () =>{
 }
     
 export {column_2001_page,column_1912_page, column_1910_page, column_1909_page, column_1908_page, column_1907_page,
-    column_1808_page, column_1807_page, column_1806_page, column_1805_page, column_胡立民_page, column_洪銘駿_page,
-    column_王英明_page, column_1602_page, column_1605_page, column_1606_page, column_1604_page, column_1601_page, 
+    column_1808_page, column_1807_page, column_1806_page, column_1805_page, column_HungMingJiun_page,
+    column_1602_page, column_1605_page, column_1606_page, column_1604_page, column_1601_page, 
     column_1603_page};
