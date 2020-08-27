@@ -7,7 +7,7 @@ const User_login_Schema = new Schema({
   account: { type: String, required: true, lowercase: true },//學號
   userpsw: String,//密碼
   private_Email: String,
-  question: { type: String, default: "Hello World" },//安全問題
+  question: { type: String},//安全問題
   img: {
     data: { type: Buffer },
     contentType: { type: String }
