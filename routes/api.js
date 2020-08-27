@@ -59,7 +59,7 @@ router.post('/getImg',
 router.post('/isLogin',
 	require('./srcs/in/isLogin'))
 
-router.post('./addRecruitment',
+router.post('/addRecruitment',
 	require('./srcs/in/addRecruitment'))
 
 module.exports = router;
