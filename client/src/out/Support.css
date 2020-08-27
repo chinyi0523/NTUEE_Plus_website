@@ -60,19 +60,19 @@ html {
 }
 @media screen and (min-width: 767px){
     #Support_up_text{
-        font-size: 35px;
+        font-size: 28px;
     }
     #Support_down_text{
-        font-size: 30px;
+        font-size: 23px;
     }
 }
 @media screen and (min-width: 1023px){
     #Support_up_text{
-        font-size: 38px;
+        font-size: 33px;
         /* color: white; */
     }
     #Support_down_text{
-        font-size: 32px;
+        font-size: 28px;
         /* color: white; */
     }
 }
