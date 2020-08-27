@@ -5,7 +5,7 @@ class Support extends Component{
     render(){
         return (
         <div>
-        <div id="Support_container" class="col-8 offset-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+        <div id="Support_container" class="col-8 offset-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 mt-lg-3">
             <div id="Support_up">
                 <p id="Support_up_text" >
                     Your support is vital in enabling NTUEE+ to fulfill
