@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './recruitment.css';
 import {NavBar_in} from '../../component/AppBar_in';
 import Recruitment_block from './recruitment_block/Recruitment_block'
@@ -8,6 +8,12 @@ import McKinsey from '../../images/McKinsey.png'
 import Riedel from '../../images/Riedel.png'
 import {Link} from 'react-router-dom';
 import Scrollbar from 'react-scrollbars-custom';
+import NewDialog from './NewRecruitment'
+import Snackbar from '@material-ui/core/Snackbar'
+import MuiAlert from '@material-ui/lab/Alert'
+
+import Button from '@material-ui/core/Button'
+import agent from '../../agent'
 
 const template1 = {
 	title:{
@@ -106,43 +112,108 @@ const template5 = {
 }
 const renderThumb = ({ style, ...props }) => {
 	const thumbStyle = {
-	borderRadius: 6,
-	backgroundColor: 'rgba(192,192,200, 0.5)'
+		borderRadius: 6,
+		backgroundColor: 'rgba(192, 192, 200, 0.5)'
 	};
-	return <div style={{ ...style, ...thumbStyle }} {...props} />;}
-const Recruitment = (props) =>{
+	return <div style={{ ...style, ...thumbStyle }} {...props} />;
+}
+
+const createRecruitment = async (data) => {
+	try {
+		const result = await agent.Recruitment.createRecruitment(data)
+		if (result.success) {
+			return true
+		}
+		else return false
+	} catch (error) {
+		console.log(error)
+		return false
+	}
+}
+
+function Recruitment(props) {
+	// Dialog
+	const [addDialogOpen, setAddDialogOpen] = useState(false)
+
+	// Snackbar
+	const [snackbarProps, setSnackbarProps] = useState({
+		open: false,
+		severity: 'success',
+		text: ''
+	})
+
+	const handleCreateRecruitment = (data) =>{
+		createRecruitment(data).then(result => {
+			if (result) {
+				setSnackbarProps({
+					open: true,
+					severity: 'success',
+					text: '新增成功'
+				})
+			}
+			else {
+				setSnackbarProps({
+					open: true,
+					severity: 'error',
+					text: '新增失敗'
+				})
+			}
+		})
+	}
+
 	return(
-		
 		<div className ="Recruitment container-fluid ">
 			<Scrollbar renderThumbVertical={renderThumb}>
-			<div className="d-xl-flex justify-content-xl-around">
-			<div className = "Recruitment_container col">
-				<div className = "Recruitment_wrapper">
-					<Link className='Recruitment_block'>
-						<Recruitment_block data = {template1} />
-					</Link>
-					<Link className='Recruitment_block'>
-						<Recruitment_block data = {template3} />
-					</Link>
-					<Link className='Recruitment_block'>
-						<Recruitment_block data = {template5}/>
-					</Link>
+				<div className="d-xl-flex justify-content-xl-around">
+					<div className = "Recruitment_container col">
+						<Button variant="contained" onClick={() => setAddDialogOpen(true)}>Add</Button>
+						<div className = "Recruitment_wrapper">
+							<Link className='Recruitment_block'>
+								<Recruitment_block data = {template1} />
+							</Link>
+							<Link className='Recruitment_block'>
+								<Recruitment_block data = {template3} />
+							</Link>
+							<Link className='Recruitment_block'>
+								<Recruitment_block data = {template5}/>
+							</Link>
+						</div>
+					</div>
+					<div className = "Recruitment_container col">
+						<div className = "Recruitment_wrapper">
+							<Link className='Recruitment_block'>
+								<Recruitment_block data = {template2}/>
+							</Link>
+							<Link className='Recruitment_block'>
+								<Recruitment_block data = {template4}/>
+							</Link>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div className = "Recruitment_container col">
-				<div className = "Recruitment_wrapper">
-					<Link className='Recruitment_block'>
-						<Recruitment_block data = {template2}/>
-					</Link>
-					<Link className='Recruitment_block'>
-						<Recruitment_block data = {template4}/>
-					</Link>
-				</div>
-			</div>
-			</div>
-		</Scrollbar>
+			</Scrollbar>
+			<NewDialog 
+				addDialogOpen={addDialogOpen} 
+				setAddDialogOpen={setAddDialogOpen}
+				handleCreateRecruitment={handleCreateRecruitment}
+			/>
+			<Snackbar
+        open={snackbarProps.open}
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        onClose={() => {
+          setSnackbarProps((_) => ({ ..._, open: false }))
+        }}>
+        <MuiAlert
+          severity={snackbarProps.severity}
+          elevation={6}
+          variant="filled"
+          onClose={() => {
+            setSnackbarProps((_) => ({ ..._, open: false }))
+          }}>
+          {snackbarProps.text}
+        </MuiAlert>
+      </Snackbar>
 		</div>
-		
 	)
 }
 export default Recruitment;
