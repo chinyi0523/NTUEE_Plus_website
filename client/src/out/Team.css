@@ -6,8 +6,50 @@
     /* margin-top: 15vh;
     margin-left: 5vw;
     margin-right: 5vw; */
-    color:white;
-    font-size: 24px;
+    /* color: white;
+    font-size: 24px; */
+}
+@media screen and (min-width: 300px){
+    #Team_content{
+        font-size: 0.75rem;
+        color: red;
+    }
+}
+@media screen and (min-width: 350px){
+    #Team_content{
+        font-size: 0.8rem;
+        color: orange;
+    }
+}
+@media screen and (min-width: 400px){
+    #Team_content{
+        font-size: 0.9rem;
+        color: yellow;
+    }
+}
+@media screen and (min-width: 600px){
+    #Team_content{
+        font-size: 1.5rem;
+        color: lightgreen;
+    }
+}
+@media screen and (min-width: 767px){
+    #Team_content{
+        font-size: 1.5rem;
+        color: lightblue;
+    }
+}
+@media screen and (min-width: 1023px){
+    #Team_content{
+        font-size: 1.67rem;
+        color: pink;
+    }
+}
+@media screen and (min-width: 1500px){
+    #Team_content{
+        font-size: 1.77rem;
+        color: purple;
+    }
 }
 #Team_title_hr{
     font-size: 48px;

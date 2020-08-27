@@ -65,7 +65,7 @@ class Forget extends Component{
 			{/* <NavBar/> */}
             <div id="Forget_container">
 				<div className="w-100" style={{height:"5rem"}}></div>
-                <div id="Forget_left_table" className="container justify-content-center mt-5">
+                <div id="Forget_left_table" className="container justify-content-center mt-2 mt-md-5 mx-3 mx-md-5">
 					<form onSubmit={this.handleSubmit}>
 						<div id="Forget_input" className="form-group row">
 							<label for="StudentID" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Student ID</label>
@@ -74,7 +74,7 @@ class Forget extends Component{
 								placeholder="Student ID"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
-								className="form-control col-7 col-lg-8 offset-1"
+								className="form-control col-5 col-lg-6 offset-1"
 							></input>
 						</div>
 						<div id="Forget_input" className="form-group row">
@@ -84,7 +84,7 @@ class Forget extends Component{
 								placeholder="Your Email"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
-								className="form-control col-7 col-lg-8 offset-1 "
+								className="form-control col-5 col-lg-6 offset-1 "
 							></input>
 						</div>
 						<div id="Forget_input" className="form-group row">
@@ -94,7 +94,7 @@ class Forget extends Component{
 								placeholder="Your favorite movie"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
-								className="form-control col-7 col-lg-8 offset-1"
+								className="form-control col-5 col-lg-6 offset-1"
 							></input>
 						</div>
 						<div id="Forget_input" className="form-group  row">
@@ -105,7 +105,7 @@ class Forget extends Component{
 								placeholder="登入後須設定新密碼"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
-								className="form-control col-7 col-lg-8 offset-1"
+								className="form-control col-5 col-lg-6 offset-1"
 							></input>
 						</div>
 						<div id="Forget_input" className="form-group row">
@@ -116,7 +116,7 @@ class Forget extends Component{
 								placeholder="再次輸入密碼"
 								value={this.state.value} 
 								onChange={this.handleInputChange}
-								className="form-control col-7 col-lg-8 offset-1"
+								className="form-control col-5 col-lg-6 offset-1"
 							></input>
 						</div>
 						<div id="Forget_btn" className="justify-content-center d-flex mt-4">

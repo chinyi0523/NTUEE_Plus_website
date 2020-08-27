@@ -28,7 +28,7 @@ const column3 = [
 const column33 = ["O","P","C"]
 
 module.exports.getOwnDB = function(obj1){
-	console.log('obj=',obj1)
+	//console.log('obj=',obj1)
 	const output = {}
 	column1.forEach(element=>{
 		output[element]=obj1[element]
@@ -39,7 +39,7 @@ module.exports.getOwnDB = function(obj1){
 	column3.forEach(element=>{
 		output[element]=obj1[element]
 	})
-	console.log('user0=',output)
+	//console.log('user0=',output)
 	if(obj1.userimage.contentType){
 		const prefix="data:"+obj1.userimage.contentType+";base64,"
 		const img = new Buffer(obj1.userimage.data, 'binary').toString('base64');
@@ -84,13 +84,13 @@ module.exports.getOtherDB = function(obj1){
 		})
 	
 	})
-	console.log(output["Occupation"])
+	//console.log(output["Occupation"])
 	if(obj1.userimage.contentType){
 		const prefix="data:"+obj1.userimage.contentType+";base64,"
 		const img = new Buffer(obj1.userimage.data, 'binary').toString('base64');
 		output.userimage = prefix+img;
 	}
-	console.log('user1=',output.account)
+	//console.log('user1=',output.account)
 	return output
 }
 
@@ -166,7 +166,7 @@ module.exports.searchOr = function(req){
 		JobMatch["show"] = true;
 		Q3["Occupation"] = {$elemMatch:JobMatch};
 		query.push(Q3)
-	}	
+	}
 	console.log('query=',query)
 	return {$or:query}
 }

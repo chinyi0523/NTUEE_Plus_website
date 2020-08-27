@@ -18,7 +18,7 @@ module.exports = function (req, res, next) {
 		else {
 			if(obj.length == 1){
 				if(obj[0].userpsw===newPas){
-					console.log('登入成功',obj);
+					console.log('登入成功');
 					req.session.regenerate(function(err) {
 						if(err){
 							console.log("session建立失敗，err=\n",err);

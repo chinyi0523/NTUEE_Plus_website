@@ -26,12 +26,12 @@ class Column_hashtags extends Component{
     }
     render(){
         return(
-            <div class="d -none d-md-block">     
+            // <div className "hidden">     
                 <div id = "hashtag_space" >
                         <div id={this.state.id} class="column_hashtags">
                          </div>
                   </div>
-                </div>
+                // </div>
         )
     }
 }

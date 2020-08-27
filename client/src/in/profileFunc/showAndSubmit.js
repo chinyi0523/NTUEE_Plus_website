@@ -131,7 +131,7 @@ export function handleSubmit(event){
 									hasChanged[element[0]] = false;
 								})
 								this.setState({hasChanged});
-							//window.location = ? in's router hasn't done yet
+								// window.location = "/in"
 						}else{
 							alert("錯誤: \n"+res.data.description);
 						}
