@@ -30,9 +30,10 @@ export default function New(props) {
 	const [description, setDescription] = useState('')
 
 	const handleSubmit = (e) => {
+		console.log('submit')
 		e.preventDefault()
 		setAddDialogOpen(false)
-		data = {
+		const data = {
 			title: title,
 			company_name: companyName,
 			work_type: workType,
@@ -54,11 +55,11 @@ export default function New(props) {
       maxWidth='lg'
     >
 			<DialogTitle id="form-dialog-title">新增職缺</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            請於下方輸入職缺資訊
-          </DialogContentText>
-					<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit}>
+				<DialogContent>
+					<DialogContentText>
+						請於下方輸入職缺資訊
+					</DialogContentText>
 						<TextField
 							margin="dense"
 							label="職缺名稱"
@@ -125,16 +126,17 @@ export default function New(props) {
 							multiline
 							InputLabelProps={{ shrink: true }}
 						/>
-					</form>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setAddDialogOpen(false)} color="primary">
-            取消
-          </Button>
-          <Button onClick={() => setAddDialogOpen(false)} color="primary">
-            新增
-          </Button>
-        </DialogActions>
+					
+				</DialogContent>
+				<DialogActions>
+					<Button onClick={() => setAddDialogOpen(false)} color="primary">
+						取消
+					</Button>
+					<Button type="submit" color="primary">
+						新增
+					</Button>
+				</DialogActions>
+			</form>
     </Dialog>
 	)
 }

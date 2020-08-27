@@ -9,8 +9,8 @@ axios.defaults.headers.common.Accept = 'application/json'
 
 const Recruitment = {
 	createRecruitment: (body) => {
-    return axios.post('/addRecruitment', {
-      params: param
+    return axios.post('/api/addRecruitment', {
+      params: body
     })
   }
 }

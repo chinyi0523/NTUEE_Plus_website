@@ -118,19 +118,6 @@ const renderThumb = ({ style, ...props }) => {
 	return <div style={{ ...style, ...thumbStyle }} {...props} />;
 }
 
-const createRecruitment = async (data) => {
-	try {
-		const result = await agent.Recruitment.createRecruitment(data)
-		if (result.success) {
-			return true
-		}
-		else return false
-	} catch (error) {
-		console.log(error)
-		return false
-	}
-}
-
 function Recruitment(props) {
 	// Dialog
 	const [addDialogOpen, setAddDialogOpen] = useState(false)
@@ -142,14 +129,16 @@ function Recruitment(props) {
 		text: ''
 	})
 
-	const handleCreateRecruitment = (data) =>{
-		createRecruitment(data).then(result => {
-			if (result) {
+	const handleCreateRecruitment = async (data) => {
+		try {
+			const result = await agent.Recruitment.createRecruitment(data)
+			if (result.success) {
 				setSnackbarProps({
 					open: true,
 					severity: 'success',
 					text: '新增成功'
 				})
+				return true
 			}
 			else {
 				setSnackbarProps({
@@ -157,8 +146,17 @@ function Recruitment(props) {
 					severity: 'error',
 					text: '新增失敗'
 				})
+				return false
 			}
-		})
+		} catch (error) {
+			console.log(error)
+			setSnackbarProps({
+				open: true,
+				severity: 'error',
+				text: '新增失敗'
+			})
+			return false
+		}
 	}
 
 	return(
