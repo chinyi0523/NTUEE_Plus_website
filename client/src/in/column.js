@@ -229,14 +229,14 @@ class Column extends Component{
                 <Column_block link="/in/Column/pages/1602" block = {column_block_1602}/>
                 <Column_block link="/in/Column/pages/1601" block = {column_block_1601}/>
 			</div>
-			/*
+				/*
 				<form onSubmit={this.handleSubmit}>
                     <input type="file" onChange={this.handleImageChange}/>
                     <input type="text" onChange={this.handleFilenameChange}/>
                     <button onClick={this.handleSubmit}> submit </button>
                 </form>
 			
-			
+				
 				{/* <img src = {this.state.nin_Aug} alt="fuckyou"></img> }
 				{ <Column_block link="/in/Column/pages/2001">
 					<div id = "column_block_section" style={{marginTop:"8%"}}>
