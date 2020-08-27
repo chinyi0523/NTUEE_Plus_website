@@ -25,6 +25,7 @@ $ npm start
 * 在branch webpack用webpack --watch打包前端檔案，npm run dev當檔案改動網頁會同步更新(要refresh)
 * forget的mail改成'"台大電機系系學會EEPlus" <ntueeplus2020@gmail.com>'，且應該會正常顯示名字
 * 發現一個嚴重的bug是只要知道學號，因為Q defalut是hello world，就能用forget改別人密碼(再改)
+	* 解決方案：把login schemas裡的question default刪掉(當初好像是為了讓大家測試)，要設安全問題的必須登入後自己加
 
 ### 0824 進度 by 建琁
 * 調整Support字體大小和margin top。
