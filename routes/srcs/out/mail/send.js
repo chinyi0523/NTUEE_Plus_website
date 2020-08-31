@@ -6,7 +6,7 @@ module.exports = function (myfriend, hr){
 		// 發信人
 		from: '"台大電機系系學會EEPlus" <ntueeplus2020@gmail.com>',
 		// 主題
-		subject: '激活碼(一小時後到期)',
+		subject: '重設密碼(一小時後到期)',
 		// 收信人
 		to: myfriend,
 		// 信件內容，HTML格式

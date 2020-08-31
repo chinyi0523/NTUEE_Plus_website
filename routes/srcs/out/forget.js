@@ -1,11 +1,10 @@
-const user_l_Schema = require('../../Schemas/user_login');
-const crypto = require("crypto");
+const user_v_Schema = require('../../Schemas/user_visual');
 const Activation = require('../../Schemas/activation');
 const sendmail = require('./mail/send');
 
 
-function insert_active(name,psw,act){ //激活碼
-	Activation.find({account:name},function(err,obj){
+function insert_active(name,act){ //激活碼
+	Activation.find({"account":name},function(err,obj){
 		if (err) {
             console.log("ErrorFind:" + err);
         }
@@ -13,7 +12,7 @@ function insert_active(name,psw,act){ //激活碼
             if(obj.length == 0){//新增
 				const data =  new Activation({
 					account : name,
-					newpsw : psw,
+					//newpsw : psw,
 					active : act
 				});	
                 data.save(function(err,res){
@@ -41,31 +40,37 @@ function insert_active(name,psw,act){ //激活碼
 
 module.exports = function (req, res, next) {
   const Useraccount = req.body.account.toLowerCase();
-  const question = req.body.question;
-  const Email = req.body.Email;
-  const UserPsw = req.body.password;
+  //const question = req.body.question;
+  //const Email = req.body.Email;
+  //const UserPsw = req.body.password;
   //密碼加密
-  let md5 = crypto.createHash("md5");
-  const newPas = md5.update(UserPsw).digest("hex");
-  console.log(UserPsw,newPas);
-  const query = {account: Useraccount};//, question:question};
-   user_l_Schema.find(query, function(err, obj){
+  //let md5 = crypto.createHash("md5");
+  //const newPas = md5.update(UserPsw).digest("hex");
+  //console.log(UserPsw,newPas);
+  const query = {"account.data": Useraccount};//, question:question};
+   user_v_Schema.find(query, function(err, obj){
         if (err) {
             console.log("Error:" + err);
 			return res.send({status:'success',message:false,description:"資料庫錯誤"});
         }else {
             if(obj.length == 1){
-				if(obj[0].question===question&&question!==""){
-					console.log('答案正確');
+				if(obj[0].publicEmail.data!==(''||undefined)){
+					console.log('信箱：'+obj[0].publicEmail.data);
 					//寄送激活碼
+					const Email = obj[0].publicEmail.data;
 					const Garbled = Math.random().toString(36).substr(2); //產生亂碼
-					insert_active(Useraccount, newPas, Garbled);
-					const hylink = '<a href="'+req.protocol+"://"+req.get('host')+'/api/activation?name='+Useraccount+'&active='+Garbled+'">點擊激活</a>';
+					insert_active(Useraccount,  Garbled);
+					const hylink = '<a href="'+req.protocol+"://"+req.get('host')+'/ResetPassword/'+Useraccount+'/'+Garbled+'">點擊進入變更密碼頁面</a>';
 					sendmail(Email,hylink);
-					return res.send({status:'success',message:true});
+					if(obj[0].publicEmail.show){
+						return res.send({status:'success',message:true,data:{email:Email}});
+					}else{
+						return res.send({status:'success',message:true,data:{email:"您的私人信箱"}});
+					}
+					
 				}else{
-					console.log('答案錯誤');
-					return res.send({status:'success',message:false,description:"答案錯誤"});
+					console.log('信箱不存在');
+					return res.send({status:'success',message:false,description:"未設定信箱，請聯絡管理員"});
 				}
             }else{
                 console.log('帳號不存在');
