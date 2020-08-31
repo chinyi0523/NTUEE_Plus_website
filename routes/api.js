@@ -32,7 +32,10 @@ router.post("/forget",
 	ValidTest('forget'),
 	ValidSend,
 	require("./srcs/out/forget"));
-router.get("/activation", require("./srcs/out/activation"));
+router.post("/activation",
+	ValidTest('activation'),
+	ValidSend,
+	require("./srcs/out/activation"));
 
 //in
 router.post("/showPersonal",
