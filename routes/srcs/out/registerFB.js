@@ -10,10 +10,10 @@ function insert(name, account, facebookID, file) {
         username: name,
         account: account,
         facebookID: facebookID,
-        img: {
-            data: file.buffer,
-            contentType: file.mimetype
-        }
+        // img: {
+        //     data: file.buffer,
+        //     contentType: file.mimetype
+        // }
     });
     console.log('img=', user.img)
     user.save(function (err, res) {
@@ -49,9 +49,9 @@ module.exports = function (req, res) {
     const UserName = req.body.username;
     const Useraccount = req.body.account.toLowerCase();
     const UserFbId = req.body.facebookID;
-    if(req.file===undefined){
-        return res.send({message:false,description:"請添加照片"});
-    }
+    // if(req.file===undefined){
+    //     return res.send({message:false,description:"請添加照片"});
+    // }
     //console.log('file\n', req.file)
 
     //查詢用戶是否存在
@@ -64,7 +64,7 @@ module.exports = function (req, res) {
         else {
             if (obj.length == 0) {
                 console.log("新增帳號");
-                insert(UserName, Useraccount, UserFbId, req.file);
+                insert(UserName, Useraccount, UserFbId, null);//req.file);
                 insertVisual(UserName,Useraccount);
                 res.send({ status: 'success', message: true, data: UserName })
             } else {

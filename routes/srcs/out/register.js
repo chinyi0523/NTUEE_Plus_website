@@ -10,10 +10,10 @@ function insert(name,account,psw,file){
                 username : name,
 				account: account,
                 userpsw : psw,
-				img:{
-					data:file.buffer,
-					contentType:file.mimetype
-				}
+				// img:{
+				// 	data:file.buffer,
+				// 	contentType:file.mimetype
+				// }
             });
 	console.log('img=',user.img)
     user.save(function(err,res){
@@ -54,9 +54,9 @@ module.exports = function (req, res) {
   let md5 = crypto.createHash("md5");
   const newPas = md5.update(UserPsw).digest("hex");
   
-  if(req.file===undefined){
-      return res.send({message:false,description:"請添加照片"});
-  }
+//   if(req.file===undefined){
+//       return res.send({message:false,description:"請添加照片"});
+//   }
   //查詢用戶是否存在
   const query = {account: Useraccount};
     user_l_Schema.find(query, function(err, obj){
@@ -67,7 +67,7 @@ module.exports = function (req, res) {
         else {
             if(obj.length == 0){
 				console.log("新增帳號");
-                insert(UserName,Useraccount,newPas,req.file);
+                insert(UserName,Useraccount,newPas,null);//req.file);
 				req.session.regenerate(function(err) {
 					if(err){
 						console.log("session建立失敗，err=\n",err);

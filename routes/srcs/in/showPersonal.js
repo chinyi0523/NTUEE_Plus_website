@@ -17,8 +17,8 @@ module.exports = function (req, res, next) {
             res.send({status:'success',message:true,data:{
                 username:obj[0].username,
                 account:obj[0].account,
-                email:obj[0].private_Email,
-                SQ:obj[0].question,
+                // email:obj[0].private_Email,
+                // SQ:obj[0].question,
                 //img:(prefix+img)
             }});
         }else{
