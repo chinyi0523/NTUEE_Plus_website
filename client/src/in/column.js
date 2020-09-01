@@ -59,7 +59,6 @@ class Column extends Component{
 			filename:'2001',
 			anno:['羅韻瑢 鄭謹譯 李筠婕 吳建翰 余欣澄 ','| 2020/03/14 星期六'],
 			title:['1999級 簡韶逸 (CEO/ Founder @ Ganzin Technology, Prof. @ NTUEE)'],
-			/*title:['1999級', '簡韶逸', ' (CEO/ Founder @ Ganzin Technology, Prof. @ NTUEE)'],*/
 			exp:['現任：CEO of Ganzin Technology', '現任：Associate professor at GIEE  (NTU)','曾任：Research staff in Quanta Research Institute (廣達)  (2003~2004)' ],
 			edu:['博士：台灣大學電子工程學研究所  (2003)', '學士：台灣大學電機系 (1999)'],
 			intro:['簡韶逸教授任職於台大電子所長達16年，致力於多媒體訊號處理系統、多媒體積體電路設計、晶片系統設計方法的研究。 多年來，「媒體晶片系統實驗室」不斷研發出優異的技術。2016 年簡韶逸教授帶學生做出眼球追蹤技術的雛形時，他看好一定能應用在 AR/VR 上，於是決心創業。2018年1月時見臻科技 (Ganzin Technology) 從台灣大學spin off。見臻科技提供整合性視線追蹤解決方案  (eye tracking solution)，包括視線追蹤模組  (eye tracking module) 及對應之軟體開發平台  (SDK)，解決目前市面上眼動儀成本高、功耗高、體積大、機構複雜的問題。','見臻科技連兩年參加世界性消費電子展 (CES)，2018年獲選Taiwan Tech Star，是32家獲選的台灣新創公司之一，2019年更被路透社評選為Best of CES。'],
@@ -155,33 +154,15 @@ class Column extends Component{
 			intro:['「想像一下，打開電腦或是手機觀看影片或玩電動，就能感受到360度逼真的立體音效，彷彿賽車就從身旁呼嘯而過、恐龍就從眼前磅礡踩過的震撼聲音。」系學會很榮幸邀請到 2007級 謝沛倫系友參加本次skype專訪。創辦於2014年，LA based的 startup ─ Ambidio，希望能創造「大腦與耳朵重新連結的Ambidio時代」，快點進文章，聽一聽謝沛倫學長為我們帶來的分享吧!'],
 			id:'Column_Block_1606'
 		}
-//        const column_block_胡立民 = {
-//			filename:'胡立民',
-//			anno:['林承德 許哲睿 蘇家軒 賴沂謙 黃煜堯','| 2018/3/9 星期五'],
-//			title:['1984級 胡立民 (Chief Technology Officer Emeritus of Ellie Mae, Inc.)'],			
-//			exp:['Chief Technology Officer Emeritus of Ellie Mae, Inc.'],
-//			edu:['博士： UC Berkeley'],
-//			intro:['如果經營公司成功就算是人生一個勝利戰果的話，那麼胡立民學長就有兩個戰果：一個是經營EllieMae的成功，目前該公司已是一個在美上市、市值三十億美金的FinTech公司；另一個是他從事慈善事業，他與友人推動的「華人特殊兒童中心」嘉惠無數特殊兒童家庭，因不敷使用，已於2017年初於南灣再開第二家，受到政府重視。快點進文章看看 胡立民學長為我們帶來的分享吧 :-)'],
-//			id:'Column_Block_胡立民'
-//		}
-        const column_block_洪銘駿 = {
-			filename:'洪銘駿',
+        const column_block_HungMingJiun = {
+			filename:'HungMingJiun',
 			anno:['劉衡謙 賴明緯 潘彥銘 葉加祈 Sasa Chen','| 2017/6/9 星期五'],
 			title:['2014級 洪銘駿 (RobotArt 國際機器人藝術大賽首獎)'],			
 			exp:['JTCF Novel Technology Paper Award for Amusement Culture'],
 			edu:['碩士：台大電機所控制組'],
 			intro:['系學會很榮幸邀請到2014級 洪銘駿 系友參加本次影片專訪。學長將本身在藝術方面的興趣和科技做結合，在RobotArt機器人藝術比賽上奪得首獎！youtube上面也有學長設計的機器人畫Albert Einstein的影片呢！這次的籌備團隊非常用心，特別製作了一份圖文並茂、以故事方式呈現訪談過程的文章 (https://goo.gl/0ZH42K)希望能讓大家對於洪銘駿學長有更完整的認識！快點進文章或觀賞我們精心剪輯的影片，聽一聽 洪銘駿 學長為我們帶來的分享吧 :-)'],
-			id:'Column_Block_洪銘駿'
+			id:'Column_Block_HungMingJiun'
 		}
-//        const column_block_王英明 = {
-//			filename:'王英明',
-//			anno:['藍辰屹 陳欽安 Wei-Lun Huang 廖宜倫 Chih-Yang Yeh','| 2017/5/26 星期五'],
-//			title:['1995級 王英明 (Corporate Business Development@ Mediatek Inc)'],			
-//			exp:['Researcher at IBM Research','VP and GM of Teknekron Systems LLC.','President of Hugo Technologies, Inc.','Co-Founder and former CTO of Ellie Mae, Inc.','Chairman of Monte Jade West'],
-//			edu:['碩士：University of Texas at Austin'],
-//			intro:['系學會很榮幸邀請到 1995級 王英明 系友參加本次影片專訪，感謝 2008級 趙式隆 隆哥的推薦。學長是標準的電機系出身，畢業後當了RD一陣子後、決定轉戰管理顧問行業，加入了麥肯錫。 學長非常熱心，兩天前 (5/24)系上的「專題演講」必修課，他也很慷慨地來到現場和大家聊聊他的心路歷程，近期王英明學長正在籌備自己的新創事業。快點進文章或觀賞我們精心剪輯的影片，聽一聽 王英明學長為我們帶來的分享吧。'],
-//			id:'Column_Block_王英明'
-//		}
         const column_block_1605 = {
 			filename:'1605',
 			anno:['蔡忠紘 林怡廷 陳鴻智 蔡承佑','| 2017/4/28 星期五'],
@@ -240,7 +221,7 @@ class Column extends Component{
 				<Column_block link="/in/Column/pages/1807" block = {column_block_1807}/>
 				<Column_block link="/in/Column/pages/1806" block = {column_block_1806}/>
 				<Column_block link="/in/Column/pages/1805" block = {column_block_1805}/>
-                <Column_block link="/in/Column/pages/洪銘駿" block = {column_block_洪銘駿}/>
+                <Column_block link="/in/Column/pages/HungMingJiun" block = {column_block_HungMingJiun}/>
                 <Column_block link="/in/Column/pages/1606" block = {column_block_1606}/>
                 <Column_block link="/in/Column/pages/1605" block = {column_block_1605}/>
                 <Column_block link="/in/Column/pages/1604" block = {column_block_1604}/>
@@ -248,14 +229,14 @@ class Column extends Component{
                 <Column_block link="/in/Column/pages/1602" block = {column_block_1602}/>
                 <Column_block link="/in/Column/pages/1601" block = {column_block_1601}/>
 			</div>
-			/*
+				/*
 				<form onSubmit={this.handleSubmit}>
                     <input type="file" onChange={this.handleImageChange}/>
                     <input type="text" onChange={this.handleFilenameChange}/>
                     <button onClick={this.handleSubmit}> submit </button>
                 </form>
 			
-			
+				
 				{/* <img src = {this.state.nin_Aug} alt="fuckyou"></img> }
 				{ <Column_block link="/in/Column/pages/2001">
 					<div id = "column_block_section" style={{marginTop:"8%"}}>

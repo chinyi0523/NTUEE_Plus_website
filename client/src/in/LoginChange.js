@@ -38,7 +38,7 @@ class LoginChange extends Component {
 	handleInputChange = event => {
 		const target = event.target;
 		const value = target.value;
-		const name = target.id;
+		const name = target.name;
 
 		if (name === "safe_Question") {
 			this.setState({ question: value });
@@ -103,7 +103,7 @@ class LoginChange extends Component {
 						<div className="form-group row mx-auto">
 							<label className="col-form-label col-5">安全問題</label>
 							<input id="LC_safe_Question" className="col-6 col-md-5 col-xl-4 offset-1 offset-md-2 offset-xl-3"
-									value={this.state.question}></input>
+									value={this.state.question} onChange={this.handleInputChange} name="safe_Question"></input>
 						</div>
 					</div>
 					<div className="d-flex justify-content-center mt-3">
