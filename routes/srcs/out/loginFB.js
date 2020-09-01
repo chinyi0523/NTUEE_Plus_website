@@ -11,10 +11,10 @@ module.exports = function (req, res, next) {
 		}
 		else {
 			if (obj.length == 1) {
-				console.log('Login successfully', obj);
+				// console.log('Login successfully', obj);
 				req.session.regenerate (function (err) {
 					if (err) {
-						console.log("Session created failed! Err=\n", err);
+						// console.log("Session created failed! Err=\n", err);
 						return res.send({
 							status: 'success',
 							message: false,
@@ -26,7 +26,7 @@ module.exports = function (req, res, next) {
 					return res.send({ status: 'success', message: true, username: obj[0].username });
 				});
 			} else {
-				console.log('The account does not exist!');
+				// console.log('The account does not exist!');
 				return res.send({ status: 'success', message: false, username: "Not found!" });
 			}
 		}

@@ -15,14 +15,14 @@ function insert(name, account, facebookID, file) {
         //     contentType: file.mimetype
         // }
     });
-    console.log('img=', user.img)
+    // console.log('img=', user.img)
     user.save(function (err, res) {
         if (err) {
             console.log(err);
         }
         else {
-            console.log('成功儲存：', user);
-            console.log(res);
+            // console.log('成功儲存：', user);
+            // console.log(res);
         }
     })
 }
@@ -39,7 +39,7 @@ function insertVisual(name,account){
               resolve(false);
           }
           else{
-              console.log('成功儲存：',user);
+              // console.log('成功儲存：',user);
               resolve( res);
           }
       })
@@ -63,12 +63,12 @@ module.exports = function (req, res) {
         }
         else {
             if (obj.length == 0) {
-                console.log("新增帳號");
+                // console.log("新增帳號");
                 insert(UserName, Useraccount, UserFbId, null);//req.file);
                 insertVisual(UserName,Useraccount);
                 res.send({ status: 'success', message: true, data: UserName })
             } else {
-                console.log("已有此帳號");
+                // console.log("已有此帳號");
                 res.send({ status: 'success', message: false, description: "帳號已存在" })
             }
         }

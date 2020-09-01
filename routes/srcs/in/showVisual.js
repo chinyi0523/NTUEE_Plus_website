@@ -15,7 +15,7 @@ function insert(name,account){
 			resolve(false);
         }
         else{
-			console.log('成功儲存：',user);
+			// console.log('成功儲存：',user);
 			resolve( res);
         }
     })
@@ -32,12 +32,12 @@ module.exports = function (req, res, next) {
         else {
             if(obj.length === 1){
               const output=readDB.getOwnDB(obj[0]);
-              console.log('即將傳出使用者資料',output.account);
+              // console.log('即將傳出使用者資料',output.account);
               res.send({status:'success',message:true,data:
                 output
               });
             }else if(obj.length === 0){//存在session但不在資料庫裡
-              console.log("session:",session_account);
+              // console.log("session:",session_account);
               output = await insert(req.session.loginName||'無名氏',session_account);
               //console.log("output",output)
               if(!output){

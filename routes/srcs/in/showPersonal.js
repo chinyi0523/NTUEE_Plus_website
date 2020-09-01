@@ -22,7 +22,7 @@ module.exports = function (req, res, next) {
                 //img:(prefix+img)
             }});
         }else{
-            console.log("session不匹配:",session_account);
+            // console.log("session不匹配:",session_account);
             res.send({status:'success',message:false, description:"session不匹配"}); 
             //res.send({status:'success',message:true, data:{}}); 
         }

@@ -11,13 +11,13 @@ module.exports = function (req, res, next) {
     }
     else {
         if(obj.length === 1){
-            console.log('發現帳號',obj);
+            // console.log('發現帳號',obj);
             user_l_Schema.updateOne({account:session_account},{$set:{question:NQ}},function(err,res){
                 if (err) return res.send({status:'success',message:false, description:err});
             });
             res.send({status:'success',message:true});
         }else{
-            console.log("session:",session_account);
+            // console.log("session:",session_account);
             res.send({status:'success',message:false, description:"帳號不存在或存在多個帳號"}); 
         }
     }

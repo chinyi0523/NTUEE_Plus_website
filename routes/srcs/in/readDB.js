@@ -73,7 +73,7 @@ module.exports.getOtherDB = function(obj1){
 		output[element]=[]
 		obj1[element].forEach(occupation=>{
 			if(occupation!==null){
-			console.log(occupation)
+			// console.log(occupation)
 			if(occupation.show===true){
 				output[element].push({
 					Company:occupation.C,
@@ -125,7 +125,7 @@ module.exports.search = function(req){
 		JobMatch["show"] = true;
 		query["Occupation"] = {$elemMatch:JobMatch};
 	}
-	console.log('query=',query)
+	// console.log('query=',query)
 	return query
 }
 
@@ -167,7 +167,7 @@ module.exports.searchOr = function(req){
 		Q3["Occupation"] = {$elemMatch:JobMatch};
 		query.push(Q3)
 	}
-	console.log('query=',query)
+	// console.log('query=',query)
 	return {$or:query}
 }
 
@@ -217,26 +217,26 @@ module.exports.chDB = function(req){
 	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Insert')){
 		const item = {}
 		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Insert']))){
-			console.log('insert',key,val);
+			// console.log('insert',key,val);
 			var arr = key.split('_');
 			if(!item.hasOwnProperty(arr[2])) item[arr[2]] = {};
 			item[arr[2]][arr[1]] = val;
 		}
-		console.log('insert item',item)
+		// console.log('insert item',item)
 		const pushArr = []
 		Object.keys(item).sort().forEach(key=>{
 			pushArr.push(item[key])
-			console.log('push item',item[key])
+			// console.log('push item',item[key])
 		})
 		re.$push = {'Occupation':{$each:pushArr}}
 	}
 	
-	console.log('set=',output)
-	console.log('unset=',unset)
+	// console.log('set=',output)
+	// console.log('unset=',unset)
 	if(req.file){
 		output["userimage.data"] = req.file.buffer
 		output["userimage.contentType"] = req.file.mimetype
-		console.log('get img',output["userimage.contentType"])
+		// console.log('get img',output["userimage.contentType"])
 	}
 
 	const unsetEmpty = (Object.entries(unset).length === 0 && unset.constructor === Object)
@@ -244,7 +244,7 @@ module.exports.chDB = function(req){
 	//var re = (!setEmpty)?((!unsetEmpty)?({$set:output,$unset:unset}):({$set:output})):((!unsetEmpty)?({$unset:unset}):({}))
 	if(!unsetEmpty)(re.$unset=unset)
 	if(!setEmpty)(re.$set = output)
-	console.log('re',re)
+	// console.log('re',re)
 	return re;
 }
 
@@ -270,7 +270,7 @@ module.exports.getOtherDB_job = function(obj){
 			output[element] = obj[element]
 		}
 	})
-	console.log('job=',output.title)
+	// console.log('job=',output.title)
 	return output
 }
 
@@ -281,6 +281,6 @@ module.exports.search_job = function(req){
 			query[element] = req.body[element];
 		}
 	})
-	console.log('query=', query)
+	// console.log('query=', query)
 	return query
 }

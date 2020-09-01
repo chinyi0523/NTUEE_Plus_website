@@ -15,7 +15,7 @@ module.exports = function (name){
 			resolve(objImg);
 		}
 		else{
-			console.log("查無資料或有多筆資料");
+			// console.log("查無資料或有多筆資料");
 			resolve(false);
 		}
 	})

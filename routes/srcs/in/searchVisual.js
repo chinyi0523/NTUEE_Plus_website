@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
 		else{
 			const output = []
 			obj.forEach(people=>{
-				console.log(obj)
+				// console.log(obj)
 				const output1 = readDB.getOtherDB(people)
 				output.push(output1)
 			})

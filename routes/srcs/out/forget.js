@@ -20,18 +20,18 @@ function insert_active(name,act){ //激活碼
 						console.log(err);
 					}
 					else{
-						console.log('新建');
-						console.log(data.account);
+						// console.log('新建');
+						// console.log(data.account);
 					}
 				})
             }else if(obj.length >=1){
-				console.log(obj);
-				console.log('複寫成');
-				console.log(psw,act);
+				// console.log(obj);
+				// console.log('複寫成');
+				// console.log(psw,act);
 				Activation.updateOne({account:name},{$set:{newpsw:psw, active:act, expireDate:Date.now()}},function(err,res){
 					if (err) throw err;
 				});
-				Activation.find({account:name},function(err,obj2){console.log('有複寫成功嗎?：',obj2)});				
+				Activation.find({account:name},function(err,obj2){/*console.log('有複寫成功嗎?：',obj2)*/});				
             }
         }
 	})
@@ -55,7 +55,7 @@ module.exports = function (req, res, next) {
         }else {
             if(obj.length == 1){
 				if(obj[0].publicEmail.data!==(''||undefined)){
-					console.log('信箱：'+obj[0].publicEmail.data);
+					// console.log('信箱：'+obj[0].publicEmail.data);
 					//寄送激活碼
 					const Email = obj[0].publicEmail.data;
 					const Garbled = Math.random().toString(36).substr(2); //產生亂碼
@@ -69,11 +69,11 @@ module.exports = function (req, res, next) {
 					}
 					
 				}else{
-					console.log('信箱不存在');
+					// console.log('信箱不存在');
 					return res.send({status:'success',message:false,description:"未設定信箱，請聯絡管理員"});
 				}
             }else{
-                console.log('帳號不存在');
+                // console.log('帳號不存在');
                 res.send({status:'success',message:false,description:"帳號不存在"});
             }
         }

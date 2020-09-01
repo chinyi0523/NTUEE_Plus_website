@@ -7,7 +7,7 @@ const crypto = require("crypto");
 
 module.exports = function(req,res){
 	const UserName = req.body.account;
-	console.log('使用者是：',UserName);
+	// console.log('使用者是：',UserName);
 	const Garbled = req.body.active;
 	let newPsw = req.body.password;
 	let md5 = crypto.createHash("md5");
@@ -19,22 +19,22 @@ module.exports = function(req,res){
         }
         else {
             if(obj.length == 1){
-				console.log("obj.active",obj[0].active);
-				console.log("datenow-datebegin=",Date.now()-obj[0].expireDate,"(ms) < 60*60*1000?");
+				// console.log("obj.active",obj[0].active);
+				// console.log("datenow-datebegin=",Date.now()-obj[0].expireDate,"(ms) < 60*60*1000?");
                 if((Date.now()-obj[0].expireDate)<=60*60*1000){//認證成功
-					console.log('認證成功，新密碼：',newPsw);
+					// console.log('認證成功，新密碼：',newPsw);
 					user_l_Schema.updateOne({account:UserName},{$set:{userpsw:newPsw}},function(err,res){
 						if (err) throw err;
 					});
 					Activation.deleteMany({account:UserName},function(err,obj){
 						if(err) throw err;
-						console.log(obj+" document(s) from Activation deleted");
+						// console.log(obj+" document(s) from Activation deleted");
 					});
-					console.log('密碼更新');
+					// console.log('密碼更新');
 					//const URL = '<a href="'+req.protocol+"://"+req.get('host')+'/Login">點擊跳轉</a>';
 					res.send({message:true});
 				}else{
-					console.log('驗證碼過期');
+					// console.log('驗證碼過期');
 					res.send({message:false,description:"驗證碼過期"});
 				}
             }else{

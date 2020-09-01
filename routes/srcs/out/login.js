@@ -18,10 +18,10 @@ module.exports = function (req, res, next) {
 		else {
 			if(obj.length == 1){
 				if(obj[0].userpsw===newPas){
-					console.log('登入成功');
+					// console.log('登入成功');
 					req.session.regenerate(function(err) {
 						if(err){
-							console.log("session建立失敗，err=\n",err);
+							// console.log("session建立失敗，err=\n",err);
 							return res.send({
 								status:'success',
 								message:false,
@@ -34,11 +34,11 @@ module.exports = function (req, res, next) {
 						//res.redirect('/');
 					});
 				}else{
-					console.log('密碼錯誤\n',obj[0].userpsw,'\n!=\n',newPas);
+					// console.log('密碼錯誤\n',obj[0].userpsw,'\n!=\n',newPas);
 					return res.send({status:'success',message:false,description:"密碼錯誤"});
 				}
 			}else{
-				console.log('帳號不存在');
+				// console.log('帳號不存在');
 				return res.send({status:'success',message:false,description:"帳號不存在"}); 
 			}
 		}

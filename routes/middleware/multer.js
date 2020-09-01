@@ -24,12 +24,12 @@ Multer = function(method){
 			if (req.fileValidationError) {
 				return res.send({status:'success',message:false,description:req.fileValidationError})
 			}else if(err instanceof multer.MulterError){
-				console.log('Merr',err);
+				console.log('Multer err：',err);
 				return res.send({status:'success',message:false,description:err.message})
 			}else if(err){
 				return res.send({status:'success',message:false,description:err})
 			}
-			console.log('no file err')
+			// console.log('no file err')
 			next()
 		})
 	}

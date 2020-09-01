@@ -11,14 +11,14 @@ module.exports = function (req, res, next) {
         }
         else {
             if(obj.length === 1){
-                console.log('即將更改資料',obj);
-                console.log('req',req.body);
+                // console.log('即將更改資料',obj);
+                // console.log('req',req.body);
                 const update = readDB.chDB(req);
                 user_v_Schema.updateOne({"account.data":session_account},update,function(err,result){
                     console.log("result=",result);
                     user_v_Schema.updateOne({"account.data":session_account},
                     {$pull:{"Occupation":null}},
-                    function(err2,result2){console.log('deleted array(may be undefined)=',result2)});
+                    function(err2,result2){/*console.log('deleted array(may be undefined)=',result2)*/});
                     if (err) {
                         console.log(err);
                         return res.send({status:'success',message:false, description:err});
@@ -26,7 +26,7 @@ module.exports = function (req, res, next) {
                 });
                 return res.send({status:'success',message:true});
             }else{
-                console.log("session:",session_account);
+                // console.log("session:",session_account);
                 return res.send({status:'success',message:false, description:"帳號不存在或重複"}); 
             }
         }
