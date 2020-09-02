@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-client && node index.js",
+    "start": "node index.js",
     "build-client": "webpack --mode production",
     "dev": "npm-run-all --parallel watch:server watch:build",
     "watch:build": "webpack --watch --mode development",
@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dbstart": "sudo service mongodb start",  
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "install-client": "cd client && npm install"
+    "install-client": "cd client && npm install && cd .."
   },
   "author": "",
   "license": "ISC",

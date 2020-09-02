@@ -4,6 +4,7 @@
 ```bash
 $ npm install
 $ npm run install-client
+$ npm run build-client
 $ npm start
 ```
 前端人員(更改會透過webpack --watch自動重整)

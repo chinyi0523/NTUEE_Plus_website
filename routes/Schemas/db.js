@@ -1,22 +1,25 @@
 const mongoose = require('mongoose');
 
 //數據地址
-const local = true;
-let DB_URL;
-if(local){
-    DB_URL = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/heroku_kbtrwz4h?retryWrites=true&w=majority'
-    //'mongodb://localhost:27017/mongoose';
-}else{
-    DB_URL = "mongodb://heroku_kbtrwz4h:f13g3thhm7uo2ip6o2qcnaufk9@ds155718.mlab.com:55718/heroku_kbtrwz4h";
-}
+// const local = true;
+// let DB_URL;
+// if(local){
+//     DB_URL = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/heroku_kbtrwz4h?retryWrites=true&w=majority'
+//     //'mongodb://localhost:27017/mongoose';
+// }else{
+//     DB_URL = "mongodb://heroku_kbtrwz4h:f13g3thhm7uo2ip6o2qcnaufk9@ds155718.mlab.com:55718/heroku_kbtrwz4h";
+// }
 //"mongodb://heroku_b6klgxdz:lmed4cj2a50535mbei4fnsfq58@ds213529.mlab.com:13529/heroku_b6klgxdz"
 // ; // || process.env.MONGODB_URI || 'mongodb://localhost:27017/mongoose';
 
+const DB_URL1 = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/heroku_kbtrwz4h?retryWrites=true&w=majority'
+const DB_URL = process.env.MONGO_URI||DB_URL1
+//"mongodb://127.0.0.1/27021"
 mongoose.connect(DB_URL);
 console.log('db connect success');
 
 mongoose.connection.on('disconnected',function(){
-    console.log('db connect wrong');
+    console.log('db connect wrong to'+DB_URL);
 })
 
 module.exports = mongoose;
