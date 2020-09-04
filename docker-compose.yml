@@ -2,12 +2,16 @@ version: '3.8'
 services:
   db:
     image: mongo
-    restart: always
-    ports:
-      - 27017:27017
-    volumes:
-      - ./tmp/data/db:/data/db
+    # restart: always
+    expose:
+      - "27017"
+    # ports:
+    #   - 27017:27017
+    # volumes:
+    #   - ./tmp/data/db:/data/db
   web:
+    image: node:12
+    working_dir: /app
     build:
         context: ./
         dockerfile: Dockerfile

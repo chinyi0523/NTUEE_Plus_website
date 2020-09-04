@@ -19,12 +19,12 @@ router.post("/login",
 router.post("/loginFB",
 	require("./srcs/out/loginFB"));
 router.post("/register",
-	//ImgGet('file'),
+	ImgGet('file'),
 	ValidTest('register'),
 	ValidSend,
 	require("./srcs/out/register"));
 router.post("/registerFB",
-	//ImgGet('file'),
+	ImgGet('file'),
 	ValidTest("registerFB"),
 	ValidSend,
 	require("./srcs/out/registerFB"));

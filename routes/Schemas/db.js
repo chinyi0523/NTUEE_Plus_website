@@ -16,10 +16,10 @@ const DB_URL1 = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.ne
 const DB_URL = process.env.MONGO_URI||DB_URL1
 //"mongodb://127.0.0.1/27021"
 mongoose.connect(DB_URL);
-console.log('db connect success');
+console.log('db connect success '+DB_URL);
 
 mongoose.connection.on('disconnected',function(){
-    console.log('db connect wrong to'+DB_URL);
+    console.log('db connect wrong to '+DB_URL);
 })
 
 module.exports = mongoose;

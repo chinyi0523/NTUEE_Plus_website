@@ -7,6 +7,12 @@ $ npm run install-client
 $ npm run build-client
 $ npm start
 ```
+run in docker
+```
+$ docker-compose build
+$ docker-compose up -d
+open https://localhost:3000
+```
 前端人員(更改會透過webpack --watch自動重整)
 ```bash
 $ npm run dev
