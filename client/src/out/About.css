@@ -1,3 +1,5 @@
+@import url(../component/style/_global.css);
+
 .About_container{
     display:flex;
     flex-direction: column;
@@ -8,32 +10,48 @@
     font-size: 1.5rem;
 }
 
-
-#About_up{
-    /* display: flex; */
-    justify-content: center;
-    margin-left: 1.5vw;
-}
 #About_up_text{
     position: relative;
-    /* margin-top: 12%; */
+
+    font-family: var(--primary-font);
     text-align: center;
-    font-family: 'Noto Sans TC',Arial,sans-serif;
+    
     color: white;
 }
 
-#About_down{
-    /* display: flex; */
-    justify-content: center;
-    margin-left: 5vw;
-}
 #About_down_text{
-    /* position: relative; */
-    /* margin-top: -1%; */
+    font-family:var(--primary-font);
+
     text-align: center;
-    font-family:'Noto Sans TC',Arial,sans-serif;
+    
     color: white;
 }
+
+#About_join_btn{
+    margin:0;
+    border: 2px #fff solid;
+
+    background-color:  #003f67;
+
+    font-size: 2.7vmin;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    
+}
+#About_join_btn:hover{
+    background-color: #fff;
+
+    font-size: 2.7vmin;
+    font-weight: bold;
+    color: #003f67;
+    text-decoration: none;
+    text-align: center;
+}
+
+
 @media screen and (min-width: 300px){
     #About_down_text{
         font-size: 12px;
@@ -90,64 +108,3 @@
         font-size: 50px;
     }
 }
-#About_join_btn{
-    font-size: 2.7vmin;
-    /* border-radius: 10px; */
-    /* position: absolute;
-    top:65%;
-    left:45.5%;
-    width:10%;
-    height: 7%; */
-    background-color:  #003f67;
-    color: #fff;
-    border: 2px #fff solid;
-    margin:0;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    
-}
-#About_join_btn:hover{
-    font-size: 2.7vmin;
-    background-color: #fff;
-    color: #003f67;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-}
-/* #About_footer{
-    position: absolute;
-    bottom:0%;
-    left:42.5%;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    color:white;
-} */
-/* #About_logo{
-    display: flex;
-    max-width: 10vmin;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#About_footer_text{
-    display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    color: #fff;
-    text-align: center;
-}
-
-#About_footer_text_2{
-    display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    text-align: center;
-    color: #fff;
-    margin-bottom:10%;
-}
-
- */

@@ -1,29 +1,26 @@
+@import url(../component/style/_global.css);
+
 #Team_container{
-    font-family:'Noto Sans TC',Arial,sans-serif !important;
+    font-family:var(--primary-font) !important;
 }
 
 #Team_content{
-    /* margin-top: 15vh;
-    margin-left: 5vw;
-    margin-right: 5vw; */
-    color:white;
+
     font-size: 24px;
+    color:white;
+    
 }
 #Team_title_hr{
-    font-size: 48px;
+
     width:100%;
+
     border-bottom: 2px solid gray;
+
+    font-size: 48px;
     
-       /* border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1; */
-}
-#Team_B06{
-    margin-top: 5vh;
 }
 #Team_B06_title_hr{
-    /* margin-top: 3vh; */
+
     font-size: 32px;
-}
-#Team_B06_leader{
-    margin-top: 3vh;
+
 }

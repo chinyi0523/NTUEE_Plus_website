@@ -1,30 +1,36 @@
+@import url(../component/style/_global.css);
+
+html {
+    background-color: var(--primary-bgcolor);
+}
 
 #Support_container{
+
     display:flex;
     flex-direction: column;
+
     min-height:100vh;
+
 } 
-html {
-    background-color: #003F67;
-}
-#Support_up{
-    display: flex;
-    justify-content: center;
-    margin-left: 1vw; 
-}
+
 #Support_up_text{
-    position: absolute;
-    bottom: 50%;
-    text-align: center;
-    font-family: 'Noto Sans TC',Arial,sans-serif; 
+    
+    margin-top: 15rem;
+
+    font-family: var(--primary-font); 
     color: white;
+    text-align: center;
+    
+
 }
 #Support_down_text{
-    position: absolute;
-    bottom: 25%;
-    text-align: center;
-    font-family: 'Noto Sans TC',Arial,sans-serif;
+
+    margin-top: 5rem;
+
+    font-family: var(--primary-font);
     color: white;
+    text-align: center;
+    
 }
 @media screen and (min-width: 300px){
     #Support_up_text{
@@ -82,45 +88,7 @@ html {
         font-size: 30px;
     }
 }
-#Support_down{
-    display: flex;
-    justify-content: center;
-    margin-left: 1vw; 
-}
 
 
 
-#Support_footer{
-    /* position: absolute;
-    bottom:0%;
-    left:42.5%;
-    font-family:'Noto Sans TC',Arial,sans-serif; */
-    color:white;
-}
-
-#Support_logo{
-    display: flex;
-    max-width: 10vmin;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto; 
-}
-
-#Support_footer_text{
-    display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    color: #fff;
-    text-align: center; 
-}
-#Support_footer_text_2{
-     display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    color: #fff;
-    text-align: center;
-    margin-bottom:10%; 
-}
 
