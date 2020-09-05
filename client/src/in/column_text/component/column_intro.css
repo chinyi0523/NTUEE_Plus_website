@@ -1,14 +1,14 @@
-.column_whole_title{
-    font-size: 36px;
+.column_intro{
+    font-size: 15px;
     text-align: center;
     font-weight: bold;
 
 }
-.column_title{
+/*.column_subtitle{
     line-height: 10px;
-}
+}*/
 @media screen and (min-width: 300px){
-    #column_whole_title{
+    .column_intro{
         font-size: 15px;
         line-height: normal;
         color: honeydew;
@@ -16,37 +16,37 @@
 
 }
 @media screen and (min-width: 350px){
-    .column_title{
-        font-size: 25px;
+    .column_subtitle{
+        font-size: 16px;
         line-height: normal;
         color: gold;
     }
     
 }
 @media screen and (min-width: 400px){
-    .column_title{
-        font-size: 25px;
+    .column_introe{
+        font-size: 17px;
         line-height: normal;
         color: crimson;
     }
 }
 @media screen and (min-width: 600px){
-    .column_title{
-        font-size: 30px;
+    .column_intro{
+        font-size: 18px;
         line-height: normal;
         color: dimgray;
     }
 }
 @media screen and (min-width: 767px){
-    .column_title{
-        font-size: 30px;
+    .column_intro{
+        font-size: 19px;
         line-height: normal;
         color: limegreen;
     }
 }
 @media screen and (min-width: 1023px){
-    .column_title{
-        font-size: 35px;
+    .column_intro{
+        font-size: 20px;
         line-height: normal;
         color: rgb(40, 20, 220);
     }

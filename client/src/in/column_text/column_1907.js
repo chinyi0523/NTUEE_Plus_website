@@ -5,7 +5,7 @@ import './column_text.css';
 class Column_1907 extends Component{
     render(){
         const column_1907_article = {
-			title:['2012級 王易如 （行動貝果共同創辦人）'],
+			title:['2012級 王易如 ','（共同創辦人＠行動貝果）'],
 			hashtags:['系友專訪', '王易如', '2012級', 'B96', 'Stanford', 'MoBagel', 'Silicon_Valley', 'Automatic_Machine_Learning', 'Advanced_Preprocessing_Unit', '行動貝果', '自動化機器學習引擎', '資料前處理'],
 			sections:[
 				{
