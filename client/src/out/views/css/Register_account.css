@@ -1,0 +1,276 @@
+@import url(../../../component/style/_global.css);
+
+#Register_acc_container {
+	width: 100%;
+	min-height: 100vh;
+
+	font-family: var(--primary-font);
+}
+
+#Register_acc_register_table {
+	color: white;
+}
+#Register_acc_register_table input {
+	border-width: 0 0 4px 0;
+	-o-border-image: linear-gradient(
+		to right,
+		rgb(106, 255, 198) 0%,
+		rgb(48, 232, 255) 100%
+	);
+	border-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(rgb(106, 255, 198)),
+		to(rgb(48, 232, 255))
+	);
+	border-image: linear-gradient(
+		to right,
+		rgb(106, 255, 198) 0%,
+		rgb(48, 232, 255) 100%
+	);
+	border-image-slice: 1;
+
+	background-color: #003f67;
+
+	color: white;
+}
+
+#Register_acc_register_table p {
+	margin: 0;
+	text-align: center;
+}
+#Register_acc_table_title {
+	letter-spacing: 2px;
+}
+
+#Register_acc_confirm_password_label {
+	margin: 0;
+	/* text-align: center; */
+}
+#Register_acc_fileinput {
+	display: none;
+}
+
+#Register_acc_addImage_icon:hover {
+	color: var(--inputborder-color);
+}
+
+#Register_acc_confirm_password:focus::-webkit-input-placeholder {
+	color: #003f67;
+}
+#Register_acc_confirm_password:focus:-ms-input-placeholder {
+	color: #003f67;
+}
+#Register_acc_confirm_password:focus::-ms-input-placeholder {
+	color: #003f67;
+}
+#Register_acc_confirm_password:focus::placeholder {
+	color: #003f67;
+}
+#Register_acc_register_button {
+	border: 2px #fff solid;
+	border-radius: 10px;
+
+	background-color: #003f67;
+
+	font-weight: bold;
+	color: #fff;
+
+	cursor: pointer;
+}
+
+#Register_acc_register_button:hover {
+	background-color: #fff;
+
+	color: #003f67;
+	font-weight: bold;
+
+	transition-property: background-color, color;
+	transition-timing-function: cubic-bezier(0.4.0, 0.2, 1),
+		cubic-bezier(0.4.0, 0.2, 1);
+	transition-duration: 250ms, 250ms;
+}
+#Register_acc_register_text {
+	margin: 0;
+
+	text-align: center;
+
+	-webkit-transform: rotate3d(1, 0, 0, 0deg);
+	transform: rotate3d(1, 0, 0, 0deg);
+	-webkit-transition: -webkit-transform 2s ease-in-out;
+	transition: -webkit-transform 2s ease-in-out;
+	transition: transform 2s ease-in-out;
+	transition: transform 2s ease-in-out, -webkit-transform 2s ease-in-out;
+}
+
+#Register_acc_FAQ_title {
+	color: gray;
+
+	text-align: center;
+}
+#Register_acc_splitline {
+	border-width: 0 0 2px 0;
+	border-style: solid;
+	border-color: gray;
+	border-radius: 1px;
+}
+
+#Register_acc_FAQ_list {
+	color: gray;
+	list-style-type: unset;
+}
+
+#Register_acc_imgPreview {
+	border-radius: 10px;
+	color: white;
+}
+
+@media screen and (min-width: 300px) {
+	.Register_account_label {
+		font-size: 0.8rem;
+		text-align: left !important;
+	}
+
+	.Register_account_input {
+		font-size: 0.8rem;
+	}
+
+	#Register_acc_FAQ {
+		font-size: 0.8rem;
+	}
+
+	#Register_acc_table_title {
+		font-size: 1rem;
+		text-align: center;
+	}
+	#Register_acc_register_button {
+		font-size: 0.8rem;
+	}
+}
+@media screen and (min-width: 350px) {
+	.Register_account_label {
+		font-size: 1rem;
+		text-align: left !important;
+	}
+
+	.Register_account_input {
+		font-size: 1rem;
+	}
+
+	#Register_acc_FAQ {
+		font-size: 1rem;
+	}
+
+	#Register_acc_table_title {
+		font-size: 1.2rem;
+		text-align: center;
+	}
+	#Register_acc_register_button {
+		font-size: 1rem;
+	}
+}
+@media screen and (min-width: 400px) {
+	.Register_account_label {
+		font-size: 1rem;
+		text-align: left !important;
+	}
+
+	.Register_account_input {
+		font-size: 1rem;
+	}
+
+	#Register_acc_FAQ {
+		font-size: 1rem;
+	}
+
+	#Register_acc_table_title {
+		font-size: 1.4rem;
+		text-align: center;
+	}
+	#Register_acc_register_button {
+		font-size: 1rem;
+	}
+}
+@media screen and (min-width: 600px) {
+	.Register_account_label {
+		font-size: 1.5rem;
+	}
+
+	.Register_account_input {
+		font-size: 1.5rem;
+	}
+
+	#Register_acc_FAQ {
+		font-size: 1.5rem;
+	}
+
+	#Register_acc_table_title {
+		font-size: 2rem;
+		text-align: center;
+	}
+	#Register_acc_register_button {
+		font-size: 1.5rem;
+	}
+}
+@media screen and (min-width: 767px) {
+	.Register_account_label {
+		font-size: 1.5rem;
+	}
+
+	.Register_account_input {
+		font-size: 1.5rem;
+	}
+
+	#Register_acc_FAQ {
+		font-size: 1.5rem;
+	}
+
+	#Register_acc_table_title {
+		font-size: 2.2rem;
+		text-align: center;
+	}
+	#Register_acc_register_button {
+		font-size: 1.5rem;
+	}
+}
+@media screen and (min-width: 1023px) {
+	.Register_account_label {
+		font-size: 1.5rem;
+	}
+
+	.Register_account_input {
+		font-size: 1.5rem;
+	}
+	#Register_acc_FAQ {
+		font-size: 1.5rem;
+	}
+	#Register_acc_table_title {
+		font-size: 2.4rem;
+		text-align: center;
+	}
+	#Register_acc_register_button {
+		font-size: 1.5rem;
+	}
+}
+@media screen and (min-width: 1500px) {
+	.Register_account_label {
+		font-size: 1.5rem;
+	}
+
+	.Register_account_input {
+		font-size: 1.5rem;
+	}
+
+	#Register_acc_FAQ {
+		font-size: 1.5rem;
+	}
+	#Register_acc_table_title {
+		font-size: 3rem;
+		text-align: left !important;
+	}
+
+	#Register_acc_register_button {
+		font-size: 1.5rem;
+	}
+}

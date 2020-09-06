@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './recruitment.css'
-import { NavBar_in } from '../../component/AppBar_in'
 import Recruitment_block from './recruitment_block/Recruitment_block'
 import eesa_icon from '../../images/eesa-icon.png'
 import kronos from '../../images/kronos.png'

@@ -14,9 +14,6 @@ class Main_in extends Component {
 				<NavBar_in />
 				<Slidebar />
 				<Switch>
-					{
-						//<Route path="/in/Home_in" exact component={Home_in_page} />
-					}
 					<Route path='/in/Column' exact component={Column_page} />
 					<Route path='/in/Column/pages' component={column_app} />
 					<Route path='/in/Career' exact component={Career_page} />

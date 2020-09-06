@@ -1,9 +1,4 @@
-#Recommendation_block_container {
-	background-color: azure;
-	border-radius: 1em;
-	color: rgb(12, 28, 99);
-	font-family: 'Noto Sans TC', Arial, sans-serif !important;
-}
+@import url(../../../component/style/_global.css);
 
 .Recommendation_block_image {
 	width: 25rem;
@@ -35,17 +30,28 @@
 .Recommendation_block_spec_div {
 	color: rgb(72, 72, 72);
 }
-#Recommendation_spec_requirement {
-	text-decoration: dashed;
-}
-#Recommendation_requirement_li {
-	font-weight: bold;
-}
+
 .Recommendation_block_requirement {
 	text-align: justify;
 	font-size: 1.1rem;
 	margin-left: 0;
 	list-style: none;
+}
+
+#Recommendation_block_container {
+	border-radius: 1em;
+
+	background-color: azure;
+
+	font-family: var(--primary-font) !important;
+	color: rgb(12, 28, 99);
+}
+
+#Recommendation_spec_requirement {
+	text-decoration: dashed;
+}
+#Recommendation_requirement_li {
+	font-weight: bold;
 }
 
 @media screen and (min-width: 300px) {

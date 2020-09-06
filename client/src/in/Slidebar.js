@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Slidebar.css'
 import arrow_right from '../images/arrow_right.png'
 import arrow_left from '../images/arrow_left.png'
-import LoginChange from './LoginChange'
 import VisualChange from './VisualChange'
 import Scrollbars from 'react-custom-scrollbars'
 

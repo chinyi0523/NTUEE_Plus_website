@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './recommendation.css'
-import { NavBar_in } from '../../component/AppBar_in'
 import Recommendation_block from './recommendation_block/Recommendation_block'
 import eesa_icon from '../../images/eesa-icon.png'
 import { Link } from 'react-router-dom'

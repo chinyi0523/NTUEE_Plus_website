@@ -15,18 +15,6 @@ import {
 import { showVisual, handleSubmit } from './profileFunc/showAndSubmit.js'
 import { map } from './profileFunc/map'
 
-//import { NavBar } from '../component/AppBar';
-//import ReactDOM from 'react-dom';
-//const remove_icon = <svg t="1582553044501" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw"><path d="M512 938.666667C276.362667 938.666667 85.333333 747.637333 85.333333 512S276.362667 85.333333 512 85.333333s426.666667 191.029333 426.666667 426.666667-191.029333 426.666667-426.666667 426.666667z m0-64c200.298667 0 362.666667-162.368 362.666667-362.666667S712.298667 149.333333 512 149.333333 149.333333 311.701333 149.333333 512s162.368 362.666667 362.666667 362.666667zM352 480h320a32 32 0 0 1 0 64H352a32 32 0 0 1 0-64z" p-id="2601" fill="#1296db" data-spm-anchor-id="a313x.7781069.0.i1" class="selected"></path></svg>
-/*const makeSVG = function(tag,attrs){
-    let el = document.createElementNS('http://www.w3.org/2000/svg',tag);
-    for (var k in attrs){
-        el.setAttribute(k,attrs[k]);
-        
-    }
-    return el;
-}*/
-
 class Profile extends Component {
 	constructor(props) {
 		super(props)
@@ -148,7 +136,6 @@ class Profile extends Component {
         }
     }*/
 	addOccupation(haveVal) {
-		//e.preventDefault();
 		if (haveVal) {
 			var toSet = { Occupation_number: this.state.Occupation_number + 1 }
 		} else {
@@ -204,8 +191,7 @@ class Profile extends Component {
 			new_img.setAttribute('class', 'Profile_remove_icon')
 			new_img.setAttribute('alt', 'remove_icon')
 			remove_btn.appendChild(new_img)
-			//remove_btn.innerHTML = remove_icon;
-			//var new_td;
+
 			let new_td_1 = document.createElement('td')
 			new_td_1.appendChild(new_input_O)
 			new_tr.appendChild(new_td_1)
@@ -253,9 +239,6 @@ class Profile extends Component {
 			textarea.removeAttribute('disabled')
 			headshot.removeAttribute('disabled')
 		}
-
-		// this.setState({ editmode: wantEdit })
-		// input.setAttribute("readOnly",!wantEdit)
 	}
 
 	componentWillMount() {
@@ -265,14 +248,6 @@ class Profile extends Component {
 	componentDidMount() {
 		this.editMode(false)
 	}
-
-	// shouldComponentUpdate(nextProps, nextState){
-	//     if (nextState.editmode){
-	//         return true
-	//     }else{
-	//         return false
-	//     }
-	// }
 
 	render() {
 		return (
@@ -761,20 +736,6 @@ class Profile extends Component {
 						</div>
 					</form>
 				</div>
-
-				{/*<div id="Profile_latest_news">
-                    <h2 style={{marginTop:"0"}}>Latest News:</h2>
-                    <div id="Profile_divider"></div>
-                    <div id="Profile_news_renderer">
-                        <a id="Profile_subtitle1" href="#">Subtitle1...</a>
-                        <p id="Profile_date1">Date1</p>
-                        <a id="Profile_subtitle2" href="#">Subtitle2...</a>
-                        <p id="Profile_date2">Date2</p>
-                        <a id="Profile_subtitle3" href="#">Subtitle3...</a>
-                        <p id="Profile_date3">Date3</p>
-                    </div>
-
-        </div>*/}
 			</div>
 		)
 	}

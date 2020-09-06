@@ -1,0 +1,55 @@
+@import url(../../../component/style/_global.css);
+
+#Team_container {
+	font-family: var(--primary-font) !important;
+}
+
+#Team_content {
+	font-size: 24px;
+	color: white;
+}
+#Team_title_hr {
+	width: 100%;
+
+	border-bottom: 2px solid gray;
+
+	font-size: 48px;
+}
+#Team_B06_title_hr {
+	font-size: 32px;
+}
+@media screen and (min-width: 300px) {
+	#Team_content {
+		font-size: 0.75rem;
+	}
+}
+@media screen and (min-width: 350px) {
+	#Team_content {
+		font-size: 0.8rem;
+	}
+}
+@media screen and (min-width: 400px) {
+	#Team_content {
+		font-size: 0.9rem;
+	}
+}
+@media screen and (min-width: 600px) {
+	#Team_content {
+		font-size: 1.5rem;
+	}
+}
+@media screen and (min-width: 767px) {
+	#Team_content {
+		font-size: 1.5rem;
+	}
+}
+@media screen and (min-width: 1023px) {
+	#Team_content {
+		font-size: 1.67rem;
+	}
+}
+@media screen and (min-width: 1500px) {
+	#Team_content {
+		font-size: 1.77rem;
+	}
+}

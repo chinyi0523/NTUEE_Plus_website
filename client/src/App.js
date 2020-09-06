@@ -10,30 +10,29 @@ import {
 	Forget_page,
 	Team_page,
 	History_page,
-} from './out/pages'
-import register_app from './out/register_in/register_app'
-import Login from './out/Login'
+	Register_app_page,
+	Reset_password_page,
+	Policy_page,
+} from './out/views/pages'
 import './App.css'
 import { NavBar } from './component/AppBar'
 import Footer from './component/Footer/Footer'
-import ResetPassword_page from './out/ResetPassword'
-import Policy_page from './out/Policy'
 const App = () => {
 	return (
 		<div className='contain'>
 			<NavBar />
 			<Route path='/' exact component={Home_page} />
-			<Route path='/Login' render={(props) => <Login {...props} />} />
+			<Route path='/Login' component={Login_page} />
 			<Route path='/Support' component={Support_page} />
 			<Route path='/About' component={About_page} />
 			<Route path='/Contact' component={Contact_page} />
 			<Route path='/Register' exact component={Register_page} />
-			<Route path='/Register/pages' component={register_app} />
+			<Route path='/Register/pages' component={Register_app_page} />
 			<Route path='/Forget' component={Forget_page} />
 			<Route path='/Team' component={Team_page} />
 			<Route
 				path='/ResetPassword/:account/:active'
-				component={ResetPassword_page}
+				component={Reset_password_page}
 			/>
 			<Route path='/History' component={History_page} />
 			<Route path='/Policy' component={Policy_page} />

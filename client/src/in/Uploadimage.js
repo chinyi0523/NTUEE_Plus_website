@@ -17,7 +17,6 @@ class Uploadimage extends Component {
 	handleFilenameChange(event) {
 		const target = event.target
 		const filename = target.value
-		//const name = target.id;
 
 		this.setState({
 			filename: filename,

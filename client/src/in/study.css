@@ -1,30 +1,30 @@
+@import url(../component/style/_global.css);
+
 #study_container {
 	position: relative;
-	font-family: 'Noto Sans TC', Arial, sans-serif;
+	font-family: var(--primary-font);
 }
 #study_text {
-	text-align: center;
 	font-size: 54px;
+	text-align: center;
 }
 #Study_btn {
-	font-size: 2.7vmin;
-	border-radius: 10px;
-	background-color: #003f67;
-	color: #fff;
-	border: 2px #fff solid;
 	margin: 0;
+	border: 2px #fff solid;
+	border-radius: 10px;
+
+	background-color: #003f67;
+
+	font-size: 2.7vmin;
 	font-weight: bold;
-	cursor: pointer;
+	color: #fff;
 	text-decoration: none;
 	text-align: center;
+
+	cursor: pointer;
 }
 #Study_btn:hover {
-	font-size: 2.7vmin;
 	background-color: #fff;
+
 	color: #003f67;
-	font-weight: bold;
-	text-decoration: none;
-	text-align: center;
-}
-@media (max-width: 500px) {
 }

@@ -1,9 +1,4 @@
-#Recruitment_block_container {
-	background-color: azure;
-	border-radius: 1em;
-	color: rgb(12, 28, 99);
-	font-family: 'Noto Sans TC', Arial, sans-serif !important;
-}
+@import url(../../../component/style/_global.css);
 
 .Recruitment_block_image {
 	width: 25rem;
@@ -39,17 +34,25 @@
 .Recruitment_block_spec_div {
 	color: rgb(72, 72, 72);
 }
-#Recruitment_spec_requirement {
-	text-decoration: dashed;
-}
-#Recruitment_requirement_li {
-	font-weight: bold;
-}
+
 .Recruitment_block_requirement {
 	text-align: justify;
 	font-size: 1.1rem;
 	margin-left: 0;
 	list-style: none;
+}
+
+#Recruitment_block_container {
+	background-color: azure;
+	border-radius: 1em;
+	color: rgb(12, 28, 99);
+	font-family: var(--primary-font) !important;
+}
+#Recruitment_spec_requirement {
+	text-decoration: dashed;
+}
+#Recruitment_requirement_li {
+	font-weight: bold;
 }
 
 @media screen and (min-width: 300px) {

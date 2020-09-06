@@ -92,17 +92,6 @@ class Column_block_img extends Component {
 		)
 	}
 }
-/*
-const Column_block_img = (props) =>{
-    const _id = props.id;
-    const _filename = props.filename;
-    const _img = getImg(_filename);
-    return (
-        <div className="column_block_img">
-            <img src={_img} alt = {_id}/>
-        </div>
-    );
-}*/
 /* ============ End Img ===========*/
 
 /* ============ Column_block ===========*/
