@@ -3,7 +3,7 @@ import './Login.css'
 import FacebookLogin from 'react-facebook-login'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import Footer from '../component/Footer/Footer'
+
 class Login extends Component {
 	constructor(props) {
 		super(props)
@@ -46,8 +46,6 @@ class Login extends Component {
 		} else {
 			var r = window.confirm('確認登入?')
 			if (r) {
-				//window.location = "/Home_in";
-
 				axios
 					.post('/api/login', {
 						account: this.state.Login_username_input,
@@ -123,7 +121,6 @@ class Login extends Component {
 		return (
 			<div>
 				<div id='Login_container' className='container-fluid col-10'>
-					{/* <NavBar/>  */}
 					<div
 						className='w-100 d-none d-sm-block'
 						style={{ height: '5rem' }}
@@ -134,7 +131,6 @@ class Login extends Component {
 							className='container justify-content-center mt-5'
 						>
 							<div id='Login_username' className='form-group row mb-5'>
-								{/* <p id="Login_username_tag">Username:</p> */}
 								<label for='username' className='col-sm-6 col-form-label'>
 									School ID
 								</label>
@@ -203,7 +199,6 @@ class Login extends Component {
 						textButton=''
 					/>
 				</div>
-				{/* <Footer/> */}
 			</div>
 		)
 	}

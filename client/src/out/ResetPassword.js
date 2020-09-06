@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './ResetPassword.css'
 import axios from 'axios'
-import { NavBar } from '../component/AppBar'
 import handleInputChange from './funcTest/handleInputChange'
 
 class ResetPassword extends Component {
@@ -10,8 +9,6 @@ class ResetPassword extends Component {
 		this.state = {
 			account: '',
 			active: '',
-			//Forget_email: '',
-			//Forget_question: '',
 			Reset_password: '',
 			Reset_confirm_password: '',
 		}
@@ -19,16 +16,6 @@ class ResetPassword extends Component {
 		this.handleInputChange = handleInputChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
-
-	/*handleInputChange(event) {
-		const target = event.target;
-		const value = target.value;
-		const name = target.name;
-		
-		this.setState({
-		  [name]: value
-		});
-	}*/
 
 	componentDidMount() {
 		try {
@@ -39,7 +26,6 @@ class ResetPassword extends Component {
 		} catch {
 			console.log(this.props)
 			alert('驗證碼不存在')
-			// window.location = "/Login";
 		}
 	}
 
@@ -59,9 +45,6 @@ class ResetPassword extends Component {
 						account: this.state.account,
 						password: this.state.Reset_password,
 						active: this.state.active,
-						// question:this.state.Forget_question,
-						// Email:this.state.Forget_email,
-						// ConfirmPassword:this.state.Reset_confirm_password
 					})
 					.then((res) => {
 						console.log(res.data)
@@ -81,7 +64,6 @@ class ResetPassword extends Component {
 	render() {
 		return (
 			<div>
-				{/* <NavBar/> */}
 				<div id='Forget_container'>
 					<div className='w-100' style={{ height: '5rem' }}></div>
 					<div
@@ -107,26 +89,7 @@ class ResetPassword extends Component {
 									className='form-control col-5 col-lg-6 offset-1'
 								></input>
 							</div>
-							{/* <div id="Forget_input" className="form-group row">
-							<label for="Your Email" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Your Email</label>
-							<input name="Forget_email"
-								id="Forget_input_input" 
-								placeholder="Your Email"
-								value={this.state.value} 
-								onChange={this.handleInputChange}
-								className="form-control col-5 col-lg-6 offset-1 "
-							></input>
-						</div> */}
-							{/* <div id="Forget_input" className="form-group row">
-							<label for="Question" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Question</label>
-							<input name="Forget_question"
-								id="Forget_input_input" 
-								placeholder="Your favorite movie"
-								value={this.state.value} 
-								onChange={this.handleInputChange}
-								className="form-control col-5 col-lg-6 offset-1"
-							></input>
-						</div> */}
+
 							<div id='Forget_input' className='form-group  row'>
 								<label
 									id='Forget_input_text'
@@ -171,24 +134,10 @@ class ResetPassword extends Component {
 							</div>
 						</form>
 					</div>
-
-					{/* <div id="Forget_FAQ">
-                    <div id="Forget_FAQ_title">FAQ</div>
-                    <div id="Forget_FAQ_splitline"></div>
-                    <div id="Forget_FAQ_content">
-                        <ul id="Forget_FAQ_list">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                </div> */}
 				</div>
 			</div>
 		)
 	}
 }
-// const ResetPassword_page = () => {
-//     return <ResetPassword />
-// }
+
 export default ResetPassword

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Support.css'
-import Footer from '../component/Footer/Footer'
+
 class Support extends Component {
 	render() {
 		return (
@@ -23,7 +23,6 @@ class Support extends Component {
 						</p>
 					</div>
 				</div>
-				{/* <Footer/> */}
 			</div>
 		)
 	}

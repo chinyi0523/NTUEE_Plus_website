@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import './About.css'
 import { Link } from 'react-router-dom'
-import Button from '@material-ui/core/Button'
-import { NavBar } from '../component/AppBar'
-import Footer from '../component/Footer/Footer'
+
 class About extends Component {
 	render() {
 		return (
 			<div>
 				<div className='About_container justify-content-center'>
 					<div className='About_content_wrap mx-auto mt-n5'>
-						{/* <NavBar/> */}
-						{/* <div id = "About_space"></div> */}
 						<div id='About_up'>
 							<p id='About_up_text'>Welcome to NTUEE+</p>
 						</div>
@@ -44,7 +40,6 @@ class About extends Component {
 						</div>
 					</div>
 				</div>
-				{/* <Footer/> */}
 			</div>
 		)
 	}

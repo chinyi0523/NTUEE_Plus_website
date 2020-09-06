@@ -3,8 +3,7 @@ import './Contact.css'
 import { Link } from 'react-router-dom'
 import left_image from '../images/left_image.png'
 import right_image from '../images/right_image.png'
-import Footer from '../component/Footer/Footer'
-// import Footer from "../component/Footer";
+
 class Contact extends Component {
 	render() {
 		return (
@@ -52,7 +51,6 @@ class Contact extends Component {
 						</Link>
 					</div>
 				</div>
-				{/* <Footer/> */}
 			</div>
 		)
 	}

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import './Team.css'
-import { NavBar } from '../component/AppBar'
-import Team_member from '../component/Team_member'
 import b06_1 from '../images/contributors/B06_1.png'
 import b06_2 from '../images/contributors/B06_2.png'
 import abroad_1 from '../images/contributors/abroad_1.png'
@@ -43,17 +41,17 @@ class Team extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {}
-		this.Generate_member_profile = this.Generate_member_profile.bind(this)
+		this.Generate_member_profile = this.generateMemberProfile.bind(this)
 	}
 
-	Generate_member_profile(member_list, team_name) {
+	generateMemberProfile(member_list, team_name) {
 		const member_components = []
 		let count = 0
 		for (let name in member_list) {
 			member_components.push(
 				<Team_member
 					className='Team_member_profile'
-					id={'Team_' + team_name + '_' + count}
+					id={'History_' + team_name + '_' + count}
 					name={name}
 					photo_src={member_list[name]}
 				/>
@@ -100,25 +98,24 @@ class Team extends Component {
 
 		return (
 			<div id='Team_container'>
-				{/* <NavBar/> */}
 				<div id='Team_content' className='container-fluid'>
 					<div id='Team_title_hr'>Website Contributors</div>
 					<div id='Team_B06'>
-						<div id='Team_B06_leader' className='container-fluid'>
+						<div id='Team_B06_leader' className='container-fluid mt-3'>
 							負責人:
-							{this.Generate_member_profile(B06_teams['leaders'], 'leaders')}
+							{this.generateMemberProfile(B06_teams['leaders'], 'leaders')}
 						</div>
 						<div id='Team_B06_frontend'>
 							網頁前端團隊:
-							{this.Generate_member_profile(B06_teams['frontend'], 'frontend')}
+							{this.generateMemberProfile(B06_teams['frontend'], 'frontend')}
 						</div>
 						<div id='Team_B06_backend'>
 							網頁後端團隊:
-							{this.Generate_member_profile(B06_teams['backend'], 'backend')}
+							{this.generateMemberProfile(B06_teams['backend'], 'backend')}
 						</div>
 						<div id='Team_B06_study'>
 							留學資料蒐集團隊:
-							{this.Generate_member_profile(B06_teams['study'], 'study')}
+							{this.generateMemberProfile(B06_teams['study'], 'study')}
 						</div>
 					</div>
 				</div>
@@ -127,3 +124,21 @@ class Team extends Component {
 	}
 }
 export default Team
+
+const Team_member = (props) => {
+	return (
+		<div
+			id={props.id}
+			style={{ display: 'inline-block' }}
+			className='History_member_entity mx-5'
+		>
+			<img
+				src={props.photo_src}
+				alt={props.name + "'s photo"}
+				width='250px'
+				height='250px'
+			/>
+			<p id={props.id + '_name'}>{props.name}</p>
+		</div>
+	)
+}

@@ -83,18 +83,18 @@ class Register extends Component {
 							autoLoad={false}
 							fields='name,email,picture'
 							callback={this.handleFBSubmit}
-							// cssClass="RegisterFB_btn"
 							textButton=''
 							render={(renderProps) => (
 								<img
 									id='Register_imgs'
-									onClick={renderProps.onClick}
 									src={Facebook_image}
 									alt='Register by Facebook'
+									onClick={renderProps.onClick}
 								/>
 							)}
 						/>
 					</div>
+
 					<div class='col d-flex justify-content-center'>
 						<Link to='/Register/pages/Register_account'>
 							<img
@@ -104,7 +104,8 @@ class Register extends Component {
 							/>
 						</Link>
 					</div>
-					<div class='w-100'></div>
+
+					<div class='w-100' />
 				</div>
 			</div>
 		)

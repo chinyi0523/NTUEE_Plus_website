@@ -6,9 +6,7 @@ class Home extends Component {
 	render() {
 		return (
 			<div style={{ minHeight: '100vh' }}>
-				{/* <NavBar/>  */}
 				<div id='Home_title'>NTUEE+</div>
-				{/* <footer id="index_footer"><Footer/></footer> */}
 			</div>
 		)
 	}

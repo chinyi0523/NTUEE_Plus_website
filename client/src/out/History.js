@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './History.css'
-// import {NavBar} from "../component/AppBar"
-import History_member from '../component/History_member'
+// import "./History_member.css"
 import B03_1 from '../images/history/B03_1.png'
 import B03_2 from '../images/history/B03_2.png'
 import B03_3 from '../images/history/B03_3.png'
@@ -13,6 +12,7 @@ import B05_2 from '../images/history/B05_2.png'
 import B06_1 from '../images/history/B06_1.png'
 import B06_2 from '../images/history/B06_2.png'
 import B06_all from '../images/history/B06_all.png'
+
 /* format:
     team leader should be first
     {
@@ -33,14 +33,16 @@ import B06_all from '../images/history/B06_all.png'
         .
     }
 */
+
 class History extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {}
-		this.Generate_member_profile = this.Generate_member_profile.bind(this)
+		this.Generate_member_profile = this.generateMemberProfile.bind(this)
 	}
-
-	Generate_member_profile(member_list, team_name) {
+	/* ============generateMemberProfile start ============*/
+	// this function generate the image component of history member
+	generateMemberProfile(member_list, team_name) {
 		const member_components = []
 		let count = 0
 		for (let name in member_list) {
@@ -63,7 +65,10 @@ class History extends Component {
 			</div>
 		)
 	}
+	/* ============generateMemberProfile end ============*/
+
 	render() {
+		/* ==history leaders(write in frontend temporialy, might transfer to backend) ==*/
 		const B03_teams = {
 			leaders: { 許秉鈞: B03_4, 袁培傑: B03_3, 楊景鈞: B03_2, 劉禹辰: B03_1 },
 		}
@@ -76,44 +81,51 @@ class History extends Component {
 		const B06_teams = {
 			leaders: { 鄭謹譯: B06_1, 李筠婕: B06_2 },
 		}
+		/* ==history leaders(write in frontend temporialy, might transfer to backend) ==*/
+
 		return (
 			<div id='History_container'>
-				{/* <NavBar/> */}
 				<div id='History_content' className='container-fluid'>
 					<div id='History_title_hr'>History</div>
+					{/* ================ History_member_components========= */}
 					<div id='History_B03'>
 						<div id='History_B03_title_hr'>B03 Founder of NTUEE+</div>
 						<div id='History_B03_leader'>
-							{this.Generate_member_profile(B03_teams['leaders'], 'leaders')}
+							{this.generateMemberProfile(B03_teams['leaders'], 'leaders')}
 						</div>
 					</div>
 					<div id='History_B04'>
 						<div id='History_B04_title_hr'>B04 2nd NTUEE+</div>
 						<div id='History_B04_leader'>
-							{this.Generate_member_profile(B04_teams['leaders'], 'leaders')}
+							{this.generateMemberProfile(B04_teams['leaders'], 'leaders')}
 						</div>
 					</div>
 					<div id='History_B05'>
 						<div id='History_B05_title_hr'>B05 3rd NTUEE+</div>
 						<div id='History_B05_leader'>
-							{this.Generate_member_profile(B05_teams['leaders'], 'leaders')}
+							{this.generateMemberProfile(B05_teams['leaders'], 'leaders')}
 						</div>
 					</div>
 					<div id='History_B06'>
 						<div id='History_B06_title_hr'>B06 4th NTUEE+</div>
 						<div id='History_B06_leader'>
-							{this.Generate_member_profile(B06_teams['leaders'], 'leaders')}
+							{this.generateMemberProfile(B06_teams['leaders'], 'leaders')}
 						</div>
-						<div className='container justify-content-center'>
-							<img
-								src={B06_all}
-								alt='4th all members'
-								display='inline-block'
-								className='img-fluid col-12 col-md-3'
-								style={{ maxWidth: '500px' }}
-							></img>
-							{/* <div className="w-100 d-block d-lg-none"></div> */}
-							<div id='History_member' className='container col-12 col-md-6'>
+						{/*=================B06 all_members =================*/}
+						<div className='container justify-content-center d-lg-flex d-block mx-auto'>
+							<div className='col-12 col-lg-6 d-flex justify-content-center'>
+								<img
+									src={B06_all}
+									alt='4th all members'
+									className='img-fluid '
+									style={{ minWidth: '300px' }}
+								/>
+							</div>
+							<div className='w-100 d-block d-lg-none'></div>
+							<div
+								id='History_member'
+								className='col-12 col-lg-4 d-flex justify-content-center align-items-center'
+							>
 								<ul className='list-group' style={{ listStyle: 'none' }}>
 									<li className='list-item'>網頁組：</li>
 									<li className='list-item'>
@@ -126,10 +138,30 @@ class History extends Component {
 								</ul>
 							</div>
 						</div>
+						{/*=================B06 all_members =================*/}
 					</div>
+					{/* ================ History_member_components========= */}
 				</div>
 			</div>
 		)
 	}
 }
 export default History
+
+const History_member = (props) => {
+	return (
+		<div
+			id={props.id}
+			style={{ display: 'inline-block' }}
+			className='History_member_entity mx-5'
+		>
+			<img
+				src={props.photo_src}
+				alt={props.name + "'s photo"}
+				width='250px'
+				height='250px'
+			/>
+			<p id={props.id + '_name'}>{props.name}</p>
+		</div>
+	)
+}
