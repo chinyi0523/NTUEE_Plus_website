@@ -1,128 +1,124 @@
-
-#Support_container{
-    display:flex;
-    flex-direction: column;
-    min-height:100vh;
-} 
+#Support_container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 html {
-    background-color: #003F67;
+	background-color: #003f67;
 }
-#Support_up{
-    display: flex;
-    justify-content: center;
-    margin-left: 1vw; 
+#Support_up {
+	display: flex;
+	justify-content: center;
+	margin-left: 1vw;
 }
-#Support_up_text{
-    position: absolute;
-    bottom: 50%;
-    text-align: center;
-    font-family: 'Noto Sans TC',Arial,sans-serif; 
-    color: white;
+#Support_up_text {
+	position: absolute;
+	bottom: 50%;
+	text-align: center;
+	font-family: 'Noto Sans TC', Arial, sans-serif;
+	color: white;
 }
-#Support_down_text{
-    position: absolute;
-    bottom: 25%;
-    text-align: center;
-    font-family: 'Noto Sans TC',Arial,sans-serif;
-    color: white;
+#Support_down_text {
+	position: absolute;
+	bottom: 25%;
+	text-align: center;
+	font-family: 'Noto Sans TC', Arial, sans-serif;
+	color: white;
 }
-@media screen and (min-width: 300px){
-    #Support_up_text{
-        font-size: 15px;
-    }
-    #Support_down_text{
-        font-size: 12px;
-    }
+@media screen and (min-width: 300px) {
+	#Support_up_text {
+		font-size: 15px;
+	}
+	#Support_down_text {
+		font-size: 12px;
+	}
 }
-@media screen and (min-width: 350px){
-    #Support_up_text{
-        font-size: 20px;
-    }
-    #Support_down_text{
-        font-size: 16px;
-    }
+@media screen and (min-width: 350px) {
+	#Support_up_text {
+		font-size: 20px;
+	}
+	#Support_down_text {
+		font-size: 16px;
+	}
 }
-@media screen and (min-width: 400px){
-    #Support_up_text{
-        font-size: 25px;
-    }
-    #Support_down_text{
-        font-size: 20px;
-    }
+@media screen and (min-width: 400px) {
+	#Support_up_text {
+		font-size: 25px;
+	}
+	#Support_down_text {
+		font-size: 20px;
+	}
 }
-@media screen and (min-width: 600px){
-    #Support_up_text{
-        font-size: 25px;
-    }
-    #Support_down_text{
-        font-size: 20px;
-    }
+@media screen and (min-width: 600px) {
+	#Support_up_text {
+		font-size: 25px;
+	}
+	#Support_down_text {
+		font-size: 20px;
+	}
 }
-@media screen and (min-width: 767px){
-    #Support_up_text{
-        font-size: 28px;
-    }
-    #Support_down_text{
-        font-size: 23px;
-    }
+@media screen and (min-width: 767px) {
+	#Support_up_text {
+		font-size: 28px;
+	}
+	#Support_down_text {
+		font-size: 23px;
+	}
 }
-@media screen and (min-width: 1023px){
-    #Support_up_text{
-        font-size: 33px;
-        /* color: white; */
-    }
-    #Support_down_text{
-        font-size: 28px;
-        /* color: white; */
-    }
+@media screen and (min-width: 1023px) {
+	#Support_up_text {
+		font-size: 33px;
+		/* color: white; */
+	}
+	#Support_down_text {
+		font-size: 28px;
+		/* color: white; */
+	}
 }
-@media screen and (min-width: 1500px){
-    #Support_up_text{
-        font-size: 35px;
-    }
-    #Support_down_text{
-        font-size: 30px;
-    }
+@media screen and (min-width: 1500px) {
+	#Support_up_text {
+		font-size: 35px;
+	}
+	#Support_down_text {
+		font-size: 30px;
+	}
 }
-#Support_down{
-    display: flex;
-    justify-content: center;
-    margin-left: 1vw; 
+#Support_down {
+	display: flex;
+	justify-content: center;
+	margin-left: 1vw;
 }
 
-
-
-#Support_footer{
-    /* position: absolute;
+#Support_footer {
+	/* position: absolute;
     bottom:0%;
     left:42.5%;
     font-family:'Noto Sans TC',Arial,sans-serif; */
-    color:white;
+	color: white;
 }
 
-#Support_logo{
-    display: flex;
-    max-width: 10vmin;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto; 
+#Support_logo {
+	display: flex;
+	max-width: 10vmin;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#Support_footer_text{
-    display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    color: #fff;
-    text-align: center; 
+#Support_footer_text {
+	display: center;
+	margin: 0;
+	font-family: 'Noto Sans TC', Arial, sans-serif;
+	font-size: 0.5vw;
+	color: #fff;
+	text-align: center;
 }
-#Support_footer_text_2{
-     display: center;
-    margin:0;
-    font-family:'Noto Sans TC',Arial,sans-serif;
-    font-size: 0.5vw;
-    color: #fff;
-    text-align: center;
-    margin-bottom:10%; 
+#Support_footer_text_2 {
+	display: center;
+	margin: 0;
+	font-family: 'Noto Sans TC', Arial, sans-serif;
+	font-size: 0.5vw;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 10%;
 }
-

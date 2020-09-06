@@ -1,26 +1,25 @@
-#History_container{
-    
-    font-family:'Noto Sans TC',Arial,sans-serif !important;
+#History_container {
+	font-family: 'Noto Sans TC', Arial, sans-serif !important;
 }
 
-#History_content{
-    /* margin-top: 15vh;
+#History_content {
+	/* margin-top: 15vh;
     margin-left: 5vw;
     margin-right: 5vw; */
-    color:white;
-    font-size: 24px;
+	color: white;
+	font-size: 24px;
 }
-#History_title_hr{
-    font-size: 48px;
-    width:100%;
-    border-bottom: 2px solid gray;
-    
-       /* border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+#History_title_hr {
+	font-size: 48px;
+	width: 100%;
+	border-bottom: 2px solid gray;
+
+	/* border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
     border-image-slice: 1; */
 }
-#History_member{
-    display: inline-block;
-    font-size: 1.4rem;
-    /* margin-left: 5vw;
+#History_member {
+	display: inline-block;
+	font-size: 1.4rem;
+	/* margin-left: 5vw;
     margin-right: 5vw; */
 }

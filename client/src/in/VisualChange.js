@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 //import "./VisualChange.css"
-import Profile from "./profile"
+import Profile from './profile'
 //import axios from "axios";
 
 class VisualChange extends Component {
@@ -72,14 +72,14 @@ class VisualChange extends Component {
 			}
 		}
 	}*/
-	
-	render(){
+
+	render() {
 		return (
-		<div>
-			<Profile />
-		</div>
-		
-		/*	<div description="personalInfo">
+			<div>
+				<Profile />
+			</div>
+
+			/*	<div description="personalInfo">
 			  <button onClick={this.btn_click}>refresh</button>
 			  <form onsubmit={this.handleSubmit}>
 				  <table>
@@ -142,8 +142,8 @@ class VisualChange extends Component {
 				  </table>
 			  </form>
 		</div> */
-		);
+		)
 	}
 }
 
-export default VisualChange;
+export default VisualChange
