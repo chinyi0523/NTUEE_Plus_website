@@ -5,13 +5,16 @@ services:
     # restart: always
     expose:
       - "27017"
-    # ports:
-    #   - 27017:27017
+    volumes: 
+      - "./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh"
+    ports:
+      - 27017:27017
     # volumes:
     #   - ./tmp/data/db:/data/db
   web:
     image: node:12
     working_dir: /app
+    restart: on-failure:5
     build:
         context: ./
         dockerfile: Dockerfile
@@ -22,7 +25,7 @@ services:
     depends_on:
         - db
     environment:
-        MONGO_URI: mongodb://db:27017/demo
+        MONGO_URI: mongodb://db/demo
     tty: true
     stdin_open: true
     # command: >
