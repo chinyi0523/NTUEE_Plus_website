@@ -29,6 +29,11 @@ $ npm start
 ```
 ## 前端coding style規則
 > https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
+
+### 0908 君輔
+* 用docker跑，過一陣子會噴Error: ENOSYS: function not implemented, read，似乎是readSync的問題(???
+* init-mongo.sh用[網上的方法](https://stackoverflow.com/questions/42912755/how-to-create-a-db-for-mongodb-container-on-start-up)沒有順利跑起來，再研究
+
 ### 0831 進度 by 君輔
 * 發現前端用async會噴bug，因為webpack沒設定好的樣子(待更改)
 * 改變forget方式
