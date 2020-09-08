@@ -35,22 +35,22 @@ export function handleCheckChange(event){
 	hasChanged[name] = true;
 	this.setState({hasChanged})
 }*/
-	
+
 export function handleInputChange(event) {
-	const target = event.target;
-	const value = target.value;
-	const name = target.name;
-	console.log(name,value);
+	const target = event.target
+	const value = target.value
+	const name = target.name
+	console.log(name, value)
 	this.setState({
-		[name]:value
-	});
-	console.log([name],value);
-	var hasChanged = {...this.state.hasChanged}
-	if(value===""){
-		hasChanged[name] = false;
-	}else{
-		hasChanged[name] = true;
+		[name]: value,
+	})
+	console.log([name], value)
+	var hasChanged = { ...this.state.hasChanged }
+	if (value === '') {
+		hasChanged[name] = false
+	} else {
+		hasChanged[name] = true
 	}
-	
-	this.setState({hasChanged})
+
+	this.setState({ hasChanged })
 }

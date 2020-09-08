@@ -1,128 +1,138 @@
-import React from 'react';
+import React from 'react'
 import './Search_input_block.css'
-import {Component} from 'react'; 
+import { Component } from 'react'
 
-import remove_btn from '../../images/remove_icon.png';
-import expand_icon from '../../images/show_more.png';
+import remove_btn from '../../images/remove_icon.png'
+import expand_icon from '../../images/show_more.png'
 //import {handleInputChange} from "../searchFunc/handleChange";
 
 const map = {
-    'Please Choose A Catalog':'default',
-    'Account':'account',
-    "Username":"username",
-    "Nickname":"nickname",
-    "Profile":"profile",
-    "Email":"publicEmail",
-    "Office Tel":"office",
-    "Home Tel":"homephone",
-    "Mobile":"cellphone",
-    "Major":"education.major",
-    "Double Major":"education.double_major",
-    "Minor":"education.minor",
-    "Master":"education.master",
-    "Doctor":"education.doctor",
-    "Company":"Occupation.C",
-    "Occupation":"Occupation.O",
-    "Position":"Occupation.P"
+	'Please Choose A Catalog': 'default',
+	Account: 'account',
+	Username: 'username',
+	Nickname: 'nickname',
+	Profile: 'profile',
+	Email: 'publicEmail',
+	'Office Tel': 'office',
+	'Home Tel': 'homephone',
+	Mobile: 'cellphone',
+	Major: 'education.major',
+	'Double Major': 'education.double_major',
+	Minor: 'education.minor',
+	Master: 'education.master',
+	Doctor: 'education.doctor',
+	Company: 'Occupation.C',
+	Occupation: 'Occupation.O',
+	Position: 'Occupation.P',
 }
 
+class Search_input_block extends Component {
+	state = {
+		currentOption: this.props.currentOption,
+		options: this.props.options,
+		name: map[this.props.currentOption],
+		currentValue: this.props.currentValue,
+	}
 
-class Search_input_block extends Component{
-    state={
-            currentOption:this.props.currentOption,
-            options:this.props.options,
-            name:map[this.props.currentOption],
-            currentValue:this.props.currentValue
-    };
+	static getDerivedStateFromProps(props, state) {
+		if (props.currentOption !== state.currentOption) {
+			return {
+				currentOption: props.currentOption,
+				name: map[props.currentOption],
+				currentValue: props.currentValue,
+			}
+		} else {
+			return null
+		}
+	}
 
-    static getDerivedStateFromProps(props,state){
-        if (props.currentOption !== state.currentOption){
-            return{
-                    currentOption:props.currentOption,
-                    name:map[props.currentOption],
-                    currentValue:props.currentValue
-                };
-            
-        }else{
-            return null
-        }
-    } 
+	removeButtonFuc = (e) => {
+		e.preventDefault()
+		this.props.removeFunc(this.state.currentOption)
+	}
 
-    removeButtonFuc = (e) => {
-        e.preventDefault();
-        this.props.removeFunc(this.state.currentOption)
-    }
+	changeDefaultToNewOption = (newOption) => {
+		this.props.addOptionFunc(newOption)
+	}
 
-    changeDefaultToNewOption = (newOption) => {
-        this.props.addOptionFunc(newOption)
-    }
+	renderOptions = () => {
+		let select = document.getElementById(this.props.id + '_ul')
+		for (let option in this.state.options) {
+			if (this.state.currentOption !== option) {
+				let new_option = document.createElement('li')
+				new_option.innerHTML = option
+				new_option.setAttribute('class', 'Search_input_block_options')
+				new_option.onclick = this.handleSelectChange
+				select.appendChild(new_option)
+			}
+		}
+	}
 
-    renderOptions = () => {
-        let select = document.getElementById(this.props.id+'_ul');
-        for (let option in this.state.options){
-            if(this.state.currentOption!==option){
-            let new_option = document.createElement('li');
-            new_option.innerHTML = option;
-            new_option.setAttribute('class','Search_input_block_options')
-            new_option.onclick=this.handleSelectChange
-            select.appendChild(new_option)
-            }
-            }
-    }
+	componentDidMount() {
+		this.renderOptions()
+	}
+	componentDidUpdate() {
+		let input = document.getElementById(this.props.id + '_input')
+		input.setAttribute('value', this.state.currentValue)
+	}
+	handleSelectChange = (e) => {
+		let value = e.target.innerHTML
+		if (this.state.currentOption === 'Please Choose A Catalog') {
+			this.changeDefaultToNewOption(value)
+		} else {
+			this.props.removeOptionFunc(this.state.currentOption)
+			this.props.addOptionFunc(value)
+		}
+		this.setState({
+			currentOption: value,
+			name: map[value],
+		})
+	}
 
-    componentDidMount(){
-        this.renderOptions()
-        
-    }
-    componentDidUpdate(){
-        
-        let input = document.getElementById(this.props.id+'_input');
-        input.setAttribute("value",this.state.currentValue)
-
-    }
-    handleSelectChange = (e) => {
-        let value = e.target.innerHTML
-        if(this.state.currentOption==='Please Choose A Catalog'){
-            this.changeDefaultToNewOption(value);
-        }
-        else{
-            this.props.removeOptionFunc(this.state.currentOption)
-            this.props.addOptionFunc(value)
-        }
-        this.setState({
-            currentOption:value,
-            name:map[value]
-        })
-        
-    }
-    
-
-
-    render(){
-        return(
-            <li className='Search_input_block_container'>
-                <div id={this.props.id+'_list_container'} className='Search_input_block_list_container'>
-                    <ul className='Search_input_block_dropdown'>
-                        
-                        <li id={this.props.id+'_currentOption'} onClick={this.displayUl} className='Search_input_block_options'>
-                            <img src={expand_icon} className="Search_input_block_expand"></img>
-                            {this.state.currentOption}
-                        <ul id={this.props.id+'_ul'} className='Search_input_block_options'></ul>
-                        </li>
-                    </ul>
-                </div>
-                <button id={this.props.id+'_remove_btn'} onClick={this.removeButtonFuc} className='Search_input_block_remove_btn'>
-                    <img src={remove_btn} className='Search_input_block_btn'/>
-                </button>
-                <input id={this.props.id+'_input'} name={this.state.name} className='Search_input_block_input' onChange={this.props.handleInputChangeFunc}></input>
-                
-            </li>
-        )
-    }
+	render() {
+		return (
+			<li className='Search_input_block_container'>
+				<div
+					id={this.props.id + '_list_container'}
+					className='Search_input_block_list_container'
+				>
+					<ul className='Search_input_block_dropdown'>
+						<li
+							id={this.props.id + '_currentOption'}
+							onClick={this.displayUl}
+							className='Search_input_block_options'
+						>
+							<img
+								src={expand_icon}
+								className='Search_input_block_expand'
+							></img>
+							{this.state.currentOption}
+							<ul
+								id={this.props.id + '_ul'}
+								className='Search_input_block_options'
+							></ul>
+						</li>
+					</ul>
+				</div>
+				<button
+					id={this.props.id + '_remove_btn'}
+					onClick={this.removeButtonFuc}
+					className='Search_input_block_remove_btn'
+				>
+					<img src={remove_btn} className='Search_input_block_btn' />
+				</button>
+				<input
+					id={this.props.id + '_input'}
+					name={this.state.name}
+					className='Search_input_block_input'
+					onChange={this.props.handleInputChangeFunc}
+				></input>
+			</li>
+		)
+	}
 }
 
-
-export default Search_input_block;
+export default Search_input_block
 /*class Search_input_block extends Component{
     constructor(props){
         super(props);
@@ -233,7 +243,6 @@ export default Search_input_block;
     }
 }*/
 
-
 // const Search_input_block = (props) => {
 //     let addFunc = props.addFunc;
 //     let removeFunc = props.removeFunc;
@@ -245,7 +254,7 @@ export default Search_input_block;
 //     const [options, setOptions] = useState(props.options)
 //     const [name, setName] = useState(value);
 //     const handleInputChange = (e) => {
-        
+
 //         const target = e.target;
 //         const value = target.value;
 //         const name = target.name;
@@ -258,7 +267,7 @@ export default Search_input_block;
 //         // }else{
 //         //     hasChanged[name] = true;
 //         // }
-        
+
 //         // this.setState({hasChanged})
 //     }
 //     const removeButtonFunc = (e) => {
@@ -284,7 +293,7 @@ export default Search_input_block;
 //     return(
 //         <div className="Search_input_block">
 //             <select id={id+'_select'} onChange={handleSelectChange}>
-                
+
 //             </select>
 //             <input name={name} className='Search_input_block_input' onChange={handleInputChange}></input>
 //             <button onClick={removeButtonFunc}>remove</button>
