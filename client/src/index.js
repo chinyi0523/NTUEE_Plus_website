@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import './index.css'
 import App from './App'
-import { Main_in_page } from './in/pages_in'
+import { Main_in_page } from './in/views/pages_in'
 
 // import { Provider } from 'react-redux';
 // import { createStore, applyMiddleware} from 'redux';
