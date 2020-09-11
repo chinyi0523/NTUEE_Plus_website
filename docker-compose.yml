@@ -1,11 +1,11 @@
-version: '3.8'
+version: "3.8"
 services:
-  db:
+  mongodb:
     image: mongo
     # restart: always
     expose:
       - "27017"
-    volumes: 
+    volumes:
       - "./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh"
     ports:
       - 27017:27017
@@ -16,16 +16,16 @@ services:
     working_dir: /app
     restart: on-failure:5
     build:
-        context: ./
-        dockerfile: Dockerfile
+      context: ./
+      dockerfile: Dockerfile
     volumes:
-        - ./:/app
+      - ./:/app
     ports:
-        - "3000:1993"
+      - "3000:1993"
     depends_on:
-        - db
+      - mongodb
     environment:
-        MONGO_URI: mongodb://db/demo
+      MONGO_URI: mongodb://mongodb/demo
     tty: true
     stdin_open: true
     # command: >
