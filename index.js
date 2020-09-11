@@ -59,17 +59,12 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 // const http = require('http');
 // connect to https://localhost:1993
-const options = {
-  key: fs.readFileSync('./certificate.key'),
-  cert: fs.readFileSync('./certificate.crt')
-};
-https.createServer(options, app).listen(process.env.PORT||1993, function() {
-  console.log('server connect');
-  console.log('port name: ', process.env.PORT||1993);
-});
-/*
+// https.createServer(options, app).listen(1993, function() {
+//   console.log('server connect');
+//   console.log('port name: ', process.env.PORT||1993);
+// })	;
+
 const server = app.listen(process.env.PORT||1993,function(){
     console.log('server connect');
-	console.log('port name: ',process.env.PORT||1993);
+	  console.log('port name: ',process.env.PORT||1993);
 })
-*/

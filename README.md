@@ -6,6 +6,7 @@ $ npm install
 $ npm run install-client
 $ npm run build-client
 $ npm start
+進入https://localhost:1993
 ```
 run in docker
 ```
