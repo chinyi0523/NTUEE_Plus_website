@@ -28,7 +28,7 @@ function insert_active(name,act){ //激活碼
 				console.log(obj);
 				console.log('複寫成');
 				//console.log(psw,act);
-				Activation.updateOne({account:name},{$set:{newpsw:psw, active:act, expireDate:Date.now()}},function(err,res){
+				Activation.updateOne({account:name},{$set:{active:act, expireDate:Date.now()}},function(err,res){
 					if (err) throw err;
 				});
 				Activation.find({account:name},function(err,obj2){console.log('有複寫成功嗎?：',obj2)});				
