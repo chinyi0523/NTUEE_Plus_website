@@ -27,7 +27,7 @@ function insert_active(name,act){ //激活碼
             }else if(obj.length >=1){
 				console.log(obj);
 				console.log('複寫成');
-				console.log(psw,act);
+				//console.log(psw,act);
 				Activation.updateOne({account:name},{$set:{newpsw:psw, active:act, expireDate:Date.now()}},function(err,res){
 					if (err) throw err;
 				});

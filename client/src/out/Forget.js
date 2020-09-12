@@ -45,7 +45,7 @@ class Forget extends Component {
 							}
 						}
 					}
-				})
+				)
 			}
 		}
 	}
@@ -71,13 +71,8 @@ class Forget extends Component {
 								onChange={this.handleInputChange}
 							></input>
 						</div>
-<<<<<<< HEAD
 						{/* <div id="Forget_input" className="form-group row">
 							<label for="Your Email" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Your Email</label>
-=======
-						<div id="Forget_input" className="form-group row">
-							<label id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left" for="Your Email">Your Email</label>
->>>>>>> 359476e4b68102d052695d01feecf008090a88e1
 							<input name="Forget_email"
 								id="Forget_input_input"
 								className="form-control col-5 col-lg-6 offset-1 "
@@ -117,12 +112,8 @@ class Forget extends Component {
 								value={this.state.value}
 								onChange={this.handleInputChange}
 							></input>
-<<<<<<< HEAD
 						</div> */}
-=======
-						</div>
-					{/*==================input area=====================*/}
->>>>>>> 359476e4b68102d052695d01feecf008090a88e1
+						{/*==================input area=====================*/}
 						<div id="Forget_btn" className="justify-content-center d-flex mt-4">
 							<button id="Forget_btn_text" onclick={this.handleSubmit}>
 								Send Link to Mail
