@@ -1,32 +1,139 @@
+@import url(../component/style/_global.css);
+
 :focus{
     outline:0;
 }
 
+.Login_input{
+
+    border-width:0 0 4px 0;
+    border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
+    border-image-slice: 1;
+    
+    background-color: var(--primary-bgcolor);;
+    
+    color:white;
+
+}
+
+.btnFacebook { 
+
+    width: 3rem;
+    height: 3rem;
+
+    border:0px transparent; 
+    border-radius: 50%;
+    padding-top: 1rem; 
+    
+    background: #3b5998;
+
+    font-size: 1rem;
+    color:white;
+    text-align: center;
+    
+}
+
+.btnFacebook:hover {
+
+    background: #3b5998;
+
+    cursor:pointer;
+
+}
+
+
 #Login_container{
-    font-family:'Noto Sans TC',Arial,sans-serif;
+
     display:flex;
     flex-direction: column;
+    
     min-height:100vh;
+
+    font-family:var(--primary-font);
+    
 }
 #Login_input{
     
     max-width: 40rem;
+
     color:white;
     
 }
 
-.Login_input{
-    color:white;
-    background-color: #003F67;
-    /*font-size:1.5rem;*/
+
+#Login_links{
     
-    border-width:0 0 4px 0;
-    -o-border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-       border-image: -webkit-gradient(linear, left top, right top, from(rgb(106, 255, 198)), to(rgb(48, 232, 255)));
-       border-image: linear-gradient(to right, rgb(106, 255, 198) 0%, rgb(48, 232, 255) 100%);
-    border-image-slice: 1;
+    max-width: 45rem;
 
 }
+
+
+#Login_submit{
+
+    width:10rem;
+
+    border: 2px #fff solid;
+    border-radius: 10px;
+
+    background-color:  var(--primary-bgcolor);;
+    
+    font-weight: bold;
+    color: #fff;
+
+    cursor: pointer;
+    
+}
+#Login_submit:hover{
+
+    background-color: #fff;
+
+    font-weight: bold;
+    color: var(--primary-bgcolor);;
+    
+    transition-property: background-color, color;
+    transition-duration: 250ms, 250ms;
+    transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
+    
+}
+
+#Login_create{
+
+    color:white;
+    text-decoration: none;
+
+}
+#Login_create:hover{
+
+    color:rgb(106, 255, 198);
+    text-decoration: none;
+
+}
+
+#Login_forgot{
+
+    color:white;
+    text-decoration: none;
+
+}
+
+#Login_forgot:hover{
+
+    color:rgb(48, 232, 255);
+    text-decoration: none;
+
+}
+
+#Login_hr{
+
+    border-bottom: 1px solid gray;
+
+    font-weight: 100;
+    color:gray;
+    text-align: center;
+
+}
+
+
 @media screen and (min-width: 300px){
     #Login_input{
         font-size: 1.0rem;
@@ -39,15 +146,6 @@
     }
 }
 @media screen and (min-width: 350px){
-    #Login_input{
-        font-size: 1.0rem;
-    }
-    #Login_hr{
-        font-size: 10px;
-    }
-    #Login_links{
-        font-size: 0.5rem;
-    }
 }
 @media screen and (min-width: 400px){
     #Login_input{
@@ -131,70 +229,3 @@
         font-size: 18px;
     }
 }
-
-#Login_links{
-    max-width: 45rem;
-}
-
-
-#Login_submit{
-    border-radius: 10px;
-    background-color:  #003f67;
-    color: #fff;
-    border: 2px #fff solid;
-    font-weight: bold;
-    cursor: pointer;
-    width:10rem;
-}
-#Login_submit:hover{
-    transition-property: background-color, color;
-    transition-timing-function: cubic-bezier(0.4.0,0.2,1),cubic-bezier(0.4.0,0.2,1);
-    transition-duration: 250ms, 250ms;
-    background-color: #fff;
-    color: #003f67;
-    font-weight: bold;
-}
-
-#Login_create{
-    color:white;
-    text-decoration: none;
-}
-#Login_create:hover{
-    color:rgb(106, 255, 198);
-    text-decoration: none;
-}
-
-#Login_forgot{
-    color:white;
-    text-decoration: none;
-}
-
-#Login_forgot:hover{
-    color:rgb(48, 232, 255);
-    text-decoration: none;
-}
-
-#Login_hr{
-    /*font-size: 18px;*/
-    color:gray;
-    font-weight: 100;
-    border-bottom: 1px solid gray;
-    text-align: center;
-}
-.btnFacebook { 
-    font-size: 1rem;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background: #3b5998;
-    color:white;
-    border:0px transparent;  
-    text-align: center;
-    padding-top: 1rem;
-}
-
-.btnFacebook:hover {
-    background: #3b5998;
-    cursor:pointer;
-}
-

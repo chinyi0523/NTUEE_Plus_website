@@ -10,31 +10,40 @@ import Forget from "./Forget"
 import Team from "./Team"
 import History from "./History"
 
-const Home_page = () =>{
+const Home_page = () =>
+{
     return <Home/>;
 };
-const Login_page = () =>{
+const Login_page = () =>
+{
     return <Login/>;
 };
-const Support_page = () =>{
+const Support_page = () =>
+{
     return <Support/>;
 };
-const About_page = () =>{
+const About_page = () =>
+{
     return <About/>;
 };
-const Contact_page = () =>{
+const Contact_page = () =>
+{
     return <Contact/>;
 };
-const Register_page = () =>{
+const Register_page = () =>
+{
     return <Register/>
 };
-const Forget_page = () =>{
+const Forget_page = () =>
+{
     return <Forget/>
 };
-const Team_page = () =>{
+const Team_page = () =>
+{
     return <Team/>
 }
-const History_page = () =>{
+const History_page = () =>
+{
     return <History/>
 }
 
