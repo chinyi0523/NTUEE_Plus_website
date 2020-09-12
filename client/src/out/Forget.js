@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import "./Forget.css"
-import axios from "axios"
+import myPost from "../post/axios"
 import handleInputChange from "./funcTest/handleInputChange"
 
 class Forget extends Component {
@@ -27,24 +27,21 @@ class Forget extends Component {
 		}else{
 			var r=window.confirm("一個更改密碼的頁面連結將寄到信箱");
 			if(r){
-				axios.post("/api/forget", 
+				myPost("/api/forget",
+				{data:
 					{account:this.state.Forget_ID//,
 					// password:this.state.Forget_password,
 					// question:this.state.Forget_question,
 					// Email:this.state.Forget_email,
 					// ConfirmPassword:this.state.Forget_confirm_password
-					}
-				).then(res => {
-					console.log(res.data);
-						if(res){
-							if(res.data.message===true){
-								alert('連結已寄到'+res.data.data.email);
-								//window.location = "/Login";
-							}else{
-								alert('錯誤：\n'+res.data.description);
-							}
-						}
-					}
+				}},
+				res => {//{email}
+					alert('連結已寄到'+res.email);
+					window.location = "/Login";
+				},
+				err => {//{description}
+					alert('錯誤\n'+err.description)
+				}
 				)
 			}
 		}

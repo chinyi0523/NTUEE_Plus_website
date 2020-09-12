@@ -2,8 +2,8 @@ import React, { Component } from "react"
 import "./Login.css"
 import FacebookLogin from "react-facebook-login"
 import { Link, Redirect } from "react-router-dom"
+import myPost from "../post/axios"
 import axios from "axios"
-
 class Login extends Component 
 {
 	constructor(props) 
@@ -50,44 +50,27 @@ class Login extends Component
 	{
 		event.preventDefault()
 		console.log(this.state)
-		if (false) 
-		{
-			alert("一些判斷式")
-		} else 
-		{
-			var r = window.confirm("確認登入?")
-			if (r) 
+		myPost("/api/login",{data:
 			{
-
-				axios.post("/api/login",
+				account: this.state.Login_username_input,
+				password: this.state.Login_password_input
+			}},
+			res => //{username,account}
+			{
+				alert("登入成功，歡迎：" + res.username)
+				//window.location = "/"
+				this.setState(
 					{
-						account: this.state.Login_username_input,
-						password: this.state.Login_password_input
+					isLogin: true
 					}
-				).then(res => 
-					{
-						console.log(res.data)
-						if (res.data) 
-						{
-							if (res.data.message === true) {
-								alert("登入成功，歡迎：" + res.data.data.username)
-								//window.location = "/"
-								this.setState(
-									{
-									isLogin: true
-									}
-								)
-								this.handleLogin(true)
-						} else 
-						{
-							alert("錯誤：\n" + res.data.description)
-
-						}
-
-						}
-					})
+				)
+				this.handleLogin(true)
+			},
+			err => //{description}
+			{
+				alert("錯誤：\n" + err.description)
 			}
-		}
+		)
 	}
 
 	handleFBSubmit = (response) => 
@@ -97,42 +80,28 @@ class Login extends Component
 			return
 		}
 		axios.post("/api/loginFB", { facebookID: response.userID })
-		.then(res => 
+		.then(res => //{username}
 			{
-			console.log(res.data)
-			if (res.data) 
-			{
-				if (res.data.message === true) 
-				{
-					alert("Logged in! Welcome：" + res.data.username)
-					this.setState(
-						{
-							Login_facebook_ID: response.userID,
-							isFBLogin: true,
-							isLogin: true
-						})
-					this.handleLogin(true)
-
-				} 
-				else 
-				{
-					alert("User not registered!")
-					this.setState(
-						{
-							Login_facebook_ID: response.userID,
-							isLogin: false,
-							isFBLogin: true
-						})
-					this.handleLogin(false)
-
-				}
+				alert("Logged in! Welcome：" + res.username)
+				this.setState(
+					{
+						Login_facebook_ID: response.userID,
+						isFBLogin: true,
+						isLogin: true
+					})
+				this.handleLogin(true)
 			}
-		})
-		.catch(err => 
-			{
-			console.log(err)
+		).catch(err=>{
+			console.log(err.description)
+			alert("User not registered!")
+			this.setState(
+				{
+					Login_facebook_ID: response.userID,
+					isLogin: false,
+					isFBLogin: true
+				})
 			this.handleLogin(false)
-			})
+		})
 	}
 	render() 
 	{

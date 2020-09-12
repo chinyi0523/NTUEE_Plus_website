@@ -44,5 +44,5 @@ module.exports = function (req, res) {
   //var query = {ID: ID};
   console.log("新增recruitment");
   insert(recruitmentTitle,recruitmentCompany_name,recruitmentWork_type,recruitmentSalary,recruitmentExperience,recruitmentDiploma,recruitmentRequirement,recruitmentDescription);
-  res.send({status:'success', message:true, data: recruitmentTitle})
+  res.status(201).send({data: recruitmentTitle})
 }

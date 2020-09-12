@@ -27,27 +27,27 @@ module.exports = function (req, res, next) {
      user_v_Schema.find({"account.data":session_account}, async function(err, obj){
         if (err) {
             console.log("Error:" + err);
-			      return res.send({status:'success',message:false, description:"資料庫錯誤"}); 
+			      return res.status(500).send({description:"資料庫錯誤"}); 
         }
         else {
+            let output=null;
             if(obj.length === 1){
-              const output=readDB.getOwnDB(obj[0]);
+              output=readDB.getOwnDB(obj[0]);
               console.log('即將傳出使用者資料',output.account);
-              res.send({status:'success',message:true,data:
-                output
-              });
+              res.status(201).send({data:output});
             }else if(obj.length === 0){//存在session但不在資料庫裡
               console.log("session:",session_account);
-              output = await insert(req.session.loginName||'無名氏',session_account||'b07901028');
-              //console.log("output",output)
+              if(req.session.loginName && session_account){
+                output = await insert(req.session.loginName,session_account);
+              }
               if(!output){
-                return res.send({status:'success',message:false, description:"資料庫錯誤(資料插入錯誤)"}); 
+                return res.status(500).send({description:"資料庫錯誤(資料插入錯誤)"}); 
               }else{
                 output.userimage = '';
-                return res.send({status:'success',message:true, data:output}); 
+                return res.status(201).send({data:output}); 
               }
             }else{
-              return res.send({status:'success',message:false, description:"帳號重複"}); 
+              return res.status(403).send({description:"帳號重複"}); 
             }
         }
     })

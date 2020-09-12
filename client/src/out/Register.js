@@ -35,36 +35,25 @@ class Register extends Component
 		{
 			return
 		}
-		axios.post("/api/loginFB", { facebookID: response.userID }).then(res => {
-			console.log(res.data)
-			if (res.data) {
-				if (res.data.message === true) 
+		axios.post("/api/loginFB", { facebookID: response.userID })
+		.then(res => {//{username}
+			alert("Already registered! Welcome：" + res.data.username)
+			this.setState(
 				{
-					alert("Already registered! Welcome：" + res.data.username)
-					this.setState(
-						{
-							Login_facebook_ID: response.userID,
-							isFBLogin: true,
-							isLogin: true
-						})
-					this.handleLogin(true)
-				} 
-				else 
+					Login_facebook_ID: response.userID,
+					isFBLogin: true,
+					isLogin: true
+				})
+			this.handleLogin(true)
+		}).catch(err => {//{description}
+			this.setState(
 				{
-					this.setState(
-						{
-							Login_facebook_ID: response.userID,
-							isLogin: false,
-							isFBLogin: true
-						})
-					this.handleLogin(false)
-				}
-			}
-		}).catch(err => 
-			{
-				console.log(err)
-				this.handleLogin(false)
-			})
+					Login_facebook_ID: response.userID,
+					isLogin: false,
+					isFBLogin: true
+				})
+			this.handleLogin(false)
+		})
 	}
 	render() {
 		console.log(this.state)

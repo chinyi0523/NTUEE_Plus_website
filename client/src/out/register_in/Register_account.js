@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Register_account.css';
-import axios from 'axios';
-
+//import axios from 'axios';
+import myPost from '../../post/axios';
 class Register_account extends Component{
 	constructor(props) {
 		super(props);
@@ -36,7 +36,7 @@ class Register_account extends Component{
 		if(this.state.Register_password!==this.state.Register_confirm_password){
 			return alert("密碼不一致");
 		}else{
-			var r=window.confirm("確認註冊?");
+			var r=window.confirm("確認註冊？");
 			if(r){
 				var data = new FormData();
 				data.append('file',this.state.file)
@@ -44,35 +44,45 @@ class Register_account extends Component{
 				data.append('account',this.state.Register_acc_student_id)
 				data.append('password',this.state.Register_acc_password)
 				data.append('ConfirmPassword',this.state.Register_acc_confirm_password)
-				console.log('data',data)
+				console.log('data is form ',data)
 				const config = {
 					headers: {
 						'content-type': 'multipart/form-data'
 					}
 				};
-				axios.post("/api/register",
-					data
-					/*{username:this.state.Register_realname,
-					account:this.state.Register_student_id,
-					password:this.state.Register_password,
-					ConfirmPassword:this.state.Register_confirm_password,
-					file:this.state.file}*/,
-					config
-				).then(res => {
-					console.log(res.data);
-						if(res){
-							if(res.data.message===true){
-								alert('註冊成功');
-								localStorage.setItem('auth',true);
-								window.location = "/Login";
-							}else{
-								alert('錯誤：\n'+res.data.description);
-							}
-						}
-				}).catch(err=>{
-					console.log("err=",err);
-					//[{value:"使用者填的值",msg:"錯的原因",param:"用他拿到是誰錯",location:"body"}]
+				myPost("/api/register",{data,config},()=>{
+					alert('註冊成功');
+					localStorage.setItem('auth',true);
+				 	window.location = "/Login";
+				},(err)=>{
+					alert(err.description);
 				})
+
+				// axios.post("/api/register",
+				// 	data
+				// 	/*{username:this.state.Register_realname,
+				// 	account:this.state.Register_student_id,
+				// 	password:this.state.Register_password,
+				// 	ConfirmPassword:this.state.Register_confirm_password,
+				// 	file:this.state.file}*/,
+				// 	config
+				// ).then(res => {
+				// 	console.log(res.data);
+				// 	alert('註冊成功');
+				// 		// if(res){
+				// 		// 	if(res.data.message===true){
+				// 		// 		alert('註冊成功');
+				// 		// 		localStorage.setItem('auth',true);
+				// 		// 		window.location = "/Login";
+				// 		// 	}else{
+				// 		// 		alert('錯誤：\n'+res.data.description);
+				// 		// 	}
+				// 		// }
+				// }).catch(err=>{
+				// 	console.log("err  =  ",err.response);
+				// 	//[{value:"使用者填的值",msg:"錯的原因",param:"用他拿到是誰錯",location:"body"}]
+				// 	alert('錯誤：\n'+err.response.data.description||'');
+				// })
 			}
 		}
 	}

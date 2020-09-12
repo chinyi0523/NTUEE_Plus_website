@@ -22,14 +22,13 @@ Multer = function(method){
 	return function(req,res,next){
 		doUpload(req,res,function(err){
 			if (req.fileValidationError) {
-				return res.send({status:'success',message:false,description:req.fileValidationError})
+				return res.status(400).send({description:req.fileValidationError})
 			}else if(err instanceof multer.MulterError){
 				console.log('Merr',err);
-				return res.send({status:'success',message:false,description:err.message})
+				return res.status(400).send({description:err.message})
 			}else if(err){
-				return res.send({status:'success',message:false,description:err})
+				return res.status(400).send({description:err})
 			}
-			console.log('no file err')
 			next()
 		})
 	}

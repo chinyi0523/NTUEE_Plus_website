@@ -12,11 +12,9 @@ export function saveImg(filename,img){
 			}
 		}
 	).then(res=>{
-		if(res.data && res.data.message === true){
 			return true
-		}else{
+		}).catch(err=>{
 			console.log("儲存失敗");
 			return false
-		}
 	})
 }

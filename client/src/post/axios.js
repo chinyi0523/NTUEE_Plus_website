@@ -1,15 +1,12 @@
 import axios from 'axios';
 
-export function axios(url, data, next){
+export default function myPost(url, input, success, fail){
 	axios.post(url, 
-		data
+        input.data,
+        input.config||{headers: {"Content-type": "application/json",}}
     ).then(res => {
-        if(res.data.message === false && res.data.description === "請登入"){
-            alert('請重新登入');
-            return window.location = "/Login";
-        }
-        else{
-            next(res.data);
-        }
+        success(res.data);//res.data = response from res.send()
+    }).catch(err => {
+        fail(err.response.data, status);//err.response.data = response from res.send()
     })
 }

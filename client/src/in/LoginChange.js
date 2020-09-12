@@ -18,20 +18,15 @@ class LoginChange extends Component {
 	showPersonal() {
 		axios.post("/api/showPersonal",
 			{}
-		).then(res => {
-			console.log(res.data);
-			if (res.data) {
-				if (res.data.message === true) {
-					this.setState({
-						username: res.data.data.username,
-						account: res.data.data.account,
-						question: res.data.data.SQ,
-						img: res.data.data.img
-					});
-				} else {
-					alert('錯誤：\n' + res.data.description);
-				}
-			}
+		).then(res => {//{username,account,question}
+			this.setState({
+				username: res.data.username,
+				account: res.data.account,
+				question: res.data.SQ,
+				img: res.data.img
+			});
+		}).catch(err => {
+			alert('錯誤：\n' + err.response.description);
 		})
 	}
 
@@ -55,29 +50,29 @@ class LoginChange extends Component {
 		this.showPersonal();
 	}
 
-	handleSubmit = event => {
-		event.preventDefault();
-		console.log(this.state);
-		if (this.state === "") {
-			alert("該值不得為空");
-		} else {
-			var r = window.confirm("確認更改安全問題?");
-			if (r) {
-				axios.post("/api/chLogin",
-					{ question: this.state.question }
-				).then(res => {
-					console.log(res.data);
-					if (res.data) {
-						if (res.data.message === true) {
-							alert('更改完成');
-						} else {
-							alert('更改失敗');
-						}
-					}
-				})
-			}
-		}
-	}
+	 handleSubmit = event => {event.preventDefault();}
+	// 	event.preventDefault();
+	// 	console.log(this.state);
+	// 	if (this.state === "") {
+	// 		alert("該值不得為空");
+	// 	} else {
+	// 		var r = window.confirm("確認更改安全問題?");
+	// 		if (r) {
+	// 			axios.post("/api/chLogin",
+	// 				{ question: this.state.question }
+	// 			).then(res => {
+	// 				console.log(res.data);
+	// 				if (res.data) {
+	// 					if (res.data.message === true) {
+	// 						alert('更改完成');
+	// 					} else {
+	// 						alert('更改失敗');
+	// 					}
+	// 				}
+	// 			})
+	// 		}
+	// 	}
+	// }
 
 	render() {
 		return (

@@ -59,16 +59,11 @@ class ResetPassword extends Component{
 					// Email:this.state.Forget_email,
 					// ConfirmPassword:this.state.Reset_confirm_password
 					}
-				).then(res => {
-					console.log(res.data);
-						if(res){
-							if(res.data.message===true){
-								alert('密碼變更成功，請登入');
-								window.location = "/Login";
-							}else{
-								alert('錯誤：\n'+res.data.description);
-							}
-						}
+				).then(() => {//{}
+					alert('密碼變更成功，請登入');
+					window.location = "/Login";
+				}).catch(err => {
+					alert('錯誤：\n'+err.description);
 				})
 			}
 		}

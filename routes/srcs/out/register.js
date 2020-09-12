@@ -55,14 +55,14 @@ module.exports = function (req, res) {
   const newPas = md5.update(UserPsw).digest("hex");
   
   if(req.file===undefined){
-      return res.send({message:false,description:"請添加照片"});
+      return res.status(400).send({description:"請添加照片"});
   }
   //查詢用戶是否存在
   const query = {account: Useraccount};
     user_l_Schema.find(query, function(err, obj){
         if (err) {
             console.log("Error:" + err);
-			return res.send({status:'success',message:false,description:"資料庫錯誤"});
+			return res.status(500).send({description:"資料庫錯誤"});
         }
         else {
             if(obj.length == 0){
@@ -71,22 +71,20 @@ module.exports = function (req, res) {
 				req.session.regenerate(function(err) {
 					if(err){
 						console.log("session建立失敗，err=\n",err);
-						return res.send({
-							status:'success',
-							message:false,
+						return res.status(500).send({
 							description:"session建立失敗"
-							});                
+							});
 					}
 					req.session.loginName = UserName;
                     req.session.loginAccount = Useraccount;
                     insertVisual(UserName,Useraccount);
-					return res.send({status:'success',message:true,data:UserName});
+					return res.status(201).send({username:UserName});
 						//res.redirect('/');
 				});
                 
             }else{
 				console.log("已有此帳號");
-                res.send({status:'success',message:false,description:"帳號已存在"}) 
+                res.status(403).send({description:"帳號已存在"});
             }
         }
     })

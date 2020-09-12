@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
 	user_l_Schema.find (query, function (err, obj) {
 		if (err) {
 			console.log("Error:" + err);
-			return res.send({ status: 'success', message: false, description: "DB Error!"});
+			return res.status(500).send({description: "DB Error!"});
 		}
 		else {
 			if (obj.length == 1) {
@@ -15,19 +15,17 @@ module.exports = function (req, res, next) {
 				req.session.regenerate (function (err) {
 					if (err) {
 						console.log("Session created failed! Err=\n", err);
-						return res.send({
-							status: 'success',
-							message: false,
+						return res.status(500).send({
 							description: "session created failed!"
 						});
 					}
 					req.session.loginName = obj[0].username;
 					req.session.loginAccount = obj[0].account;
-					return res.send({ status: 'success', message: true, username: obj[0].username });
+					return res.status(201).send({username: obj[0].username });
 				});
 			} else {
 				console.log('The account does not exist!');
-				return res.send({ status: 'success', message: false, username: "Not found!" });
+				return res.status(404).send({description: "account Not found!" });
 			}
 		}
 	})
