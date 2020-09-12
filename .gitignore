@@ -45,5 +45,4 @@ node_modules/
 npm-debug.log
 client/build/
 sessions/
-hellos/
 dist/

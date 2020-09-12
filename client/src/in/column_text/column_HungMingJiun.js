@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Column_content from './component/column_content';
 // import './column_text.css';
 
-class Column_洪銘駿 extends Component{
+class Column_HungMingJiun extends Component{
     render(){
-        const column_洪銘駿_article = {
+        const column_HungMingJiun_article = {
 			title:['2014級 洪銘駿（RobotArt 國際機器人藝術大賽首獎）'],
 			hashtags:['系友專訪', '洪銘駿', '2014級', 'B99', 'RobotArt', 'Painting', 'ArtandTechnology', 'Robot', '機器人繪圖', '藝術', '台大山服', '系藍', '臺大電機所控制組', '不要想太多全心全力的投入', '多嘗試抬起頭來看外面的世界' ],
 			sections:[
@@ -75,14 +75,14 @@ class Column_洪銘駿 extends Component{
 			
 			
 			annotation:['特別感謝：洪銘駿','撰寫：劉衡謙 賴明緯 潘彥銘 葉加祈 Sasa Chen'],
-			id:'column_洪銘駿'
+			id:'column_HungMingJiun'
 		}
 		return (
 			<div>
-				<Column_content content = {column_洪銘駿_article}/>
+				<Column_content content = {column_HungMingJiun_article}/>
 			</div>
         )
     }
 }
 
-export default Column_洪銘駿;
+export default Column_HungMingJiun;

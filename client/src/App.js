@@ -11,7 +11,8 @@ import Login from './out/Login';
 import './App.css'
 import {NavBar} from './component/AppBar';
 import Footer from './component/Footer/Footer';
-
+import ResetPassword_page from './out/ResetPassword';
+import Policy_page from './out/Policy';
 // import { get } from 'mongoose';
 // import equal from 'fast-deep-equal';
 //import {fakeAuth} from './auth';
@@ -124,7 +125,9 @@ const App = () =>{
         {/* <Route path="/in" component={Main_in_page} /> */}
         {/* <PrivateRoute path="/in" component={Main_in_page} loginstatus={this.state.isLogin}/> */}
         <Route path="/Team" component={Team_page}/>
+        <Route path="/ResetPassword/:account/:active" component={ResetPassword_page}/>
         <Route path="/History" component={History_page}/>
+        <Route path="/Policy" component={Policy_page}/>
         <Footer/>
       </div>
     );

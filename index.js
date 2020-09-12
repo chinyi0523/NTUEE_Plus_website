@@ -13,6 +13,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+const connectHistoryApiFallback = require('connect-history-api-fallback');
+
 
 //post, get時的解碼
 app.use(bodyParser.urlencoded({extended:true}))
@@ -37,26 +39,35 @@ app.use(session({
     }
 }));
 
-//由 api/當後端
+
 app.use("/api", require("./routes/api"));
+const DIST_DIR = path.join(__dirname, './dist'); 
+const HTML_FILE = path.join(__dirname, './index.html'); 
+app.use(connectHistoryApiFallback({
+  verbose: false
+}));
+app.use(express.static(DIST_DIR)); 
+app.get('/', (req, res) => {
+  res.sendFile(HTML_FILE); // EDIT
+});
+//由 api/當後端
 
 //Serve static files from the React app
 //詳細資訊看：https://expressjs.com/zh-tw/starter/static-files.html
 app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req, res) => {
+/*app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html')); //這個缺點是react build的index不是我們寫的那個
   //res.redirect('/'); //這個按F5會亂跳，先捨棄
-});
+});*/
 
 // const http = require('http');
 // connect to https://localhost:1993
-https.createServer(options, app).listen(1993, function() {
-  console.log('server connect');
-  console.log('port name: ', process.env.PORT||1993);
-})	;
-/*
+// https.createServer(options, app).listen(1993, function() {
+//   console.log('server connect');
+//   console.log('port name: ', process.env.PORT||1993);
+// })	;
+
 const server = app.listen(process.env.PORT||1993,function(){
     console.log('server connect');
-	console.log('port name: ',process.env.PORT||1993);
+	  console.log('port name: ',process.env.PORT||1993);
 })
-*/

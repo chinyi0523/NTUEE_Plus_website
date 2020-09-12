@@ -32,7 +32,10 @@ router.post("/forget",
 	ValidTest('forget'),
 	ValidSend,
 	require("./srcs/out/forget"));
-router.get("/activation", require("./srcs/out/activation"));
+router.post("/activation",
+	ValidTest('activation'),
+	ValidSend,
+	require("./srcs/out/activation"));
 
 //in
 router.post("/showPersonal",
@@ -62,7 +65,7 @@ router.post('/getImg',	Auth,
 router.post('/isLogin',
 	require('./srcs/in/isLogin'))
 
-router.post('./addRecruitment',
+router.post('/addRecruitment',
 	require('./srcs/in/addRecruitment'))
 
 module.exports = router;

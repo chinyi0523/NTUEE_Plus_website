@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import './Forget.css';
+import './ResetPassword.css';
 import axios from 'axios';
 import { NavBar } from '../component/AppBar';
 import handleInputChange from './funcTest/handleInputChange';
 
-class Forget extends Component{
+class ResetPassword extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-		  Forget_ID: '',
-		  Forget_email: '',
-		  Forget_question: '',
-		  Forget_password: '',
-		  Forget_confirm_password: ''
+          account: '',
+          active: '',
+		  //Forget_email: '',
+		  //Forget_question: '',
+		  Reset_password: '',
+		  Reset_confirm_password: ''
 		};
 
 		this.handleInputChange = handleInputChange.bind(this);
@@ -28,28 +29,42 @@ class Forget extends Component{
 		  [name]: value
 		});
 	}*/
-	
+    
+    componentDidMount(){
+        try{
+            this.setState({
+                account:this.props.match.params.account,
+                active:this.props.match.params.active
+            })
+        }catch{
+            console.log(this.props)
+            alert('驗證碼不存在');
+            // window.location = "/Login";
+        }
+    }
+
 	handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.state);
-		if(false){//this.state.Forget_password!==this.state.Forget_confirm_password){
-			alert("密碼不一致");
+		if(this.state.Reset_password!==this.state.Reset_confirm_password || this.state.Reset_password===''){
+			alert("密碼不一致或為空");
 		}else{
-			var r=window.confirm("一個更改密碼的頁面連結將寄到信箱");
+			var r=window.confirm("密碼即將更改");
 			if(r){
-				axios.post("/api/forget", 
-					{account:this.state.Forget_ID//,
-					// password:this.state.Forget_password,
+				axios.post("/api/activation", 
+					{account:this.state.account,
+                    password:this.state.Reset_password,
+                    active:this.state.active
 					// question:this.state.Forget_question,
 					// Email:this.state.Forget_email,
-					// ConfirmPassword:this.state.Forget_confirm_password
+					// ConfirmPassword:this.state.Reset_confirm_password
 					}
 				).then(res => {
 					console.log(res.data);
 						if(res){
 							if(res.data.message===true){
-								alert('連結已寄到'+res.data.data.email);
-								//window.location = "/Login";
+								alert('密碼變更成功，請登入');
+								window.location = "/Login";
 							}else{
 								alert('錯誤：\n'+res.data.description);
 							}
@@ -72,8 +87,9 @@ class Forget extends Component{
 							<input name="Forget_ID"
 								id="Forget_input_input" 
 								placeholder="Student ID"
-								value={this.state.value} 
-								onChange={this.handleInputChange}
+								value={this.state.account} 
+                                // onChange={this.handleInputChange}
+                                disabled={true}
 								className="form-control col-5 col-lg-6 offset-1"
 							></input>
 						</div>
@@ -86,8 +102,8 @@ class Forget extends Component{
 								onChange={this.handleInputChange}
 								className="form-control col-5 col-lg-6 offset-1 "
 							></input>
-						</div>
-						<div id="Forget_input" className="form-group row">
+						</div> */}
+						{/* <div id="Forget_input" className="form-group row">
 							<label for="Question" id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Question</label>
 							<input name="Forget_question"
 								id="Forget_input_input" 
@@ -96,32 +112,32 @@ class Forget extends Component{
 								onChange={this.handleInputChange}
 								className="form-control col-5 col-lg-6 offset-1"
 							></input>
-						</div>
+						</div> */}
 						<div id="Forget_input" className="form-group  row">
 						   <label id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">New Password</label>
-							<input name="Forget_password"
+							<input name="Reset_password"
 								id="Forget_input_input" 
 								type = "password"
-								placeholder="登入後須設定新密碼"
-								value={this.state.value} 
+								placeholder="設定新密碼"
+								value={this.state.Reset_password} 
 								onChange={this.handleInputChange}
 								className="form-control col-5 col-lg-6 offset-1"
 							></input>
 						</div>
 						<div id="Forget_input" className="form-group row">
 						   <label id="Forget_input_text" className="col-form-label col-lg-3 col-4 text-center text-md-left">Confirm Password</label>
-							<input name="Forget_confirm_password"
+							<input name="Reset_confirm_password"
 								id="Forget_input_input" 
 								type = "password"
 								placeholder="再次輸入密碼"
-								value={this.state.value} 
+								value={this.state.Reset_confirm_password} 
 								onChange={this.handleInputChange}
 								className="form-control col-5 col-lg-6 offset-1"
 							></input>
-						</div> */}
+						</div>
 						<div id="Forget_btn" className="justify-content-center d-flex mt-4">
-							<button id="Forget_btn_text" onclick={this.handleSubmit}>
-								Send Link to Mail
+							<button id="Forget_btn_text" onClick={this.handleSubmit}>
+								RESET PASSWORD
 							</button>
 						</div>
 					</form>
@@ -144,4 +160,7 @@ class Forget extends Component{
         )
     }
 }
-export default Forget
+// const ResetPassword_page = () => {
+//     return <ResetPassword />
+// }
+export default ResetPassword

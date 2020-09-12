@@ -3,28 +3,52 @@
 首次執行
 ```bash
 $ npm install
-$ npm run postbuild
+$ npm run install-client
 $ npm start
+進入https://localhost:1993
 ```
-前端改過後重跑(重build跑比較久)
+前端人員(更改會透過webpack --watch自動重整)
 ```bash
-$ npm run local_mac
+$ npm run dev
 ```
-只有改後端
+後端人員
 ```bash
-$ npm start
+$ node index.js
+或
+$ nodemon index.js //有可能會很卡 不建議
 ```
-只想看前端(改程式會自動refresh)
+正式跑
 ```bash
-$ cd client
 $ npm start
 ```
 ## 前端coding style規則
 > https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
+### 0831 進度 by 君輔
+* 發現前端用async會噴bug，因為webpack沒設定好的樣子(待更改)
+* 改變forget方式
+	1. 在forget頁面輸入學號會寄信到profile中設定的信箱
+	2. 點擊連結進入改密碼頁面
+	3. 改完密碼檢驗驗證碼、學號和資料庫是否吻合，吻合則覆蓋密碼
+
+	* 待修正：
+		* user login change
+		* 修改密碼頁面
+		
+### 0827 進度 by 君輔
+* 在branch webpack用webpack --watch打包前端檔案，npm run dev當檔案改動網頁會同步更新(要refresh)
+* forget的mail改成'"台大電機系系學會EEPlus" <ntueeplus2020@gmail.com>'，且應該會正常顯示名字
+* 發現一個嚴重的bug是只要知道學號，因為Q defalut是hello world，就能用forget改別人密碼(再改)
+	* 解決方案：把login schemas裡的question default刪掉(當初好像是為了讓大家測試)，要設安全問題的必須登入後自己加
+
+### 0824 進度 by 建琁
+* 調整Support字體大小和margin top。
+
 ### 0817 進度 by 君輔
 * 把Auth統一管理，master裡不判定(呼叫next)，beta裡會return{description:請登入}
+
 ### 0811 進度 by 君輔
 * 新增beta branch
+
 ### 0803 進度 by 友廷
 * Profile SlideBar 已套 Bootstrap
 * 增加Edit按鈕
