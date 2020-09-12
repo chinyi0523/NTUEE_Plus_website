@@ -5,10 +5,10 @@ services:
     # restart: always
     expose:
       - "27017"
-    volumes:
-      - "./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh"
-    ports:
-      - 27017:27017
+    # volumes:
+    #   - "./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh"
+    # ports:
+    #   - 27017:27017
     # volumes:
     #   - ./tmp/data/db:/data/db
   web:
