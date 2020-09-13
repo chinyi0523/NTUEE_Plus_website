@@ -6,6 +6,7 @@ html, body{
     height: 100%;
 }
 :root{
+    --primary-bgcolor:#003F67;
     --primary-color: #63e7e7;
     --primary-color2: #132149;
     --title-color: #131314;

@@ -9,7 +9,7 @@ module.exports = function (req, res, next) {
 		job_Schema.find(query, {_id:0}, function(err,obj){
 			if (err) {
 				console.log("Error:" + err);
-				return res.send({status:'success',message:false, description:"資料庫錯誤"}); 
+				return res.status(500).send({description:"資料庫錯誤"}); 
 			}
 			else{
 				const output = []
@@ -17,11 +17,11 @@ module.exports = function (req, res, next) {
 					const output1 = readDB.getOtherDB_job(item)
 					output.push(output1)
 				})
-				return res.send({status:'success',message:true,data:output});
+				return res.status(200).send({data:output});
 			}
 		})
 	}
-	else{
-		res.send({status:'success', message:false, description:"session不存在(已過期)"});
-	}
+	// else{
+	// 	res.send({status:'success', message:false, description:"session不存在(已過期)"});
+	// }//改到Auth.js
 }

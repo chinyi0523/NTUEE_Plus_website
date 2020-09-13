@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import {Route,Switch} from "react-router-dom";
-import {Register_account_page, Register_facebook_page} from "./register_pages";
+import {Register_account_page, Register_facebook_page} from "./Register_pages";
 class register_app extends Component{
     render(){
         return(

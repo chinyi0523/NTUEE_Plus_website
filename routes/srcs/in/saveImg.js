@@ -5,6 +5,6 @@ module.exports = function (req, res, next){
 		saveDone = SaveFunc(req.body.filename,req.file);
 	}
 	
-	if(saveDone){return res.send({status:'success',message:true})}
-	else{return res.send({status:'success',message:false,description:"儲存失敗"})}
+	if(saveDone){return res.status(204).end()}
+	else{return res.status(500).send({description:"儲存失敗"})}
 }

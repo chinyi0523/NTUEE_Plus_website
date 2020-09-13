@@ -4,7 +4,7 @@ module.exports = async function (req, res, next){
 	getDone = await GetFunc(req.body.filename);
 	console.log("getDone"+req.body.filename)
 	if(getDone){		
-		return res.send({status:'success',message:true,data:getDone})
+		return res.status(201).send({data:getDone})
 	}
-	else{return res.send({status:'success',message:false,description:"get Img 發生錯誤"})}
+	else{return res.status(500).send({description:"get Img 發生錯誤"})}
 }

@@ -15,7 +15,7 @@ module.exports = function(req,res){
 	Activation.find({account:UserName,active:Garbled}, function(err, obj){
         if (err) {
 			console.log("Error:" + err);
-			return res.send({message:false,description:"資料庫發生錯誤"});
+			return res.status(500).send({message:false,description:"資料庫發生錯誤"});
         }
         else {
             if(obj.length == 1){
@@ -32,16 +32,16 @@ module.exports = function(req,res){
 					});
 					console.log('密碼更新');
 					//const URL = '<a href="'+req.protocol+"://"+req.get('host')+'/Login">點擊跳轉</a>';
-					res.send({message:true});
+					res.status(200).end();
 				}else{
 					console.log('驗證碼過期');
-					res.send({message:false,description:"驗證碼過期"});
+					res.status(401).send({description:"驗證碼過期"});
 				}
             }else{
                 // console.log('驗證碼錯誤');
 				// console.log(obj, Garbled);
 				// const URL = '<a href="'+req.protocol+"://"+req.get('host')+'/Forget">點擊跳轉</a>';
-                res.send({message:false,description:"驗證碼已過期"});
+                res.status(401).send({description:"驗證碼已過期"});
             }
         }
     })

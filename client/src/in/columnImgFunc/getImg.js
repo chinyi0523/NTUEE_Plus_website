@@ -5,20 +5,16 @@ export function getImg (filename){
 	console.log(filename)
 	axios.post("/api/getImg",
 		toSend
-	).then(res=>{
-		if(res.data && res.data.message === true){
-			console.log(res)
-			// return res.data.data;
+	).then(res=>{//{data}
 			const objImg = res.data.data;
 			const img = new Buffer(objImg.data, 'binary').toString('base64')
 			this.setState({
 				img:"data:"+objImg.contentType+";base64,"+img
 			})
 
-		}else{
+		}).catch(err => {
 			console.log("讀取失敗或查無檔案");
-			console.log(res.data.description)
+			console.log(err.response.description)
 			return false
-		}
 	})
 }

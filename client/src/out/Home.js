@@ -1,26 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from "react"
 import "./Home.css"
-// import Footer from "../component/Footer";
-import { NavBar } from '../component/AppBar';
 class Home extends Component{
 	
     render(){
         
         return ( 
-        <div style={{minHeight: '100vh'}}>
-            {/* <NavBar/>  */}
-        <div id = "Home_title">
-            
-			NTUEE+
-			
-        </div>
-        {/* <footer id="index_footer"><Footer/></footer> */}
+        <div style={{minHeight: "100vh"}}>
+            <div id = "Home_title">
+                NTUEE+
+            </div>
         </div> 
         )
     }
 }
 
-export default Home;
+export default Home
 
 
 

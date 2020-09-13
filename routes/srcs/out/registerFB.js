@@ -59,17 +59,17 @@ module.exports = function (req, res) {
     user_l_Schema.find(query, function (err, obj) {
         if (err) {
             console.log("Error:" + err);
-            return res.send({ status: 'success', message: false, description: "資料庫錯誤" });
+            return res.status(500).send({description: "資料庫錯誤" });
         }
         else {
             if (obj.length == 0) {
                 console.log("新增帳號");
                 insert(UserName, Useraccount, UserFbId, req.file);
                 insertVisual(UserName,Useraccount);
-                res.send({ status: 'success', message: true, data: UserName })
+                res.status(201).send({username: UserName })
             } else {
                 console.log("已有此帳號");
-                res.send({ status: 'success', message: false, description: "帳號已存在" })
+                res.status(403).send({description: "帳號已存在" })
             }
         }
     })

@@ -8,16 +8,11 @@ class Logout extends Component {
 		axios.post("/api/logout", 
 			{}
 		).then(res => {
-			console.log(res.data);
-				if(res.data){
-					if(res.data.message===true){
-						alert('登出成功');
-						localStorage.removeItem('auth');
-						window.location = "/Login";
-					}else{
-						alert('登出失敗');
-					}
-				}
+			alert('登出成功');
+			localStorage.removeItem('auth');
+			window.location = "/Login";
+		}).catch(err => {
+			(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
 		})
 	}
 	

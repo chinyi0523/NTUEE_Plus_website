@@ -48,18 +48,11 @@ class Register_facebook extends Component{
 			
 			axios.post("/api/registerFB",
 				data, config
-			).then(res => {
-				console.log(res.data);
-					if(res){
-						if(res.data.message===true){
-							alert('Successfully registered!');
-							window.location = "/Login";
-						}else{
-							alert('Error：\n'+res.data.description);
-						}
-					}
+			).then(res => {//{username}
+				alert('Successfully registered!');
+				window.location = "/Login";
 			}).catch(err=>{
-				console.log("err=",err);
+				(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
 			})
 		}
 	}
