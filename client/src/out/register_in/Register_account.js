@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Register_account.css';
-//import axios from 'axios';
-import myPost from '../../post/axios';
+import axios from 'axios';
+//import myPost from '../../post/axios';
 class Register_account extends Component{
 	constructor(props) {
 		super(props);
@@ -50,11 +50,11 @@ class Register_account extends Component{
 						'content-type': 'multipart/form-data'
 					}
 				};
-				myPost("/api/register",{data,config},()=>{
+				axios.post("/api/register",data,config).then(()=>{
 					alert('註冊成功');
 					localStorage.setItem('auth',true);
 				 	window.location = "/Login";
-				},(err)=>{
+				}).catch((err)=>{
 					alert(err.description);
 				})
 

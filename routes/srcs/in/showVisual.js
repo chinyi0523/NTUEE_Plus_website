@@ -47,7 +47,7 @@ module.exports = function (req, res, next) {
                 return res.status(201).send({data:output}); 
               }
             }else{
-              return res.status(403).send({description:"帳號重複"}); 
+              return res.status(404).send({description:"帳號重複"}); 
             }
         }
     })

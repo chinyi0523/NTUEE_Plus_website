@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./Login.css"
 import FacebookLogin from "react-facebook-login"
 import { Link, Redirect } from "react-router-dom"
-import myPost from "../post/axios"
+//import myPost from "../post/axios"
 import axios from "axios"
 class Login extends Component 
 {
@@ -50,14 +50,14 @@ class Login extends Component
 	{
 		event.preventDefault()
 		console.log(this.state)
-		myPost("/api/login",{data:
+		axios.post("/api/login",
 			{
 				account: this.state.Login_username_input,
 				password: this.state.Login_password_input
-			}},
-			res => //{username,account}
+			}
+		).then( (res) => //{username,account}
 			{
-				alert("登入成功，歡迎：" + res.username)
+				alert("登入成功，歡迎：" + res.data.username)
 				//window.location = "/"
 				this.setState(
 					{
@@ -65,10 +65,10 @@ class Login extends Component
 					}
 				)
 				this.handleLogin(true)
-			},
-			err => //{description}
+			}
+		).catch( err => //{description}
 			{
-				alert("錯誤：\n" + err.description)
+				(err.response.data.description)&&(alert("錯誤：\n" + err.response.data.description))
 			}
 		)
 	}
