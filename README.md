@@ -21,6 +21,54 @@ $ nodemon index.js //有可能會很卡 不建議
 ```bash
 $ npm start
 ```
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Route</th>
+    <th>Request Body</th>
+    <th>Response</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>POST</td>
+    <td>/api/register</td>
+    <td>
+		type: <code>x-www-form-urlencoded</code><br />
+      content:
+      <table>
+        <tr>
+          <th>KEY</th>
+          <th>VALUE</th>
+        </tr>
+        <tr>
+          <td>userID</td>
+          <td>學號(String)</td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td>密碼(String)</td>
+        </tr>
+      </table>
+	</td>
+    <td>
+      Success: 200<br />
+      JSON Response:<br />
+		<pre>
+		{
+		userID: 學號(String)
+		}
+		</pre>
+      Failed:<br />
+      403: 沒登入
+    </td>
+    <td>Get user session data</td>
+  </tr>
+
+  
+</table>
+
 ## 前端coding style規則
 > https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
 ### 0831 進度 by 君輔
