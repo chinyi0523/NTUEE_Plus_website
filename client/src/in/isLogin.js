@@ -8,7 +8,7 @@ export function isLoginChecker(){
 		console.log("登入者",res.data.account);
 		return true;
 	}).catch(err => {
-		console.log("未登入",err.response.description);
+		console.log("未登入",err.response.data.description);
 		return false;
 	})
 }

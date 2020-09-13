@@ -14,7 +14,7 @@ export function getImg (filename){
 
 		}).catch(err => {
 			console.log("讀取失敗或查無檔案");
-			console.log(res.data.description)
+			console.log(err.response.description)
 			return false
 	})
 }

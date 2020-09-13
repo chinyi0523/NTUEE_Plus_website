@@ -55,7 +55,7 @@ class Register_account extends Component{
 					localStorage.setItem('auth',true);
 				 	window.location = "/Login";
 				}).catch((err)=>{
-					alert(err.description);
+					(err.response.data.description) && alert(err.response.data.description);
 				})
 
 				// axios.post("/api/register",

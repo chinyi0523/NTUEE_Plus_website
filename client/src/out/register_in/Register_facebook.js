@@ -52,7 +52,7 @@ class Register_facebook extends Component{
 				alert('Successfully registered!');
 				window.location = "/Login";
 			}).catch(err=>{
-				alert('Error：\n'+errdescription);
+				(err.response.data.description) && alert(err.response.data.description);
 			})
 		}
 	}
