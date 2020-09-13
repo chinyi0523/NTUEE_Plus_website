@@ -63,7 +63,7 @@ class ResetPassword extends Component{
 					alert('密碼變更成功，請登入');
 					window.location = "/Login";
 				}).catch(err => {
-					(err.response.data.description) && alert(err.response.data.description);
+					(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
 				})
 			}
 		}

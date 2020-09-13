@@ -40,7 +40,7 @@ class Forget extends Component {
 					window.location = "/Login";
 				}
 				).catch(err => {//{description}
-					(err.response.data.description) && alert('錯誤\n'+err.description)
+					(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
 				})
 			}
 		}

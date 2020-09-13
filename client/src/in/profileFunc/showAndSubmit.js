@@ -38,7 +38,7 @@ export function showVisual(){
 					})
 	}).catch(err=>{
 		// console.log(err)
-		(err.response.data.description) && alert(err.response.data.description);
+		(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
 	})
 };
 
@@ -123,7 +123,7 @@ export function handleSubmit(event){
 					this.setState({hasChanged});
 					// window.location = "/in"
 			}).catch(err =>{
-				(err.response.data.description) && alert(err.response.data.description);
+				(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
 			})
 		}
 }

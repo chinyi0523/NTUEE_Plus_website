@@ -26,7 +26,7 @@ class LoginChange extends Component {
 				img: res.data.img
 			});
 		}).catch(err => {
-			alert('錯誤：\n' + err.response.description);
+			(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
 		})
 	}
 
