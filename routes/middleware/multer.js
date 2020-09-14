@@ -17,7 +17,7 @@ const upload=multer({
 	}
 })
 
-Multer = function(method){
+Multer = function(method){//method is filename, ex: file
 	const doUpload=upload.single(method)
 	return function(req,res,next){
 		doUpload(req,res,function(err){

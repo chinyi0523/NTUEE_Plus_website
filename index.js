@@ -43,7 +43,7 @@ app.use(session({
 app.use("/api", require("./routes/api"));
 const DIST_DIR = path.join(__dirname, './dist'); 
 const HTML_FILE = path.join(__dirname, './index.html'); 
-app.use(connectHistoryApiFallback({
+app.use(connectHistoryApiFallback({ //這樣讀webpack生成的前端才不會炸掉
   verbose: false
 }));
 app.use(express.static(DIST_DIR)); 
