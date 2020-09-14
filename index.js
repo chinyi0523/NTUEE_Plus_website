@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
 
 //Serve static files from the React app
 //詳細資訊看：https://expressjs.com/zh-tw/starter/static-files.html
-app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static(path.join(__dirname, 'client/build')));
 /*app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html')); //這個缺點是react build的index不是我們寫的那個
   //res.redirect('/'); //這個按F5會亂跳，先捨棄
