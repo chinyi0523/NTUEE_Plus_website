@@ -47,3 +47,5 @@ client/build/
 sessions/
 dist/
 tmp/
+
+.env
