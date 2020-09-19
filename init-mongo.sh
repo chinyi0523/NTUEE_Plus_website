@@ -1,2 +1,0 @@
-mongoexport --uri mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/heroku_kbtrwz4h --collection columns --type json --out column.json
-mongoimport --db demo --collection columns --file column.json

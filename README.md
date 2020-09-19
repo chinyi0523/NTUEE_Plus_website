@@ -10,8 +10,8 @@ $ npm start
 ```
 run in docker
 ```
-$ docker-compose build
-$ docker-compose up -d (噴error時取消-d可以看到完整錯誤訊息)
+$ docker-compose up --build -d (噴error時取消-d可以看到完整錯誤訊息)
+$ docker-compose exec web npm run reset-db
 open https://localhost:3000
 ```
 前端人員(更改會透過webpack --watch自動重整)

@@ -47,3 +47,6 @@ client/build/
 sessions/
 dist/
 tmp/
+
+.env
+init-mongo.sh

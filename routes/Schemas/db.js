@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 // ; // || process.env.MONGODB_URI || 'mongodb://localhost:27017/mongoose';
 
 const DB_URL1 = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/heroku_kbtrwz4h?retryWrites=true&w=majority'
+const DB_URL2 = 'mongodb://localhost:27017/eeplus';
 const DB_URL = process.env.MONGO_URI||DB_URL1
 //"mongodb://127.0.0.1/27021"
 mongoose.connect(DB_URL);

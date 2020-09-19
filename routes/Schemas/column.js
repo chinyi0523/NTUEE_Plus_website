@@ -1,4 +1,4 @@
-const mongoose = require('./db'),
+const mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 const Column_Schema = new Schema({
@@ -8,5 +8,5 @@ const Column_Schema = new Schema({
 	  contentType:{type:String}
 	}
 })
-
-module.exports = mongoose.model('Column',Column_Schema);
+//module.exports.userSchema = Column_Schema;
+module.exports =  mongoose.model('Column',Column_Schema);
