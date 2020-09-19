@@ -81,6 +81,7 @@ class Register extends Component {
 						<FacebookLogin
 							appId='969130733557478'
 							autoLoad={false}
+							isMobile={false}
 							fields='name,email,picture'
 							callback={this.handleFBSubmit}
 							textButton=''
