@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState, Component } from 'react'
 import './Search_input_block.css'
-import { Component } from 'react'
-
-import remove_btn from '../../images/remove_icon.png'
-import expand_icon from '../../images/show_more.png'
+import Select from '../../../../../component/Select'
+// import remove_btn from '../../images/remove_icon.png'
+// import expand_icon from '../../images/show_more.png'
+import {
+	updateOptions,
+	updateHaveChosen,
+	updateValue,
+} from '../../../../controllers/searchFunc/Search_input_block_controller.js'
 //import {handleInputChange} from "../searchFunc/handleChange";
 
 const map = {
@@ -26,7 +30,65 @@ const map = {
 	Position: 'Occupation.P',
 }
 
-class Search_input_block extends Component {
+const Search_input_block = (props) => {
+	const setOption = props.setOption
+	const setHaveChosen = props.setHaveChosen
+	const haveChosen = props.haveChosen
+	const currentOption = props.currentOption
+	const index = parseInt(props.index - 1)
+	const options = props.options
+	const options_for_select = {}
+
+	for (let option in props.options) {
+		if (!props.options[option].isChosen) {
+			options_for_select[option] = props.options[option]
+		}
+	}
+
+	const handleRemoveBlock = (e) => {
+		e.preventDefault()
+		//TODO
+		// after clicking the remove button, it will call updateOptions to change the state of options and haveChosen in parent
+		updateOptions(setOption, options, currentOption, false)
+		updateHaveChosen(setHaveChosen, haveChosen, index, null)
+	}
+
+	const handleChangeCurrentOption = (newOption) => {
+		//TODO
+		// pass into Select and enable it to change the Search_input's option and haveChosen
+		updateOptions(setOption, options, currentOption, false)
+		updateOptions(setOption, options, newOption, true)
+		updateHaveChosen(setHaveChosen, haveChosen, index, newOption)
+	}
+
+	const handleInputChange = (e) => {
+		//TODO
+		//call updateValue and pass e.target.value
+		updateValue(setOption, options, currentOption, e.target.value)
+	}
+
+	return (
+		<div>
+			<input
+				type='text'
+				value={currentOption ? options[currentOption].value : ''}
+				onChange={handleInputChange}
+			/>
+			<Select
+				id={'Search_select_' + props.index}
+				className='Search_select'
+				options={Object.keys(options_for_select)}
+				currentOption={currentOption}
+				conn={handleChangeCurrentOption}
+				key={props.index}
+			/>
+			<button onClick={handleRemoveBlock}>remove</button>
+		</div>
+	)
+}
+
+export default Search_input_block
+/* class Search_input_block extends Component {
 	state = {
 		currentOption: this.props.currentOption,
 		options: this.props.options,
@@ -132,7 +194,7 @@ class Search_input_block extends Component {
 	}
 }
 
-export default Search_input_block
+export default Search_input_block */
 /*class Search_input_block extends Component{
     constructor(props){
         super(props);

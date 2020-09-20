@@ -1,27 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Search_input.css'
 //import { useState } from 'react';
-import Search_input_block from '../search_block/Search_input_block'
-import add_btn from '../../images/add_icon.png'
-// var map = [
-// 	["Account","account"],
-// 	["Username","username"],
-// 	["Nickname","nickname"],
-// 	["Profile","profile"],
-// 	["Email","publicEmail"],
-// 	["Office Tel","office"],
-// 	["Home Tel","homephone"],
-// 	["Mobile","cellphone"],
-// 	["Major","education.major"],
-// 	["Double Major","education.double_major"],
-// 	["Minor","education.minor"],
-// 	["Master","education.master"],
-// 	["Doctor","education.doctor"],
-// 	["Company","Occupation.C"],
-// 	["Occupation","Occupation.O"],
-// 	["Position","Occupation.P"]
-// ];
-const map = {
+import Search_input_block from './Search_input_block'
+// import add_btn from '../../images/add_icon.png'
+import { useState, useEffect } from 'react'
+import {
+	renderInitialOptionState,
+	addBlockToBlockList,
+	handleSubmit,
+} from '../../../../controllers/searchFunc/Search_input_controller'
+
+let map = {
 	'Please Choose A Catalog': 'default',
 	Account: 'account',
 	Username: 'username',
@@ -44,7 +33,63 @@ let map_reverse = {}
 for (let option in map) {
 	map_reverse[map[option]] = option
 }
-let template = {
+
+const Search_input = (props) => {
+	const [options, setOptions] = useState(renderInitialOptionState(map))
+	const [haveChosen, setHaveChosen] = useState([])
+	const [blockList, setBlockList] = useState([])
+	const [stateNum, setStateNum] = useState(0)
+
+	const renderSearchBlocks = () => {
+		//TODO
+		let newBlockList = []
+		let count = stateNum
+		let count2 = 1
+		// render all the Search_input_block in the haveChosen
+		console.log('XDXDXDXD')
+
+		for (let haveChosenOption of haveChosen) {
+			newBlockList.push(
+				<Search_input_block
+					setOption={setOptions}
+					setHaveChosen={setHaveChosen}
+					currentOption={haveChosenOption}
+					haveChosen={haveChosen}
+					options={options}
+					key={haveChosenOption + '_' + count}
+					index={count2}
+				/>
+			)
+			count++
+			count2++
+		}
+		setStateNum(count)
+		setBlockList(newBlockList)
+	}
+
+	const handleAddBlock = (e) => {
+		e.preventDefault()
+		//TODO
+		// after clicking the add button, it will call addBlockToBlockList() in controller and change the state of blockList
+		addBlockToBlockList(haveChosen, setHaveChosen)
+
+		renderSearchBlocks()
+	}
+
+	useEffect(() => {
+		renderSearchBlocks()
+	}, [haveChosen, options])
+
+	return (
+		<div>
+			<button onClick={handleAddBlock}>ADD</button>
+			<div>{blockList}</div>
+			<button onClick={handleSubmit}>Submit</button>
+		</div>
+	)
+}
+export default Search_input
+/* let template = {
 	'Please Choose A Catalog': 'default',
 	Account: 'account',
 	Username: 'username',
@@ -193,7 +238,7 @@ class Search_input extends Component {
 	}
 }
 
-export default Search_input
+export default Search_input */
 /*class Search_input extends Component{
     constructor(props){
         super(props);

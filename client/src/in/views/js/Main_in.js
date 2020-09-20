@@ -24,7 +24,7 @@ class Main_in extends Component {
 					<Route path='/in/Career' exact component={Career_page} />
 					<Route path='/in/Career/pages' component={Career_app_page} />
 					<Route path='/in/Study' exact component={Study_page} />
-					{/* <Route path='/in/Search' exact component={Search_page} /> */}
+					<Route path='/in/Search' exact component={Search_page} />
 					<Route path='/in/:handle' exact component={Profile_for_search} />
 				</Switch>
 			</div>
