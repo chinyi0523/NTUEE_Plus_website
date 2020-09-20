@@ -24,7 +24,7 @@ class Reset_password extends Component {
 				active: this.props.match.params.active,
 			})
 		} catch {
-			console.log(this.props)
+			// console.log(this.props)
 			alert('驗證碼不存在')
 		}
 	}

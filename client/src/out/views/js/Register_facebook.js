@@ -60,7 +60,7 @@ class Register_facebook extends Component {
 					}
 				})
 				.catch((err) => {
-					console.log('err=', err)
+					// console.log('err=', err)
 				})
 		}
 	}

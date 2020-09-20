@@ -40,11 +40,11 @@ export function handleInputChange(event) {
 	const target = event.target
 	const value = target.value
 	const name = target.name
-	console.log(name, value)
+	// console.log(name, value)
 	this.setState({
 		[name]: value,
 	})
-	console.log([name], value)
+	// console.log([name], value)
 	var hasChanged = { ...this.state.hasChanged }
 	if (value === '') {
 		hasChanged[name] = false

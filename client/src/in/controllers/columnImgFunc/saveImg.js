@@ -14,7 +14,7 @@ export function saveImg(filename, img) {
 			if (res.data && res.data.message === true) {
 				return true
 			} else {
-				console.log('儲存失敗')
+				// console.log('儲存失敗')
 				return false
 			}
 		})

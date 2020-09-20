@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button'
 class Logout extends Component {
 	logoutbtn() {
 		axios.post('/api/logout', {}).then((res) => {
-			console.log(res.data)
+			// console.log(res.data)
 			if (res.data) {
 				if (res.data.message === true) {
 					alert('登出成功')

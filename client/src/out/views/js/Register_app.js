@@ -95,7 +95,7 @@ class Register_account extends Component {
 						}
 					})
 					.catch((err) => {
-						console.log('err=', err)
+						// console.log('err=', err)
 						//[{value:"使用者填的值",msg:"錯的原因",param:"用他拿到是誰錯",location:"body"}]
 					})
 			}

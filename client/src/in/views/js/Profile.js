@@ -152,7 +152,7 @@ class Profile extends Component {
 			var OT = document.getElementById('Profile_occupation_table')
 			//var i;
 			let num = this.state.Occupation_number
-			console.log('num', num)
+			// console.log('num', num)
 			var new_tr = document.createElement('tr')
 			new_tr.setAttribute('id', `Profile_occupation_row_${num}`)
 			new_tr.setAttribute('name', `work_${num}`)
@@ -216,7 +216,7 @@ class Profile extends Component {
 
 		var delete_tr = e.target.parentNode.parentNode.parentNode
 		var delete_tr_parent = delete_tr.parentNode
-		console.log('toDelete name', delete_tr.getAttribute('name'))
+		// console.log('toDelete name', delete_tr.getAttribute('name'))
 		var hasChanged = { ...this.state.hasChanged }
 		hasChanged[delete_tr.getAttribute('name')] = true
 		this.setState({ hasChanged })

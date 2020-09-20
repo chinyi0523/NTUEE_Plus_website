@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export function showVisual() {
 	axios.post('/api/showVisual', {}).then((res) => {
-		console.log(res.data)
+		// console.log(res.data)
 		if (res.data) {
 			if (res.data.message === true) {
 				var D = res.data.data
@@ -24,7 +24,7 @@ export function showVisual() {
 				})
 				sta.InitWorkNum = res.data.data.Occupation.length
 				sta.imagePreviewUrl = sta.userimage
-				console.log('sta=', sta)
+				// console.log('sta=', sta)
 				this.setState(sta)
 				res.data.data.Occupation.forEach((item, index) => {
 					this.setState(
@@ -48,7 +48,7 @@ export function showVisual() {
 
 export function handleSubmit(event) {
 	event.preventDefault()
-	console.log(this.state)
+	// console.log(this.state)
 	if (false) {
 		alert('一些判斷式') //validation
 	} else {
@@ -68,7 +68,7 @@ export function handleSubmit(event) {
 			var toRemove = {}
 			var toInsert = {}
 			for (var workL = 1; workL <= this.state.InitWorkNum; workL++) {
-				console.log('workL0', workL)
+				// console.log('workL0', workL)
 				if (this.state.hasChanged[`work_${workL}`] === true) {
 					toRemove[`work_${workL}`] = 1
 				} else {
@@ -90,9 +90,9 @@ export function handleSubmit(event) {
 				workL <= this.state.Occupation_number;
 				workL++
 			) {
-				console.log('workL', workL)
+				// console.log('workL', workL)
 				;['O', 'P', 'C'].forEach((word) => {
-					console.log('word', word)
+					// console.log('word', word)
 					if (this.state.hasChanged[`work_${word}_${workL}`]) {
 						toInsert[`work_${word}_${workL}`] = this.state[
 							`work_${word}_${workL}`
@@ -100,10 +100,10 @@ export function handleSubmit(event) {
 					}
 				})
 			}
-			console.log('insert', toInsert)
+			// console.log('insert', toInsert)
 			if (Object.entries(toInsert).length !== 0)
 				sta.append('Occupation.Insert', JSON.stringify(toInsert))
-			console.log('sta', sta)
+			// console.log('sta', sta)
 			const config = {
 				headers: {
 					'content-type': 'multipart/form-data',
@@ -137,7 +137,7 @@ export function handleSubmit(event) {
 			}*/ config
 				)
 				.then((res) => {
-					console.log(res.data)
+					// console.log(res.data)
 					if (res.data) {
 						if (res.data.message === true) {
 							alert('修改成功!')

@@ -8,7 +8,7 @@ export function handleImageChange(e) {
 	})
 
 	reader.onloadend = () => {
-		console.log('onloadend')
+		// console.log('onloadend')
 		this.setState({
 			imagePreviewUrl: reader.result,
 		})
@@ -37,8 +37,8 @@ export function handleInputChange(event) {
 	const target = event.target
 	const value = target.value
 	const name = target.name
-	console.log(name)
-	console.log(value)
+	// console.log(name)
+	// console.log(value)
 
 	this.setState({
 		[name]: value,

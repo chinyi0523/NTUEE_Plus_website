@@ -52,7 +52,7 @@ class Profile_for_search extends Component{
         const {handle} = this.props.match.params
         const {userdata} = this.props.location.state
 
-        console.log(userdata)
+        // console.log(userdata)
         //const {prevstate} = this.props.location.prevstate
 
         // for (let catalog in userdata){
@@ -78,7 +78,7 @@ class Profile_for_search extends Component{
         // console.log(this.state.userdata)
     }
     componentWillUnmount(){
-        console.log('Jump!')
+        // console.log('Jump!')
         this.props.history.push({
             pathname: '/in/Search',
             state: this.state.userdata.prevstate
