@@ -8,8 +8,10 @@ const app = express()
 const path = require('path')
 const bodyParser = require('body-parser')
 const session = require('express-session')
-const FileStore = require('session-file-store')(session)
+// const FileStore = require('session-file-store')(session)
 const connectHistoryApiFallback = require('connect-history-api-fallback')
+const mongoose = require('./routes/Schemas/db')
+const MongoStore = require('connect-mongo')(session);
 
 //post, get時的解碼
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -29,7 +31,10 @@ app.use(
 	session({
 		name: 'eeplus',
 		secret: 'fuewhzk', // 用来對session id相關的cookie進行簽名，建議128byte亂碼
-		store: new FileStore({ logFn: function () {} }), // 本地儲存session（文本文件，也可以選擇其他store，比如redis的）
+		//store: new FileStore({ logFn: function () {} }), // 本地儲存session（文本文件，也可以選擇其他store，比如redis的）
+		store: new MongoStore({
+			mongooseConnection: mongoose.connection,
+		}),
 		saveUninitialized: false, // 是否自动保存未初始化的會話，建議false
 		resave: false, // 是否每次都重新保存會話，建議false
 		cookie: {

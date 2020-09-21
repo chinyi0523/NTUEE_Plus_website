@@ -49,7 +49,7 @@ class Register_facebook extends Component {
 			axios
 				.post('/api/registerFB', data, config)
 				.then((res) => {
-					console.log(res.data)
+					// console.log(res.data)
 					if (res) {
 						if (res.data.message === true) {
 							alert('Successfully registered!')
@@ -70,19 +70,19 @@ class Register_facebook extends Component {
 
 		let reader = new FileReader()
 		let file = e.target.files[0]
-		console.log('t', e.target)
+		// console.log('t', e.target)
 		this.setState({
 			file: file,
 		})
 		reader.onloadend = () => {
-			console.log('onloadend')
+			// console.log('onloadend')
 			this.setState({
 				imagePreviewUrl: reader.result,
 			})
 		}
 
 		reader.readAsDataURL(file)
-		console.log(this.state.file)
+		// console.log(this.state.file)
 	}
 
 	render() {

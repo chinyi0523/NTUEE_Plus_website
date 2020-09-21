@@ -31,7 +31,7 @@ class Reset_password extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault()
-		console.log(this.state)
+		// console.log(this.state)
 		if (
 			this.state.Reset_password !== this.state.Reset_confirm_password ||
 			this.state.Reset_password === ''
@@ -47,7 +47,7 @@ class Reset_password extends Component {
 						active: this.state.active,
 					})
 					.then((res) => {
-						console.log(res.data)
+						// console.log(res.data)
 						if (res) {
 							if (res.data.message === true) {
 								alert('密碼變更成功，請登入')

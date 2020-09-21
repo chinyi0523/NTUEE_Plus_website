@@ -18,7 +18,7 @@ class Register extends Component {
 		this.handleFBSubmit = this.handleFBSubmit.bind(this)
 	}
 	handleLogin(isLoginorNot) {
-		console.log('handleLogin')
+		// console.log('handleLogin')
 		let isLogin = isLoginorNot
 		if (isLogin) {
 			localStorage.setItem('auth', true)
@@ -32,7 +32,7 @@ class Register extends Component {
 		axios
 			.post('/api/loginFB', { facebookID: response.userID })
 			.then((res) => {
-				console.log(res.data)
+				// console.log(res.data)
 				if (res.data) {
 					if (res.data.message === true) {
 						alert('Already registered! Welcome：' + res.data.username)
@@ -58,7 +58,7 @@ class Register extends Component {
 			})
 	}
 	render() {
-		console.log(this.state)
+		// console.log(this.state)
 		if (this.state.isLogin) {
 			return <Redirect to='/in' />
 		} else if (this.state.isFBLogin) {

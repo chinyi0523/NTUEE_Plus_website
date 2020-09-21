@@ -21,7 +21,7 @@ class Login extends Component {
 		this.handleFBSubmit = this.handleFBSubmit.bind(this)
 	}
 	handleLogin(isLoginorNot) {
-		console.log('handleLogin')
+		// console.log('handleLogin')
 		let isLogin = isLoginorNot
 		if (isLogin) {
 			localStorage.setItem('auth', true)
@@ -40,7 +40,7 @@ class Login extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault()
-		console.log(this.state)
+		// console.log(this.state)
 		if (false) {
 			alert('一些判斷式')
 		} else {
@@ -52,7 +52,7 @@ class Login extends Component {
 						password: this.state.Login_password_input,
 					})
 					.then((res) => {
-						console.log(res.data)
+						// console.log(res.data)
 						if (res.data) {
 							if (res.data.message === true) {
 								alert('登入成功，歡迎：' + res.data.data.username)
@@ -77,7 +77,7 @@ class Login extends Component {
 		axios
 			.post('/api/loginFB', { facebookID: response.userID })
 			.then((res) => {
-				console.log(res.data)
+				// console.log(res.data)
 				if (res.data) {
 					if (res.data.message === true) {
 						alert('Logged in! Welcome：' + res.data.username)
@@ -99,12 +99,12 @@ class Login extends Component {
 				}
 			})
 			.catch((err) => {
-				console.log(err)
+				// console.log(err)
 				this.handleLogin(false)
 			})
 	}
 	render() {
-		console.log(this.state)
+		// console.log(this.state)
 		if (this.state.isLogin) {
 			return <Redirect to='/in' />
 		} else if (this.state.isFBLogin) {

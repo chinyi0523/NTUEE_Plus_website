@@ -54,7 +54,7 @@ class Register_account extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault()
-		console.log(this.state)
+		// console.log(this.state)
 		if (this.state.Register_password !== this.state.Register_confirm_password) {
 			return alert('密碼不一致')
 		} else {
@@ -66,7 +66,7 @@ class Register_account extends Component {
 				data.append('account', this.state.Register_acc_student_id)
 				data.append('password', this.state.Register_acc_password)
 				data.append('ConfirmPassword', this.state.Register_acc_confirm_password)
-				console.log('data', data)
+				// console.log('data', data)
 				const config = {
 					headers: {
 						'content-type': 'multipart/form-data',
@@ -83,7 +83,7 @@ class Register_account extends Component {
 					file:this.state.file}*/ config
 					)
 					.then((res) => {
-						console.log(res.data)
+						// console.log(res.data)
 						if (res) {
 							if (res.data.message === true) {
 								alert('註冊成功')
@@ -107,19 +107,19 @@ class Register_account extends Component {
 
 		let reader = new FileReader()
 		let file = e.target.files[0]
-		console.log('t', e.target)
+		// console.log('t', e.target)
 		this.setState({
 			file: file,
 		})
 		reader.onloadend = () => {
-			console.log('onloadend')
+			// console.log('onloadend')
 			this.setState({
 				imagePreviewUrl: reader.result,
 			})
 		}
 
 		reader.readAsDataURL(file)
-		console.log(this.state.file)
+		// console.log(this.state.file)
 	}
 
 	render() {
@@ -355,7 +355,7 @@ class Register_facebook extends Component {
 			axios
 				.post('/api/registerFB', data, config)
 				.then((res) => {
-					console.log(res.data)
+					// console.log(res.data)
 					if (res) {
 						if (res.data.message === true) {
 							alert('Successfully registered!')
@@ -366,7 +366,7 @@ class Register_facebook extends Component {
 					}
 				})
 				.catch((err) => {
-					console.log('err=', err)
+					// console.log('err=', err)
 				})
 		}
 	}
@@ -376,19 +376,19 @@ class Register_facebook extends Component {
 
 		let reader = new FileReader()
 		let file = e.target.files[0]
-		console.log('t', e.target)
+		// console.log('t', e.target)
 		this.setState({
 			file: file,
 		})
 		reader.onloadend = () => {
-			console.log('onloadend')
+			// console.log('onloadend')
 			this.setState({
 				imagePreviewUrl: reader.result,
 			})
 		}
 
 		reader.readAsDataURL(file)
-		console.log(this.state.file)
+		// console.log(this.state.file)
 	}
 
 	render() {
