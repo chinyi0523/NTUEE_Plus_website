@@ -16,11 +16,16 @@ const DB_URL1 = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.ne
 const DB_URL2 = 'mongodb://localhost:27017/eeplus';
 const DB_URL = process.env.MONGO_URI||DB_URL1
 //"mongodb://127.0.0.1/27021"
+console.log('mongoose try to connect to： '+DB_URL);
 mongoose.connect(DB_URL);
-console.log('db connect success '+DB_URL);
+
 
 mongoose.connection.on('disconnected',function(){
-    console.log('db connect wrong to '+DB_URL);
+    console.log('db disconnectted to '+DB_URL);
+})
+
+mongoose.connection.on('error',function(err){
+    console.log(err);
 })
 
 module.exports = mongoose;
