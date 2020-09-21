@@ -11,7 +11,7 @@
     .column_intro{
         font-size: 15px;
         line-height: normal;
-        color: honeydew;
+        color: black;
     }
 
 }
@@ -19,7 +19,7 @@
     .column_subtitle{
         font-size: 16px;
         line-height: normal;
-        color: gold;
+        /* color: gold; */
     }
     
 }
@@ -27,28 +27,28 @@
     .column_introe{
         font-size: 17px;
         line-height: normal;
-        color: crimson;
+        /* color: crimson; */
     }
 }
 @media screen and (min-width: 600px){
     .column_intro{
         font-size: 18px;
         line-height: normal;
-        color: dimgray;
+        /* color: dimgray; */
     }
 }
 @media screen and (min-width: 767px){
     .column_intro{
         font-size: 19px;
         line-height: normal;
-        color: limegreen;
+        /* color: limegreen; */
     }
 }
 @media screen and (min-width: 1023px){
     .column_intro{
         font-size: 20px;
         line-height: normal;
-        color: rgb(40, 20, 220);
+        /* color: rgb(40, 20, 220); */
     }
 }
 /*@media screen and (min-width: 1500px){

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Column_content from './component/column_content';
-// import './column_text.css';
+ import './column_text.css';
 
 
 class Column_1605 extends Component{
     render(){
         const column_1605_article = {
-			title:['2006級 高奕豪','（Quantitative Researcher @Two Sigma Investments）'],
+			title:['2006級 高奕豪'],
+			subtitle:['（Quantitative Researcher','@Two Sigma Investments）'],
 			hashtags:['系友專訪' ,'高奕豪', '2006級', 'B91', '計量金融', 'Stanford', 'InformationSystems',  'TwoSigmaInvestments', 'QuantitativeResearcher', 'Google', 'Yahoo', 'McKinsey', 'GoldmanSachs', 'ACM_ICPC', '數學與資訊奧林匹亞競賽' ],
 			sections:[
 				{

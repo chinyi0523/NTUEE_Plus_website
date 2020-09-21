@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Column_content from './component/column_content';
-// import './column_text.css';
+import './column_text.css';
 
 
 class Column_1602 extends Component{
     render(){
         const column_1602_article = {
 			//intro:['系學會很榮幸邀請到 1992級 梁維仁 系友參加本次skype專訪！學長不但在金融工程領域闖出一片天，退休後投入音樂藝術相關工作，還擅長登山滑雪等休閒活動，人生經歷非常豐富，我們快來看看梁維仁學長的經驗分享吧！'],
-			title:['1992級 梁維仁','（總經理＠元大證券香港區、總經理＠花旗環球證券臺灣區）'],
+			title:['1992級 梁維仁'],
+			subtitle:['（總經理','＠元大證券香港區、總經理＠花旗環球證券臺灣區）'],
+			
 			hashtags:['系友專訪', '梁維仁', '1992級', 'B77', '金融工程', 'CarnegieMellonUniversity', 'ComputationalFinance', 'MS', 'MBA', '元大證券', '花旗環球證券', '總經理', '外資交易', 'optionpricingmodel', '跨領域', 'justdoit' ],
 			sections:[
 				{

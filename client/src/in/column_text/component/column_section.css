@@ -6,6 +6,7 @@
 }
 
 .column_minor_title{
+    list-style:none;
     padding-left:20px;
     font-size:20px;
     font-weight: bold;
@@ -20,4 +21,14 @@
     line-height: 35px;
     letter-spacing:1.5px;
     white-space: pre-line;
+    word-break: break-all;
+    /* word-wrap:break-word; */
+}
+@media screen and (min-width: 350px){
+    .column_minor_content{
+
+        font-size: 15px;
+        line-height: normal;
+        /* color: honeydew; */
+    }
 }

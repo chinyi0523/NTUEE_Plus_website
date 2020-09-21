@@ -5,7 +5,8 @@ import Column_content from '../column_text/component/column_content'
 class Column_陳俊仰 extends Component{
     render(){
         const column_陳俊仰_article = {
-			title:['2000級 陳俊仰','（President & CTO＠Grindr＠）'],
+			title:['2000級 陳俊仰'],
+			subtitle:['（President & CTO','＠Grindr＠）'],
 			hashtags:['系友專訪', '陳俊仰', '2000級', 'B85', 'Caltech', 'Facebook', 'Instagram', 'Grindr', 'President', 'CTO'],
 			sections:[
 				{

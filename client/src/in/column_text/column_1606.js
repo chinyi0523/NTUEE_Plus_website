@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Column_content from './component/column_content';
-// import './column_text.css';
+import './column_text.css';
 
 class Column_1606 extends Component{
     render(){
         const column_1606_article = {
-			title:['2007級 謝沛倫','（共同創辦人＠Ambidio Inc. ）'],
+			title:['2007級 謝沛倫'],
+			subtitle:['（共同創辦人','＠Ambidio Inc. ）'],
 			hashtags:['系友專訪', '謝沛倫', '2007級', 'B92', 'Ambidio', 'AdventuresInSound', 'LosAngelesStartup', '聲音革命', 'Bloomberg媒體報導', 'Billboard', '讓筆電喇叭變百萬音響', '80年來最偉大的聲音革命', '李嘉誠與黑眼豆豆搶投資', 'HorizonsVentures', 'ColumbiaUniversity', 'ComputerGraphics', 'MusicTech', '大腦和耳朵重新連結的Ambidio時代'],
 			sections:[
 				{

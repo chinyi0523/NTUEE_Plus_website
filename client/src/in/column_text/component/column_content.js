@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Column_title from './column_title';
 import Column_subtitle from './column_subtitle';
 import Column_hashtags from './column_hashtags';
-import Column_intro from './column_intro';
+// import Column_intro from './column_intro';
 import Column_article from './column_article';
 import Column_annotation from './column_annotation';
 import './column_content.css'
@@ -14,7 +14,7 @@ class Column_content extends Component{
             title:this.props.content.title,
             subtitle:this.props.content.subtitle,
             hashtags: this.props.content.hashtags,
-            intro: this.props.content.intro,
+            // intro: this.props.content.intro,
             sections: this.props.content.sections,
             annotation:this.props.content.annotation,
             id: this.props.content.id,
@@ -29,7 +29,7 @@ class Column_content extends Component{
                     <div class="d-none d-lg-block">
                         <Column_hashtags id={`${this.state.id}_hashtags`} hashtags={this.state.hashtags}/>
                     </div>
-                    <Column_intro id={`${this.state.id}_intro`} intro={this.state.intro}/>
+                    {/* <Column_intro id={`${this.state.id}_intro`} intro={this.state.intro}/> */}
                     <Column_article id={`${this.state.id}_article`} sections={this.state.sections}/>
                     <Column_annotation id={`${this.state.id}_annotation`} annotation={this.state.annotation}/>
                 </div>

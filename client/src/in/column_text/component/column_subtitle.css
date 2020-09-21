@@ -1,54 +1,55 @@
 .column_subtitle{
-    font-size: 36px;
+    font-size: 30px  !important;
     text-align: center;
     font-weight: bold;
+    /* color:yellow; */
 
 }
 /*.column_subtitle{
     line-height: 10px;
 }*/
 @media screen and (min-width: 300px){
-    #column_subtitle{
+    .column_subtitle{
         font-size: 15px;
         line-height: normal;
-        color: honeydew;
+        /* color:black; */
     }
 
 }
 @media screen and (min-width: 350px){
     .column_subtitle{
-        font-size: 25px;
+        font-size: 15px  !important;
         line-height: normal;
-        color: gold;
+         /* color: red;  */
     }
     
 }
 @media screen and (min-width: 400px){
     .column_subtitle{
-        font-size: 25px;
+        font-size: 20px !important;
         line-height: normal;
-        color: crimson;
+        /* color: crimson; */
     }
 }
 @media screen and (min-width: 600px){
     .column_subtitle{
-        font-size: 30px;
+        font-size: 23px;
         line-height: normal;
-        color: dimgray;
+        /* color: dimgray; */
     }
 }
 @media screen and (min-width: 767px){
     .column_subtitle{
-        font-size: 30px;
+        font-size: 25px !important;
         line-height: normal;
-        color: limegreen;
+        /* color: limegreen; */
     }
 }
 @media screen and (min-width: 1023px){
     .column_subtitle{
-        font-size: 35px;
+        font-size: 30px;
         line-height: normal;
-        color: rgb(40, 20, 220);
+        /* color: rgb(40, 20, 220); */
     }
 }
 /*@media screen and (min-width: 1500px){

@@ -6,7 +6,8 @@ import {NavBar_in} from '../../component/AppBar_in';
 class Column_1910 extends Component{
     render(){
 		const column_1910_article = {
-			title:['2016級 林奕辰 ','（執行長＠Bravo AI 洽吧智能）','2014級 沈昇勳 ','（技術長＠Bravo AI 洽吧智能）'],
+			title:['2016級 林奕辰 ','2014級 沈昇勳 '],
+			subtitle:['(執行長','技術長','＠Bravo AI 洽吧智能)'],
 			hashtags:['系友專訪','林奕辰','沈昇勳','2016級','2014級','BravoAI','洽吧智能','MachineLearning','核保理賠自動化','電腦視覺','自然語言處理','深度學習'],
 			sections:[
 				{
