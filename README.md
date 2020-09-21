@@ -33,7 +33,8 @@ $ npm start
 
 ### 0908 君輔
 * 用docker跑，過一陣子會噴Error: ENOSYS: function not implemented, read，似乎是readSync的問題(???
-* init-mongo.sh用[網上的方法](https://stackoverflow.com/questions/42912755/how-to-create-a-db-for-mongodb-container-on-start-up)沒有順利跑起來，再研究
+* ~~init-mongo.sh用[網上的方法](https://stackoverflow.com/questions/42912755/how-to-create-a-db-for-mongodb-container-on-start-up)沒有順利跑起來，再研究~~
+* 改成用npm run reset-db跑route/Schemas/preload.js，把eeplusDB刪掉，再複製column進來。[0920]
 
 ### 0831 進度 by 君輔
 * 發現前端用async會噴bug，因為webpack沒設定好的樣子(待更改)
