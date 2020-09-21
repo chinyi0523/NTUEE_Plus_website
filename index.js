@@ -27,8 +27,8 @@ app.use(function (req, res, next) {
 //參考網站https://www.cnblogs.com/chyingp/p/nodejs-learning-express-session.html
 app.use(
 	session({
-		name: 'test',
-		secret: 'chyingp', // 用来對session id相關的cookie進行簽名，建議128byte亂碼
+		name: 'eeplus',
+		secret: 'fuewhzk', // 用来對session id相關的cookie進行簽名，建議128byte亂碼
 		store: new FileStore({ logFn: function () {} }), // 本地儲存session（文本文件，也可以選擇其他store，比如redis的）
 		saveUninitialized: false, // 是否自动保存未初始化的會話，建議false
 		resave: false, // 是否每次都重新保存會話，建議false
@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 
 //Serve static files from the React app
 //詳細資訊看：https://expressjs.com/zh-tw/starter/static-files.html
-app.use(express.static(path.join(__dirname, 'client/build')))
+// app.use(express.static(path.join(__dirname, 'client/build')))
 /*app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html')); //這個缺點是react build的index不是我們寫的那個
   //res.redirect('/'); //這個按F5會亂跳，先捨棄
