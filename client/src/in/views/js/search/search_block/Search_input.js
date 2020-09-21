@@ -84,7 +84,7 @@ const Search_input = (props) => {
 		<div>
 			<button onClick={handleAddBlock}>ADD</button>
 			<div>{blockList}</div>
-			<button onClick={handleSubmit}>Submit</button>
+			<button onClick={(e)=>{handleSubmit(e,options)}}>Submit</button>
 		</div>
 	)
 }

@@ -38,20 +38,22 @@ const addBlockToBlockList = (haveChosen, setHaveChosen) => {
 	setHaveChosen(haveChosen)
 }
 
-const handleSubmit = (options) => {
+const handleSubmit = (e, options) => {
 	//TODO
 	// send data back to backend
 	// axios.post("/api/searchVisual",)
-
+	e.preventDefault()
 	let data = {}
 	for (let option in options) {
-		data[option.option_name] = option.value
+		if(options[option].isChosen){
+			data[options[option].option_name] = options[option].value
+		}
 	}
-
 	axios
 		.post('/api/searchVisual', data)
-		.then((data) => {
-			console.log(data)
+		.then((res) => {//{res.data.data=[...]}
+			console.log(res.data.data)
+
 		})
 		.catch((err) => console.log(err))
 }
