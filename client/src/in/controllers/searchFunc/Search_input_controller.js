@@ -52,8 +52,12 @@ const handleSubmit = (e, options) => {
 	axios
 		.post('/api/searchVisual', data)
 		.then((res) => {//{res.data.data=[...]}
-			console.log(res.data.data)
-
+			if(res.data.message){
+				console.log(res.data.data)
+			}
+			else{
+				console.log(res.data.description)
+			}
 		})
 		.catch((err) => console.log(err))
 }
