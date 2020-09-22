@@ -1,10 +1,10 @@
 //srcs/chLogin.js
-const user_l_Schema = require('../../Schemas/user_login');
+const Login = require('../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
     const session_account = req.session.loginAccount;
     const NQ = req.body.question;
-    user_l_Schema.find({account:session_account}, function(err, obj){
+    Login.find({account:session_account}, function(err, obj){
     if (err) {
         console.log("Error:" + err);
         return res.status(500).send({description:"資料庫錯誤"}); 
@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
     else {
         if(obj.length === 1){
             console.log('發現帳號',obj);
-            user_l_Schema.updateOne({account:session_account},{$set:{question:NQ}},function(err,res){
+            Login.updateOne({account:session_account},{$set:{question:NQ}},function(err,res){
                 if (err) return res.status(500).send({description:'資料庫錯誤'});
             });
             res.status(204).end();

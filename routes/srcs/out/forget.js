@@ -1,4 +1,4 @@
-const user_v_Schema = require('../../Schemas/user_visual');
+const Login = require('../../Schemas/user_visual');
 const Activation = require('../../Schemas/activation');
 const sendmail = require('./mail/send');
 
@@ -48,7 +48,7 @@ module.exports = function (req, res, next) {
   //const newPas = md5.update(UserPsw).digest("hex");
   //console.log(UserPsw,newPas);
   const query = {"account.data": Useraccount};//, question:question};
-   user_v_Schema.find(query, function(err, obj){
+   Login.find(query, function(err, obj){
         if (err) {
             console.log("Error:" + err);
 			return res.status(500).send({status:'success',message:false,description:"資料庫錯誤"});

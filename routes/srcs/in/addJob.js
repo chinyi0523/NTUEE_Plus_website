@@ -1,9 +1,9 @@
-const Job_Schema = require('../../Schemas/job');
+const Job = require('../../Schemas/job');
 
 /*新增一筆資料*/
 function insert(title,subtitle,description){
       //格式
-    const job =  new Job_Schema({ 
+    const job =  new Job({ 
 		title: title,
                 subtitle : subtitle,
 		description: description

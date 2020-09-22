@@ -1,10 +1,10 @@
 //srcs/login.js
-const user_v_Schema = require('../../Schemas/user_visual');
+const Visual = require('../../Schemas/user_visual');
 const readDB = require('./readDB');
 
 function insert(name,account){
   return new Promise((resolve,reject)=>{
-    const user =  new user_v_Schema({
+    const user =  new Visual({
                 username:{data : name},
 				account:{data: account}
             });
@@ -24,7 +24,7 @@ function insert(name,account){
 
 module.exports = function (req, res, next) {
   let session_account = req.session.loginAccount
-     user_v_Schema.find({"account.data":session_account}, async function(err, obj){
+     Visual.find({"account.data":session_account}, async function(err, obj){
         if (err) {
             console.log("Error:" + err);
 			      return res.status(500).send({description:"資料庫錯誤"}); 

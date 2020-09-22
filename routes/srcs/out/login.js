@@ -1,5 +1,5 @@
 //srcs/login.js
-const user_l_Schema = require('../../Schemas/user_login');
+const Login = require('../../Schemas/user_login');
 const crypto = require("crypto");
 
 
@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
 	let md5 = crypto.createHash("md5");
 	const newPas = md5.update(UserPsw).digest("hex");
 	const query = {account: account};//,userpsw:newPas};
-	user_l_Schema.find(query, function(err, obj){
+	Login.find(query, function(err, obj){
 		if (err) {
 			console.log("Error:" + err);
 			return res.status(500).send({description:"資料庫發生錯誤"});

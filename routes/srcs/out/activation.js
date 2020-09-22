@@ -1,7 +1,7 @@
 //scrs/activation
 //處理express中 http://<hostname>/activation?name=<UserName>&active=<Gradled>
 const Activation = require('../../Schemas/activation');
-const user_l_Schema = require('../../Schemas/user_login');
+const Login = require('../../Schemas/user_login');
 const crypto = require("crypto");
 
 
@@ -23,7 +23,7 @@ module.exports = function(req,res){
 				console.log("datenow-datebegin=",Date.now()-obj[0].expireDate,"(ms) < 60*60*1000?");
                 if((Date.now()-obj[0].expireDate)<=60*60*1000){//認證成功
 					console.log('認證成功，新密碼：',newPsw);
-					user_l_Schema.updateOne({account:UserName},{$set:{userpsw:newPsw}},function(err,res){
+					Login.updateOne({account:UserName},{$set:{userpsw:newPsw}},function(err,res){
 						if (err) throw err;
 					});
 					Activation.deleteMany({account:UserName},function(err,obj){

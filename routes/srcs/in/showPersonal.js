@@ -1,9 +1,9 @@
 //srcs/login.js
-const user_l_Schema = require('../../Schemas/user_login');
+const Login = require('../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
   const session_account = req.session.loginAccount;
-    user_l_Schema.find({account:session_account}, function(err, obj){
+    Login.find({account:session_account}, function(err, obj){
     if (err) {
         console.log("Error:" + err);
         return res.status(500).send({description:"資料庫錯誤"}); 

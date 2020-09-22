@@ -1,4 +1,4 @@
-const job_Schema = require('../../Schemas/job');
+const Job = require('../../Schemas/job');
 const readDB = require('./readDB');
 
 module.exports = function (req, res, next) {
@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
 
 	if(jobTitle){
 		const query = readDB.search_job(req);
-		job_Schema.find(query, {_id:0}, function(err,obj){
+		Job.find(query, {_id:0}, function(err,obj){
 			if (err) {
 				console.log("Error:" + err);
 				return res.status(500).send({description:"資料庫錯誤"}); 

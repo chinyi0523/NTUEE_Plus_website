@@ -1,8 +1,8 @@
-const Column_Schema = require('../../../Schemas/column');
+const Column = require('../../../Schemas/column');
 
 module.exports = function (name){
 	return new Promise((resolve,reject)=>{
-		Column_Schema.find({filename:name},function(err,obj){
+		Column.find({filename:name},function(err,obj){
 		if(err){
 			console.log(err);
 			resolve(false);

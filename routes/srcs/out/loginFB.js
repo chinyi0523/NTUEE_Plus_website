@@ -1,10 +1,10 @@
 //srcs/login.js
-const user_l_Schema = require('../../Schemas/user_login');
+const Login = require('../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
 	const facebookID = req.body.facebookID;
 	const query = { facebookID: facebookID };
-	user_l_Schema.find (query, function (err, obj) {
+	Login.find (query, function (err, obj) {
 		if (err) {
 			console.log("Error:" + err);
 			return res.status(500).send({description: "DB Error!"});

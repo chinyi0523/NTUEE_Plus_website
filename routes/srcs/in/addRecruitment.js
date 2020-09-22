@@ -1,9 +1,9 @@
-const Recruitment_Schema = require('../../Schemas/recruitment');
+const Recruitment = require('../../Schemas/recruitment');
 
 /*新增一筆資料*/
 function insert(title,company_name,work_type,salary,experience,diploma,requirement,description){
     //格式
-  const recruitment =  new Recruitment_Schema({
+  const recruitment =  new Recruitment({
     title:{
       title: title,
 		  company_name: company_name,

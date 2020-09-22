@@ -1,10 +1,10 @@
-const user_v_Schema = require('../../Schemas/user_visual');
+const Visual = require('../../Schemas/user_visual');
 const readDB = require('./readDB');
 
 module.exports = function (req, res, next) {
 	let session_account = req.session.loginAccount;
 	const query = readDB.searchOr(req);
-	user_v_Schema.find(query,{_id:0},function(err,obj){
+	Visual.find(query,{_id:0},function(err,obj){
 		if (err) {
 			console.log("Error:" + err);
 			return res.status(500).send({description:"資料庫錯誤"}); 

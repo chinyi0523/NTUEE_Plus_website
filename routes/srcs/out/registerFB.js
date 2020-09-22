@@ -1,12 +1,12 @@
 //srcs/register.js
-const user_l_Schema = require('../../Schemas/user_login');
+const Login = require('../../Schemas/user_login');
 //const crypto = require("crypto");
-const user_v_Schema = require('../../Schemas/user_visual');
+const Visual = require('../../Schemas/user_visual');
 
 /*新增一筆使用者資料*/
 function insert(name, account, facebookID, file) {
     //格式
-    const user = new user_l_Schema({
+    const user = new Login({
         username: name,
         account: account,
         facebookID: facebookID,
@@ -28,7 +28,7 @@ function insert(name, account, facebookID, file) {
 }
 function insertVisual(name,account){
     return new Promise((resolve,reject)=>{
-      const user =  new user_v_Schema({
+      const user =  new Visual({
                   username:{data : name},
                   account:{data: account}
               });
@@ -56,7 +56,7 @@ module.exports = function (req, res) {
 
     //查詢用戶是否存在
     const query = { account: Useraccount };
-    user_l_Schema.find(query, function (err, obj) {
+    Login.find(query, function (err, obj) {
         if (err) {
             console.log("Error:" + err);
             return res.status(500).send({description: "資料庫錯誤" });
