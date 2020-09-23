@@ -6,14 +6,19 @@ $ npm install
 $ npm run install-client
 $ npm run build-client
 $ npm start
-進入https://localhost:1993
+進入http://localhost:1993
 ```
 run in docker
 ```
 $ docker-compose up --build -d (噴error時取消-d可以看到完整錯誤訊息)
 $ docker-compose exec web npm run reset-db
-open https://localhost:3000
+open http://localhost:3000
 ```
+if docker no working well，try this in powershell
+```bash
+$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+
 前端人員(更改會透過webpack --watch自動重整)
 ```bash
 $ npm run dev
