@@ -5,7 +5,7 @@
 $ npm install
 $ npm run install-client
 $ npm start
-進入https://localhost:1993
+進入http://localhost:1993
 ```
 前端人員(更改會透過webpack --watch自動重整)
 ```bash
