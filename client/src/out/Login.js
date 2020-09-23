@@ -68,6 +68,7 @@ class Login extends Component
 			}
 		).catch( err => //{description}
 			{
+				console.log(err);
 				(err.response.data.description)&&(alert("錯誤：\n" + err.response.data.description))
 			}
 		)
