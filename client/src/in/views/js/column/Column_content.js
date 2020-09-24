@@ -228,6 +228,8 @@ class Column_section extends Component {
 			let new_minor_section = document.createElement('div')
 			let minor_section_title = document.createElement('li')
 			let minor_section_content = document.createElement('p')
+
+			 
 			minor_section_title.innerHTML = this.state.sections[i].title
 			minor_section_title.setAttribute(
 				'id',

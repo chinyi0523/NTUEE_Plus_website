@@ -17,7 +17,7 @@
 }
 @media screen and (min-width: 350px){
     .column_subtitle{
-        font-size: 25px;
+        font-size: 15px;
         line-height: normal;
         /* color: gold; */
     }
@@ -25,28 +25,28 @@
 }
 @media screen and (min-width: 400px){
     .column_subtitle{
-        font-size: 25px;
+        font-size: 20px;
         line-height: normal;
         /* color: crimson; */
     }
 }
 @media screen and (min-width: 600px){
     .column_subtitle{
-        font-size: 30px;
+        font-size: 23px;
         line-height: normal;
         /* color: dimgray; */
     }
 }
 @media screen and (min-width: 767px){
     .column_subtitle{
-        font-size: 30px;
+        font-size: 25px;
         line-height: normal;
         /* color: limegreen; */
     }
 }
 @media screen and (min-width: 1023px){
     .column_subtitle{
-        font-size: 35px;
+        font-size: 30px;
         line-height: normal;
         /* color: rgb(40, 20, 220); */
     }
