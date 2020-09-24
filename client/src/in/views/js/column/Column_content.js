@@ -8,7 +8,7 @@ class Column_content extends Component {
 			title: this.props.content.title,
 			subtitle: this.props.content.subtitle,
 			hashtags: this.props.content.hashtags,
-			intro: this.props.content.intro,
+			// intro: this.props.content.intro,
 			sections: this.props.content.sections,
 			annotation: this.props.content.annotation,
 			id: this.props.content.id,
@@ -32,10 +32,10 @@ class Column_content extends Component {
 							hashtags={this.state.hashtags}
 						/>
 					</div>
-					<Column_intro
-						id={`${this.state.id}_intro`}
-						intro={this.state.intro}
-					/>
+					{/* <Column_intro */}
+						{/* id={`${this.state.id}_intro`} */}
+						{/* intro={this.state.intro} */}
+					{/* /> */}
 					<Column_article
 						id={`${this.state.id}_article`}
 						sections={this.state.sections}
@@ -156,9 +156,9 @@ class Column_hashtags extends Component {
 	}
 }
 
-import '../../css/column/column_pages/Column_intro.css'
+// import '../../css/column/column_pages/Column_intro.css'
 
-class Column_intro extends Component {
+/*class Column_intro extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -184,11 +184,11 @@ class Column_intro extends Component {
 	render() {
 		return (
 			<div id={this.state.id} class='column_intro'>
-				{/* {this.state.title} */}
-			</div>
+				{/* {this.state.title} }
+		/*	</div>
 		)
 	}
-}
+}*/
 
 class Column_article extends Component {
 	constructor(props) {
