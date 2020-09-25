@@ -7,8 +7,10 @@ class Column_1602 extends Component {
 		const column_1602_article = {
 			//intro:['系學會很榮幸邀請到 1992級 梁維仁 系友參加本次skype專訪！學長不但在金融工程領域闖出一片天，退休後投入音樂藝術相關工作，還擅長登山滑雪等休閒活動，人生經歷非常豐富，我們快來看看梁維仁學長的經驗分享吧！'],
 			title: [
-				'1992級 梁維仁',
-				'（總經理＠元大證券香港區、總經理＠花旗環球證券臺灣區）',
+				'1992級 梁維仁'
+			],
+			subtitle:[
+				'（總經理','＠元大證券香港區','＠花旗環球證券臺灣區）',
 			],
 			hashtags: [
 				'系友專訪',
@@ -29,6 +31,16 @@ class Column_1602 extends Component {
 				'justdoit',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'系學會很榮幸邀請到 1992級 梁維仁 系友參加本次skype專訪！學長不但在金融工程領域闖出一片天，退休後投入音樂藝術相關工作，還擅長登山滑雪等休閒活動，人生經歷非常豐富，我們快來看看梁維仁學長的經驗分享吧！',
+						},
+					],
+				},
 				{
 					bigtitle: '一、Emphasize',
 					sections: [

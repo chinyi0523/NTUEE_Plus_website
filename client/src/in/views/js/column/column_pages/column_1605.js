@@ -6,8 +6,11 @@ class Column_1605 extends Component {
 	render() {
 		const column_1605_article = {
 			title: [
-				'2006級 高奕豪',
-				'（Quantitative Researcher @Two Sigma Investments）',
+				'2006級 高奕豪'
+			],
+			subtitle:[
+				'（Quantitative Researcher ',
+				'@Two Sigma Investments）',
 			],
 			hashtags: [
 				'系友專訪',
@@ -27,6 +30,16 @@ class Column_1605 extends Component {
 				'數學與資訊奧林匹亞競賽',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'系學會很榮幸邀請到 2006級 高奕豪 系友參加本次skype專訪，感謝 2006級 I-Hsiang Wang 教授的推薦。學長的經歷非常豐富，在Stanford University取得EE的PhD後，進入Wall Street 的 hedge fund，在數學、軟硬體、計量金融...等領域，都有很多人生故事願意和我們分享。快點進文章，看一看高奕豪學長為我們帶來的分享吧!',
+						},
+					],
+				},
 				{
 					bigtitle: '一、序言',
 					sections: [
