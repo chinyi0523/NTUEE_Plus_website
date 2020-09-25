@@ -4,7 +4,8 @@ import Column_content from '../Column_content'
 class Column_陳俊仰 extends Component {
 	render() {
 		const column_陳俊仰_article = {
-			title: ['2000級 陳俊仰', '（President & CTO＠Grindr＠）'],
+			title: ['2000級 陳俊仰'],
+			subtitle:['（President & CTO','＠Grindr）'],
 			hashtags: [
 				'系友專訪',
 				'陳俊仰',
@@ -18,6 +19,16 @@ class Column_陳俊仰 extends Component {
 				'CTO',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'陳俊仰學長在從台大電信所 (通訊組)畢業後，在 Caltech 唸了五年 PhD，研究領域是通訊和雷達的信號處理。從 Caltech 畢業後進入一流的軟體公司 Facebook 工作，目前則在世界最大的同志交友平台 Grindr 擔任總裁兼技術長。',
+						},
+					],
+				},
 				{
 					bigtitle: '一、前言',
 					sections: [

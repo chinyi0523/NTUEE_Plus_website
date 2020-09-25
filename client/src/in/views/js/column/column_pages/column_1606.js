@@ -5,7 +5,8 @@ import Column_content from '../Column_content'
 class Column_1606 extends Component {
 	render() {
 		const column_1606_article = {
-			title: ['2007級 謝沛倫', '（共同創辦人＠Ambidio Inc. ）'],
+			title: ['2007級 謝沛倫'],
+			subtitle:[ '（共同創辦人','＠Ambidio Inc. ）'],
 			hashtags: [
 				'系友專訪',
 				'謝沛倫',
@@ -27,6 +28,16 @@ class Column_1606 extends Component {
 				'大腦和耳朵重新連結的Ambidio時代',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'「想像一下，打開電腦或是手機觀看影片或玩電動，就能感受到360度逼真的立體音效，彷彿賽車就從身旁呼嘯而過、恐龍就從眼前磅礡踩過的震撼聲音。」系學會很榮幸邀請到 2007級 謝沛倫系友參加本次skype專訪。創辦於2014年，LA based的 startup ─ Ambidio，希望能創造「大腦與耳朵重新連結的Ambidio時代」，快點進文章，聽一聽謝沛倫學長為我們帶來的分享吧!',
+						},
+					],
+				},
 				{
 					bigtitle: '一、Ambidio快問快答',
 					sections: [
