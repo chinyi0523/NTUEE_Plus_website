@@ -51,3 +51,4 @@ tmp/
 .env
 init-mongo.sh
 certificate.crt
+certificate.key
