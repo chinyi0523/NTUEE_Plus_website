@@ -22,9 +22,9 @@ module.exports = function (req, res, next) {
 					req.session.regenerate(function(err) {
 						if(err){
 							console.log("session建立失敗，err=\n",err);
-							return res.status(500),send({
+							return res.status(500).send({
 								description:"session建立失敗"
-								});                
+								});
 						}
 						req.session.loginName = obj[0].username;
 						req.session.loginAccount = obj[0].account;
