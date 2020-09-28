@@ -1,7 +1,7 @@
 //srcs/register.js
-const Login = require('../../Schemas/user_login');
+const Login = require('../../../Schemas/user_login');
 const crypto = require("crypto");
-const Visual = require('../../Schemas/user_visual');
+const Visual = require('../../../Schemas/user_visual');
 
 /*新增一筆使用者資料*/
 function insert(name,account,psw,file){

@@ -1,7 +1,7 @@
 //scrs/activation
 //處理express中 http://<hostname>/activation?name=<UserName>&active=<Gradled>
-const Activation = require('../../Schemas/activation');
-const Login = require('../../Schemas/user_login');
+const Activation = require('../../../Schemas/activation');
+const Login = require('../../../Schemas/user_login');
 const crypto = require("crypto");
 
 

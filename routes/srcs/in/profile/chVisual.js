@@ -1,6 +1,6 @@
 //srcs/chLogin.js
-const Visual = require('../../Schemas/user_visual');
-const readDB = require('./readDB');
+const Visual = require('../../../Schemas/user_visual');
+const readDB = require('../readDB');
 module.exports = function (req, res, next) {
   const session_account = (req.session.loginAccount)
 

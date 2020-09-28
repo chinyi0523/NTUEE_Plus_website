@@ -1,5 +1,5 @@
-const Visual = require('../../Schemas/user_visual');
-const readDB = require('./readDB');
+const Visual = require('../../../Schemas/user_visual');
+const readDB = require('../readDB');
 
 module.exports = function (req, res, next) {
 	let session_account = req.session.loginAccount;

@@ -1,4 +1,4 @@
-const Column = require('../../../Schemas/column');
+const Column = require('../../../../Schemas/column');
 
 module.exports = function(name,file){
 	const column =  new Column({

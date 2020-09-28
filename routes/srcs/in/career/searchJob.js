@@ -1,5 +1,5 @@
-const Job = require('../../Schemas/job');
-const readDB = require('./readDB');
+const Job = require('../../../Schemas/job');
+const readDB = require('../readDB');
 
 module.exports = function (req, res, next) {
 	const jobTitle = req.body.title

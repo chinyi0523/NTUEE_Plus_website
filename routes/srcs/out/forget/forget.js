@@ -1,5 +1,5 @@
-const Login = require('../../Schemas/user_visual');
-const Activation = require('../../Schemas/activation');
+const Login = require('../../../Schemas/user_visual');
+const Activation = require('../../../Schemas/activation');
 const sendmail = require('./mail/send');
 
 

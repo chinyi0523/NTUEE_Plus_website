@@ -1,4 +1,4 @@
-const Recruitment = require('../../Schemas/recruitment');
+const Recruitment = require('../../../Schemas/recruitment');
 
 /*新增一筆資料*/
 function insert(title,company_name,work_type,salary,experience,diploma,requirement,description){

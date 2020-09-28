@@ -1,4 +1,4 @@
-const Job = require('../../Schemas/job');
+const Job = require('../../../Schemas/job');
 
 /*新增一筆資料*/
 function insert(title,subtitle,description){

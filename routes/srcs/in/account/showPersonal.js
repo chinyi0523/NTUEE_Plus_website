@@ -1,5 +1,5 @@
 //srcs/login.js
-const Login = require('../../Schemas/user_login');
+const Login = require('../../../Schemas/user_login');
 
 module.exports = function (req, res, next) {
   const session_account = req.session.loginAccount;

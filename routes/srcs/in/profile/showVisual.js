@@ -1,6 +1,6 @@
 //srcs/login.js
-const Visual = require('../../Schemas/user_visual');
-const readDB = require('./readDB');
+const Visual = require('../../../Schemas/user_visual');
+const readDB = require('../readDB');
 
 function insert(name,account){
   return new Promise((resolve,reject)=>{
