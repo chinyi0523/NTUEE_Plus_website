@@ -19,6 +19,9 @@ router.post("/registerFB",
 	ImgGet('file'),
 	ValidTest("registerFB"),
 	ValidSend,
-    require("./registerFB"));
+	require("./registerFB"));
+router.post("/logout",require("./logout"));
+router.post('/isLogin',
+	require('./isLogin'))
     
 module.exports = router;

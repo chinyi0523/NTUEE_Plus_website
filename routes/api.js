@@ -20,6 +20,8 @@ router.use(require("./srcs/out/account/main"));
 router.use(require("./srcs/out/forget/main"));
 
 //in
+//Auth
+router.use(require("./srcs/in/Auth"));
 //showVisual, chVisual, searchVisual
 router.use(require("./srcs/in/profile/main"));
 //showPerson, chLogin, isLogin, logout

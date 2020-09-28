@@ -1,13 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const Auth = require("../Auth");
+// const Auth = require("../Auth");
 const ImgGet = require('../../../middleware/multer');
 
-router.post("/showVisual", Auth, require('./showVisual'));
-router.post("/chVisual", Auth,
+router.post("/showVisual",
+	require('./showVisual'));
+router.post("/chVisual",
 	ImgGet('userimage'),
 	require('./chVisual'));
-router.post('/searchVisual', Auth,
+router.post('/searchVisual',
     require('./searchVisual'));
     
 module.exports = router
