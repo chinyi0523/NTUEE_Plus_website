@@ -4,7 +4,8 @@ import Column_content from '../Column_content'
 class Column_1909 extends Component {
 	render() {
 		const column_1909_article = {
-			title: ['2012級 李昀樵', '（技術副總＠17直播）'],
+			title: ['2012級 李昀樵'],
+			subtitle:['（技術副總','＠17直播）'],
 			hashtags: [
 				'系友專訪',
 				'李昀樵',
@@ -18,6 +19,16 @@ class Column_1909 extends Component {
 				'17直播',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'李昀樵曾是李琳山教授語音實驗室的研究生，研究所時期除了研究外，更有進行小型創業，開發出新聞摘要軟件及搜尋公共腳踏車的APP，前者以兩萬元售出，後者成為該領域當時市占率最高的APP。之後，李昀樵加入17直播，監管每年五百萬的IT預算，帶領團隊從5人成長到107人，更將17 Media的首屏載入速度從4秒縮減到0.3秒，成為同業中最快速的。李昀樵在新創領域有豐富經驗，現更到Harvard MBA進修。',
+						},
+					],
+				},
 				{
 					bigtitle: '一、大學時期',
 					sections: [

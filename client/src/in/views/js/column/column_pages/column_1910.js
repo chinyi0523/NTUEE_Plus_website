@@ -6,9 +6,14 @@ class Column_1910 extends Component {
 		const column_1910_article = {
 			title: [
 				'2016級 林奕辰 ',
-				'（執行長＠Bravo AI 洽吧智能）',
 				'2014級 沈昇勳 ',
-				'（技術長＠Bravo AI 洽吧智能）',
+			],
+			subtitle:[
+				'（執行長',
+				'＠Bravo AI 洽吧智能）',
+				'（技術長',
+				'＠Bravo AI 洽吧智能）',
+
 			],
 			hashtags: [
 				'系友專訪',
@@ -25,6 +30,16 @@ class Column_1910 extends Component {
 				'深度學習',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'創立於2017年的BravoAI  (洽吧智能)是一間AI公司，專注於研發、提供金融機構廣泛的軟體服務。運用其電腦視覺、自然語言處理、深度學習等AI專長，BravoAI協助人壽與保險公司研發核保、理賠等流程自動化的方案，不僅替客戶節省大量行政成本，也為公司打出了知名度。目前為止，BravoAI以達成台灣壽險市佔率第一，更計畫邁向國際化。\n&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;BravoAI主要由創辦人趙式隆、執行長林奕辰與技術長沈昇勳帶領，團隊著重於技術基礎研究與應用技術解決實際問題。',
+						},
+					],
+				},
 				{
 					bigtitle: '一、對大學的反思與日後影響',
 					sections: [

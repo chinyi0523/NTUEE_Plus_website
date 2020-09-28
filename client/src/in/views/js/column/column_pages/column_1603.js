@@ -5,7 +5,8 @@ import Column_content from '../Column_content'
 class Column_1603 extends Component {
 	render() {
 		const column_1603_article = {
-			title: ['2008級 趙式隆', '（理事長＠台灣矽谷創業家協會）'],
+			title: ['2008級 趙式隆'],
+			subtitle:[ '（理事長','＠台灣矽谷創業家協會）'],
 			hashtags: [
 				'系友專訪',
 				'首PO',
@@ -21,6 +22,16 @@ class Column_1603 extends Component {
 				'保持好奇心勇於嘗試',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'系學會很榮幸邀請到2008級 趙式隆 學長擔任首po系友專訪，為我們介紹他的簡歷以及NTUEE在他心中的定位！',
+						},
+					],
+				},
 				{
 					bigtitle: '一、談創業經驗',
 					sections: [

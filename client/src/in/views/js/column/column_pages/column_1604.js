@@ -6,8 +6,12 @@ class Column_1604 extends Component {
 	render() {
 		const column_1604_article = {
 			title: [
-				'2000級 胡一天',
-				'（執行長＠源鉑資本Kyber Capital，專業投資人與金融觀察家）',
+				'2000級 胡一天'
+			],
+			subtitle:[
+				'（執行長',
+				'＠源鉑資本Kyber Capital',
+				'，專業投資人與金融觀察家）',
 			],
 			hashtags: [
 				'系友專訪',
@@ -31,6 +35,16 @@ class Column_1604 extends Component {
 				'先進到適合發展的環境再積極創造機會',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'系學會很榮幸邀請到 2000級 胡一天系友參加本次專訪，感謝 2000級 陳和麟教授的大力幫忙。學長對於金融的洞見非常令人欽佩，而且樂於與學弟妹分享自己的故事、願意撥冗直接參與編修這篇文章 (超熱心！)現在就點擊連結、一起認識學長的心路歷程吧!',
+						},
+					],
+				},
 				{
 					bigtitle: '一、求學相關',
 					sections: [

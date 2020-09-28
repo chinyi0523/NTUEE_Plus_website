@@ -4,7 +4,8 @@ import Column_content from '../Column_content'
 class Column_1908 extends Component {
 	render() {
 		const column_1908_article = {
-			title: ['2008級 方劭云', '（副教授＠台灣科技大學）'],
+			title: ['2008級 方劭云'],
+			subtitle:['（副教授','＠台灣科技大學）'],
 			hashtags: [
 				'2008級',
 				'B93',
@@ -19,6 +20,16 @@ class Column_1908 extends Component {
 				'演算法',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'2008畢業於台大電機，目前任職於臺灣科技大學的方劭云教授，僅僅不到十年的時間內已經取得了副教授的頭銜，能有這樣的榮譽，是背後無數國際期刊論文與比賽獲獎的支撐。方教授於IEEE/ACM網絡學報屢次發布論文，二度獲得該學報最佳論文獎的榮譽。自2016起更帶領台科大團隊於CAD Contest at ICCAD比賽中四度獲獎，為臺灣在EDA領域中頗具地位的人才。目前授課項目包括VLSI、邏輯設計、演算法、奈米積體電路實體設計，並持續於EDA、奈米積體電路實體設計、製造可行性/可靠性設計、ML設計最佳化等領域中深造。',
+						},
+					],
+				},
 				{
 					bigtitle: '一、我的大學生涯',
 					sections: [

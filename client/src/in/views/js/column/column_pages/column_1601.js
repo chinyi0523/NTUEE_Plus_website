@@ -5,7 +5,8 @@ import Column_content from '../Column_content'
 class Column_1601 extends Component {
 	render() {
 		const column_1601_article = {
-			title: ['1995級 徐瑞廷', '（董事總經理＠BCG 波士頓顧問公司）'],
+			title: ['1995級 徐瑞廷'],
+			subtitle:[ '（董事總經理','＠BCG 波士頓顧問公司）'],
 			hashtags: [
 				'系友專訪',
 				'徐瑞廷',
@@ -26,6 +27,16 @@ class Column_1601 extends Component {
 				'獨立思考',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'系學會很榮幸邀請到 1995級 徐瑞廷系友參加本次專訪，感謝 1995級林哲立系友 與 1995級丁建均教授的大力幫忙。現在就點擊文章，讓我們一起看看徐瑞廷學長的分享與心路歷程吧!',
+						},
+					],
+				},
 				{
 					bigtitle: '一、前言',
 					sections: [

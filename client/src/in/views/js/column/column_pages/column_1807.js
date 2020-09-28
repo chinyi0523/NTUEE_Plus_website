@@ -4,7 +4,8 @@ import Column_content from '../Column_content'
 class Column_1807 extends Component {
 	render() {
 		const column_1807_article = {
-			title: ['2006級 楊奕軒 ', '（研究員/教授 @ 中研院資創中心）'],
+			title: ['2006級 楊奕軒 '],
+			subtitle:[ '（研究員/教授 ','@ 中研院資創中心）'],
 			hashtags: [
 				'系友專訪',
 				'楊奕軒',
@@ -21,6 +22,16 @@ class Column_1807 extends Component {
 				'音源分離',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'楊奕軒學長是國內少數專攻音樂資訊領域的學者，研究論文產量十分豐厚。電機系畢業後直攻電信所的博士，過去曾在美國Columbia University、西班牙Universitat Pompeu Fabra擔任訪問學者。目前是中研院資創中心的副研究員，也是清大與成大的合聘教授，同時也擔任過許多conference的editer、chair以及眾多journal、conference的reviewer等等。',
+						},
+					],
+				},
 				{
 					bigtitle: '一、生涯規劃',
 					sections: [
