@@ -12,5 +12,4 @@ router.post("/chLogin",
 	ValidSend,
 	require("./chLogin"));
 
-    
 module.exports = router
