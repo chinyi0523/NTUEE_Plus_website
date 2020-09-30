@@ -54,6 +54,14 @@ export function handleSubmit(event){
 				}
 				//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
 			})
+			// let Oc = []
+			// for(let workL = 1;workL<=this.state.InitWorkNum;workL++){
+			// 	Oc.push = {
+			// 		O: this.state[`work_O_${workL}`],
+
+			// 	}
+			// }
+			// sta.append("Occupation",this.state[""])
 			let toModify = {}
 			let toRemove = {}
 			let toInsert = {}

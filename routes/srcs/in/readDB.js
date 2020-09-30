@@ -167,8 +167,12 @@ module.exports.searchOr = function(req){
 		Q3["Occupation"] = {$elemMatch:JobMatch};
 		query.push(Q3)
 	}
-	console.log('query=',query)
-	return {$or:query}
+	if(query.length === 0){
+		return {}
+	}
+	else{
+		return {$or:query}
+	}
 }
 
 module.exports.chDB = function(req){
@@ -196,17 +200,9 @@ module.exports.chDB = function(req){
 		}
 	})
 	
-	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Modify')){
-		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Modify']))){
-			//key = work_O、P、C_{index}
-			const arr = key.split('_')
-			if(val===''){
-				unset[column3+'.'+(arr[2]-1)+'.'+arr[1]] = ''
-			}else{
-				output[column3+'.'+(arr[2]-1)+'.'+arr[1]] = val
-			}
-		}
-	}
+	// if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation')){
+	// 	output["Occupation"] = req.body.Occupation
+	// }
 	if(Object.prototype.hasOwnProperty.call(req.body, 'Occupation.Remove')){
 		for(let [key,val] of Object.entries(JSON.parse(req.body['Occupation.Remove']))){
 			//key = work_O、P、C_{index}
