@@ -5,10 +5,10 @@ const crypto = require("crypto");
 
 module.exports = function (req, res, next) {
 	const account = req.body.account.toLowerCase();
-	const UserPsw = req.body.password;
+	const password = req.body.password;
 	//密碼加密  
 	let md5 = crypto.createHash("md5");
-	const newPas = md5.update(UserPsw).digest("hex");
+	const newPas = md5.update(password).digest("hex");
 	const query = {account: account};//,userpsw:newPas};
 	Login.find(query, function(err, obj){
 		if (err) {
