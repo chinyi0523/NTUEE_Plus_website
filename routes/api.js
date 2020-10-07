@@ -1,14 +1,12 @@
 //routes/api.js 控管後端所有頁面部屬 
 const express = require("express");
 const router = express.Router();
-const ValidSend = require("./validation/control");//若valid未通過則send false
-const ValidTest = require("./validation/validation");
-const ImgGet = require('./middleware/multer');
-const Auth = require("./srcs/in/Auth");
+
 // const asyncHandler = require("express-async-handler");//for aysnc err handling
 //test
 router.get("/testClient",function(req,res){
-	const path = require('path');
+    const path = require('path');
+    console.log("use test");
     res.sendFile(path.join(__dirname+"/test/testClient.html"))
 })
 router.post("/testRoute",require("./test/testRoute"))
