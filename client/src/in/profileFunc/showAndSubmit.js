@@ -55,41 +55,46 @@ export function handleSubmit(event){
 				//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
 			})
 			// let Oc = []
-			// for(let workL = 1;workL<=this.state.InitWorkNum;workL++){
-			// 	Oc.push = {
-			// 		O: this.state[`work_O_${workL}`],
-
-			// 	}
-			// }
-			// sta.append("Occupation",this.state[""])
-			let toModify = {}
-			let toRemove = {}
-			let toInsert = {}
-			for(let workL = 1;workL<=this.state.InitWorkNum;workL++){
-				console.log('workL0',workL)
-				if(this.state.hasChanged[`work_${workL}`]===true){
-					toRemove[`work_${workL}`] = 1
-				}else{
-					(['O','P','C']).forEach(word=>{
-						if(this.state.hasChanged[`work_${word}_${workL}`]){
-							toModify[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
-						}
-					})
+			for(let workL = 1;(workL<=this.state.Occupation_number||workL<=this.state.InitWorkNum);workL++){
+				if(this.state.hasChanged[`work_${workL}`]!==true){
+					sta.append("Occupation[]", JSON.stringify({
+						O: this.state[`work_O_${workL}`],
+						C: this.state[`work_C_${workL}`],
+						P: this.state[`work_P_${workL}`],
+						show: true
+					}))
 				}
 			}
-			if(Object.entries(toModify).length!==0) sta.append('Occupation.Modify',JSON.stringify(toModify))
-			if(Object.entries(toRemove).length!==0)  sta.append('Occupation.Remove',JSON.stringify(toRemove))
-			for(let workL = this.state.InitWorkNum+1;workL<=this.state.Occupation_number;workL++){
-				console.log('workL',workL);
-				(['O','P','C']).forEach(word=>{
-					console.log('word',word)
-					if(this.state.hasChanged[`work_${word}_${workL}`]){
-						toInsert[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
-					}
-				})
-			}
-			console.log('insert',toInsert)
-			if(Object.entries(toInsert).length!==0)  sta.append('Occupation.Insert',JSON.stringify(toInsert))
+			// console.log("Oc",Oc)
+			// sta.append("Occupation[]",Oc)
+			// let toModify = {}
+			// let toRemove = {}
+			// let toInsert = {}
+			// for(let workL = 1;workL<=this.state.InitWorkNum;workL++){
+			// 	console.log('workL0',workL)
+			// 	if(this.state.hasChanged[`work_${workL}`]===true){
+			// 		toRemove[`work_${workL}`] = 1
+			// 	}else{
+			// 		(['O','P','C']).forEach(word=>{
+			// 			if(this.state.hasChanged[`work_${word}_${workL}`]){
+			// 				toModify[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
+			// 			}
+			// 		})
+			// 	}
+			// }
+			// if(Object.entries(toModify).length!==0) sta.append('Occupation.Modify',JSON.stringify(toModify))
+			// if(Object.entries(toRemove).length!==0)  sta.append('Occupation.Remove',JSON.stringify(toRemove))
+			// for(let workL = this.state.InitWorkNum+1;workL<=this.state.Occupation_number;workL++){
+			// 	console.log('workL',workL);
+			// 	(['O','P','C']).forEach(word=>{
+			// 		console.log('word',word)
+			// 		if(this.state.hasChanged[`work_${word}_${workL}`]){
+			// 			toInsert[`work_${word}_${workL}`] = this.state[`work_${word}_${workL}`]
+			// 		}
+			// 	})
+			// }
+			// console.log('insert',toInsert)
+			// if(Object.entries(toInsert).length!==0)  sta.append('Occupation.Insert',JSON.stringify(toInsert))
 			console.log('sta',sta)
 			const config = {
 				headers: {

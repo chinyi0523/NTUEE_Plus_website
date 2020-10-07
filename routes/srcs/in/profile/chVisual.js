@@ -1,9 +1,8 @@
 //srcs/chLogin.js
 const Visual = require('../../../Schemas/user_visual');
-const readDB = require('../readDB');
+const updatePro = require('./DBquery/update');
 module.exports = function (req, res, next) {
-  const session_account = (req.session.loginAccount)
-
+    const session_account = (req.session.loginAccount)
     Visual.find({"account.data":session_account}, function(err, obj){
         if (err) {
             console.log("Error:" + err);
@@ -11,14 +10,12 @@ module.exports = function (req, res, next) {
         }
         else {
             if(obj.length === 1){
-                console.log('即將更改資料',obj);
-                console.log('req',req.body);
-                const update = readDB.chDB(req);
+                const update = updatePro(req);
                 Visual.updateOne({"account.data":session_account},update,function(err,result){
-                    console.log("result=",result);
-                    Visual.updateOne({"account.data":session_account},
-                    {$pull:{"Occupation":null}},
-                    function(err2,result2){console.log('deleted array(may be undefined)=',result2)});
+                    // console.log("result=",result);
+                    // Visual.updateOne({"account.data":session_account},
+                    // {$pull:{"Occupation":null}},
+                    // function(err2,result2){console.log('deleted array(may be undefined)=',result2)});
                     if (err) {
                         console.log(err);
                         return res.status(500).send({description:'資料庫錯誤'});
