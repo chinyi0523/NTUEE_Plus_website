@@ -7,7 +7,7 @@ module.exports = function(req){
     D1.forEach(key=>{//account,username,...
         try{
             // let show,data;
-            if(key in req.body) ({show,data} = req.body[key])
+            if(key in req.body) ({show,data} = JSON.parse(req.body[key]))
             else ([show,data] = [req.body[`${key}.show`],req.body[`${key}.data`]])
             // console.log(show,data)
             if(show!==undefined) output[`${key}.show`] = show
