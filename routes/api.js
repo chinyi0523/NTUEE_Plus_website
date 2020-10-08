@@ -6,7 +6,7 @@ const router = express.Router();
 //test
 router.get("/testClient",function(req,res){
     const path = require('path');
-    console.log("use test");
+    // console.log("use test");
     res.sendFile(path.join(__dirname+"/test/testClient.html"))
 })
 router.post("/testRoute",require("./test/testRoute"))
