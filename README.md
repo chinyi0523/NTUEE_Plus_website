@@ -27,6 +27,7 @@ $ npm start
 ## 後端/api 使用方法
 > https://hackmd.io/XCiAXLMkTQal6L6AOARD-w#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%B4%B9
 
+hello world!
 ## 部員名單
 (git練習請在此填入資料)
 |姓名|組別|學號|git帳號|JS|react|bootstrap|express|mongoose|
