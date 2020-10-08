@@ -31,7 +31,7 @@ hello world!
 ## 部員名單
 (git練習請在此填入資料)
 |姓名|組別|學號|git帳號|JS|react|bootstrap|express|mongoose|
-|---|---|----|---|---|---|---|---|---|
+|巫竑儒|---|b09901072|vwvwMM|X|X|X|X|X|
 |王友廷|前端|b08901072|noidname01|V|V|V|X|X|
 |陳君輔|後端|b07901029|Claude0311|V|X|X|V|V|
 |崔翰清||b09901031|hackhaha1|V|X|X|X|X|
