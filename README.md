@@ -38,6 +38,7 @@ hello world!
 |葉星宏|-|b08901015|sab93667|X|X|X|X|X|
 |崔翰清||b09901031|hackhaha1|V|X|X|X|X|
 
+
 ### 0831 進度 by 君輔
 * 發現前端用async會噴bug，因為webpack沒設定好的樣子(待更改)
 * 改變forget方式
