@@ -27,7 +27,6 @@ $ npm start
 ## 後端/api 使用方法
 > https://hackmd.io/XCiAXLMkTQal6L6AOARD-w#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%B4%B9
 
-hello world!
 ## 部員名單
 (git練習請在此填入資料)
 |姓名|組別|學號|git帳號|JS|react|bootstrap|express|mongoose|
@@ -38,6 +37,10 @@ hello world!
 |葉星宏|-|b08901015|sab93667|X|X|X|X|X|
 |崔翰清||b09901031|hackhaha1|V|X|X|X|X|
 
+### 1013 進度 by 維恩
+* 將網頁上大的圖片從git刪掉（主要是人的照片），並用imgur存起來，client/src/images裡每個資料夾有一個json檔存有全部的連結（包括所有圖片）
+* 修改前端使用到這些圖片的js檔（更改import的檔案及變數名稱）
+* client/src/images裡有我用來抓取imgur api的js檔
 
 ### 0831 進度 by 君輔
 * 發現前端用async會噴bug，因為webpack沒設定好的樣子(待更改)
