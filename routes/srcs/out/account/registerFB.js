@@ -4,9 +4,9 @@ const Login = require('../../../Schemas/user_login');
 const Visual = require('../../../Schemas/user_visual');
 
 /*新增一筆使用者資料*/
-function insertFB(name, account, facebookID, file) {
+async function insertFB(name, account, facebookID, file) {
     //格式
-    const user = new Login({
+    await new Login({
         username: name,
         account: account,
         facebookID: facebookID,
@@ -14,42 +14,41 @@ function insertFB(name, account, facebookID, file) {
             data: file.buffer,
             contentType: file.mimetype
         }
-    });
-    console.log('img=', user.img)
-    user.save(function (err, res) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            console.log('成功儲存：', user);
-            console.log(res);
-        }
-    })
+    }).save();
+    // console.log('img=', user.img)
+    // user.save(function (err, res) {
+    //     if (err) {
+    //         console.log(err);
+    //     }
+    //     else {
+    //         console.log('成功儲存：', user);
+    //         console.log(res);
+    //     }
+    // })
 }
-function insertVisual(name,account){
-    return new Promise((resolve,reject)=>{
-      const user =  new Visual({
-                  username:{data : name},
-                  account:{data: account}
-              });
+async function insertVisual(name,account){
+    await new Visual({
+        username:{data : name},
+        account:{data: account}
+    }).save();
       
-      user.save(function(err,res){
-          if(err){
-              console.log(err);
-              resolve(false);
-          }
-          else{
-              console.log('成功儲存：',user);
-              resolve( res);
-          }
-      })
-    })
+    //   user.save(function(err,res){
+    //       if(err){
+    //           console.log(err);
+    //           resolve(false);
+    //       }
+    //       else{
+    //           console.log('成功儲存：',user);
+    //           resolve( res);
+    //       }
+    //   })
 }
 module.exports = async function (req, res) {
     const username = req.body.username;
     const account = req.body.account.toLowerCase();
     const userFBid = req.body.facebookID;
-    if(req.file===undefined) return res.send({message:false,description:"請添加照片"});
+
+    if(req.file===undefined) return res.status(400).send({message:false,description:"請添加照片"});
 
     try{
         const query = { account: account }
