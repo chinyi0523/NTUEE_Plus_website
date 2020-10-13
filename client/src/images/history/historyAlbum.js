@@ -1,6 +1,5 @@
 var axios = require("axios");
 const fs = require("fs");
-const { info } = require("console");
 
 let images = {};
 var config = {
