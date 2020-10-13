@@ -5,7 +5,7 @@
 $ npm install
 $ npm run install-client
 $ npm start
-進入https://localhost:1993
+進入http://localhost:1993
 ```
 前端人員(更改會透過webpack --watch自動重整)
 ```bash
@@ -26,6 +26,17 @@ $ npm start
 > https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
 ## 後端/api 使用方法
 > https://hackmd.io/XCiAXLMkTQal6L6AOARD-w#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%B4%B9
+
+## 部員名單
+(git練習請在此填入資料)
+|姓名|組別|學號|git帳號|JS|react|bootstrap|express|mongoose|
+|---|---|---|---|---|---|---|---|---|
+|巫竑儒|---|b09901072|vwvwMM|X|X|X|X|X|
+|王友廷|前端|b08901072|noidname01|V|V|V|X|X|
+|陳君輔|後端|b07901029|Claude0311|V|X|X|V|V|
+|葉星宏|-|b08901015|sab93667|X|X|X|X|X|
+|崔翰清||b09901031|hackhaha1|V|X|X|X|X|
+
 ### 1013 進度 by 維恩
 * 將網頁上大的圖片從git刪掉（主要是人的照片），並用imgur存起來，client/src/images裡每個資料夾有一個json檔存有全部的連結（包括所有圖片）
 * 修改前端使用到這些圖片的js檔（更改import的檔案及變數名稱）

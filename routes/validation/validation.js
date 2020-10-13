@@ -6,6 +6,7 @@ const mat = {
 	"login":["account","password"],
 	"forget":["account"],//,"question","Email","password","ConfirmPassword"],
 	"chLogin":["question"],
+	"chPassword":[],
 	"activation":["account","password"]
 }
 

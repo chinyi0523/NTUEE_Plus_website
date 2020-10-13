@@ -45,13 +45,13 @@ app.use(
 )
 
 app.use('/api', require('./routes/api'))
-const DIST_DIR = path.join(__dirname, './dist')
-const HTML_FILE = path.join(__dirname, './index.html')
 app.use(
 	connectHistoryApiFallback({
 		verbose: false,
 	})
 )
+const DIST_DIR = path.join(__dirname, './dist')
+const HTML_FILE = path.join(__dirname, './index.html')
 app.use(express.static(DIST_DIR))
 app.get('/', (req, res) => {
 	res.sendFile(HTML_FILE) // EDIT
@@ -68,14 +68,14 @@ app.get('/', (req, res) => {
 
 // const http = require('http');
 // connect to https://localhost:1993
-/* const options = {
-  key: fs.readFileSync('./certificate.key'),
-  cert: fs.readFileSync('./certificate.crt')
-};
-https.createServer(options, app).listen(process.env.PORT||1993, function() {
-  console.log('server connect');
-  console.log('port name: ', process.env.PORT||1993);
-}); */
+//  const options = {
+// //   key: fs.readFileSync('./certificate.key'),
+// //   cert: fs.readFileSync('./certificate.crt')
+// };
+// https.createServer(options, app).listen(process.env.PORT||1993, function() {
+//   console.log('server connect');
+//   console.log('port name: ', process.env.PORT||1993);
+// }); 
 
 const server = app.listen(process.env.PORT || 1993, function () {
 	console.log('server connect')

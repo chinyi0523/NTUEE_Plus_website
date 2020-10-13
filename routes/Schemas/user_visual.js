@@ -92,4 +92,14 @@ const User_visual_Schema = new Schema({
   }
 });
 
+User_visual_Schema.virtual('imgSrc').get(function() {
+	try{
+		const prefix="data:"+this.userimage.contentType+";base64,"
+		const img = new Buffer(this.userimage.data, 'binary').toString('base64');
+		return prefix+img;
+	}catch{
+		return ""
+	}
+});
+
 module.exports = mongoose.model("User_visual", User_visual_Schema);
