@@ -4,7 +4,7 @@ const Login = require('../../../Schemas/user_login');
 const Visual = require('../../../Schemas/user_visual');
 
 /*新增一筆使用者資料*/
-function insert(name, account, facebookID, file) {
+function insertFB(name, account, facebookID, file) {
     //格式
     const user = new Login({
         username: name,
@@ -45,32 +45,41 @@ function insertVisual(name,account){
       })
     })
 }
-module.exports = function (req, res) {
-    const UserName = req.body.username;
-    const Useraccount = req.body.account.toLowerCase();
-    const UserFbId = req.body.facebookID;
-    if(req.file===undefined){
-        return res.send({message:false,description:"請添加照片"});
-    }
-    //console.log('file\n', req.file)
+module.exports = async function (req, res) {
+    const username = req.body.username;
+    const account = req.body.account.toLowerCase();
+    const userFBid = req.body.facebookID;
+    if(req.file===undefined) return res.send({message:false,description:"請添加照片"});
 
-    //查詢用戶是否存在
-    const query = { account: Useraccount };
-    Login.find(query, function (err, obj) {
-        if (err) {
-            console.log("Error:" + err);
-            return res.status(500).send({description: "資料庫錯誤" });
-        }
-        else {
-            if (obj.length == 0) {
-                console.log("新增帳號");
-                insert(UserName, Useraccount, UserFbId, req.file);
-                insertVisual(UserName,Useraccount);
-                res.status(201).send({username: UserName })
-            } else {
-                console.log("已有此帳號");
-                res.status(403).send({description: "帳號已存在" })
-            }
-        }
-    })
+    try{
+        const query = { account: account }
+        const obj = await Login.findOne(query)
+        if(obj) return res.status(403).send({description: "帳號已存在" })
+        await insertFB(username, account, userFBid, req.file);
+        await insertVisual(username,account);
+        req.session.loginName = username;
+        req.session.loginAccount = account;
+        return res.status(201).send({username});
+    }catch(e){
+        console.log(e)
+        return res.status(500).send({description:"資料庫錯誤"});
+    }
+
+    // Login.find(query, function (err, obj) {
+    //     if (err) {
+    //         console.log("Error:" + err);
+    //         return res.status(500).send({description: "資料庫錯誤" });
+    //     }
+    //     else {
+    //         if (obj.length == 0) {
+    //             console.log("新增帳號");
+    //             insertFB(username, account, userFBid, req.file);
+    //             insertVisual(username,account);
+    //             res.status(201).send({username: username })
+    //         } else {
+    //             console.log("已有此帳號");
+    //             res.status(403).send({description: "帳號已存在" })
+    //         }
+    //     }
+    // })
 }

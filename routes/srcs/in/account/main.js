@@ -7,9 +7,9 @@ const ValidTest = require("../../../validation/validation");
 
 router.post("/showPersonal",
 	require("./showPersonal"));
-router.post("/chLogin",
-	ValidTest('chLogin'),
+router.post("/chPassword",
+	ValidTest('chPassword'),
 	ValidSend,
-	require("./chLogin"));
+	require("./chPassword"));
 
 module.exports = router

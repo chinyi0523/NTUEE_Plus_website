@@ -1,10 +1,9 @@
-const SaveFunc = require('./imgProcess/addImg');
-module.exports = function (req, res, next){
-	let saveDone = false;
-	if(req.body.filename){
-		saveDone = SaveFunc(req.body.filename,req.file);
+const addColumn = require('./imgProcess/addImg');
+module.exports = async function (req, res, next){
+	try{
+		await addColumn(req.body.filename,req.file)
+		return res.status(204).end()
+	}catch(e){
+		return res.status(500).send({description:"儲存失敗"})
 	}
-	
-	if(saveDone){return res.status(204).end()}
-	else{return res.status(500).send({description:"儲存失敗"})}
 }

@@ -2,27 +2,26 @@
 const Visual = require('../../../Schemas/user_visual');
 const getPrivate = require('./DBquery/getPrivate');
 
-function insert(name,account){
-    return new Promise((resolve,reject)=>{
-        const user =  new Visual({
-            username:{data : name},
-            account:{data: account}
-        });
-        user.save(function(err,res){
-            if(err){
-                console.log(err);
-                resolve(false);
-            }
-            else{
-                console.log('成功儲存：',user);
-                resolve( res);
-            }
-        })
-    })
+async function insertVisual(name,account){
+    await new Visual({
+        username:{data : name},
+        account:{data: account}
+    }).save();
 }
 
-module.exports = function (req, res, next) {
+module.exports = async function (req, res, next) {
     let session_account = req.session.loginAccount
+
+    try{
+        const obj = await Visual.findOne({"account.data":session_account})
+        if(!obj){
+            await insertVisual(req.session.loginName,session_account);
+            return res.status(201).send({data:output});
+        }
+    }catch(e){
+        console.log(e)
+        return res.status(500).send({description:"資料庫錯誤"})
+    }
     Visual.find({"account.data":session_account}, async function(err, obj){
         if (err) {
             console.log("Error:" + err);
@@ -37,7 +36,7 @@ module.exports = function (req, res, next) {
             }else if(obj.length === 0){//存在session但不在資料庫裡
                 console.log("session:",session_account);
                 if(req.session.loginName && session_account){
-                    output = await insert(req.session.loginName,session_account);
+                    output = await insertVisual(req.session.loginName,session_account);
                 }
                 if(!output){
                     return res.status(500).send({description:"資料庫錯誤(資料插入錯誤)"}); 

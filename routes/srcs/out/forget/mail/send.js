@@ -1,6 +1,6 @@
 const send = require('./mail');
 
-module.exports = function (myfriend, hr){
+module.exports = async function (myfriend, hr){
 		// 設定寄信參數
 	const mail = {
 		// 發信人
@@ -13,5 +13,5 @@ module.exports = function (myfriend, hr){
 		//text:一些內容
 		html: hr //激活連結
 	};
-	send(mail);
+	await send(mail);
 };
