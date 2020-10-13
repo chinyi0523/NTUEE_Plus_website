@@ -432,7 +432,7 @@ class Profile extends Component {
                   <img
                     className="Profile_expand_icon"
                     id="Profile_expand_icon_1"
-                    src={show_more}
+                    src={data.show_more}
                     alt="show_more"
                   ></img>
                 </button>
@@ -521,7 +521,7 @@ class Profile extends Component {
                     <img
                       className="Profile_expand_icon"
                       id="Profile_expand_icon_2"
-                      src={show_more}
+                      src={data.show_more}
                       alt="show_more"
                     ></img>
                   </button>
@@ -610,7 +610,7 @@ class Profile extends Component {
                     <img
                       className="Profile_expand_icon"
                       id="Profile_expand_icon_3"
-                      src={show_more}
+                      src={data.show_more}
                       alt="show_more"
                     ></img>
                   </button>
