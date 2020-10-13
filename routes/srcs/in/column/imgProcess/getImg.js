@@ -1,7 +1,7 @@
 const Column = require('../../../../Schemas/column');
 
 module.exports = async function (name){
-	const objImg = await Column.findOne(name)
+	const objImg = await Column.findOne({filename:name})
 	if(!objImg) return false
 	return objImg.columnImg
 	// return new Promise((resolve,reject)=>{
