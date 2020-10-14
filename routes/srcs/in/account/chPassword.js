@@ -14,7 +14,7 @@ module.exports = async function (req, res, next) {
             {account:session_account},
             {$set:{userpsw:newPsw}}
         )
-        res.status(204).end();
+        return res.status(204).end();
     }catch(e){
         console.log(e)
         return res.status(500).send({description:"資料庫錯誤"})

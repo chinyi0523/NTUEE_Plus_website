@@ -24,7 +24,7 @@ module.exports = async function(req,res){
 			{$set:{userpsw:newPsw}}
 		)
 		Activation.deleteMany({account}).exec()
-		res.status(200).end()
+		return res.status(200).end()
 	}catch(e){
 		console.log(e)
 		return res.status(500).send({description:"資料庫錯誤"})
