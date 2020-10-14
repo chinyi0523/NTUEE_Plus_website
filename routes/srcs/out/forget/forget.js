@@ -14,7 +14,7 @@ async function insertActive(name,act){
 			{account:name},
 			{$set:{
 				active:act,
-				expireDate:Date.now()
+				createdAt:Date.now()
 			}}
 		);
 	}
