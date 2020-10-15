@@ -8,8 +8,7 @@ const crypto = require("crypto");
 module.exports = async function(req,res){
 	const {account,active,password} = req.body;
 	
-	let md5 = crypto.createHash("md5");
-	const newPsw = md5.update(password).digest("hex");
+	const newPsw = crypto.createHash("md5").update(password).digest("hex");
 	
 	try{
 		const obj = await Activation.findOne({account,active})

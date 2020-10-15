@@ -6,8 +6,7 @@ module.exports = async function (req, res, next) {
 	const account = req.body.account.toLowerCase();
 	const password = req.body.password;
 	//密碼加密
-	let md5 = crypto.createHash("md5");
-	const newPsw = md5.update(password).digest("hex");
+	const newPsw = crypto.createHash("md5").update(password).digest("hex");
 	
 	try{
 		const query = {account: account};

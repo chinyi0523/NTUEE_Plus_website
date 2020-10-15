@@ -28,8 +28,7 @@ module.exports = async function (req, res) {
     const userPsw = req.body.password;
 
     //密碼加密
-    let md5 = crypto.createHash("md5");
-    const newPsw = md5.update(userPsw).digest("hex");
+    const newPsw = crypto.createHash("md5").update(userPsw).digest("hex");
 
     if(req.file===undefined) return res.status(400).send({description:"請添加照片"});
     
