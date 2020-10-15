@@ -1,12 +1,6 @@
 const mongoose = require("./db"),
   Schema = mongoose.Schema;
 
-function addMins() {
-  const copy = new Date
-  copy.setMinutes(copy.getMinutes() + 5)
-  return copy
-}
-
 const activation_Schema = new Schema({
   account: { type: String, required: true },
   //newpsw: { type: String, required: true },
