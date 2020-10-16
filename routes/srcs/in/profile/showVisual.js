@@ -3,10 +3,11 @@ const Visual = require('../../../Schemas/user_visual');
 const getPrivate = require('./DBquery/getPrivate');
 
 async function insertVisual(name,account){
-    await new Visual({
+    const user = await new Visual({
         username:{data : name},
         account:{data: account}
     }).save();
+    return user
 }
 
 module.exports = async function (req, res, next) {
@@ -15,8 +16,8 @@ module.exports = async function (req, res, next) {
     try{
         let obj = await Visual.findOne({"account.data":session_account})
         if(!obj){
-            await insertVisual(req.session.loginName,session_account)
-            obj = await Visual.findOne({"account.data":session_account}) //不是最好的方法
+            obj = await insertVisual(req.session.loginName,session_account)
+            // obj = await Visual.findOne({"account.data":session_account}) //不是最好的方法
         }
         const user = getPrivate(obj)
         return res.status(201).send({data:user})
