@@ -17,7 +17,6 @@ module.exports = async function (req, res, next) {
         let obj = await Visual.findOne({"account.data":session_account})
         if(!obj){
             obj = await insertVisual(req.session.loginName,session_account)
-            // obj = await Visual.findOne({"account.data":session_account}) //不是最好的方法
         }
         const user = getPrivate(obj)
         return res.status(201).send({data:user})
