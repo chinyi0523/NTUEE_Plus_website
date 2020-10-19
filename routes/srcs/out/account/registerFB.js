@@ -52,8 +52,8 @@ module.exports = async function (req, res) {
 
     try{
         const query = { account: account }
-        const obj = await Login.findOne(query)
-        if(obj) return res.status(403).send({description: "帳號已存在" })
+        const isRegistered = await Login.exists(query)
+        if(isRegistered) return res.status(403).send({description: "帳號已存在" })
         await insertFB(username, account, userFBid, req.file);
         await insertVisual(username,account);
         req.session.loginName = username;

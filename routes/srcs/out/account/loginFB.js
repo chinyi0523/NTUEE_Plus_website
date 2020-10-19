@@ -4,11 +4,11 @@ const Login = require('../../../Schemas/user_login');
 module.exports = async function (req, res, next) {
 	const facebookID = req.body.facebookID;
 	try{
-		const query = { facebookID: facebookID };
-		const obj = await Login.findOne(query);
+		const query = { facebookID };
+		const obj = await Login.findOne(query, "username account");
 		if(!obj) return res.status(404).send({description: "account Not found!" });
-		req.session.loginName = obj[0].username;
-		req.session.loginAccount = obj[0].account;
+		req.session.loginName = obj.username;
+		req.session.loginAccount = obj.account;
 		return res.status(201).send({username: obj.username });
 	}catch(e){
 		console.log(e)
