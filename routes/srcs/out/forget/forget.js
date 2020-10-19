@@ -26,7 +26,7 @@ module.exports = async function (req, res, next) {
 	
 	const query = {"account.data": account};//, question:question};
 	try{
-		const obj = await Visual.findOne(query)
+		const obj = await Visual.findOne(query,'publicEmail')
 		if(!obj) return res.status(404).send({description:"帳號不存在"});
 		if(!obj.publicEmail.data) return res.status(404).send({description:"未設定信箱，請聯絡管理員"});
 		const email = obj.publicEmail.data;

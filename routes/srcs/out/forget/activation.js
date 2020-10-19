@@ -11,13 +11,13 @@ module.exports = async function(req,res){
 	const newPsw = crypto.createHash("md5").update(password).digest("hex");
 	
 	try{
-		const obj = await Activation.findOne({account,active})
+		const obj = await Activation.exists({account,active})
 		if(!obj) return res.status(401).send({description:"驗證碼已不存在"})
 		// if((Date.now()-obj.expireDate)>=60*60*1000){
 		// 	Activation.deleteMany({account}).exec()
 		// 	return res.status(401).send({description:"驗證碼過期"})
 		// }
-		console.log(obj.createdAt)
+		// console.log(obj.createdAt)
 		//更新密碼
 		await Login.updateOne(
 			{account},

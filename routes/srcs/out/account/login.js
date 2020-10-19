@@ -10,7 +10,7 @@ module.exports = async function (req, res, next) {
 	
 	try{
 		const query = {account: account};
-		const obj = await Login.findOne(query);
+		const obj = await Login.findOne(query,"userpsw username account");
 		if(!obj) return res.status(404).send({description:"帳號不存在"});
 		if(obj.userpsw !== newPsw) return res.status(401).send({description:"密碼錯誤"});
 		console.log("登入成功")
