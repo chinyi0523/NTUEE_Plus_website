@@ -8,6 +8,7 @@ const RegValid = (req,res,next)=>{
 			description:errors.array()[0].msg,
 			errors: errors.array()});
 	}else{
+		console.log("validation pass")
 		return next();
 	}
 }

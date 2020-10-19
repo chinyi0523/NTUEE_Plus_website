@@ -10,20 +10,17 @@ const mat = {
 	"activation":["account","password"]
 }
 
-const Valid = function(method,req){
+const Valid = function(method){
 	const output = [];
 	mat[method].forEach(element=>{
-		if(element==="ConfirmPassword"){//如果需要抓req就用它
-			output.push(require("./Name/"+element)(req));
-		}else{
-			output.push(require("./Name/"+element));
-		}
+		output.push(require("./Name/"+element));
 	});
 	return output;
 }
 
 
-module.exports=(method,req)=>Valid(method,req);
+// module.exports=(method,req)=>Valid(method,req);
+module.exports=(method)=>Valid(method);
 /*module.exports.Login=()=>Valid("login");
 module.exports.Register=(req,res)=>{Valid("register",req,res)};
 module.exports.Forget=()=>Valid("forget");
