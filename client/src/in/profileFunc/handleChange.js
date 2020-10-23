@@ -45,7 +45,7 @@ export function handleInputChange(event) {
 	this.setState({
 		[name]:value
 	});
-	var hasChanged = {...this.state.hasChanged}
+	const hasChanged = {...this.state.hasChanged}
 	hasChanged[name] = true;
 	this.setState({hasChanged})
 }

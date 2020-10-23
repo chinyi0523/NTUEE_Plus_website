@@ -6,6 +6,7 @@ const User_login_Schema = new Schema({
   facebookID: String,
   account: { type: String, required: true, lowercase: true },//學號
   userpsw: String,//密碼
+  isAuth: {type:Boolean, default:false},
   private_Email: String,
   question: { type: String},//安全問題
   img: {
