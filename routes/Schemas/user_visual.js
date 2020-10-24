@@ -47,7 +47,7 @@ const User_visual_Schema = new Schema({
 	}
   },
   publicEmail:{
-	show:{type:Boolean,default:true},
+	show:{type:Boolean,default:false},
 	data:{type:mongoose.SchemaTypes.Email}
   },
   office:{

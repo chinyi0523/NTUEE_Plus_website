@@ -10,6 +10,7 @@ class Register_account extends Component{
 		  Register_acc_student_id: '',
 		  Register_acc_password: '',
 		  Register_acc_confirm_password: '',
+		  Register_acc_email: '',
 		  imagePreviewUrl: '',
 		  file: null
 		};
@@ -44,6 +45,7 @@ class Register_account extends Component{
 				data.append('account',this.state.Register_acc_student_id)
 				data.append('password',this.state.Register_acc_password)
 				data.append('ConfirmPassword',this.state.Register_acc_confirm_password)
+				data.append('Email',this.state.Register_acc_email)
 				console.log('data is form ',data)
 				const config = {
 					headers: {
@@ -151,9 +153,10 @@ class Register_account extends Component{
 								></input>
 							</div>
 							<div className="form-group row">
-								<label id="Register_acc_question_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">Question</label>
-								<input id="Register_acc_question" placeholder="ex: the name of your first pet, etc..." type="text"
-								 onChange = {this.handleInputChange} className="form-control offset-sm-1 col-7 col-md-8 Register_account_input"
+								<label id="Register_acc_email_label" className="col-form-label col-5 col-sm-4 col-md-3 Register_account_label text-center text-lg-left">private email</label>
+								<input id="Register_acc_email" placeholder="notify you when account is successfully activate" type="text"
+								 value={this.state.value} onChange = {this.handleInputChange}
+								 className="form-control offset-sm-1 col-7 col-md-8 Register_account_input"
 								 ></input>
 							</div>
 							<div className="form-group row">
@@ -182,6 +185,7 @@ class Register_account extends Component{
 							<div id="Register_acc_FAQ_content">
 								<ul id="Register_acc_FAQ_list">
 									<li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
+									<li>ID photo is used to confirm your identity, and will be auto deleted after account is activated</li>
 									<li>The size of photo is at most 1MB.</li>
 									<li>...</li>
 								</ul>
@@ -204,6 +208,7 @@ class Register_account extends Component{
 							<div id="Register_acc_FAQ_content" className="mt-3 mb-5">
 								<ul id="Register_acc_FAQ_list">
 									<li>ID photo should contain your <em>full name</em> and <em>intact, clear face</em>.</li>
+									<li>ID photo is used to confirm your identity, and will be auto deleted after account is activated</li>
 									<li>The size of photo is at most 1MB.</li>
 									<li>...</li>
 								</ul>

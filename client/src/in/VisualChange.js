@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import "./VisualChange.css"
-import Profile2 from "./profile_new"
+import Profile from "./profile_new"
 //import axios from "axios";
 
 class VisualChange extends Component {
@@ -76,7 +76,7 @@ class VisualChange extends Component {
 	render(){
 		return (
 		<div>
-			<Profile2 />
+			<Profile />
 		</div>
 		
 		/*	<div description="personalInfo">

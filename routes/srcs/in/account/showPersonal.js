@@ -5,7 +5,7 @@ module.exports = async function (req, res, next) {
     const session_account = req.session.loginAccount;
 
     try{
-        const obj = await Login.findOne({account:session_account});
+        const obj = await Login.findOne({account:session_account},"username account");
         if(!obj) return res.status(403).send({description:"帳號不存在"});
         return res.status(201).send({
             username:obj.username,
