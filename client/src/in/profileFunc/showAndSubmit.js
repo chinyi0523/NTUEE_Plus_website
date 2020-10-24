@@ -5,23 +5,23 @@ export function showVisual(){
 	axios.post("/api/showVisual", 
 		{}
 	).then(res => {//{data:output}
-					let D = res.data.data;
-					let sta = {}
-					map.forEach(([frontKey,backKey])=>{
-						let arr = backKey.split('.')
-						try{
-							if(arr.length===1) sta[frontKey] = D[arr[0]]
-							else if(arr.length===2) sta[frontKey] = D[arr[0]][arr[1]]
-							else if(arr.length===3) sta[frontKey] = D[arr[0]][arr[1]][arr[2]]
-						}catch{
-							sta[frontKey] = ""
-						}
-					})
-					sta.imagePreviewUrl = sta.userimage;
-					console.log('sta = ',sta)
-					sta.work = D.Occupation
+		let D = res.data.data;
+		let sta = {}
+		map.forEach(([frontKey,backKey])=>{
+			let arr = backKey.split('.')
+			try{
+				if(arr.length===1) sta[frontKey] = D[arr[0]]
+				else if(arr.length===2) sta[frontKey] = D[arr[0]][arr[1]]
+				else if(arr.length===3) sta[frontKey] = D[arr[0]][arr[1]][arr[2]]
+			}catch{
+				sta[frontKey] = ""
+			}
+		})
+		sta.imagePreviewUrl = sta.userimage;
+		console.log('sta = ',sta)
+		sta.work = D.Occupation
 
-					this.setState(sta);
+		this.setState(sta);
 	}).catch(err=>{
 		// console.log(err)
 		(err.response.data.description) && alert('錯誤\n'+err.response.data.description);

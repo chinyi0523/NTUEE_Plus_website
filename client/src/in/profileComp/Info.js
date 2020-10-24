@@ -1,20 +1,26 @@
 import React from 'react';
 import InfoElement from './InputRow'
 // import data from "../../images/public_images.json";
-export default ({realname, nickname,shortintro,handleInputChange}) => { 
+export default ({
+    realname,realname_checkbox,
+    nickname,nickname_checkbox,
+    shortintro,
+    handleInputChange,handleCheckChange}) => { 
 return (
 <div id="Profile_info">
     <div id="Profile_name" className="mb-4">
         <InfoElement
             labelText="Realname:"
-            value={realname}
-            onChange={handleInputChange}
+            value={{data:realname,show:realname_checkbox}}
+            inputChange={handleInputChange}
+            checkChange={handleCheckChange}
             name="realname"
         />
         <InfoElement
             labelText="Nickname:"
-            value={nickname}
-            onChange={handleInputChange}
+            value={{data:nickname,show:nickname_checkbox}}
+            inputChange={handleInputChange}
+            checkChange={handleCheckChange}
             name="nickname"
         />
     </div>
@@ -26,7 +32,7 @@ return (
             placeholder="briefly introduce yourself!"
             value={shortintro}
             onChange={handleInputChange}
-        ></textarea>
+        />
     </div>
 </div>
 )

@@ -1,7 +1,7 @@
 import React from 'react';
-import data from "../../images/public_images.json";
+import {show_more} from "../../images/public_images.json";
 
-const ExpandRow = ({labelClass,inputClass,imgID,labelText,name,value,expand,onChange})=>{
+const ExpandRow = ({labelClass,inputClass,imgID,labelText,name,value:{data,show},expand,inputChange,checkChange})=>{
 return(
 <div className="form-group row mx-auto">
     <label className={labelClass}>
@@ -14,20 +14,20 @@ return(
         <img
             className="Profile_expand_icon"
             id={imgID}
-            src={data.show_more}
+            src={show_more}
             alt="show_more"
         />
     </button>
     {/* <input type="checkbox"
-        checked={this.state.phone_company_checkbox}
-        onChange={this.handleCheckChange}
-        name="phone_company_checkbox"
-    ></input> */}
+        checked={show}
+        onChange={checkChange}
+        name={`${name}_checkbox`}
+    /> */}
     <input
         id="Profile_phone_company"
         className={inputClass}
-        value={value}
-        onChange={onChange}
+        value={data}
+        onChange={inputChange}
         name={name}
         onFocus={expand}
     />
@@ -37,22 +37,22 @@ return(
 
 export {ExpandRow}
 
-export default ({labelText,value,name,onChange})=>{
+export default ({labelText,value:{data,show},name,inputChange,checkChange})=>{
 return(
 <div className="form-group row mx-auto">
     <label className="col-form-label col-4 Profile_info_label">
         {labelText}
     </label>
     {/* <input type="checkbox"
-        className="Profile_diploma_checkbox"
-        checked={this.state.master_checkbox}
-        onChange={this.handleCheckChange}
-        name="master_checkbox"
-    ></input> */}
+        className="Profile_input_checkbox"
+        checked={show}
+        onChange={checkChange}
+        name={`${name}_checkbox`}
+    /> */}
     <input
         className="Profile_input_nonfloat form-control col-7 col-md-6 col-xl-5 offset-1 offset-md-2 offset-xl-3 Profile_info_input"
-        value={value}
-        onChange={onChange}
+        value={data}
+        onChange={inputChange}
         name={name}
     />
 </div>

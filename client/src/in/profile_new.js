@@ -34,9 +34,9 @@ import rmOccupation from './profileFunc/rmOccupation';
 class Profile extends Component {
   constructor(props) {
     super(props);
-    var tmpCh = {work:false};
-    map.forEach((element) => {
-      tmpCh[element[0]] = false;
+    const hasChanged = {work:false};
+    map.forEach(([element,..._]) => {
+      hasChanged[element] = false;
     });
 
     this.state = {
@@ -61,7 +61,7 @@ class Profile extends Component {
       diploma_doctor: "",
       shortintro: "",
       work:[],
-      hasChanged: tmpCh,
+      hasChanged
     };
 
     this.handleInputChange = handleInputChange.bind(this);
@@ -204,6 +204,7 @@ class Profile extends Component {
             <Profile_info
               {...this.state}
               handleInputChange={this.handleInputChange}
+              handleCheckChange={this.handleCheckChange}
             />
             
             <div id="hr1" className="Profile_hr">
@@ -213,6 +214,7 @@ class Profile extends Component {
               <Contact
                 {...this.state}
                 handleInputChange={this.handleInputChange}
+                handleCheckChange={this.handleCheckChange}
                 expandElement={this.expandDiploma}
               />
               <div id="hr4" className="Profile_hr">
@@ -221,6 +223,7 @@ class Profile extends Component {
               <SocialMedia
                 {...this.state}
                 handleInputChange={this.handleInputChange}
+                handleCheckChange={this.handleCheckChange}
                 expandElement={this.expandDiploma}
               />
               <div id="hr2" className="Profile_hr">
@@ -229,6 +232,7 @@ class Profile extends Component {
               <Diploma
                 {...this.state}
                 handleInputChange={this.handleInputChange}
+                handleCheckChange={this.handleCheckChange}
                 expandElement={this.expandDiploma}
               />
               <div id="hr41" className="Profile_hr">
@@ -244,6 +248,7 @@ class Profile extends Component {
                   }}
                   {...this.state}
                   handleWorkChange={this.handleWorkChange}
+                  handleCheckChange={this.handleCheckChange}
                   rmOccupation={this.rmOccupation}
                 />
                 {/* <div className="form-group row mx-auto">

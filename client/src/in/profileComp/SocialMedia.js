@@ -1,7 +1,11 @@
 import React from 'react';
 import SocialElement, { ExpandRow } from './InputRow'
 
-export default ({facebook,personal_website,Linkedin,handleInputChange,expandElement}) => {
+export default ({
+    facebook,facebook_checkbox,
+    personal_website,personal_website_checkbox,
+    Linkedin,Linkedin_checkbox,
+    handleInputChange,handleCheckChange,expandElement}) => {
 const expand = (e) => {
     e.preventDefault();
     expandElement(
@@ -18,8 +22,9 @@ return (
         labelClass="col-form-label col-4 Profile_info_label"
         inputClass="form-control col-6 ml-auto Profile_info_input"
         labelText="Facebook:"
-        value={facebook}
-        onChange={handleInputChange}
+        value={{data:facebook,show:facebook_checkbox}}
+        inputChange={handleInputChange}
+        checkChange={handleCheckChange}
         name="facebook"
         expand={expand}
         imgID="Profile_expand_icon_2"
@@ -27,14 +32,16 @@ return (
     <div id="Profile_expand_social_media">
         <SocialElement
             labelText='Blog:'
-            value={personal_website}
-            onChange={handleInputChange}
+            value={{data:personal_website,show:personal_website_checkbox}}
+            inputChange={handleInputChange}
+            checkChange={handleCheckChange}
             name="personal_website"
         />
         <SocialElement
             labelText='Linkedin:'
-            value={Linkedin}
-            onChange={handleInputChange}
+            value={{data:Linkedin,show:Linkedin_checkbox}}
+            inputChange={handleInputChange}
+            checkChange={handleCheckChange}
             name="Linkedin"
         />
     </div>

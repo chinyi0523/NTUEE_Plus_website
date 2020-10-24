@@ -1,7 +1,13 @@
 import React from 'react';
 import ContactElement,{ExpandRow} from './InputRow'
 
-export default ({email,address,phone_company,phone_home,handleInputChange,mobile,expandElement}) => { 
+export default ({
+    email,email_checkbox,
+    address,address_checkbox,
+    phone_company,phone_company_checkbox,
+    phone_home,phone_home_checkbox,
+    mobile,mobile_checkbox,
+    handleInputChange,handleCheckChange,expandElement}) => { 
 const expand = (e) => {
     e.preventDefault()
     expandElement(
@@ -16,22 +22,25 @@ return (
 <div id="Profile_more_info">
     <ContactElement
         labelText="Email:"
-        value={email}
-        onChange={handleInputChange}
+        value={{data:email,show:email_checkbox}}
+        inputChange={handleInputChange}
+        checkChange={handleCheckChange}
         name="email"
     />
     <ContactElement
         labelText="Living Address:"
-        value={address}
-        onChange={handleInputChange}
+        value={{data:address,show:address_checkbox}}
+        inputChange={handleInputChange}
+        checkChange={handleCheckChange}
         name="address"
     />
     <ExpandRow
         labelClass="col-form-label col-5 Profile_info_label"
         labelText="Phone(Office):"
         inputClass="form-control col-5 ml-auto Profile_info_input"
-        value={phone_company}
-        onChange={handleInputChange}
+        value={{data:phone_company,show:phone_company_checkbox}}
+        inputChange={handleInputChange}
+        checkChange={handleCheckChange}
         name="phone_company"
         expand={expand}
         imgID="Profile_expand_icon_1"
@@ -40,14 +49,16 @@ return (
     <div id="Profile_expand_phone">
         <ContactElement
             labelText="Phone(Home):"
-            value={phone_home}
-            onChange={handleInputChange}
+            value={{data:phone_home,show:phone_home_checkbox}}
+            inputChange={handleInputChange}
+            checkChange={handleCheckChange}
             name="phone_home"
         />
         <ContactElement
             labelText="Mobile:"
-            value={mobile}
-            onChange={handleInputChange}
+            value={{data:mobile,show:mobile_checkbox}}
+            inputChange={handleInputChange}
+            checkChange={handleCheckChange}
             name="mobile"
         />
     </div>
