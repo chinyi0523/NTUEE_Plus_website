@@ -40,7 +40,6 @@ class Profile extends Component {
     });
 
     this.state = {
-      Occupation_number: 0,
       editmode: false,
       //clicktime : 0,
       userimage: data.default_image,

@@ -16,7 +16,7 @@ return(
             id={imgID}
             src={data.show_more}
             alt="show_more"
-        ></img>
+        />
     </button>
     {/* <input type="checkbox"
         checked={this.state.phone_company_checkbox}
