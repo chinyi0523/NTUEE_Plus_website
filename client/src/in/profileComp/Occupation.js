@@ -1,7 +1,7 @@
 import React from 'react';
 import {remove_icon} from "../../images/public_images.json";
 
-const OccupationTD = (readOnly,value,onChange)=>{
+const OccupationTD = ({readOnly,value,onChange})=>{
 return (
     <td>
         <input className="Profile_info_table_input Profile_info_input"

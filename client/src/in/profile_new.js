@@ -15,7 +15,7 @@ import {
 } from "./profileFunc/handleChange";
 import { showVisual, handleSubmit } from "./profileFunc/showAndSubmit.js";
 import { map } from "./profileFunc/map";
-import {Occupation,Header, HeadShot, Diploma,Profile_info, Contact, SocialMedia} from './profileComp/Main';
+import {OccupationTable,Header, HeadShot, Diploma,Profile_info, Contact, SocialMedia} from './profileComp/Main';
 import handleWorkChange from './profileFunc/handleWorkChange';
 import rmOccupation from './profileFunc/rmOccupation';
 
@@ -236,41 +236,17 @@ class Profile extends Component {
                 Work Experience
               </div>
               <div id="Profile_occupation_container" className="mt-1">
-                <table
-                  id="Profile_occupation_table"
-                  className="table table-responsive col-12"
-                >
-                  <thead>
-                    <tr style={{ borderBottom: "2px white solid" }}>
-                      <th>Occupation</th>
-                      <th>Position</th>
-                      <th>Company</th>
-                      <th>
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault()
-                            this.setState(state=>({work:[...state.work,{O:"",P:"",C:"",show:true}],
-                              hasChanged:{...state.hasChanged,work:true}
-                            }))
-                          }}
-                          id="Profile_addOccupation"
-                        >
-                          <img
-                            src={data.add_icon}
-                            alt="add_icon"
-                            className="Profile_remove_icon"
-                          ></img>
-                        </button>
-                      </th>
-                    </tr>
-                    <Occupation
-                      work={this.state.work}
-                      handleChange={this.handleWorkChange}
-                      rmOccupation={this.rmOccupation}
-                      editmode={this.state.editmode}
-                    />
-                  </thead>
-                </table>
+                <OccupationTable
+                  addOcp={(e)=>{
+                      e.preventDefault()
+                      this.setState(state=>({work:[...state.work,{O:"",P:"",C:"",show:true}],
+                          hasChanged:{...state.hasChanged,work:true}
+                      }))
+                  }}
+                  {...this.state}
+                  handleWorkChange={this.handleWorkChange}
+                  rmOccupation={this.rmOccupation}
+                />
                 {/* <div className="form-group row mx-auto">
                   <label className="col-form-label col-4 Profile_info_label">
                     JobID
