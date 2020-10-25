@@ -18,9 +18,9 @@ export function handleImageChange(e){
 	} catch (error) {
 		
 	}
-	var hasChanged = {...this.state.hasChanged}
-	hasChanged.userimage = true;
-	this.setState({hasChanged})
+	// var hasChanged = {...this.state.hasChanged}
+	// hasChanged.userimage = true;
+	this.setState(state=>({hasChanged:{...state.hasChanged,userimage:true}}))
 }
 
 export function handleCheckChange(event){
