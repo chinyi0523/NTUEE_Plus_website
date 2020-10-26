@@ -1,15 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const ValidSend = require("../../../validation/control");//若valid未通過則res.send false
-const ValidTest = require("../../../validation/validation");
+const valid = require("../../../validation");
 
 router.post("/forget",
-	ValidTest('forget'),
-	ValidSend,
+	valid('forget'),
 	require("./forget"));
 router.post("/activation",
-	ValidTest('activation'),
-	ValidSend,
+	valid('activation'),
     require("./activation"));
 
 module.exports = router;

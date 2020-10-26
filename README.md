@@ -37,6 +37,10 @@ $ npm start
 |葉星宏|-|b08901015|sab93667|X|X|X|X|X|
 |崔翰清||b09901031|hackhaha1|V|X|X|X|X|
 
+### 1026 進度 by 君輔
+* searchVisual新增valid，驗證學號長度
+* searchVisual的account允許模糊搜尋，輸入b079010xx可找到b07901029,b07901014,...，希望沒啥資安問題
+
 ### 1013 進度 by 維恩
 * 將網頁上大的圖片從git刪掉（主要是人的照片），並用imgur存起來，client/src/images裡每個資料夾有一個json檔存有全部的連結（包括所有圖片）
 * 修改前端使用到這些圖片的js檔（更改import的檔案及變數名稱）

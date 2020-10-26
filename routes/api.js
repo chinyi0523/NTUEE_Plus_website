@@ -1,8 +1,8 @@
 //routes/api.js 控管後端所有頁面部屬 
 const express = require("express");
 const router = express.Router();
-
 // const asyncHandler = require("express-async-handler");//for aysnc err handling
+
 //test
 router.get("/testClient",function(req,res){
     const path = require('path');
@@ -15,11 +15,11 @@ router.post("/testRoute",require("./test/testRoute"))
 //login, loginFB, register, registerFB
 router.use(require("./srcs/out/account/main"));
 //forget, activation
-router.use(require("./srcs/out/forget/main"));
+router.use(require("./srcs/out/forget"));
 
 //in
 //Auth
-router.use(require("./srcs/in/Auth"));
+router.use(require("./srcs/in/isAuth"));
 //showVisual, chVisual, searchVisual
 router.use(require("./srcs/in/profile/main"));
 //showPerson, chLogin, isLogin, logout

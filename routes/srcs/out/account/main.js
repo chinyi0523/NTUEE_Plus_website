@@ -1,24 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const ValidSend = require("../../../validation/control");//若valid未通過則res.send false
-const ValidTest = require("../../../validation/validation");
-const ImgGet = require('../../../middleware/multer');
+const valid = require("../../../validation");
+const getImg = require('../../../middleware/multer');
 
 router.post("/login",
-	ValidTest('login'),
-	ValidSend,
+	valid('login'),
 	require("./login"));
 router.post("/loginFB",
 	require("./loginFB"));
 router.post("/register",
-	ImgGet('file'),
-	ValidTest('register'),
-	ValidSend,
+	getImg('file'),
+	valid('register'),
 	require("./register"));
 router.post("/registerFB",
-	ImgGet('file'),
-	ValidTest("registerFB"),
-	ValidSend,
+	getImg('file'),
+	valid("registerFB"),
 	require("./registerFB"));
 router.post("/logout",require("./logout"));
 router.post('/isLogin',

@@ -3,11 +3,15 @@ const {D1,D2,D3} = require("./dataType");
 module.exports = function(req){
 	let query=[]
 	D1.forEach(key=>{
-		if(req.body[key]!==undefined){
+		const val = req.body[key]
+		if(val!==undefined){
 			const Q1 = {};
-			Q1[key+".data"] = req.body[key];
+			Q1[key+".data"] = val;
 			Q1[key+".show"] = true;
 			query.push(Q1);
+			if(key==='account' && val.includes('x')){
+				Q1[key+".data"]={$regex:new RegExp(val.replace(/x/g,'.'))} //regexp
+			}
 		}
 	})
 	Object.entries(D2).forEach(([key,element])=>{//[education,[major,...]]

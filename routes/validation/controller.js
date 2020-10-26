@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 
-const RegValid = (req,res,next)=>{
+const validationHandling = (req,res,next)=>{
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {
 		console.log("errors=",errors);
@@ -12,4 +12,4 @@ const RegValid = (req,res,next)=>{
 		return next();
 	}
 }
-module.exports=RegValid;
+module.exports=validationHandling;
