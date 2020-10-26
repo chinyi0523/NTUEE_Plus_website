@@ -15,7 +15,7 @@ router.post("/testRoute",require("./test/testRoute"))
 //login, loginFB, register, registerFB
 router.use(require("./srcs/out/account/main"));
 //forget, activation
-router.use(require("./srcs/out/forget"));
+router.use(require("./srcs/out/forget/main"));
 
 //in
 //Auth
