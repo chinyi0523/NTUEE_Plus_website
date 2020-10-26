@@ -20,6 +20,9 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [htmlPlugin],
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   module: {
     rules: [
       {
