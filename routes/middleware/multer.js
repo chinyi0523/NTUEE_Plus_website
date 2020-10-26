@@ -18,7 +18,7 @@ const upload = multer({
 })
 
 const myMulter = function(method){//method is filename, ex: file
-	const doUpload=upload.single(method)
+	const doUpload = upload.single(method)
 	return function(req,res,next){
 		doUpload(req,res,function(err){
 			if (req.fileValidationError) {
