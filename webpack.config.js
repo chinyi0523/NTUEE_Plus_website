@@ -20,13 +20,17 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [htmlPlugin],
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
+          options: require('./babel.config')
         }
       },
       {
