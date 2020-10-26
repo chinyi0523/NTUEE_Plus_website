@@ -3,10 +3,10 @@ const path = require('path');
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./client/public/index.html", 
   filename: "./index.html",
-  favicon: './client/public/favicon.ico',//favicon路径
-  minify: { //压缩HTML文件
-    removeComments: true, //移除HTML中的注释
-    collapseWhitespace: false //删除空白符与换行符
+  favicon: './client/public/favicon.ico',//favicon路徑
+  minify: { //壓縮html
+    removeComments: true, //移除html註釋
+    collapseWhitespace: false //刪除空白和換行
   }
 });
 module.exports = {
@@ -20,15 +20,22 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [htmlPlugin],
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
         use: {
-          loader: "babel-loader"
+            loader: 'babel-loader',
+            options:{
+              "presets": ["@babel/preset-env", "@babel/preset-react"],
+              "plugins": ["@babel/transform-runtime","@babel/plugin-proposal-class-properties"]
+            }
         }
-      },
+    },
       {
         test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
