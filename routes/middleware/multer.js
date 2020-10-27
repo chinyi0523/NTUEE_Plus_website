@@ -24,7 +24,7 @@ const myMulter = function(method){//method is filename, ex: file
 			if (req.fileValidationError) {
 				return res.status(400).send({description:req.fileValidationError})
 			}else if(err instanceof multer.MulterError){
-				console.log('Merr',err);
+				console.log('multer error when uploading ',err);
 				return res.status(400).send({description:err.message})
 			}else if(err){
 				return res.status(400).send({description:err})
