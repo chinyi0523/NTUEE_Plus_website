@@ -15,7 +15,7 @@ $ npm run dev
 ```bash
 $ node index.js
 或
-$ nodemon index.js //有可能會很卡 不建議
+$ npm run watch:server //nodemon即時更新
 ```
 正式跑
 ```bash
@@ -36,6 +36,11 @@ $ npm start
 |陳君輔|後端|b07901029|Claude0311|V|X|X|V|V|
 |葉星宏|-|b08901015|sab93667|X|X|X|X|X|
 |崔翰清||b09901031|hackhaha1|V|X|X|X|X|
+
+### 1109 進度 by 沒什麼考試的君輔
+* email使用template：jsDOM讀取html模板，並用jquery變更特定element，詳細可參考forget/mail
+* 有空可以請前端的人刻responsive email模板
+* 把file/validation/mail這些之後應該很常重複用到的東西都放到middleware，然後寫了點JS Documentation Standards
 
 ### 1026 進度 by 君輔
 * searchVisual新增valid，驗證學號長度

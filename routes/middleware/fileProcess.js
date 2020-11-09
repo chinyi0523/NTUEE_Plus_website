@@ -22,7 +22,7 @@ const upload = multer({
  * @param  {String} filename filename in multer 
  * @return {List}      callback functions to put in router
  */
-module.exports = (filename)=>{
+module.exports = (filename) => {
 	const doUpload = upload.single(filename)
 	return function(req,res,next){
 		doUpload(req,res,function(err){
@@ -32,7 +32,7 @@ module.exports = (filename)=>{
 				console.log('multer error when uploading ',err);
 				return res.status(400).send({description:err.message})
 			}else if(err){
-				return res.status(400).send({description:err})
+				return res.status(400).send({description:'檔案讀取發生錯誤'})
 			}
 			next()
 		})
