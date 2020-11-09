@@ -1,6 +1,7 @@
 const Visual = require('../../../Schemas/user_visual');
 const Activation = require('../../../Schemas/activation');
 const sendmail = require('../../../middleware/mail');
+const template = require('./mail/template_generator')
 
 async function insertActive(name,act){
 	const obj = await Activation.findOne({account:name});
@@ -35,7 +36,7 @@ module.exports = async function (req, res, next) {
 		//寄信
 		const hylink = `${req.protocol}://${req.get('host')}/ResetPassword/${account}/${randomNum}`
 		const hy_br = `${req.protocol}://${req.get('host')}/<wbr>ResetPassword/<wbr>${account}/<wbr>${randomNum}`
-		const htmlText = await require('./mail/template_generator')(hylink,hy_br)
+		const htmlText = await template(hylink,hy_br)
 		await sendmail(email, '重設密碼(一小時後到期)', htmlText)
 		if(obj.publicEmail.show) return res.status(200).send({email})
 		else return res.status(200).send({email:"您的私人信箱"})

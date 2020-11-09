@@ -4,7 +4,7 @@ const path = require('path')
 /**
  * generate email with beautiful button
  * @param  {String} href hyper link to the reset password page
- * @param  {String} href_br hyper link for user to copy (contain <wbr>)
+ * @param  {String} href_br hyper link for user to copy (contain \<wbr\>)
  * @return  {String} html text
  */
 module.exports = async (href,href_br) => {
