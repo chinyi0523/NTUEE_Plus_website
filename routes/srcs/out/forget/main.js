@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const valid = require("../../../validation");
+const valid = require("../../../middleware/validation");
 
 router.post("/forget",
 	valid('forget'),

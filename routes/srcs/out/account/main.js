@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const valid = require("../../../validation");
-const getImg = require('../../../middleware/multer');
+const valid = require("../../../middleware/validation");
+const getImg = require('../../../middleware/fileProcess');
 
 router.post("/login",
 	valid('login'),

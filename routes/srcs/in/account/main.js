@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 // const Auth = require("../Auth");
-const valid = require("../../../validation");
+const valid = require("../../../middleware/validation");
 // const ImgGet = require('../../../middleware/multer');
 
 router.post("/showPersonal",

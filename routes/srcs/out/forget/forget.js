@@ -1,6 +1,6 @@
 const Visual = require('../../../Schemas/user_visual');
 const Activation = require('../../../Schemas/activation');
-const sendmail = require('./mail/send');
+const sendmail = require('../../../middleware/mail');
 
 async function insertActive(name,act){
 	const obj = await Activation.findOne({account:name});
@@ -8,7 +8,7 @@ async function insertActive(name,act){
 		await new Activation({
 			account:name,
 			active:act
-		}).save();
+		}).save()
 	}else{
 		await Activation.updateOne(
 			{account:name},
@@ -16,29 +16,29 @@ async function insertActive(name,act){
 				active:act,
 				createdAt:Date.now()
 			}}
-		);
+		)
 	}
 }
 
 
 module.exports = async function (req, res, next) {
-	const account = req.body.account.toLowerCase();
+	const account = req.body.account.toLowerCase()
 	
 	const query = {"account.data": account};//, question:question};
 	try{
 		const obj = await Visual.findOne(query,'publicEmail')
 		if(!obj) return res.status(404).send({description:"帳號不存在"});
-		if(!obj.publicEmail.data) return res.status(404).send({description:"未設定信箱，請聯絡管理員"});
+		if(!obj.publicEmail.data) return res.status(404).send({description:"未設定信箱，請聯絡管理員"})
 		const email = obj.publicEmail.data;
 		const randomNum = Math.random().toString(36).substr(2); //產生亂碼
 		await insertActive(account,randomNum);
+		//寄信
 		const hylink = `${req.protocol}://${req.get('host')}/ResetPassword/${account}/${randomNum}`
 		const hy_br = `${req.protocol}://${req.get('host')}/<wbr>ResetPassword/<wbr>${account}/<wbr>${randomNum}`
 		const htmlText = await require('./mail/template_generator')(hylink,hy_br)
-		// const htmlText = '<h1>htllo world</h1>'
-		await sendmail(email,htmlText);
-		if(obj.publicEmail.show) return res.status(200).send({email});
-		else return res.status(200).send({email:"您的私人信箱"});
+		await sendmail(email, '重設密碼(一小時後到期)', htmlText)
+		if(obj.publicEmail.show) return res.status(200).send({email})
+		else return res.status(200).send({email:"您的私人信箱"})
 	}catch(e){
 		console.log(e)
 		return res.status(500).send({description:"資料庫錯誤"})
