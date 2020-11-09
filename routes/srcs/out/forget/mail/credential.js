@@ -3,7 +3,7 @@
 module.exports = {
   cookieSecret: 'your cookie secret goes here',
   gmail: {
-    user: 'ntueeplus2020@gmail.com',
-    password: 'hkflkyylafkimboz' //這不是真正的密碼，不用試了:)
+    user: 'ck1041016@gl.ck.tp.edu.tw',
+    password: 'fnukkdjhjkyslhuv'//'hkflkyylafkimboz' //這不是真正的密碼，不用試了:)
   }
 };

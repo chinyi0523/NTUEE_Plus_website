@@ -32,8 +32,11 @@ module.exports = async function (req, res, next) {
 		const email = obj.publicEmail.data;
 		const randomNum = Math.random().toString(36).substr(2); //產生亂碼
 		await insertActive(account,randomNum);
-		const hylink = '<a href="'+req.protocol+"://"+req.get('host')+'/ResetPassword/'+account+'/'+randomNum+'">點擊進入變更密碼頁面</a>';
-		await sendmail(email,hylink);
+		const hylink = `${req.protocol}://${req.get('host')}/ResetPassword/${account}/${randomNum}`
+		const hy_br = `${req.protocol}://${req.get('host')}/<wbr>ResetPassword/<wbr>${account}/<wbr>${randomNum}`
+		const htmlText = await require('./mail/template_generator')(hylink,hy_br)
+		// const htmlText = '<h1>htllo world</h1>'
+		await sendmail(email,htmlText);
 		if(obj.publicEmail.show) return res.status(200).send({email});
 		else return res.status(200).send({email:"您的私人信箱"});
 	}catch(e){

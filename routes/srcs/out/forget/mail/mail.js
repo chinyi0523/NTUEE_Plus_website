@@ -18,7 +18,7 @@ module.exports = async function (mail){
             if(error) {
                 reject(error)
             }
-            console.log('mail sent:', info.response);
+            console.log('mail sent:', info)//.response);
             resolve(true)
         });
     })
