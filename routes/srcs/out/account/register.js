@@ -4,7 +4,7 @@ const crypto = require("crypto");
 const Visual = require('../../../Schemas/user_visual');
 
 /*新增一筆使用者資料*/
-async function insert(username,account,psw,file){
+async function insert(username,account,psw,file,visual){
     await new Login({
         username : username,
         account: account,
@@ -12,23 +12,24 @@ async function insert(username,account,psw,file){
         img:{
             data:file.buffer,
             contentType:file.mimetype
-        }
+        },
+        visual:visual._id
     }).save();
 }
 
-async function insertVisual(name,account){
-    await new Visual({
+async function insertVisual(name,account,email){
+    return await new Visual({
         username:{data : name},
-        account:{data: account}
+        account:{data: account},
+        publicEmail:{data: email}
     }).save();
 }
 module.exports = async function (req, res) {
-    const username = req.body.username;
+    const {username,password,Email} = req.body;
     const account = req.body.account.toLowerCase();
-    const userPsw = req.body.password;
 
     //密碼加密
-    const newPsw = crypto.createHash("md5").update(userPsw).digest("hex");
+    const newPsw = crypto.createHash("md5").update(password).digest("hex");
 
     if(req.file===undefined) return res.status(400).send({description:"請添加照片"});
     
@@ -36,8 +37,8 @@ module.exports = async function (req, res) {
         const query = {account};
         const isRegistered = await Login.exists(query);
         if(isRegistered) return res.status(403).send({description:"帳號已存在"});
-        await insert(username,account,newPsw,req.file);
-        await insertVisual(username,account);
+        const user = await insertVisual(username,account,Email);
+        await insert(username,account,newPsw,req.file,user);
         req.session.loginName = username;
         req.session.loginAccount = account;
         return res.status(201).send({username});

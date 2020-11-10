@@ -34,16 +34,18 @@ module.exports = function(req){
         const data = req.body[key]
         // console.log("OCC=",data,Array.isArray(data))
         try{
-            output[key] = []
+            Occupation = []
             data.forEach(occupation=>{
                 // console.log(Object.keys(occupation))
                 const {O,P,C,show} = JSON.parse(occupation)//{O,P,C,show}
                 console.log({O,P,C,show})
-                output[key].push({O,P,C,show})
+                Occupation.push({O,P,C,show})
             })
+            output[key] = Occupation
         }catch(e){
-            console.log(e)
-            console.log(data)
+            // console.log(e)
+            // console.log(data)
+            console.log("skip work")
         }
     })
     if(req.file){

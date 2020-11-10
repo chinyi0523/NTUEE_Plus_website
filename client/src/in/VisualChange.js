@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import "./VisualChange.css"
-import Profile from "./profile"
+import Profile from "./profile_new"
 //import axios from "axios";
 
 class VisualChange extends Component {

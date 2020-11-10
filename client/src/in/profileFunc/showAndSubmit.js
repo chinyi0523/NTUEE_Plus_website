@@ -5,37 +5,23 @@ export function showVisual(){
 	axios.post("/api/showVisual", 
 		{}
 	).then(res => {//{data:output}
-					let D = res.data.data;
-					let sta = {}
-					map.forEach(elements=>{
-						//(elements[0]==="userimage") && (elements
-						console.log(elements)
-						let arr = elements[1].split('.')
-						let val = D;
-						let i;
-						for(i=0;i<arr.length;i++){
-							val = val[arr[i]];
-							if(val===undefined){
-								val=(elements.length<=2)?'':elements[2]
-								break
-							}
-						}
-						sta[elements[0]]=val;
-					})
-					sta.InitWorkNum = res.data.data.Occupation.length;
-					sta.imagePreviewUrl = sta.userimage;
-					console.log('sta = ',sta)
-					this.setState(sta);
-					res.data.data.Occupation.forEach((item,index)=>{
-						this.setState({
-							[`work_O_${index+1}`] : (item.O===undefined)?'':item.O,
-							[`work_P_${index+1}`] : (item.P===undefined)?'':item.P,
-							[`work_C_${index+1}`] : (item.C===undefined)?'':item.C,
-							[`work_show_${index+1}`] : item.show
-						},function(){
-							this.addOccupation(true)
-						});
-					})
+		let D = res.data.data;
+		let sta = {}
+		map.forEach(([frontKey,backKey])=>{
+			let arr = backKey.split('.')
+			try{
+				if(arr.length===1) sta[frontKey] = D[arr[0]]
+				else if(arr.length===2) sta[frontKey] = D[arr[0]][arr[1]]
+				else if(arr.length===3) sta[frontKey] = D[arr[0]][arr[1]][arr[2]]
+			}catch{
+				sta[frontKey] = ""
+			}
+		})
+		sta.imagePreviewUrl = sta.userimage;
+		console.log('sta = ',sta)
+		sta.work = D.Occupation
+
+		this.setState(sta);
 	}).catch(err=>{
 		// console.log(err)
 		(err.response.data.description) && alert('錯誤\n'+err.response.data.description);
@@ -55,16 +41,19 @@ export function handleSubmit(event){
 				//sta[elements[1]]=this.state[elements[0]]//資料形式從{}改成FormData
 			})
 			// let Oc = []
-			for(let workL = 1;(workL<=this.state.Occupation_number||workL<=this.state.InitWorkNum);workL++){
-				if(this.state.hasChanged[`work_${workL}`]!==true){
-					sta.append("Occupation[]", JSON.stringify({
-						O: this.state[`work_O_${workL}`],
-						C: this.state[`work_C_${workL}`],
-						P: this.state[`work_P_${workL}`],
-						show: true
-					}))
-				}
-			}
+			if(this.state.hasChanged.work) this.state.work.forEach(({O,P,C,show})=>{
+				sta.append("Occupation[]", JSON.stringify({O,P,C,show}))
+			})
+			// for(let workL = 1;(workL<=this.state.Occupation_number||workL<=this.state.InitWorkNum);workL++){
+			// 	if(this.state.hasChanged[`work_${workL}`]!==true){
+			// 		sta.append("Occupation[]", JSON.stringify({
+			// 			O: this.state[`work_O_${workL}`],
+			// 			C: this.state[`work_C_${workL}`],
+			// 			P: this.state[`work_P_${workL}`],
+			// 			show: true
+			// 		}))
+			// 	}
+			// }
 			// console.log("Oc",Oc)
 			// sta.append("Occupation[]",Oc)
 			// let toModify = {}
@@ -130,8 +119,8 @@ export function handleSubmit(event){
 			).then(res => {
 				alert("修改成功!");
 					var hasChanged = {...this.state.hasChanged}
-					map.forEach(element=>{
-						hasChanged[element[0]] = false;
+					Object.keys(hasChanged).forEach(element=>{
+						hasChanged[element] = false;
 					})
 					this.setState({hasChanged});
 					// window.location = "/in"
