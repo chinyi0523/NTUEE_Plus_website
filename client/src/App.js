@@ -15,6 +15,7 @@ import {
 //import { Home_in_page, Column_page,Recruit_study_page, Main_in_page } from './in/pages_in';
 //import PrivateRoute from './component/PrivateRoute';
 import Register_app from "./out/register_in/Register_app";
+import Test from "./test/Test";
 import Login from "./out/Login";
 // import {isLoginChecker} from './in/isLogin';
 // import Footer from './component/Footer/Footer'
@@ -140,6 +141,7 @@ const App = () => {
       />
       <Route path="/History" component={History_page} />
       <Route path="/Policy" component={Policy_page} />
+      <Route path="/Test" component={Test} />
       <Footer />
     </div>
   );

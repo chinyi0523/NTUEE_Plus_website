@@ -4,20 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>測試頁</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script> -->
 </head>
 <body>
-  <form id="testForm">
-	<input type="text" id="pUrl" placeholder="url" value="/api/testRoute">
+  <form>
+    <label>/api/</label>
+    <input value='testRoute'/>
+    <input type='submit'/>
+  </form>
+  <button id='addItem'>新增欄位</button>
+  <table>
+    <thead>
+      <tr>
+        <th>key</th>
+        <th>value</th>
+        <th>sepcial?</th>
+      </tr>
+    </thead>
+    <tbody id='output'>
+
+    </tbody>
+  </table>
+  <!-- <form id="testForm">
+	  <input type="text" id="pUrl" placeholder="url" value="/api/testRoute">
     <input type="submit" />
   </form>
   <textarea form="testForm" id="taid" cols="35" wrap="soft"></textarea>
   <input type="file" id="selectFiles" value="Import" /><br />
-  <button id="import">Import file</button>
-  <script>
+  <button id="import">Import file</button> -->
+  <!-- <script>
   document.getElementById('import').onclick = function() {
     var files = document.getElementById('selectFiles').files;
   console.log(files);
@@ -74,6 +91,6 @@
            }
          });
 });
-  </script>
+  </script> -->
 </body>
 </html>
