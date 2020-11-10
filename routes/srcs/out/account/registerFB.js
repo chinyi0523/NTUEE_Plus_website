@@ -31,7 +31,6 @@ async function insertVisual(name,account){
         username:{data : name},
         account:{data: account}
     }).save();
-      
     //   user.save(function(err,res){
     //       if(err){
     //           console.log(err);
