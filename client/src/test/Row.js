@@ -2,6 +2,7 @@ import React, { Component , useState} from 'react';
 import Arr from './Container/Arr'
 import File from './Container/File';
 import Obj from './Container/Obj'
+import ObjArr from './Container/ObjArr'
 const Row = ({setVal,key2,val,setKey,setTrans,setWithFile})=>{
     const valType = ['pure string','file','object','array','object array']
     const [selected,setSlc] = useState(valType[0])
@@ -21,9 +22,36 @@ const Row = ({setVal,key2,val,setKey,setTrans,setWithFile})=>{
             <input value={key2} onChange={e=>{setKey(e.target.value)}}/>
             <select value={selected} onChange={(e)=>{
                 if(e.target.value==='file') setWithFile(true)
-                else if(e.target.value==='object') setVal([])
-                else if(e.target.value==='object array') setVal([])
-                else if(e.target.value==='array') setVal([])
+                else if(e.target.value==='object') {
+                    setVal([{key:'key',value:'val'}])
+                    setTrans(input=>{
+                        const output = {}
+                        input.forEach(({key,value})=>{
+                            output[key] = value
+                        })
+                        return output
+                    })
+                }
+                else if(e.target.value==='object array'){
+                    setVal([[{key:'key',value:'val'},{key:'key2',value:'val2'}]])
+                    setTrans(input=>{//input=val,output=arr
+                        const inTrans = x => {
+                            const output = {}
+                            x.forEach(({key,value})=>{
+                                output[key] = value
+                            })
+                            return output
+                        }
+                        const output = []
+                        input.forEach((arr)=>{
+                            output.push(inTrans(arr))
+                        })
+                        return output
+                    })
+                }
+                else if(e.target.value==='array'){
+                    setVal(['first item'])
+                }
                 setSlc(e.target.value)
             }}>
                 {valType.map(typ=>{

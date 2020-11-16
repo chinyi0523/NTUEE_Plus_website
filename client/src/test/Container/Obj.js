@@ -19,7 +19,7 @@ export default ({val,setVal,setTrans})=>{
     // }
     return (
         <>
-        <button onClick={e=>{setVal([...val,{key:'',value:''}])}}>add key/val pair</button>
+        <button onClick={e=>{setVal([...val,{key:`key${val.length+1}`,value:`val${val.length+1}`}])}}>add key/val pair</button>
         <ul>
             {(val).map(({key,value},index)=>{
             return <li>

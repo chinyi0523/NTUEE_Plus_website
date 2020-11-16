@@ -40,7 +40,7 @@ const Test = ()=>{
                     console.log(res)
                 }}>submit</button>
             </div>
-            <button onClick={(e)=>{setStates([...states,{key:'',val:'',transformer:x=>x}])}}>addItem</button>
+            <button onClick={(e)=>{setStates([...states,{key:`key${states.length+1}`,val:`val${states.length+1}`,transformer:x=>x}])}}>addItem</button>
             <ul>
                 {states.map(({key,val},index)=>{
                     return (
