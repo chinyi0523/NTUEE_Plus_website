@@ -1,12 +1,13 @@
 import React, { Component , useState} from 'react';
 import axios from 'axios'
+import Row from './Row';
 
 const handleFile = async (url,states)=>{
     const data = new FormData()
-    states.forEach(({key,val,file})=>{
-        if(!file) data.append(key,val)
-        else data.append(key,file)
+    states.forEach(({key,val,transformer})=>{
+        data.append(key,transformer(val))
     })
+    console.log(data)
     const config = {
         headers: {
             'content-type': 'multipart/form-data'
@@ -16,18 +17,19 @@ const handleFile = async (url,states)=>{
 }
 const handleSubmit = async (url,states)=>{
     const data = {}
-    states.forEach(({key,val})=>{
-        data[key]
+    states.forEach(({key,val,transformer})=>{
+        data[key] = transformer(val)
     })
+    console.log(data,states)
     return await axios.post(url,data)
 }
 
 const Test = ()=>{
     const [url,setUrl] = useState('testRoute')
-    const [states,setStates] = useState([{key:"KEY",val:"VAL"}])
+    const [states,setStates] = useState([{key:"KEY",val:"VAL",transformer:(x)=>x}])
     const [withFile,setWithFile] = useState(false)
     return(
-        <div style={{'background-color':'#BBB'}}>
+        <div style={{'backgroundColor':'#BBB'}}>
             <div name='toSend'>
                 <label>/api/</label>
                 <input value={url} onChange={(e)=>{setUrl(e.target.value)}}/>
@@ -38,32 +40,29 @@ const Test = ()=>{
                     console.log(res)
                 }}>submit</button>
             </div>
-            <button onClick={(e)=>{setStates([...states,{key:'',val:''}])}}>addItem</button>
+            <button onClick={(e)=>{setStates([...states,{key:'',val:'',transformer:x=>x}])}}>addItem</button>
             <ul>
                 {states.map(({key,val},index)=>{
                     return (
-                        <li>
-                            <input value={key} onChange={(e)=>{
+                        <Row setVal={(val)=>{
                                 const fakeList = states
-                                fakeList[index].key = e.target.value
+                                fakeList[index].val = val
                                 setStates([...fakeList])
-                            }}/>
-                            <input value={val} onChange={(e)=>{
+                            }}
+                            setKey={(key)=>{
                                 const fakeList = states
-                                fakeList[index].val = e.target.value
+                                fakeList[index].key = key
                                 setStates([...fakeList])
-                            }}/>
-                            <input type="file"
-                                onChange={(e)=>{
-                                    const fakeList = states
-                                    fakeList[index].file = e.target.files[0]
-                                    fakeList[index].val = e.target.files[0].name
-                                    console.log(e.target.files[0])
-                                    setStates([...fakeList])
-                                    setWithFile(true)
-                                }}
-                            />
-                        </li>
+                            }}
+                            setTrans={(trans)=>{
+                                const fakeList = states
+                                fakeList[index].transformer = trans
+                                setStates([...fakeList])
+                            }}
+                            setWithFile={setWithFile}
+                            key2={key}
+                            val={val}
+                        />
                     )
                 })}
             </ul>
