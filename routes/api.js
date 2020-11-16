@@ -4,6 +4,7 @@ const router = express.Router();
 // const asyncHandler = require("express-async-handler");//for aysnc err handling
 if(process.env.NODE_ENV==='development'){
     //test
+    console.log('running in dev mode')
     router.get("/testClient",function(req,res){
         const path = require('path');
         // console.log("use test");
