@@ -2,14 +2,15 @@
 const express = require("express");
 const router = express.Router();
 // const asyncHandler = require("express-async-handler");//for aysnc err handling
-
-//test
-router.get("/testClient",function(req,res){
-    const path = require('path');
-    // console.log("use test");
-    res.sendFile(path.join(__dirname+"/test/testClient.html"))
-})
-router.post("/testRoute",require("./test/testRoute"))
+if(process.env.NODE_ENV==='development'){
+    //test
+    router.get("/testClient",function(req,res){
+        const path = require('path');
+        // console.log("use test");
+        res.sendFile(path.join(__dirname+"/test/testClient.html"))
+    })
+    router.post("/testRoute",require("./test/testRoute"))
+}
 
 //out
 //login, loginFB, register, registerFB
