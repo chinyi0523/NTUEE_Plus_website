@@ -1,4 +1,4 @@
-const Column = require('../../../../Schemas/column');
+const Column = require('../../../../Schemas/column_outline');
 
 module.exports = async function (name){
 	const objImg = await Column.findOne({filename:name})
