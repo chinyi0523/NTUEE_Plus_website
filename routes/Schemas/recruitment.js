@@ -17,8 +17,32 @@ const Recruitment_Schema = new Schema({
 		requirement: String,
 		description: String
 	},
-	//image:eesa_icon,
-  id: String
+	img: {
+		data: { type: Buffer },
+		contentType: { type: String }
+	},
+//   id: String
 })
+
+Recruitment_Schema.virtual('imgSrc').get(function() {
+	try{
+		// const prefix="data:"+this.userimage.contentType+";base64,"
+		// const img = new Buffer(this.userimage.data, 'binary').toString('base64');
+		// return prefix+img;
+		return `data:${this.img.contentType};base64,${new Buffer(this.img.data, 'binary').toString('base64')}`
+	}catch{
+		return ""
+	}
+})
+
+Recruitment_Schema.methods.getPublic = function() {
+	console.log(this.title)
+	return {
+		title:this.title,
+		info:this.info,
+		spec:this.spec,
+		image:this.imgSrc
+	}
+};
 
 module.exports = mongoose.model('Recruitment', Recruitment_Schema);
