@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 
 const DB_URL1 = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.fctiy.mongodb.net/heroku_kbtrwz4h?retryWrites=true&w=majority'
 const DB_URL2 = 'mongodb://localhost:27017/eeplus';
-const DB_URL3 = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.gbnte.mongodb.net/EEplus?retryWrites=true&w=majority'
+// const DB_URL3 = 'mongodb+srv://ntueeplus:ntueeplus2020@cluster0.gbnte.mongodb.net/EEplus?retryWrites=true&w=majority'
 const DB_URL = process.env.MONGO_URI||DB_URL1
 //"mongodb://127.0.0.1/27021"
 console.log('mongoose connect to： '+DB_URL);
