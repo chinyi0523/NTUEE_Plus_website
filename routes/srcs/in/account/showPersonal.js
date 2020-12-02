@@ -2,6 +2,17 @@
 const { dbCatch } = require('../../../error');
 const Login = require('../../../Schemas/user_login');
 
+/**
+ * @api {post} /chPassword 重設密碼
+ * @apiName chPassword
+ * @apiGroup In/account
+ * @apiDescription 重設密碼
+ * 
+ * @apiSuccess (201) username 使用者名字
+ * @apiSuccess (201) account 使用者學號
+ * 
+ * @apiError (500) {String} description 資料庫錯誤
+ */
 module.exports = async function (req, res, next) {
     const session_account = req.session.loginAccount
 

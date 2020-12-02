@@ -1,5 +1,3 @@
-//後端isLogin
-
 const { ErrorHandler } = require("../../../error")
 
 /**
@@ -14,10 +12,6 @@ const { ErrorHandler } = require("../../../error")
  */
 module.exports = function (req, res, next) {
     const session_account = req.session.loginAccount
-    if(session_account){
-        return res.status(200).send({account:session_account})
-    }else{
-        // return res.status(403).send({description:'未登入'}); 
-        throw new ErrorHandler(403,'未登入')
-    }
+    if(session_account) return res.status(200).send({account:session_account})
+    else throw new ErrorHandler(403,'未登入')
 }

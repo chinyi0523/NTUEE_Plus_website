@@ -23,13 +23,33 @@ async function insertActive(name,act){
 }
 
 
+/**
+ * @api {post} /forget forget
+ * @apiName Forget
+ * @apiGroup Out/forget
+ * @apiDescription 忘記密碼，寄信
+ * 
+ * @apiparam {String} account 學號
+ * 
+ * @apiSuccess (200) {String} email 
+ * 	- 使用者填寫的email
+ * 	- "您的私人信箱"
+ * 
+ * @apiError (404) {String} description
+ *   - 帳號不存在
+ *   - 未設定信箱，請聯絡管理員
+ * @apiError (500) {String} description 
+ *   - 資料庫錯誤
+ *   - 信件範本讀取失敗
+ *   - 寄信失敗
+ */
 module.exports = async function (req, res, next) {
 	const account = req.body.account.toLowerCase()
 	
 	const query = {"account.data": account}
 	const obj = await Visual.findOne(query,'publicEmail').catch(dbCatch)
 	if(!obj) throw new ErrorHandler(404,'帳號不存在')
-	if(!obj.publicEmail.data) throw new ErrorHandler(404,"未設定信箱，請聯絡管理員")
+	if(!obj.publicEmail.data) throw new ErrorHandler(404,'未設定信箱，請聯絡管理員')
 	const email = obj.publicEmail.data
 	const randomNum = Math.random().toString(36).substr(2) //產生亂碼
 	await insertActive(account,randomNum).catch(dbCatch)

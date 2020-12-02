@@ -22,6 +22,27 @@ async function insertVisual(name,account){
         account:{data: account}
     }).save().catch(dbCatch)
 }
+
+
+/**
+ * @api {post} /registerFB registerFB
+ * @apiName RegisterFB
+ * @apiGroup Out/account
+ * @apiDescription 註冊(by facebook ID)
+ * 
+ * @apiHeaderExample {json} config
+                 { "content-type": "multipart/form-data" }
+ *
+ * @apiparam {String} account 學號
+ * @apiparam {String} username 使用者名字
+ * @apiparam {File} file 身分證明的照片(FB登入好像不用照片，做管理員api時跟我討論一下)
+ * 
+ * @apiSuccess (201) {String} username 使用者名字
+ * 
+ * @apiError (400) {String} description 請添加照片
+ * @apiError (403) {String} description 帳號已存在
+ * @apiError (500) {String} description 資料庫錯誤
+ */
 module.exports = async function (req, res) {
     const username = req.body.username;
     const account = req.body.account.toLowerCase();

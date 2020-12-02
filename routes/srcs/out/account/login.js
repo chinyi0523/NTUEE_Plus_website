@@ -15,13 +15,12 @@ const { dbCatch,ErrorHandler } = require('../../../error')
  * @apiSuccess (201) {String} username 登入者名字
  * @apiSuccess (201) {String} account 登入者學號
  * 
- * @apiError (404) {String} description "帳號不存在"
+ * @apiError (404) {String} description 帳號不存在
  * 
- * @apiError (401) {String} description "密碼錯誤"
+ * @apiError (401) {String} description 密碼錯誤
  * 
- * @apiError (500) {String} description "資料庫錯誤"
+ * @apiError (500) {String} description 資料庫錯誤
  */
-
 module.exports = async function (req, res, next) {
 	const account = req.body.account.toLowerCase()
 	const password = req.body.password

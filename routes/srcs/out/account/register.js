@@ -45,6 +45,7 @@ async function insertVisual(name,account,email){
  * 
  * @apiError (400) {String} description 請添加照片
  * @apiError (403) {String} description 帳號已存在
+ * 
  * @apiError (500) {String} description 資料庫錯誤
  */
 module.exports = async function (req, res) {
