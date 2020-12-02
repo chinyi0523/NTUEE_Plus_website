@@ -24,11 +24,11 @@ mongoose.set('useCreateIndex', true)
 mongoose.connect(DB_URL,{useNewUrlParser:true});
 
 mongoose.connection.on('disconnected',function(){
-    console.log('fail to connect'+DB_URL);
+    console.log('fail to connect '+DB_URL);
 })
 
 mongoose.connection.on('error',function(err){
-    console.log(err);
+    console.log(err.message);
 })
 
 module.exports = mongoose;

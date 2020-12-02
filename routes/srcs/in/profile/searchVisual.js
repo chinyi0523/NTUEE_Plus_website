@@ -2,8 +2,9 @@ const Visual = require('../../../Schemas/user_visual');
 const search = require('./DBquery/searchOr');
 const getPublic = require('./DBquery/getPublic');
 const { dbCatch } = require('../../../error');
+const asyncHandler = require('express-async-handler')
 
-module.exports = async function (req, res, next) {
+const searchVisual = async function (req, res, next) {
 	const query = search(req)
 	const objs = await Visual.find(query,{_id:0}).catch(dbCatch)
 	const users = []
@@ -12,3 +13,4 @@ module.exports = async function (req, res, next) {
 	})
 	return res.status(201).send({data:users})
 }
+module.exports = asyncHandler(searchVisual)

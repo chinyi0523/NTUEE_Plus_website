@@ -1,9 +1,8 @@
-//scrs/activation
-//處理express中 http://<hostname>/activation?name=<UserName>&active=<Gradled>
 const Activation = require('../../../Schemas/activation');
 const Login = require('../../../Schemas/user_login');
 const crypto = require("crypto");
 const { ErrorHandler, dbCatch } = require('../../../error');
+const asyncHandler = require('express-async-handler')
 
 /**
  * @api {post} /activation activation
@@ -20,7 +19,7 @@ const { ErrorHandler, dbCatch } = require('../../../error');
  * @apiError (401) {String} description 驗證碼已不存在
  * @apiError (500) {String} description 資料庫錯誤
  */
-module.exports = async function(req,res){
+const activate = async (req,res) => {
 	const {account,active,password} = req.body
 	const newPsw = crypto.createHash("md5").update(password).digest("hex")
 	
@@ -34,3 +33,4 @@ module.exports = async function(req,res){
 	Activation.deleteMany({account}).exec().catch(e=>{console.log(e.message)})
 	return res.status(200).end()
 }
+module.exports = asyncHandler(activate)

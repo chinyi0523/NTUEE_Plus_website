@@ -1,6 +1,7 @@
 //srcs/login.js
 const { dbCatch } = require('../../../error');
 const Login = require('../../../Schemas/user_login');
+const asyncHandler = require('express-async-handler')
 
 /**
  * @api {post} /chPassword 重設密碼
@@ -13,7 +14,7 @@ const Login = require('../../../Schemas/user_login');
  * 
  * @apiError (500) {String} description 資料庫錯誤
  */
-module.exports = async function (req, res, next) {
+const shPsw = async (req, res, next) => {
     const session_account = req.session.loginAccount
 
     const obj = await Login.findOne({account:session_account},"username account").catch(dbCatch)
@@ -24,3 +25,4 @@ module.exports = async function (req, res, next) {
         account:obj.account
     })
 }
+module.exports = asyncHandler(shPsw)

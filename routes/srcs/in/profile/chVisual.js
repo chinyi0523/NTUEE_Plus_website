@@ -2,7 +2,9 @@
 const { dbCatch, ErrorHandler } = require('../../../error');
 const Visual = require('../../../Schemas/user_visual');
 const updatePro = require('./DBquery/update');
-module.exports = async function (req, res, next) {
+const asyncHandler = require('express-async-handler')
+
+const chVisual = async (req, res, next)=>{
     const session_account = (req.session.loginAccount)
 
     const obj = await Visual.findOne({"account.data":session_account}).catch(dbCatch)
@@ -11,3 +13,4 @@ module.exports = async function (req, res, next) {
     await Visual.updateOne({"account.data":session_account},update).catch(dbCatch)
     return res.status(204).end()
 }
+module.exports = asyncHandler(chVisual)

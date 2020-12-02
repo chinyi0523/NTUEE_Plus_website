@@ -3,6 +3,7 @@ const Activation = require('../../../Schemas/activation');
 const sendmail = require('../../../middleware/mail');
 const template = require('./mail/template_generator');
 const { dbCatch, ErrorHandler } = require('../../../error');
+const asyncHandler = require('express-async-handler')
 
 async function insertActive(name,act){
 	const obj = await Activation.findOne({account:name});
@@ -43,7 +44,7 @@ async function insertActive(name,act){
  *   - 信件範本讀取失敗
  *   - 寄信失敗
  */
-module.exports = async function (req, res, next) {
+const forget = async (req, res, next) => {
 	const account = req.body.account.toLowerCase()
 	
 	const query = {"account.data": account}
@@ -62,3 +63,4 @@ module.exports = async function (req, res, next) {
 	if(obj.publicEmail.show) return res.status(200).send({email})
 	else return res.status(200).send({email:"您的私人信箱"})
 }
+module.exports = asyncHandler(forget)

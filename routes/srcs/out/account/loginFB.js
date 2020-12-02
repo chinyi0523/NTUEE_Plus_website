@@ -2,6 +2,8 @@
 const Login = require('../../../Schemas/user_login');
 const {ErrorHandler, dbCatch} = require('../../../error')
 
+const asyncHandler = require('express-async-handler')
+
 /**
  * @api {post} /loginFB loginFB
  * @apiName LoginFB
@@ -16,7 +18,7 @@ const {ErrorHandler, dbCatch} = require('../../../error')
  * 
  * @apiError (500) {String} description 資料庫錯誤
  */
-module.exports = async function (req, res, next) {
+const loginFB = async (req, res, next) => {
 	const {facebookID} = req.body
 	const query = { facebookID }
 	const obj = await Login.findOne(query, "username account")
@@ -26,3 +28,5 @@ module.exports = async function (req, res, next) {
 	req.session.loginAccount = obj.account
 	return res.status(201).send({username: obj.username })
 }
+
+module.exports = asyncHandler(loginFB)
