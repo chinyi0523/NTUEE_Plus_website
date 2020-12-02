@@ -1,6 +1,24 @@
 //srcs/login.js
 const Login = require('../../../Schemas/user_login');
 const crypto = require("crypto");
+/**
+ * @api {post} /login login
+ * @apiName Login
+ * @apiGroup Out/account
+ * @apiDescription 登入
+ *
+ * @apiparam {String} account 學號
+ * @apiparam {String} password 密碼(以後建議在前端加密)
+ * 
+ * @apiSuccess (201) {String} username 登入者名字
+ * @apiSuccess (201) {String} account 登入者學號
+ * 
+ * @apiError (404) {String} description "帳號不存在"
+ * 
+ * @apiError (401) {String} description "密碼錯誤"
+ * 
+ * @apiError (500) {String} description "資料庫錯誤"
+ */
 
 module.exports = async function (req, res, next) {
 	const account = req.body.account.toLowerCase();

@@ -24,6 +24,30 @@ async function insertVisual(name,account,email){
         publicEmail:{data: email}
     }).save();
 }
+
+/**
+ * @api {post} /register register
+ * @apiName Register
+ * @apiGroup Out/account
+ * @apiDescription 註冊(by 學號 & email)
+ * 
+ * @apiHeaderExample {json} config
+                 { "content-type": "multipart/form-data" }
+ *
+ * @apiparam {String} account 學號
+ * @apiparam {String} password 密碼(以後建議在前端加密)
+ * @apiparam {String} username 使用者名字
+ * @apiparam {String} Email 信箱 
+ * @apiparam {File} file 身分證明的照片
+ * 
+ * @apiSuccess (201) {String} username 使用者名字
+ * 
+ * @apiError (400) {String} description "請添加照片"
+ * 
+ * @apiError (403) {String} description "帳號已存在"
+ * 
+ * @apiError (500) {String} description "資料庫錯誤"
+ */
 module.exports = async function (req, res) {
     const {username,password,Email} = req.body;
     const account = req.body.account.toLowerCase();

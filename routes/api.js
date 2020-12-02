@@ -5,6 +5,14 @@ const router = express.Router();
 if(process.env.NODE_ENV==='development' || true){
     //test
     console.log('running in dev mode')
+    /**
+     * @api {get} /testClient testClient
+     * @apiName TestClient
+     * @apiGroup Test
+     * @apiDescription 前端的測試頁面，建議改用postman測試
+     *
+     * @apiSuccess {file} - 測試頁面
+     */
     router.get("/testClient",function(req,res){
         const path = require('path');
         // console.log("use test");
