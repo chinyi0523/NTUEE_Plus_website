@@ -12,7 +12,7 @@ const { ErrorHandler } = require("../../../error")
  * 
  * @apiError (403) {String} description "未登入"
  */
-module.exports = function (req, res, next) {
+module.exports = (req, res, next) => {
     const session_account = req.session.loginAccount
     if(session_account){
         return res.status(200).send({account:session_account})

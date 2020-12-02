@@ -1,7 +1,9 @@
 //srcs/login.js
 const Login = require('../../../Schemas/user_login');
 const {ErrorHandler, dbCatch} = require('../../../error')
-module.exports = async function (req, res, next) {
+const asyncHandler = require('express-async-handler')
+
+const loginFB = async (req, res, next) => {
 	const {facebookID} = req.body
 	const query = { facebookID }
 	const obj = await Login.findOne(query, "username account")
@@ -11,3 +13,5 @@ module.exports = async function (req, res, next) {
 	req.session.loginAccount = obj.account
 	return res.status(201).send({username: obj.username })
 }
+
+module.exports = asyncHandler(loginFB)

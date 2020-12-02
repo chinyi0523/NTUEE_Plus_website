@@ -3,6 +3,7 @@ const Login = require('../../../Schemas/user_login');
 const crypto = require("crypto");
 const Visual = require('../../../Schemas/user_visual');
 const { ErrorHandler, dbCatch } = require('../../../error');
+const asyncHandler = require('express-async-handler')
 
 /*新增一筆使用者資料*/
 async function insert(username,account,psw,file,visual){
@@ -47,7 +48,7 @@ async function insertVisual(name,account,email){
  * @apiError (403) {String} description 帳號已存在
  * @apiError (500) {String} description 資料庫錯誤
  */
-module.exports = async function (req, res) {
+const register = async (req, res) => {
     const {username,password,Email} = req.body
     const account = req.body.account.toLowerCase()
 
@@ -65,3 +66,5 @@ module.exports = async function (req, res) {
     req.session.loginAccount = account
     return res.status(201).send({username})
 }
+
+module.exports = asyncHandler(register)

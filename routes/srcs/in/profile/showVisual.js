@@ -3,6 +3,7 @@ const { dbCatch } = require('../../../error');
 const Visual = require('../../../Schemas/user_visual');
 const Login = require('../../../Schemas/user_login');
 const getPrivate = require('./DBquery/getPrivate');
+const asyncHandler = require('express-async-handler')
 
 async function insertVisual(name,account){
     const user = await new Visual({
@@ -15,7 +16,7 @@ async function insertVisual(name,account){
     return user
 }
 
-module.exports = async function (req, res, next) {
+const shVisual = async (req, res, next)=>{
     let session_account = req.session.loginAccount
 
     let obj = await Visual.findOne({"account.data":session_account}).catch(dbCatch)
@@ -26,3 +27,4 @@ module.exports = async function (req, res, next) {
     const user = getPrivate(obj)
     return res.status(201).send({data:user})
 }
+module.exports = asyncHandler(shVisual)

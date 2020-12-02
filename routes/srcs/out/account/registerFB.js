@@ -3,6 +3,7 @@ const { ErrorHandler, dbCatch } = require('../../../error');
 const Login = require('../../../Schemas/user_login');
 //const crypto = require("crypto");
 const Visual = require('../../../Schemas/user_visual');
+const asyncHandler = require('express-async-handler')
 
 async function insertFB(name, account, facebookID, file, user) {
     await new Login({
@@ -22,7 +23,7 @@ async function insertVisual(name,account){
         account:{data: account}
     }).save().catch(dbCatch)
 }
-module.exports = async function (req, res) {
+const registerFB = async (req, res) => {
     const username = req.body.username;
     const account = req.body.account.toLowerCase();
     const userFBid = req.body.facebookID;
@@ -38,3 +39,5 @@ module.exports = async function (req, res) {
     req.session.loginAccount = account
     return res.status(201).send({username})
 }
+
+module.exports = asyncHandler(registerFB)

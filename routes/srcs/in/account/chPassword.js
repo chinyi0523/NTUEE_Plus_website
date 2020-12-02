@@ -1,8 +1,9 @@
 //srcs/chLogin.js
 const { dbCatch, ErrorHandler } = require('../../../error');
 const Login = require('../../../Schemas/user_login');
+const asyncHandler = require('express-async-handler')
 
-module.exports = async function (req, res, next) {
+const chPsw = async (req, res, next) => {
     const session_account = req.session.loginAccount
 
     let {oldPsw,newPsw} = req.body;
@@ -19,3 +20,4 @@ module.exports = async function (req, res, next) {
     ).catch(dbCatch)
     return res.status(204).end()
 }
+module.exports = asyncHandler(chPsw)

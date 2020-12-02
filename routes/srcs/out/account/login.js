@@ -2,7 +2,7 @@
 const Login = require('../../../Schemas/user_login');
 const crypto = require("crypto");
 const { dbCatch,ErrorHandler } = require('../../../error')
-
+const asyncHandler = require('express-async-handler')
 /**
  * @api {post} /login login
  * @apiName Login
@@ -22,7 +22,7 @@ const { dbCatch,ErrorHandler } = require('../../../error')
  * @apiError (500) {String} description "資料庫錯誤"
  */
 
-module.exports = async function (req, res, next) {
+const login = async (req, res, next) => {
 	const account = req.body.account.toLowerCase()
 	const password = req.body.password
 	//密碼加密
@@ -37,3 +37,5 @@ module.exports = async function (req, res, next) {
 	req.session.loginAccount = obj.account;
 	return res.status(201).send({username:obj.username,account:obj.account})
 }
+
+module.exports = asyncHandler(login)
