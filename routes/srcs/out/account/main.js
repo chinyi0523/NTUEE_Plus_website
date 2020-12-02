@@ -5,21 +5,27 @@ const getImg = require('../../../middleware/fileProcess');
 
 router.post("/login",
 	valid('login'),
-	require("./login"));
+	require("./login"))
+
 router.post("/loginFB",
-	require("./loginFB"));
+	require("./loginFB"))
+
 router.post("/register",
 	getImg('file'),
 	valid('register'),
-	require("./register"));
+	require("./register"))
+
 router.post("/registerFB",
 	getImg('file'),
 	valid("registerFB"),
-	require("./registerFB"));
-router.post("/logout",require("./logout"));
+	require("./registerFB"))
+
+router.post("/logout",require("./logout"))
+
 router.post('/isLogin',
 	require('./isLogin'))
-router.post('/practice',
-	require('./practice'));
+	
+// router.post('/practice',
+// 	require('./practice'))
 
 module.exports = router;

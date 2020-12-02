@@ -1,8 +1,8 @@
+const { dbCatch } = require('../../../error');
 const Recruitment = require('../../../Schemas/recruitment');
 
 /*新增一筆資料*/
 async function insert(title,company_name,work_type,salary,experience,diploma,requirement,description){
-    //格式
   const recruitment =  await new Recruitment({
     title:{
       title: title,
@@ -18,7 +18,7 @@ async function insert(title,company_name,work_type,salary,experience,diploma,req
 		  requirement: requirement,
 		  description: description
     }
-  }).save()
+  }).save().catch(dbCatch)
   console.log(recruitment.title.title)
   return recruitment.title.title
   // recruitment.save(function(err,res){ //save to db
@@ -44,11 +44,6 @@ module.exports = async function (req, res) {
 
   //var query = {ID: ID};
   console.log("新增recruitment")
-  try{
-    await insert(recruitmentTitle,recruitmentCompany_name,recruitmentWork_type,recruitmentSalary,recruitmentExperience,recruitmentDiploma,recruitmentRequirement,recruitmentDescription)
-    res.status(201).send({data: recruitmentTitle})
-  }catch(e){
-    console.log(e)
-    res.status(500).send({description:'資料庫錯誤'})
-  }
+  await insert(recruitmentTitle,recruitmentCompany_name,recruitmentWork_type,recruitmentSalary,recruitmentExperience,recruitmentDiploma,recruitmentRequirement,recruitmentDescription)
+  res.status(201).send({data: recruitmentTitle})
 }

@@ -1,5 +1,7 @@
 //srcs/logout.js
 
+const { ErrorHandler } = require("../../../error");
+
 /**
  * @api {post} /logout logout
  * @apiName Logout
@@ -14,8 +16,9 @@ module.exports = function (req, res, next) {
     req.session.destroy(function(err) {
 		if(err){
 			console.log("session destroy err\n",err);
-			return res.status(500).send({description:"session destroy失敗"});
+			// return res.status(500).send({description:"session destroy失敗"});
+			throw new ErrorHandler(500,'session destroy fail')
 		}
-		return res.status(204).end();
+		return res.status(204).end()
 	})
 }

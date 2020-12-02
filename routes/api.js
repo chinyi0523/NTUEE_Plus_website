@@ -1,7 +1,7 @@
-//routes/api.js 控管後端所有頁面部屬 
-const express = require("express");
-const router = express.Router();
-// const asyncHandler = require("express-async-handler");//for aysnc err handling
+//routes/api.js 控管後端所有頁面部屬
+const express = require("express")
+const router = express.Router()
+
 if(process.env.NODE_ENV==='development' || true){
     //test
     console.log('running in dev mode')
@@ -23,20 +23,23 @@ if(process.env.NODE_ENV==='development' || true){
 
 //out
 //login, loginFB, register, registerFB
-router.use(require("./srcs/out/account/main"));
+router.use(require("./srcs/out/account/main"))
 //forget, activation
-router.use(require("./srcs/out/forget/main"));
+router.use(require("./srcs/out/forget/main"))
 
 //in
 //Auth
-router.use(require("./srcs/in/isAuth"));
+router.use(require("./srcs/in/isAuth"))
 //showVisual, chVisual, searchVisual
-router.use(require("./srcs/in/profile/main"));
+router.use(require("./srcs/in/profile/main"))
 //showPerson, chLogin, isLogin, logout
-router.use(require("./srcs/in/account/main"));
+router.use(require("./srcs/in/account/main"))
 //getImg, saveImg
-router.use(require("./srcs/in/column/main"));
+router.use(require("./srcs/in/column/main"))
 //searchJob, addJob, addRecruitment
-router.use(require("./srcs/in/career/main"));
+router.use(require("./srcs/in/career/main"))
+
+//error handling, every error thrown by previous router will be catch by me
+router.use(require('./error').handleError)
 
 module.exports = router;

@@ -5,9 +5,10 @@ const valid = require("../../../middleware/validation");
 // const ImgGet = require('../../../middleware/multer');
 
 router.post("/showPersonal",
-	require("./showPersonal"));
+	require("./showPersonal"))
+
 router.post("/chPassword",
 	valid('chPassword'),
-	require("./chPassword"));
+	require("./chPassword"))
 
 module.exports = router
