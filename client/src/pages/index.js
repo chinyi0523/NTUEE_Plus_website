@@ -32,19 +32,29 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
             state: { from: props.location }
           }} />
     )} />
-  )
-ReactDOM.render(
-  
-    <BrowserRouter>
+)
+const Index = () =>{
+  return (
+      <BrowserRouter>
       <Switch>
       <PrivateRoute path="/in" component={Main_in_page}/>
         <App />
       </Switch>
     </BrowserRouter>
-    
-    ,
-    document.getElementById('root')
-  );
+  )
+}
+export default Index
+// ReactDOM.render(
+  
+//     <BrowserRouter>
+//       <Switch>
+//       <PrivateRoute path="/in" component={Main_in_page}/>
+//         <App />
+//       </Switch>
+//     </BrowserRouter>
+//     ,
+//     document.getElementById('root')
+//   );
 
 
 // If you want your app to work offline and load faster, you can change
