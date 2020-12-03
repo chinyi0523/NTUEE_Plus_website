@@ -18,8 +18,8 @@ module.exports = function(req){
 		element.forEach(major=>{
 			const Q2 = {};
 			try{
-				let data = req.body[key][major];// || req.body[`${key}.${major}`];
-				if(data===undefined) data = req.body[`${key}.${major}`];
+				let data =  req.body[`${key}.${major}`];
+				if(data===undefined) data = req.body[key][major];
 				if(data!==undefined){
 					Q2[`${key}.${major}.SD`] = data;
 					Q2[`${key}.${major}.show`] = true;

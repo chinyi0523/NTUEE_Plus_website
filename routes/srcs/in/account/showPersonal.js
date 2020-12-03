@@ -4,10 +4,9 @@ const Login = require('../../../Schemas/user_login');
 const asyncHandler = require('express-async-handler')
 
 /**
- * @api {post} /chPassword 重設密碼
- * @apiName chPassword
+ * @api {post} /showPersonal 顯示帳號私人資訊
+ * @apiName ShowPersonal
  * @apiGroup In/account
- * @apiDescription 重設密碼
  * 
  * @apiSuccess (201) username 使用者名字
  * @apiSuccess (201) account 使用者學號
