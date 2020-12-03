@@ -81,9 +81,10 @@ class Login extends Component
 			return
 		}
 		axios.post("/api/loginFB", { facebookID: response.userID })
-		.then(res => //{username}
+		.then(({data}) => //{username}
 			{
-				alert("Logged in! Welcome：" + res.username)
+				console.log(res)
+				alert("Logged in! Welcome：" + data.username)
 				this.setState(
 					{
 						Login_facebook_ID: response.userID,

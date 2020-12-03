@@ -24,6 +24,7 @@ const loginFB = async (req, res, next) => {
 	const obj = await Login.findOne(query, "username account")
 						   .catch(dbCatch)
 	if(!obj) throw new ErrorHandler(404,'帳號不存在')
+	console.log(obj)
 	req.session.loginName = obj.username
 	req.session.loginAccount = obj.account
 	return res.status(201).send({username: obj.username })
