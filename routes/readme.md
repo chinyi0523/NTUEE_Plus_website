@@ -3,14 +3,16 @@
 
 EE+ api文件
 
- - [Out/account](#out/account)
+ - [In/account](#inaccount)
+   - [重設密碼](#重設密碼)
+ - [Out/account](#outaccount)
    - [isLogin](#islogin)
    - [login](#login)
    - [loginFB](#loginfb)
    - [logout](#logout)
    - [register](#register)
    - [registerFB](#registerfb)
- - [Out/forget](#out/forget)
+ - [Out/forget](#outforget)
    - [activation](#activation)
    - [forget](#forget)
  - [Test](#test)
@@ -19,6 +21,52 @@ EE+ api文件
 
 ___
 
+
+# In/account
+
+## 重設密碼
+[Back to top](#top)
+
+重設密碼
+
+```
+POST /chPassword
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| oldPsw | `String` | 原本密碼 |
+| newPsw | `String` | 新密碼 |
+
+### Success response
+
+#### Success response - `204`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - |  |  |
+
+### Error response
+
+#### Error response - `401`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 原始密碼錯誤 |
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 帳號不存在 |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
 
 # Out/account
 
@@ -265,7 +313,7 @@ config
 ## activation
 [Back to top](#top)
 
-檢查激活碼，重設密碼
+檢查激活碼，忘記密碼重設
 
 ```
 POST /activation
@@ -304,7 +352,7 @@ POST /activation
 ## forget
 [Back to top](#top)
 
-忘記密碼
+忘記密碼，寄信
 
 ```
 POST /forget

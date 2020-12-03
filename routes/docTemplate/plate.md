@@ -4,9 +4,9 @@
 <%= project.description %>
 
 <% data.forEach(group => { -%>
- - [<%= group.name %>](#<%= toLink(group.name).toLowerCase() -%>)
+ - [<%= group.name %>](#<%= toLink(group.name.replace('/','')).toLowerCase() -%>)
 <% group.subs.forEach(sub => { -%>
-   - [<%= sub.title %>](#<%= toLink(sub.title).toLowerCase() %>)
+   - [<%= sub.title %>](#<%= toLink(sub.title.replace('/','')).toLowerCase() %>)
 <% })}) -%>
 
 ___
