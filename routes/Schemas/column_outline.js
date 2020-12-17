@@ -15,4 +15,14 @@ const Column_Outline = new Schema({
 	}
 })
 
+Column_Outline.virtual('imgSrc').get(function() {
+	try{
+		const prefix="data:"+this.columnImg.contentType+";base64,"
+		const img = new Buffer(this.columnImg.data, 'binary').toString('base64');
+		return prefix+img;
+	}catch{
+		return ""
+	}
+});
+
 module.exports = mongoose.model('Column_outline',Column_Outline);
