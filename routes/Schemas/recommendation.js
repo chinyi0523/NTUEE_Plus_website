@@ -10,7 +10,7 @@ const Recommendation_Schema = new Schema({
 	info:{
 		contact: String,
 		email: String,
-		diploma: String
+		diploma: String,
 	},
 	
 	spec:{

@@ -47,7 +47,7 @@ const User_visual_Schema = new Schema({
 	}
   },
   publicEmail:{
-	show:{type:Boolean,default:true},
+	show:{type:Boolean,default:false},
 	data:{type:mongoose.SchemaTypes.Email}
   },
   office:{
@@ -90,6 +90,16 @@ const User_visual_Schema = new Schema({
 	  contentType:{type:String},
 	  show:{type:Boolean,default:true}
   }
+});
+
+User_visual_Schema.virtual('imgSrc').get(function() {
+	try{
+		const prefix="data:"+this.userimage.contentType+";base64,"
+		const img = new Buffer(this.userimage.data, 'binary').toString('base64');
+		return prefix+img;
+	}catch{
+		return ""
+	}
 });
 
 module.exports = mongoose.model("User_visual", User_visual_Schema);
