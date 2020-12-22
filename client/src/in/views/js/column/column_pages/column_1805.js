@@ -4,7 +4,8 @@ import Column_content from '../Column_content'
 class Column_1805 extends Component {
 	render() {
 		const column_1805_article = {
-			title: ['2014級 黃柏源', '（PhD＠Princeton EE）'],
+			title: ['2014級 黃柏源'],
+			subtitle:[ '（PhD','＠Princeton EE）'],
 			hashtags: [
 				'系友專訪',
 				'黃柏源',
@@ -19,6 +20,17 @@ class Column_1805 extends Component {
 				'IEEE_paper_reviewer',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'黃柏源學長是目前受訪者中最年輕的一位，大學時拿過多次書卷獎，電機系畢業後前往Princeton攻讀EE PhD，專攻EDA領域，大學時就曾擔任IEEE 通訊 paper reviewer，也曾在TSMC及Intel實習過，學界業界經歷皆相當豐富。',
+
+						},
+					],
+				},
 				{
 					bigtitle: '一、前言',
 					sections: [

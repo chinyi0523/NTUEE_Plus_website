@@ -4,7 +4,8 @@ import Column_content from '../Column_content'
 class Column_1907 extends Component {
 	render() {
 		const column_1907_article = {
-			title: ['2012級 王易如 ', '（共同創辦人＠行動貝果）'],
+			title: ['2012級 王易如 '],
+			subtitle:[ '（共同創辦人','＠行動貝果）'],
 			hashtags: [
 				'系友專訪',
 				'王易如',
@@ -20,6 +21,16 @@ class Column_1907 extends Component {
 				'資料前處理',
 			],
 			sections: [
+				{
+					bigtitle:'零、簡介',
+					sections:[
+						{
+							title:'',
+							section:
+								'王易如於史丹佛大學取得碩士學位後，經由世界最大黑克松Salesforce $1Million Hackathon籌組MoBagel (行動貝果)，目前任職該新創的營運長。MoBagel 致力於讓機器學習落地，目標讓人工智慧普及化，主要方向為APU  (Advanced Preprocessing Unit)，根據AI的應用類別來進行資料前處理，增加預測準確度，目前已經與台灣許多產業龍頭合作。',
+						},
+					],
+				},
 				{
 					bigtitle: '一、大學生涯',
 					sections: [
