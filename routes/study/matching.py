@@ -2,7 +2,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-df1 = pd.read_excel('A.xlsx')
+df1 = pd.read_excel(sys.argv[1])
 Name = df1["姓名"].tolist()
 degree = df1["學位"].tolist()
 degree_list = [x.split(' + ') for x in degree]
@@ -18,7 +18,7 @@ for p in person1:
 
 print()
 
-df2 = pd.read_excel('B.xlsx')
+df2 = pd.read_excel(sys.argv[2])
 
 Name = df2["姓名"].tolist()
 degree = df2["學位"].tolist()
