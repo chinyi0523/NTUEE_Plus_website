@@ -1,11 +1,11 @@
 const validationFields = require('./validFields')
 
-const validationList = function(method){
-	const output = [];
+const validationList = (method) => {
+	const output = []
 	validationFields[method].forEach(element=>{
-		output.push(require("./Name/"+element));
-	});
-	return output;
+		output.push(require("./Name/"+element))
+	})
+	return output
 }
 
-module.exports=(method)=>validationList(method);
+module.exports = validationList

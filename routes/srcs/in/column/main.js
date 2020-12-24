@@ -8,6 +8,7 @@ const ImgGet = require('../../../middleware/fileProcess');
 router.post('/saveImg',
 	ImgGet('file'),
 	require('./saveImg'))
+	
 router.post('/getImg',
 	require('./getImg'))
     

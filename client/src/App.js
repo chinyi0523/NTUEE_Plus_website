@@ -141,7 +141,7 @@ const App = () => {
       />
       <Route path="/History" component={History_page} />
       <Route path="/Policy" component={Policy_page} />
-      {process.env.NODE_ENV==='development' && <Route path="/Test" component={Test} />}
+      {<Route path="/Test" component={Test} />}{/* don't use it in product */}
       <Footer />
     </div>
   );

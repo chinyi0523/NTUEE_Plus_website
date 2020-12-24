@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer')
+const { ErrorHandler } = require('../../error')
 const credentials = require('./credential')
 
 const transporter = nodemailer.createTransport({
@@ -26,6 +27,9 @@ module.exports = async function (recipient,subject,text){
 		// 信件內容，HTML格式
 		html: text
 	}
-	let info = await transporter.sendMail(mail)
+	let info = await transporter.sendMail(mail).catch(e=>{
+		console.log(e.message)
+		throw new ErrorHandler(500,'寄信失敗')
+	})
 	console.log('mail sent:', info.envelope)
 }

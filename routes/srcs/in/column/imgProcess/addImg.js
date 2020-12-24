@@ -1,3 +1,4 @@
+const { dbCatch } = require('../../../../error');
 const Column = require('../../../../Schemas/column');
 
 module.exports = async function(name,file){
@@ -7,17 +8,5 @@ module.exports = async function(name,file){
 			data:file.buffer,
 			contentType:file.mimetype
 		}
-	}).save();
-	// console.log('get img=',column.columnImg.contentType)
-    // column.save(function(err,res){
-    //     if(err){
-    //         console.log(err);
-	// 		return false;
-    //     }
-    //     else{
-	// 		console.log('成功儲存');
-    //         console.log(res);
-	// 		return true;
-    //     }
-    // })
+	}).save().catch(dbCatch)
 }

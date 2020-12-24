@@ -1,40 +1,38 @@
 //srcs/chLogin.js
+const { dbCatch, ErrorHandler } = require('../../../error');
 const Login = require('../../../Schemas/user_login');
+const asyncHandler = require('express-async-handler')
 
-module.exports = async function (req, res, next) {
-    const session_account = req.session.loginAccount;
+/**
+ * @api {post} /chPassword 重設密碼
+ * @apiName chPassword
+ * @apiGroup In/account
+ * @apiDescription 重設密碼
+ * 
+ * @apiparam {String} oldPsw 原本密碼
+ * @apiparam {String} newPsw 新密碼
+ * 
+ * @apiSuccess (204) -
+ * 
+ * @apiError (401) {String} description 原始密碼錯誤
+ * @apiError (404) {String} description 帳號不存在
+ * @apiError (500) {String} description 資料庫錯誤
+ */
+const chPsw = async (req, res, next) => {
+    const session_account = req.session.loginAccount
+
     let {oldPsw,newPsw} = req.body;
-    oldPsw = crypto.createHash("md5").update(oldPsw).digest("hex");
-    newPsw = crypto.createHash("md5").update(newPsw).digest("hex");
-    try{
-        const obj = await Login.findOne({account:session_account})
-        if(!obj) return res.status(404).send({description:"帳號不存在"})
-        if(obj.userpsw!==oldPsw) return res.status(401).send({description:"原始密碼錯誤"})
-        await Login.updateOne(
-            {account:session_account},
-            {$set:{userpsw:newPsw}}
-        )
-        return res.status(204).end();
-    }catch(e){
-        console.log(e)
-        return res.status(500).send({description:"資料庫錯誤"})
-    }
-    // Login.find({account:session_account}, function(err, obj){
-    // if (err) {
-    //     console.log("Error:" + err);
-    //     return res.status(500).send({description:"資料庫錯誤"}); 
-    // }
-    // else {
-    //     if(obj.length === 1){
-    //         console.log('發現帳號',obj);
-    //         Login.updateOne({account:session_account},{$set:{question:NQ}},function(err,res){
-    //             if (err) return res.status(500).send({description:'資料庫錯誤'});
-    //         });
-    //         res.status(204).end();
-    //     }else{
-    //         console.log("session:",session_account);
-    //         res.status(404).send({status:'success',message:false, description:"帳號不存在或存在多個帳號"}); 
-    //     }
-    // }
-    // })
+    oldPsw = crypto.createHash("md5").update(oldPsw).digest("hex")
+    newPsw = crypto.createHash("md5").update(newPsw).digest("hex")
+
+    const obj = await Login.findOne({account:session_account}).catch(dbCatch)
+    if(!obj) throw new ErrorHandler(404,'帳號不存在')
+    if(obj.userpsw!==oldPsw) throw new ErrorHandler(401,'原始密碼錯誤')
+    
+    await Login.updateOne(
+        {account:session_account},
+        {$set:{userpsw:newPsw}}
+    ).catch(dbCatch)
+    return res.status(204).end()
 }
+module.exports = asyncHandler(chPsw)
