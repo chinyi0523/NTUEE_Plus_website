@@ -18,4 +18,7 @@ router.post('/getDetail',
 router.post('/getOutline',
 	require('./getOutline'))
 
+router.post('/addColumn',
+	require('./addColumn'))
+
 module.exports = router
