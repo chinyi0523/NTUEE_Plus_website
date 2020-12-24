@@ -8,7 +8,9 @@ router.post("/showVisual",
 	require('./showVisual'));
 router.post("/chVisual",
 	getImg('userimage'),
-	require('./chVisual'));
+	valid('chVisual')
+	//require('./chVisual'));
+)
 router.post('/searchVisual',
 	valid('searchVisual'),
 	require('./searchVisual'));

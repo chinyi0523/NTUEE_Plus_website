@@ -8,5 +8,6 @@ module.exports = {
 	"chLogin":["question"],
 	"chPassword":[],
 	"activation":["account","password"],
-	"searchVisual":["account.data"]
+	"searchVisual":["account.data"],
+	"chVisual":['chVisual/account','chVisual/phone','chVisual/homephone']
 }
