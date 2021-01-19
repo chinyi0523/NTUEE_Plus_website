@@ -21,4 +21,7 @@ router.post('/getOutline',
 router.post('/addColumn',
 	require('./addColumn'))
 
+router.post('/search',
+	require('./search'))
+
 module.exports = router

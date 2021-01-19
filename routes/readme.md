@@ -10,6 +10,7 @@ EE+ api文件
    - [新增職缺](#新增職缺)
    - [顯示所有職缺](#顯示所有職缺)
  - [In/column](#incolumn)
+   - [hashtag關鍵字查詢](#hashtag關鍵字查詢)
    - [存column照片](#存column照片)
    - [拿column照片](#拿column照片)
    - [拿Detail資料](#拿detail資料)
@@ -180,6 +181,48 @@ POST /showRecruitment
 | description | `String` | 資料庫錯誤 |
 
 # In/column
+
+## hashtag關鍵字查詢
+[Back to top](#top)
+
+```
+POST /search
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| keyword | `String` |  |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+HTTP/1.1 200 OK
+[{
+	title:String
+	hashtag:String
+	sections:[{
+		bigtitle:String,
+		sections:[{
+			title:String,
+			section:String
+		}]
+	}]
+	annotation:["特別感謝:...","撰寫:...","校稿:...",...]
+	id:["column_yymm"]
+},...]
+```
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
 
 ## 存column照片
 [Back to top](#top)
