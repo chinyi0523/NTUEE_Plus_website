@@ -186,7 +186,7 @@ POST /showRecruitment
 [Back to top](#top)
 
 ```
-POST /search
+POST /column/search
 ```
 
 ### Parameters - `Parameter`

@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { dbCatch } = require('../../../error');
 
 /**
- * @api {post} /search hashtag關鍵字查詢
+ * @api {post} /column/search hashtag關鍵字查詢
  * @apiName Search
  * @apiGroup In/column
  * 
