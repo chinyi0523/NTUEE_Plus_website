@@ -1,19 +1,36 @@
 const getColumn = require('./imgProcess/getDetail');
-const asyncHandler = require('express-async-handler')
+const asyncHandler = require('express-async-handler');
+const { dbCatch, ErrorHandler } = require('../../../error');
 
 
 /**
- * @api {post} /getImg 拿column照片
- * @apiName GetImg
+ * @api {post} /getDetail 拿Detail資料
+ * @apiName GetDetail
  * @apiGroup In/column
  * 
- * @apiparam {String} filename 檔名
+ * @apiparam {String} id column_yymm
  * 
- * @apiSuccess (201) data 照片url(Ex. <code>\<img src={url}/></code>)
- * @apiError (404) {String} description 照片不存在
+ * @apiSuccessExample {json} Success-Response:
+ * 	HTTP/1.1 200 OK
+ * 	{
+ * 		title:String
+ * 		hashtag:String
+ * 		sections:[{
+ * 			bigtitle:String,
+ * 			sections:[{
+ * 				title:String,
+ * 				section:String
+ * 			}]
+ * 		}]
+ * 		annotation:["特別感謝:...","撰寫:...","校稿:...",...]
+ * 		id:["column_yymm"]
+ * 	}
+ * 
+ * @apiError (404) {String} description 找不到資料
  * @apiError (500) {String} description 資料庫錯誤
  */
 module.exports = asyncHandler(async (req, res, next)=>{
 	const getDone = await getColumn(req.body.id)
-	return res.status(201).send({data:getDone})
+	if (!getDone) throw new ErrorHandler(404, "找不到資料")
+	return res.status(201).send(getDone)
 })

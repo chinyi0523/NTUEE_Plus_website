@@ -4,17 +4,11 @@ const Column_outline = require('../../../Schemas/column_outline');
 const asyncHandler = require('express-async-handler')
 
 /*新增一筆資料*/
-async function insert_detail(title,hashtags,bigtitle,smalltitle,section,annotation,id){
+async function insert_detail(title,hashtags,sections,annotation,id){
     const column_detail =  await new Column_detail({
         title: title,
         hashtags: hashtags,
-        sections:{
-            bigtitle: bigtitle,
-            sections:{
-                title: smalltitle,
-                section: section,
-            },
-        },
+        sections: sections,
         annotation: annotation,
         id: id
     }).save().catch(dbCatch)
@@ -56,20 +50,36 @@ async function insert_outline(filename,anno,title,exp,edu,intro,id){
 }
   
   /**
-   * @api {post} /addRecruitment 新增職缺
-   * @apiName AddRecruitment
-   * @apiGroup In/career
+   * @api {post} /addColumn 管理員新增文章
+   * @apiName addColumn
+   * @apiGroup In/column
    * 
-   * @apiparam {String} title 職缺標題
-   * @apiparam {String} company_name 公司名稱
-   * @apiparam {String} work_type 職位(ex.前端工程師)
-   * @apiparam {String} salary 薪資
-   * @apiparam {String} experience 經驗要求
-   * @apiparam {String} diploma 學系要求
-   * @apiparam {String} requirement 技能要求
-   * @apiparam {String} description 其他描述
+   * @apiparam {String[]} title 文章標題
+   *    (xxxx 級 xxx (公司名稱與職位))
+   * @apiparam {String} detail_id 文章在column_details的編號
+   *    (column_yymm) 
+   * @apiparam {String[]} hashtags 文章的hashtag
+   *    (文章類別，訪問者姓名、級別、工作、相關組織與企業) 
+   * @apiparam {Object[]} sections 
+   * @apiparam {String} sections.bigtitle (一、標題，二、求學階段...)
+   * @apiparam {Object[]} sections.sections
+   * @apiparam {String} sections.sections.title (各bigtitle的小主題)
+   * @apiparam {String} sections.sections.section (文章內容)
+   * @apiparam {String[]} annotation 參與人員
+   *    (工作:人員)
+   * @apiparam {String} filename (yymm)
+   * @apiparam {String[2]} anno 
+   *    ([所有採訪人員姓名,| yyyy/mm/dd 星期x])
+   * @apiparam {String[]} exp 採訪者的姓名與現任職位
+   * @apiparam {String[]} edu 採訪者的學歷
+   *    (學士:校系(畢業年分) 碩士:校系(畢業年分) 博士:校系(畢業年分))
+   * @apiparam {String[]} intro 簡介
+   *    (1個element是一段)
+   * @apiparam {String} outline_id 文章在column_outlines的id
+   *    (Column_Block_yymm)
    * 
-   * @apiSuccess (201) data 職缺標題
+   * @apiSuccess (201) {String} title post的title
+   * @apiSuccess (201) {String} filename post的filename
    * 
    * @apiError (500) {String} description 資料庫錯誤
    */
@@ -77,9 +87,7 @@ module.exports = asyncHandler(async (req, res)=>{
     const columnTitle = req.body.title;
     const columnDetailId = req.body.detail_id;
     const columnDetailHashtags = req.body.hashtags;
-    const columnDetailBigtitle = req.body.bigtitle;
-    const columnDetailSection = req.body.section;
-    const columnDetailSmallTitle = req.body.smalltitle;
+    const columnDetailSections = req.body.sections;
     const columnDetailAnnotation = req.body.annotation;
     const columnOutlineFilename = req.body.filename;
     const columnOutlineAnno = req.body.anno;
@@ -90,10 +98,10 @@ module.exports = asyncHandler(async (req, res)=>{
   
     //var query = {ID: ID};
     console.log("新增column_detail")
-    await insert_detail(columnTitle,columnDetailHashtags,columnDetailBigtitle,columnDetailSmallTitle,columnDetailSection,columnDetailAnnotation,columnDetailId)
+    await insert_detail(columnTitle,columnDetailHashtags,columnDetailSections,columnDetailAnnotation,columnDetailId).catch(dbCatch)
     console.log("新增column_outline")
-    await insert_outline(columnOutlineFilename,columnOutlineAnno,columnTitle,columnOutlineExp,columnOutlineEdu,columnOutlineIntro,columnOutlineId)
-    res.status(201).send({data_detail: columnTitle, data_outline: columnOutlineFilename})
+    await insert_outline(columnOutlineFilename,columnOutlineAnno,columnTitle,columnOutlineExp,columnOutlineEdu,columnOutlineIntro,columnOutlineId).catch(dbCatch)
+    res.status(201).send({title: columnTitle, filename: columnOutlineFilename})
 })
 
 /*

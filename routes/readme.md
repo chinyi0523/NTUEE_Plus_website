@@ -12,6 +12,9 @@ EE+ api文件
  - [In/column](#incolumn)
    - [存column照片](#存column照片)
    - [拿column照片](#拿column照片)
+   - [拿Detail資料](#拿detail資料)
+   - [拿Outline資料](#拿outline資料)
+   - [管理員新增文章](#管理員新增文章)
  - [In/profile](#inprofile)
    - [搜尋porfile](#搜尋porfile)
    - [更新porfile](#更新porfile)
@@ -243,6 +246,142 @@ POST /getImg
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | description | `String` | 照片不存在 |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 拿Detail資料
+[Back to top](#top)
+
+```
+POST /getDetail
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| id | `String` | column_yymm |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+HTTP/1.1 200 OK
+{
+	title:String
+	hashtag:String
+	sections:[{
+		bigtitle:String,
+		sections:[{
+			title:String,
+			section:String
+		}]
+	}]
+	annotation:["特別感謝:...","撰寫:...","校稿:...",...]
+	id:["column_yymm"]
+}
+```
+
+### Error response
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 找不到資料 |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 拿Outline資料
+[Back to top](#top)
+
+```
+POST /getOutline
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - | `<ul> <li></li> </ul>` |  <li></li>  |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+HTTP/1.1 200 OK
+{
+	filename:["yymm"]
+	anno:["作者1 作者2 作者3...","| yyyy/mm/dd 星期x"]
+	title:["yyyy級 採訪者姓名 (目前職位)"...]
+	exp:["採訪者姓名 現任:目前職位"...]
+	edu:["採訪者姓名 學士/碩士/博士:....(畢業年分)",...]
+	intro:["內文段落1","內文段落2"...]
+	id:["Column_Block_yymm"]
+}
+```
+
+### Error response
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 找不到資料 |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 管理員新增文章
+[Back to top](#top)
+
+```
+POST /addColumn
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| title | `String[]` | 文章標題 (xxxx 級 xxx (公司名稱與職位)) |
+| detail_id | `String` | 文章在column_details的編號 (column_yymm) |
+| hashtags | `String[]` | 文章的hashtag (文章類別，訪問者姓名、級別、工作、相關組織與企業) |
+| sections | `Object[]` |  |
+| &ensp;bigtitle | `String` | (一、標題，二、求學階段...) |
+| &ensp;sections | `Object[]` |  |
+| &ensp;&ensp;title | `String` | (各bigtitle的小主題) |
+| &ensp;&ensp;section | `String` | (文章內容) |
+| annotation | `String[]` | 參與人員 (工作:人員) |
+| filename | `String` | (yymm) |
+| anno | `String[2]` | ([所有採訪人員姓名,| yyyy/mm/dd 星期x]) |
+| exp | `String[]` | 採訪者的姓名與現任職位 |
+| edu | `String[]` | 採訪者的學歷 (學士:校系(畢業年分) 碩士:校系(畢業年分) 博士:校系(畢業年分)) |
+| intro | `String[]` | 簡介 (1個element是一段) |
+| outline_id | `String` | 文章在column_outlines的id (Column_Block_yymm) |
+
+### Success response
+
+#### Success response - `201`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| title | `String` | post的title |
+| filename | `String` | post的filename |
+
+### Error response
 
 #### Error response - `500`
 
