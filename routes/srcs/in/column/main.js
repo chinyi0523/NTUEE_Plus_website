@@ -11,5 +11,17 @@ router.post('/saveImg',
 	
 router.post('/getImg',
 	require('./getImg'))
-    
+	
+router.post('/getDetail',
+	require('./getDetail'))
+
+router.post('/getOutline',
+	require('./getOutline'))
+
+router.post('/addColumn',
+	require('./addColumn'))
+
+router.post('/column/search',
+	require('./search'))
+
 module.exports = router
