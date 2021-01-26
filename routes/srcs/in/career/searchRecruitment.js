@@ -45,7 +45,7 @@ const search = (req) => {
 
 const searchRecuitment = async function (req, res, next) {
     const query = search(req);
-    const objs = await Recruitment.find(query, {_id:0}).catch(dbCatch);
+    const objs = await Recruitment.find(query).sort({_id: 1}).catch(dbCatch);
     const recruitments = [];
     objs.forEach(each => {
         recruitments.push(each.getPublic());
@@ -70,6 +70,7 @@ const searchRecuitment = async function (req, res, next) {
  * @apiSuccessExample {json} Success-Response:
  * 	HTTP/1.1 201 Created
  * 	[{
+ *      _id: String,
  * 		title: {
  *          title: String,
  *          company_name: String,
