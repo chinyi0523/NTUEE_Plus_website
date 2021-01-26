@@ -53,4 +53,41 @@ const searchRecuitment = async function (req, res, next) {
     return res.status(201).send({data: recruitments})
 }
 
+/**
+ * @api {post} /searchRecruitment 尋找職缺
+ * @apiName SearchRecruitment
+ * @apiGroup In/career
+ * 
+ * @apiparam {String} title 職缺標題 (optional)
+ * @apiparam {String} company_name 公司名稱 (optional)
+ * @apiparam {String} work_type 職位 (optional)
+ * @apiparam {String} salary 薪資 (optional)
+ * @apiparam {String} experience 經驗要求 (optional)
+ * @apiparam {String} diploma 學系要求 (optional)
+ * @apiparam {String} requirement 技能要求 (optional)
+ * @apiparam {String} description 其他描述 (optional)
+ * 
+ * @apiSuccessExample {json} Success-Response:
+ * 	HTTP/1.1 201 Created
+ * 	[{
+ * 		title: {
+ *          title: String,
+ *          company_name: String,
+ *          work_type: String
+ *      },
+ *      info: {
+            salary: String,
+            experience: String,
+            diploma: String
+ *      },
+ * 		spec: {
+            requirement: String,
+            description: String
+ *      },
+        image: String
+ * 	},...]
+ * 
+ * @apiError (500) {String} description 資料庫錯誤
+ */
+
 module.exports = asyncHandler(searchRecuitment)

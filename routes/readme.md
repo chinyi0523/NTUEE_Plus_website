@@ -7,6 +7,7 @@ EE+ api文件
    - [重設密碼](#重設密碼)
    - [顯示帳號私人資訊](#顯示帳號私人資訊)
  - [In/career](#incareer)
+   - [尋找職缺](#尋找職缺)
    - [新增職缺](#新增職缺)
    - [顯示所有職缺](#顯示所有職缺)
  - [In/column](#incolumn)
@@ -108,6 +109,59 @@ POST /showPersonal
 | description | `String` | 資料庫錯誤 |
 
 # In/career
+
+## 尋找職缺
+[Back to top](#top)
+
+```
+POST /searchRecruitment
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| title | `String` | 職缺標題 (optional) |
+| company_name | `String` | 公司名稱 (optional) |
+| work_type | `String` | 職位 (optional) |
+| salary | `String` | 薪資 (optional) |
+| experience | `String` | 經驗要求 (optional) |
+| diploma | `String` | 學系要求 (optional) |
+| requirement | `String` | 技能要求 (optional) |
+| description | `String` | 其他描述 (optional) |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+	HTTP/1.1 201 Created
+	[{
+		title: {
+         title: String,
+         company_name: String,
+         work_type: String
+     },
+     info: {
+            salary: String,
+            experience: String,
+            diploma: String
+     },
+		spec: {
+            requirement: String,
+            description: String
+     },
+        image: String
+	},...]
+```
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
 
 ## 新增職缺
 [Back to top](#top)
