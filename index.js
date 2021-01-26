@@ -45,18 +45,20 @@ mongoose.connection.on('open',()=>{
 // })
 
 //frontend
-const connectHistoryApiFallback = require('connect-history-api-fallback')
-app.use(
-	connectHistoryApiFallback({
-		verbose: false,
+if(!process.env.HERO){
+	const connectHistoryApiFallback = require('connect-history-api-fallback')
+	app.use(
+		connectHistoryApiFallback({
+			verbose: false,
+		})
+	)
+	const DIST_DIR = path.join(__dirname, './dist')
+	const HTML_FILE = path.join(__dirname, './index.html')
+	app.use(express.static(DIST_DIR))
+	app.get('/', (req, res) => {
+		res.sendFile(HTML_FILE) // EDIT
 	})
-)
-const DIST_DIR = path.join(__dirname, './dist')
-const HTML_FILE = path.join(__dirname, './index.html')
-app.use(express.static(DIST_DIR))
-app.get('/', (req, res) => {
-	res.sendFile(HTML_FILE) // EDIT
-})
+}
 //old frontend
 //Serve static files from the React app
 //詳細資訊看：https://expressjs.com/zh-tw/starter/static-files.html
@@ -68,6 +70,13 @@ app.get('/', (req, res) => {
 
 //server on
 app.listen(process.env.PORT || 1993, () => {
+	if(process.env.HERO){
+		const {wakeDyno} = require('heroku-keep-awake')
+		wakeDyno('https://eeplus-back.herokuapp.com/',{
+			logging: false,
+			stopTimes: { start: '16:00', end: '00:00' }//time zone +0，so -8hr
+		})
+	}
 	console.log(`Server is up on port ${process.env.PORT || 1993}.`)
 })
 //https server
