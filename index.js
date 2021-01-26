@@ -5,7 +5,7 @@ const path = require('path')
 
 const mongoose = require('./routes/Schemas/db')
 
-// mongoose.connection.on('open',()=>{
+mongoose.connection.on('open',()=>{
 	console.log('DB on')
 	const bodyParser = require('body-parser')
 	const session = require('express-session')
@@ -80,4 +80,4 @@ app.listen(process.env.PORT || 1993, () => {
 // const https = require('https');
 // https.createServer(null, app).listen(process.env.PORT||1993, () => {
 //   console.log(`Server is up on port ${process.env.PORT || 1993}.`)
-// }); 
+}); 
