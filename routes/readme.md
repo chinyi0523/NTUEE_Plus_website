@@ -137,6 +137,7 @@ POST /searchRecruitment
 ```json
 	HTTP/1.1 201 Created
 	[{
+     _id: String,
 		title: {
          title: String,
          company_name: String,
@@ -213,6 +214,7 @@ POST /showRecruitment
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | - | `Object[]` | 職缺們 |
+| &ensp;_id | `String` | mongodb _id(for delete) |
 | &ensp;title | `Object` | 標題相關 |
 | &ensp;&ensp;title | `String` | 標題 |
 | &ensp;&ensp;company_name | `String` | 公司名稱 |
