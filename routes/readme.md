@@ -7,6 +7,7 @@ EE+ api文件
    - [重設密碼](#重設密碼)
    - [顯示帳號私人資訊](#顯示帳號私人資訊)
  - [In/career](#incareer)
+   - [刪除職缺](#刪除職缺)
    - [尋找職缺](#尋找職缺)
    - [新增職缺](#新增職缺)
    - [顯示所有職缺](#顯示所有職缺)
@@ -109,6 +110,35 @@ POST /showPersonal
 | description | `String` | 資料庫錯誤 |
 
 # In/career
+
+## 刪除職缺
+[Back to top](#top)
+
+```
+DELETE /deleteRecruitment
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| _id | `String` | 要刪除職缺的mongodb _id |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| data |  | 刪除職缺標題 |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
 
 ## 尋找職缺
 [Back to top](#top)

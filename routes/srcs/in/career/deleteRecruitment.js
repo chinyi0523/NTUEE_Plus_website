@@ -12,7 +12,7 @@ async function deleteRecruitment (req, res, next) {
 
 
 /**
- * @api {delete} /deleteRecruitment 新增職缺
+ * @api {delete} /deleteRecruitment 刪除職缺
  * @apiName DeleteRecruitment
  * @apiGroup In/career
  * 
