@@ -11,6 +11,7 @@ const asyncHandler = require('express-async-handler')
  * 
  * 
  * @apiSuccess (201) {Object[]} - 職缺們
+ * @apiSuccess (201) {String} -._id mongodb _id(for delete)
  * @apiSuccess (201) {Object} -.title 標題相關
  * @apiSuccess (201) {String} -.title.title 標題
  * @apiSuccess (201) {String} -.title.company_name 公司名稱

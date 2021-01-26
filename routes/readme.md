@@ -7,6 +7,8 @@ EE+ api文件
    - [重設密碼](#重設密碼)
    - [顯示帳號私人資訊](#顯示帳號私人資訊)
  - [In/career](#incareer)
+   - [刪除職缺](#刪除職缺)
+   - [尋找職缺](#尋找職缺)
    - [新增職缺](#新增職缺)
    - [顯示所有職缺](#顯示所有職缺)
  - [In/column](#incolumn)
@@ -109,6 +111,89 @@ POST /showPersonal
 
 # In/career
 
+## 刪除職缺
+[Back to top](#top)
+
+```
+DELETE /deleteRecruitment
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| _id | `String` | 要刪除職缺的mongodb _id |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| data |  | 刪除職缺標題 |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 尋找職缺
+[Back to top](#top)
+
+```
+POST /searchRecruitment
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| title | `String` | 職缺標題 (optional) |
+| company_name | `String` | 公司名稱 (optional) |
+| work_type | `String` | 職位 (optional) |
+| salary | `String` | 薪資 (optional) |
+| experience | `String` | 經驗要求 (optional) |
+| diploma | `String` | 學系要求 (optional) |
+| requirement | `String` | 技能要求 (optional) |
+| description | `String` | 其他描述 (optional) |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+	HTTP/1.1 201 Created
+	[{
+     _id: String,
+		title: {
+         title: String,
+         company_name: String,
+         work_type: String
+     },
+     info: {
+            salary: String,
+            experience: String,
+            diploma: String
+     },
+		spec: {
+            requirement: String,
+            description: String
+     },
+        image: String
+	},...]
+```
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
 ## 新增職缺
 [Back to top](#top)
 
@@ -159,6 +244,7 @@ POST /showRecruitment
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | - | `Object[]` | 職缺們 |
+| &ensp;_id | `String` | mongodb _id(for delete) |
 | &ensp;title | `Object` | 標題相關 |
 | &ensp;&ensp;title | `String` | 標題 |
 | &ensp;&ensp;company_name | `String` | 公司名稱 |
