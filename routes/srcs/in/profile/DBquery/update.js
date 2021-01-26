@@ -3,7 +3,7 @@ const {D1,D2,D3} = require("./dataType");
 module.exports = function(req){
     const output = {}
     const unset = {}
-    console.log("b0dy",req.body)
+    console.log("body",req.body)
     D1.forEach(key=>{//account,username,...
         try{
             // let show,data;

@@ -33,6 +33,25 @@ async function insert(title,company_name,work_type,salary,experience,diploma,req
   // })
 }
 
+
+/**
+ * @api {post} /addRecruitment 新增職缺
+ * @apiName AddRecruitment
+ * @apiGroup In/career
+ * 
+ * @apiparam {String} title 職缺標題
+ * @apiparam {String} company_name 公司名稱
+ * @apiparam {String} work_type 職位(ex.前端工程師)
+ * @apiparam {String} salary 薪資
+ * @apiparam {String} experience 經驗要求
+ * @apiparam {String} diploma 學系要求
+ * @apiparam {String} requirement 技能要求
+ * @apiparam {String} description 其他描述
+ * 
+ * @apiSuccess (201) data 職缺標題
+ * 
+ * @apiError (500) {String} description 資料庫錯誤
+ */
 module.exports = asyncHandler(async (req, res)=>{
   const recruitmentTitle = req.body.title;
   const recruitmentCompany_name = req.body.company_name;

@@ -15,7 +15,7 @@ module.exports = function(obj){
         element.forEach(major=>{
             try{
                 const {show,...data} = obj[key][major]  //data={SD,Note}
-                if(show) output[key] = data
+                if(show) output[key][major] = data
             }catch{
                 console.log(`skip ${major}`)
             }
