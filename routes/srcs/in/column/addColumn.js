@@ -1,53 +1,7 @@
-const { dbCatch } = require('../../../error');
-const Column_detail = require('../../../Schemas/column_detail');
-const Column_outline = require('../../../Schemas/column_outline');
+const { dbCatch } = require('../../../error')
+const Column_detail = require('../../../Schemas/column_detail')
+const Column_outline = require('../../../Schemas/column_outline')
 const asyncHandler = require('express-async-handler')
-
-/*新增一筆資料*/
-async function insert_detail(title,hashtags,sections,annotation,id){
-    const column_detail =  await new Column_detail({
-        title: title,
-        hashtags: hashtags,
-        sections: sections,
-        annotation: annotation,
-        id: id
-    }).save().catch(dbCatch)
-    console.log(column_detail.title)
-    return column_detail.title
-    // recruitment.save(function(err,res){ //save to db
-    //     if(err){
-    //         console.log(err);
-    //     }
-    //     else{
-    //     console.log('成功儲存：',recruitment);
-    //     console.log(res);
-    //     }
-    // })
-  }
-  
-async function insert_outline(filename,anno,title,exp,edu,intro,id){
-    const column_outline =  await new Column_outline({
-        filename: filename,
-        anno: anno,
-        title: title,
-        exp: exp,
-        edu: edu,
-        intro: intro,
-        id: id,
-        
-    }).save().catch(dbCatch)
-    console.log(column_outline.filename)
-    return column_outline.filename
-    // recruitment.save(function(err,res){ //save to db
-    //     if(err){
-    //         console.log(err);
-    //     }
-    //     else{
-    //     console.log('成功儲存：',recruitment);
-    //     console.log(res);
-    //     }
-    // })
-}
   
   /**
    * @api {post} /addColumn 管理員新增文章
@@ -83,40 +37,19 @@ async function insert_outline(filename,anno,title,exp,edu,intro,id){
    * 
    * @apiError (500) {String} description 資料庫錯誤
    */
+
 module.exports = asyncHandler(async (req, res)=>{
-    const columnTitle = req.body.title;
-    const columnDetailId = req.body.detail_id;
-    const columnDetailHashtags = req.body.hashtags;
-    const columnDetailSections = req.body.sections;
-    const columnDetailAnnotation = req.body.annotation;
-    const columnOutlineFilename = req.body.filename;
-    const columnOutlineAnno = req.body.anno;
-    const columnOutlineExp = req.body.exp;
-    const columnOutlineEdu = req.body.edu;
-    const columnOutlineIntro = req.body.intro;
-    const columnOutlineId = req.body.outline_id;
-  
+    const {title,detail_id,hashtags,sections,annotation,filename, 
+        anno,exp,edu,intro,outline_id} = req.body
+    const objDetail = {title,hashtags,sections,annotation,id:detail_id}
+    const objOutline = {filename,anno,title,exp,edu,intro,id:outline_id}
+    
     //var query = {ID: ID};
     console.log("新增column_detail")
-    await insert_detail(columnTitle,columnDetailHashtags,columnDetailSections,columnDetailAnnotation,columnDetailId).catch(dbCatch)
+    await new Column_detail(objDetail).save().catch(dbCatch)
     console.log("新增column_outline")
-    await insert_outline(columnOutlineFilename,columnOutlineAnno,columnTitle,columnOutlineExp,columnOutlineEdu,columnOutlineIntro,columnOutlineId).catch(dbCatch)
-    res.status(201).send({title: columnTitle, filename: columnOutlineFilename})
+    await new Column_outline(objOutline).save().catch(dbCatch)
+    res.status(201).send({title, filename})
+    console.log(title)
+    return title
 })
-
-/*
-module.exports = asyncHandler(async (req, res)=>{
-    const columnOutlineFilename = req.body.filename;
-    const columnOutlineAnno = req.body.anno;
-    const columnOutlineTitle = req.body.title;
-    const columnOutlineExp = req.body.exp;
-    const columnOutlineEdu = req.body.edu;
-    const columnOutlineIntro = req.body.intro;
-    const columnOutlineId = req.body.id;
-  
-    //var query = {ID: ID};
-    console.log("新增column_outline")
-    console.log(req.body.filename)
-    await insert_outline(columnOutlineFilename,columnOutlineAnno,columnOutlineTitle,columnOutlineExp,columnOutlineEdu,columnOutlineIntro,columnOutlineId)
-    res.status(201).send({data: columnOutlineFilename})
-})*/
