@@ -38,10 +38,11 @@ Recruitment_Schema.virtual('imgSrc').get(function() {
 Recruitment_Schema.methods.getPublic = function() {
 	console.log(this.title)
 	return {
-		title:this.title,
-		info:this.info,
-		spec:this.spec,
-		image:this.imgSrc
+		_id: this.id,
+		title: this.title,
+		info: this.info,
+		spec: this.spec,
+		image: this.imgSrc
 	}
 };
 
