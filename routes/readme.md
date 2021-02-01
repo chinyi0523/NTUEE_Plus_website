@@ -12,15 +12,15 @@ EE+ api文件
    - [新增職缺](#新增職缺)
    - [顯示所有職缺](#顯示所有職缺)
  - [In/column](#incolumn)
+   - [hashtag關鍵字查詢](#hashtag關鍵字查詢)
    - [存column照片](#存column照片)
    - [拿column照片](#拿column照片)
    - [拿Detail資料](#拿detail資料)
    - [拿Outline資料](#拿outline資料)
    - [管理員新增文章](#管理員新增文章)
-   - [hashtag關鍵字查詢](#hashtag關鍵字查詢)
  - [In/profile](#inprofile)
-   - [更新porfile](#更新porfile)
    - [搜尋porfile](#搜尋porfile)
+   - [更新porfile](#更新porfile)
    - [顯示個人profile](#顯示個人profile)
  - [Out/account](#outaccount)
    - [isLogin](#islogin)
@@ -268,6 +268,48 @@ POST /showRecruitment
 
 # In/column
 
+## hashtag關鍵字查詢
+[Back to top](#top)
+
+```
+POST /column/search
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| keyword | `String` |  |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+HTTP/1.1 200 OK
+[{
+	title:String
+	hashtag:String
+	sections:[{
+		bigtitle:String,
+		sections:[{
+			title:String,
+			section:String
+		}]
+	}]
+	annotation:["特別感謝:...","撰寫:...","校稿:...",...]
+	id:["column_yymm"]
+},...]
+```
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
 ## 存column照片
 [Back to top](#top)
 
@@ -459,6 +501,42 @@ POST /addColumn
 | intro | `String[]` | 簡介 (1個element是一段) |
 | outline_id | `String` | 文章在column_outlines的id (Column_Block_yymm) |
 
+### Parameters examples
+`js` - Input-Example:
+
+```js
+let input=new FormData()
+
+input.append("file", 採訪合照)
+input.append("title", "2008級 方劭云（當屆最年輕升遷副教授）")
+input.append("detail_id", "column_yymm")
+input.append("hashtags[0]", 關鍵字1)
+input.append("hashtags[1]", 關鍵字2) ...
+input.append("annotation[0]", "特別感謝:...")
+input.append("annotation[1]", "撰寫:...") ...
+input.append("anno[0]", "作者1 作者2 ...")
+input.append("anno[1]", "| yyyy/mm/dd 星期x")
+input.append("exp[0]", "現任：國立臺灣科技大學電機系 副教授") ...
+input.append("edu[0]", "博士：台灣大學電子所  (2013)") ...
+input.append("intro[0]", "2008畢業於台大電機，目前任職於臺灣科技大學的方劭云教授...") ...
+input.append("outline_id", "Column_Block_yymm")
+
+input.append("sections[0][bigtitle]", "一、我的大學生涯")
+input.append("sections[0][sections][0][title]", "球隊與課業交織的辛苦大學生活")
+input.append("sections[0][sections][0][section]", "因為我是排球校隊，沒能花很多時間在系上...")
+input.append("sections[0][sections][1][title]", "求學生涯印象最深刻的事")
+input.append("sections[0][sections][1][section]", "雖然有嘗試做過專題，但一直到大四要推甄的時候我還是很徬徨...")
+input.append("sections[0][sections][2...][title/section]", ...)
+
+input.append("sections[1][bigtitle]", "二、攻讀碩士博士")
+input.append("sections[1][sections][0][title]", "漫長的研究所生涯")
+input.append("sections[1][sections][0][section]", "我讀完一年碩士之後就直升攻讀博士，再花四年拿到博士學位...")
+input.append("sections[1][sections][1...][title/section]", ...)
+...
+
+axios.post("/api/addColumn", input, {headers:{'content-type': 'multipart/form-data'}})
+```
+
 ### Success response
 
 #### Success response - `201`
@@ -476,119 +554,7 @@ POST /addColumn
 |----------|------------|---------------------------------------|
 | description | `String` | 資料庫錯誤 |
 
-## hashtag關鍵字查詢
-[Back to top](#top)
-
-```
-POST /column/search
-```
-
-### Parameters - `Parameter`
-
-| Name     | Type       | Description                           |
-|----------|------------|---------------------------------------|
-| keyword | `String` |  |
-
-### Success response example
-
-#### Success response example - `Success-Response:`
-
-```json
-HTTP/1.1 200 OK
-[{
-	title:String
-	hashtag:String
-	sections:[{
-		bigtitle:String,
-		sections:[{
-			title:String,
-			section:String
-		}]
-	}]
-	annotation:["特別感謝:...","撰寫:...","校稿:...",...]
-	id:["column_yymm"]
-},...]
-```
-
-### Error response
-
-#### Error response - `500`
-
-| Name     | Type       | Description                           |
-|----------|------------|---------------------------------------|
-| description | `String` | 資料庫錯誤 |
-
 # In/profile
-
-## 更新porfile
-[Back to top](#top)
-
-```
-POST /chVisual
-```
-
-### Header examples
-header-config
-
-```json
-{ "content-type": "multipart/form-data" }
-```
-
-### Parameters - `Parameter`
-
-| Name     | Type       | Description                           |
-|----------|------------|---------------------------------------|
-| userimage | `File` | 大頭貼 |
-| account | `Obejct` | 學號(可以只有show或data) |
-| &ensp;data | `String` | 學號(或用'account.data') |
-| &ensp;show | `Boolean` | 是否顯示學號(或用'account.show') |
-| username | `Object` | 名字 {show,data} |
-| nickname | `Object` | 綽號 {show,data} |
-| profile | `Object` | 自介 {show,data} |
-| publicEmail | `Object` | 公開信相 {show,data} |
-| office | `Object` | 公司電話 {show,data} |
-| homephone | `Object` | 家裡電話 {show,data} |
-| cellphone | `Object` | 手機 {show,data} |
-| CC | `Object` | city and country {show,data} |
-| web | `Object` | 個人部落格 {show,data} |
-| facebook | `Object` | facebook {show,data} |
-| Linkedin | `Object` | Linkedin {show,data} |
-| education | `Object` | 學位 |
-| &ensp;major | `Object` | 主修 |
-| &ensp;&ensp;show | `Boolean` | 是否顯示(或用'education.major.show') |
-| &ensp;&ensp;SD | `String` | school and department(或用'education.major.SD') |
-| &ensp;&ensp;Note | `String` | 備註(或用'education.major.Note') |
-| &ensp;double_major | `Object` | 雙主修 {show,SD,Note} |
-| &ensp;minor | `Object` | 輔修 {show,SD,Note} |
-| &ensp;master | `Object` | 碩士 {show,SD,Note} |
-| &ensp;doctor | `Object` | 博士 {show,SD,Note} |
-| Occupation | `Object[]` | 工作(因為array運算複雜，請直接給我完整的覆蓋) |
-| &ensp;show | `Boolean` | 是否顯示 |
-| &ensp;C | `String` | 公司 |
-| &ensp;O | `String` | 部門 |
-| &ensp;P | `String` | 職位 |
-
-### Success response
-
-#### Success response - `204`
-
-| Name     | Type       | Description                           |
-|----------|------------|---------------------------------------|
-| - |  |  |
-
-### Error response
-
-#### Error response - `404`
-
-| Name     | Type       | Description                           |
-|----------|------------|---------------------------------------|
-| description | `String` | 帳號不存在 |
-
-#### Error response - `500`
-
-| Name     | Type       | Description                           |
-|----------|------------|---------------------------------------|
-| description | `String` | 資料庫錯誤 |
 
 ## 搜尋porfile
 [Back to top](#top)
@@ -658,6 +624,76 @@ POST /searchVisual
 | &ensp;&ensp;P | `String` | 職稱 |
 
 ### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 更新porfile
+[Back to top](#top)
+
+```
+POST /chVisual
+```
+
+### Header examples
+header-config
+
+```json
+{ "content-type": "multipart/form-data" }
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| userimage | `File` | 大頭貼 |
+| account | `Obejct` | 學號(可以只有show或data) |
+| &ensp;data | `String` | 學號(或用'account.data') |
+| &ensp;show | `Boolean` | 是否顯示學號(或用'account.show') |
+| username | `Object` | 名字 {show,data} |
+| nickname | `Object` | 綽號 {show,data} |
+| profile | `Object` | 自介 {show,data} |
+| publicEmail | `Object` | 公開信相 {show,data} |
+| office | `Object` | 公司電話 {show,data} |
+| homephone | `Object` | 家裡電話 {show,data} |
+| cellphone | `Object` | 手機 {show,data} |
+| CC | `Object` | city and country {show,data} |
+| web | `Object` | 個人部落格 {show,data} |
+| facebook | `Object` | facebook {show,data} |
+| Linkedin | `Object` | Linkedin {show,data} |
+| education | `Object` | 學位 |
+| &ensp;major | `Object` | 主修 |
+| &ensp;&ensp;show | `Boolean` | 是否顯示(或用'education.major.show') |
+| &ensp;&ensp;SD | `String` | school and department(或用'education.major.SD') |
+| &ensp;&ensp;Note | `String` | 備註(或用'education.major.Note') |
+| &ensp;double_major | `Object` | 雙主修 {show,SD,Note} |
+| &ensp;minor | `Object` | 輔修 {show,SD,Note} |
+| &ensp;master | `Object` | 碩士 {show,SD,Note} |
+| &ensp;doctor | `Object` | 博士 {show,SD,Note} |
+| Occupation | `Object[]` | 工作(因為array運算複雜，請直接給我完整的覆蓋) |
+| &ensp;show | `Boolean` | 是否顯示 |
+| &ensp;C | `String` | 公司 |
+| &ensp;O | `String` | 部門 |
+| &ensp;P | `String` | 職位 |
+
+### Success response
+
+#### Success response - `204`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - |  |  |
+
+### Error response
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 帳號不存在 |
 
 #### Error response - `500`
 

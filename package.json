@@ -20,12 +20,8 @@
     "apidoc": "^0.25.0",
     "apidoc-markdown": "^5.2.1",
     "body-parser": "^1.17.2",
-<<<<<<< HEAD
-    "bootstrap": "^4.5.3",
-=======
     "bootstrap": "^4.5.0",
     "child_process": "^1.0.2",
->>>>>>> b08901110
     "connect-history-api-fallback": "^1.6.0",
     "connect-mongo": "^3.2.0",
     "core-js": "^3.8.1",
