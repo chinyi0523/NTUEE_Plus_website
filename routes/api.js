@@ -3,7 +3,6 @@ const express = require("express")
 const router = express.Router()
 const env = require('dotenv')
 env.config()
-console.log('env',process.env.NODE_ENV)
 
 if(process.env.NODE_ENV==='development'){
     //test
