@@ -93,4 +93,4 @@ const matching = async (senior,junior,oPath)=>{
 
 // matching('senior.xlsx', 'junior.xlsx', 'output.xlsx')
 
-exports.module = matching
+module.exports = matching

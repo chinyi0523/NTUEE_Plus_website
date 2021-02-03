@@ -9,8 +9,8 @@ const post = asyncHandle(async (req,res,next)=>{
     console.log(junior)
     
     // const childPython = spawn('python', ['./api/excel/matching.py',senior.path,junior.path,'./api/excel/uploads/output.csv'])
-    await matching('/uploads/senior.xlsx','/uploads/junior.xlsx','/uploads/output.xlsx')
-    res.download('api/excel/uploads/output.csv')
+    await matching(__dirname+'/uploads/senior.xlsx',__dirname+'/uploads/junior.xlsx',__dirname+'/uploads/output.xlsx')
+    res.download(__dirname+'/uploads/output.xlsx')
 })
 
-exports.module = [parseExcel,post]
+module.exports = [parseExcel,post]

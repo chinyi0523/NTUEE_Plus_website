@@ -1,11 +1,11 @@
 const multer = require( 'multer')
 const {ErrorHandler} = require('../../../../error')
-
-const __dirname = './'//path.resolve();
+const asyncHandle = require('express-async-handler')
+// const __dirname = './'//path.resolve();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, __dirname + '/api/excel/uploads/')
+        cb(null, __dirname + '/uploads')
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)
@@ -26,7 +26,7 @@ const uploadExcel = multer({
     {name:'junior',maxCount:1}
 ])
 
-exports.module = (req,res,next)=>{
+module.exports = (req,res,next)=>{
     uploadExcel(req,res,(err)=>{
         if (req.fileValidationError) throw new ErrorHandler(400,req.fileValidationError)
         else if(err instanceof multer.MulterError) throw new ErrorHandler(400,err.message)
