@@ -1,8 +1,10 @@
 //routes/api.js 控管後端所有頁面部屬
 const express = require("express")
 const router = express.Router()
+const env = require('dotenv')
+env.config()
 
-if(process.env.NODE_ENV==='development' || true){
+if(process.env.NODE_ENV==='development'){
     //test
     console.log('running in dev mode')
     /**
