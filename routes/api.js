@@ -40,6 +40,8 @@ router.use(require("./srcs/in/account/main"))
 router.use(require("./srcs/in/column/main"))
 //searchJob, addJob, addRecruitment
 router.use(require("./srcs/in/career/main"))
+//study
+router.use(require('./srcs/in/study/main'))
 
 //error handling, every error thrown by previous router will be catch by me
 router.use(require('./error').handleError)
