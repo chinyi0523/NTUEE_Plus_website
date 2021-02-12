@@ -1,6 +1,6 @@
-const Column_detail = require('../../../Schemas/column_detail');
-const asyncHandler = require('express-async-handler');
-const { dbCatch } = require('../../../error');
+const Column_detail = require('../../../Schemas/column_detail')
+const asyncHandler = require('express-async-handler')
+const { dbCatch } = require('../../../error')
 
 /**
  * @api {post} /column/search hashtag關鍵字查詢
