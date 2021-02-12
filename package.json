@@ -22,7 +22,6 @@
     "apidoc-markdown": "^5.2.1",
     "body-parser": "^1.17.2",
     "bootstrap": "^4.5.3",
-    "child_process": "^1.0.2",
     "connect-history-api-fallback": "^1.6.0",
     "connect-mongo": "^3.2.0",
     "core-js": "^3.8.1",

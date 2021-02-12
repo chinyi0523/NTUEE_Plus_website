@@ -28,9 +28,9 @@ const uploadExcel = multer({
 
 module.exports = (req,res,next)=>{
     uploadExcel(req,res,(err)=>{
-        if (req.fileValidationError) throw new ErrorHandler(400,req.fileValidationError)
-        else if(err instanceof multer.MulterError) throw new ErrorHandler(400,err.message)
-        else if(err) throw new ErrorHandler(400,err)
+        if (req.fileValidationError) next(new ErrorHandler(400,req.fileValidationError))
+        else if(err instanceof multer.MulterError) next(new ErrorHandler(400,err.message))
+        else if(err) next(new ErrorHandler(400,err))
         next()
     })
 }
