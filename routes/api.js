@@ -1,8 +1,10 @@
 //routes/api.js 控管後端所有頁面部屬
 const express = require("express")
 const router = express.Router()
+const env = require('dotenv')
+env.config()
 
-if(process.env.NODE_ENV==='development' || true){
+if(process.env.NODE_ENV==='development'){
     //test
     console.log('running in dev mode')
     /**
@@ -38,6 +40,8 @@ router.use(require("./srcs/in/account/main"))
 router.use(require("./srcs/in/column/main"))
 //searchJob, addJob, addRecruitment
 router.use(require("./srcs/in/career/main"))
+//study
+router.use(require('./srcs/in/study/main'))
 
 //error handling, every error thrown by previous router will be catch by me
 router.use(require('./error').handleError)

@@ -22,6 +22,8 @@ EE+ api文件
    - [搜尋porfile](#搜尋porfile)
    - [更新porfile](#更新porfile)
    - [顯示個人profile](#顯示個人profile)
+ - [In/study](#instudy)
+   - [配對](#配對)
  - [Out/account](#outaccount)
    - [isLogin](#islogin)
    - [login](#login)
@@ -437,12 +439,6 @@ HTTP/1.1 200 OK
 POST /getOutline
 ```
 
-### Parameters - `Parameter`
-
-| Name     | Type       | Description                           |
-|----------|------------|---------------------------------------|
-| - | `<ul> <li></li> </ul>` |  <li></li>  |
-
 ### Success response example
 
 #### Success response example - `Success-Response:`
@@ -750,6 +746,39 @@ POST /showVisual
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | description | `String` | 資料庫錯誤 |
+
+# In/study
+
+## 配對
+[Back to top](#top)
+
+給學長姊跟學弟妹留學配對的.xlsx檔，幫他們配對
+
+```
+POST /study_matching
+```
+
+### Header examples
+config
+
+```json
+{ "content-type": "multipart/form-data" }
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| senior | `File` | 學長姐的.xlsx |
+| junior | `File` | 學弟妹的.xlsx |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - | `File` | output.xlsx |
 
 # Out/account
 
