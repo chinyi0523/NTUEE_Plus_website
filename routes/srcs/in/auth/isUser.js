@@ -1,4 +1,4 @@
-const { ErrorHandler } = require("../../error");
+const { ErrorHandler } = require("../../../error");
 const env = require('dotenv')
 env.config()
 

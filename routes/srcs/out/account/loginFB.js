@@ -27,6 +27,7 @@ const loginFB = async (req, res, next) => {
 	console.log(obj)
 	req.session.loginName = obj.username
 	req.session.loginAccount = obj.account
+	req.session.isAuth = obj.isAuth
 	return res.status(201).send({username: obj.username })
 }
 

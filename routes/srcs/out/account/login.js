@@ -35,6 +35,7 @@ const login = async (req, res, next) => {
 	if(obj.userpsw !== newPsw) throw new ErrorHandler(401,'密碼錯誤')
 	req.session.loginName = obj.username;
 	req.session.loginAccount = obj.account;
+	req.session.isAuth = obj.isAuth;
 	return res.status(201).send({username:obj.username,account:obj.account})
 }
 
