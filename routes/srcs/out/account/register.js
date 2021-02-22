@@ -41,6 +41,7 @@ async function insertVisual(name,account,email){
  *
  * @apiparam {String} account 學號
  * @apiparam {String} password 密碼(以後建議在前端加密)
+ * @apiparam {String} ConfirmPassword 二次密碼
  * @apiparam {String} username 使用者名字
  * @apiparam {String} Email 信箱 
  * @apiparam {File} file 身分證明的照片
