@@ -29,6 +29,7 @@ EE+ api文件
    - [更新porfile](#更新porfile)
    - [顯示個人profile](#顯示個人profile)
  - [In/study](#instudy)
+   - [新增本年表單連結](#新增本年表單連結)
    - [配對](#配對)
  - [Out/account](#outaccount)
    - [isLogin](#islogin)
@@ -934,6 +935,38 @@ POST /showVisual
 | description | `String` | 資料庫錯誤 |
 
 # In/study
+
+## 新增本年表單連結
+[Back to top](#top)
+
+設定本年表單
+
+```
+POST /study/addLink
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| senior | `String` | 學長姊表單連結 |
+| junior | `String` | 學弟妹表單連結 |
+
+### Success response
+
+#### Success response - `201`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| x | `String` | data stored |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
 
 ## 配對
 [Back to top](#top)
