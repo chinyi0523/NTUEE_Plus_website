@@ -6,6 +6,12 @@ EE+ api文件
  - [In/account](#inaccount)
    - [重設密碼](#重設密碼)
    - [顯示帳號私人資訊](#顯示帳號私人資訊)
+ - [In/auth](#inauth)
+   - [刪除用戶](#刪除用戶)
+   - [新增、刪除管理員](#新增、刪除管理員)
+   - [查看待核可帳號](#查看待核可帳號)
+   - [檢視用戶](#檢視用戶)
+   - [身分驗證](#身分驗證)
  - [In/career](#incareer)
    - [刪除職缺](#刪除職缺)
    - [尋找職缺](#尋找職缺)
@@ -104,6 +110,180 @@ POST /showPersonal
 | account |  | 使用者學號 |
 
 ### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+# In/auth
+
+## 刪除用戶
+[Back to top](#top)
+
+刪除用戶
+
+```
+POST /delUser
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 帳號 |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | account |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 新增、刪除管理員
+[Back to top](#top)
+
+新增、刪除管理員
+
+```
+POST /manageAuth
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 學號 |
+| setAuth | `Boolean` | true:加成管理員；false:從管理員移除(可以移除自己) |
+
+### Success response
+
+#### Success response - `204`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - |  |  |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 查看待核可帳號
+[Back to top](#top)
+
+查看待核可帳號
+
+```
+POST /showPending
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| x | `x` | x |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| pendings | `Object[]` | 各個帳號 |
+| &ensp;username | `String` | 名字 |
+| &ensp;account | `String` | 學號 |
+| &ensp;email | `String` | 信箱 |
+| &ensp;imgSrc | `String` | 證件照 |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 檢視用戶
+[Back to top](#top)
+
+檢視用戶
+
+```
+POST /showUser
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 帳號(optional)，用b0790xxxx模糊搜尋 |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| users | `Object[]` | 各個帳號 |
+| &ensp;username | `String` | 名字 |
+| &ensp;account | `String` | 學號 |
+| &ensp;email | `String` | 信箱 |
+| &ensp;imgSrc | `String` | 證件照 |
+| &ensp;_id | `String` | 帳號ID，暫不要顯示出來 |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 身分驗證
+[Back to top](#top)
+
+身分驗證
+
+```
+POST /handlePending
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 學號 |
+| acceptUser | `Boolean` | 是否接受此用戶 |
+
+### Success response
+
+#### Success response - `204`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - |  |  |
+
+### Error response
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | user not found |
 
 #### Error response - `500`
 
@@ -438,6 +618,12 @@ HTTP/1.1 200 OK
 ```
 POST /getOutline
 ```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - | `<ul> <li></li> </ul>` |  <li></li>  |
 
 ### Success response example
 
@@ -917,7 +1103,7 @@ POST /logout
 ## register
 [Back to top](#top)
 
-註冊(by 學號 &amp; email)
+註冊(by 學號 &amp; email)，.env設定newReg=true使用新註冊規則
 
 ```
 POST /register
@@ -936,6 +1122,7 @@ config
 |----------|------------|---------------------------------------|
 | account | `String` | 學號 |
 | password | `String` | 密碼(以後建議在前端加密) |
+| ConfirmPassword | `String` | 二次密碼 |
 | username | `String` | 使用者名字 |
 | Email | `String` | 信箱 |
 | file | `File` | 身分證明的照片 |
