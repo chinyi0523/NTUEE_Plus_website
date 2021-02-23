@@ -1,7 +1,7 @@
-const { dbCatch, ErrorHandler } = require('../../../error')
-const Login = require('../../../Schemas/user_login')
-const Pending = require('../../../Schemas/user_pending')
-const Visual = require('../../../Schemas/user_visual')
+const { dbCatch, ErrorHandler } = require('../../../../error')
+const Login = require('../../../../Schemas/user_login')
+const Pending = require('../../../../Schemas/user_pending')
+const Visual = require('../../../../Schemas/user_visual')
 const asyncHandler = require('express-async-handler')
 
 /**

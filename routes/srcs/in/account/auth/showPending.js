@@ -1,5 +1,5 @@
-const { dbCatch, ErrorHandler } = require('../../../error')
-const Pending = require('../../../Schemas/user_pending')
+const { dbCatch, ErrorHandler } = require('../../../../error')
+const Pending = require('../../../../Schemas/user_pending')
 const asyncHandler = require('express-async-handler')
 
 /**

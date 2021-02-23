@@ -35,7 +35,7 @@ router.use(require("./srcs/in/auth/isUser"))
 //showVisual, chVisual, searchVisual
 router.use(require("./srcs/in/profile/main"))
 //showPerson, chLogin, isLogin, logout
-router.use(require("./srcs/in/account/main"))
+router.use(require("./srcs/in/account/main").router)
 //column
 router.use(require("./srcs/in/column/main").router)
 //searchJob, addJob, addRecruitment
@@ -49,6 +49,8 @@ router.use(require('./srcs/in/auth/isAuth'))
 router.use(require("./srcs/in/column/main").router_auth)
 //auth
 router.use(require('./srcs/in/auth/main'))
+//account
+router.use(require("./srcs/in/account/main").router_auth)
 
 //error handling, every error thrown by previous router will be catch by me
 router.use(require('./error').handleError)
