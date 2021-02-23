@@ -1017,6 +1017,7 @@ POST /login
 |----------|------------|---------------------------------------|
 | username | `String` | 登入者名字 |
 | account | `String` | 登入者學號 |
+| isAuth | `Boolean` | 是否是管理員 |
 
 ### Error response
 
@@ -1060,6 +1061,8 @@ POST /loginFB
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | username | `String` | 登入者名字 |
+| account | `String` | 學號 |
+| isAuth | `Boolean` | 是否是管理員 |
 
 ### Error response
 

@@ -13,6 +13,8 @@ const asyncHandler = require('express-async-handler')
  * @apiparam {String} facebookID facebook ID
  * 
  * @apiSuccess (201) {String} username 登入者名字
+ * @apiSuccess (201) {String} account 學號
+ * @apiSuccess (201) {Boolean} isAuth 是否是管理員
  * 
  * @apiError (404) {String} description 帳號不存在
  * 
@@ -28,7 +30,7 @@ const loginFB = async (req, res, next) => {
 	req.session.loginName = obj.username
 	req.session.loginAccount = obj.account
 	req.session.isAuth = obj.isAuth
-	return res.status(201).send({username: obj.username })
+	return res.status(201).send({username: obj.username, isAuth:obj.isAuth, account:obj.account })
 }
 
 module.exports = asyncHandler(loginFB)
