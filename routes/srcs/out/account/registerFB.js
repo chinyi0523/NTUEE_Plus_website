@@ -1,5 +1,6 @@
 //srcs/register.js
 const { ErrorHandler, dbCatch } = require('../../../error');
+const Pending = require('../../../Schemas/user_pending');
 const Login = require('../../../Schemas/user_login');
 //const crypto = require("crypto");
 const Visual = require('../../../Schemas/user_visual');
@@ -61,4 +62,34 @@ const registerFB = async (req, res) => {
     return res.status(201).send({username})
 }
 
-module.exports = asyncHandler(registerFB)
+const secure_regFB = async (req,res)=>{
+    const username = req.body.username;
+    const account = req.body.account.toLowerCase();
+    const facebookID = req.body.facebookID;
+
+    if(req.file===undefined) throw new ErrorHandler(400,'請添加照片')
+
+    const query = { account }
+    const isRegistered = await Login.exists(query).catch(dbCatch)
+    if(isRegistered) throw new ErrorHandler(403,'帳號已存在')
+    
+    const data = {
+        username,
+        account,
+        facebookID,
+        email:Email,
+        img:{
+            data:req.file.buffer,
+            contentType:req.file.mimetype
+        }
+    }
+    await Pending.findOneAndUpdate(
+        {account},
+        data,
+        {upsert: true}
+    ).catch(dbCatch)
+
+    return res.status(201).send({username})
+}
+
+module.exports = process.env.newReg==='true' ? asyncHandler(secure_regFB) : asyncHandler(registerFB)

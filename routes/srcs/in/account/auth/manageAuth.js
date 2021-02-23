@@ -1,5 +1,5 @@
-const { dbCatch } = require('../../../error')
-const Login = require('../../../Schemas/user_login')
+const { dbCatch } = require('../../../../error')
+const Login = require('../../../../Schemas/user_login')
 const asyncHandler = require('express-async-handler')
 
 /**
