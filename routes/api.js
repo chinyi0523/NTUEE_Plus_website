@@ -30,18 +30,27 @@ router.use(require("./srcs/out/account/main"))
 router.use(require("./srcs/out/forget/main"))
 
 //in
-//Auth
-router.use(require("./srcs/in/isAuth"))
+//check is user
+router.use(require("./srcs/in/auth/isUser"))
 //showVisual, chVisual, searchVisual
 router.use(require("./srcs/in/profile/main"))
 //showPerson, chLogin, isLogin, logout
-router.use(require("./srcs/in/account/main"))
-//getImg, saveImg
-router.use(require("./srcs/in/column/main"))
+router.use(require("./srcs/in/account/main").router)
+//column
+router.use(require("./srcs/in/column/main").router)
 //searchJob, addJob, addRecruitment
 router.use(require("./srcs/in/career/main"))
 //study
 router.use(require('./srcs/in/study/main'))
+
+//check is auth
+router.use(require('./srcs/in/auth/isAuth'))
+//column
+router.use(require("./srcs/in/column/main").router_auth)
+//auth
+router.use(require('./srcs/in/auth/main'))
+//account
+router.use(require("./srcs/in/account/main").router_auth)
 
 //error handling, every error thrown by previous router will be catch by me
 router.use(require('./error').handleError)

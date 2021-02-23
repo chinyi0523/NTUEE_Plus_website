@@ -1,6 +1,6 @@
-const getColumn = require('./imgProcess/getOutline');
-const asyncHandler = require('express-async-handler');
-const { dbCatch } = require('../../../error');
+const getColumn = require('./imgProcess/getOutline')
+const asyncHandler = require('express-async-handler')
+const { dbCatch } = require('../../../error')
 
 
 /**
