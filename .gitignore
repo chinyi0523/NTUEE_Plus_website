@@ -54,4 +54,4 @@ certificate.crt
 certificate.key
 routes/apidoc-out
 package-lock.json
-uploads/
+uploads/*.xlsx
