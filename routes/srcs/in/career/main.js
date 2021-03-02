@@ -13,5 +13,7 @@ router.post('/addRecruitment',
 	require('./addRecruitment'))
 router.post('/showRecruitment',
 	require('./showRecruitment'))
+router.post('/searchRecruitment',
+	require('./searchRecruitment'))
     
 module.exports = router

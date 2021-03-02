@@ -6,8 +6,8 @@ module.exports = {
 	"login":["account","password"],
 	"forget":["account"],//,"question","Email","password","ConfirmPassword"],
 	"chLogin":["question"],
-	"chPassword":[],
+	"chPassword":['chPassword/oldpassword','chPassword/newpassword'],
 	"activation":["account","password"],
 	"searchVisual":["account.data"],
-	"chVisual":['chVisual/account','chVisual/phone','chVisual/homephone']
+	"chVisual":['chVisual/account','chVisual/phone','chVisual/homephone','chVisual/email']
 }

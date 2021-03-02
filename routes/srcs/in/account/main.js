@@ -9,6 +9,6 @@ router.post("/showPersonal",
 
 router.post("/chPassword",
 	valid('chPassword'),
-	require("./chPassword"))
-
+	//require("./chPassword"))
+)
 module.exports = router
