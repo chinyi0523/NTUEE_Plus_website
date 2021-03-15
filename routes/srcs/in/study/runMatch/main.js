@@ -20,8 +20,8 @@ const post = asyncHandle(async (req,res,next)=>{
     const junior = req.files['junior'][0]
     console.log(senior)
     console.log(junior)
-    
-    await matching(__dirname+'/uploads/senior.xlsx',__dirname+'/uploads/junior.xlsx',__dirname+'/uploads/output.xlsx')
+    await matching(senior.path,junior.path,__dirname+'/uploads/output.xlsx')
+    // await matching(__dirname+'/uploads/senior.xlsx',__dirname+'/uploads/junior.xlsx',__dirname+'/uploads/output.xlsx')
     res.download(__dirname+'/uploads/output.xlsx')
 })
 

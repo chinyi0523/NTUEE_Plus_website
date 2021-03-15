@@ -71,6 +71,6 @@ const test = async ()=>{
         });
     })
 }
-test()
+// test()
 
 module.exports = main

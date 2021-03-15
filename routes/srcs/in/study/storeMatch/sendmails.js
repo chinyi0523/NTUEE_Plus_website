@@ -31,16 +31,17 @@ const toJunior = async (data)=>{
 
 const sendmails = async (resultData)=>{
     errors = []
-    resultData.forEach(data=>{
-        try{
-            const mail_to_senior = await template2senior(data)
-            await sendmail(data.senior.smail,'留學配對結果',mail_to_senior)
-        }catch{
-            errors.push(data.senior)
-        }
-    })
+    // resultData.forEach(async data=>{
+    //     try{
+    //         const mail_to_senior = await template2senior(data)
+    //         await sendmail(data.senior.smail,'留學配對結果',mail_to_senior)
+    //     }catch{
+    //         errors.push(data.senior)
+    //     }
+    // })
 }
 
-sendmails(resultData)
+console.log('triger sendmails')
+// sendmails(resultData)
 
 module.exports = sendmails
