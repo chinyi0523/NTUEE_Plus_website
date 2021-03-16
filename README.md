@@ -36,6 +36,7 @@ $ npm start
 |陳君輔|後端|b07901029|Claude0311|V|X|X|V|V|
 |葉星宏|-|b08901015|sab93667|X|X|X|X|X|
 |崔翰清||b09901031|hackhaha1|V|X|X|X|X|
+|郭宇誠|後端|b09901107|Yu-Cheng-Kuo|X|X|X|X|X|
 
 ### 1109 進度 by 沒什麼考試的君輔
 * email使用template：jsDOM讀取html模板，並用jquery變更特定element，詳細可參考forget/mail
