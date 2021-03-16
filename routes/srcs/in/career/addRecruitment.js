@@ -3,8 +3,8 @@ const Recruitment = require('../../../Schemas/recruitment');
 const asyncHandler = require('express-async-handler')
 
 /*新增一筆資料*/
-async function insert(title,company_name,work_type,salary,experience,diploma,requirement,description){
-  const recruitment =  await new Recruitment({
+async function insert(title,company_name,work_type,salary,experience,diploma,requirement,description,img){
+  let recruitmentObj = {
     title:{
       title: title,
 		  company_name: company_name,
@@ -18,8 +18,12 @@ async function insert(title,company_name,work_type,salary,experience,diploma,req
 	  spec:{
 		  requirement: requirement,
 		  description: description
-    }
-  }).save().catch(dbCatch)
+    },
+  };
+  if(img){
+    recruitmentObj.img = img;
+  }
+  const recruitment =  await new Recruitment(recruitmentObj).save().catch(dbCatch)
   console.log(recruitment.title.title)
   return recruitment.title.title
   // recruitment.save(function(err,res){ //save to db
@@ -62,8 +66,15 @@ module.exports = asyncHandler(async (req, res)=>{
   const recruitmentRequirement = req.body.requirement;
   const recruitmentDescription = req.body.description;
 
+  const recruitmentFile = req.file;
+  let recruitmentImg;
+  if(recruitmentFile){
+    recruitmentImg = {data:recruitmentFile.buffer, contentType:recruitmentFile.mimetype}
+    console.log(recruitmentImg)
+  }
+
   //var query = {ID: ID};
   console.log("新增recruitment")
-  await insert(recruitmentTitle,recruitmentCompany_name,recruitmentWork_type,recruitmentSalary,recruitmentExperience,recruitmentDiploma,recruitmentRequirement,recruitmentDescription)
+  await insert(recruitmentTitle,recruitmentCompany_name,recruitmentWork_type,recruitmentSalary,recruitmentExperience,recruitmentDiploma,recruitmentRequirement,recruitmentDescription, recruitmentFile?recruitmentImg:undefined)
   res.status(201).send({data: recruitmentTitle})
 })

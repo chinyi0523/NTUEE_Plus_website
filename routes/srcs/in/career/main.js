@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const ImgGet = require('../../../middleware/fileProcess');
 // const Auth = require("../Auth");
 // const ValidSend = require("../../../validation/control");//若valid未通過則res.send false
 // const ValidTest = require("../../../validation/validation");
@@ -10,6 +11,7 @@ const router = express.Router();
 // router.post('/searchJob',
 // 	require('./searchJob'))
 router.post('/addRecruitment',
+	ImgGet('file'),
 	require('./addRecruitment'))
 router.post('/showRecruitment',
 	require('./showRecruitment'))
