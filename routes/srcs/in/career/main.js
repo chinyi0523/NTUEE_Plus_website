@@ -15,5 +15,7 @@ router.post('/showRecruitment',
 	require('./showRecruitment'))
 router.post('/searchRecruitment',
 	require('./searchRecruitment'))
+router.delete('/deleteRecruitment',
+	require('./deleteRecruitment'))
     
 module.exports = router

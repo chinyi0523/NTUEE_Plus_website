@@ -14,7 +14,7 @@ class ErrorHandler extends Error {
 const handleError = (err,req,res,next) => {
     const { statusCode, description } = err
     if(!description) {
-        console.log('Error:',err.message)
+        console.log('Error:',err)
         return res.status(404).json({
             description:'unknow error'
         })

@@ -53,3 +53,5 @@ init-mongo.sh
 certificate.crt
 certificate.key
 routes/apidoc-out
+package-lock.json
+uploads/

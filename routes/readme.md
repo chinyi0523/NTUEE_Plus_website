@@ -6,16 +6,30 @@ EE+ api文件
  - [In/account](#inaccount)
    - [重設密碼](#重設密碼)
    - [顯示帳號私人資訊](#顯示帳號私人資訊)
+ - [In/auth](#inauth)
+   - [刪除用戶](#刪除用戶)
+   - [新增、刪除管理員](#新增、刪除管理員)
+   - [查看待核可帳號](#查看待核可帳號)
+   - [檢視用戶](#檢視用戶)
+   - [身分驗證](#身分驗證)
  - [In/career](#incareer)
+   - [刪除職缺](#刪除職缺)
+   - [尋找職缺](#尋找職缺)
    - [新增職缺](#新增職缺)
    - [顯示所有職缺](#顯示所有職缺)
  - [In/column](#incolumn)
+   - [hashtag關鍵字查詢](#hashtag關鍵字查詢)
    - [存column照片](#存column照片)
    - [拿column照片](#拿column照片)
+   - [拿Detail資料](#拿detail資料)
+   - [拿Outline資料](#拿outline資料)
+   - [管理員新增文章](#管理員新增文章)
  - [In/profile](#inprofile)
    - [搜尋porfile](#搜尋porfile)
    - [更新porfile](#更新porfile)
    - [顯示個人profile](#顯示個人profile)
+ - [In/study](#instudy)
+   - [配對](#配對)
  - [Out/account](#outaccount)
    - [isLogin](#islogin)
    - [login](#login)
@@ -103,7 +117,264 @@ POST /showPersonal
 |----------|------------|---------------------------------------|
 | description | `String` | 資料庫錯誤 |
 
+# In/auth
+
+## 刪除用戶
+[Back to top](#top)
+
+刪除用戶
+
+```
+POST /delUser
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 帳號 |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | account |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 新增、刪除管理員
+[Back to top](#top)
+
+新增、刪除管理員
+
+```
+POST /manageAuth
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 學號 |
+| setAuth | `Boolean` | true:加成管理員；false:從管理員移除(可以移除自己) |
+
+### Success response
+
+#### Success response - `204`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - |  |  |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 查看待核可帳號
+[Back to top](#top)
+
+查看待核可帳號
+
+```
+POST /showPending
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| x | `x` | x |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| pendings | `Object[]` | 各個帳號 |
+| &ensp;username | `String` | 名字 |
+| &ensp;account | `String` | 學號 |
+| &ensp;email | `String` | 信箱 |
+| &ensp;imgSrc | `String` | 證件照 |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 檢視用戶
+[Back to top](#top)
+
+檢視用戶
+
+```
+POST /showUser
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 帳號(optional)，用b0790xxxx模糊搜尋 |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| users | `Object[]` | 各個帳號 |
+| &ensp;username | `String` | 名字 |
+| &ensp;account | `String` | 學號 |
+| &ensp;email | `String` | 信箱 |
+| &ensp;imgSrc | `String` | 證件照 |
+| &ensp;_id | `String` | 帳號ID，暫不要顯示出來 |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 身分驗證
+[Back to top](#top)
+
+身分驗證
+
+```
+POST /handlePending
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| account | `String` | 學號 |
+| acceptUser | `Boolean` | 是否接受此用戶 |
+
+### Success response
+
+#### Success response - `204`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - |  |  |
+
+### Error response
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | user not found |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
 # In/career
+
+## 刪除職缺
+[Back to top](#top)
+
+```
+DELETE /deleteRecruitment
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| _id | `String` | 要刪除職缺的mongodb _id |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| data |  | 刪除職缺標題 |
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 尋找職缺
+[Back to top](#top)
+
+```
+POST /searchRecruitment
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| title | `String` | 職缺標題 (optional) |
+| company_name | `String` | 公司名稱 (optional) |
+| work_type | `String` | 職位 (optional) |
+| salary | `String` | 薪資 (optional) |
+| experience | `String` | 經驗要求 (optional) |
+| diploma | `String` | 學系要求 (optional) |
+| requirement | `String` | 技能要求 (optional) |
+| description | `String` | 其他描述 (optional) |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+	HTTP/1.1 201 Created
+	[{
+     _id: String,
+		title: {
+         title: String,
+         company_name: String,
+         work_type: String
+     },
+     info: {
+            salary: String,
+            experience: String,
+            diploma: String
+     },
+		spec: {
+            requirement: String,
+            description: String
+     },
+        image: String
+	},...]
+```
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
 
 ## 新增職缺
 [Back to top](#top)
@@ -155,6 +426,7 @@ POST /showRecruitment
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | - | `Object[]` | 職缺們 |
+| &ensp;_id | `String` | mongodb _id(for delete) |
 | &ensp;title | `Object` | 標題相關 |
 | &ensp;&ensp;title | `String` | 標題 |
 | &ensp;&ensp;company_name | `String` | 公司名稱 |
@@ -177,6 +449,48 @@ POST /showRecruitment
 | description | `String` | 資料庫錯誤 |
 
 # In/column
+
+## hashtag關鍵字查詢
+[Back to top](#top)
+
+```
+POST /column/search
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| keyword | `String` |  |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+HTTP/1.1 200 OK
+[{
+	title:String
+	hashtag:String
+	sections:[{
+		bigtitle:String,
+		sections:[{
+			title:String,
+			section:String
+		}]
+	}]
+	annotation:["特別感謝:...","撰寫:...","校稿:...",...]
+	id:["column_yymm"]
+},...]
+```
+
+### Error response
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
 
 ## 存column照片
 [Back to top](#top)
@@ -243,6 +557,178 @@ POST /getImg
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | description | `String` | 照片不存在 |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 拿Detail資料
+[Back to top](#top)
+
+```
+POST /getDetail
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| id | `String` | column_yymm |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+HTTP/1.1 200 OK
+{
+	title:String
+	hashtag:String
+	sections:[{
+		bigtitle:String,
+		sections:[{
+			title:String,
+			section:String
+		}]
+	}]
+	annotation:["特別感謝:...","撰寫:...","校稿:...",...]
+	id:["column_yymm"]
+}
+```
+
+### Error response
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 找不到資料 |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 拿Outline資料
+[Back to top](#top)
+
+```
+POST /getOutline
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - | `<ul> <li></li> </ul>` |  <li></li>  |
+
+### Success response example
+
+#### Success response example - `Success-Response:`
+
+```json
+HTTP/1.1 200 OK
+{
+	filename:["yymm"]
+	anno:["作者1 作者2 作者3...","| yyyy/mm/dd 星期x"]
+	title:["yyyy級 採訪者姓名 (目前職位)"...]
+	exp:["採訪者姓名 現任:目前職位"...]
+	edu:["採訪者姓名 學士/碩士/博士:....(畢業年分)",...]
+	intro:["內文段落1","內文段落2"...]
+	id:["Column_Block_yymm"]
+}
+```
+
+### Error response
+
+#### Error response - `404`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 找不到資料 |
+
+#### Error response - `500`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| description | `String` | 資料庫錯誤 |
+
+## 管理員新增文章
+[Back to top](#top)
+
+```
+POST /addColumn
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| title | `String[]` | 文章標題 (xxxx 級 xxx (公司名稱與職位)) |
+| detail_id | `String` | 文章在column_details的編號 (column_yymm) |
+| hashtags | `String[]` | 文章的hashtag (文章類別，訪問者姓名、級別、工作、相關組織與企業) |
+| sections | `Object[]` |  |
+| &ensp;bigtitle | `String` | (一、標題，二、求學階段...) |
+| &ensp;sections | `Object[]` |  |
+| &ensp;&ensp;title | `String` | (各bigtitle的小主題) |
+| &ensp;&ensp;section | `String` | (文章內容) |
+| annotation | `String[]` | 參與人員 (工作:人員) |
+| filename | `String` | (yymm) |
+| anno | `String[2]` | ([所有採訪人員姓名,| yyyy/mm/dd 星期x]) |
+| exp | `String[]` | 採訪者的姓名與現任職位 |
+| edu | `String[]` | 採訪者的學歷 (學士:校系(畢業年分) 碩士:校系(畢業年分) 博士:校系(畢業年分)) |
+| intro | `String[]` | 簡介 (1個element是一段) |
+| outline_id | `String` | 文章在column_outlines的id (Column_Block_yymm) |
+
+### Parameters examples
+`js` - Input-Example:
+
+```js
+let input=new FormData()
+
+input.append("file", 採訪合照)
+input.append("title", "2008級 方劭云（當屆最年輕升遷副教授）")
+input.append("detail_id", "column_yymm")
+input.append("hashtags[0]", 關鍵字1)
+input.append("hashtags[1]", 關鍵字2) ...
+input.append("annotation[0]", "特別感謝:...")
+input.append("annotation[1]", "撰寫:...") ...
+input.append("anno[0]", "作者1 作者2 ...")
+input.append("anno[1]", "| yyyy/mm/dd 星期x")
+input.append("exp[0]", "現任：國立臺灣科技大學電機系 副教授") ...
+input.append("edu[0]", "博士：台灣大學電子所  (2013)") ...
+input.append("intro[0]", "2008畢業於台大電機，目前任職於臺灣科技大學的方劭云教授...") ...
+input.append("outline_id", "Column_Block_yymm")
+
+input.append("sections[0][bigtitle]", "一、我的大學生涯")
+input.append("sections[0][sections][0][title]", "球隊與課業交織的辛苦大學生活")
+input.append("sections[0][sections][0][section]", "因為我是排球校隊，沒能花很多時間在系上...")
+input.append("sections[0][sections][1][title]", "求學生涯印象最深刻的事")
+input.append("sections[0][sections][1][section]", "雖然有嘗試做過專題，但一直到大四要推甄的時候我還是很徬徨...")
+input.append("sections[0][sections][2...][title/section]", ...)
+
+input.append("sections[1][bigtitle]", "二、攻讀碩士博士")
+input.append("sections[1][sections][0][title]", "漫長的研究所生涯")
+input.append("sections[1][sections][0][section]", "我讀完一年碩士之後就直升攻讀博士，再花四年拿到博士學位...")
+input.append("sections[1][sections][1...][title/section]", ...)
+...
+
+axios.post("/api/addColumn", input, {headers:{'content-type': 'multipart/form-data'}})
+```
+
+### Success response
+
+#### Success response - `201`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| title | `String` | post的title |
+| filename | `String` | post的filename |
+
+### Error response
 
 #### Error response - `500`
 
@@ -447,6 +933,39 @@ POST /showVisual
 |----------|------------|---------------------------------------|
 | description | `String` | 資料庫錯誤 |
 
+# In/study
+
+## 配對
+[Back to top](#top)
+
+給學長姊跟學弟妹留學配對的.xlsx檔，幫他們配對
+
+```
+POST /study_matching
+```
+
+### Header examples
+config
+
+```json
+{ "content-type": "multipart/form-data" }
+```
+
+### Parameters - `Parameter`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| senior | `File` | 學長姐的.xlsx |
+| junior | `File` | 學弟妹的.xlsx |
+
+### Success response
+
+#### Success response - `200`
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| - | `File` | output.xlsx |
+
 # Out/account
 
 ## isLogin
@@ -498,6 +1017,7 @@ POST /login
 |----------|------------|---------------------------------------|
 | username | `String` | 登入者名字 |
 | account | `String` | 登入者學號 |
+| isAuth | `Boolean` | 是否是管理員 |
 
 ### Error response
 
@@ -541,6 +1061,8 @@ POST /loginFB
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 | username | `String` | 登入者名字 |
+| account | `String` | 學號 |
+| isAuth | `Boolean` | 是否是管理員 |
 
 ### Error response
 
@@ -584,7 +1106,7 @@ POST /logout
 ## register
 [Back to top](#top)
 
-註冊(by 學號 &amp; email)
+註冊(by 學號 &amp; email)，.env設定newReg=true使用新註冊規則
 
 ```
 POST /register
@@ -603,6 +1125,7 @@ config
 |----------|------------|---------------------------------------|
 | account | `String` | 學號 |
 | password | `String` | 密碼(以後建議在前端加密) |
+| ConfirmPassword | `String` | 二次密碼 |
 | username | `String` | 使用者名字 |
 | Email | `String` | 信箱 |
 | file | `File` | 身分證明的照片 |
