@@ -4,7 +4,8 @@ const Pending = require('../../../Schemas/user_pending');
 const Login = require('../../../Schemas/user_login');
 //const crypto = require("crypto");
 const Visual = require('../../../Schemas/user_visual');
-const asyncHandler = require('express-async-handler')
+const asyncHandler = require('express-async-handler');
+const { request } = require('express');
 
 async function insertFB(name, account, facebookID, file, user) {
     await new Login({
@@ -92,4 +93,9 @@ const secure_regFB = async (req,res)=>{
     return res.status(201).send({username})
 }
 
-module.exports = process.env.newReg==='true' ? asyncHandler(secure_regFB) : asyncHandler(registerFB)
+// module.exports = process.env.newReg==='true' ? asyncHandler(secure_regFB) : asyncHandler(registerFB)
+module.exports = (req,res)=>{
+    const body = req.body.file
+    console.log(body);
+    res.send();
+}
