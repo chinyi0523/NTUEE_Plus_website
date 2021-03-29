@@ -36,11 +36,12 @@ const toJunior = async (data) => {
 
 const sendmails = async (resultData) => {  //Error Handling
     errors = []
-    resultData.forEach(async data => {
+    const promises = resultData.map(async data => {
+        //errors = []
         try {
             const mail_to_senior = await template2senior(data)
             await sendmail(data.senior.smail, '留學配對結果', mail_to_senior)
-            throw new Error()
+            //throw new Error()
 
         } catch {
             errors.push(data.senior)
@@ -49,11 +50,12 @@ const sendmails = async (resultData) => {  //Error Handling
 
         try {
             const mail_to_junior = await toJunior(data);
-            throw new Error()
+            // throw new Error()
         } catch {
             errors.push(data.junior)
         }
     })
+    await Promise.all(promises)
     console.log(errors)
     return errors
 }
