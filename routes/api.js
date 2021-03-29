@@ -42,6 +42,8 @@ router.use(require("./srcs/in/column/main").router)
 router.use(require("./srcs/in/career/main"))
 //study
 router.use(require('./srcs/in/study/main'))
+//abroadInfo
+router.use(require('./srcs/in/abroadInfo/main').router)
 
 //check is auth
 router.use(require('./srcs/in/auth/isAuth'))
@@ -51,6 +53,8 @@ router.use(require("./srcs/in/column/main").router_auth)
 router.use(require('./srcs/in/auth/main'))
 //account
 router.use(require("./srcs/in/account/main").router_auth)
+//abroadInfo
+router.use(require('./srcs/in/abroadInfo/main').router_auth)
 
 //error handling, every error thrown by previous router will be catch by me
 router.use(require('./error').handleError)
