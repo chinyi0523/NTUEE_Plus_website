@@ -7,16 +7,22 @@ const { dbCatch , ErrorHandler } = require('../../../error')
  * @apiName GetAbroadInfo
  * @apiGroup In/abroadInfo
  * 
- * @apiparam {String} //?
+ * @apiparam {String} title 學校名
  * 
- * @apiSuccess
+ * @apiSuccessExample {json} Success-Response:
+ * HTTP/1.1 200 OK
+ * {
+ *     title:string
+ *     info:string
+ * }
  * 
  * @apiError (404) {String} 資料不存在
  * @apiError (500) {String} 資料庫錯誤
  */
 
 module.exports = asyncHandler(async (req, res, next)=>{
-    const getDone = await getAbroadInfo(req.body._id)    //?
+    const key = req.body.title
+    const getDone = await Abroad_info.findOne({title:key}).catch(dbCatch)    //?
     if (!getDone) throw new ErrorHandler(404, "找不到資料")
     return res.status(201).send(getDone)
 })
