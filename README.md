@@ -25,7 +25,9 @@ $ npm start
 ## 前端coding style規則
 > https://www.notion.so/Tidy-Up-Coding-style-de130c77c8654b61ba0e45c941b55ed4
 ## 後端/api 使用方法
-> https://hackmd.io/XCiAXLMkTQal6L6AOARD-w#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%B4%B9
+> https://github.com/NTUEE-PLUS/NTUEE_Plus_website/tree/master/routes#top
+## EE+ MD
+> https://hackmd.io/CSNbja7XTYCYquYxgq4Xow
 
 ## 部員名單
 (git練習請在此填入資料)
