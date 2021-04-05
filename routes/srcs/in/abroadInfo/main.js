@@ -7,3 +7,6 @@ router_auth.post('/addAbroadInfo',
     ImgGet('file'),
     require('./addAbroadInfo'))
 
+router.post('/getAbroadInfo',
+    require('./getAbroadInfo'))
+
