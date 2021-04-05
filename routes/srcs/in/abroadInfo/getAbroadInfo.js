@@ -1,10 +1,22 @@
-const asyncHandler = require('express-async-handler')
-const { dbcatch, ErrorHandler } = require('../../../error')
-const AbroadInfo = require('../../../Schemas/abroad_info')
+const Abroad_info = require('../../../Schemas/abroad_info')
+const asynchandler = require('express-async-handler')
+const { dbCatch , ErrorHandler } = require('../../../error')
 
-module.exports = asyncHandler(async (req, res)=>{
-	//const getDone = await getAbroadInfo(req.body.title)
-    const getDone = await AbroadInfo.findOne(req.body.title).catch(dbcatch)
-	if (!getDone) throw new ErrorHandler(404, "找不到資料")
-	return res.status(201).send(getDone)
+/**
+ * @api {post} /getAbroadInfo 拿AbroadInfo資料
+ * @apiName GetAbroadInfo
+ * @apiGroup In/abroadInfo
+ * 
+ * @apiparam {String} //?
+ * 
+ * @apiSuccess
+ * 
+ * @apiError (404) {String} 資料不存在
+ * @apiError (500) {String} 資料庫錯誤
+ */
+
+module.exports = asyncHandler(async (req, res, next)=>{
+    const getDone = await getAbroadInfo(req.body._id)    //?
+    if (!getDone) throw new ErrorHandler(404, "找不到資料")
+    return res.status(201).send(getDone)
 })
