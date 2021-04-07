@@ -21,7 +21,7 @@ const { dbCatch , ErrorHandler } = require('../../../error')
  */
 
 module.exports = asyncHandler(async (req, res, next)=>{
-    const key = req.body.title
+    const key = req.body.title   //req.body._id
     const getDone = await Abroad_info.findOne({title:key}).catch(dbCatch)    //?
     if (!getDone) throw new ErrorHandler(404, "找不到資料")
     return res.status(201).send(getDone)
