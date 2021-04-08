@@ -16,7 +16,7 @@ const {dbCatch} = require('../../../error')
 
 module.exports = asyncHandler(async (req, res, next)=>{
     console.log(req.body)
-    const deletedAbroadInfo = await AbroadInfo.findByIdAndDelete(req.body._id).catch(dbCatch)
+    const deletedAbroadInfo = await Abroad_info.findByIdAndDelete(req.body._id).catch(dbCatch)
     let deletedAbroadInfo = deletedAbroadInfo ? deletedAbroadInfo.title.title : '_id does not exist'
     console.log('delete:', deletedAbroadInfo)
     res.status(200).send({data: deletedAbroadInfo})
