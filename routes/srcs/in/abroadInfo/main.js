@@ -10,3 +10,7 @@ router_auth.post('/addAbroadInfo',
 router.post('/getAbroadInfo',
     require('./getAbroadInfo'))
 
+router_auth.delete('/deleteAbroadInfo',
+    require('./deleteAbroadInfo'))
+
+module.exports = {router,router_auth}
